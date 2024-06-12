@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"set_global_params",
   "parent":{
-    "name":"Set parameters",
-    "path":"folders/Core/Game setup/Set parameters.yy",
+    "name":"Initial setup",
+    "path":"folders/Core/Game setup/Initial setup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

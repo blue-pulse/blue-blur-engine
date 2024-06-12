@@ -21,7 +21,7 @@
     "name":"spr_terrain_collision",
     "path":"sprites/spr_terrain_collision/spr_terrain_collision.yy",
   },
-  "spriteNoExport":false,
+  "spriteNoExport":true,
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",

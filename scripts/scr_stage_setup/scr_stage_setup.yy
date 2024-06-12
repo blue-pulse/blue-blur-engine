@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_stage_setup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_stage_setup",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Stages/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
