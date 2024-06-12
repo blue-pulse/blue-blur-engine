@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"src_player_position",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"src_player_position",
+  "parent":{
+    "name":"Position",
+    "path":"folders/Resources/Player/Scripts/Position.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
