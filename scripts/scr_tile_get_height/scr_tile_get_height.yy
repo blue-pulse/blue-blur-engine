@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_tile_get_height",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_tile_get_height",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Resources/Terrain/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

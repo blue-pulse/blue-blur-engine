@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_tile_get_width",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_tile_get_width",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Resources/Terrain/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
