@@ -455,6 +455,7 @@
     {"id":{"name":"set_global_params","path":"scripts/set_global_params/set_global_params.yy",},},
     {"id":{"name":"set_macros","path":"scripts/set_macros/set_macros.yy",},},
     {"id":{"name":"set_screen_params","path":"scripts/set_screen_params/set_screen_params.yy",},},
+    {"id":{"name":"src_player_air_collision","path":"scripts/src_player_air_collision/src_player_air_collision.yy",},},
     {"id":{"name":"src_player_floor_collision","path":"scripts/src_player_floor_collision/src_player_floor_collision.yy",},},
     {"id":{"name":"src_player_position","path":"scripts/src_player_position/src_player_position.yy",},},
     {"id":{"name":"spr_controller","path":"sprites/spr_controller/spr_controller.yy",},},

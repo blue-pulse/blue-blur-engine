@@ -23,14 +23,14 @@ This project is the result of a collaborative effort by many individuals:
 - **Programming Team 💻:** Alejandro Buelvas Garcia, Juan Miguel Hernandez Retamoso, Josh Sebastian Lopez Murcia
 - **Level Designers 🎮:** Alejandro Buelvas Garcia, Josh Sebastian Lopez Murcia
 - **Artwork 🎨:** Juan Miguel Hernandez Retamoso
-- **Testers ✔️:** Kevin Gilberto Niño Vargas, Laura Natalia Espitia Huertas, David Alejandro Cediel Paez, Laura Sofia Núñez Rincon
+- **Testers ✔️:** @_natfl1x_, @alejandro.cediel, @lsofia20, @takuda
 
 With special thanks to:
 
 - **Sonic Team:** For all character sprites, designs, and sounds.
 - **SEGA SOUND TEAM:** For the all music.
-- **@DDeniCC:** For the beautiful logo design.
-- **@Triangly, @SingleShotGamer and @abhmughal:** For the additional code used for the collision system and physics implementations.
+- **@ddenicc:** For the beautiful logo design.
+- **@triangly, @singleshotgamer and @abhmughal:** For the additional code used for the collision system and physics implementations.
 
 The collective efforts of everyone, directly involved or indirectly supportive, have brought this project to life, enriching it with their skills and dedication.
 

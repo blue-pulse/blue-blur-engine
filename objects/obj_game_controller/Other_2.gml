@@ -1,0 +1,1 @@
+instance_create_depth(0, 0, -4096, obj_delta_controller);
