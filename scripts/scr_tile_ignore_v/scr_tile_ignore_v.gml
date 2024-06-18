@@ -1,61 +1,41 @@
-function tile_ignore_v(index,toPositive)
-{
-	/* Returns TRUE if the tile should be ignored, else returns FALSE */
-	
+function tile_ignore_v(tile_index, to_positive) {
 	// Check for LBR Tiles
-	if index > global.tile_data[1] * 2
-	{
-		if object_index == Player
-		{
-			if !Player.is_grounded or !Player.collision_mode[0]
-			{
-				return toPositive;
-			}
-			else
-			{
+	if (tile_index > global.tile_data[1] * 2) {
+		if (object_index == Player) {
+			if (!Player.is_grounded or !Player.collision_mode[0]) {
+				return to_positive;
+			} else {
 				return true;
 			}
+		} else {
+			return to_positive;
 		}
-		else
-		{
-			return toPositive;
-		}
-	}
-	
-	// Check for Top Solid Tiles
-	else if index > global.tile_data[1]
-	{
-		if object_index == Player
-		{
-			if !Player.is_grounded
-			{
-				return !toPositive;
+	} else if (tile_index > global.tile_data[1]) {
+		// Check for Top Solid Tiles
+		if (object_index == Player) {
+			if (!Player.is_grounded) {
+				return !to_positive;
+			} else {
+				switch (Player.collision_mode[0]) {
+					case 0:
+						return !to_positive;
+						break;
+					case 1:
+						return true;
+						break;
+					case 2:
+						return to_positive;
+						break;
+					case 3:
+						return true;
+						break;
+				}
 			}
-			else switch Player.collision_mode[0]
-			{
-				case 0:
-					return !toPositive;
-				break;
-				case 1:
-					return true;
-				break;
-				case 2:
-					return toPositive;
-				break;
-				case 3:
-					return true;
-				break;
-			}
+		} else {
+			return !to_positive;
 		}
-		else
-		{
-			return !toPositive;
-		}
-	}
-	
-	// Do not ignore Full Solid Tiles
-	else
-	{
+	} else {
+		// Do not ignore Full Solid Tiles
 		return false;
 	}
 }

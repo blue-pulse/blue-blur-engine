@@ -116,7 +116,7 @@ function handle_player_floor_collision() {
 				if (!stick_to_convex) {
 					var distance_to_floor = min(4 + abs(floor(horizontal_speed)), 14);
 					if (found_floor[0] > distance_to_floor) {
-						if (current_state == moving) {
+						if (get_state() == moving) {
 							show_debug_message("animation_reset");
 						}
 						is_pushing  = false;
@@ -145,7 +145,7 @@ function handle_player_floor_collision() {
 				if (!stick_to_convex) {
 					var distance_to_floor = min(4 + abs(floor(vertical_speed)), 14);
 					if (found_floor[0] > distance_to_floor) {
-						if (current_state == moving) {
+						if (get_state() == moving) {
 							show_debug_message("animation_reset");
 						}
 						is_pushing  = false;
@@ -174,7 +174,7 @@ function handle_player_floor_collision() {
 				if (!stick_to_convex) {
 					var distance_to_floor = min(4 + abs(floor(horizontal_speed)), 14);
 					if (found_floor[0] > distance_to_floor) {
-						if (current_state == moving) {
+						if (get_state() == moving) {
 							show_debug_message("animation_reset");
 						}
 						is_pushing  = false;
@@ -203,7 +203,7 @@ function handle_player_floor_collision() {
 				if (!stick_to_convex) {
 					var distance_to_floor = min(4 + abs(floor(vertical_speed)), 14);
 					if (found_floor[0] > distance_to_floor) {
-						if (current_state == moving) {
+						if (get_state() == moving) {
 							show_debug_message("animation_reset");
 						}
 						is_pushing  = false;

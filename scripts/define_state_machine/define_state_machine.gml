@@ -8,14 +8,14 @@ function State() constructor {
 
 function State_Machine() constructor {
 	// Set default state
-    static idle = new State();
+    static null_state = new State();
 	
 	// Set variables
-    state = idle;
+    state = null_state;
     time = 0;
 
     // Set a new state
-    set = function(new_state = idle) {
+    set = function(new_state = null_state) {
 		// Destroy current state
         state.destroy();
 		

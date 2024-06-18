@@ -18,6 +18,7 @@ radius_y = default_radius[1];
 
 on_object = false;
 is_pushing = false;
+is_spinning = false;
 is_grounded = false;
 is_underwater = false;
 allow_collision	= true;
@@ -32,20 +33,5 @@ current_score = global.player_score;
 current_lives = global.player_lives;
 
 // State machine
-current_state = new State_Machine();
-
-// States
-idle = new State();
-idle.step = function() {
-    if (keyboard_check_pressed(vk_f1)) {
-		show_debug_message("Idle");
-    }
-}
-current_state.set(idle);
-
-moving = new State();
-moving.step = function() {
-    if (keyboard_check_pressed(vk_f2)) {
-		show_debug_message("Moving");
-    }
-}
+set_player_state_machine();
+set_player_states();
