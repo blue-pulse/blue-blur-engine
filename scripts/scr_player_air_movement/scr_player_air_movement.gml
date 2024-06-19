@@ -10,7 +10,7 @@ function handle_player_air_movement() {
 	}
 	
 	// Limit vertical speed if not jumping
-	if vertical_speed < -15.75 and !Jumping
+	if vertical_speed < -15.75 and !is_jumping
 	{
 		vertical_speed = -15.75;
 	}
@@ -58,7 +58,7 @@ function handle_player_air_movement() {
 	}
 	
 	// Apply air drag
-	if vertical_speed < 0 and vertical_speed > -4 and !Hurt
+	if vertical_speed < 0 and vertical_speed > -4 and !is_hurt
 	{
 		horizontal_speed -= floor(horizontal_speed / 0.125) / 256;
 	}

@@ -25,23 +25,24 @@ small_radius = [7, 14];
 radius_x = default_radius[0];
 radius_y = default_radius[1];
 
-on_object = false;
+is_hurt = false;
+is_jumping = false;
 is_pushing = false;
 is_spinning = false;
 is_grounded = false;
 is_underwater = false;
+
+on_object = false;
 allow_collision	= true;
 allow_movement = true;
 
 air_lock = 0;
+forced_roll = false;
 ground_lock = 0;
 collision_mode = [0, 0];
 gravity_force = 0.21875;
 stick_to_convex = false;
 spindash_revolutions = -1;
-
-Jumping = false;
-Hurt = false;
 
 // Load score and lives
 current_score = global.player_score;
