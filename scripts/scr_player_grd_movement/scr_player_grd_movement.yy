@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"src_player_position",
+  "%Name":"scr_player_grd_movement",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"src_player_position",
+  "name":"scr_player_grd_movement",
   "parent":{
     "name":"Physics",
     "path":"folders/Resources/Player/Scripts/Physics.yy",

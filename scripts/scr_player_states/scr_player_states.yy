@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_states",
   "parent":{
-    "name":"States",
-    "path":"folders/Resources/Player/Scripts/States.yy",
+    "name":"Configuration",
+    "path":"folders/Resources/Player/Scripts/State Machine/Configuration.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

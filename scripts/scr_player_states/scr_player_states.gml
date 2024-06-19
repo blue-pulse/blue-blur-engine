@@ -1,22 +1,8 @@
 function set_player_states(){
-	idle = new State();
-	idle.step = function() {
-	    if (keyboard_check_pressed(vk_f1)) {
-			show_debug_message("Idle");
-	    }
-	}
-
-	moving = new State();
-	moving.step = function() {
-	    if (keyboard_check_pressed(vk_f2)) {
-			show_debug_message("Moving");
-	    }
-	}
-	
-	skidding = new State();
-	pushing = new State();
-	looking_up = new State();
-	crouching = new State();
-	
-	set_state(idle);
+	init_player_crouching_state();
+	init_player_idle_state();
+	init_player_looking_state();
+	init_player_moving_state();
+	init_player_pushing_state();
+	init_player_skidding_state();
 }

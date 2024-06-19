@@ -1,5 +1,5 @@
 function handle_player_ground_movement() {	
-	if spindash_revolution != -1 {
+	if spindash_revolutions != -1 {
 		return;
 	}
 	
@@ -105,7 +105,7 @@ function handle_player_ground_movement() {
 		{
 			if input_check("btn_up")
 			{
-				set_state(looking_up);
+				set_state(looking);
 			}
 			else if input_check("btn_down")
 			{
@@ -128,8 +128,4 @@ function handle_player_ground_movement() {
 			set_state(moving);
 		}
 	}
-}
-
-function handle_player_roll_movement() {
-
 }

@@ -18,10 +18,10 @@
       ],"name":"setup","properties":[],"resourceType":"GMRLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRLayer":"","%Name":"collision","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"$GMRTileLayer":"","%Name":"collision_layer_a","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"collision_layer_a","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":14,"SerialiseWidth":25,"TileCompressedData":[
-              -25,256,1,1,-5,0,-13,-2147483648,-5,0,-2,1,-2,0,-19,-2147483648,-2,0,-2,1,1,0,-20,-2147483648,-2,0,-2,
-              1,-2,0,-21,-2147483648,-2,1,-2,0,-21,-2147483648,-2,1,3,0,-2147483648,0,-15,-2147483648,1,0,-4,-2147483648,
-              -2,1,1,0,-17,-2147483648,-2,0,-3,-2147483648,-2,1,-23,0,-2,1,-23,0,-2,1,-23,0,-2,1,-23,0,-2,1,-8,0,16,
-              2,3,4,5,6,7,8,9,10,11,12,13,14,15,1,1,-25,256,
+              -26,1,-5,0,-2,-2147483648,-8,0,-3,-2147483648,-5,0,-2,1,-2,0,-19,-2147483648,-2,0,-2,1,1,0,-20,-2147483648,
+              -2,0,-2,1,-2,0,-21,-2147483648,-2,1,-2,0,-21,-2147483648,-2,1,3,0,-2147483648,0,-15,-2147483648,1,0,
+              -4,-2147483648,-2,1,1,0,-17,-2147483648,-2,0,-2,-2147483648,3,114,1,1,-22,0,3,145,1,1,-22,0,3,144,1,
+              1,-22,0,3,143,1,1,-21,0,1,142,-3,1,-17,0,4,2,3,140,141,-3,1,-25,256,
             ],"TileDataFormat":1,},"tilesetId":{"name":"ts_terrain_collision","path":"tilesets/ts_terrain_collision/ts_terrain_collision.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
         {"$GMRTileLayer":"","%Name":"collision_layer_b","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"collision_layer_b","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":14,"SerialiseWidth":25,"TileCompressedData":[-207,-2147483648,-143,0,],"TileDataFormat":1,},"tilesetId":{"name":"ts_terrain_collision","path":"tilesets/ts_terrain_collision/ts_terrain_collision.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
       ],"name":"collision","properties":[],"resourceType":"GMRLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

@@ -2,7 +2,8 @@
 x = floor(pos_x);
 y = floor(pos_y);
 image_xscale = facing;
-image_angle = angle;
+image_angle = rotation;
+image_alpha = transparency;
 
 // Draw player
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, 1, image_angle, c_white, image_alpha);
+draw_self();
