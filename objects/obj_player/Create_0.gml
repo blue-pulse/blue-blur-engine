@@ -33,11 +33,15 @@ is_underwater = false;
 allow_collision	= true;
 allow_movement = true;
 
+air_lock = 0;
 ground_lock = 0;
 collision_mode = [0, 0];
 gravity_force = 0.21875;
 stick_to_convex = false;
 spindash_revolutions = -1;
+
+Jumping = false;
+Hurt = false;
 
 // Load score and lives
 current_score = global.player_score;

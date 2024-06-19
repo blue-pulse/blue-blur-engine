@@ -448,6 +448,7 @@
     {"id":{"name":"scr_player_air_movement","path":"scripts/scr_player_air_movement/scr_player_air_movement.yy",},},
     {"id":{"name":"scr_player_grd_movement","path":"scripts/scr_player_grd_movement/scr_player_grd_movement.yy",},},
     {"id":{"name":"scr_player_roll_movement","path":"scripts/scr_player_roll_movement/scr_player_roll_movement.yy",},},
+    {"id":{"name":"scr_player_rotation","path":"scripts/scr_player_rotation/scr_player_rotation.yy",},},
     {"id":{"name":"scr_player_states","path":"scripts/scr_player_states/scr_player_states.yy",},},
     {"id":{"name":"scr_screen_properties","path":"scripts/scr_screen_properties/scr_screen_properties.yy",},},
     {"id":{"name":"scr_stage_setup","path":"scripts/scr_stage_setup/scr_stage_setup.yy",},},
