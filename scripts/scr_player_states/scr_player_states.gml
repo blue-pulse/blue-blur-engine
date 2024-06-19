@@ -13,5 +13,10 @@ function set_player_states(){
 	    }
 	}
 	
+	skidding = new State();
+	pushing = new State();
+	looking_up = new State();
+	crouching = new State();
+	
 	set_state(idle);
 }
