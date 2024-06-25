@@ -1,6 +1,4 @@
-	if !PlayerProcess()
-	{
-		return;
-	}
-	PlayerPhysicsHandle();
+if (allow_movement) {	
+	player_handle_physics();
 	PlayerRotation();
+}

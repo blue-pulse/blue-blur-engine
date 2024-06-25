@@ -1,22 +1,22 @@
 function PlayerJump()
 {
-	if !Jumping
+	if !is_jumping
 	{
 		return;
 	}
 	
-	if !input_check("btn_1")
+	if !button_check("btn_1")
 	{
 		// Shorten jump force
-		if Ysp < JumpMin
+		if vertical_speed < min_jump_height
 		{
-			Ysp = JumpMin;
+			vertical_speed = min_jump_height;
 		}
 	}
 	
 	/* Everything below is special mid-jump actions */
 	
-	if Ysp < JumpMin or !input_check_pressed("btn_1")
+	if vertical_speed < min_jump_height or !button_check_pressed("btn_1")
 	{
 		return;
 	}

@@ -1,57 +1,57 @@
 function PlayerRotation()
 {
-	if Animation != AnimMove
+	if state != states.moving
 	{
-		VisualAngle = 360;
+		rotation = 360;
 	}
 	else
 	{
 		// Apply smooth rotation
 		if global.SmoothRotation
 		{
-			if Grounded
+			if is_grounded
 			{
 				/* Smooth rotation code by Nihil (NullSpace)
 				Used with permission! */
 				
-				if Angle >= 35.16 and Angle <= 324.84
+				if angle >= 35.16 and angle <= 324.84
 				{
-					var TargetAngle  = Angle;
-					var RotationStep = (abs(Gsp) / 16 + abs(Gsp) / 32 - 2) * -1
+					var TargetAngle  = angle;
+					var RotationStep = (abs(ground_speed) / 16 + abs(ground_speed) / 32 - 2) * -1
 				}
 				else
 				{
 					var TargetAngle  = 360;
-					var RotationStep = (abs(Gsp) / 16 - 2) * -1
+					var RotationStep = (abs(ground_speed) / 16 - 2) * -1
 				}
-				VisualAngle = darctan2(dsin(TargetAngle) + dsin(VisualAngle) * RotationStep, dcos(TargetAngle) + dcos(VisualAngle) * RotationStep);	
+				rotation = darctan2(dsin(TargetAngle) + dsin(rotation) * RotationStep, dcos(TargetAngle) + dcos(rotation) * RotationStep);	
 			}
 			else
 			{
 				// Rotate back to 360
-				if VisualAngle <= 0
+				if rotation <= 0
 				{
-					VisualAngle += 360;
+					rotation += 360;
 				}
-				if VisualAngle < 180
+				if rotation < 180
 				{
-					VisualAngle = max(VisualAngle - 2.8125, 0);
+					rotation = max(rotation - 2.8125, 0);
 				}
 				else
 				{
-					VisualAngle = min(VisualAngle + 2.8125, 360);
+					rotation = min(rotation + 2.8125, 360);
 				}	
 			}
 		}
 	
 		// Apply regular classic-like rotation
-		else if Angle >= 23.91 and Angle <= 337.5
+		else if angle >= 23.91 and angle <= 337.5
 		{	
-			VisualAngle = ceil((Angle - 22.5) / 45) * 45;
+			rotation = ceil((angle - 22.5) / 45) * 45;
 		}
 		else
 		{
-			VisualAngle = 360;
+			rotation = 360;
 		}
 	}
 }

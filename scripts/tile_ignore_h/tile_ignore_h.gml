@@ -4,11 +4,11 @@ function tile_ignore_h(index,toPositive)
 	/* Returns TRUE if the tile should be ignored, else returns FALSE */
 	
 	// Check for LBR Tiles
-	if index > global.TileData[1] * 2
+	if index > global.tile_data[1] * 2
 	{
 		if object_index == Player
 		{
-			if !Player.Grounded or !Player.CollisionMode[0]
+			if !Player.is_grounded or !Player.collision_mode[0]
 			{
 				return false;
 			}
@@ -24,15 +24,15 @@ function tile_ignore_h(index,toPositive)
 	}
 	
 	// Check for Top Solid Tiles
-	else if index > global.TileData[1]
+	else if index > global.tile_data[1]
 	{
 		if object_index == Player
 		{
-			if !Player.Grounded
+			if !Player.is_grounded
 			{
 				return true;
 			}
-			else switch Player.CollisionMode[0]
+			else switch Player.collision_mode[0]
 			{
 				case 0:
 					return true;

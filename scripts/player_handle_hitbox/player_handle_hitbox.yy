@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"player_handle_hitbox",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_handle_hitbox",
+  "parent":{
+    "name":"Collision",
+    "path":"folders/Resources/Player/Scripts/Collision.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

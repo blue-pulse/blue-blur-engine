@@ -1,7 +1,7 @@
 function PlayerResetOnFloor()
 {	
-	// Wait until grounded flag is set. That means player has landed
-	if !Grounded
+	// Wait until is_grounded flag is set. That means player has landed
+	if !is_grounded
 	{
 		return;
 	}
@@ -9,70 +9,63 @@ function PlayerResetOnFloor()
 	// Is water barrier active?
 	if BarrierIsActive and BarrierType == BarrierWater 
 	{
-		var Force = IsUnderwater ? -4 : -7.5;
-		Ysp		  = Force * dcos(Angle);
-		Xsp       = Force * dsin(Angle);
+		var Force = is_underwater ? -4 : -7.5;
+		vertical_speed		  = Force * dcos(angle);
+		horizontal_speed       = Force * dsin(angle);
 		
 		BarrierIsActive = false;
-		Grounded        = false;
+		is_grounded        = false;
 		OnObject	    = false;
 	}
 	else
 	{
 		// Update player animation
-		if !OnObject and Animation != AnimIdle
+		if !OnObject and state != states.idle
 		{
-			if  Animation != AnimSpindash 
-			and Animation != AnimDropStand 
-			and Animation != AnimGlideStand
+			if  state != states.spindash
 			{
-				Animation = AnimMove;
+				state = states.moving;
 			}
 		}
 		
 		// Reset flags
-		if Hurt
+		if is_being_hurt
 		{
-			Hurt = false;
-			Gsp  = 0;
+			is_being_hurt = false;
+			ground_speed  = 0;
 		}
-		Spinning		 = false;
-		Jumping			 = false;
-		AirLock			 = false;
-		Pushing			 = false;
-		FlightState		 = false;
-		GlideState		 = false;
-		ClimbState		 = false;
+		is_rolling		 = false;
+		is_jumping			 = false;
+		air_lock			 = false;
+		is_pushing			 = false;
 		ScoreCombo		 = false;
 		BarrierIsActive  = false;
-		DropdashFlag	 = DashLocked;
-		DoubleSpinAttack = SpinReady;
 	
 		// Update visual angle if floor is steep enough
-		if global.SmoothRotation and Angle >= 35.16 and Angle <= 324.84
+		if global.SmoothRotation and angle >= 35.16 and angle <= 324.84
 		{
-			VisualAngle = Angle;
+			rotation = angle;
 		}
 		
 		// Reset gravity
-		if !IsUnderwater
+		if !is_underwater
 		{
-			Grv = 0.21875;
+			gravity_force = 0.21875;
 		}
 		else
 		{
 			// Reduce by 0x28 (0.15625) if underwater
-			Grv = 0.0625
+			gravity_force = 0.0625
 		}
 		
 		// Release/reset dropdash
 		if DropdashRev == 20
 		{	
-			if RadiusY != SmallRadiusY
+			if radius_y != small_radius_y
 			{
-				PosY   -= SmallRadiusY - RadiusY;
-				RadiusX = SmallRadiusX;
-				RadiusY = SmallRadiusY;
+				pos_y   -= small_radius_y - radius_y;
+				radius_x = small_radius_x;
+				radius_y = small_radius_y;
 			}
 			if SuperState
 			{
@@ -86,19 +79,19 @@ function PlayerResetOnFloor()
 			}
 		
 			// Define dropspeed
-			if DropdashSide == FlipRight
+			if DropdashSide == right
 			{
-				var Dropspeed = Gsp / 4 + DropForce * Facing;
+				var Dropspeed = ground_speed / 4 + DropForce * facing;
 			}
-			else if DropdashSide == FlipLeft
+			else if DropdashSide == left
 			{
-				if Angle == 360
+				if angle == 360
 				{
-					var Dropspeed = DropForce * Facing;
+					var Dropspeed = DropForce * facing;
 				}
 				else
 				{
-					var Dropspeed = Gsp / 2 + DropForce * Facing;
+					var Dropspeed = ground_speed / 2 + DropForce * facing;
 				}
 			}
 			Dropspeed = clamp(Dropspeed, -MaxForce, MaxForce);
@@ -110,10 +103,10 @@ function PlayerResetOnFloor()
 			}
 			
 			// Apply dropspeed
-			Gsp			= Dropspeed;
+			ground_speed			= Dropspeed;
 			DropdashRev = -1;
-			Spinning    = true;
-			Animation   = AnimSpin;
+			is_rolling    = true;
+			state   = states.rolling;
 		}
 		else
 		{
@@ -121,11 +114,11 @@ function PlayerResetOnFloor()
 		}
 	
 		// Reset collision radiuses if not rolling
-		if !Spinning
+		if !is_rolling
 		{
-			PosY   -= DefaultRadiusY - RadiusY;
-			RadiusX	= DefaultRadiusX;
-			RadiusY = DefaultRadiusY; 
+			pos_y   -= default_radius_y - radius_y;
+			radius_x	= default_radius_x;
+			radius_y = default_radius_y; 
 		}
 	}
 }

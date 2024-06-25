@@ -1,0 +1,1 @@
+global.allow_input = true;

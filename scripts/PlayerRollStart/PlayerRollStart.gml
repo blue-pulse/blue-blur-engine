@@ -1,26 +1,26 @@
 function PlayerRollStart()
 {
-	if !ForcedRoll and (input_check("btn_left") or input_check("btn_right")) or SpindashRev != -1
+	if !ForcedRoll and (button_check("btn_left") or button_check("btn_right")) or spindash_revolutions != -1
 	{
 		return;
 	}
 	
 	// Check if we should roll up
 	var ManualRoll = false;
-	if  input_check("btn_down")
+	if  button_check("btn_down")
 	{
 		if global.SKCrouch
 		{
-			if abs(Gsp) >= 1
+			if abs(ground_speed) >= 1
 			{
 				ManualRoll = true;
 			}
 			else
 			{
-				Animation = AnimCrouch;
+				state = states.crouching;
 			}
 		}
-		else if abs(Gsp) >= 0.5
+		else if abs(ground_speed) >= 0.5
 		{
 			ManualRoll = true;
 		}
@@ -29,10 +29,10 @@ function PlayerRollStart()
 	// Roll up
 	if ManualRoll or ForcedRoll
 	{
-		PosY     += DefaultRadiusY - SmallRadiusY;
-		RadiusY   = SmallRadiusY;
-		RadiusX	  = SmallRadiusX;
-		Spinning  = true;
-		Animation = AnimSpin;
+		pos_y     += default_radius_y - small_radius_y;
+		radius_y   = small_radius_y;
+		radius_x	  = small_radius_x;
+		is_rolling  = true;
+		state = states.rolling;
 	}
 }

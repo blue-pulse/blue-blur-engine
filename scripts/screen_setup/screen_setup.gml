@@ -1,9 +1,9 @@
 // Set application parameters
 surface_resize(application_surface, Screen.width, Screen.height);
 
-// Set window properties
-window_verify_resolution();
-window_set_properties();
+// Set screen properties
+screen_verify_resolution();
+screen_set_properties();
 
 // Apply some GPU magic that will increase game speed
 surface_depth_disable(true);

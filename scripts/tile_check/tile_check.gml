@@ -4,7 +4,7 @@ function tile_check(x,y,noTopSolid,tilelayer)
 	y = floor(y);
 	
 	// Exit if no tiledata found
-	if !array_length(global.TileData)
+	if !array_length(global.tile_data)
 	{
 		return false;
 	}
@@ -14,12 +14,12 @@ function tile_check(x,y,noTopSolid,tilelayer)
     }
 	
 	// Get tile at position
-	var Layer	  = global.TileLayers[tilelayer];
-    var Tile      = tilemap_get(Layer, x div 16, y div 16);
+	var plane	  = global.tile_layers[tilelayer];
+    var Tile      = tilemap_get(plane, x div 16, y div 16);
     var TileIndex = tile_get_index(Tile);
 	
    	// Exit if tile is top-only and we're ignoring them
-    if noTopSolid and TileIndex > global.TileData[1]
+    if noTopSolid and TileIndex > global.tile_data[1]
     {
         return false;
     }

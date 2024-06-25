@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"screen_verify_resolution",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"screen_verify_resolution",
+  "parent":{
+    "name":"Screen",
+    "path":"folders/Core/Screen.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

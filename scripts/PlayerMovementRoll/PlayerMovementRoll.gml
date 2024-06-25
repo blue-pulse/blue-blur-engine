@@ -1,79 +1,79 @@
 function PlayerMovementRoll()
 {
 	// Decelerate
-	if !GroundLock
+	if !ground_lock
 	{
-		if input_check("btn_left")
+		if button_check("btn_left")
 		{
-			if Gsp > 0
+			if ground_speed > 0
 			{
-				Gsp -= RollDec;
-				if Gsp < 0
+				ground_speed -= roll_decel;
+				if ground_speed < 0
 				{
-					Gsp = -0.5;
+					ground_speed = -0.5;
 				}
 			}
 			else
 			{
-				Pushing = false;
-				Facing  = FlipLeft;
+				is_pushing = false;
+				facing  = left;
 			}
 		}
-		if input_check("btn_right")
+		if button_check("btn_right")
 		{
-			if Gsp < 0
+			if ground_speed < 0
 			{
-				Gsp += RollDec;
-				if Gsp >= 0
+				ground_speed += roll_decel;
+				if ground_speed >= 0
 				{
-					Gsp = 0.5;
+					ground_speed = 0.5;
 				}
 			}
 			else
 			{
-				Pushing = false;
-				Facing  = FlipRight;
+				is_pushing = false;
+				facing  = right;
 			}
 		}
 	}
 
 	// Apply friction
-	if Gsp > 0
+	if ground_speed > 0
 	{
-		Gsp = max(Gsp - RollFrc, 0);
+		ground_speed = max(ground_speed - roll_frict, 0);
 	}
-	else if Gsp < 0
+	else if ground_speed < 0
 	{
-		Gsp = min(Gsp + RollFrc, 0);
+		ground_speed = min(ground_speed + roll_frict, 0);
 	}
 	
 	// Convert ground inertia to speeds
-	Xsp = Gsp *  dcos(Angle);
-	Ysp = Gsp * -dsin(Angle);
+	horizontal_speed = ground_speed *  dcos(angle);
+	vertical_speed = ground_speed * -dsin(angle);
 	
 	// Limit rolling speed
 	if !global.NoRollSpeedLimit
 	{
-		Xsp = clamp(Xsp, -16, 16);
+		horizontal_speed = clamp(horizontal_speed, -16, 16);
 	}
 
 	// Unroll
 	if !ForcedRoll
 	{
-		if !global.SKCrouch and Gsp == 0 
-		or  global.SKCrouch and abs(Gsp) < 0.5
+		if !global.SKCrouch and ground_speed == 0 
+		or  global.SKCrouch and abs(ground_speed) < 0.5
 		{
-			PosY     -= DefaultRadiusY - SmallRadiusY;
-			RadiusX   = DefaultRadiusX;
-			RadiusY   = DefaultRadiusY;		
-			Spinning  = false;
-			Animation = AnimIdle;
+			pos_y     -= default_radius_y - small_radius_y;
+			radius_x   = default_radius_x;
+			radius_y   = default_radius_y;		
+			is_rolling  = false;
+			state = states.idle;
 		}
 	}
 	
 	// If forced to roll, continue rolling
-	else if Gsp == 0
+	else if ground_speed == 0
 	{
-		Gsp = 2;
+		ground_speed = 2;
 	}
 }

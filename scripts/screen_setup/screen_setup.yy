@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"screen_setup",
   "parent":{
-    "name":"Initial setup",
-    "path":"folders/Core/Game setup/Initial setup.yy",
+    "name":"Screen",
+    "path":"folders/Core/Screen.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,6 +1,6 @@
 function PlayerGroundFloorCollision()
 {	
-	if !AllowCollision or OnObject
+	if !allow_collision or OnObject
 	{
 		return;
 	}
@@ -12,53 +12,53 @@ function PlayerGroundFloorCollision()
 
 		if !global.BetterPlayerTileGrip
 		{
-			if Angle <= 45 or Angle >= 315
+			if angle <= 45 or angle >= 315
 			{
-				CollisionMode[0] = 0;
+				collision_mode[0] = 0;
 			}
-			else if Angle >= 46.41 and Angle <= 133.59
+			else if angle >= 46.41 and angle <= 133.59
 			{
-				CollisionMode[0] = 1;
+				collision_mode[0] = 1;
 			}
-			else if Angle >= 135 and Angle <= 225
+			else if angle >= 135 and angle <= 225
 			{
-				CollisionMode[0] = 2;
+				collision_mode[0] = 2;
 			}
-			else if Angle >= 226.41 and Angle <= 313.59
+			else if angle >= 226.41 and angle <= 313.59
 			{
-				CollisionMode[0] = 3;
+				collision_mode[0] = 3;
 			}
 		}
 	
 		/* Custom method, check for slopes. Provides better stability on convex ones */
 		
-		else if !CollisionMode[1]
+		else if !collision_mode[1]
 		{
 			// If the difference between found angle and current angle is greater than this, collision mode won't update
 			var AngleTolerance = 45;
 			
-			switch CollisionMode[0]
+			switch collision_mode[0]
 			{
 				// Floor mode
 				case 0:
 				{
 					// Switch to right wall mode
-					var FindTile = tile_find_h(PosX + RadiusY - 2, PosY + RadiusX, true, Layer);
+					var FindTile = tile_find_h(pos_x + radius_y - 2, pos_y + radius_x, true, plane);
 					if  FindTile[0] < 0
 					{
-						if FindTile[1] - Angle mod 360 < AngleTolerance
+						if FindTile[1] - angle mod 360 < AngleTolerance
 						{
-							CollisionMode[0] = 1;
+							collision_mode[0] = 1;
 						}
 					}
 					
 					// Switch to left wall mode
-					var FindTile = tile_find_h(PosX - RadiusY + 2, PosY + RadiusX, false, Layer);
+					var FindTile = tile_find_h(pos_x - radius_y + 2, pos_y + radius_x, false, plane);
 					if  FindTile[0] < 0
 					{
-						if Angle - FindTile[1] < AngleTolerance
+						if angle - FindTile[1] < AngleTolerance
 						{
-							CollisionMode[0] = 3;
+							collision_mode[0] = 3;
 						}
 					}
 				}
@@ -68,22 +68,22 @@ function PlayerGroundFloorCollision()
 				case 1:	
 				{
 					// Switch to floor mode
-					var FindTile = tile_find_v(PosX + RadiusX, PosY + RadiusY - 2, true, Layer);
+					var FindTile = tile_find_v(pos_x + radius_x, pos_y + radius_y - 2, true, plane);
 					if  FindTile[0] < 0
 					{
-						if Angle - FindTile[1] mod 360 < AngleTolerance
+						if angle - FindTile[1] mod 360 < AngleTolerance
 						{
-							CollisionMode[0] = 0;
+							collision_mode[0] = 0;
 						}
 					}
 					
 					// Switch to ceiling mode
-					var FindTile = tile_find_v(PosX + RadiusX, PosY - RadiusY + 2, false, Layer);
+					var FindTile = tile_find_v(pos_x + radius_x, pos_y - radius_y + 2, false, plane);
 					if  FindTile[0] < 0
 					{
-						if FindTile[1] - Angle < AngleTolerance
+						if FindTile[1] - angle < AngleTolerance
 						{
-							CollisionMode[0] = 2;
+							collision_mode[0] = 2;
 						}
 					}
 				}
@@ -93,22 +93,22 @@ function PlayerGroundFloorCollision()
 				case 2:
 				{
 					// Switch to right wall mode
-					var FindTile = tile_find_h(PosX + RadiusY - 2, PosY - RadiusX, true, Layer);
+					var FindTile = tile_find_h(pos_x + radius_y - 2, pos_y - radius_x, true, plane);
 					if  FindTile[0] < 0
 					{
-						if Angle - FindTile[1] < AngleTolerance
+						if angle - FindTile[1] < AngleTolerance
 						{
-							CollisionMode[0] = 1;
+							collision_mode[0] = 1;
 						}
 					}
 					
 					// Switch to left wall mode
-					var FindTile = tile_find_h(PosX - RadiusY + 2, PosY - RadiusX, false, Layer);
+					var FindTile = tile_find_h(pos_x - radius_y + 2, pos_y - radius_x, false, plane);
 					if  FindTile[0] < 0
 					{
-						if FindTile[1] - Angle < AngleTolerance
+						if FindTile[1] - angle < AngleTolerance
 						{
-							CollisionMode[0] = 3;
+							collision_mode[0] = 3;
 						}
 					}
 				}
@@ -118,22 +118,22 @@ function PlayerGroundFloorCollision()
 				case 3:
 				{
 					// Switch to floor mode
-					var FindTile = tile_find_v(PosX - RadiusX, PosY + RadiusY - 2, true, Layer);
+					var FindTile = tile_find_v(pos_x - radius_x, pos_y + radius_y - 2, true, plane);
 					if  FindTile[0] < 0
 					{
-						if FindTile[1] - Angle < AngleTolerance
+						if FindTile[1] - angle < AngleTolerance
 						{
-							CollisionMode[0] = 0;
+							collision_mode[0] = 0;
 						}
 					}
 					
 					// Switch to ceiling mode
-					var FindTile = tile_find_v(PosX - RadiusX, PosY - RadiusY + 2, false, Layer);
+					var FindTile = tile_find_v(pos_x - radius_x, pos_y - radius_y + 2, false, plane);
 					if  FindTile[0] < 0
 					{
-						if Angle - FindTile[1] < AngleTolerance
+						if angle - FindTile[1] < AngleTolerance
 						{
-							CollisionMode[0] = 2;
+							collision_mode[0] = 2;
 						}
 					}
 				}
@@ -143,32 +143,32 @@ function PlayerGroundFloorCollision()
 		else
 		{
 			// Reset landing flag
-			CollisionMode[1] = false;
+			collision_mode[1] = false;
 		}
 	}
 	#endregion
 	
 	// Perform collision based on current collision mode
-	switch CollisionMode[0]
+	switch collision_mode[0]
 	{
 		// Floor mode
 		case 0:
 		{		
 			// Get tile below us
-			var FindFloor = tile_find_2v(PosX - RadiusX, PosY + RadiusY, PosX + RadiusX, PosY + RadiusY, true, Angle, Layer);
+			var FindFloor = tile_find_2v(pos_x - radius_x, pos_y + radius_y, pos_x + radius_x, pos_y + radius_y, true, angle, plane);
 			
 			// Go airborne if surface is too far away from us
-			if !StickToConvex
+			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(Xsp)), 14);
+				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(horizontal_speed)), 14);
 				if  FindFloor[0] > Distance
 				{
-					if Animation == AnimMove
+					if state == states.moving
 					{
 						//animation_reset(0);
 					}
-					Pushing  = false;
-					Grounded = false;
+					is_pushing  = false;
+					is_grounded = false;
 					
 					break;
 				}		
@@ -177,8 +177,8 @@ function PlayerGroundFloorCollision()
 			// Else collide
 			if FindFloor[0] >= -14
 			{
-				PosY += FindFloor[0];
-				Angle = FindFloor[1];	
+				pos_y += FindFloor[0];
+				angle = FindFloor[1];	
 			}
 		}
 		break;
@@ -187,20 +187,20 @@ function PlayerGroundFloorCollision()
 		case 1:
 		{	
 			// Get tile to our right
-			var FindFloor = tile_find_2h(PosX + RadiusY, PosY + RadiusX, PosX + RadiusY, PosY - RadiusX, true, Angle, Layer);
+			var FindFloor = tile_find_2h(pos_x + radius_y, pos_y + radius_x, pos_x + radius_y, pos_y - radius_x, true, angle, plane);
 			
 			// Go airborne if surface is too far away from us
-			if !StickToConvex
+			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(Ysp)), 14);
+				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(vertical_speed)), 14);
 				if  FindFloor[0] > Distance
 				{
-					if Animation == AnimMove
+					if state == states.moving
 					{
 						//animation_reset(0);
 					}
-					Pushing  = false;
-					Grounded = false;
+					is_pushing  = false;
+					is_grounded = false;
 					
 					break;
 				}	
@@ -209,8 +209,8 @@ function PlayerGroundFloorCollision()
 			// Else collide
 			if FindFloor[0] >= -14
 			{
-				PosX += FindFloor[0];
-				Angle = FindFloor[1];	
+				pos_x += FindFloor[0];
+				angle = FindFloor[1];	
 			}
 		}
 		break;
@@ -219,20 +219,20 @@ function PlayerGroundFloorCollision()
 		case 2:	
 		{	
 			// Get tile above us
-			var FindFloor = tile_find_2v(PosX + RadiusX, PosY - RadiusY, PosX - RadiusX, PosY - RadiusY, false, Angle, Layer);
+			var FindFloor = tile_find_2v(pos_x + radius_x, pos_y - radius_y, pos_x - radius_x, pos_y - radius_y, false, angle, plane);
 			
 			// Go airborne if surface is too far away from us
-			if !StickToConvex
+			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(Xsp)), 14);
+				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(horizontal_speed)), 14);
 				if  FindFloor[0] > Distance
 				{
-					if Animation == AnimMove
+					if state == states.moving
 					{
 						//animation_reset(0);
 					}
-					Pushing  = false;
-					Grounded = false;
+					is_pushing  = false;
+					is_grounded = false;
 					
 					break;
 				}
@@ -241,8 +241,8 @@ function PlayerGroundFloorCollision()
 			// Else collide
 			if FindFloor[0] >= -14
 			{	
-				PosY -= FindFloor[0];
-				Angle = FindFloor[1];
+				pos_y -= FindFloor[0];
+				angle = FindFloor[1];
 			}
 		}
 		break;
@@ -251,20 +251,20 @@ function PlayerGroundFloorCollision()
 		case 3:
 		{	
 			// Get tile to our left
-			var FindFloor = tile_find_2h(PosX - RadiusY, PosY - RadiusX, PosX - RadiusY, PosY + RadiusX, false, Angle, Layer); 
+			var FindFloor = tile_find_2h(pos_x - radius_y, pos_y - radius_x, pos_x - radius_y, pos_y + radius_x, false, angle, plane); 
 			
 			// Go airborne if surface is too far away from us
-			if !StickToConvex
+			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(Ysp)), 14);
+				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(vertical_speed)), 14);
 				if  FindFloor[0] > Distance
 				{
-					if Animation == AnimMove
+					if state == states.moving
 					{
 						//animation_reset(0);
 					}
-					Pushing  = false;
-					Grounded = false;
+					is_pushing  = false;
+					is_grounded = false;
 					
 					break;
 				}
@@ -273,8 +273,8 @@ function PlayerGroundFloorCollision()
 			// Else collide
 		    if FindFloor[0] >= -14
 			{
-				PosX -= FindFloor[0];
-				Angle = FindFloor[1];
+				pos_x -= FindFloor[0];
+				angle = FindFloor[1];
 			}
 		}
 		break;

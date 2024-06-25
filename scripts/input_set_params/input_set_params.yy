@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"input_set_params",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_set_params",
+  "parent":{
+    "name":"Input",
+    "path":"folders/Core/Input.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

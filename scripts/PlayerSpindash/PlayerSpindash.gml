@@ -6,28 +6,28 @@ function PlayerSpindash()
 	}
 	
 	// Start spindash
-	if SpindashRev == -1
+	if spindash_revolutions == -1
 	{
-		if Animation == AnimCrouch and input_check_pressed("btn_1")
+		if state == states.crouching and input_check_pressed("btn_1")
 		{
-			SpindashRev = 0;
-			Xsp			= 0;
+			spindash_revolutions = 0;
+			horizontal_speed			= 0;
 		}
 	}
 	
 	// Charge spindash
-	else if input_check("btn_down")
+	else if button_check("btn_down")
 	{
 		if input_check_pressed("btn_1")
 		{
-			SpindashRev = min(SpindashRev + 2, 8);
+			spindash_revolutions = min(spindash_revolutions + 2, 8);
 			
 			//animation_reset(0);
 			//audio_sfx_play(sfxCharge, false);
 		}
 		else
 		{
-			SpindashRev -= floor(SpindashRev / 0.125) / 256;
+			spindash_revolutions -= floor(spindash_revolutions / 0.125) / 256;
 		}
 	}
 	
@@ -39,28 +39,28 @@ function PlayerSpindash()
 			//Camera.ScrollDelay = 16;
 		}
 		
-		Gsp	        = ((SuperState ? 11 : 8) + round(SpindashRev) / 2) * Facing;
-		Spinning    = true;
-		SpindashRev = -1;
-		Animation   = AnimSpin;
+		ground_speed	        = ((SuperState ? 11 : 8) + round(spindash_revolutions) / 2) * facing;
+		is_rolling    = true;
+		spindash_revolutions = -1;
+		state   = states.rolling;
 			
-		RadiusX	= SmallRadiusX;
-		RadiusY	= SmallRadiusY;
-		PosY   += DefaultRadiusY - SmallRadiusY;
+		radius_x	= small_radius_x;
+		radius_y	= small_radius_y;
+		pos_y   += default_radius_y - small_radius_y;
 		
-		// Convert Gsp to speed. Originals don't do this, so you could jump straight upwards there!
+		// Convert ground_speed to speed. Originals don't do this, so you could jump straight upwards there!
 		if global.FixDashRelease
 		{
-			Xsp = Gsp *  dcos(Angle);
-			Ysp = Gsp * -dsin(Angle);
+			horizontal_speed = ground_speed *  dcos(angle);
+			vertical_speed = ground_speed * -dsin(angle);
 		}
 	}
 	
 	// Apply spindash animation
-	if SpindashRev >= 0
+	if spindash_revolutions >= 0
 	{
-		Animation = AnimSpindash;
+		state = states.spindash;
 	}
 	
-	return Spinning;
+	return is_rolling;
 }

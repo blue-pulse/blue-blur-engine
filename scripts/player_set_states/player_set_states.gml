@@ -1,8 +1,17 @@
-function player_set_states(){
-	init_player_crouching_state();
-	init_player_idle_state();
-	init_player_looking_state();
-	init_player_moving_state();
-	init_player_pushing_state();
-	init_player_skidding_state();
+function player_set_states() {
+	enum states {
+		idle = 0,
+		moving = 1,
+		crouching = 2,
+		pushing = 3,
+		skidding = 4,
+		searching = 5,
+		rolling = 6,
+		spindash = 7,
+		
+		AnimBalance = 99,
+		AnimBalanceTurn = 98,
+		AnimBalancePanic = 97,
+		AnimBalanceFlip = 96,
+	}
 }

@@ -1,66 +1,66 @@
 function PlayerMovementAir()
 {
 	// Rotate angle back to 360 degrees
-	if Angle < 180
+	if angle < 180
 	{
-		Angle = max(Angle - 2.8125, 0);
+		angle = max(angle - 2.8125, 0);
 	}
 	else
 	{
-		Angle = min(Angle + 2.8125, 360);
+		angle = min(angle + 2.8125, 360);
 	}
 	
 	// Limit vertical speed if not jumping
-	if Ysp < -15.75 and !Jumping
+	if vertical_speed < -15.75 and !is_jumping
 	{
-		Ysp = -15.75;
+		vertical_speed = -15.75;
 	}
 	
-	if !AirLock
+	if !air_lock
 	{
-		if input_check("btn_left")
+		if button_check("btn_left")
 		{	
 			// Decelerate
-			if Xsp > 0 
+			if horizontal_speed > 0 
 			{
-				Xsp -= AirAcc;
+				horizontal_speed -= air_accel;
 			} 
 			
 			// Accelerate
-			else if global.AirSpeedcap or Xsp > -TopAcc
+			else if global.AirSpeedcap or horizontal_speed > -top_accel
 			{
-				Xsp -= AirAcc;
-				if Xsp <= -TopAcc
+				horizontal_speed -= air_accel;
+				if horizontal_speed <= -top_accel
 				{
-					Xsp = -TopAcc;
+					horizontal_speed = -top_accel;
 				}
 			}
-			Facing = FlipLeft;
+			facing = left;
 		}
-		if input_check("btn_right")
+		if button_check("btn_right")
 		{	
 			// Decelerate
-			if Xsp < 0 
+			if horizontal_speed < 0 
 			{
-				Xsp += AirAcc;
+				horizontal_speed += air_accel;
 			} 
 			
 			// Accelerate
-			else if global.AirSpeedcap or Xsp < TopAcc
+			else if global.AirSpeedcap or horizontal_speed < top_accel
 			{
-				Xsp += AirAcc;
-				if Xsp >= TopAcc
+				horizontal_speed += air_accel;
+				if horizontal_speed >= top_accel
 				{
-					Xsp = TopAcc;
+					horizontal_speed = top_accel;
 				}
 			}
-			Facing = FlipRight;
+			facing = right;
 		}	
 	}
 	
 	// Apply air drag
-	if Ysp < 0 and Ysp > -4 and !Hurt
+	if vertical_speed < 0 and vertical_speed > -4 and !is_being_hurt
 	{
-		Xsp -= floor(Xsp / 0.125) / 256;
+		horizontal_speed -= floor(horizontal_speed / 0.125) / 256;
 	}
 }

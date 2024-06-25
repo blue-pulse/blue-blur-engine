@@ -1,16 +1,16 @@
 function PlayerJumpStart()
 {	
-	if !input_check_pressed("btn_1") or SpindashRev != -1 or PeeloutRev != -1
+	if !button_check_pressed("btn_1") or spindash_revolutions != -1 or PeeloutRev != -1
 	{
 		return;
 	}
 
 	// Check if there is a room between player's head and ceiling above them
-	switch CollisionMode[0]
+	switch collision_mode[0]
 	{
 		case 0:
 		{
-			if tile_find_2v(PosX - RadiusX, PosY - RadiusY, PosX + RadiusX, PosY - RadiusY, false, noone, Layer)[0] < 6
+			if tile_find_2v(pos_x - radius_x, pos_y - radius_y, pos_x + radius_x, pos_y - radius_y, false, noone, plane)[0] < 6
 			{
 				return;
 			}
@@ -18,7 +18,7 @@ function PlayerJumpStart()
 		break;
 		case 1:
 		{
-			if tile_find_2h(PosX - RadiusY, PosY - RadiusX, PosX - RadiusY, PosY + RadiusX, false, noone, Layer)[0] < 6
+			if tile_find_2h(pos_x - radius_y, pos_y - radius_x, pos_x - radius_y, pos_y + radius_x, false, noone, plane)[0] < 6
 			{
 				return;
 			}
@@ -31,7 +31,7 @@ function PlayerJumpStart()
 		break;
 		case 3:
 		{
-			if tile_find_2h(PosX + RadiusY, PosY - RadiusX, PosX + RadiusY, PosY + RadiusX, true, noone, Layer)[0] < 6
+			if tile_find_2h(pos_x + radius_y, pos_y - radius_x, pos_x + radius_y, pos_y + radius_x, true, noone, plane)[0] < 6
 			{
 				return;
 			}
@@ -39,23 +39,23 @@ function PlayerJumpStart()
 		break;
 	}
 	
-	Xsp			 += Jump * dsin(Angle);
-	Ysp			 += Jump * dcos(Angle);	
-	Pushing		  = false;
-	Grounded      = false;
+	horizontal_speed			 += jump_height * dsin(angle);
+	vertical_speed			 += jump_height * dcos(angle);	
+	is_pushing		  = false;
+	is_grounded      = false;
 	OnObject	  = false;
-	StickToConvex = false;
-	Jumping       = true;
-	Animation     = AnimSpin;
-	RadiusX		  = DefaultRadiusX;
-	RadiusY		  = DefaultRadiusY;
+	stick_to_convex = false;
+	is_jumping       = true;
+	state     = states.rolling;
+	radius_x		  = default_radius_x;
+	radius_y		  = default_radius_y;
 
-	if !Spinning
+	if !is_rolling
 	{	
-		PosY    += DefaultRadiusY - SmallRadiusY;
-		RadiusX	 = SmallRadiusX;
-		RadiusY  = SmallRadiusY;
-		Spinning = true;
+		pos_y    += default_radius_y - small_radius_y;
+		radius_x	 = small_radius_x;
+		radius_y  = small_radius_y;
+		is_rolling = true;
 		
 		/* Yes, originals seems to reset radiuses first and then set them once again. This
 		leads to an oversight few lines below, fixed with the global.FixRollJump flag */		
@@ -64,17 +64,17 @@ function PlayerJumpStart()
 	{
 		if !global.RolljumpControl
 		{
-			AirLock = true;
+			air_lock = true;
 		}
 		
 		// Sonic Team :|
 		if global.FixRollJump
 		{
-			RadiusX	= SmallRadiusX;
-			RadiusY = SmallRadiusY;
+			radius_x	= small_radius_x;
+			radius_y = small_radius_y;
 		}
 	}
 			
 	// Return action result
-	return Jumping;
+	return is_jumping;
 }

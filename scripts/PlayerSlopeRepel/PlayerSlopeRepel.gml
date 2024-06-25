@@ -1,14 +1,14 @@
 function PlayerSlopeRepel() 
 {
-	if StickToConvex
+	if stick_to_convex
 	{
 		return;
 	}
 	
-	// Decrease timer every frame when grounded if non-zero
-	if GroundLock
+	// Decrease timer every frame when is_grounded if non-zero
+	if ground_lock
 	{
-		GroundLock--;
+		ground_lock--;
 	}
 	
 	// Check if we are on a steep slope and going slow
@@ -16,27 +16,27 @@ function PlayerSlopeRepel()
 	{
 		if !global.S3SlopePhysics
 		{	
-			// Angle check here is different in comparison to collision mode checks
-			if Angle >= 46.41 and Angle <= 315 and abs(Gsp) < 2.5
+			// angle check here is different in comparison to collision mode checks
+			if angle >= 46.41 and angle <= 315 and abs(ground_speed) < 2.5
 			{	
-				Grounded   = false;
-				GroundLock = 30;
-				Gsp		   = 0;		
+				is_grounded   = false;
+				ground_lock = 30;
+				ground_speed		   = 0;		
 			} 
 		}
 		else
 		{
-			if Angle >= 35.16 and Angle <= 326.25 and abs(Gsp) < 2.5
+			if angle >= 35.16 and angle <= 326.25 and abs(ground_speed) < 2.5
 			{
-				if Angle >= 68.91 and Angle <= 292.5
+				if angle >= 68.91 and angle <= 292.5
 				{
-					Grounded = false;
+					is_grounded = false;
 				}
 				else
 				{
-					Gsp += Angle > 180 ? 0.5 : -0.5;
+					ground_speed += angle > 180 ? 0.5 : -0.5;
 				}
-				GroundLock = 30;
+				ground_lock = 30;
 			}
 		}	
 	}

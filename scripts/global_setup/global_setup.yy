@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"global_setup",
   "parent":{
-    "name":"Initial setup",
-    "path":"folders/Core/Game setup/Initial setup.yy",
+    "name":"Scripts",
+    "path":"folders/Core/Global setup/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

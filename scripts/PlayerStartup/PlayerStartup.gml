@@ -1,30 +1,30 @@
 function PlayerStartup()
 {		
 	// Initialise variables
-	PosX				= 0;
-	PosY				= 0;
-	Acc					= 0;
+	pos_x				= 0;
+	pos_y				= 0;
+	accel				= 0;
 	GlideAcc			= 0;
-	Dec					= 0;
-	Frc					= 0;
-	RollFrc				= 0;
-	AirAcc				= 0;
-	RollDec				= 0;
-	Jump				= 0;
-	JumpMin				= 0;
-	TopAcc				= 0;
-	Xsp					= 0;
-	Ysp					= 0;
-	Gsp					= 0;
-	SlopeGravity        = 0;
-	Angle				= 0;
-	GroundLock			= 0;
-	AirLock				= 0;
+	decel					= 0;
+	frict					= 0;
+	roll_frict				= 0;
+	air_accel				= 0;
+	roll_decel				= 0;
+	jump_height				= 0;
+	min_jump_height				= 0;
+	top_accel				= 0;
+	horizontal_speed					= 0;
+	vertical_speed					= 0;
+	ground_speed					= 0;
+	slope_gravity        = 0;
+	angle				= 0;
+	ground_lock			= 0;
+	air_lock				= 0;
 	ForcedRoll			= 0;
-	Spinning			= 0;
-	Jumping				= 0;
-	Pushing             = 0;
-	Grounded		    = 0;
+	is_rolling			= 0;
+	is_jumping				= 0;
+	is_pushing             = 0;
+	is_grounded		    = 0;
 	OnObject			= 0;
 	PeeloutForce        = 0;
 	DropdashSide	    = 0;
@@ -42,48 +42,48 @@ function PlayerStartup()
 	HighspeedBonus	    = 0;
 	InvincibleBonus	    = 0;
 	InvincibilityFrames = 0;
-	IsUnderwater	    = 0;
+	is_underwater	    = 0;
 	BarrierType			= 0;
 	BarrierIsActive     = 0;
-	StickToConvex	    = 0;
-	Hurt				= 0;
+	stick_to_convex	    = 0;
+	is_being_hurt				= 0;
 	Death				= 0;
 	Drown				= 0;
 	ScoreCombo			= 0;	
-	Layer				= 0;
-	VisualAngle			= 0;
+	plane				= 0;
+	rotation			= 0;
 	Animation			= 0;
 	Rings				= 0;
 	DebugMode           = 0;
 	DebugItem			= 0;
 	DebugSpeed			= 0;
-	HitboxData			= [];
+	hitbox			= [];
 	
 	// Set defaults
-	AllowCollision   = true;
-	AllowMovement    = true;
+	allow_collision   = true;
+	allow_movement    = true;
 	DropdashRev      = -1;
 	PeeloutRev       = -1;
-	SpindashRev      = -1;
-	Grv			     = 0.21875;
+	spindash_revolutions      = -1;
+	gravity_force			     = 0.21875;
 	AirTimer	     = 1800;
-	CollisionMode    = [0, 0];
-	Facing			 = FlipRight;
+	collision_mode    = [0, 0];
+	facing			 = right;
 	DoubleSpinAttack = SpinReady;
 	DropdashFlag     = DashLocked;
 	DrawOrder		 = depth;
 	
 	// Set collision radiuses
-	DefaultRadiusY = 19;
-	DefaultRadiusX = 9;
-	SmallRadiusY   = 14;
-	SmallRadiusX   = 7;
-	RadiusX = DefaultRadiusX;
-	RadiusY = DefaultRadiusY;
+	default_radius_y = 19;
+	default_radius_x = 9;
+	small_radius_y   = 14;
+	small_radius_x   = 7;
+	radius_x = default_radius_x;
+	radius_y = default_radius_y;
 	
 	// Set spawn position and centre the camera on us
-	PosX = x;
-	PosY = y - RadiusY - 1;
+	pos_x = x;
+	pos_y = y - radius_y - 1;
 	
 	// Load score and lives
 	Score		 = global.Score;

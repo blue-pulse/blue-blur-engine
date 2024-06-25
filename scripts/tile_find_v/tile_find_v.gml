@@ -11,7 +11,7 @@ function tile_find_v(x,y,toPositive,tilelayer)
 	}
 	
 	// Exit if no tiledata found
-	if !array_length(global.TileData)
+	if !array_length(global.tile_data)
 	{
 		return [32, noone];
 	}
@@ -24,8 +24,8 @@ function tile_find_v(x,y,toPositive,tilelayer)
 	var Shift     = 0;
 	
 	// Get tile at position
-	var Layer	   = global.TileLayers[tilelayer];
-	var Tile       = tilemap_get(Layer, x div 16, y div 16);
+	var plane	   = global.tile_layers[tilelayer];
+	var Tile       = tilemap_get(plane, x div 16, y div 16);
 	var TileIndex  = tile_get_index(Tile);
 	var TileHeight = tile_get_height(x, Tile, TileIndex);
 	
@@ -33,7 +33,7 @@ function tile_find_v(x,y,toPositive,tilelayer)
 	if !TileHeight or tile_ignore_v(TileIndex, toPositive)
 	{
 		Shift		= 16;
-		Tile	    = tilemap_get(Layer, x div 16, (y + Shift * Direction) div 16);
+		Tile	    = tilemap_get(plane, x div 16, (y + Shift * Direction) div 16);
 		TileIndex   = tile_get_index(Tile);
 		TileHeight  = tile_get_height(x, Tile, TileIndex);
 	}
@@ -42,7 +42,7 @@ function tile_find_v(x,y,toPositive,tilelayer)
 	else if TileHeight == 16
 	{
 		Shift		= -16;
-		Tile        = tilemap_get(Layer, x div 16, (y + Shift * Direction) div 16);
+		Tile        = tilemap_get(plane, x div 16, (y + Shift * Direction) div 16);
 		TileIndex   = tile_get_index(Tile);
 		TileHeight  = tile_get_height(x, Tile, TileIndex);
 		
@@ -50,7 +50,7 @@ function tile_find_v(x,y,toPositive,tilelayer)
 		if !TileHeight or tile_ignore_v(TileIndex, toPositive)
 		{
 			Shift		= 0;
-			Tile        = tilemap_get(Layer, x div 16, y div 16);
+			Tile        = tilemap_get(plane, x div 16, y div 16);
 			TileIndex   = tile_get_index(Tile);
 			TileHeight  = tile_get_height(x, Tile, TileIndex);
 		}

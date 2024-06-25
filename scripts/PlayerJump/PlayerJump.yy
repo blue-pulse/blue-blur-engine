@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PlayerJump",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Resources/Player/Scripts/State Machine/Scripts.yy",
+    "name":"States",
+    "path":"folders/Resources/Player/Scripts/State Machine/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

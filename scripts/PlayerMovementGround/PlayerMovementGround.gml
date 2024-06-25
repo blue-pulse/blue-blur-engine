@@ -1,95 +1,95 @@
 function PlayerMovementGround()
 {	
-	if SpindashRev != -1 or PeeloutRev != -1
+	if spindash_revolutions != -1
 	{
 		return;
 	}
 	
-	if !GroundLock 
+	if !ground_lock 
 	{
-		if input_check("btn_left")
+		if button_check("btn_left")
 		{	
 			// Decelerate
-			if Gsp > 0 
+			if ground_speed > 0 
 			{
-				Gsp -= Dec;
-				if Gsp <= 0
+				ground_speed -= decel;
+				if ground_speed <= 0
 				{
-					Gsp = -0.5;
+					ground_speed = -0.5;
 				}
 			} 
 			
 			// Accelerate
 			else
 			{
-				if Facing != FlipLeft
+				if facing != left
 				{
-					Facing  = FlipLeft;
-					Pushing = false;
+					facing  = left;
+					is_pushing = false;
 				}
-				if global.GroundSpeedcap or Gsp > -TopAcc
+				if global.GroundSpeedcap or ground_speed > -top_accel
 				{
-					Gsp = max(Gsp - Acc, -TopAcc);
+					ground_speed = max(ground_speed - accel, -top_accel);
 				} 
 			}
 		}
-		else if input_check("btn_right")
+		else if button_check("btn_right")
 		{			
 			// Decelerate
-			if Gsp < 0 
+			if ground_speed < 0 
 			{
-				Gsp += Dec;
-				if Gsp >= 0
+				ground_speed += decel;
+				if ground_speed >= 0
 				{
-					Gsp = 0.5;
+					ground_speed = 0.5;
 				}
 			} 
 			
 			// Accelerate
 			else
 			{
-				if Facing != FlipRight
+				if facing != right
 				{
-					Facing  = FlipRight;
-					Pushing = false;
+					facing  = right;
+					is_pushing = false;
 				}
-				if global.GroundSpeedcap or Gsp < TopAcc
+				if global.GroundSpeedcap or ground_speed < top_accel
 				{
-					Gsp = min(Gsp + Acc, TopAcc);
+					ground_speed = min(ground_speed + accel, top_accel);
 				} 
 			}
 		}
 		
-		// Perform skid. Angle check here is different in comparison to collision mode checks
-		if (Angle <= 45 or Angle >= 316.41) and Animation != AnimSkid
+		// Perform skid. angle check here is different in comparison to collision mode checks
+		if (angle <= 45 or angle >= 316.41) and state != states.skidding
 		{
-			if input_check("btn_left") and Gsp >= 4 or input_check("btn_right") and Gsp <= -4
+			if button_check("btn_left") and ground_speed >= 4 or button_check("btn_right") and ground_speed <= -4
 			{
-				Animation = AnimSkid;
+				state = states.skidding;
 			}
 		}
 	}
 	
 	// Apply friction
-	if !input_check("btn_left") and !input_check("btn_right")
+	if !button_check("btn_left") and !button_check("btn_right")
 	{
-		if Gsp > 0
+		if ground_speed > 0
 		{
-			Gsp = max(Gsp - Frc, 0);
+			ground_speed = max(ground_speed - frict, 0);
 		}
 		else
 		{
-			Gsp = min(Gsp + Frc, 0);
+			ground_speed = min(ground_speed + frict, 0);
 		}
-		Pushing = false;
+		is_pushing = false;
 	}
 
 	// Convert ground inertia to speed
-	Xsp = Gsp *  dcos(Angle);
-	Ysp = Gsp * -dsin(Angle);
+	horizontal_speed = ground_speed *  dcos(angle);
+	vertical_speed = ground_speed * -dsin(angle);
 	
 	// Define which animations should be in priority over the idle animation
-	switch Animation
+	switch state
 	{
 		case AnimDropStand:
 		case AnimGlideStand:
@@ -100,38 +100,38 @@ function PlayerMovementGround()
 	}
 	
 	// Set animation
-	if Pushing
+	if is_pushing
 	{
-		Animation = AnimPush;
+		state = states.pushing;
 	}
-	else if Gsp == 0
+	else if ground_speed == 0
 	{
 		// Same unsymmetrical angle check, just like above...
-		if (Angle <= 45 or Angle >= 316.41) and !AnimationPriority
+		if (angle <= 45 or angle >= 316.41) and !AnimationPriority
 		{
-			if input_check("btn_up")
+			if button_check("btn_up")
 			{
-				Animation = AnimLookup;
+				state = states.searching;
 			}
-			else if input_check("btn_down")
+			else if button_check("btn_down")
 			{
-				Animation = AnimCrouch;
+				state = states.crouching;
 			}
 			else
 			{
-				Animation = AnimIdle;
+				state = states.idle;
 			}
 		}
 	}
 	else
 	{
-		if Animation != AnimSkid
+		if state != states.skidding
 		{
-			Animation = AnimMove;
+			state = states.moving;
 		}
-		else if Gsp > 0 and input_check("btn_right") or Gsp < 0 and input_check("btn_left")
+		else if ground_speed > 0 and button_check("btn_right") or ground_speed < 0 and button_check("btn_left")
 		{
-			Animation = AnimMove;
+			state = states.moving;
 		}
 	}
 }

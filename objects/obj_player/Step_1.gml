@@ -1,41 +1,33 @@
-	if PlayerProcess()
-	{
-		// Airborne
-		if !Grounded
-		{
-			PlayerJump();
-			PlayerMovementAir();
-			PlayerPosition();
-			PlayerAirLevelCollision();
-			PlayerResetOnFloor();
-			PlayerHitboxUpdate();
+if (allow_movement) {
+	if (is_grounded) {
+		if (is_rolling) {
+			// Is spinning
+			if (PlayerJumpStart()) then return;
+			PlayerSlopeResistRoll();	
+			PlayerMovementRoll();
+			PlayerGroundWallCollision();
+		} else {
+			// Is walking
+			if (PlayerSpindash()) then return;
+			if (PlayerJumpStart()) then return;
+			PlayerSlopeResist();
+			PlayerMovementGround();
+			PlayerBalance();
+			PlayerGroundWallCollision();	
+			PlayerRollStart();	
 		}
-		
-		// Grounded
-		else
-		{
-			if !Spinning
-			{
-				// Not rolling
-				if PlayerSpindash()  return;
-				if PlayerJumpStart() return;
-				PlayerSlopeResist();
-				PlayerMovementGround();
-				PlayerBalance();
-				PlayerGroundWallCollision();	
-				PlayerRollStart();	
-			}
-			else
-			{
-				// Rolling
-				if PlayerJumpStart() return;
-				PlayerSlopeResistRoll();	
-				PlayerMovementRoll();
-				PlayerGroundWallCollision();
-			}
-			PlayerPosition();
-			PlayerGroundFloorCollision();
-			PlayerSlopeRepel();
-			PlayerHitboxUpdate();
-		}
-	}	
+		// Finally
+		player_handle_position();
+		PlayerGroundFloorCollision();
+		PlayerSlopeRepel();
+		player_handle_hitbox();
+	} else {
+		// Is airborne
+		PlayerJump();
+		PlayerMovementAir();
+		player_handle_position();
+		PlayerAirLevelCollision();
+		PlayerResetOnFloor();
+		player_handle_hitbox();
+	}
+}
