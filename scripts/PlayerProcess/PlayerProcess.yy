@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"PlayerProcess",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PlayerProcess",
+  "parent":{
+    "name":"Setup",
+    "path":"folders/Resources/Player/Scripts/Setup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

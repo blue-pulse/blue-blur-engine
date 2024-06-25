@@ -1,0 +1,3 @@
+PlayerStartup();
+PlayerHitboxUpdate();
+PlayerPhysicsHandle();
