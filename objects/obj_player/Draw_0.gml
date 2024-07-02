@@ -6,3 +6,7 @@ image_angle = rotation;
 
 // Draw player
 draw_self();
+draw_line(x, y, x+radius_x, y);
+draw_line(x, y, x-radius_x, y);
+draw_line(x, y, x, y+radius_y);
+draw_line(x, y, x, y-radius_y);
