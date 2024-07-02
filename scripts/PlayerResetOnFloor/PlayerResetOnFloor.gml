@@ -9,7 +9,7 @@ function PlayerResetOnFloor()
 	// Is water barrier active?
 	if BarrierIsActive and BarrierType == BarrierWater 
 	{
-		var Force = is_underwater ? -4 : -7.5;
+		var Force = (is_underwater) ? (-4) : (-7.5);
 		vertical_speed		  = Force * dcos(angle);
 		horizontal_speed       = Force * dsin(angle);
 		

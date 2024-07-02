@@ -160,7 +160,7 @@ function PlayerGroundFloorCollision()
 			// Go airborne if surface is too far away from us
 			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(horizontal_speed)), 14);
+				var Distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(horizontal_speed)), 14));
 				if  FindFloor[0] > Distance
 				{
 					if state == states.moving
@@ -192,7 +192,7 @@ function PlayerGroundFloorCollision()
 			// Go airborne if surface is too far away from us
 			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(vertical_speed)), 14);
+				var Distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(vertical_speed)), 14));
 				if  FindFloor[0] > Distance
 				{
 					if state == states.moving
@@ -224,7 +224,7 @@ function PlayerGroundFloorCollision()
 			// Go airborne if surface is too far away from us
 			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(horizontal_speed)), 14);
+				var Distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(horizontal_speed)), 14));
 				if  FindFloor[0] > Distance
 				{
 					if state == states.moving
@@ -256,7 +256,7 @@ function PlayerGroundFloorCollision()
 			// Go airborne if surface is too far away from us
 			if !stick_to_convex
 			{
-				var Distance = !global.S2FloorCollision ? 14 : min(4 + abs(floor(vertical_speed)), 14);
+				var Distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(vertical_speed)), 14));
 				if  FindFloor[0] > Distance
 				{
 					if state == states.moving

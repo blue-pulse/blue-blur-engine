@@ -34,7 +34,7 @@ function PlayerSlopeRepel()
 				}
 				else
 				{
-					ground_speed += angle > 180 ? 0.5 : -0.5;
+					ground_speed += (angle > 180) ? (0.5) : (-0.5);
 				}
 				ground_lock = 30;
 			}

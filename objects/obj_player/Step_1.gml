@@ -26,7 +26,7 @@ if (allow_movement) {
 		PlayerJump();
 		PlayerMovementAir();
 		player_handle_position();
-		PlayerAirLevelCollision();
+		player_air_collision();
 		PlayerResetOnFloor();
 		player_handle_hitbox();
 	}
