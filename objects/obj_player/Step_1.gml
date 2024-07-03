@@ -5,7 +5,7 @@ if (allow_movement) {
 			if (PlayerJumpStart()) then return;
 			PlayerSlopeResistRoll();	
 			PlayerMovementRoll();
-			PlayerGroundWallCollision();
+			player_wall_collision();
 		} else {
 			// Is walking
 			if (PlayerSpindash()) then return;
@@ -13,7 +13,7 @@ if (allow_movement) {
 			PlayerSlopeResist();
 			PlayerMovementGround();
 			PlayerBalance();
-			PlayerGroundWallCollision();	
+			player_wall_collision();	
 			PlayerRollStart();	
 		}
 		// Finally

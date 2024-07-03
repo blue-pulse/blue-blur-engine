@@ -48,20 +48,16 @@ function player_floor_collision() {
 				case 2:
 					// Switch to right wall mode
 					var found_tile = tile_find_h(pos_x + radius_y - 2, pos_y - radius_x, true, plane);
-					if  found_tile[0] < 0
-					{
-						if angle - found_tile[1] < angle_tolerance
-						{
+					if (found_tile[0] < 0) {
+						if (angle - found_tile[1] < angle_tolerance) {
 							collision_mode[0] = 1;
 						}
 					}
 					
 					// Switch to left wall mode
 					var found_tile = tile_find_h(pos_x - radius_y + 2, pos_y - radius_x, false, plane);
-					if  found_tile[0] < 0
-					{
-						if found_tile[1] - angle < angle_tolerance
-						{
+					if (found_tile[0] < 0) {
+						if (found_tile[1] - angle < angle_tolerance) {
 							collision_mode[0] = 3;
 						}
 					}
