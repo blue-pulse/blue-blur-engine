@@ -19,7 +19,7 @@ if (allow_movement) {
 		// Finally
 		player_handle_position();
 		player_floor_collision();
-		PlayerSlopeRepel();
+		player_slope_repel();
 		player_handle_hitbox();
 	} else {
 		// Is airborne

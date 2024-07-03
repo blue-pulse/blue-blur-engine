@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerSlopeRepel",
+  "%Name":"player_slope_repel",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerSlopeRepel",
+  "name":"player_slope_repel",
   "parent":{
     "name":"Collision",
     "path":"folders/Resources/Player/Scripts/Collision.yy",
