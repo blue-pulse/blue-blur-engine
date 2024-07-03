@@ -25,7 +25,7 @@ function PlayerStartup()
 	is_jumping				= 0;
 	is_pushing             = 0;
 	is_grounded		    = 0;
-	OnObject			= 0;
+	on_object			= 0;
 	PeeloutForce        = 0;
 	DropdashSide	    = 0;
 	SuperState			= 0;

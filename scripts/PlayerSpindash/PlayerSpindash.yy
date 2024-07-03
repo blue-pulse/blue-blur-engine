@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"PlayerSpindash",
   "isCompatibility":false,
   "isDnD":false,

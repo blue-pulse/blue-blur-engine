@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"PlayerSlopeResist",
   "isCompatibility":false,
   "isDnD":false,

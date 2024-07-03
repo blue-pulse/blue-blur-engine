@@ -43,7 +43,7 @@ function PlayerJumpStart()
 	vertical_speed			 += jump_height * dcos(angle);	
 	is_pushing		  = false;
 	is_grounded      = false;
-	OnObject	  = false;
+	on_object	  = false;
 	stick_to_convex = false;
 	is_jumping       = true;
 	state     = states.rolling;

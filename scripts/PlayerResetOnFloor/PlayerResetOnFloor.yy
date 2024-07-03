@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"PlayerResetOnFloor",
   "isCompatibility":false,
   "isDnD":false,

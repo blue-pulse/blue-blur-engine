@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"PlayerRollStart",
   "isCompatibility":false,
   "isDnD":false,

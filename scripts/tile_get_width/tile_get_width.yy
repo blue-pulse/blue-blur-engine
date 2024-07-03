@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"tile_get_width",
   "isCompatibility":false,
   "isDnD":false,

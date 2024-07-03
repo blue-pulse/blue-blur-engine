@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"stage_setup",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,12 +1,12 @@
 {
-  "$GMScript":"",
-  "%Name":"delta_set_params",
+  "$GMScript":"v1",
+  "%Name":"controller_create",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"delta_set_params",
+  "name":"controller_create",
   "parent":{
     "name":"Scripts",
-    "path":"folders/Core/Delta time/Scripts.yy",
+    "path":"folders/Core/Global setup/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

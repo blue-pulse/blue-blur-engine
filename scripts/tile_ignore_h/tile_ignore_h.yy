@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"tile_ignore_h",
   "isCompatibility":false,
   "isDnD":false,

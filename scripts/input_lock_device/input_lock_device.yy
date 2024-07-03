@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"input_lock_device",
   "isCompatibility":false,
   "isDnD":false,

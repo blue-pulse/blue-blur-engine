@@ -15,12 +15,12 @@ function PlayerResetOnFloor()
 		
 		BarrierIsActive = false;
 		is_grounded        = false;
-		OnObject	    = false;
+		on_object	    = false;
 	}
 	else
 	{
 		// Update player animation
-		if !OnObject and state != states.idle
+		if !on_object and state != states.idle
 		{
 			if  state != states.spindash
 			{

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"tile_load_data",
   "isCompatibility":false,
   "isDnD":false,

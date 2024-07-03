@@ -71,7 +71,7 @@ function PlayerBalance()
 	#endregion
 	
 	// Balance on the floor
-	if !OnObject
+	if !on_object
 	{
 		if global.SKCrouch and button_check("btn_down")
 		{
@@ -118,15 +118,15 @@ function PlayerBalance()
 		
 		// Ignore specific objects
 		/*
-		if OnObject.object_index == Bridge
+		if on_object.object_index == Bridge
 		{
 			return;
 		}
 		*/
 		
 		// Get balance range
-		var PlayerX   = OnObject.Obj_SolidX - OnObject.x + floor(pos_x);
-		var RightEdge = OnObject.Obj_SolidX * 2 - 1;
+		var PlayerX   = on_object.Obj_SolidX - on_object.x + floor(pos_x);
+		var RightEdge = on_object.Obj_SolidX * 2 - 1;
 		
 		// Balance!
 		if PlayerX < Tolerance

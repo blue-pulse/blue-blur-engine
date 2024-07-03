@@ -18,7 +18,7 @@ if (allow_movement) {
 		}
 		// Finally
 		player_handle_position();
-		PlayerGroundFloorCollision();
+		player_floor_collision();
 		PlayerSlopeRepel();
 		player_handle_hitbox();
 	} else {

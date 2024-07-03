@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"PlayerRotation",
   "isCompatibility":false,
   "isDnD":false,

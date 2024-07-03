@@ -22,6 +22,7 @@ radius_x = default_radius_x;
 radius_y = default_radius_y;
 
 // Set defaults
+on_object = noone;
 allow_collision = true;
 allow_movement = true;
 spindash_revolutions = -1;

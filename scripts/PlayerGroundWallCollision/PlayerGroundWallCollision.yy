@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"PlayerGroundWallCollision",
   "isCompatibility":false,
   "isDnD":false,

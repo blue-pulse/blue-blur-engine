@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"button_check_released",
   "isCompatibility":false,
   "isDnD":false,

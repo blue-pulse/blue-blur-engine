@@ -1,9 +1,9 @@
 {
-  "$GMScript":"",
-  "%Name":"driver_create",
+  "$GMScript":"v1",
+  "%Name":"delta",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"driver_create",
+  "name":"delta",
   "parent":{
     "name":"Scripts",
     "path":"folders/Core/Global setup/Scripts.yy",
