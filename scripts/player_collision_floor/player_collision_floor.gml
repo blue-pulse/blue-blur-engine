@@ -1,4 +1,4 @@
-function player_floor_collision() {	
+function player_collision_floor() {	
 	if (allow_collision and !on_object) {
 		// Update collision mode
 		if (!collision_mode[1]) {

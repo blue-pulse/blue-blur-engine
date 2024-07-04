@@ -1,4 +1,4 @@
-function player_air_collision() {
+function player_collision_air() {
 	if (allow_collision) {
 		var horizontal_radius = default_radius_x + 1;
 

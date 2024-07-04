@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_wall_collision",
+  "%Name":"player_collision_wall",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_wall_collision",
+  "name":"player_collision_wall",
   "parent":{
     "name":"Collision",
     "path":"folders/Resources/Player/Scripts/Collision.yy",

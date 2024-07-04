@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_handle_hitbox",
   "parent":{
-    "name":"Collision",
-    "path":"folders/Resources/Player/Scripts/Collision.yy",
+    "name":"Physics",
+    "path":"folders/Resources/Player/Scripts/Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

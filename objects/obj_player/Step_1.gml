@@ -5,7 +5,7 @@ if (allow_movement) {
 			if (PlayerJumpStart()) then return;
 			player_slope_resist_roll();	
 			PlayerMovementRoll();
-			player_wall_collision();
+			player_collision_wall();
 		} else {
 			// Is walking
 			if (PlayerSpindash()) then return;
@@ -13,12 +13,12 @@ if (allow_movement) {
 			player_slope_resist();
 			PlayerMovementGround();
 			PlayerBalance();
-			player_wall_collision();	
+			player_collision_wall();	
 			PlayerRollStart();	
 		}
 		// Finally
 		player_handle_position();
-		player_floor_collision();
+		player_collision_floor();
 		player_slope_repel();
 		player_handle_hitbox();
 	} else {
@@ -26,7 +26,7 @@ if (allow_movement) {
 		PlayerJump();
 		PlayerMovementAir();
 		player_handle_position();
-		player_air_collision();
+		player_collision_air();
 		PlayerResetOnFloor();
 		player_handle_hitbox();
 	}

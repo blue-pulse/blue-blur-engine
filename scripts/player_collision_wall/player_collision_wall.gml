@@ -1,4 +1,4 @@
-function player_wall_collision() {
+function player_collision_wall() {
 	var unsymmetric_check = (angle mod 90 != 0) and (angle >= 91.41) and (angle <= 270);
 	if (allow_collision and !unsymmetric_check) {
 		var vertical_offset = 8 * (angle == 360);

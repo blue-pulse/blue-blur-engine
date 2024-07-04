@@ -1,4 +1,4 @@
 if (allow_movement) {	
 	player_handle_physics();
-	PlayerRotation();
+	player_handle_rotation();
 }
