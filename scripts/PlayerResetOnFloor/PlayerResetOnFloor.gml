@@ -1,6 +1,6 @@
 function PlayerResetOnFloor()
 {	
-	// Wait until is_grounded flag is set. That means player has landed
+	// Wait until player has landed
 	if !is_grounded
 	{
 		return;

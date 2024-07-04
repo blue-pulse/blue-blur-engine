@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerMovementAir",
+  "%Name":"player_movement_air",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerMovementAir",
+  "name":"player_movement_air",
   "parent":{
     "name":"Physics",
     "path":"folders/Resources/Player/Scripts/Physics.yy",

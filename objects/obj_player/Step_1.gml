@@ -24,7 +24,7 @@ if (allow_movement) {
 	} else {
 		// Is airborne
 		PlayerJump();
-		PlayerMovementAir();
+		player_movement_air();
 		player_handle_position();
 		player_collision_air();
 		PlayerResetOnFloor();
