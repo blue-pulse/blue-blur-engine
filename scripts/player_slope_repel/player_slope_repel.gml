@@ -1,6 +1,6 @@
 function player_slope_repel() {
 	if (!stick_to_convex) {
-		// Decrease timer every frame when is_grounded if non-zero
+		// Decrease timer every frame when grounded if non-zero
 		if (ground_lock) {
 			ground_lock--;
 		} else if ((angle >= 46.41) and (angle <= 315) and (abs(ground_speed) < 2.5)) {

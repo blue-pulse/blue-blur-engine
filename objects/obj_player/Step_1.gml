@@ -3,14 +3,14 @@ if (allow_movement) {
 		if (is_rolling) {
 			// Is spinning
 			if (PlayerJumpStart()) then return;
-			PlayerSlopeResistRoll();	
+			player_slope_resist_roll();	
 			PlayerMovementRoll();
 			player_wall_collision();
 		} else {
 			// Is walking
 			if (PlayerSpindash()) then return;
 			if (PlayerJumpStart()) then return;
-			PlayerSlopeResist();
+			player_slope_resist();
 			PlayerMovementGround();
 			PlayerBalance();
 			player_wall_collision();	
