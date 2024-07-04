@@ -99,7 +99,7 @@
     {"id":{"name":"obj_core_controller","path":"objects/obj_core_controller/obj_core_controller.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_stage_controller","path":"objects/obj_stage_controller/obj_stage_controller.yy",},},
-    {"id":{"name":"Test","path":"rooms/Test/Test.yy",},},
+    {"id":{"name":"rm_test_zone","path":"rooms/rm_test_zone/rm_test_zone.yy",},},
     {"id":{"name":"__input_axis_is_directional","path":"scripts/__input_axis_is_directional/__input_axis_is_directional.yy",},},
     {"id":{"name":"__input_binding_get_label","path":"scripts/__input_binding_get_label/__input_binding_get_label.yy",},},
     {"id":{"name":"__input_class_binding","path":"scripts/__input_class_binding/__input_class_binding.yy",},},
@@ -511,7 +511,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Test","path":"rooms/Test/Test.yy",},},
+    {"roomId":{"name":"rm_test_zone","path":"rooms/rm_test_zone/rm_test_zone.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
