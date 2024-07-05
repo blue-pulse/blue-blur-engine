@@ -14,6 +14,8 @@
     {"$GMFolder":"","%Name":"Global setup","folderPath":"folders/Core/Global setup.yy","name":"Global setup","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Core/Global setup/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Core/Global setup/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Methods","folderPath":"folders/Core/Global setup/Scripts/Methods.yy","name":"Methods","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Setup","folderPath":"folders/Core/Global setup/Scripts/Setup.yy","name":"Setup","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Core/Global setup/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Input","folderPath":"folders/Core/Input.yy","name":"Input","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Screen","folderPath":"folders/Core/Screen.yy","name":"Screen","resourceType":"GMFolder","resourceVersion":"2.0",},

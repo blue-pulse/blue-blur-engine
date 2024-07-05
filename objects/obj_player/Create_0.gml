@@ -42,7 +42,6 @@ is_jumping = false;
 is_pushing = false;
 is_underwater = false;
 is_being_hurt = false;
-manual_roll = false;
 forced_roll = false;
 
 // Set global variables

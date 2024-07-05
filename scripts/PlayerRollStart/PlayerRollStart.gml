@@ -1,5 +1,8 @@
-function PlayerRollStart()
-{
+function PlayerRollStart() {
+	// Verify initial conditions
+	if (is_grounded and !is_rolling) {
+	}
+	
 	if !forced_roll and (button_check("btn_left") or button_check("btn_right")) or spindash_revolutions != -1
 	{
 		return;

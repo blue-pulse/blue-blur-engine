@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"controller_create",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Core/Global setup/Scripts.yy",
+    "name":"Methods",
+    "path":"folders/Core/Global setup/Scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
