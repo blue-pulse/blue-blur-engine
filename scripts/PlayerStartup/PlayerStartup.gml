@@ -20,7 +20,7 @@ function PlayerStartup()
 	angle				= 0;
 	ground_lock			= 0;
 	air_lock				= 0;
-	ForcedRoll			= 0;
+	forced_roll			= 0;
 	is_rolling			= 0;
 	is_jumping				= 0;
 	is_pushing             = 0;

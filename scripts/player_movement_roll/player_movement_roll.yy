@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerMovementGround",
+  "%Name":"player_movement_roll",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerMovementGround",
+  "name":"player_movement_roll",
   "parent":{
     "name":"Physics",
     "path":"folders/Resources/Player/Scripts/Physics.yy",

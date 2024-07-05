@@ -42,6 +42,12 @@ is_jumping = false;
 is_pushing = false;
 is_underwater = false;
 is_being_hurt = false;
+manual_roll = false;
+forced_roll = false;
+
+// Set global variables
+score = global.player_score;
+lives = global.player_lives;
 
 // Set states
 player_set_states();

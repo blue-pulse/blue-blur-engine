@@ -4,14 +4,14 @@ if (allow_movement) {
 			// Is spinning
 			if (PlayerJumpStart()) then return;
 			player_slope_resist_roll();	
-			PlayerMovementRoll();
+			player_movement_roll();
 			player_collision_wall();
 		} else {
 			// Is walking
 			if (PlayerSpindash()) then return;
 			if (PlayerJumpStart()) then return;
 			player_slope_resist();
-			PlayerMovementGround();
+			player_movement_ground();
 			PlayerBalance();
 			player_collision_wall();	
 			PlayerRollStart();	
@@ -27,7 +27,7 @@ if (allow_movement) {
 		player_movement_air();
 		player_handle_position();
 		player_collision_air();
-		PlayerResetOnFloor();
+		player_reset_on_floor();
 		player_handle_hitbox();
 	}
 }

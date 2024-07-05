@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerResetOnFloor",
+  "%Name":"player_movement_ground",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerResetOnFloor",
+  "name":"player_movement_ground",
   "parent":{
     "name":"Physics",
     "path":"folders/Resources/Player/Scripts/Physics.yy",
