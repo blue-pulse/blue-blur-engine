@@ -1,9 +1,5 @@
 function PlayerSpindash()
 {
-	if !global.SpindashEnabled
-	{
-		return;
-	}
 	
 	// Start spindash
 	if spindash_revolutions == -1

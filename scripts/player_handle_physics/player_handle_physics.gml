@@ -1,35 +1,33 @@
 function player_handle_physics() {
-	if (is_underwater) {
-		// Underwater parameters
-		accel = 0.0234375;
-		air_accel = 0.046875;
-		decel = 0.25;
-		roll_decel = 0.125;
-		frict = 0.0234375;
-		roll_frict  = 0.01171875;
-		top_accel = 3;
-		jump_height = -3.5;
-		min_jump_height = -2;
-	} else {
-		if (is_boosting) {
-			// Boosting parameters
-			accel = 0.09375;
-			air_accel = 0.1875;
-			frict = 0.09375;
-			roll_frict = 0.046875;
-			top_accel = 12;
+	if (is_grounded) {
+		if (is_rolling) {
+			// Is spinning
+			if (PlayerJumpStart()) then return;
+			player_slope_resist_roll();	
+			player_movement_roll();
+			player_collision_wall();
 		} else {
-			// Common parameters
-			accel = 0.046875;
-			air_accel = 0.09375;
-			frict = 0.046875;
-			roll_frict = 0.0234375;
-			top_accel = 6;
+			// Is walking
+			//if (PlayerSpindash()) then return;
+			if (PlayerJumpStart()) then return;
+			player_slope_resist();
+			player_movement_ground();
+			PlayerBalance();
+			player_collision_wall();	
+			PlayerRollStart();	
 		}
 		// Finally
-		decel = 0.5;
-		roll_decel = 0.125;
-		jump_height = -6.5;
-		min_jump_height = -4;
+		player_handle_position();
+		player_collision_floor();
+		player_slope_repel();
+		player_handle_hitbox();
+	} else {
+		// Is airborne
+		PlayerJump();
+		player_movement_air();
+		player_handle_position();
+		player_collision_air();
+		player_reset_on_floor();
+		player_handle_hitbox();
 	}
 }

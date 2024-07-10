@@ -92,7 +92,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.0.157",
+    "IDEVersion":"2024.6.1.160",
   },
   "name":"blue-blur-engine",
   "resources":[
@@ -462,6 +462,7 @@
     {"id":{"name":"player_collision_floor","path":"scripts/player_collision_floor/player_collision_floor.yy",},},
     {"id":{"name":"player_collision_wall","path":"scripts/player_collision_wall/player_collision_wall.yy",},},
     {"id":{"name":"player_handle_hitbox","path":"scripts/player_handle_hitbox/player_handle_hitbox.yy",},},
+    {"id":{"name":"player_handle_params","path":"scripts/player_handle_params/player_handle_params.yy",},},
     {"id":{"name":"player_handle_physics","path":"scripts/player_handle_physics/player_handle_physics.yy",},},
     {"id":{"name":"player_handle_position","path":"scripts/player_handle_position/player_handle_position.yy",},},
     {"id":{"name":"player_handle_rotation","path":"scripts/player_handle_rotation/player_handle_rotation.yy",},},

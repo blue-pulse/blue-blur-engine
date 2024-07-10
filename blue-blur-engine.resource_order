@@ -391,6 +391,7 @@
     {"name":"player_collision_floor","order":6,"path":"scripts/player_collision_floor/player_collision_floor.yy",},
     {"name":"player_collision_wall","order":5,"path":"scripts/player_collision_wall/player_collision_wall.yy",},
     {"name":"player_handle_hitbox","order":7,"path":"scripts/player_handle_hitbox/player_handle_hitbox.yy",},
+    {"name":"player_handle_physics","order":8,"path":"scripts/player_handle_physics/player_handle_physics.yy",},
     {"name":"player_handle_position","order":4,"path":"scripts/player_handle_position/player_handle_position.yy",},
     {"name":"player_handle_rotation","order":6,"path":"scripts/player_handle_rotation/player_handle_rotation.yy",},
     {"name":"player_handle_states","order":1,"path":"scripts/player_handle_states/player_handle_states.yy",},

@@ -53,4 +53,4 @@ player_set_states();
 
 PlayerStartup();
 player_handle_hitbox();
-player_handle_physics();
+player_handle_params();
