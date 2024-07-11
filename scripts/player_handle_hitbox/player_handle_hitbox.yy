@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_handle_hitbox",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_handle_hitbox",
+  "parent":{
+    "name":"Physics",
+    "path":"folders/Resources/Player/Scripts/Physics.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"button_get_icon",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"button_get_icon",
+  "parent":{
+    "name":"Input",
+    "path":"folders/Core/Input.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

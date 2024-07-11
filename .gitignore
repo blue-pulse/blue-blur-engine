@@ -52,5 +52,4 @@ Temporary Items
 .apdisk
  
 # GameMaker temporary files
-*.resource_order
 *.old

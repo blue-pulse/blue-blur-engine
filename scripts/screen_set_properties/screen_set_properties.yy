@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"screen_set_properties",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"screen_set_properties",
+  "parent":{
+    "name":"Screen",
+    "path":"folders/Core/Screen.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

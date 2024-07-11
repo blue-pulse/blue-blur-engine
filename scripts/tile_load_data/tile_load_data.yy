@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tile_load_data",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tile_load_data",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Resources/Terrain/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

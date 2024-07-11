@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_collision_air",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_collision_air",
+  "parent":{
+    "name":"Collision",
+    "path":"folders/Resources/Player/Scripts/Collision.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"button_check_released",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"button_check_released",
+  "parent":{
+    "name":"Input",
+    "path":"folders/Core/Input.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
