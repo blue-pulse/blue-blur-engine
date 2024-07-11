@@ -12,6 +12,8 @@ frict = 0.046875;
 roll_frict = 0.0234375;
 jump_height = -6.5;
 min_jump_height = -4;
+horizontal_speed = 0;
+vertical_speed = 0;
 
 // Set collision radiuses
 default_radius_x = 9;
@@ -43,6 +45,8 @@ is_pushing = false;
 is_underwater = false;
 is_being_hurt = false;
 forced_roll = false;
+ground_lock = false;
+air_lock = false;
 
 // Set global variables
 score = global.player_score;
@@ -50,7 +54,5 @@ lives = global.player_lives;
 
 // Set states
 player_set_states();
-
-PlayerStartup();
 player_handle_hitbox();
 player_handle_params();

@@ -1,5 +1,8 @@
 {
   "FolderOrderSettings":[
+    {"name":"Assets","order":6,"path":"folders/Assets.yy",},
+    {"name":"Sprites","order":2,"path":"folders/Assets/Sprites.yy",},
+    {"name":"Objects","order":1,"path":"folders/Assets/Objects.yy",},
     {"name":"Core","order":3,"path":"folders/Core.yy",},
     {"name":"Global setup","order":1,"path":"folders/Core/Global setup.yy",},
     {"name":"Scripts","order":1,"path":"folders/Core/Global setup/Scripts.yy",},
@@ -8,7 +11,6 @@
     {"name":"Sprites","order":2,"path":"folders/Core/Global setup/Sprites.yy",},
     {"name":"Input","order":5,"path":"folders/Core/Input.yy",},
     {"name":"Screen","order":2,"path":"folders/Core/Screen.yy",},
-    {"name":"Assets","order":6,"path":"folders/Assets.yy",},
     {"name":"Packages","order":1,"path":"folders/Packages.yy",},
     {"name":"(System)","order":1,"path":"folders/Packages/Input/(System).yy",},
     {"name":"Classes","order":1,"path":"folders/Packages/Input/(System)/Classes.yy",},
@@ -53,7 +55,6 @@
     {"name":"Scripts","order":1,"path":"folders/Resources/Player/Scripts.yy",},
     {"name":"Collision","order":5,"path":"folders/Resources/Player/Scripts/Collision.yy",},
     {"name":"Physics","order":4,"path":"folders/Resources/Player/Scripts/Physics.yy",},
-    {"name":"Setup","order":7,"path":"folders/Resources/Player/Scripts/Setup.yy",},
     {"name":"State Machine","order":6,"path":"folders/Resources/Player/Scripts/State Machine.yy",},
     {"name":"Setup","order":4,"path":"folders/Resources/Player/Scripts/State Machine/Setup.yy",},
     {"name":"States","order":3,"path":"folders/Resources/Player/Scripts/State Machine/States.yy",},
@@ -65,7 +66,6 @@
     {"name":"Objects","order":3,"path":"folders/Stages/Objects.yy",},
     {"name":"Rooms","order":2,"path":"folders/Stages/Rooms.yy",},
     {"name":"Scripts","order":1,"path":"folders/Stages/Scripts.yy",},
-    {"name":"Tmp","order":5,"path":"folders/Tmp.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"Version","order":30,"path":"notes/Version/Version.yy",},
@@ -388,7 +388,6 @@
     {"name":"input_x","order":3,"path":"scripts/input_x/input_x.yy",},
     {"name":"input_xy","order":4,"path":"scripts/input_xy/input_xy.yy",},
     {"name":"input_y","order":5,"path":"scripts/input_y/input_y.yy",},
-    {"name":"macros_other","order":1,"path":"scripts/macros_other/macros_other.yy",},
     {"name":"macros_setup","order":2,"path":"scripts/macros_setup/macros_setup.yy",},
     {"name":"player_balance_left","order":11,"path":"scripts/player_balance_left/player_balance_left.yy",},
     {"name":"player_balance_right","order":12,"path":"scripts/player_balance_right/player_balance_right.yy",},
