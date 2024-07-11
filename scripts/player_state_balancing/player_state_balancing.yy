@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerBalance",
+  "%Name":"player_state_balancing",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerBalance",
+  "name":"player_state_balancing",
   "parent":{
     "name":"States",
     "path":"folders/Resources/Player/Scripts/State Machine/States.yy",
