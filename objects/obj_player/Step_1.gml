@@ -1,4 +1,5 @@
 if (allow_movement) {
-	player_handle_states();
-	player_handle_physics();
+	player_states_handle();
+	player_physics_handle();
+	player_states_animations();
 }

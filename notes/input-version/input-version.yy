@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"input-version",
+  "name":"input-version",
+  "parent":{
+    "name":"Input",
+    "path":"folders/Packages/Input.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

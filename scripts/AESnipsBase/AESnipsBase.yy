@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"AESnipsBase",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"AESnipsBase",
+  "parent":{
+    "name":"AESnips",
+    "path":"folders/Packages/AESnips.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

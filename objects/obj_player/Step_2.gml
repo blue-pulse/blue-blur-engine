@@ -1,4 +1,4 @@
 if (allow_movement) {
-	player_handle_params();
-	player_handle_rotation();
+	player_physics_params();
+	player_physics_rotation();
 }

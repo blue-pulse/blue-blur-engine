@@ -35,6 +35,7 @@ stick_to_convex = 0;
 facing = right;
 state = 0;
 plane = 0;
+frame = 0;
 
 // Set flags
 is_grounded	= false;
@@ -53,6 +54,6 @@ score = global.player_score;
 lives = global.player_lives;
 
 // Set states
-player_set_states();
-player_handle_hitbox();
-player_handle_params();
+player_states_set();
+player_physics_hitbox();
+player_physics_params();

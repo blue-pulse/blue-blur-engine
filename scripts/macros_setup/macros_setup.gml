@@ -10,6 +10,4 @@
 // Macros for objects
 #macro Screen global
 #macro Window global
-#macro Core obj_core_driver
-#macro Stage obj_stage_driver
 #macro Player obj_player
