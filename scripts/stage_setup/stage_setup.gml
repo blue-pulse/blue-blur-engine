@@ -5,7 +5,7 @@ function stage_setup() {
 			tile_load_data();
 			break;
 		default:
-			tile_set_data("", 0, "", "");
+			tile_set_data(noone, 0, "", "");
 			break;
 	}
 }

@@ -1,36 +1,30 @@
-function tile_check(x,y,noTopSolid,tilelayer)
-{
-	x = floor(x);
-	y = floor(y);
+function tile_check(pos_x, pos_y, no_top_solid, tilelayer) {
+	pos_x = floor(pos_x);
+	pos_y = floor(pos_y);
 	
 	// Exit if no tiledata found
-	if !array_length(global.tile_data)
-	{
+	if (!array_length(global.tile_data)) {
 		return false;
 	}
-    if x <= 0 or y <= 0 or x >= room_width or y >= room_height 
-    {
+	
+    if (pos_x <= 0 or pos_y <= 0 or pos_x >= room_width or pos_y >= room_height) {
         return false;
     }
 	
 	// Get tile at position
-	var plane	  = global.tile_layers[tilelayer];
-    var Tile      = tilemap_get(plane, x div 16, y div 16);
-    var TileIndex = tile_get_index(Tile);
+	var plane = global.tile_layers[tilelayer];
+    var tile = tilemap_get(plane, pos_x div 16, pos_y div 16);
+    var tile_index = tile_get_index(tile);
 	
    	// Exit if tile is top-only and we're ignoring them
-    if noTopSolid and TileIndex > global.tile_data[1]
-    {
+    if (no_top_solid and tile_index > global.tile_data[1]) {
         return false;
     }
 	
 	// Return check result
-	if tile_get_flip(Tile)
-	{
-		return y mod 16 < tile_get_height(x, Tile, TileIndex);
-	}
-	else
-	{
-		return 16 - 1 - y mod 16 < tile_get_height(x, Tile, TileIndex);
+	if (tile_get_flip(tile)) {
+		return pos_y mod 16 < tile_get_height(pos_x, tile, tile_index);
+	} else {
+		return 16 - 1 - pos_y mod 16 < tile_get_height(pos_x, tile, tile_index);
 	}
 }

@@ -1,11 +1,8 @@
-/// @function tile_get_angle(index)
-function tile_get_angle(index)
-{
+function tile_get_angle(index) {
 	// Return found angle
-	var Tile = (index - 1) mod global.tile_data[1] + 1;
-	if  Tile
-	{
-		return global.tile_angles[Tile];
+	var tile = (index - 1) mod global.tile_data[1] + 1;
+	if (tile) {
+		return global.tile_angles[tile];
 	}
 	
 	// If no tile found, return empty angle

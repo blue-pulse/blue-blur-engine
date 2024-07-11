@@ -1,68 +1,50 @@
-function tile_load_data(){
-		// Clear tiledata
-		global.tile_angles   = [];
-		global.tile_widths  = [];
-		global.tile_heights = [];
-	
+function tile_load_data() {
+	// Clear tiledata
+	global.tile_angles = [];
+	global.tile_heights = [];
+	global.tile_widths = [];
 
-			var AngleMap  = "anglemap"  + global.tile_data[0] + ".bin";
-			var HeightMap = "heightmap" + global.tile_data[0] + ".bin";
-			var WidthMap  = "widthmap"  + global.tile_data[0] + ".bin";
-	
-			// Load data files
-			for (var k = 0; k < 3; k++)
-			{
-				switch k
-				{
-					case 0:
-						var Name = AngleMap;
-					break;
+	// Set variables
+	var tile_name = global.tile_data[0];
+	var data_files = [
+		"anglemap"  + tile_name + ".bin",
+		"heightmap" + tile_name + ".bin",
+		"widthmap"  + tile_name + ".bin"
+	];
+
+	// Load binary files
+	for (var i = 0; i < 3; i++) {
+		// Load data file
+		var file_name = data_files[i];
+		var file = file_bin_open("config/tiledata/" + file_name, 0);	
+
+		// Obtain file data
+		if (file != noone) {
+			var file_size = file_bin_size(file);
+			
+			for (var j = 0; j <= global.tile_data[1]; j++) {
+				switch (i) {
+					// Load angle map
+					case 0:	
+						global.tile_angles[j] = j < file_size ? (256 - file_bin_read_byte(file)) * 360 / 256 : 0;
+						break;
+					// Load heigh tmap
 					case 1:
-						var Name = HeightMap;
-					break;
-					case 2:
-						var Name = WidthMap;
-					break;
-				}
-		
-				// Load data file
-				var File = file_bin_open("config/tiledata/" + Name, 0);	
-				var Size = file_bin_size(File);
-				if  File 
-				{
-					for (var i = 0; i <= global.tile_data[1]; i++) 
-					{
-						switch Name 
-						{
-							// Load anglemap
-							case AngleMap:
-							{	
-								global.tile_angles[i] = i < Size ? (256 - file_bin_read_byte(File)) * 360 / 256 : 0;
-							}
-							break;
-					
-							// Load heightmap
-							case HeightMap:
-							{
-								for (var j = 0; j < 16; j++) 
-								{
-									global.tile_heights[i][j] = (i * 16 < Size) ? file_bin_read_byte(File) : 0;
-								}
-							}
-							break;
-					
-							// Load widthmap
-							case WidthMap:  
-							{
-								for (var j = 0; j < 16; j++) 
-								{
-									global.tile_widths[i][j] = (i * 16 < Size) ? file_bin_read_byte(File) : 0;	 
-								}
-							}
-							break;
+						for (var k = 0; k < 16; k++) {
+							global.tile_heights[j][k] = (j * 16 < file_size) ? file_bin_read_byte(file) : 0;
 						}
-					}
-					file_bin_close(File);									 
+						break;
+					// Load width map
+					case 2:
+						for (var l = 0; l < 16; l++) {
+							global.tile_widths[j][l] = (j * 16 < file_size) ? file_bin_read_byte(file) : 0;	 
+						}
+						break;
 				}
 			}
+		
+			// Close file
+			file_bin_close(file);
+		}
+	}
 }

@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Assets/Objects.yy",
+    "path":"folders/Resources/Items/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -97,7 +97,7 @@ function player_collision_floor() {
 			
 				// Go airborne if surface is too far away from us
 				if (!stick_to_convex) {
-					var floor_distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(horizontal_speed)), 14));
+					var floor_distance = min(4 + abs(floor(horizontal_speed)), 14);
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							//animation_reset(0);
@@ -122,7 +122,7 @@ function player_collision_floor() {
 			
 				// Go airborne if surface is too far away from us
 				if (!stick_to_convex) {
-					var floor_distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(vertical_speed)), 14));
+					var floor_distance = min(4 + abs(floor(vertical_speed)), 14);
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							//animation_reset(0);
@@ -147,7 +147,7 @@ function player_collision_floor() {
 			
 				// Go airborne if surface is too far away from us
 				if (!stick_to_convex) {
-					var floor_distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(horizontal_speed)), 14));
+					var floor_distance = min(4 + abs(floor(horizontal_speed)), 14);
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							//animation_reset(0);
@@ -172,7 +172,7 @@ function player_collision_floor() {
 			
 				// Go airborne if surface is too far away from us
 				if (!stick_to_convex) {
-					var floor_distance = (!global.S2FloorCollision) ? (14) : (min(4 + abs(floor(vertical_speed)), 14));
+					var floor_distance = min(4 + abs(floor(vertical_speed)), 14);
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							//animation_reset(0);
