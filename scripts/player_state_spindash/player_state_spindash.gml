@@ -6,7 +6,7 @@ function player_state_spindash() {
 				spindash_revolutions = 0;
 				horizontal_speed = 0;
 			}
-		} else if button_check("btn_down") {
+		} else if (button_check("btn_down")) {
 			// Charge spindash
 			if (button_check_pressed("btn_1")) {
 				spindash_revolutions = min(spindash_revolutions + 2, 8);
@@ -32,7 +32,7 @@ function player_state_spindash() {
 			vertical_speed = ground_speed * -dsin(angle);
 		}
 	
-		// Apply spindash animation
+		// Set state
 		if (spindash_revolutions >= 0) {
 			state = states.spindash;
 		}

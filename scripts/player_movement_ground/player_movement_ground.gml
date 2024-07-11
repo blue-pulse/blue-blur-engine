@@ -57,7 +57,7 @@ function player_movement_ground() {
 		}
 
 		// Convert ground inertia to speed
-		horizontal_speed = ground_speed *  dcos(angle);
+		horizontal_speed = ground_speed * dcos(angle);
 		vertical_speed = ground_speed * -dsin(angle);
 	
 		// Set animation

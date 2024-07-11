@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerSpindash",
+  "%Name":"player_state_jumping",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerSpindash",
+  "name":"player_state_jumping",
   "parent":{
     "name":"States",
     "path":"folders/Resources/Player/Scripts/State Machine/States.yy",
