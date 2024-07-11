@@ -1,8 +1,5 @@
 {
   "FolderOrderSettings":[
-    {"name":"Assets","order":6,"path":"folders/Assets.yy",},
-    {"name":"Sprites","order":2,"path":"folders/Assets/Sprites.yy",},
-    {"name":"Objects","order":1,"path":"folders/Assets/Objects.yy",},
     {"name":"Core","order":3,"path":"folders/Core.yy",},
     {"name":"Global setup","order":1,"path":"folders/Core/Global setup.yy",},
     {"name":"Scripts","order":1,"path":"folders/Core/Global setup/Scripts.yy",},
@@ -50,7 +47,9 @@
     {"name":"26  Keyboard (Direct)","order":28,"path":"folders/Packages/Input/26  Keyboard (Direct).yy",},
     {"name":"27  Combos","order":29,"path":"folders/Packages/Input/27  Combos.yy",},
     {"name":"Resources","order":2,"path":"folders/Resources.yy",},
-    {"name":"Player","order":1,"path":"folders/Resources/Player.yy",},
+    {"name":"Items","order":2,"path":"folders/Resources/Items.yy",},
+    {"name":"Objects","order":1,"path":"folders/Resources/Items/Objects.yy",},
+    {"name":"Sprites","order":2,"path":"folders/Resources/Items/Sprites.yy",},
     {"name":"Objects","order":3,"path":"folders/Resources/Player/Objects.yy",},
     {"name":"Scripts","order":1,"path":"folders/Resources/Player/Scripts.yy",},
     {"name":"Collision","order":5,"path":"folders/Resources/Player/Scripts/Collision.yy",},
@@ -59,7 +58,7 @@
     {"name":"Setup","order":4,"path":"folders/Resources/Player/Scripts/State Machine/Setup.yy",},
     {"name":"States","order":3,"path":"folders/Resources/Player/Scripts/State Machine/States.yy",},
     {"name":"Sprites","order":2,"path":"folders/Resources/Player/Sprites.yy",},
-    {"name":"Terrain","order":2,"path":"folders/Resources/Terrain.yy",},
+    {"name":"Terrain","order":1,"path":"folders/Resources/Terrain.yy",},
     {"name":"Scripts","order":8,"path":"folders/Resources/Terrain/Scripts.yy",},
     {"name":"Sprites","order":6,"path":"folders/Resources/Terrain/Sprites.yy",},
     {"name":"Tilesets","order":7,"path":"folders/Resources/Terrain/Tilesets.yy",},
