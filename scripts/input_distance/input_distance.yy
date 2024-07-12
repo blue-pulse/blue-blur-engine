@@ -6,7 +6,7 @@
   "name":"input_distance",
   "parent":{
     "name":"02  2D Checkers",
-    "path":"folders/Packages/Input/02  2D Checkers.yy",
+    "path":"folders/Packages/Input v6.3.1/02  2D Checkers.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

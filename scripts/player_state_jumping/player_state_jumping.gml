@@ -47,7 +47,8 @@ function player_state_jumping() {
 				radius_x = small_radius_x;
 				radius_y = small_radius_y;
 			}
-			//audio_sfx_play(sfxJump, false);
+			audio_play_sfx(snd_player_jump);
+			audio_play_sfx(snd_player_wind);
 		}
 	}
 	

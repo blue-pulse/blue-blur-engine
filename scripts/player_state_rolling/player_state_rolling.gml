@@ -15,6 +15,7 @@ function player_state_rolling() {
 				radius_x = small_radius_x;
 				is_rolling = true;
 				state = states.rolling;
+				audio_play_sfx(snd_player_rolling);
 			}
 		}
 	}

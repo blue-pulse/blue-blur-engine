@@ -6,7 +6,7 @@
   "name":"__input_define_gamepad_types",
   "parent":{
     "name":"Initialization",
-    "path":"folders/Packages/Input/(System)/Initialization.yy",
+    "path":"folders/Packages/Input v6.3.1/(System)/Initialization.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,17 +1,18 @@
-// Initialise variables
+// Initialise physics variables
 pos_x = x;
 pos_y = y;
 angle = 0;
 rotation = 0;
-accel = 0.046875;
-air_accel = 0.09375;
-top_accel = 6;
-decel = 0.5;
-roll_decel = 0.125;
-frict = 0.046875;
-roll_frict = 0.0234375;
-jump_height = -6.5;
-min_jump_height = -4;
+opacity = 1;
+accel = 0;
+air_accel = 0;
+top_accel = 0;
+decel = 0;
+roll_decel = 0;
+frict = 0;
+roll_frict = 0;
+jump_height = 0;
+min_jump_height = 0;
 horizontal_speed = 0;
 vertical_speed = 0;
 
@@ -28,6 +29,7 @@ on_object = noone;
 allow_collision = true;
 allow_movement = true;
 spindash_revolutions = -1;
+spindash_sound_pitch = 1;
 gravity_force = 0.21875;
 collision_mode = [0, 0];
 hitbox = [0, 0];
@@ -35,7 +37,6 @@ stick_to_convex = 0;
 facing = right;
 state = 0;
 plane = 0;
-frame = 0;
 
 // Set flags
 is_grounded	= false;
@@ -53,7 +54,5 @@ air_lock = false;
 score = global.player_score;
 lives = global.player_lives;
 
-// Set states
-player_states_set();
+// Player startup
 player_physics_hitbox();
-player_physics_params();

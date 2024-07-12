@@ -6,7 +6,7 @@
   "name":"input_verb_group_active",
   "parent":{
     "name":"04  Further Verb Functions",
-    "path":"folders/Packages/Input/04  Further Verb Functions.yy",
+    "path":"folders/Packages/Input v6.3.1/04  Further Verb Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

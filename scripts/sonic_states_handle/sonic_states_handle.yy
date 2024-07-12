@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sonic_states_handle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sonic_states_handle",
+  "parent":{
+    "name":"States",
+    "path":"folders/Resources/Player/Sonic/Scripts/States.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

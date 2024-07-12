@@ -6,7 +6,7 @@
   "name":"player_physics_position",
   "parent":{
     "name":"Physics",
-    "path":"folders/Resources/Player/Scripts/Physics.yy",
+    "path":"folders/Resources/Player/Parent/Scripts/Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
