@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_balance_left",
+  "%Name":"player_spindash_start",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_balance_left",
+  "name":"player_spindash_start",
   "parent":{
     "name":"States",
     "path":"folders/Resources/Player/Parent/Scripts/States.yy",

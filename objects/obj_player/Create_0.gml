@@ -30,7 +30,6 @@ on_object = noone;
 allow_collision = true;
 allow_movement = true;
 spindash_revolutions = -1;
-spindash_sound_pitch = 1;
 gravity_force = 0.21875;
 collision_mode = [0, 0];
 hitbox = [0, 0];
