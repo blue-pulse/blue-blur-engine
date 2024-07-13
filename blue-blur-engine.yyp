@@ -534,6 +534,7 @@
     {"id":{"name":"spr_sonic_balancing_turn","path":"sprites/spr_sonic_balancing_turn/spr_sonic_balancing_turn.yy",},},
     {"id":{"name":"spr_sonic_balancing","path":"sprites/spr_sonic_balancing/spr_sonic_balancing.yy",},},
     {"id":{"name":"spr_sonic_crouching","path":"sprites/spr_sonic_crouching/spr_sonic_crouching.yy",},},
+    {"id":{"name":"spr_sonic_default","path":"sprites/spr_sonic_default/spr_sonic_default.yy",},},
     {"id":{"name":"spr_sonic_icon","path":"sprites/spr_sonic_icon/spr_sonic_icon.yy",},},
     {"id":{"name":"spr_sonic_idle","path":"sprites/spr_sonic_idle/spr_sonic_idle.yy",},},
     {"id":{"name":"spr_sonic_jumping","path":"sprites/spr_sonic_jumping/spr_sonic_jumping.yy",},},

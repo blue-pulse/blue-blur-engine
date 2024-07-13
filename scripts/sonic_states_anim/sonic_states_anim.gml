@@ -34,8 +34,7 @@ function sonic_states_anim() {
 			sonic_anim_balancing_panic();
 			break;
 		default:
-			sprite_index = spr_sonic_rolling;
-			image_speed = 1;
+			sprite_index = spr_sonic_default;
 			break;
 	}
 }

@@ -449,6 +449,7 @@
     {"name":"spr_sonic_balancing_turn","order":15,"path":"sprites/spr_sonic_balancing_turn/spr_sonic_balancing_turn.yy",},
     {"name":"spr_sonic_balancing","order":16,"path":"sprites/spr_sonic_balancing/spr_sonic_balancing.yy",},
     {"name":"spr_sonic_crouching","order":1,"path":"sprites/spr_sonic_crouching/spr_sonic_crouching.yy",},
+    {"name":"spr_sonic_default","order":19,"path":"sprites/spr_sonic_default/spr_sonic_default.yy",},
     {"name":"spr_sonic_icon","order":3,"path":"sprites/spr_sonic_icon/spr_sonic_icon.yy",},
     {"name":"spr_sonic_idle","order":4,"path":"sprites/spr_sonic_idle/spr_sonic_idle.yy",},
     {"name":"spr_sonic_jumping","order":8,"path":"sprites/spr_sonic_jumping/spr_sonic_jumping.yy",},
