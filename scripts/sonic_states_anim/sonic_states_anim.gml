@@ -35,8 +35,7 @@ function sonic_states_anim() {
 			break;
 		default:
 			sprite_index = spr_sonic_rolling;
-			image_index = 0;
-			image_speed = 0;
+			image_speed = 1;
 			break;
 	}
 }
