@@ -1,4 +1,4 @@
-function PlayerBalance() {
+function player_state_balancing() {
 	if (is_grounded and !is_rolling) {
 		if (ground_speed == 0) {
 			// Balance on the floor
@@ -22,11 +22,9 @@ function PlayerBalance() {
 				}
 		
 				// Balance!
-				if (!found_angle_1) {	
+				if (!found_angle_1) {
 					player_balance_left(tile_find_v(pos_x + 6, pos_y + radius_y, true, plane)[0] >= 12);
-				}
-				else if !found_angle_2
-				{
+				} else if (!found_angle_2) {
 					player_balance_right(tile_find_v(pos_x - 6, pos_y + radius_y, true, plane)[0] >= 12);
 				}
 			} else {

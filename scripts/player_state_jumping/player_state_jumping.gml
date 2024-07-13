@@ -32,7 +32,7 @@ function player_state_jumping() {
 			on_object = false;
 			stick_to_convex = false;
 			is_jumping = true;
-			state = states.rolling;
+			state = states.jumping;
 			radius_x = default_radius_x;
 			radius_y = default_radius_y;
 			

@@ -9,6 +9,7 @@ function player_physics_handle() {
 			// Is walking
 			player_slope_resist();
 			player_movement_ground();
+			player_state_balancing();
 			player_collision_wall();
 		}
 		// Finally

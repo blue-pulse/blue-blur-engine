@@ -32,6 +32,7 @@ function player_movement_ground() {
 						facing = right;
 						is_pushing = false;
 					}
+					
 					if (ground_speed < top_accel) {
 						ground_speed = min(ground_speed + accel, top_accel);
 					} 

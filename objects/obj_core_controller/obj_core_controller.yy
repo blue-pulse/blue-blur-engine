@@ -14,7 +14,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Core/Global setup/Objects.yy",
+    "path":"folders/Core/Global/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

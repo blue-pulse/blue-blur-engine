@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sonic_anim_balancing_panic",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sonic_anim_balancing_panic",
+  "parent":{
+    "name":"Animations",
+    "path":"folders/Resources/Player/Sonic/Scripts/Animations.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

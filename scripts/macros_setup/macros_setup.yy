@@ -6,7 +6,7 @@
   "name":"macros_setup",
   "parent":{
     "name":"Scripts",
-    "path":"folders/Core/Global setup/Scripts.yy",
+    "path":"folders/Core/Global/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

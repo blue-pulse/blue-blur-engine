@@ -13,6 +13,7 @@ frict = 0;
 roll_frict = 0;
 jump_height = 0;
 min_jump_height = 0;
+ground_speed = 0;
 horizontal_speed = 0;
 vertical_speed = 0;
 

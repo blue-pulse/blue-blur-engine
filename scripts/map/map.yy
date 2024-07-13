@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"map",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"map",
+  "parent":{
+    "name":"Others",
+    "path":"folders/Core/Others.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
