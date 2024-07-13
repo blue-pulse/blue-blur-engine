@@ -50,7 +50,7 @@
   "origin":4,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Resources/Player/Sonic/Sprites.yy",
+    "path":"folders/Player/Sonic/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

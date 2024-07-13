@@ -6,7 +6,7 @@
   "name":"player_physics_update",
   "parent":{
     "name":"Physics",
-    "path":"folders/Resources/Player/Parent/Scripts/Physics.yy",
+    "path":"folders/Player/Parent/Scripts/Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

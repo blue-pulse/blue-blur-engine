@@ -6,7 +6,7 @@
   "name":"player_spindash_start",
   "parent":{
     "name":"States",
-    "path":"folders/Resources/Player/Parent/Scripts/States.yy",
+    "path":"folders/Player/Parent/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

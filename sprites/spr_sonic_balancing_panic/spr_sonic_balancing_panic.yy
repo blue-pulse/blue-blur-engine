@@ -29,7 +29,7 @@
   "origin":9,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Resources/Player/Sonic/Sprites.yy",
+    "path":"folders/Player/Sonic/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -87,7 +87,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":28,
+    "xorigin":26,
     "yorigin":25,
   },
   "swatchColours":null,

@@ -6,7 +6,7 @@
   "name":"sonic_states_update",
   "parent":{
     "name":"States",
-    "path":"folders/Resources/Player/Sonic/Scripts/States.yy",
+    "path":"folders/Player/Sonic/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

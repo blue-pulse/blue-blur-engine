@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Resources/Player/Parent/Objects.yy",
+    "path":"folders/Player/Parent/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

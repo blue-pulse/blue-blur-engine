@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Resources/Player/Sonic/Objects.yy",
+    "path":"folders/Player/Sonic/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_player",

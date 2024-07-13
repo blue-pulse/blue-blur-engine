@@ -6,7 +6,7 @@
   "name":"sonic_anim_searching",
   "parent":{
     "name":"Animations",
-    "path":"folders/Resources/Player/Sonic/Scripts/Animations.yy",
+    "path":"folders/Player/Sonic/Scripts/Animations.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

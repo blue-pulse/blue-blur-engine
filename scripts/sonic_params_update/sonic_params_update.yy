@@ -6,7 +6,7 @@
   "name":"sonic_params_update",
   "parent":{
     "name":"Physics",
-    "path":"folders/Resources/Player/Sonic/Scripts/Physics.yy",
+    "path":"folders/Player/Sonic/Scripts/Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

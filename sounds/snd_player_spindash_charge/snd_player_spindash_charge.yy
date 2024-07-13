@@ -13,7 +13,7 @@
   "name":"snd_player_spindash_charge",
   "parent":{
     "name":"Audio",
-    "path":"folders/Resources/Player/Parent/Audio.yy",
+    "path":"folders/Player/Parent/Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
