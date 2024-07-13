@@ -1,4 +1,4 @@
-function player_physics_rotation() {
+function player_rotation_update() {
 	if (state != states.moving) {
 		rotation = 360;
 	} else {

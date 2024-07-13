@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_physics_rotation",
+  "%Name":"player_rotation_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_physics_rotation",
+  "name":"player_rotation_update",
   "parent":{
     "name":"Physics",
     "path":"folders/Resources/Player/Parent/Scripts/Physics.yy",

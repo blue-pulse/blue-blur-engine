@@ -1,4 +1,4 @@
-function player_physics_handle() {
+function player_physics_update() {
 	if (is_grounded) {
 		if (is_rolling) {
 			// Is spinning
@@ -13,16 +13,16 @@ function player_physics_handle() {
 			player_collision_wall();
 		}
 		// Finally
-		player_physics_position();
+		player_position_update();
 		player_collision_floor();
 		player_slope_repel();
-		player_physics_hitbox();
+		player_hitbox_update();
 	} else {
 		// Is airborne
 		player_movement_air();
-		player_physics_position();
+		player_position_update();
 		player_collision_air();
 		player_reset_on_floor();
-		player_physics_hitbox();
+		player_hitbox_update();
 	}
 }

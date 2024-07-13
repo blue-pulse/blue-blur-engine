@@ -1,3 +1,3 @@
 if (allow_movement) {
-	player_physics_rotation();
+	player_rotation_update();
 }

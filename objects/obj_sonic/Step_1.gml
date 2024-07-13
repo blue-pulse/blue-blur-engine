@@ -1,7 +1,4 @@
 if (allow_movement) {
-	// States
-	sonic_states_handle();
-	
-	// Physics
-	player_physics_handle();
+	sonic_states_update();
+	player_physics_update();
 }

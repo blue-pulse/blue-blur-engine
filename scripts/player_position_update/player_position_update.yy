@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_physics_position",
+  "%Name":"player_position_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_physics_position",
+  "name":"player_position_update",
   "parent":{
     "name":"Physics",
     "path":"folders/Resources/Player/Parent/Scripts/Physics.yy",

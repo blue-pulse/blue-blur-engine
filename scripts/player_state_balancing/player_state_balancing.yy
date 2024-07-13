@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_state_balancing",
   "parent":{
-    "name":"States",
-    "path":"folders/Resources/Player/Parent/Scripts/States.yy",
+    "name":"Basic states",
+    "path":"folders/Resources/Player/Parent/Scripts/Basic states.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,4 +1,4 @@
-function sonic_physics_params() {
+function sonic_params_update() {
 	if (is_underwater) {
 		// Underwater parameters
 		accel = 0.0234375;

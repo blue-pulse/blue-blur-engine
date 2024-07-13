@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sonic_states_set",
+  "%Name":"sonic_states_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sonic_states_set",
+  "name":"sonic_states_update",
   "parent":{
     "name":"States",
     "path":"folders/Resources/Player/Sonic/Scripts/States.yy",

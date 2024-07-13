@@ -14,6 +14,5 @@ pos_x = x;
 pos_y = y - radius_y - 1;
 
 // Handle startup
-sonic_states_set();
-sonic_physics_params();
-player_physics_hitbox();
+sonic_params_update();
+player_hitbox_update();

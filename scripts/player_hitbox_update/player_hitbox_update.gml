@@ -1,4 +1,4 @@
-function player_physics_hitbox() {
+function player_hitbox_update() {
 	if (state != states.crouching) {
 		hitbox = [
 			floor(pos_x - 8), floor(pos_y - radius_y + 3),

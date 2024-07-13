@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_physics_hitbox",
+  "%Name":"sonic_params_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_physics_hitbox",
+  "name":"sonic_params_update",
   "parent":{
     "name":"Physics",
-    "path":"folders/Resources/Player/Parent/Scripts/Physics.yy",
+    "path":"folders/Resources/Player/Sonic/Scripts/Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

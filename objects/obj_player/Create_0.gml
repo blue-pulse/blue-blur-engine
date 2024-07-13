@@ -56,4 +56,4 @@ score = global.player_score;
 lives = global.player_lives;
 
 // Player startup
-player_physics_hitbox();
+player_hitbox_update();

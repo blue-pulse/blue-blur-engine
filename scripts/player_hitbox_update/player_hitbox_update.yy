@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_physics_handle",
+  "%Name":"player_hitbox_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_physics_handle",
+  "name":"player_hitbox_update",
   "parent":{
     "name":"Physics",
     "path":"folders/Resources/Player/Parent/Scripts/Physics.yy",

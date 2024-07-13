@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"sonic_physics_params",
+  "%Name":"player_physics_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sonic_physics_params",
+  "name":"player_physics_update",
   "parent":{
     "name":"Physics",
-    "path":"folders/Resources/Player/Sonic/Scripts/Physics.yy",
+    "path":"folders/Resources/Player/Parent/Scripts/Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
