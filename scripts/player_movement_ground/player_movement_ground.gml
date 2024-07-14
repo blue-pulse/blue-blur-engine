@@ -2,40 +2,44 @@ function player_movement_ground() {
 	if (spindash_revolutions == -1) {
 		if (!ground_lock) {
 			if (button_check("btn_left")) {	
-				// Decelerate
 				if (ground_speed > 0) {
+					// Decelerate
 					ground_speed -= decel;
+					
 					if (ground_speed <= 0) {
 						ground_speed = -0.5;
 					}
 				} else {
-					// Accelerate
+					// Change direction
 					if (facing != left) {
 						facing = left;
 						is_pushing = false;
 					}
 					
-					if (ground_speed > -top_accel) {
-						ground_speed = max(ground_speed - accel, -top_accel);
+					// Accelerate
+					if (ground_speed > -top_speed) {
+						ground_speed = max(ground_speed - accel, -top_speed);
 					} 
 				}
-			} else if (button_check("btn_right")) {			
-				// Decelerate
-				if (ground_speed < 0) {
+			} else if (button_check("btn_right")) {	
+				if (ground_speed < 0) {		
+					// Decelerate
 					ground_speed += decel;
+					
 					if (ground_speed >= 0) {
 						ground_speed = 0.5;
 					}
 				} else {
-					// Accelerate
+					// Change direction
 					if (facing != right) {
 						facing = right;
 						is_pushing = false;
 					}
 					
-					if (ground_speed < top_accel) {
-						ground_speed = min(ground_speed + accel, top_accel);
-					} 
+					// Accelerate
+					if (ground_speed < top_speed) {
+						ground_speed = min(ground_speed + accel, top_speed);
+					}
 				}
 			}
 		

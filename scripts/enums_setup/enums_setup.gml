@@ -3,6 +3,8 @@ enum states {
 	idle,
 	moving,
 	jumping,
+	falling,
+	landing,
 	rolling,
 	crouching,
 	pushing,

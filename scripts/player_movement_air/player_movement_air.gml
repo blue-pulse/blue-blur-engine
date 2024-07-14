@@ -17,12 +17,12 @@ function player_movement_air() {
 			if (horizontal_speed > 0) {
 				// Decelerate
 				horizontal_speed -= air_accel;
-			} else if (horizontal_speed > -top_accel) {
+			} else if (horizontal_speed > -top_speed) {
 				// Accelerate
 				horizontal_speed -= air_accel;
 				
-				if (horizontal_speed <= -top_accel) {
-					horizontal_speed = -top_accel;
+				if (horizontal_speed <= -top_speed) {
+					horizontal_speed = -top_speed;
 				}
 			}
 			
@@ -35,12 +35,12 @@ function player_movement_air() {
 			if (horizontal_speed < 0) {	
 				// Decelerate
 				horizontal_speed += air_accel;
-			} else if (horizontal_speed < top_accel) {
+			} else if (horizontal_speed < top_speed) {
 				// Accelerate
 				horizontal_speed += air_accel;
 				
-				if (horizontal_speed >= top_accel) {
-					horizontal_speed = top_accel;
+				if (horizontal_speed >= top_speed) {
+					horizontal_speed = top_speed;
 				}
 			}
 			

@@ -4,12 +4,12 @@ function player_jump_start() {
         switch (collision_mode[0]) {
             case 0:
                 if (tile_find_2v(pos_x - radius_x, pos_y - radius_y, pos_x + radius_x, pos_y - radius_y, false, noone, plane)[0] < 6) {
-                    return;
+                    return false;
                 }
                 break;
             case 1:
                 if (tile_find_2h(pos_x - radius_y, pos_y - radius_x, pos_x - radius_y, pos_y + radius_x, false, noone, plane)[0] < 6) {
-                    return;
+                    return false;
                 }
                 break;
             case 2:
@@ -17,7 +17,7 @@ function player_jump_start() {
                 break;
             case 3:
                 if (tile_find_2h(pos_x + radius_y, pos_y - radius_x, pos_x + radius_y, pos_y + radius_x, true, noone, plane)[0] < 6) {
-                    return;
+                    return false;
                 }
                 break;
         }

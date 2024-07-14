@@ -2,11 +2,11 @@
 pos_x = x;
 pos_y = y;
 angle = 0;
-rotation = 0;
+rotation = 360;
 opacity = 1;
 accel = 0;
 air_accel = 0;
-top_accel = 0;
+top_speed = 0;
 decel = 0;
 roll_decel = 0;
 frict = 0;

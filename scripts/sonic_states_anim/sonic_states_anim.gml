@@ -4,16 +4,16 @@ function sonic_states_anim() {
 			sonic_anim_idle();
 			break;
 		case states.moving:
-			if abs(ground_speed) < 6 {
-				sprite_index = spr_sonic_walking;
-				image_speed = floor(max(1, 9 - abs(ground_speed)));
-			} else {
-				sprite_index = abs(ground_speed) < 10 ? spr_sonic_jogging : spr_sonic_running;
-				image_speed = floor(max(1, 9 - abs(ground_speed)));
-			}
+			sonic_anim_moving();
 			break;
 		case states.jumping:
 			sonic_anim_jumping();
+			break;
+		case states.falling:
+			sonic_anim_falling();
+			break;
+		case states.landing:
+			sonic_anim_landing();
 			break;
 		case states.rolling:
 			sonic_anim_rolling();

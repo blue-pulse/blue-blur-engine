@@ -7,7 +7,7 @@ function sonic_params_update() {
 		roll_decel = 0.125;
 		frict = 0.0234375;
 		roll_frict  = 0.01171875;
-		top_accel = 3;
+		top_speed = 3;
 		jump_height = -3.5;
 		min_jump_height = -2;
 	} else {
@@ -17,14 +17,14 @@ function sonic_params_update() {
 			air_accel = 0.1875;
 			frict = 0.09375;
 			roll_frict = 0.046875;
-			top_accel = 12;
+			top_speed = 12;
 		} else {
 			// Common parameters
 			accel = 0.046875;
 			air_accel = 0.09375;
 			frict = 0.046875;
 			roll_frict = 0.0234375;
-			top_accel = 6;
+			top_speed = 10;
 		}
 		// Finally
 		decel = 0.5;
