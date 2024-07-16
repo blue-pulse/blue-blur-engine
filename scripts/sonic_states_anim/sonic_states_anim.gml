@@ -6,17 +6,14 @@ function sonic_states_anim() {
 		case states.moving:
 			sonic_anim_moving();
 			break;
-		case states.jumping:
-			sonic_anim_jumping();
-			break;
 		case states.falling:
 			sonic_anim_falling();
 			break;
+		case states.jumping:
+			sonic_anim_jumping();
+			break;
 		case states.landing:
 			sonic_anim_landing();
-			break;
-		case states.rolling:
-			sonic_anim_rolling();
 			break;
 		case states.searching:
 			sonic_anim_searching();
@@ -24,8 +21,14 @@ function sonic_states_anim() {
 		case states.crouching:
 			sonic_anim_crouching();
 			break;
+		case states.rolling:
+			sonic_anim_rolling();
+			break;
 		case states.spindash:
 			sonic_anim_spindash();
+			break;
+		case states.skidding:
+			sonic_anim_skidding();
 			break;
 		case states.pushing:
 			sonic_anim_pushing();
@@ -41,9 +44,6 @@ function sonic_states_anim() {
 			break;
 		case states.balancing_panic:
 			sonic_anim_balancing_panic();
-			break;
-		default:
-			sprite_index = spr_sonic_default;
 			break;
 	}
 }

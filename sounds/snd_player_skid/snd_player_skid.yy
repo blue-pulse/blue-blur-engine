@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_player_rolling",
+  "%Name":"snd_player_skid",
   "audioGroupId":{
     "name":"grp_sfx",
     "path":"audiogroups/grp_sfx",
@@ -9,8 +9,8 @@
   "bitRate":320,
   "compression":0,
   "conversionMode":0,
-  "duration":2.056644,
-  "name":"snd_player_rolling",
+  "duration":0.835918,
+  "name":"snd_player_skid",
   "parent":{
     "name":"Audio",
     "path":"folders/Player/Parent/Audio.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_player_rolling.wav",
+  "soundFile":"snd_player_skid.wav",
   "type":1,
-  "volume":0.35,
+  "volume":1.0,
 }

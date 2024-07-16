@@ -7,7 +7,13 @@ function player_slope_repel() {
 			// Angle check here is different in comparison to collision mode checks
 			is_grounded = false;
 			ground_lock = 30;
-			ground_speed  = 0;		
+			ground_speed = 0;
+			
+			// Change the state
+			if (state == states.moving) {
+				image_index = 0;
+				state = states.falling;
+			}
 		}
 	}
 }

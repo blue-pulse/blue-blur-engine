@@ -4,7 +4,7 @@ function sonic_anim_falling() {
 	image_speed = 1;
 	
 	// Set image index
-	if (floor(image_index) == 5) {
-		image_index = 2;
+	if (floor(image_index) == 7) {
+		image_index = 4;
 	}
 }

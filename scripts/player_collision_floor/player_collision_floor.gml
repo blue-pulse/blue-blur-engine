@@ -87,7 +87,6 @@ function player_collision_floor() {
 			collision_mode[1] = false;
 		}
 	
-	
 		// Perform collision based on current collision mode
 		switch (collision_mode[0]) {
 			// Floor mode
@@ -101,6 +100,7 @@ function player_collision_floor() {
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							image_index = 0;
+							state = states.falling;
 						}
 						is_pushing  = false;
 						is_grounded = false;
@@ -126,6 +126,7 @@ function player_collision_floor() {
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							image_index = 0;
+							state = states.falling;
 						}
 						is_pushing  = false;
 						is_grounded = false;
@@ -151,6 +152,7 @@ function player_collision_floor() {
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							image_index = 0;
+							state = states.falling;
 						}
 						is_pushing  = false;
 						is_grounded = false;
@@ -176,6 +178,7 @@ function player_collision_floor() {
 					if (found_floor[0] > floor_distance) {
 						if (state == states.moving) {
 							image_index = 0;
+							state = states.falling;
 						}
 						is_pushing  = false;
 						is_grounded = false;

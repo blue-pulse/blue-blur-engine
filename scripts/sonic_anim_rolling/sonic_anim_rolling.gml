@@ -1,8 +1,10 @@
 function sonic_anim_rolling() {
-	// Set sprite
-	sprite_index = spr_sonic_rolling;
-	
-	// Set image speed
 	var current_speed = abs(ground_speed);
-	image_speed = map(current_speed, 0.5, 8, 2, 3); 
+	if (current_speed > 2) {
+		sprite_index = spr_sonic_rolling;
+		image_speed = map(current_speed, 2, 8, 2, 3); 
+	} else {
+		sprite_index = spr_sonic_rolling_slow;
+		image_speed = clamp(current_speed, 1, 2);
+	}
 }

@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_sonic_icon",
-    "path":"sprites/spr_sonic_icon/spr_sonic_icon.yy",
+    "name":"spr_sonic_default",
+    "path":"sprites/spr_sonic_default/spr_sonic_default.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -80,7 +80,7 @@ function player_collision_wall() {
 					var found_wall = tile_find_v(pos_x + horizontal_speed, pos_y + vertical_speed + horizontal_radius, true, plane)[0];
 					break;
 			}
-		
+			
 			// Collide with it
 			if (found_wall < 0) { 
 				switch (collision_mode[0]) {
