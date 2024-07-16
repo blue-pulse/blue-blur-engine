@@ -31,7 +31,7 @@ function player_reset_on_floor() {
 	
 			// Reset collision radiuses if not rolling
 			if (!is_rolling) {
-				pos_y -= default_radius_y - radius_y;
+				pos_y -= delta(default_radius_y - radius_y);
 				radius_x = default_radius_x;
 				radius_y = default_radius_y; 
 			}

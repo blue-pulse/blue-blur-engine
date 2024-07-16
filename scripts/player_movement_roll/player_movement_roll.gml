@@ -3,7 +3,7 @@ function player_movement_roll() {
 	if (!ground_lock) {
 		if (button_check("btn_left")) {
 			if (ground_speed > 0) {
-				ground_speed -= roll_decel;
+				ground_speed -= delta(roll_decel);
 				if (ground_speed < 0) {
 					ground_speed = -0.5;
 				}
@@ -15,7 +15,7 @@ function player_movement_roll() {
 		
 		if (button_check("btn_right")) {
 			if (ground_speed < 0) {
-				ground_speed += roll_decel;
+				ground_speed += delta(roll_decel);
 				if (ground_speed >= 0) {
 					ground_speed = 0.5;
 				}
@@ -43,7 +43,7 @@ function player_movement_roll() {
 	// Unroll
 	if (!forced_roll) {
 		if (ground_speed == 0 or abs(ground_speed) < 0.5) {
-			pos_y -= default_radius_y - small_radius_y;
+			pos_y -= delta(default_radius_y - small_radius_y);
 			radius_x = default_radius_x;
 			radius_y = default_radius_y;		
 			is_rolling = false;

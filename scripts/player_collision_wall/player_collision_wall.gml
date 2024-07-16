@@ -39,7 +39,7 @@ function player_collision_wall() {
 			if (found_wall < 0) {
 				switch (collision_mode[0]) {
 					case 0:
-						horizontal_speed -= found_wall;
+						horizontal_speed -= delta(found_wall);
 						ground_speed = 0;
 					
 						// Set pushing flag
@@ -48,10 +48,10 @@ function player_collision_wall() {
 						}
 						break;
 					case 1:
-						vertical_speed += found_wall;
+						vertical_speed += delta(found_wall);
 						break;
 					case 2:
-						horizontal_speed += found_wall;
+						horizontal_speed += delta(found_wall);
 						ground_speed = 0;
 					
 						// Set pushing flag
@@ -60,7 +60,7 @@ function player_collision_wall() {
 						}
 						break;
 					case 3:
-						vertical_speed -= found_wall;
+						vertical_speed -= delta(found_wall);
 						break;
 				}
 			}
@@ -85,7 +85,7 @@ function player_collision_wall() {
 			if (found_wall < 0) { 
 				switch (collision_mode[0]) {
 					case 0:
-						horizontal_speed += found_wall;
+						horizontal_speed += delta(found_wall);
 						ground_speed = 0;
 					
 						// Set pushing flag
@@ -94,10 +94,10 @@ function player_collision_wall() {
 						}
 						break;
 					case 1:
-						vertical_speed -= found_wall;
+						vertical_speed -= delta(found_wall);
 						break;
 					case 2:
-						horizontal_speed -= found_wall;
+						horizontal_speed -= delta(found_wall);
 						ground_speed = 0;
 				
 						// Set pushing flag
@@ -106,7 +106,7 @@ function player_collision_wall() {
 						}
 						break;
 					case 3:
-						vertical_speed += found_wall;
+						vertical_speed += delta(found_wall);
 						break;
 				}
 			}

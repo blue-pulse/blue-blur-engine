@@ -4,7 +4,7 @@ function player_movement_ground() {
 			if (button_check("btn_left")) {	
 				if (ground_speed > 0) {
 					// Decelerate
-					ground_speed -= decel;
+					ground_speed -= delta(decel);
 					
 					if (ground_speed <= 0) {
 						ground_speed = -0.5;
@@ -24,7 +24,7 @@ function player_movement_ground() {
 			} else if (button_check("btn_right")) {	
 				if (ground_speed < 0) {		
 					// Decelerate
-					ground_speed += decel;
+					ground_speed += delta(decel);
 					
 					if (ground_speed >= 0) {
 						ground_speed = 0.5;

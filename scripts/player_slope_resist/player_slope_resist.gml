@@ -7,7 +7,7 @@ function player_slope_resist() {
 	
 		// Apply it
 		if (ground_speed != 0) {
-			ground_speed -= slope_gravity;
+			ground_speed -= delta(slope_gravity);
 		}
 	}
 }

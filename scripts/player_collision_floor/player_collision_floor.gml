@@ -110,7 +110,7 @@ function player_collision_floor() {
 			
 				// Else collide
 				if (found_floor[0] >= -14) {
-					pos_y += found_floor[0];
+					pos_y += delta(found_floor[0]);
 					angle = found_floor[1];	
 				}
 				break;
@@ -136,7 +136,7 @@ function player_collision_floor() {
 			
 				// Else collide
 				if (found_floor[0] >= -14) {
-					pos_x += found_floor[0];
+					pos_x += delta(found_floor[0]);
 					angle = found_floor[1];	
 				}
 				break;
@@ -162,7 +162,7 @@ function player_collision_floor() {
 			
 				// Else collide
 				if (found_floor[0] >= -14) {	
-					pos_y -= found_floor[0];
+					pos_y -= delta(found_floor[0]);
 					angle = found_floor[1];
 				}
 				break;
@@ -188,7 +188,7 @@ function player_collision_floor() {
 				
 				// Else collide
 			    if (found_floor[0] >= -14) {
-					pos_x -= found_floor[0];
+					pos_x -= delta(found_floor[0]);
 					angle = found_floor[1];
 				}
 				break;

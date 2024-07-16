@@ -15,14 +15,14 @@ function player_collision_air() {
 				// Collide with left wall
 				var found_wall = tile_find_h(pos_x - horizontal_radius, pos_y, false, plane)[0];
 				if (found_wall < 0) {
-					pos_x -= found_wall;
+					pos_x -= delta(found_wall);
 					horizontal_speed = 0;
 				}
 			
 				// Collide with right wall
 				var found_wall = tile_find_h(pos_x + horizontal_radius, pos_y, true, plane)[0];
 				if (found_wall < 0) {
-					pos_x += found_wall;
+					pos_x += delta(found_wall);
 					horizontal_speed = 0;
 				}
 			
@@ -55,7 +55,7 @@ function player_collision_air() {
 					}
 					
 					// Adhere to the surface and land
-					pos_y += floor_distance;
+					pos_y += delta(floor_distance);
 					angle = floor_angle;
 					is_grounded = true;
 				}
@@ -64,14 +64,14 @@ function player_collision_air() {
 				// Collide with left wall
 				var found_wall = tile_find_h(pos_x - horizontal_radius, pos_y, false, plane)[0];
 				if (found_wall < 0) {
-					pos_x -= found_wall;
+					pos_x -= delta(found_wall);
 					horizontal_speed = 0;
 				}
 			
 				// Collide with right wall
 				var found_wall = tile_find_h(pos_x + horizontal_radius, pos_y, true, plane)[0];
 				if (found_wall < 0) {
-					pos_x += found_wall;
+					pos_x += delta(found_wall);
 					horizontal_speed = 0;
 				}
 			
@@ -87,14 +87,14 @@ function player_collision_air() {
 					} else {
 						vertical_speed = 0;
 					}				
-					pos_y -= found_roof[0];
+					pos_y -= delta(found_roof[0]);
 				}
 				break;		
 			case "moving_left":
 				// Collide with left wall
 				var found_wall = tile_find_h(pos_x - horizontal_radius, pos_y, false, plane)[0];
 				if (found_wall < 0) {
-					pos_x -= found_wall;
+					pos_x -= delta(found_wall);
 					ground_speed = vertical_speed;
 					horizontal_speed = 0;
 				} else {
@@ -104,12 +104,12 @@ function player_collision_air() {
 						if (vertical_speed < 0) {
 							vertical_speed = 0;
 						}
-						pos_y -= found_roof[0];
+						pos_y -= delta(found_roof[0]);
 					} else if (vertical_speed > 0) {
 						// Collide with floor
 						var found_floor = tile_find_2v(pos_x - radius_x, pos_y + radius_y, pos_x + radius_x, pos_y + radius_y, true, noone, plane);
 						if (found_floor[0] < 0) {
-							pos_y += found_floor[0];
+							pos_y += delta(found_floor[0]);
 							angle = found_floor[1];
 							ground_speed = horizontal_speed;
 							vertical_speed = 0;
@@ -122,7 +122,7 @@ function player_collision_air() {
 				// Collide with right wall
 				var found_wall = tile_find_h(pos_x + horizontal_radius, pos_y, true, plane)[0];
 				if (found_wall < 0) {
-					pos_x += found_wall;
+					pos_x += delta(found_wall);
 					ground_speed = vertical_speed;
 					horizontal_speed = 0;	
 				} else {
@@ -132,12 +132,12 @@ function player_collision_air() {
 						if (vertical_speed < 0) {
 							vertical_speed = 0;
 						}
-						pos_y -= found_roof[0];
+						pos_y -= delta(found_roof[0]);
 					} else if (vertical_speed > 0) {
 						// Collide with floor
 						var found_floor = tile_find_2v(pos_x - radius_x, pos_y + radius_y, pos_x + radius_x, pos_y + radius_y, true, noone, plane);
 						if (found_floor[0] < 0) {
-							pos_y += found_floor[0];
+							pos_y += delta(found_floor[0]);
 							angle = found_floor[1];
 							ground_speed = horizontal_speed;
 							vertical_speed = 0;

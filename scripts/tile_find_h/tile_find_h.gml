@@ -4,8 +4,8 @@ function tile_find_h(pox_x, pox_y, to_positive, tilelayer) {
 	pox_y = floor(pox_y);
 	
 	if (to_positive and object_index != Player) {
-		pox_x--;
-		pox_y--;
+		pox_x -= delta(1);
+		pox_y -= delta(1);
 	}
 
 	// Exit if no tiledata found

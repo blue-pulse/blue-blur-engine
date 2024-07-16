@@ -16,10 +16,10 @@ function player_movement_air() {
 		if (button_check("btn_left")) {
 			if (horizontal_speed > 0) {
 				// Decelerate
-				horizontal_speed -= air_accel;
+				horizontal_speed -= delta(air_accel);
 			} else if (horizontal_speed > -top_speed) {
 				// Accelerate
-				horizontal_speed -= air_accel;
+				horizontal_speed -= delta(air_accel);
 				
 				if (horizontal_speed <= -top_speed) {
 					horizontal_speed = -top_speed;
@@ -34,10 +34,10 @@ function player_movement_air() {
 		if (button_check("btn_right")) {
 			if (horizontal_speed < 0) {	
 				// Decelerate
-				horizontal_speed += air_accel;
+				horizontal_speed += delta(air_accel);
 			} else if (horizontal_speed < top_speed) {
 				// Accelerate
-				horizontal_speed += air_accel;
+				horizontal_speed += delta(air_accel);
 				
 				if (horizontal_speed >= top_speed) {
 					horizontal_speed = top_speed;
@@ -51,6 +51,6 @@ function player_movement_air() {
 	
 	// Apply air drag
 	if (!is_being_hurt and (vertical_speed < 0) and (vertical_speed > -4)) {
-		horizontal_speed -= floor(horizontal_speed / 0.125) / 256;
+		horizontal_speed -= delta(floor(horizontal_speed / 0.125) / 256);
 	}
 }
