@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"instance_create_singleton",
+  "%Name":"instance_create_controller",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"instance_create_singleton",
+  "name":"instance_create_controller",
   "parent":{
     "name":"Others",
     "path":"folders/Core/Others.yy",
