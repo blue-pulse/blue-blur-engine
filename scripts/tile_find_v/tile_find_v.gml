@@ -3,8 +3,8 @@ function tile_find_v(pos_x, pos_y, to_positive, tilelayer) {
 	pos_y = floor(pos_y);
 	
 	if (to_positive and object_index != Player) {
-		pos_x -= delta(1);
-		pos_y -= delta(1);
+		pos_x -= (1);
+		pos_y -= (1);
 	}
 	
 	// Exit if no tiledata found

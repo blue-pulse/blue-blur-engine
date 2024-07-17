@@ -20,7 +20,7 @@ function player_rotation_update() {
 		} else {
 			// Rotate back to 360
 			if (rotation <= 0) {
-				rotation += delta(360);
+				rotation += (360);
 			}
 			
 			if (rotation < 180) {

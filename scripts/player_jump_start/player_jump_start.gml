@@ -23,8 +23,8 @@ function player_jump_start() {
         }
 
         // Handle parameters
-        horizontal_speed += delta(jump_height * dsin(angle));
-        vertical_speed += delta(jump_height * dcos(angle));
+        horizontal_speed += (jump_height * dsin(angle));
+        vertical_speed += (jump_height * dcos(angle));
         is_pushing = false;
         is_grounded = false;
         on_object = false;
@@ -36,7 +36,7 @@ function player_jump_start() {
 
         // Reset radius
         if (!is_rolling) {
-            pos_y += delta(default_radius_y - small_radius_y);
+            pos_y += (default_radius_y - small_radius_y);
             radius_x = small_radius_x;
             radius_y = small_radius_y;
             is_rolling = true;

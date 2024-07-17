@@ -20,11 +20,11 @@ function player_spindash_start() {
             spindash_revolutions = min(spindash_revolutions + 2, 8);
 			
 			// Play sound effect
-            spindash_sound_pitch += delta(spindash_revolutions / 100);
+            spindash_sound_pitch += (spindash_revolutions / 100);
             audio_sound_pitch(snd_player_spindash_charge, min(1.15, spindash_sound_pitch));
             audio_play_sfx(snd_player_spindash_charge);
         } else {
-            spindash_revolutions -= delta(floor(spindash_revolutions / 0.125) / 256);
+            spindash_revolutions -= (floor(spindash_revolutions / 0.125) / 256);
         }
     } else {
         // Release spindash
@@ -36,7 +36,7 @@ function player_spindash_start() {
         // Handle hitbox
         radius_x = small_radius_x;
         radius_y = small_radius_y;
-        pos_y += delta(default_radius_y - small_radius_y);
+        pos_y += (default_radius_y - small_radius_y);
 
         // Convert ground_speed to speed
         horizontal_speed = ground_speed * dcos(angle);

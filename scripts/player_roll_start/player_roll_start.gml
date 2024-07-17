@@ -10,7 +10,7 @@ function player_roll_start() {
         // Roll up
         if (manual_roll or forced_roll) {
             // Handle parameters
-            pos_y += delta(default_radius_y - small_radius_y);
+            pos_y += (default_radius_y - small_radius_y);
             radius_y = small_radius_y;
             radius_x = small_radius_x;
             is_rolling = true;

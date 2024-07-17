@@ -10,6 +10,6 @@ function player_slope_resist_roll() {
 		}
 		
 		// Apply it
-		ground_speed -= delta(slope_gravity);
+		ground_speed -= (slope_gravity);
 	}
 }
