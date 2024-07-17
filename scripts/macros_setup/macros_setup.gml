@@ -10,5 +10,6 @@
 #macro paused global.game_is_paused
 
 // Macros for objects
+#macro Core obj_core_controller
 #macro Stage obj_stage_controller
 #macro Player obj_player

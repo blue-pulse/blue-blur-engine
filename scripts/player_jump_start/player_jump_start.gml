@@ -45,12 +45,12 @@ function player_jump_start() {
             radius_x = small_radius_x;
             radius_y = small_radius_y;
         }
-		
-		// Play sound effects
+
+        // Play sound effects
         audio_play_sfx(snd_player_jump);
         audio_play_sfx(snd_player_wind);
     }
-	
-	// Return action result
-	return is_jumping;
+
+    // Return action result
+    return is_jumping;
 }

@@ -1,5 +1,5 @@
 function player_balance_start() {
-    if (ground_speed == 0) {
+    if (gnd_speed == 0) {
         // Balance on the floor
         if (!on_object) {
             if (angle >= 46.41 and angle <= 313.59) {

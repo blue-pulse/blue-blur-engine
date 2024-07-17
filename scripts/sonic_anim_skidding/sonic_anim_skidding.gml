@@ -12,7 +12,7 @@ function sonic_anim_skidding() {
 	            }
 				break;
 			default:
-				sprite_index = (abs(ground_speed) > 8) ? (spr_sonic_skidding_fast) : (spr_sonic_skidding);
+				sprite_index = (abs(gnd_speed) > 8) ? (spr_sonic_skidding_fast) : (spr_sonic_skidding);
 				break;
 		}
     } else {

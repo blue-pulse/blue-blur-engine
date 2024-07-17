@@ -18,7 +18,7 @@ function player_collision_wall() {
 		}
 
 		// Check for collisions, always one frame ahead
-		if (ground_speed < 0) {
+		if (gnd_speed < 0) {
 			// Left wall collision
 			switch (direction_check) {
 				case 0:
@@ -40,7 +40,7 @@ function player_collision_wall() {
 				switch (collision_mode[0]) {
 					case 0:
 						hor_speed -= found_wall;
-						ground_speed = 0;
+						gnd_speed = 0;
 					
 						// Set pushing flag
 						if (facing == LEFT and !is_rolling) {
@@ -52,7 +52,7 @@ function player_collision_wall() {
 						break;
 					case 2:
 						hor_speed += found_wall;
-						ground_speed = 0;
+						gnd_speed = 0;
 					
 						// Set pushing flag
 						if (facing == LEFT and !is_rolling) {
@@ -64,7 +64,7 @@ function player_collision_wall() {
 						break;
 				}
 			}
-		} else if (ground_speed > 0) {
+		} else if (gnd_speed > 0) {
 			// Right wall collision
 			switch (direction_check) {
 				case 0:
@@ -86,7 +86,7 @@ function player_collision_wall() {
 				switch (collision_mode[0]) {
 					case 0:
 						hor_speed += found_wall;
-						ground_speed = 0;
+						gnd_speed = 0;
 					
 						// Set pushing flag
 						if (facing == RIGHT and !is_rolling) {
@@ -98,7 +98,7 @@ function player_collision_wall() {
 						break;
 					case 2:
 						hor_speed -= found_wall;
-						ground_speed = 0;
+						gnd_speed = 0;
 				
 						// Set pushing flag
 						if (facing == RIGHT and !is_rolling) {

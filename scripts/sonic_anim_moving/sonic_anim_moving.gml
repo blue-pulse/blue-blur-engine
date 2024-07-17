@@ -1,5 +1,5 @@
 function sonic_anim_moving() {
-    var running_speed = abs(ground_speed);
+    var running_speed = abs(gnd_speed);
     if (running_speed > 0 and running_speed < 2.4) {
         sprite_index = spr_sonic_strolling;
         image_speed = clamp(running_speed, 0.67, 1);
