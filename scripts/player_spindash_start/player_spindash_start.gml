@@ -10,6 +10,7 @@ function player_spindash_start() {
             hor_speed = 0;
 
             // Play sound effect
+			instance_create_fx(pos_x, pos_y + radius_y, obj_spindash_dust);
             audio_sound_pitch(snd_player_spindash_charge, spindash_sound_pitch);
             audio_play_sfx(snd_player_spindash_charge);
         }

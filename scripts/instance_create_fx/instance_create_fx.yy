@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"controller_create",
+  "%Name":"instance_create_fx",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"controller_create",
+  "name":"instance_create_fx",
   "parent":{
     "name":"Others",
     "path":"folders/Core/Others.yy",

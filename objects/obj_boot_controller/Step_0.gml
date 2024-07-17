@@ -13,8 +13,8 @@ if (audio_group_is_loaded(grp_sfx)) {
 	print("[INFO] Screen setup was completed!");
 
 	// Create an instance of each controller
-	controller_create(obj_core_controller);
-	controller_create(obj_stage_controller);
+	instance_create_singleton(obj_core_controller);
+	instance_create_singleton(obj_stage_controller);
 	print("[INFO] All controller singletons were created!");
 
 	// Start the game

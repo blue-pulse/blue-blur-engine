@@ -25,6 +25,7 @@ enum orders {
 	
 	// Depths
 	entities = 0,
+	effects = 0,
 	player = -1,
 	controller = -4096,
 }
