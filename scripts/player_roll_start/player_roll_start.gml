@@ -17,7 +17,7 @@ function player_roll_start() {
             state = states.rolling;
 
             // Play sound effects
-            audio_play_sfx(snd_player_roll, true);
+            audio_play_sfx(snd_player_roll);
         }
     }
 }

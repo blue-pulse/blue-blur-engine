@@ -103,7 +103,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.1.160",
+    "IDEVersion":"2024.600.0.585",
   },
   "name":"blue-blur-engine",
   "resources":[
@@ -219,7 +219,6 @@
     {"id":{"name":"button_check","path":"scripts/button_check/button_check.yy",},},
     {"id":{"name":"button_get_icon","path":"scripts/button_get_icon/button_get_icon.yy",},},
     {"id":{"name":"controller_create","path":"scripts/controller_create/controller_create.yy",},},
-    {"id":{"name":"delta","path":"scripts/delta/delta.yy",},},
     {"id":{"name":"enums_setup","path":"scripts/enums_setup/enums_setup.yy",},},
     {"id":{"name":"globals_setup","path":"scripts/globals_setup/globals_setup.yy",},},
     {"id":{"name":"input_accessibility_global_cooldown_get","path":"scripts/input_accessibility_global_cooldown_get/input_accessibility_global_cooldown_get.yy",},},
@@ -495,6 +494,7 @@
     {"id":{"name":"player_slope_resist","path":"scripts/player_slope_resist/player_slope_resist.yy",},},
     {"id":{"name":"player_spindash_start","path":"scripts/player_spindash_start/player_spindash_start.yy",},},
     {"id":{"name":"print","path":"scripts/print/print.yy",},},
+    {"id":{"name":"screen_prepare_gpu","path":"scripts/screen_prepare_gpu/screen_prepare_gpu.yy",},},
     {"id":{"name":"screen_set_properties","path":"scripts/screen_set_properties/screen_set_properties.yy",},},
     {"id":{"name":"screen_verify_resolution","path":"scripts/screen_verify_resolution/screen_verify_resolution.yy",},},
     {"id":{"name":"sonic_anim_balancing_flip","path":"scripts/sonic_anim_balancing_flip/sonic_anim_balancing_flip.yy",},},

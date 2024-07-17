@@ -1,4 +1,5 @@
 // Macros for general variables
+#macro max_fps 60
 #macro paused global.game_is_paused
 
 // Macros for directions

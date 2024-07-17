@@ -7,10 +7,6 @@ global.buffer = 8;
 global.size = 2;
 global.fullscreen = false;
 
-// Set delta time parameters
-global.fps_limit = 60;
-global.delta_factor = 1;
-
 // Set input parameters
 global.allow_input = true;
 

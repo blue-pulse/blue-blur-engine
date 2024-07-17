@@ -416,6 +416,7 @@
     {"name":"player_slope_resist","order":3,"path":"scripts/player_slope_resist/player_slope_resist.yy",},
     {"name":"player_spindash_start","order":7,"path":"scripts/player_spindash_start/player_spindash_start.yy",},
     {"name":"print","order":4,"path":"scripts/print/print.yy",},
+    {"name":"screen_prepare_gpu","order":5,"path":"scripts/screen_prepare_gpu/screen_prepare_gpu.yy",},
     {"name":"screen_set_properties","order":2,"path":"scripts/screen_set_properties/screen_set_properties.yy",},
     {"name":"screen_verify_resolution","order":4,"path":"scripts/screen_verify_resolution/screen_verify_resolution.yy",},
     {"name":"sonic_anim_balancing_flip","order":7,"path":"scripts/sonic_anim_balancing_flip/sonic_anim_balancing_flip.yy",},

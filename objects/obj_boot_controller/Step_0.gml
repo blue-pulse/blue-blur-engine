@@ -9,18 +9,13 @@ if (audio_group_is_loaded(grp_sfx)) {
 	// Set screen properties
 	screen_verify_resolution();
 	screen_set_properties();
+	screen_prepare_gpu();
 	print("[INFO] Screen setup was completed!");
-
-	// Apply some GPU magic that will increase game speed
-	surface_depth_disable(true);
-	gpu_set_alphatestenable(true);
-	gpu_set_alphatestref(0);
-	print("[INFO] GPU magic was applied!");
 
 	// Create an instance of each controller
 	controller_create(obj_core_controller);
 	controller_create(obj_stage_controller);
-	print("[INFO] All controllers were started!");
+	print("[INFO] All controller singletons were created!");
 
 	// Start the game
 	print("[INFO] Starting game...");

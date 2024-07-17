@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"delta",
+  "%Name":"screen_prepare_gpu",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"delta",
+  "name":"screen_prepare_gpu",
   "parent":{
-    "name":"Others",
-    "path":"folders/Core/Others.yy",
+    "name":"Screen",
+    "path":"folders/Core/Screen.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
