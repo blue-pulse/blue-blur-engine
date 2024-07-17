@@ -6,7 +6,7 @@
   "name":"input_is_analogue",
   "parent":{
     "name":"01  Checking Verbs",
-    "path":"folders/Packages/Input/01  Checking Verbs.yy",
+    "path":"folders/Packages/Input v6.3.1/01  Checking Verbs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

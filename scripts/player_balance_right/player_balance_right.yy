@@ -6,7 +6,7 @@
   "name":"player_balance_right",
   "parent":{
     "name":"States",
-    "path":"folders/Resources/Player/Scripts/State Machine/States.yy",
+    "path":"folders/Player/Parent/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

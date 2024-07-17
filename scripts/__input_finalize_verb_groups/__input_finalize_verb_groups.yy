@@ -6,7 +6,7 @@
   "name":"__input_finalize_verb_groups",
   "parent":{
     "name":"Initialization",
-    "path":"folders/Packages/Input/(System)/Initialization.yy",
+    "path":"folders/Packages/Input v6.3.1/(System)/Initialization.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

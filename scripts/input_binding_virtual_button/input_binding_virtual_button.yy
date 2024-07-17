@@ -6,7 +6,7 @@
   "name":"input_binding_virtual_button",
   "parent":{
     "name":"05  Binding Creators",
-    "path":"folders/Packages/Input/05  Binding Creators.yy",
+    "path":"folders/Packages/Input v6.3.1/05  Binding Creators.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Resources/Player/Objects.yy",
+    "path":"folders/Player/Parent/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player",
-    "path":"sprites/spr_player/spr_player.yy",
+    "name":"spr_player_icon",
+    "path":"sprites/spr_player_icon/spr_player_icon.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -6,7 +6,7 @@
   "name":"__input_player_tick_sources",
   "parent":{
     "name":"Ticks",
-    "path":"folders/Packages/Input/(System)/Ticks.yy",
+    "path":"folders/Packages/Input v6.3.1/(System)/Ticks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"__input_keyboard_key",
   "parent":{
     "name":"Keyboard and Mouse",
-    "path":"folders/Packages/Input/(System)/Keyboard and Mouse.yy",
+    "path":"folders/Packages/Input v6.3.1/(System)/Keyboard and Mouse.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

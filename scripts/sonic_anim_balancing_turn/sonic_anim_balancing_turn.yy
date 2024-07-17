@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sonic_anim_balancing_turn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sonic_anim_balancing_turn",
+  "parent":{
+    "name":"Animations",
+    "path":"folders/Player/Sonic/Scripts/Animations.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

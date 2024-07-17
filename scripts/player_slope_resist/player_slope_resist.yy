@@ -6,7 +6,7 @@
   "name":"player_slope_resist",
   "parent":{
     "name":"Collision",
-    "path":"folders/Resources/Player/Scripts/Collision.yy",
+    "path":"folders/Player/Parent/Scripts/Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

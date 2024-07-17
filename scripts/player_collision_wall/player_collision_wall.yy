@@ -6,7 +6,7 @@
   "name":"player_collision_wall",
   "parent":{
     "name":"Collision",
-    "path":"folders/Resources/Player/Scripts/Collision.yy",
+    "path":"folders/Player/Parent/Scripts/Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

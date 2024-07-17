@@ -6,7 +6,7 @@
   "name":"player_movement_roll",
   "parent":{
     "name":"Physics",
-    "path":"folders/Resources/Player/Scripts/Physics.yy",
+    "path":"folders/Player/Parent/Scripts/Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

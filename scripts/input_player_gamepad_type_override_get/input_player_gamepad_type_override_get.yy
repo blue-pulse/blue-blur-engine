@@ -6,7 +6,7 @@
   "name":"input_player_gamepad_type_override_get",
   "parent":{
     "name":"15  Players",
-    "path":"folders/Packages/Input/15  Players.yy",
+    "path":"folders/Packages/Input v6.3.1/15  Players.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -123,8 +123,8 @@ function player_collision_air() {
 				var found_wall = tile_find_h(pos_x + horizontal_radius, pos_y, true, plane)[0];
 				if (found_wall < 0) {
 					pos_x += found_wall;
-					ground_speed   = vertical_speed;
-					horizontal_speed   = 0;	
+					ground_speed = vertical_speed;
+					horizontal_speed = 0;	
 				} else {
 					// Collide with ceiling
 					var found_roof = tile_find_2v(pos_x - radius_x, pos_y - radius_y, pos_x + radius_x, pos_y - radius_y, false, noone, plane);
@@ -139,7 +139,7 @@ function player_collision_air() {
 						if (found_floor[0] < 0) {
 							pos_y += found_floor[0];
 							angle = found_floor[1];
-							ground_speed = horizontal_speed
+							ground_speed = horizontal_speed;
 							vertical_speed = 0;
 							is_grounded = true;
 						}

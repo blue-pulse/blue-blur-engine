@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"screen_prepare_gpu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"screen_prepare_gpu",
+  "parent":{
+    "name":"Screen",
+    "path":"folders/Core/Screen.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
