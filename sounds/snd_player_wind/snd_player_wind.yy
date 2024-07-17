@@ -12,8 +12,8 @@
   "duration":0.991995,
   "name":"snd_player_wind",
   "parent":{
-    "name":"Audio",
-    "path":"folders/Player/Parent/Audio.yy",
+    "name":"Sounds",
+    "path":"folders/Player/Parent/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

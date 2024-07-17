@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"terrain-help",
+  "name":"terrain-help",
+  "parent":{
+    "name":"Tilesets",
+    "path":"folders/Resources/Terrain/Tilesets.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

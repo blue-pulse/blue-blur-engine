@@ -12,8 +12,8 @@
   "duration":0.416508,
   "name":"snd_player_jump",
   "parent":{
-    "name":"Audio",
-    "path":"folders/Player/Parent/Audio.yy",
+    "name":"Sounds",
+    "path":"folders/Player/Parent/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

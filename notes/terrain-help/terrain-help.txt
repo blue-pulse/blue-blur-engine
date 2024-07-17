@@ -1,0 +1,3 @@
+Black tiles: Solid from all sides (You'll want to use them 90% of the time).
+White tiles: Solid only from above (Use them for platforms that can be jumped through). 
+Yellow tiles: Solid from all sides but above (Use them when making a ceiling you don't want Sonic to land on).
