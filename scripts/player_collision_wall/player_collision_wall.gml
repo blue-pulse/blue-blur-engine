@@ -43,7 +43,7 @@ function player_collision_wall() {
 						ground_speed = 0;
 					
 						// Set pushing flag
-						if (facing == left and !is_rolling) {
+						if (facing == LEFT and !is_rolling) {
 							is_pushing = true;
 						}
 						break;
@@ -55,7 +55,7 @@ function player_collision_wall() {
 						ground_speed = 0;
 					
 						// Set pushing flag
-						if (facing == left and !is_rolling) {
+						if (facing == LEFT and !is_rolling) {
 							is_pushing = true;
 						}
 						break;
@@ -89,7 +89,7 @@ function player_collision_wall() {
 						ground_speed = 0;
 					
 						// Set pushing flag
-						if (facing == right and !is_rolling) {
+						if (facing == RIGHT and !is_rolling) {
 							is_pushing = true;
 						}
 						break;
@@ -101,7 +101,7 @@ function player_collision_wall() {
 						ground_speed = 0;
 				
 						// Set pushing flag
-						if (facing == right and !is_rolling) {
+						if (facing == RIGHT and !is_rolling) {
 							is_pushing = true;
 						}
 						break;

@@ -459,7 +459,6 @@
     {"name":"spr_sonic_default","order":19,"path":"sprites/spr_sonic_default/spr_sonic_default.yy",},
     {"name":"spr_sonic_falling","order":33,"path":"sprites/spr_sonic_falling/spr_sonic_falling.yy",},
     {"name":"spr_sonic_icon","order":3,"path":"sprites/spr_sonic_icon/spr_sonic_icon.yy",},
-    {"name":"spr_sonic_idle_turn","order":25,"path":"sprites/spr_sonic_idle_turn/spr_sonic_idle_turn.yy",},
     {"name":"spr_sonic_idle","order":4,"path":"sprites/spr_sonic_idle/spr_sonic_idle.yy",},
     {"name":"spr_sonic_jogging","order":21,"path":"sprites/spr_sonic_jogging/spr_sonic_jogging.yy",},
     {"name":"spr_sonic_landing","order":26,"path":"sprites/spr_sonic_landing/spr_sonic_landing.yy",},

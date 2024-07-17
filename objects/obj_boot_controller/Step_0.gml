@@ -3,7 +3,7 @@ if (audio_group_is_loaded(grp_sfx)) {
 	print("[INFO] All assets were loaded!");
 	
 	// Set application parameters
-	surface_resize(application_surface, Screen.width, Screen.height);
+	surface_resize(application_surface, global.width, global.height);
 	print("[INFO] Surface resize was completed!");
 
 	// Set screen properties

@@ -11,8 +11,8 @@ function player_movement_ground() {
 					}
 				} else {
 					// Change direction
-					if (facing != left) {
-						facing = left;
+					if (facing != LEFT) {
+						facing = LEFT;
 						is_pushing = false;
 					}
 					
@@ -31,8 +31,8 @@ function player_movement_ground() {
 					}
 				} else {
 					// Change direction
-					if (facing != right) {
-						facing = right;
+					if (facing != RIGHT) {
+						facing = RIGHT;
 						is_pushing = false;
 					}
 					

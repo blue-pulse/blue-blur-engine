@@ -27,7 +27,7 @@ function player_movement_air() {
 			}
 			
 			// Set facing direction
-			facing = left;
+			facing = LEFT;
 		}
 		
 		// Go right
@@ -45,7 +45,7 @@ function player_movement_air() {
 			}
 			
 			// Set facing direction
-			facing = right;
+			facing = RIGHT;
 		}	
 	}
 	

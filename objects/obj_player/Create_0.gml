@@ -34,7 +34,7 @@ gravity_force = 0.21875;
 collision_mode = [0, 0];
 hitbox = [0, 0];
 stick_to_convex = 0;
-facing = right;
+facing = RIGHT;
 state = 0;
 plane = 0;
 
