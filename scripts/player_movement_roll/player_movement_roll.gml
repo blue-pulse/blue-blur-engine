@@ -34,11 +34,11 @@ function player_movement_roll() {
 	}
 	
 	// Convert ground inertia to speeds
-	horizontal_speed = ground_speed *  dcos(angle);
-	vertical_speed = ground_speed * -dsin(angle);
+	hor_speed = ground_speed *  dcos(angle);
+	ver_speed = ground_speed * -dsin(angle);
 	
 	// Limit rolling speed
-	horizontal_speed = clamp(horizontal_speed, -16, 16);
+	hor_speed = clamp(hor_speed, -16, 16);
 
 	// Unroll
 	if (!forced_roll) {

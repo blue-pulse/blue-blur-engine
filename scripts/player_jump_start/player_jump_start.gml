@@ -23,8 +23,8 @@ function player_jump_start() {
         }
 
         // Handle parameters
-        horizontal_speed += jump_height * dsin(angle);
-        vertical_speed += jump_height * dcos(angle);
+        hor_speed += jump_height * dsin(angle);
+        ver_speed += jump_height * dcos(angle);
         is_pushing = false;
         is_grounded = false;
         on_object = false;

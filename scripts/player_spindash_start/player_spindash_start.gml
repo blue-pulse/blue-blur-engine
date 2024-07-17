@@ -7,7 +7,7 @@ function player_spindash_start() {
         if ((state == states.crouching) and button_check_pressed("btn_1")) {
 			// Handle parameters
             spindash_revolutions = 0;
-            horizontal_speed = 0;
+            hor_speed = 0;
 			
 			// Play sound effect
             audio_sound_pitch(snd_player_spindash_charge, spindash_sound_pitch);
@@ -39,8 +39,8 @@ function player_spindash_start() {
         pos_y += default_radius_y - small_radius_y;
 
         // Convert ground_speed to speed
-        horizontal_speed = ground_speed * dcos(angle);
-        vertical_speed = ground_speed * -dsin(angle);
+        hor_speed = ground_speed * dcos(angle);
+        ver_speed = ground_speed * -dsin(angle);
 
         // Handle sound effects
         spindash_sound_pitch = 1;

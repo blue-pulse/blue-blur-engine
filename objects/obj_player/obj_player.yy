@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_icon",
-    "path":"sprites/spr_player_icon/spr_player_icon.yy",
+    "name":"spr_entities",
+    "path":"sprites/spr_entities/spr_entities.yy",
   },
   "spriteMaskId":null,
   "visible":true,

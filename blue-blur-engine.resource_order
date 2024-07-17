@@ -51,7 +51,6 @@
     {"name":"Scripts","order":1,"path":"folders/Player/Parent/Scripts.yy",},
     {"name":"Physics","order":1,"path":"folders/Player/Parent/Scripts/Physics.yy",},
     {"name":"States","order":2,"path":"folders/Player/Parent/Scripts/States.yy",},
-    {"name":"Sprites","order":2,"path":"folders/Player/Parent/Sprites.yy",},
     {"name":"Sonic","order":3,"path":"folders/Player/Sonic.yy",},
     {"name":"Scripts","order":2,"path":"folders/Player/Sonic/Scripts.yy",},
     {"name":"Animations","order":3,"path":"folders/Player/Sonic/Scripts/Animations.yy",},

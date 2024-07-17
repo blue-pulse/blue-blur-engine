@@ -22,16 +22,16 @@ function player_collision_wall() {
 			// Left wall collision
 			switch (direction_check) {
 				case 0:
-					var found_wall = tile_find_h(pos_x + horizontal_speed - horizontal_radius, pos_y + vertical_speed + vertical_offset, false, plane)[0];
+					var found_wall = tile_find_h(pos_x + hor_speed - horizontal_radius, pos_y + ver_speed + vertical_offset, false, plane)[0];
 					break;
 				case 1:
-					var found_wall = tile_find_v(pos_x + horizontal_speed, pos_y + vertical_speed + horizontal_radius, true, plane)[0];
+					var found_wall = tile_find_v(pos_x + hor_speed, pos_y + ver_speed + horizontal_radius, true, plane)[0];
 					break;
 				case 2:
-					var found_wall = tile_find_h(pos_x + horizontal_speed + horizontal_radius, pos_y + vertical_speed, true, plane)[0];
+					var found_wall = tile_find_h(pos_x + hor_speed + horizontal_radius, pos_y + ver_speed, true, plane)[0];
 					break;
 				case 3:
-					var found_wall = tile_find_v(pos_x + horizontal_speed, pos_y + vertical_speed - horizontal_radius, false, plane)[0];
+					var found_wall = tile_find_v(pos_x + hor_speed, pos_y + ver_speed - horizontal_radius, false, plane)[0];
 					break;
 			}
 		
@@ -39,7 +39,7 @@ function player_collision_wall() {
 			if (found_wall < 0) {
 				switch (collision_mode[0]) {
 					case 0:
-						horizontal_speed -= found_wall;
+						hor_speed -= found_wall;
 						ground_speed = 0;
 					
 						// Set pushing flag
@@ -48,10 +48,10 @@ function player_collision_wall() {
 						}
 						break;
 					case 1:
-						vertical_speed += found_wall;
+						ver_speed += found_wall;
 						break;
 					case 2:
-						horizontal_speed += found_wall;
+						hor_speed += found_wall;
 						ground_speed = 0;
 					
 						// Set pushing flag
@@ -60,7 +60,7 @@ function player_collision_wall() {
 						}
 						break;
 					case 3:
-						vertical_speed -= found_wall;
+						ver_speed -= found_wall;
 						break;
 				}
 			}
@@ -68,16 +68,16 @@ function player_collision_wall() {
 			// Right wall collision
 			switch (direction_check) {
 				case 0:
-					var found_wall = tile_find_h(pos_x + horizontal_speed + horizontal_radius, pos_y + vertical_speed + vertical_offset, true, plane)[0];
+					var found_wall = tile_find_h(pos_x + hor_speed + horizontal_radius, pos_y + ver_speed + vertical_offset, true, plane)[0];
 					break;
 				case 1:
-					var found_wall = tile_find_v(pos_x + horizontal_speed, pos_y + vertical_speed - horizontal_radius, false, plane)[0];
+					var found_wall = tile_find_v(pos_x + hor_speed, pos_y + ver_speed - horizontal_radius, false, plane)[0];
 					break;
 				case 2:	
-					var found_wall = tile_find_h(pos_x + horizontal_speed - horizontal_radius, pos_y + vertical_speed, false, plane)[0];
+					var found_wall = tile_find_h(pos_x + hor_speed - horizontal_radius, pos_y + ver_speed, false, plane)[0];
 					break;
 				case 3:
-					var found_wall = tile_find_v(pos_x + horizontal_speed, pos_y + vertical_speed + horizontal_radius, true, plane)[0];
+					var found_wall = tile_find_v(pos_x + hor_speed, pos_y + ver_speed + horizontal_radius, true, plane)[0];
 					break;
 			}
 			
@@ -85,7 +85,7 @@ function player_collision_wall() {
 			if (found_wall < 0) { 
 				switch (collision_mode[0]) {
 					case 0:
-						horizontal_speed += found_wall;
+						hor_speed += found_wall;
 						ground_speed = 0;
 					
 						// Set pushing flag
@@ -94,10 +94,10 @@ function player_collision_wall() {
 						}
 						break;
 					case 1:
-						vertical_speed -= found_wall;
+						ver_speed -= found_wall;
 						break;
 					case 2:
-						horizontal_speed -= found_wall;
+						hor_speed -= found_wall;
 						ground_speed = 0;
 				
 						// Set pushing flag
@@ -106,7 +106,7 @@ function player_collision_wall() {
 						}
 						break;
 					case 3:
-						vertical_speed += found_wall;
+						ver_speed += found_wall;
 						break;
 				}
 			}

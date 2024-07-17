@@ -6,7 +6,6 @@ rotation = 360;
 opacity = 1;
 accel = 0;
 air_accel = 0;
-top_speed = 0;
 decel = 0;
 roll_decel = 0;
 frict = 0;
@@ -14,8 +13,10 @@ roll_frict = 0;
 jump_height = 0;
 min_jump_height = 0;
 ground_speed = 0;
-horizontal_speed = 0;
-vertical_speed = 0;
+hor_speed = 0;
+ver_speed = 0;
+max_hor_speed = 0;
+max_ver_speed = 0;
 
 // Set collision radiuses
 default_radius_x = 9;

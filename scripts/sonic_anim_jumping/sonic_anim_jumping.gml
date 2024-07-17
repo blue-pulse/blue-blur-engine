@@ -1,5 +1,5 @@
 function sonic_anim_jumping() {
-	if (vertical_speed < 3) {
+	if (ver_speed < 3) {
 		// Rolling in the air
 		var current_speed = abs(ground_speed);
 		sprite_index = spr_sonic_rolling_fast;

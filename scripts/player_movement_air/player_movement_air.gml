@@ -7,22 +7,22 @@ function player_movement_air() {
 	}
 	
 	// Limit vertical speed if not jumping
-	if (!is_jumping and (vertical_speed < -15.75)) {
-		vertical_speed = -15.75;
+	if (!is_jumping and (ver_speed < -max_ver_speed)) {
+		ver_speed = -max_ver_speed;
 	}
 	
 	if (!air_lock) {
 		// Go left
 		if (button_check("btn_left")) {
-			if (horizontal_speed > 0) {
+			if (hor_speed > 0) {
 				// Decelerate
-				horizontal_speed -= air_accel;
-			} else if (horizontal_speed > -top_speed) {
+				hor_speed -= air_accel;
+			} else if (hor_speed > -max_hor_speed) {
 				// Accelerate
-				horizontal_speed -= air_accel;
+				hor_speed -= air_accel;
 				
-				if (horizontal_speed <= -top_speed) {
-					horizontal_speed = -top_speed;
+				if (hor_speed <= -max_hor_speed) {
+					hor_speed = -max_hor_speed;
 				}
 			}
 			
@@ -32,15 +32,15 @@ function player_movement_air() {
 		
 		// Go right
 		if (button_check("btn_right")) {
-			if (horizontal_speed < 0) {	
+			if (hor_speed < 0) {	
 				// Decelerate
-				horizontal_speed += air_accel;
-			} else if (horizontal_speed < top_speed) {
+				hor_speed += air_accel;
+			} else if (hor_speed < max_hor_speed) {
 				// Accelerate
-				horizontal_speed += air_accel;
+				hor_speed += air_accel;
 				
-				if (horizontal_speed >= top_speed) {
-					horizontal_speed = top_speed;
+				if (hor_speed >= max_hor_speed) {
+					hor_speed = max_hor_speed;
 				}
 			}
 			
@@ -50,7 +50,7 @@ function player_movement_air() {
 	}
 	
 	// Apply air drag
-	if (!is_being_hurt and (vertical_speed < 0) and (vertical_speed > -4)) {
-		horizontal_speed -= floor(horizontal_speed / 0.125) / 256;
+	if (!is_being_hurt and (ver_speed < 0) and (ver_speed > -4)) {
+		hor_speed -= floor(hor_speed / 0.125) / 256;
 	}
 }

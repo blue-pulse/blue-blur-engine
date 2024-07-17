@@ -17,8 +17,8 @@ function player_movement_ground() {
 					}
 					
 					// Accelerate
-					if (ground_speed > -top_speed) {
-						ground_speed = max(ground_speed - accel, -top_speed);
+					if (ground_speed > -max_hor_speed) {
+						ground_speed = max(ground_speed - accel, -max_hor_speed);
 					} 
 				}
 			} else if (button_check("btn_right")) {	
@@ -37,8 +37,8 @@ function player_movement_ground() {
 					}
 					
 					// Accelerate
-					if (ground_speed < top_speed) {
-						ground_speed = min(ground_speed + accel, top_speed);
+					if (ground_speed < max_hor_speed) {
+						ground_speed = min(ground_speed + accel, max_hor_speed);
 					}
 				}
 			}
@@ -63,8 +63,8 @@ function player_movement_ground() {
 		}
 
 		// Convert ground inertia to speed
-		horizontal_speed = ground_speed * dcos(angle);
-		vertical_speed = ground_speed * -dsin(angle);
+		hor_speed = ground_speed * dcos(angle);
+		ver_speed = ground_speed * -dsin(angle);
 	
 		// Set animation
 		if (is_pushing) {
