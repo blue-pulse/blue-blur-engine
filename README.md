@@ -23,7 +23,7 @@ This project is the result of a collaborative effort by many individuals:
 - **Programming Team 💻:** Alejandro Buelvas Garcia, Juan Miguel Hernandez Retamoso, Josh Sebastian Lopez Murcia
 - **Level Designers 🎮:** Alejandro Buelvas Garcia, Josh Sebastian Lopez Murcia
 - **Artwork 🎨:** Juan Miguel Hernandez Retamoso
-- **Testers ✔️:** @_natfl1x_, @alejandro.cediel, @lsofia20, @takuda
+- **Testers ✔️:** @natfl1x, @alejandro.cediel, @lsofia20, @takuda
 
 With special thanks to:
 
