@@ -29,3 +29,15 @@ enum orders {
 	player = -1,
 	controller = -4096,
 }
+
+// Floor materials
+enum materials {
+	generic,
+	water,
+	grass,
+	dirt,
+	wood,
+	metal,
+	stone,
+	glass,
+}

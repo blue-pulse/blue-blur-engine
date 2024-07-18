@@ -15,6 +15,7 @@ function tile_check(pos_x, pos_y, no_top_solid, tilelayer) {
 	var plane = global.tile_layers[tilelayer];
     var tile = tilemap_get(plane, pos_x div 16, pos_y div 16);
     var tile_index = tile_get_index(tile);
+	print(tile_index)
 	
    	// Exit if tile is top-only and we're ignoring them
     if (no_top_solid and tile_index > global.tile_data[1]) {

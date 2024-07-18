@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5fd83222-ec6a-400b-9fba-e97db554bead","name":"5fd83222-ec6a-400b-9fba-e97db554bead","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6cd4e566-7024-43f3-b48d-4042f8c577ac","name":"6cd4e566-7024-43f3-b48d-4042f8c577ac","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":862,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3cf5f717-5156-4147-89f3-1ba7c053ab8f","blendMode":0,"displayName":"default","isLocked":false,"name":"3cf5f717-5156-4147-89f3-1ba7c053ab8f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"754b4e1e-4a70-48f0-a77f-d59508506763","blendMode":0,"displayName":"default","isLocked":false,"name":"754b4e1e-4a70-48f0-a77f-d59508506763","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_terrain_collision",
   "nineSlice":null,
@@ -59,7 +59,7 @@
     },
     "name":"spr_terrain_collision",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5fd83222-ec6a-400b-9fba-e97db554bead","path":"sprites/spr_terrain_collision/spr_terrain_collision.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6771fdc5-3887-4599-8bbb-ade95e0fd655","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6cd4e566-7024-43f3-b48d-4042f8c577ac","path":"sprites/spr_terrain_collision/spr_terrain_collision.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"59f07efb-fbba-4746-8638-76646fd1b973","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
