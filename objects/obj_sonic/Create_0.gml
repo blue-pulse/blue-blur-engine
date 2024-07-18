@@ -14,6 +14,5 @@ pos_x = x;
 pos_y = y - radius_y - 1;
 
 // Handle startup
-state = states.falling;
 sonic_params_update();
 player_hitbox_update();

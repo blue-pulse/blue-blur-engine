@@ -11,11 +11,11 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Player/Effects/Objects.yy",
+    "path":"folders/Player/VFX/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_fx",
-    "path":"objects/obj_fx/obj_fx.yy",
+    "name":"obj_vfx",
+    "path":"objects/obj_vfx/obj_vfx.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

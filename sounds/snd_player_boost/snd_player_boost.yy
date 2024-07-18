@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_player_boost",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":0,
+  "conversionMode":0,
+  "duration":8.684308,
+  "name":"snd_player_boost",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Player/Parent/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_player_boost.wav",
+  "type":1,
+  "volume":1.0,
+}

@@ -11,28 +11,28 @@
 //mouse buttons
 
 function __input_config_verbs() {
-    return {
-        keyboard_and_mouse: {
-            btn_up:    input_binding_key(vk_up),
-            btn_down:  input_binding_key(vk_down),
-            btn_left:  input_binding_key(vk_left),
-            btn_right: input_binding_key(vk_right),
+	return {
+		keyboard_and_mouse: {
+			btn_up: input_binding_key(vk_up),
+			btn_down: input_binding_key(vk_down),
+			btn_left: input_binding_key(vk_left),
+			btn_right: input_binding_key(vk_right),
 			btn_enter: input_binding_key(vk_enter),
 			btn_1: input_binding_key(vk_space),
 			btn_2: input_binding_key("X"),
 			btn_3: input_binding_key("Z"),
 			btn_4: input_binding_key("C")
-        },
-        gamepad: {
-            btn_up: [input_binding_gamepad_button(gp_padu), input_binding_gamepad_axis(gp_axislv, true)],
-            btn_down: [input_binding_gamepad_button(gp_padd), input_binding_gamepad_axis(gp_axislv, false)],
-            btn_left: [input_binding_gamepad_button(gp_padl), input_binding_gamepad_axis(gp_axislh, true)],
-            btn_right: [input_binding_gamepad_button(gp_padr), input_binding_gamepad_axis(gp_axislh, false)],
+		},
+		gamepad: {
+			btn_up: [input_binding_gamepad_button(gp_padu), input_binding_gamepad_axis(gp_axislv, true)],
+			btn_down: [input_binding_gamepad_button(gp_padd), input_binding_gamepad_axis(gp_axislv, false)],
+			btn_left: [input_binding_gamepad_button(gp_padl), input_binding_gamepad_axis(gp_axislh, true)],
+			btn_right: [input_binding_gamepad_button(gp_padr), input_binding_gamepad_axis(gp_axislh, false)],
 			btn_enter: input_binding_gamepad_button(gp_start),
 			btn_1: input_binding_gamepad_button(gp_face1),
 			btn_2: input_binding_gamepad_button(gp_face2),
 			btn_3: input_binding_gamepad_button(gp_face3),
 			btn_4: input_binding_gamepad_button(gp_face4)
-        }
-    };
+		}
+	};
 }

@@ -38,7 +38,8 @@ hitbox = [0, 0];
 on_object = noone;
 plane = 0;
 spindash_revolutions = -1;
-state = 0;
+state = states.falling;
+stamina = 100;
 stick_to_convex = 0;
 
 // Set flags

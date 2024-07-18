@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_fx",
+  "%Name":"obj_vfx",
   "eventList":[],
   "managed":true,
-  "name":"obj_fx",
+  "name":"obj_vfx",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Player/Effects/Objects.yy",
+    "path":"folders/Player/VFX/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_fx",
-    "path":"sprites/spr_fx/spr_fx.yy",
+    "name":"spr_vfx",
+    "path":"sprites/spr_vfx/spr_vfx.yy",
   },
   "spriteMaskId":null,
   "visible":true,

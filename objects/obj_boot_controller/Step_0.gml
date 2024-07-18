@@ -1,4 +1,4 @@
-if (audio_group_is_loaded(grp_sfx)) {
+if (audio_group_is_loaded(grp_sfx) and audio_group_is_loaded(grp_voices)) {
 	// Print state of assets
 	print("[INFO] All assets were loaded!");
 	

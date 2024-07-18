@@ -6,7 +6,7 @@ image_alpha = opacity;
 
 // Update the facing direction only if not rolling
 if (state != states.rolling) {
-    image_xscale = facing;
+	image_xscale = facing;
 }
 
 // Draw player

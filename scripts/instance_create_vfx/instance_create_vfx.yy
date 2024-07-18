@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"instance_create_fx",
+  "%Name":"instance_create_vfx",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"instance_create_fx",
+  "name":"instance_create_vfx",
   "parent":{
     "name":"Others",
     "path":"folders/Core/Others.yy",
