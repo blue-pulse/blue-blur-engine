@@ -10,8 +10,8 @@
   "name":"obj_boost_aura",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Player/VFX/Objects.yy",
+    "name":"VFX",
+    "path":"folders/Player/VFX.yy",
   },
   "parentObjectId":{
     "name":"obj_vfx",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boost_aura",
-    "path":"sprites/spr_boost_aura/spr_boost_aura.yy",
+    "name":"spr_vfx",
+    "path":"sprites/spr_vfx/spr_vfx.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -9,7 +9,7 @@
   "bitRate":320,
   "compression":0,
   "conversionMode":0,
-  "duration":3.68,
+  "duration":2.144036,
   "name":"snd_player_boost_loop",
   "parent":{
     "name":"Sounds",

@@ -31,5 +31,6 @@ function sonic_params_update() {
 		roll_decel = 0.125;
 		jump_height = -6.5;
 		min_jump_height = -4;
+		stamina = clamp(stamina, 0, 100);
 	}
 }

@@ -27,5 +27,6 @@ enum orders {
 	entities = 0,
 	effects = 0,
 	player = -1,
+	gui = -100,
 	controller = -4096,
 }

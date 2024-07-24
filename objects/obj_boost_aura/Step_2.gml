@@ -1,16 +1,13 @@
-// Destroy if the animation alpha is equal to 0
-if (image_alpha <= 0) {
-	instance_destroy();
-}
-
-// Increase alpha if the player started to boost
-if (image_alpha < 0.8 && Player.is_boosting) {
-	image_alpha += 0.05;
-}
-
-// Fade if the player stopped boosting
-if (!Player.is_boosting || abs(Player.hor_speed) < 2.2) {
-	image_alpha -= 0.05;
+if (Player.is_boosting) {
+	if (image_alpha < 0.65) {
+		image_alpha += 0.125;
+	}
+} else {
+	// Destroy if the animation alpha is equal to 0
+	image_alpha -= 0.125;
+    if (image_alpha <= 0) {
+		instance_destroy();
+	}
 }
 
 // Stick to the player position

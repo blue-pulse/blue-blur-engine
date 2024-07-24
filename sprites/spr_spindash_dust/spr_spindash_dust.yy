@@ -33,7 +33,7 @@
   "origin":9,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Player/VFX/Sprites.yy",
+    "path":"folders/Player/Parent/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

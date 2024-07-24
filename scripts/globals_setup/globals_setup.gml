@@ -23,4 +23,5 @@ global.player_lives = 3;
 global.current_character = obj_sonic;
 
 // Set game parameters
+global.debug = true;
 global.game_is_paused = false;

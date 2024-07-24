@@ -53,7 +53,7 @@ function player_movement_ground() {
 		}
 
 		// Apply friction
-		if (!button_check("btn_left") and !button_check("btn_right")) {
+		if (abs(gnd_speed) > max_hor_speed or (!button_check("btn_left") and !button_check("btn_right"))) {
 			if (gnd_speed > 0) {
 				gnd_speed = max(gnd_speed - frict, 0);
 			} else {

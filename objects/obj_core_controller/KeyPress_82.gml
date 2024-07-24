@@ -1,1 +1,1 @@
-room_goto(rm_init_game);
+game_start();
