@@ -32,6 +32,10 @@ function player_boost_start() {
 			instance_create_vfx(pos_x, pos_y, obj_boost_aura);
 			instance_create_vfx(pos_x, pos_y, obj_boost_wave);
 			
+			// Voice clip
+			var voice_clip = array_rand(boost.sounds);
+			audio_play_speech(voice_clip);
+			
 			// SFX
 			audio_play_sfx(snd_player_boost);
 			audio_play_sfx(snd_player_boost_start);

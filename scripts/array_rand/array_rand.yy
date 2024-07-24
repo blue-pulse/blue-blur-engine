@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"array_rand",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"array_rand",
+  "parent":{
+    "name":"Others",
+    "path":"folders/Core/Others.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

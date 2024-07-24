@@ -1,3 +1,8 @@
+// Set global variables
+depth = orders.player;
+score = global.player_score;
+lives = global.player_lives;
+
 // Set basic parameters
 pos_x = x;
 pos_y = y;
@@ -54,10 +59,17 @@ is_pushing = false;
 is_rolling = false;
 is_underwater = false;
 
-// Set global variables
-score = global.player_score;
-lives = global.player_lives;
-depth = orders.player;
+// Icons, effects and sounds
+hud = {
+	icon: 0,
+}
+
+boost = {
+	aura: 0,
+	spark: 0,
+	wave: 0,
+	sounds: [0, 0, 0],
+}
 
 // Player startup
 player_hitbox_update();

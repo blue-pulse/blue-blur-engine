@@ -22,6 +22,7 @@ enum orders {
 	// Audio
 	bgm = 0,
 	sfx = 1,
+	voices = 2,
 	
 	// Depths
 	entities = 0,

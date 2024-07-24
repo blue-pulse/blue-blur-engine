@@ -16,7 +16,11 @@ if (audio_group_is_loaded(grp_sfx) and audio_group_is_loaded(grp_voices)) {
 	instance_create_controller(obj_core_controller);
 	instance_create_controller(obj_stage_controller);
 	print("[INFO] All controller singletons were created!");
-
+	
+	// Randomize seed
+	randomize();
+	print("[INFO] Random seed was generated!");
+	
 	// Start the game
 	print("[INFO] Starting game...");
 	room_goto_next();
