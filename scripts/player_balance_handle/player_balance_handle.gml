@@ -1,4 +1,4 @@
-function player_balance_start() {
+function player_balance_handle() {
 	if (gnd_speed == 0) {
 		// Balance on the floor
 		if (!on_object) {

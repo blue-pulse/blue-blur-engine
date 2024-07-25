@@ -16,7 +16,7 @@ function player_physics_update() {
 			// Walking
 			player_slope_resist();
 			player_movement_ground();
-			player_balance_start();
+			player_balance_handle();
 			player_collision_wall();
 			player_roll_handle();
 		}
