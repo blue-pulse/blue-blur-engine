@@ -13,7 +13,7 @@ function player_spindash_start() {
 			instance_create_vfx(pos_x, pos_y + radius_y, obj_spindash_dust);
 			audio_sound_pitch(snd_player_spindash_charge, spindash_sound_pitch);
 			audio_play_sfx(snd_player_spindash_charge);
-			shake_effect(10);
+			shake_effect(7);
 		}
 	} else if (button_check("btn_down")) {
 		// Charge spindash
@@ -25,7 +25,7 @@ function player_spindash_start() {
 			spindash_sound_pitch += spindash_revolutions / 100;
 			audio_sound_pitch(snd_player_spindash_charge, min(1.15, spindash_sound_pitch));
 			audio_play_sfx(snd_player_spindash_charge);
-			shake_effect(10);
+			shake_effect(7);
 		} else {
 			spindash_revolutions -= floor(spindash_revolutions / 0.125) / 256;
 		}
