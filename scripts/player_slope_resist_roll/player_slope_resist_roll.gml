@@ -1,6 +1,6 @@
 function player_slope_resist_roll() {
 	// Angle check here is different in comparison to collision mode checks
-	var on_ceiling = (angle <= 225) and (angle >= 136.41);
+	var on_ceiling = (angle <= 225 and angle >= 136.41);
 	if (!on_ceiling) {
 		// Set slope gravity
 		if (sign(gnd_speed) != sign(dsin(angle))) {

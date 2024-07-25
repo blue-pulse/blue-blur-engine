@@ -1,4 +1,4 @@
-function player_boost_start() {
+function player_boost_handle() {
 	// Variables
 	static air_timer = 45;
 	static afterimage_counter = 0;
@@ -14,6 +14,7 @@ function player_boost_start() {
 		// SFX
 		audio_stop_sound(snd_player_boost);
 		audio_stop_sound(snd_player_boost_loop);
+		return;
 	}
 	
 	// Handle boost
@@ -24,7 +25,7 @@ function player_boost_start() {
 			is_boosting = true;
 
 			// Parameters
-			gnd_speed = max_hor_speed * facing;
+			gnd_speed = max_hor_speed * dir;
 			hor_speed = gnd_speed * dcos(angle);
 			stamina -= 1.5;
 
@@ -33,7 +34,7 @@ function player_boost_start() {
 			instance_create_vfx(pos_x, pos_y, obj_boost_wave);
 			
 			// Voice clip
-			var voice_clip = array_rand(boost.sounds);
+			var voice_clip = array_rand(ast_boost.snd_clips);
 			audio_play_speech(voice_clip);
 			
 			// SFX

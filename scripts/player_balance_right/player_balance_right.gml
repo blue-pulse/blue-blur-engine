@@ -1,14 +1,14 @@
 function player_balance_right(panic_condition) {
-	if (facing == RIGHT) {
+	if (dir == RIGHT) {
 		state = states.balancing;
-	} else if (facing == LEFT) {
+	} else if (dir == LEFT) {
 		state = states.balancing_flip;
 	}
 
 	if (panic_condition) {
-		if (facing == LEFT) {
+		if (dir == LEFT) {
 			state = states.balancing_turn;
-			facing = RIGHT;
+			dir = RIGHT;
 		} else {
 			state = states.balancing_panic;
 		}

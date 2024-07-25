@@ -18,7 +18,7 @@ function player_physics_update() {
 			player_movement_ground();
 			player_balance_start();
 			player_collision_wall();
-			player_roll_start();
+			player_roll_handle();
 		}
 		// Finally
 		player_position_update();
@@ -34,6 +34,4 @@ function player_physics_update() {
 		player_reset_on_floor();
 		player_hitbox_update();
 	}
-	// In any case
-	player_boost_start();
 }

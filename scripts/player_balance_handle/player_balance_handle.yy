@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_roll_start",
+  "%Name":"player_balance_handle",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_roll_start",
+  "name":"player_balance_handle",
   "parent":{
     "name":"States",
     "path":"folders/Player/Parent/Scripts/States.yy",

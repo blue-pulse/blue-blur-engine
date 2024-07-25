@@ -37,7 +37,7 @@ small_radius_y = 14;
 allow_collision = true;
 allow_movement = true;
 collision_mode = [0, 0];
-facing = RIGHT;
+dir = RIGHT;
 gravity_force = 0.21875;
 hitbox = [0, 0];
 on_object = noone;
@@ -59,16 +59,16 @@ is_pushing = false;
 is_rolling = false;
 is_underwater = false;
 
-// Icons, effects and sounds
-hud = {
-	icon: 0,
+// Assets
+ast_hud = {
+	spr_icon: 0,
 }
 
-boost = {
-	aura: 0,
-	spark: 0,
-	wave: 0,
-	sounds: [0, 0, 0],
+ast_boost = {
+	spr_aura: 0,
+	spr_spark: 0,
+	spr_wave: 0,
+	snd_clips: [],
 }
 
 // Player startup

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_balance_start",
+  "%Name":"player_boost_handle",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_balance_start",
+  "name":"player_boost_handle",
   "parent":{
     "name":"States",
     "path":"folders/Player/Parent/Scripts/States.yy",

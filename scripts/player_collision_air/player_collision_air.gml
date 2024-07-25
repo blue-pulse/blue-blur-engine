@@ -4,14 +4,14 @@ function player_collision_air() {
 
 		// Define direction of our movement
 		if (abs(hor_speed) >= abs(ver_speed)) {
-			var direction_movement = (hor_speed > 0) ? ("moving_right") : ("moving_left");
+			var direction_movement = (hor_speed > 0) ? (RIGHT) : (LEFT);
 		} else {
-			var direction_movement = (ver_speed > 0) ? ("moving_down") : ("moving_up");
+			var direction_movement = (ver_speed > 0) ? (DOWN) : (UP);
 		}
 
 		// Process collision
 		switch (direction_movement) {
-			case "moving_down":
+			case DOWN:
 				// Collide with left wall
 				var found_wall = tile_find_h(pos_x - horizontal_radius, pos_y, false, plane)[0];
 				if (found_wall < 0) {
@@ -60,7 +60,7 @@ function player_collision_air() {
 					is_grounded = true;
 				}
 				break;
-			case "moving_up":
+			case UP:
 				// Collide with left wall
 				var found_wall = tile_find_h(pos_x - horizontal_radius, pos_y, false, plane)[0];
 				if (found_wall < 0) {
@@ -89,7 +89,7 @@ function player_collision_air() {
 					pos_y -= found_roof[0];
 				}
 				break;
-			case "moving_left":
+			case LEFT:
 				// Collide with left wall
 				var found_wall = tile_find_h(pos_x - horizontal_radius, pos_y, false, plane)[0];
 				if (found_wall < 0) {
@@ -117,7 +117,7 @@ function player_collision_air() {
 					}
 				}
 				break;
-			case "moving_right":
+			case RIGHT:
 				// Collide with right wall
 				var found_wall = tile_find_h(pos_x + horizontal_radius, pos_y, true, plane)[0];
 				if (found_wall < 0) {

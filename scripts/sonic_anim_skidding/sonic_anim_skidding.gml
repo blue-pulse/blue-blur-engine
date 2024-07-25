@@ -12,8 +12,9 @@ function sonic_anim_skidding() {
 				}
 				break;
 			default:
+				var current_speed = abs(gnd_speed);
 				image_index = 0;
-				sprite_index = (abs(gnd_speed) > 8) ? (spr_sonic_skidding_fast) : (spr_sonic_skidding);
+				sprite_index = (current_speed > 8) ? (spr_sonic_skidding_fast) : (spr_sonic_skidding);
 				break;
 		}
 	} else {

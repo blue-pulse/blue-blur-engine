@@ -3,13 +3,13 @@ function player_balance_start() {
 		// Balance on the floor
 		if (!on_object) {
 			if (angle >= 46.41 and angle <= 313.59) {
-				return;
+				return false;
 			}
 
 			// Check for floor
 			var found_floor = tile_find_v(pos_x, pos_y + radius_y, true, plane)[0];
 			if (found_floor < 12) {
-				return;
+				return false;
 			}
 
 			// Get floor angles and continue if only one exists
@@ -17,7 +17,7 @@ function player_balance_start() {
 			var found_angle_2 = tile_find_v(pos_x + radius_x, pos_y + radius_y, true, plane)[1];
 
 			if !(found_angle_1 and !found_angle_2 or !found_angle_1 and found_angle_2) {
-				return;
+				return false;
 			}
 
 			// Balance!
@@ -32,12 +32,12 @@ function player_balance_start() {
 
 			// Ignore specific objects
 			if (on_object.object_index == obj_bridge) {
-				return;
+				return false;
 			}
 
 			// Get balance range
-			var player_x = on_object.solid_x - on_object.x + floor(pos_x);
-			var right_edge = on_object.solid_x * 2 - 1;
+			var player_x = on_object.pos_x - on_object.x + floor(pos_x);
+			var right_edge = on_object.pos_x * 2 - 1;
 
 			// Balance
 			if (player_x < tolerance) {

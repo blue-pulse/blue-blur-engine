@@ -13,16 +13,21 @@ radius_y = default_radius_y;
 pos_x = x;
 pos_y = y - radius_y - 1;
 
-// Icons, effects and sounds
-hud = {
-	icon: spr_sonic_icon,
+// Assets
+ast_hud = {
+	spr_icon: spr_sonic_icon,
 }
 
-boost = {
-	aura: spr_sonic_boost_aura,
-	spark: spr_sonic_boost_spark,
-	wave: spr_sonic_boost_wave,
-	sounds: [snd_sonic_boost_a, snd_sonic_boost_b, snd_sonic_boost_c],
+ast_boost = {
+	img_blend: make_colour_rgb(100, 220, 255),
+	spr_aura: spr_sonic_boost_aura,
+	spr_spark: spr_sonic_boost_spark,
+	spr_wave: spr_sonic_boost_wave,
+	snd_clips: [
+		snd_sonic_boost_a,
+		snd_sonic_boost_b,
+		snd_sonic_boost_c,
+	],
 }
 
 // Handle startup

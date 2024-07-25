@@ -4,7 +4,7 @@ function player_spindash_start() {
 
 	// Start spindash
 	if (spindash_revolutions == -1) {
-		if ((state == states.crouching) and button_check_pressed("btn_1")) {
+		if (state == states.crouching and button_check_pressed("btn_1")) {
 			// Handle parameters
 			spindash_revolutions = 0;
 			hor_speed = 0;
@@ -29,7 +29,7 @@ function player_spindash_start() {
 		}
 	} else {
 		// Release spindash
-		gnd_speed = (8 + round(spindash_revolutions) / 2) * facing;
+		gnd_speed = (8 + round(spindash_revolutions) / 2) * dir;
 		is_rolling = true;
 		spindash_revolutions = -1;
 		state = states.rolling;

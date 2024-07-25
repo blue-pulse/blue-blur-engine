@@ -4,9 +4,9 @@ y = floor(pos_y);
 image_angle = rotation;
 image_alpha = opacity;
 
-// Update the facing direction only if not rolling
+// Update the dir direction only if not rolling
 if (state != states.rolling) {
-	image_xscale = facing;
+	image_xscale = dir;
 }
 
 // Draw player

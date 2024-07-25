@@ -11,8 +11,8 @@ function player_movement_ground() {
 					}
 				} else {
 					// Change direction
-					if (facing != LEFT) {
-						facing = LEFT;
+					if (dir != LEFT) {
+						dir = LEFT;
 						is_pushing = false;
 					}
 
@@ -31,8 +31,8 @@ function player_movement_ground() {
 					}
 				} else {
 					// Change direction
-					if (facing != RIGHT) {
-						facing = RIGHT;
+					if (dir != RIGHT) {
+						dir = RIGHT;
 						is_pushing = false;
 					}
 
@@ -44,8 +44,8 @@ function player_movement_ground() {
 			}
 
 			// Perform skid. Angle check here is different in comparison to collision mode checks
-			if ((state != states.skidding) and (angle <= 45 or angle >= 316.41)) {
-				if (button_check("btn_left") and (gnd_speed >= 4) or button_check("btn_right") and (gnd_speed <= -4)) {
+			if (state != states.skidding and (angle <= 45 or angle >= 316.41)) {
+				if ((button_check("btn_left") and gnd_speed >= 4) or (button_check("btn_right") and gnd_speed <= -4)) {
 					state = states.skidding;
 					audio_play_sfx(snd_player_skid, true);
 				}
@@ -83,7 +83,7 @@ function player_movement_ground() {
 		} else {
 			if (state != states.skidding) {
 				state = states.moving;
-			} else if ((gnd_speed > 0) and button_check("btn_right") or (gnd_speed < 0) and button_check("btn_left")) {
+			} else if ((gnd_speed > 0 and button_check("btn_right")) or (gnd_speed < 0 and button_check("btn_left"))) {
 				state = states.moving;
 			}
 		}

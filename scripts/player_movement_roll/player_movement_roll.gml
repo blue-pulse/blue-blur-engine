@@ -9,7 +9,7 @@ function player_movement_roll() {
 				}
 			} else {
 				is_pushing = false;
-				facing = LEFT;
+				dir = LEFT;
 			}
 		}
 
@@ -21,7 +21,7 @@ function player_movement_roll() {
 				}
 			} else {
 				is_pushing = false;
-				facing = RIGHT;
+				dir = RIGHT;
 			}
 		}
 	}

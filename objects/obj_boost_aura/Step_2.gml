@@ -1,4 +1,5 @@
 if (Player.is_boosting) {
+	// Increase alpha
 	if (image_alpha < 0.65) {
 		image_alpha += 0.125;
 	}

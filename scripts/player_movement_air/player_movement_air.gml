@@ -7,7 +7,7 @@ function player_movement_air() {
 	}
 
 	// Limit vertical speed if not jumping
-	if (!is_jumping and (ver_speed < -max_ver_speed)) {
+	if (!is_jumping and ver_speed < -max_ver_speed) {
 		ver_speed = -max_ver_speed;
 	}
 
@@ -26,8 +26,8 @@ function player_movement_air() {
 				}
 			}
 
-			// Set facing direction
-			facing = LEFT;
+			// Set direction
+			dir = LEFT;
 		}
 
 		// Go right
@@ -44,13 +44,13 @@ function player_movement_air() {
 				}
 			}
 
-			// Set facing direction
-			facing = RIGHT;
+			// Set direction
+			dir = RIGHT;
 		}
 	}
 
 	// Apply air drag
-	if (!is_being_hurt and (ver_speed < 0) and (ver_speed > -4)) {
+	if (!is_being_hurt and ver_speed < 0 and ver_speed > -4) {
 		hor_speed -= floor(hor_speed / 0.125) / 256;
 	}
 }
