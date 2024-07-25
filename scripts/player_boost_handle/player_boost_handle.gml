@@ -30,6 +30,7 @@ function player_boost_handle() {
 			stamina -= 1.5;
 
 			// VFX
+			shake_effect(25);
 			instance_create_vfx(pos_x, pos_y, obj_boost_aura);
 			instance_create_vfx(pos_x, pos_y, obj_boost_wave);
 			

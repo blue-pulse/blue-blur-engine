@@ -9,8 +9,8 @@
   "name":"obj_boost_wave",
   "overriddenProperties":[],
   "parent":{
-    "name":"VFX",
-    "path":"folders/Player/VFX.yy",
+    "name":"Objects",
+    "path":"folders/Player/VFX/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_vfx",

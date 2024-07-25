@@ -9,10 +9,11 @@ function player_spindash_start() {
 			spindash_revolutions = 0;
 			hor_speed = 0;
 
-			// Play sound effect
+			// FX
 			instance_create_vfx(pos_x, pos_y + radius_y, obj_spindash_dust);
 			audio_sound_pitch(snd_player_spindash_charge, spindash_sound_pitch);
 			audio_play_sfx(snd_player_spindash_charge);
+			shake_effect(10);
 		}
 	} else if (button_check("btn_down")) {
 		// Charge spindash
@@ -20,10 +21,11 @@ function player_spindash_start() {
 			// Increase the revolutions
 			spindash_revolutions = min(spindash_revolutions + 2, 8);
 
-			// Play sound effect
+			// FX
 			spindash_sound_pitch += spindash_revolutions / 100;
 			audio_sound_pitch(snd_player_spindash_charge, min(1.15, spindash_sound_pitch));
 			audio_play_sfx(snd_player_spindash_charge);
+			shake_effect(10);
 		} else {
 			spindash_revolutions -= floor(spindash_revolutions / 0.125) / 256;
 		}
@@ -43,10 +45,11 @@ function player_spindash_start() {
 		hor_speed = gnd_speed * dcos(angle);
 		ver_speed = gnd_speed * -dsin(angle);
 
-		// Handle sound effects
+		// FX
 		spindash_sound_pitch = 1;
 		audio_stop_sound(snd_player_spindash_charge);
 		audio_play_sfx(snd_player_spindash_release);
+		shake_effect(15);
 	}
 
 	// Set state

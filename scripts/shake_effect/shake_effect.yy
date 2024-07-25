@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"shake_effect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shake_effect",
+  "parent":{
+    "name":"Others",
+    "path":"folders/Core/Others.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
