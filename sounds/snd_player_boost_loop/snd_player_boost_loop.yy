@@ -7,7 +7,7 @@
   },
   "bitDepth":1,
   "bitRate":320,
-  "compression":0,
+  "compression":2,
   "conversionMode":0,
   "duration":2.144036,
   "name":"snd_player_boost_loop",

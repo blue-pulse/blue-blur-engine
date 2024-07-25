@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":320,
-  "compression":1,
+  "compression":0,
   "conversionMode":0,
-  "duration":0.990912,
+  "duration":0.990907,
   "name":"snd_sonic_boost_a",
   "parent":{
     "name":"Sounds",

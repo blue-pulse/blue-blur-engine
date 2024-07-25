@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":320,
-  "compression":0,
+  "compression":1,
   "conversionMode":0,
-  "duration":0.416508,
+  "duration":3.68,
   "name":"snd_player_boost_start",
   "parent":{
     "name":"Sounds",
