@@ -15,6 +15,7 @@ enum states {
     balancing_flip,
     balancing_panic,
     balancing_turn,
+	stomping,
 }
 
 // Drawing depths and audio priorities

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sonic_stomp_handle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sonic_stomp_handle",
+  "parent":{
+    "name":"List",
+    "path":"folders/Player/Sonic/Scripts/States/List.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,15 +1,13 @@
 function player_boost_handle() {
 	// Variables
-	static air_timer = 45;
 	static afterimage_counter = 0;
 	var allowed_states = [states.idle, states.moving, states.jumping];
 	var denied_states = [states.skidding, states.rolling];
 
 	// Stop boost
-	if (is_boosting and (air_timer <= 0 or stamina <= 0 or abs(gnd_speed) <= 6 or !button_check("btn_3") or array_contains(denied_states, state))) {
+	if (is_boosting and (air_timer >= 45 or stamina <= 0 or abs(gnd_speed) <= 6 or !button_check("btn_3") or array_contains(denied_states, state))) {
 		// Parameters
 		is_boosting = false;
-		air_timer = 45;
 
 		// SFX
 		audio_stop_sound(snd_player_boost);
@@ -48,7 +46,6 @@ function player_boost_handle() {
 		if (is_boosting and button_check("btn_3")) {
 			// Parameters
 			stamina -= 0.35;
-			air_timer = (is_grounded) ? (45) : (air_timer - 1);
 			
 			// VFX
 			afterimage_counter++;

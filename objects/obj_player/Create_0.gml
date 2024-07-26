@@ -34,6 +34,7 @@ small_radius_x = 7;
 small_radius_y = 14;
 
 // Set defaults
+air_timer = 0;
 allow_collision = true;
 allow_movement = true;
 collision_mode = [0, 0];
@@ -49,6 +50,8 @@ stick_to_convex = 0;
 
 // Set flags
 air_lock = false;
+allow_boost = false;
+allow_stomp = false;
 forced_roll = false;
 ground_lock = false;
 is_being_hurt = false;
@@ -57,6 +60,7 @@ is_grounded = false;
 is_jumping = false;
 is_pushing = false;
 is_rolling = false;
+is_stomping = false;
 is_underwater = false;
 
 // Assets

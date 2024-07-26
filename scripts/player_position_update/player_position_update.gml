@@ -1,10 +1,16 @@
 function player_position_update() {
-	// Position
+	// Update position
 	pos_x += hor_speed;
 	pos_y += ver_speed;
 
-	// Vertical speed while airborne
-	if (!is_grounded) {
+	if (is_grounded) {
+		// Reset air timer
+		air_timer = 0;
+	} else {
+		// Increase vertical speed while airborne
 		ver_speed += gravity_force;
+		
+		// Increase air timer
+		air_timer++;
 	}
 }

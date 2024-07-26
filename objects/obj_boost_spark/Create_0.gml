@@ -1,4 +1,4 @@
-depth = orders.player;
+depth = orders.player - 1;
 image_alpha = 0.5;
 image_angle = Player.image_angle;
 image_speed = 1;

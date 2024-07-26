@@ -1,5 +1,5 @@
 alarm[0] = 10;
-depth = orders.player - 1;
+depth = orders.player;
 image_alpha = 0.5;
 image_angle = Player.image_angle;
 image_blend = Player.ast_boost.img_blend;

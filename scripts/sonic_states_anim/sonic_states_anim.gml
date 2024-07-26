@@ -45,5 +45,8 @@ function sonic_states_anim() {
 		case states.balancing_panic:
 			sonic_anim_balancing_panic();
 			break;
+		case states.stomping:
+			sonic_anim_stomping();
+			break;
 	}
 }
