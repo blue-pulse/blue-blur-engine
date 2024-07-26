@@ -75,5 +75,10 @@ ast_boost = {
 	snd_clips: [],
 }
 
+ast_stomp = {
+	spr_aura: 0,
+	snd_clips: [],
+}
+
 // Player startup
 player_hitbox_update();

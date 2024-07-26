@@ -31,6 +31,14 @@ ast_boost = {
 	],
 }
 
+ast_stomp = {
+	spr_aura: spr_sonic_stomp_aura,
+	snd_clips: [
+		snd_sonic_stomp_a,
+		snd_sonic_stomp_b,
+	],
+}
+
 // Handle startup
 sonic_params_update();
 player_hitbox_update();
