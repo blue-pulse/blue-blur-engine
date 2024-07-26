@@ -19,7 +19,8 @@ ast_hud = {
 }
 
 ast_boost = {
-	img_blend: make_colour_rgb(100, 220, 255),
+	img_blend: #64DCFF,
+	par_trail: part_type_create_trail(#4EC2FC),
 	spr_aura: spr_sonic_boost_aura,
 	spr_spark: spr_sonic_boost_spark,
 	spr_wave: spr_sonic_boost_wave,

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"enums_setup",
+  "%Name":"part_type_create_trail",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"enums_setup",
+  "name":"part_type_create_trail",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Core/Setup/Scripts.yy",
+    "name":"Others",
+    "path":"folders/Core/Others.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -46,29 +46,21 @@ function player_boost_handle() {
 		
 		// Continue boosting
 		if (is_boosting and button_check("btn_3")) {
-			// Handle parameters when grounded
-			if (is_grounded) {
-				// Show spark effect
-				if (afterimage_counter == 6 and gnd_speed != 0) {
-					instance_create_vfx(xprevious, yprevious, obj_boost_spark, true);
-				}
-				
-				// Reset air timer
-				air_timer = 45;
-			} else {
-				// Decrease air timer
-				air_timer--;
-			}
+			// Parameters
+			stamina -= 0.35;
+			air_timer = (is_grounded) ? (45) : (air_timer - 1);
 			
-			// Show afterimages
-			if (afterimage_counter >= 7) {
+			// VFX
+			afterimage_counter++;
+			part_particles_create(part_sys, xprevious, yprevious, ast_boost.par_trail, 2);
+			if (afterimage_counter == 6) {
+				// Show spark effect
+				instance_create_vfx(xprevious, yprevious, obj_boost_spark, true);
+			} else if (afterimage_counter >= 7) {
+				// Show afterimages
 				afterimage_counter = 0;
 				instance_create_vfx(xprevious, yprevious, obj_afterimage, true);
 			}
-			
-			// Finally
-			stamina -= 0.35;
-			afterimage_counter++;
 		}
 	}
 }

@@ -7,7 +7,8 @@
 #macro DOWN -2
 
 // Macros for general variables
-#macro paused global.game_is_paused
+#macro is_paused global.game_is_paused
+#macro part_sys global.part_system
 
 // Macros for objects
 #macro Core obj_core_controller

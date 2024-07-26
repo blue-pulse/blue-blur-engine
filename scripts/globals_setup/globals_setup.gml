@@ -17,6 +17,9 @@ global.tile_angles = [];
 global.tile_widths = [];
 global.tile_heights = [];
 
+// Particle system
+global.part_system = part_system_create();
+
 // Set player parameters
 global.player_score = 0;
 global.player_lives = 3;
