@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_collision_wall",
   "parent":{
-    "name":"Collision",
-    "path":"folders/Player/Parent/Scripts/Collision.yy",
+    "name":"Methods",
+    "path":"folders/Player/Parent/Scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

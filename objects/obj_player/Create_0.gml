@@ -20,6 +20,7 @@ hor_speed = 0;
 jump_height = 0;
 max_hor_speed = 0;
 max_ver_speed = 15.75;
+max_abs_speed = 15.75;
 min_jump_height = 0;
 roll_decel = 0;
 roll_frict = 0;
@@ -34,7 +35,6 @@ small_radius_x = 7;
 small_radius_y = 14;
 
 // Set defaults
-air_timer = 0;
 allow_collision = true;
 allow_movement = true;
 collision_mode = [0, 0];
@@ -50,12 +50,11 @@ stick_to_convex = 0;
 
 // Set flags
 air_lock = false;
-allow_boost = false;
-allow_stomp = false;
 forced_roll = false;
 ground_lock = false;
 is_being_hurt = false;
 is_boosting = false;
+is_dashing = false;
 is_grounded = false;
 is_jumping = false;
 is_pushing = false;
@@ -64,15 +63,22 @@ is_stomping = false;
 is_underwater = false;
 
 // Assets
-ast_hud = {
-	spr_icon: 0,
-}
-
 ast_boost = {
+	img_blend: #FFFFFF,
+	par_trail: part_type_create_trail(#FFFFFF),
 	spr_aura: 0,
 	spr_spark: 0,
 	spr_wave: 0,
 	snd_clips: [],
+}
+
+ast_dash = {
+	snd_sfx: 0,
+	snd_clips: [],
+}
+
+ast_hud = {
+	spr_icon: 0,
 }
 
 ast_stomp = {
@@ -80,5 +86,10 @@ ast_stomp = {
 	snd_clips: [],
 }
 
+// Remember last position
+prev_pos_x = pos_x;
+prev_pos_y = pos_y;
+
 // Player startup
+player_params_update();
 player_hitbox_update();

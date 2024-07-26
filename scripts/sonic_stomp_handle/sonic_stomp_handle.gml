@@ -1,11 +1,9 @@
 function sonic_stomp_handle() {
-	// Variables
-	static afterimage_counter = 0;
-	
-	// Start stomp
-    if (!is_grounded and !is_stomping and air_timer >= 10 and button_check_pressed("btn_2")) {
+	if (is_stomping) {
+		// Draw trail while stomping
+		player_draw_trail();
+	} else if (!is_grounded and ver_speed >= min_jump_height and button_check_pressed("btn_2")) {
 		// Change speed
-		gnd_speed = 0;
 		hor_speed = 0;
 		ver_speed = 8;
 		
@@ -13,35 +11,14 @@ function sonic_stomp_handle() {
 		air_lock = true;
 		is_jumping = false;
 		is_stomping = true;
-		state = states.stomping;
 		
 		// VFX
-		instance_create_vfx(x, y + 8, obj_stomp_aura);
+		image_index = 0;
+		state = states.stomping;
+		instance_create_vfx(prev_pos_x, prev_pos_y, obj_stomp_aura);
 		
 		// SFX
-		var voice_clip = array_rand(ast_stomp.snd_clips);
-		audio_play_speech(voice_clip);
+		audio_play_speech(ast_stomp.snd_clips);
 		audio_play_sfx(snd_player_stomp_start);
-		return noone;
     }
-	
-	// Stop stomp when grounded
-	if (is_stomping) {
-		if (is_grounded) {
-			// Reset flags
-			is_stomping = false;
-			player_reset_on_floor();
-			
-			// SFX
-			audio_stop_sound(snd_player_stomp_start);
-			audio_play_sfx(snd_player_stomp_end);
-		} else {
-			// VFX
-			afterimage_counter++;
-			if (afterimage_counter >= 5) {
-				afterimage_counter = 0;
-				instance_create_vfx(xprevious, yprevious, obj_afterimage, true);
-			}
-		}
-	}
 }

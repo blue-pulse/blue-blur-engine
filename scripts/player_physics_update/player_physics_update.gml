@@ -18,13 +18,12 @@ function player_physics_update() {
 			player_movement_ground();
 			player_balance_handle();
 			player_collision_wall();
-			player_roll_handle();
+			player_roll_update();
 		}
 		// Finally
 		player_position_update();
 		player_collision_floor();
 		player_slope_repel();
-		player_hitbox_update();
 	} else {
 		// Airborne
 		player_jump_update();
@@ -32,6 +31,5 @@ function player_physics_update() {
 		player_position_update();
 		player_collision_air();
 		player_reset_on_floor();
-		player_hitbox_update();
 	}
 }

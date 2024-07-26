@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_slope_repel",
+  "%Name":"player_boost_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_slope_repel",
+  "name":"player_boost_update",
   "parent":{
-    "name":"Methods",
-    "path":"folders/Player/Parent/Scripts/Methods.yy",
+    "name":"States",
+    "path":"folders/Player/Parent/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

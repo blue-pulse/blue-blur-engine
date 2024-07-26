@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_boost_handle",
+  "%Name":"player_draw_trail",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_boost_handle",
+  "name":"player_draw_trail",
   "parent":{
-    "name":"States",
-    "path":"folders/Player/Parent/Scripts/States.yy",
+    "name":"Methods",
+    "path":"folders/Player/Parent/Scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

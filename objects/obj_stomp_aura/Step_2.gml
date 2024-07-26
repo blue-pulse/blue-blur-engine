@@ -14,4 +14,4 @@ if (Player.is_stomping) {
 
 // Stick to the player position
 x = Player.x;
-y = Player.y + 8;
+y = Player.y;

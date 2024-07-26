@@ -1,21 +1,22 @@
-function player_boost_handle() {
+function player_boost_update() {
 	// Variables
-	static afterimage_counter = 0;
-	var allowed_states = [states.idle, states.moving, states.jumping];
+	static air_timer = 45;
+	var allowed_states = [states.idle, states.moving, states.jumping, states.landing, states.falling];
 	var denied_states = [states.skidding, states.rolling];
 
-	// Stop boost
-	if (is_boosting and (air_timer >= 45 or stamina <= 0 or abs(gnd_speed) <= 6 or !button_check("btn_3") or array_contains(denied_states, state))) {
-		// Parameters
-		is_boosting = false;
-
-		// SFX
+	// Handling when boost is inactive
+	if (!is_boosting) {
+		// When boost isn't active
+		air_timer = 45;
 		audio_stop_sound(snd_player_boost);
 		audio_stop_sound(snd_player_boost_loop);
+	} else if (air_timer <= 0 or stamina <= 0 or abs(gnd_speed) <= 6 or !button_check("btn_3") or array_contains(denied_states, state)) {
+		// Stop boost
+		is_boosting = false;
 		return;
 	}
 	
-	// Handle boost
+	// Handling when boost is active
 	if (!is_pushing and stamina > 0) {
 		// Start boosting
 		if (!is_boosting and button_check_pressed("btn_3") and array_contains(allowed_states, state)) {
@@ -33,8 +34,7 @@ function player_boost_handle() {
 			instance_create_vfx(pos_x, pos_y, obj_boost_wave);
 			
 			// Voice clip
-			var voice_clip = array_rand(ast_boost.snd_clips);
-			audio_play_speech(voice_clip);
+			audio_play_speech(ast_boost.snd_clips);
 			
 			// SFX
 			audio_play_sfx(snd_player_boost);
@@ -46,18 +46,10 @@ function player_boost_handle() {
 		if (is_boosting and button_check("btn_3")) {
 			// Parameters
 			stamina -= 0.35;
+			air_timer = (is_grounded) ? (45) : (air_timer - 1);
 			
 			// VFX
-			afterimage_counter++;
-			part_particles_create(part_sys, xprevious, yprevious, ast_boost.par_trail, 2);
-			if (afterimage_counter == 6) {
-				// Show spark effect
-				instance_create_vfx(xprevious, yprevious, obj_boost_spark, true);
-			} else if (afterimage_counter >= 7) {
-				// Show afterimages
-				afterimage_counter = 0;
-				instance_create_vfx(xprevious, yprevious, obj_afterimage, true);
-			}
+			player_draw_trail(true);
 		}
 	}
 }

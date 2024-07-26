@@ -1,4 +1,4 @@
-function player_roll_handle() {
+function player_roll_update() {
 	if (forced_roll or (!button_check("btn_left") and !button_check("btn_right")) and spindash_revolutions == -1) {
 		// Check if we should roll up
 		if (button_check("btn_down") and abs(gnd_speed) >= 0.5) {

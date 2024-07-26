@@ -1,16 +1,19 @@
 function player_position_update() {
+	// Remember last position
+	prev_pos_x = pos_x;
+	prev_pos_y = pos_y;
+	
 	// Update position
 	pos_x += hor_speed;
 	pos_y += ver_speed;
-
-	if (is_grounded) {
-		// Reset air timer
-		air_timer = 0;
-	} else {
-		// Increase vertical speed while airborne
+	
+	// Increase vertical speed while airborne
+	if (!is_grounded) {
 		ver_speed += gravity_force;
-		
-		// Increase air timer
-		air_timer++;
 	}
+	
+	// Limit speed
+	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
+	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
+    ver_speed = clamp(ver_speed, -max_abs_speed, max_abs_speed);
 }
