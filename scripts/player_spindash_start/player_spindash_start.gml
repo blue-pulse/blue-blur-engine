@@ -5,58 +5,70 @@ function player_spindash_start() {
 	// Start spindash
 	if (spindash_revolutions == -1) {
 		if (state == states.crouching and button_check_pressed("btn_1")) {
-			// Handle parameters
+			// Parameters
 			spindash_revolutions = 0;
 			hor_speed = 0;
 
-			// FX
+			// VFX
+			shake_effect(7);
 			instance_create_vfx(pos_x, pos_y + radius_y, obj_spindash_dust);
+
+			// SFX
 			audio_sound_pitch(snd_player_spindash_charge, spindash_sound_pitch);
 			audio_play_sfx(snd_player_spindash_charge);
-			shake_effect(7);
 		}
-	} else if (button_check("btn_down")) {
-		// Charge spindash
+	}
+
+	// Charge spindash
+	else if (button_check("btn_down")) {
 		if (button_check_pressed("btn_1")) {
 			// Increase the revolutions
 			spindash_revolutions = min(spindash_revolutions + 2, 8);
 
-			// FX
+			// VFX
+			shake_effect(7);
+
+			// SFX
 			spindash_sound_pitch += spindash_revolutions / 100;
 			audio_sound_pitch(snd_player_spindash_charge, min(1.15, spindash_sound_pitch));
 			audio_play_sfx(snd_player_spindash_charge);
-			shake_effect(7);
 		} else {
+			// Decrease the revolutions
 			spindash_revolutions -= floor(spindash_revolutions / 0.125) / 256;
 		}
-	} else {
-		// Release spindash
+	}
+
+	// Release spindash
+	else {
+		// Parameters
 		gnd_speed = (8 + round(spindash_revolutions) / 2) * dir;
-		is_rolling = true;
 		spindash_revolutions = -1;
 		state = states.rolling;
+		is_rolling = true;
 
-		// Handle hitbox
-		radius_x = small_radius_x;
-		radius_y = small_radius_y;
-		pos_y += default_radius_y - small_radius_y;
+		// Player's radius
+		radius_x = sm_radius_x;
+		radius_y = sm_radius_y;
+		pos_y += df_radius_y - sm_radius_y;
 
-		// Convert ground speed to actual speed
-		hor_speed = gnd_speed * dcos(angle);
-		ver_speed = gnd_speed * -dsin(angle);
+		// VFX
+		shake_effect(15);
 
-		// FX
+		// SFX
 		spindash_sound_pitch = 1;
 		audio_stop_sound(snd_player_spindash_charge);
 		audio_play_sfx(snd_player_spindash_release);
-		shake_effect(15);
+
+		// Convert ground speed to real speed
+		hor_speed = gnd_speed * dcos(angle);
+		ver_speed = gnd_speed * -dsin(angle);
 	}
 
-	// Set state
+	// Apply spindash animation
 	if (spindash_revolutions >= 0) {
 		state = states.spindash;
 	}
 
-	// Return action result
+	// Return flag
 	return is_rolling;
 }

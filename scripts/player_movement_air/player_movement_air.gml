@@ -12,39 +12,34 @@ function player_movement_air() {
 	}
 
 	if (!air_lock) {
-		// Go left
 		if (button_check("btn_left")) {
-			if (hor_speed > 0) {
-				// Decelerate
+			// Decelerate
+			if hor_speed > 0 {
 				hor_speed -= air_accel;
-			} else if (hor_speed > -max_hor_speed) {
-				// Accelerate
-				hor_speed -= air_accel;
+			}
 
+			// Accelerate
+			else if (hor_speed > -max_hor_speed) {
+				hor_speed -= air_accel;
 				if (hor_speed <= -max_hor_speed) {
 					hor_speed = -max_hor_speed;
 				}
 			}
-
-			// Set direction
 			dir = LEFT;
 		}
-
-		// Go right
 		if (button_check("btn_right")) {
+			// Decelerate
 			if (hor_speed < 0) {
-				// Decelerate
 				hor_speed += air_accel;
-			} else if (hor_speed < max_hor_speed) {
-				// Accelerate
-				hor_speed += air_accel;
+			}
 
+			// Accelerate
+			else if (hor_speed < max_hor_speed) {
+				hor_speed += air_accel;
 				if (hor_speed >= max_hor_speed) {
 					hor_speed = max_hor_speed;
 				}
 			}
-
-			// Set direction
 			dir = RIGHT;
 		}
 	}
@@ -54,3 +49,4 @@ function player_movement_air() {
 		hor_speed -= floor(hor_speed / 0.125) / 256;
 	}
 }
+

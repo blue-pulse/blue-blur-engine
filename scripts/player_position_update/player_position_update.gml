@@ -9,11 +9,7 @@ function player_position_update() {
 	
 	// Increase vertical speed while airborne
 	if (!is_grounded) {
-		ver_speed += gravity_force;
+		ver_speed += grv;
 	}
 	
-	// Limit speed
-	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
-	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
-    ver_speed = clamp(ver_speed, -max_abs_speed, max_abs_speed);
 }

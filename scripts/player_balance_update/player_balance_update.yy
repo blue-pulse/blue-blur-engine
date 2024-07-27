@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_balance_handle",
+  "%Name":"player_balance_update",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_balance_handle",
+  "name":"player_balance_update",
   "parent":{
     "name":"States",
     "path":"folders/Player/Parent/Scripts/States.yy",
