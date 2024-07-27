@@ -56,4 +56,3 @@ function player_movement_roll() {
 		gnd_speed = 2;
 	}
 }
-

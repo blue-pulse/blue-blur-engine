@@ -52,4 +52,3 @@ function player_movement_air() {
 		hor_speed -= floor(hor_speed / 0.125) / 256;
 	}
 }
-
