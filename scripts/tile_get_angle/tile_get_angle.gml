@@ -4,7 +4,7 @@ function tile_get_angle(index) {
 	if (tile) {
 		return global.tile_angles[tile];
 	}
-	
+
 	// If no tile found, return empty angle
 	return noone;
 }

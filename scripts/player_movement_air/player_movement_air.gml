@@ -43,6 +43,9 @@ function player_movement_air() {
 			dir = RIGHT;
 		}
 	}
+	
+	// Airspeed cap
+	ver_speed = clamp(ver_speed, -max_abs_speed, max_abs_speed);
 
 	// Apply air drag
 	if (!is_being_hurt and ver_speed < 0 and ver_speed > -4) {

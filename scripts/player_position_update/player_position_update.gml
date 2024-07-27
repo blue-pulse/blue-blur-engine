@@ -11,5 +11,4 @@ function player_position_update() {
 	if (!is_grounded) {
 		ver_speed += grv;
 	}
-	
 }

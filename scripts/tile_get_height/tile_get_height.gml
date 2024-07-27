@@ -4,8 +4,8 @@ function tile_get_height(pos_x, tiledata, index) {
 	} else {
 		var height_to_use = pos_x mod 16;
 	}
-	
-	// Return found height
 	var tile = (index - 1) mod global.tile_data[1] + 1;
+
+	// Return found height
 	return global.tile_heights[tile][height_to_use];
 }

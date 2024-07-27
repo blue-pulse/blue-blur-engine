@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"globals_setup",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Core/Setup/Scripts.yy",
+    "name":"Setup",
+    "path":"folders/Core/Setup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -58,7 +58,7 @@ function player_movement_ground() {
 	}
 
 	// Apply friction
-	if (!button_check("btn_left") and !button_check("btn_right")) {
+	if (abs(gnd_speed) > max_hor_speed or !button_check("btn_left") and !button_check("btn_right")) {
 		if (gnd_speed > 0) {
 			gnd_speed = max(gnd_speed - frict, 0);
 		} else {
@@ -70,6 +70,10 @@ function player_movement_ground() {
 	// Convert ground inertia to speed
 	hor_speed = gnd_speed * dcos(angle);
 	ver_speed = gnd_speed * -dsin(angle);
+	
+	// Speed cap
+	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
+	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
 
 	// Set animation
 	if (is_pushing) {
