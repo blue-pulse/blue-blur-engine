@@ -10,15 +10,20 @@ function player_jump_update() {
 	}
 
 	// Homing dash
-	if (state == states.jumping) {
-		if (is_dashing) {
+	if (is_dashing) {
+		// VFX
+		if (state == states.jumping) {
 			player_draw_trail();
-		} else if (ver_speed >= min_jump_height and button_check_pressed("btn_1")) {
-			air_lock = true;
-			is_dashing = true;
-			hor_speed = 8 * dir;
-			ver_speed = 0;
-			audio_play_sfx(ast_dash.snd_sfx);
 		}
+	} else if (ver_speed >= min_jump_height and button_check_pressed("btn_1")) {
+		// Parameters
+		air_lock = true;
+		is_dashing = true;
+		hor_speed = 8 * dir;
+		ver_speed = 0;
+		state = states.jumping;
+		
+		// SFX
+		audio_play_sfx(ast_dash.snd_sfx);
 	}
 }

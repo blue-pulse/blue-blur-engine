@@ -40,16 +40,16 @@ function player_jump_start() {
 
 	// Change player's radius
 	if (!is_rolling) {
+		is_rolling = true;
 		pos_y += df_radius_y - sm_radius_y;
 		radius_x = sm_radius_x;
 		radius_y = sm_radius_y;
-		is_rolling = true;
 	} else {
 		radius_x = sm_radius_x;
 		radius_y = sm_radius_y;
 	}
 
-    // Play sound effects
+    // FX
     audio_play_sfx(snd_player_jump);
     audio_play_sfx(snd_player_wind);
 
