@@ -73,6 +73,7 @@ ast_boost = {
 }
 
 ast_dash = {
+	spr_aura: 0,
 	snd_sfx: 0,
 	snd_clips: [],
 }

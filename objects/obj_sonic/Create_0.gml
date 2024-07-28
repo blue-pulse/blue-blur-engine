@@ -14,10 +14,6 @@ pos_x = x;
 pos_y = y - radius_y - 1;
 
 // Assets
-ast_hud = {
-	spr_icon: spr_sonic_icon,
-}
-
 ast_boost = {
 	img_blend: #64DCFF,
 	par_trail: part_type_create_trail(#33A8FF),
@@ -32,8 +28,13 @@ ast_boost = {
 }
 
 ast_dash = {
+	spr_aura: spr_sonic_jumpball,
 	snd_sfx: snd_sonic_dash,
 	snd_clips: [snd_sonic_boost_a, snd_sonic_boost_b],
+}
+
+ast_hud = {
+	spr_icon: spr_sonic_icon,
 }
 
 ast_stomp = {

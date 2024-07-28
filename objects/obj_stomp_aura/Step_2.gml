@@ -1,6 +1,9 @@
 if (Player.is_stomping) {
+	// Stick to the player position
+	x = Player.x;
+	y = Player.y;
+
 	// Increase alpha
-	Player.state = states.stomping
 	if (image_alpha < 1) {
 		image_alpha += 0.25;
 	}
@@ -11,7 +14,3 @@ if (Player.is_stomping) {
 		instance_destroy();
 	}
 }
-
-// Stick to the player position
-x = Player.x;
-y = Player.y;

@@ -8,7 +8,10 @@ function player_jump_update() {
 	if (ver_speed < min_jump_height and !button_check("btn_1")) {
 		ver_speed = min_jump_height;
 	}
-
+	
+	// VFX
+	instance_create_vfx(pos_x, pos_y, obj_jumpball);
+	
 	// Homing dash
 	if (is_dashing) {
 		// VFX

@@ -124,6 +124,7 @@
     {"id":{"name":"obj_bridge","path":"objects/obj_bridge/obj_bridge.yy",},},
     {"id":{"name":"obj_core_controller","path":"objects/obj_core_controller/obj_core_controller.yy",},},
     {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},},
+    {"id":{"name":"obj_jumpball","path":"objects/obj_jumpball/obj_jumpball.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_sonic","path":"objects/obj_sonic/obj_sonic.yy",},},
     {"id":{"name":"obj_spindash_dust","path":"objects/obj_spindash_dust/obj_spindash_dust.yy",},},

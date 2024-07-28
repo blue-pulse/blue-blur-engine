@@ -85,6 +85,7 @@
     {"name":"obj_boot_controller","order":2,"path":"objects/obj_boot_controller/obj_boot_controller.yy",},
     {"name":"obj_core_controller","order":1,"path":"objects/obj_core_controller/obj_core_controller.yy",},
     {"name":"obj_hud","order":1,"path":"objects/obj_hud/obj_hud.yy",},
+    {"name":"obj_jumpball","order":8,"path":"objects/obj_jumpball/obj_jumpball.yy",},
     {"name":"obj_spindash_dust","order":5,"path":"objects/obj_spindash_dust/obj_spindash_dust.yy",},
     {"name":"obj_stage_controller","order":1,"path":"objects/obj_stage_controller/obj_stage_controller.yy",},
     {"name":"obj_stomp_aura","order":7,"path":"objects/obj_stomp_aura/obj_stomp_aura.yy",},
