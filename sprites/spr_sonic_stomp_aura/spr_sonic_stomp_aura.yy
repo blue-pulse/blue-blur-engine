@@ -28,7 +28,7 @@
   ],
   "name":"spr_sonic_stomp_aura",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/Player/Sonic/Sprites.yy",
@@ -96,7 +96,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":18,
-    "yorigin":23,
+    "yorigin":15,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

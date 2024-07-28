@@ -5,6 +5,6 @@ if (Player.state != states.jumping) {
 
 // Stick to the player position
 else {
-	x = Player.pos_x;
-	y = Player.pos_y;
+	x = floor(Player.pos_x);
+	y = floor(Player.pos_y);
 }

@@ -4,6 +4,7 @@ function sonic_stomp_handle() {
 		player_draw_trail();
 	} else if (!is_grounded and ver_speed >= min_jump_height and button_check_pressed("btn_2")) {
 		// Change speed
+		gnd_speed = 0;
 		hor_speed = 0;
 		ver_speed = 8;
 		

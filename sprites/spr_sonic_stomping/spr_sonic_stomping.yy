@@ -26,7 +26,7 @@
   ],
   "name":"spr_sonic_stomping",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/Player/Sonic/Sprites.yy",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":17,
-    "yorigin":23,
+    "yorigin":29,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

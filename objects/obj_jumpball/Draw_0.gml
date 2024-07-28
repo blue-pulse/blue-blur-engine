@@ -1,5 +1,5 @@
 if (!Player.is_boosting) {
-	// Sprite is offset one pixel to the left when mirrored. Let's fix that
+	// Sprite is offset one pixel when mirrored. Let's fix that
 	if (image_xscale == LEFT) {
 		x--;
 	}

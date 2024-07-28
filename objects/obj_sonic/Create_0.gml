@@ -30,7 +30,6 @@ ast_boost = {
 ast_dash = {
 	spr_aura: spr_sonic_jumpball,
 	snd_sfx: snd_sonic_dash,
-	snd_clips: [snd_sonic_boost_a, snd_sonic_boost_b],
 }
 
 ast_hud = {

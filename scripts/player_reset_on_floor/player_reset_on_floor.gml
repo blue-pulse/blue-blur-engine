@@ -1,6 +1,6 @@
 function player_reset_on_floor() {
 	// Wait until the player has landed
-	if !is_grounded {
+	if (!is_grounded) {
 		return;
 	}
 
@@ -29,7 +29,6 @@ function player_reset_on_floor() {
 		is_jumping = false;
 		is_pushing = false;
 		is_rolling = false;
-		is_stomping = false;
 		
 		// Reset flags when hurt
 		if (is_being_hurt) {
@@ -43,11 +42,7 @@ function player_reset_on_floor() {
 		}
 
 		// Reset gravity
-		if (!is_underwater) {
-			grv = 0.21875;
-		} else {
-			grv = 0.0625
-		}
+		grv = (is_underwater) ? (0.0625) : (0.21875);
 
 		// Reset collision radiuses if not rolling
 		if (!is_rolling) {
