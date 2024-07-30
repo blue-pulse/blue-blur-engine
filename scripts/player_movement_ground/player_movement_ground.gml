@@ -25,8 +25,7 @@ function player_movement_ground() {
 					gnd_speed = max(gnd_speed - accel, -max_hor_speed);
 				}
 			}
-		}
-		else if button_check("btn_right") {
+		} else if button_check("btn_right") {
 			// Decelerate
 			if gnd_speed < 0 {
 				gnd_speed += decel;

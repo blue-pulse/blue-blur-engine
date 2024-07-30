@@ -1,7 +1,7 @@
 if (Player.is_stomping) {
 	// Stick to the player position
 	x = floor(Player.pos_x);
-	y = floor(Player.pos_y - Player.radius_y);
+	y = floor(Player.pos_y - Player.sm_radius_y);
 
 	// Increase alpha
 	if (image_alpha < 1) {
