@@ -7,4 +7,5 @@ if (Player.state != states.jumping) {
 else {
 	x = floor(Player.pos_x);
 	y = floor(Player.pos_y);
+	image_xscale = Player.dir;
 }
