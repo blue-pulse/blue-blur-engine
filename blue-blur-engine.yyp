@@ -18,7 +18,7 @@
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Core/Controllers/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Core/Controllers/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Input","folderPath":"folders/Core/Input.yy","name":"Input","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Others","folderPath":"folders/Core/Others.yy","name":"Others","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Utils","folderPath":"folders/Core/Utils.yy","name":"Utils","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Screen","folderPath":"folders/Core/Screen.yy","name":"Screen","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Setup","folderPath":"folders/Core/Setup.yy","name":"Setup","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"GUI","folderPath":"folders/GUI.yy","name":"GUI","resourceType":"GMFolder","resourceVersion":"2.0",},

@@ -4,7 +4,7 @@
     {"name":"Objects","order":1,"path":"folders/Core/Controllers/Objects.yy",},
     {"name":"Rooms","order":2,"path":"folders/Core/Controllers/Rooms.yy",},
     {"name":"Input","order":2,"path":"folders/Core/Input.yy",},
-    {"name":"Others","order":3,"path":"folders/Core/Others.yy",},
+    {"name":"Utils","order":3,"path":"folders/Core/Utils.yy",},
     {"name":"Screen","order":1,"path":"folders/Core/Screen.yy",},
     {"name":"Setup","order":4,"path":"folders/Core/Setup.yy",},
     {"name":"GUI","order":13,"path":"folders/GUI.yy",},

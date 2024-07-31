@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"audio_play_speech",
   "parent":{
-    "name":"Others",
-    "path":"folders/Core/Others.yy",
+    "name":"Utils",
+    "path":"folders/Core/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

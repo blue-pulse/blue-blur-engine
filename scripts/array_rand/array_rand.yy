@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"array_rand",
   "parent":{
-    "name":"Others",
-    "path":"folders/Core/Others.yy",
+    "name":"Utils",
+    "path":"folders/Core/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
