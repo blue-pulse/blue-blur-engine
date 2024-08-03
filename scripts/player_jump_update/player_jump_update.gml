@@ -5,8 +5,8 @@ function player_jump_update() {
 	}
 
 	// Shorten jump force
-	if (ver_speed < min_jump_height and !button_check("btn_1")) {
-		ver_speed = min_jump_height;
+	if (ver_speed < min_jmp_height and !button_check("btn_1")) {
+		ver_speed = min_jmp_height;
 	}
 	
 	// VFX
@@ -18,7 +18,7 @@ function player_jump_update() {
 		if (state == states.jumping) {
 			player_draw_trail();
 		}
-	} else if (ver_speed >= min_jump_height and button_check_pressed("btn_1")) {
+	} else if (ver_speed >= min_jmp_height and button_check_pressed("btn_1")) {
 		// Parameters
 		air_lock = true;
 		is_dashing = true;

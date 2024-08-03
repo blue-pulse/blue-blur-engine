@@ -15,16 +15,17 @@ accel = 0;
 air_accel = 0;
 decel = 0;
 frict = 0;
+grv = 0.21875;
 gnd_speed = 0;
 hor_speed = 0;
-jump_height = 0;
+ver_speed = 0;
+jmp_height = 0;
+min_jmp_height = 0;
 max_hor_speed = 0;
 max_ver_speed = 15.75;
 max_abs_speed = 16;
-min_jump_height = 0;
 roll_decel = 0;
 roll_frict = 0;
-ver_speed = 0;
 
 // Set collision radiuses
 df_radius_x = 9;
@@ -34,12 +35,11 @@ sm_radius_y = 14;
 radius_x = df_radius_x;
 radius_y = df_radius_y;
 
-// Set defaults
+// Set control variables
 allow_collision = true;
 allow_movement = true;
 collision_mode = [0, 0];
 dir = RIGHT;
-grv = 0.21875;
 hitbox = [0, 0];
 on_object = noone;
 plane = 0;
