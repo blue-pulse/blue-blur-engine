@@ -48,5 +48,8 @@ function sonic_states_anim() {
 		case states.stomping:
 			sonic_anim_stomping();
 			break;
+		case states.sliding:
+			sonic_anim_sliding();
+			break;
 	}
 }

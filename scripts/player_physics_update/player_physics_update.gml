@@ -19,6 +19,7 @@ function player_physics_update() {
 			player_balance_update();
 			player_collision_wall();
 			player_roll_update();
+			player_slide_update();
 		}
 		// Finally
 		player_position_update();

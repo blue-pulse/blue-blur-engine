@@ -1,5 +1,5 @@
 function player_hitbox_update() {
-	if (state == states.crouching) {
+	if (state == states.crouching or state == states.sliding) {
 		hitbox = [
 			floor(pos_x - 8), floor(pos_y - 4),
 			floor(pos_x + 8), floor(pos_y + 16),

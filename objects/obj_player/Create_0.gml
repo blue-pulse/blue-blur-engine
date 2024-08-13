@@ -59,10 +59,15 @@ is_grounded = false;
 is_jumping = false;
 is_pushing = false;
 is_rolling = false;
+is_sliding = false;
 is_stomping = false;
 is_underwater = false;
 
 // Assets
+ast_attack = {
+	snd_clips: [],
+}
+
 ast_boost = {
 	img_blend: #FFFFFF,
 	par_trail: part_type_create_trail(#FFFFFF),

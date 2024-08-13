@@ -1,6 +1,6 @@
 function player_roll_update() {
 	// Early exit
-	if (!forced_roll and(button_check("btn_left") or button_check("btn_right")) or spindash_revolutions != -1) {
+	if (!forced_roll and (button_check("btn_left") or button_check("btn_right")) or spindash_revolutions != -1) {
 		return;
 	}
 
