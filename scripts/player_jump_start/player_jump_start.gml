@@ -27,8 +27,8 @@ function player_jump_start() {
 	}
 
 	// Change player's parameters
-	hor_speed += jump_height * dsin(angle);
-	ver_speed += jump_height * dcos(angle);
+	hor_speed += jmp_height * dsin(angle);
+	ver_speed += jmp_height * dcos(angle);
 	is_grounded = false;
 	is_jumping = true;
 	is_pushing = false;
