@@ -29,6 +29,7 @@ function player_reset_on_floor() {
 		is_jumping = false;
 		is_pushing = false;
 		is_rolling = false;
+		is_sliding = false;
 		
 		// Reset flags when hurt
 		if (is_being_hurt) {
@@ -44,11 +45,9 @@ function player_reset_on_floor() {
 		// Reset gravity
 		grv = (is_underwater) ? (0.0625) : (0.21875);
 
-		// Reset collision radiuses if not rolling
-		if (!is_rolling) {
-			pos_y -= df_radius_y - radius_y;
-			radius_x = df_radius_x;
-			radius_y = df_radius_y;
-		}
+		// Reset collision radiuses assuming the player isn't rolling or sliding
+		pos_y -= df_radius_y - radius_y;
+		radius_x = df_radius_x;
+		radius_y = df_radius_y;
 	}
 }

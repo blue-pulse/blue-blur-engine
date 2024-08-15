@@ -10,7 +10,8 @@ function player_movement_air() {
 	if (!is_jumping and ver_speed < -max_ver_speed) {
 		ver_speed = -max_ver_speed;
 	}
-
+	
+	// Handle movement
 	if (!air_lock) {
 		if (button_check("btn_left")) {
 			// Decelerate

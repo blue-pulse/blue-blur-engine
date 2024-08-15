@@ -8,6 +8,14 @@ function player_physics_update() {
 			player_slope_resist_roll();
 			player_movement_roll();
 			player_collision_wall();
+		} else if (is_sliding) {
+			// Doing an action
+			if player_jump_start() then return false;
+			
+			// Sliding
+			player_slope_resist();
+			player_movement_slide();
+			player_collision_wall();
 		} else {
 			// Doing an action
 			if player_spindash_start() then return false;

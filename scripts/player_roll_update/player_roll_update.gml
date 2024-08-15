@@ -6,8 +6,6 @@ function player_roll_update() {
 
 	// Check if we should roll up
 	var manual_roll = (button_check("btn_down") and abs(gnd_speed) >= 0.5);
-
-	// Roll up
 	if (manual_roll or forced_roll) {
 		pos_y += df_radius_y - sm_radius_y;
 		radius_y = sm_radius_y;

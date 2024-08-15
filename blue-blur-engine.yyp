@@ -509,6 +509,7 @@
     {"id":{"name":"player_movement_air","path":"scripts/player_movement_air/player_movement_air.yy",},},
     {"id":{"name":"player_movement_ground","path":"scripts/player_movement_ground/player_movement_ground.yy",},},
     {"id":{"name":"player_movement_roll","path":"scripts/player_movement_roll/player_movement_roll.yy",},},
+    {"id":{"name":"player_movement_slide","path":"scripts/player_movement_slide/player_movement_slide.yy",},},
     {"id":{"name":"player_params_update","path":"scripts/player_params_update/player_params_update.yy",},},
     {"id":{"name":"player_physics_update","path":"scripts/player_physics_update/player_physics_update.yy",},},
     {"id":{"name":"player_position_update","path":"scripts/player_position_update/player_position_update.yy",},},
