@@ -43,8 +43,8 @@ function player_spindash_start() {
 		// Parameters
 		gnd_speed = (8 + round(spindash_revolutions) / 2) * dir;
 		spindash_revolutions = -1;
-		state = states.rolling;
 		is_rolling = true;
+		player_set_state(states.rolling);
 
 		// Player's radius
 		radius_x = sm_radius_x;
@@ -66,7 +66,7 @@ function player_spindash_start() {
 
 	// Apply spindash animation
 	if (spindash_revolutions >= 0) {
-		state = states.spindash;
+		player_set_state(states.spindash, false);
 	}
 
 	// Return flag

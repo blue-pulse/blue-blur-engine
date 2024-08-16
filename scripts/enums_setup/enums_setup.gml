@@ -22,7 +22,7 @@ enum states {
 // Drawing depths and audio priorities
 enum orders {
 	// Audio
-	bgm = 0,
+	bgm = 100,
 	sfx = 1,
 	voices = 2,
 	

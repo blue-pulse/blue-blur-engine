@@ -14,8 +14,7 @@ function sonic_stomp_handle() {
 		is_stomping = true;
 		
 		// VFX
-		image_index = 0;
-		state = states.stomping;
+		player_set_state(states.stomping);
 		instance_create_vfx(prev_pos_x, prev_pos_y, obj_stomp_aura);
 		
 		// SFX

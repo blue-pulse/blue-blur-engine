@@ -24,7 +24,7 @@ function player_jump_update() {
 		is_dashing = true;
 		hor_speed = 8 * dir;
 		ver_speed = 0;
-		state = states.jumping;
+		player_set_state(states.jumping);
 		
 		// SFX
 		audio_play_sfx(ast_dash.snd_sfx);

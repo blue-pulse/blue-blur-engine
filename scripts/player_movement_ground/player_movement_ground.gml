@@ -50,7 +50,7 @@ function player_movement_ground() {
 		// Perform skid. angle check here is different in comparison to collision mode checks
 		if (state != states.skidding and (angle <= 45 or angle >= 316.41)) {
 			if (button_check("btn_left") and gnd_speed >= 4 or button_check("btn_right") and gnd_speed <= -4) {
-				state = states.skidding;
+				player_set_state(states.skidding);
 				audio_play_sfx(snd_player_skid, true);
 			}
 		}
@@ -76,23 +76,23 @@ function player_movement_ground() {
 
 	// Set animation
 	if (is_pushing) {
-		state = states.pushing;
+		player_set_state(states.pushing, false);
 	} else if (gnd_speed == 0) {
 		// Unsymmetrical angle check
 		if (angle <= 45 or angle >= 316.41) {
 			if (button_check("btn_up")) {
-				state = states.searching;
+				player_set_state(states.searching, false);
 			} else if (button_check("btn_down")) {
-				state = states.crouching;
+				player_set_state(states.crouching, false);
 			} else {
-				state = states.idle;
+				player_set_state(states.idle, false);
 			}
 		}
 	} else {
 		if (state != states.skidding) {
-			state = states.moving;
+			player_set_state(states.moving, false);
 		} else if (gnd_speed > 0 and button_check("btn_right") or gnd_speed < 0 and button_check("btn_left")) {
-			state = states.moving;
+			player_set_state(states.moving, false);
 		}
 	}
 }

@@ -6,7 +6,6 @@ function sonic_anim_jumping() {
 		image_speed = map(current_speed, 0, 8, 2, 3);
 	} else {
 		// Trying to land
-		image_index = 0;
-		state = states.landing;
+		player_set_state(states.landing);
 	}
 }

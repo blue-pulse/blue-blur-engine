@@ -20,7 +20,7 @@ function player_reset_on_floor() {
 	} else {
 		// Update player animation
 		if (!on_object and state != states.idle and state != states.spindash) {
-			state = states.moving;
+			player_set_state(states.moving);
 		}
 
 		// Reset flags

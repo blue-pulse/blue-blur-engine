@@ -3,8 +3,7 @@ function player_movement_slide() {
 	if (angle > 45 and angle < 316.41) {
 		is_sliding = false;
 		is_rolling = true;
-		image_index = 0;
-		state = states.rolling;
+		player_set_state(states.rolling);
 		audio_play_sfx(snd_player_roll);
 		return;
 	}
@@ -56,6 +55,6 @@ function player_movement_slide() {
 		radius_x = df_radius_x;
 		radius_y = df_radius_y;
 		is_sliding = false;
-		state = states.moving;
+		player_set_state(states.moving);
 	}
 }

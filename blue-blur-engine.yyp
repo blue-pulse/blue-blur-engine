@@ -516,6 +516,7 @@
     {"id":{"name":"player_reset_on_floor","path":"scripts/player_reset_on_floor/player_reset_on_floor.yy",},},
     {"id":{"name":"player_roll_update","path":"scripts/player_roll_update/player_roll_update.yy",},},
     {"id":{"name":"player_rotation_update","path":"scripts/player_rotation_update/player_rotation_update.yy",},},
+    {"id":{"name":"player_set_state","path":"scripts/player_set_state/player_set_state.yy",},},
     {"id":{"name":"player_slide_update","path":"scripts/player_slide_update/player_slide_update.yy",},},
     {"id":{"name":"player_slope_repel","path":"scripts/player_slope_repel/player_slope_repel.yy",},},
     {"id":{"name":"player_slope_resist_roll","path":"scripts/player_slope_resist_roll/player_slope_resist_roll.yy",},},

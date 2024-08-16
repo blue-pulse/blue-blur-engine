@@ -104,8 +104,7 @@ function player_collision_floor() {
 				var dist = min(4 + abs(floor(hor_speed)), 14);
 				if (find_floor[0] > dist) {
 					if (state == states.moving) {
-						image_index = 0;
-						state = states.falling;
+						player_set_state(states.falling);
 					}
 					is_pushing = false;
 					is_grounded = false;
@@ -130,8 +129,7 @@ function player_collision_floor() {
 				var dist = min(4 + abs(floor(ver_speed)), 14);
 				if (find_floor[0] > dist) {
 					if (state == states.moving) {
-						image_index = 0;
-						state = states.falling;
+						player_set_state(states.falling);
 					}
 					is_pushing = false;
 					is_grounded = false;
@@ -156,8 +154,7 @@ function player_collision_floor() {
 				var dist = min(4 + abs(floor(hor_speed)), 14);
 				if (find_floor[0] > dist) {
 					if (state == states.moving) {
-						image_index = 0;
-						state = states.falling;
+						player_set_state(states.falling);
 					}
 					is_pushing = false;
 					is_grounded = false;
@@ -182,8 +179,7 @@ function player_collision_floor() {
 				var dist = min(4 + abs(floor(ver_speed)), 14);
 				if (find_floor[0] > dist) {
 					if (state == states.moving) {
-						image_index = 0;
-						state = states.falling;
+						player_set_state(states.falling);
 					}
 					is_pushing = false;
 					is_grounded = false;

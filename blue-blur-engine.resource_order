@@ -433,6 +433,7 @@
     {"name":"player_reset_on_floor","order":4,"path":"scripts/player_reset_on_floor/player_reset_on_floor.yy",},
     {"name":"player_roll_update","order":4,"path":"scripts/player_roll_update/player_roll_update.yy",},
     {"name":"player_rotation_update","order":5,"path":"scripts/player_rotation_update/player_rotation_update.yy",},
+    {"name":"player_set_state","order":8,"path":"scripts/player_set_state/player_set_state.yy",},
     {"name":"player_slide_update","order":9,"path":"scripts/player_slide_update/player_slide_update.yy",},
     {"name":"player_slope_repel","order":2,"path":"scripts/player_slope_repel/player_slope_repel.yy",},
     {"name":"player_slope_resist_roll","order":4,"path":"scripts/player_slope_resist_roll/player_slope_resist_roll.yy",},

@@ -18,8 +18,7 @@ function player_slope_repel() {
 
 		// Change the state
 		if (state == states.moving) {
-			image_index = 0;
-			state = states.falling;
+			player_set_state(states.falling);
 		}
 	}
 }

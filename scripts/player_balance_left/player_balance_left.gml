@@ -1,18 +1,18 @@
 function player_balance_left(panic_condition) {
 	// Play main animations
 	if (dir == LEFT) {
-		state = states.balancing;
+		player_set_state(states.balancing, false);
 	} else if (dir == RIGHT) {
-		state = states.balancing_flip;
+		player_set_state(states.balancing_flip, false);
 	}
 
 	// Play additional animations
 	if (panic_condition) {
 		if (dir == RIGHT) {
-			state = states.balancing_turn;
+			player_set_state(states.balancing_turn, false);
 			dir = LEFT;
 		} else {
-			state = states.balancing_panic;
+			player_set_state(states.balancing_panic, false);
 		}
 	}
 }

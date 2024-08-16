@@ -47,7 +47,7 @@ function player_movement_roll() {
 			radius_x = df_radius_x;
 			radius_y = df_radius_y;
 			is_rolling = false;
-			state = states.idle;
+			player_set_state(states.idle);
 		}
 	}
 

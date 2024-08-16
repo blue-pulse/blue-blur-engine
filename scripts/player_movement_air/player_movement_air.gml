@@ -1,4 +1,10 @@
 function player_movement_air() {
+	// Cancel sliding
+	if (is_sliding) {
+		is_sliding = false;
+		player_set_state(states.falling);
+	}
+	
 	// Rotate angle back to 360 degrees
 	if (angle < 180) {
 		angle = max(angle - 2.8125, 0);

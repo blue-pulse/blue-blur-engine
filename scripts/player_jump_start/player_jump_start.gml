@@ -34,9 +34,9 @@ function player_jump_start() {
 	is_pushing = false;
 	on_object = false;
 	stick_to_convex = false;
-	state = states.jumping;
 	radius_x = df_radius_x;
 	radius_y = df_radius_y;
+	player_set_state(states.jumping);
 
 	// Change player's radius
 	if (!is_rolling) {
