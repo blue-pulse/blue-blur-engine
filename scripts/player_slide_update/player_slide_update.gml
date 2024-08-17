@@ -13,5 +13,5 @@ function player_slide_update() {
 	
 	// SFX
 	audio_play_speech(ast_attack.snd_clips);
-	audio_play_sfx(snd_player_skid);
+	audio_play_sfx(snd_player_slide);
 }

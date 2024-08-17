@@ -1,5 +1,6 @@
 // Macros for constants
 #macro TITLE "Blue Blur Engine"
+#macro MAX_SOUNDS 200
 #macro MAX_FPS 60
 #macro RIGHT 1
 #macro LEFT -1

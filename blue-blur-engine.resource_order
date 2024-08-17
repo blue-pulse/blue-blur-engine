@@ -477,6 +477,7 @@
     {"name":"snd_player_boost","order":8,"path":"sounds/snd_player_boost/snd_player_boost.yy",},
     {"name":"snd_player_roll","order":1,"path":"sounds/snd_player_roll/snd_player_roll.yy",},
     {"name":"snd_player_skid","order":5,"path":"sounds/snd_player_skid/snd_player_skid.yy",},
+    {"name":"snd_player_slide","order":11,"path":"sounds/snd_player_slide/snd_player_slide.yy",},
     {"name":"snd_player_spindash_charge","order":2,"path":"sounds/snd_player_spindash_charge/snd_player_spindash_charge.yy",},
     {"name":"snd_player_spindash_release","order":3,"path":"sounds/snd_player_spindash_release/snd_player_spindash_release.yy",},
     {"name":"snd_player_stomp_end","order":10,"path":"sounds/snd_player_stomp_end/snd_player_stomp_end.yy",},

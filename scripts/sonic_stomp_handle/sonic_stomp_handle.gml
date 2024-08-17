@@ -11,6 +11,7 @@ function sonic_stomp_handle() {
 		// Flags
 		air_lock = true;
 		is_jumping = false;
+		is_sliding = false;
 		is_stomping = true;
 		
 		// VFX
