@@ -16,7 +16,6 @@ pos_y = y - radius_y - 1;
 // Assets
 ast_attack = {
 	snd_clips: [
-		noone,
 		snd_sonic_attack_a,
 		snd_sonic_attack_b,
 		snd_sonic_attack_c,
