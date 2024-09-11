@@ -26,7 +26,7 @@ function input_binding_set_safe(_verb_name, _binding, _player_index = 0, _altern
         var _collisions = input_binding_test_collisions(_verb_name, _binding, _player_index, _profile_name);
         if (array_length(_collisions) == 0)
         {
-            input_binding_set(_verb_name, _binding, _player_index, _alternate, _profile_name);
+            input_binding_set(_verb_name, _binding, _player_index, _alternate);
         }
         else
         {
@@ -43,8 +43,8 @@ function input_binding_set_safe(_verb_name, _binding, _player_index = 0, _altern
                 return false;
             }
             
-            var _verb_b      = _collisions[0].__verb;
-            var _alternate_b = _collisions[0].__alternate;
+            var _verb_b      = _collisions[0].verb;
+            var _alternate_b = _collisions[0].alternate;
             
             if ((_verb_name != _verb_b) || (_alternate != _alternate_b))
             {

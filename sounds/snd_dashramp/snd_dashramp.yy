@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_dashramp",
+  "audioGroupId":{
+    "name":"grp_efectos_sonido",
+    "path":"audiogroups/grp_efectos_sonido",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":1,
+  "conversionMode":0,
+  "duration":2.197098,
+  "name":"snd_dashramp",
+  "parent":{
+    "name":"Dash Ramps",
+    "path":"folders/Sonidos/Efectos de sonido/Elementos de niveles/Dash Ramps.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_dashramp.wav",
+  "type":1,
+  "volume":0.7,
+}

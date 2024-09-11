@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_stardust_speedway",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":3,
+  "conversionMode":0,
+  "duration":105.89599,
+  "name":"msc_stardust_speedway",
+  "parent":{
+    "name":"Canciones",
+    "path":"folders/Sonidos/Canciones.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"msc_stardust_speedway.wav",
+  "type":1,
+  "volume":1.0,
+}

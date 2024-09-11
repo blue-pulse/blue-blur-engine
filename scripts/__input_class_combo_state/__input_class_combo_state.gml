@@ -80,7 +80,7 @@ function __input_class_combo_state(_name, _combo_def) constructor
             switch(_phase_type)
             {
                 case __INPUT_COMBO_PHASE.__PRESS:
-                    if (_verb_state.__press)
+                    if (_verb_state.press)
                     {
                         if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (press \"", _phase_verb, "\")");
                         __add_to_allow_hold_dict(_phase_verb);
@@ -89,7 +89,7 @@ function __input_class_combo_state(_name, _combo_def) constructor
                 break;
                 
                 case __INPUT_COMBO_PHASE.__RELEASE:
-                    if (not _verb_state.__held)
+                    if (not _verb_state.held)
                     {
                         if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (release \"", _phase_verb, "\")");
                         __remove_from_allow_hold_dict(_phase_verb);
@@ -99,13 +99,13 @@ function __input_class_combo_state(_name, _combo_def) constructor
                 break;
                 
                 case __INPUT_COMBO_PHASE.__PRESS_OR_RELEASE:
-                    if (_verb_state.__press)
+                    if (_verb_state.press)
                     {
                         if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (PRESS or release \"", _phase_verb, "\")");
                         __add_to_allow_hold_dict(_phase_verb);
                         __next_phase(_phase_array, true);
                     }
-                    else if (_verb_state.__release)
+                    else if (_verb_state.release)
                     {
                         if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (press or RELEASE \"", _phase_verb, "\")");
                         __remove_from_allow_hold_dict(_phase_verb);
@@ -115,7 +115,7 @@ function __input_class_combo_state(_name, _combo_def) constructor
                 break;
                 
                 case __INPUT_COMBO_PHASE.__HOLD:
-                    if (_verb_state.__held)
+                    if (_verb_state.held)
                     {
                         if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" phase ", __phase, " passed (hold \"", _phase_verb, "\")");
                         __add_to_allow_hold_dict(_phase_verb);
@@ -125,7 +125,7 @@ function __input_class_combo_state(_name, _combo_def) constructor
                 break;
                 
                 case __INPUT_COMBO_PHASE.__CHARGE:
-                    if (_verb_state.__held)
+                    if (_verb_state.held)
                     {
                         if (__charge_trigger)
                         {
@@ -175,19 +175,10 @@ function __input_class_combo_state(_name, _combo_def) constructor
     {
         if (__charge_measure)
         {
+            __remove_from_require_hold_array(_phase_array[__phase-1].__verb);
+            
             //Stop measuring the length of the charge
-            if (_reset_charge) 
-            {
-                __charge_measure = false;
-            }
-            else
-            {
-                var _verb = _phase_array[__phase].__verb;
-                _verb = __direction_mapping[$ _verb] ?? _verb;
-                
-                //Remove hold requirement when charge isn't reset
-                __remove_from_require_hold_array(_verb);
-            }
+            if (_reset_charge) __charge_measure = false;
         }
         
         //Allow retriggering of a charge phase if that's the next type we're going to evaluate
@@ -205,14 +196,13 @@ function __input_class_combo_state(_name, _combo_def) constructor
     static __check_valid = function(_player_verb_struct)
     {
         static _all_verb_array = __global.__all_verb_array;
-        var _ignore_dict = __combo.__ignore_dict;
         
         //Check everything that's meant to be pressed is being pressed
         var _i = 0;
         repeat(array_length(__require_hold_array))
         {
             var _verb = __require_hold_array[_i];
-            if (not _player_verb_struct[$ _verb].__held)
+            if (not _player_verb_struct[$ _verb].held)
             {
                 if (INPUT_COMBO_DEBUG) __input_trace("Combo \"", __name, "\" failed, verb \"", _verb, "\" not held (phase=", __phase, ")");
                 return false;
@@ -221,23 +211,23 @@ function __input_class_combo_state(_name, _combo_def) constructor
             ++_i;
         }
         
-        //Check that nothing that shouldn't be pressed isn't being pressed
+        //Check that nothing that shouldn't be pressed is being pressed
         var _i = 0;
         repeat(array_length(_all_verb_array))
         {
             var _verb = _all_verb_array[_i];
-            
+                
             var _state = _player_verb_struct[$ _verb];
             if (not _state.__inactive)
             {
                 if (variable_struct_exists(__allow_hold_dict, _verb))
                 {
                     //Once a verb has been released, don't allow it to be retriggered
-                    if (not _state.__held) variable_struct_remove(__allow_hold_dict, _verb);
+                    if (not _state.held) variable_struct_remove(__allow_hold_dict, _verb);
                 }
-                else if (not variable_struct_exists(_ignore_dict, __direction_mapping[$ _verb] ?? _verb)) //Don't trigger a failure if this verb has been ignored
+                else
                 {
-                    if (_state.__held)
+                    if (_state.held)
                     {
                         if (INPUT_COMBO_DEBUG && (__phase != 0)) __input_trace("Combo \"", __name, "\" failed, verb \"", _verb, "\" pressed erroneously (phase=", __phase, ")");
                         return false;
@@ -306,10 +296,10 @@ function __input_class_combo_state(_name, _combo_def) constructor
             var _backward_struct          = (_backward_verb         == undefined)? undefined : _player_verb_struct[$ _backward_verb];
             var _clockwise_struct         = (_clockwise_verb        == undefined)? undefined : _player_verb_struct[$ _clockwise_verb];
             
-            var _forward_state          = is_struct(_forward_struct         ) && (not           _forward_struct.__inactive) && _forward_struct.__held;
-            var _counterclockwise_state = is_struct(_counterclockwise_struct) && (not  _counterclockwise_struct.__inactive) && _counterclockwise_struct.__held;
-            var _backward_state         = is_struct(_backward_struct        ) && (not          _backward_struct.__inactive) && _backward_struct.__held;
-            var _clockwise_state        = is_struct(_clockwise_struct       ) && (not         _clockwise_struct.__inactive) && _clockwise_struct.__held;
+            var _forward_state          = is_struct(_forward_struct         ) && (not           _forward_struct.__inactive) && _forward_struct.held;
+            var _counterclockwise_state = is_struct(_counterclockwise_struct) && (not  _counterclockwise_struct.__inactive) && _counterclockwise_struct.held;
+            var _backward_state         = is_struct(_backward_struct        ) && (not          _backward_struct.__inactive) && _backward_struct.held;
+            var _clockwise_state        = is_struct(_clockwise_struct       ) && (not         _clockwise_struct.__inactive) && _clockwise_struct.held;
             
             if (_phase_verb == _forward_verb)
             {

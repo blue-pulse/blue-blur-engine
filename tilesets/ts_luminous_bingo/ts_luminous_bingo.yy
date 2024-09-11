@@ -1,0 +1,38 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"ts_luminous_bingo",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"ts_luminous_bingo",
+  "out_columns":14,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Luminous Bingo",
+    "path":"folders/Conjuntos de casillas/Luminous Bingo.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_luminous_bingo",
+    "path":"sprites/spr_luminous_bingo/spr_luminous_bingo.yy",
+  },
+  "spriteNoExport":true,
+  "textureGroupId":{
+    "name":"grp_texturas",
+    "path":"texturegroups/grp_texturas",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":96,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":96,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":200,
+}

@@ -6,7 +6,7 @@
   "name":"input_accessibility_global_cooldown_set",
   "parent":{
     "name":"12  Accessibility",
-    "path":"folders/Packages/Input v6.3.1/12  Accessibility.yy",
+    "path":"folders/Extensiones/Input v6.2.0/12  Accessibility.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"__input_gamepad_tester_tick",
   "parent":{
     "name":"Gamepad Tester",
-    "path":"folders/Packages/Input v6.3.1/(System)/Gamepad Tester.yy",
+    "path":"folders/Extensiones/Input v6.2.0/(System)/Gamepad Tester.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

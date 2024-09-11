@@ -6,7 +6,7 @@
   "name":"__input_key_is_ignored",
   "parent":{
     "name":"Keyboard and Mouse",
-    "path":"folders/Packages/Input v6.3.1/(System)/Keyboard and Mouse.yy",
+    "path":"folders/Extensiones/Input v6.2.0/(System)/Keyboard and Mouse.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

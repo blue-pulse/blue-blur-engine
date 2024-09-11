@@ -35,6 +35,8 @@ function __input_class_virtual() constructor
     __verb_down    = undefined;
     __max_distance = 1;
     
+    __4dir = false;
+    
     __threshold_min = INPUT_VIRTUAL_BUTTON_MIN_THRESHOLD;
     __threshold_max = INPUT_VIRTUAL_BUTTON_MAX_THRESHOLD;
     
@@ -44,7 +46,6 @@ function __input_class_virtual() constructor
     __follow           = false;
     __record_history   = false;
     __first_touch_only = false;
-    __momentary        = false;
     
     //State
     //These variables should be cleared by .__clear_state()
@@ -52,7 +53,6 @@ function __input_class_virtual() constructor
     __pressed             = false;
     __held                = false;
     __released            = false;
-    __held_buffer         = false;
     __normalized_x        = 0;
     __normalized_y        = 0;
     __touch_x             = undefined;
@@ -61,7 +61,7 @@ function __input_class_virtual() constructor
     __touch_start_y       = undefined;
     __history_array       = undefined; //Created when setting history recording
     __history_count       = 0;
-    __capture_frame       = undefined;
+    __captured_this_frame = false;
     
     
     
@@ -165,26 +165,26 @@ function __input_class_virtual() constructor
     static get_position = function()
     {
         static _struct = {
-            __left:   undefined,
-            __top:    undefined,
-            __right:  undefined,
-            __bottom: undefined,
-            __width:  undefined,
-            __height: undefined,
-            __x:      undefined,
-            __y:      undefined,
-            __radius: undefined,
+            left:   undefined,
+            top:    undefined,
+            right:  undefined,
+            bottom: undefined,
+            width:  undefined,
+            height: undefined,
+            x:      undefined,
+            y:      undefined,
+            radius: undefined,
         };
         
-        _struct.__left   = __left;
-        _struct.__top    = __top;
-        _struct.__right  = __right;
-        _struct.__bottom = __bottom;
-        _struct.__width  = __width;
-        _struct.__height = __height;
-        _struct.__x      = __x;
-        _struct.__y      = __y;
-        _struct.__radius = __radius;
+        _struct.left   = __left;
+        _struct.top    = __top;
+        _struct.right  = __right;
+        _struct.bottom = __bottom;
+        _struct.width  = __width;
+        _struct.height = __height;
+        _struct.x      = __x;
+        _struct.y      = __y;
+        _struct.radius = __radius;
         
         return _struct;
     }
@@ -203,32 +203,6 @@ function __input_class_virtual() constructor
         return self;
     }
     
-    // Horizontal 1-axis DPAD
-    static hpad = function(_click, _left, _right)
-    {
-        if (__destroyed || __background) return self;
-        __type       = INPUT_VIRTUAL_TYPE.DPAD_HORIZONTAL;
-        __verb_click = _click;
-        __verb_left  = _left;
-        __verb_right = _right;
-        __verb_up    = undefined;
-        __verb_down  = undefined;
-        return self;
-    }
-
-    // Vertical 1-axis DPAD
-    static vpad = function(_click, _up, _down)
-    {
-        if (__destroyed || __background) return self;
-        __type       = INPUT_VIRTUAL_TYPE.DPAD_VERTICAL;
-        __verb_click = _click;
-        __verb_left  = undefined;
-        __verb_right = undefined;
-        __verb_up    = _up;
-        __verb_down  = _down;
-        return self;
-    }
-
     static dpad = function(_click, _left, _right, _up, _down, _4dir = false)
     {
         if (__destroyed || __background) return self;
@@ -280,18 +254,18 @@ function __input_class_virtual() constructor
     static get_verbs = function()
     {
         static _struct = {
-            __click: undefined,
-            __left:  undefined,
-            __right: undefined,
-            __up:    undefined,
-            __down:  undefined,
+            click: undefined,
+            left:  undefined,
+            right: undefined,
+            up:    undefined,
+            down:  undefined,
         };
         
-        _struct.__click = __verb_click;
-        _struct.__left  = __verb_left;
-        _struct.__right = __verb_right;
-        _struct.__up    = __verb_up;
-        _struct.__down  = __verb_down;
+        _struct.click = __verb_click;
+        _struct.left  = __verb_left;
+        _struct.right = __verb_right;
+        _struct.up    = __verb_up;
+        _struct.down  = __verb_down;
         
         return _struct;
     }
@@ -309,12 +283,12 @@ function __input_class_virtual() constructor
     static get_threshold = function()
     {
         static _struct = {
-            __mini: undefined,
-            __maxi: undefined,
+            mini: undefined,
+            maxi: undefined,
         };
         
-        _struct.__mini = __threshold_min;
-        _struct.__maxi = __threshold_max;
+        _struct.mini = __threshold_min;
+        _struct.maxi = __threshold_max;
         
         return _struct;
     }
@@ -407,18 +381,6 @@ function __input_class_virtual() constructor
         return __reference;
     }
     
-    static momentary = function(_state)
-    {
-        __momentary = _state;
-        
-        return self;
-    }
-    
-    static get_momentary = function()
-    {
-        return __momentary;
-    }
-    
     #endregion
     
     
@@ -474,7 +436,7 @@ function __input_class_virtual() constructor
         return __touch_y;
     }
     
-    static get_touch_dx = function()
+    static get_touch_start_dx = function()
     {
         if (__destroyed) return 0;
         if (__prev_x == undefined) return 0;
@@ -482,7 +444,7 @@ function __input_class_virtual() constructor
         return __touch_x - __prev_x;
     }
     
-    static get_touch_dy = function()
+    static get_touch_start_dy = function()
     {
         if (__destroyed) return 0;
         if (__prev_y == undefined) return 0;
@@ -490,18 +452,18 @@ function __input_class_virtual() constructor
         return __touch_y - __prev_y;
     }
     
-    static get_touch_start_x = function()
+    static get_touch_x = function()
     {
         if (__destroyed) return 0;
         
-        return __touch_start_x;
+        return __touch_x;
     }
     
-    static get_touch_start_y = function()
+    static get_touch_y = function()
     {
         if (__destroyed) return 0;
         
-        return __touch_start_y;
+        return __touch_y;
     }
     
     #endregion
@@ -655,10 +617,9 @@ function __input_class_virtual() constructor
     {
         __touch_device = undefined;
         
-        __pressed     = false;
-        __held        = false;
-        __released    = false;
-        __held_buffer = false;
+        __pressed  = false;
+        __held     = false;
+        __released = false;
             
         //Clear touch position variables
         __normalized_x  = 0;
@@ -729,18 +690,15 @@ function __input_class_virtual() constructor
         
         if (_over)
         {
-            // Initialize the starting point
             __touch_start_x = _touch_x;
             __touch_start_y = _touch_y;
-            __touch_x       = __touch_start_x;
-            __touch_y       = __touch_start_y;
             
             if (__record_history) __history_push(_touch_x, _touch_y);
             
             //We set further variables in the __tick method()
             
             __touch_device = _device;
-            __capture_frame = __global.__frame;
+            __captured_this_frame = true;
         }
         
         return _over;
@@ -759,8 +717,10 @@ function __input_class_virtual() constructor
             if (__destroyed) return undefined;
         }
         
-        if (__capture_frame == __global.__frame)
+        if (__captured_this_frame)
         {
+            __captured_this_frame = false;
+            
             __pressed  = true;
             __held     = true;
             __released = false;
@@ -781,23 +741,7 @@ function __input_class_virtual() constructor
         }
         else
         {
-            var _sustain = __momentary? (__capture_frame == __global.__frame) : device_mouse_check_button(__touch_device, mb_left);          
-            
-            //Guard iOS dropping a sustained hold on SystemGestureGate timeout
-            if (__INPUT_ON_IOS)
-            {
-                if (!_sustain && (__global.__frame - __capture_frame > 20))
-                {
-                    if (not __held_buffer)
-                    {
-                        _sustain = true;
-                    }
-                    
-                    __held_buffer = !__held_buffer;
-                }
-            }
-            
-            if (not _sustain)
+            if (not device_mouse_check_button(__touch_device, mb_left))
             {
                 __pressed  = false;
                 __held     = false;
@@ -808,14 +752,8 @@ function __input_class_virtual() constructor
                 var _player = __global.__touch_player;
                 _player.__verb_set_from_virtual(__verb_click, 1, 1, false);
                 
-                __prev_x = __touch_x;
-                __prev_y = __touch_y;
-                
-                if (not __held_buffer)
-                {
-                    __touch_x = device_mouse_x_to_gui(__touch_device);
-                    __touch_y = device_mouse_y_to_gui(__touch_device);
-                }
+                __touch_x = device_mouse_x_to_gui(__touch_device);
+                __touch_y = device_mouse_y_to_gui(__touch_device);
                 
                 if (__record_history) __history_push(__touch_x, __touch_y);
                 
@@ -842,6 +780,9 @@ function __input_class_virtual() constructor
                         __input_error("Reference point type (", __reference, ") not supported");
                     break;
                 }
+                
+                __prev_x = __touch_x;
+                __prev_y = __touch_y;
                 
                 var _length = _dx*_dx + _dy*_dy;
                 if (_length <= 0)
@@ -892,28 +833,6 @@ function __input_class_virtual() constructor
                 {
                     switch(__type)
                     {
-                        case INPUT_VIRTUAL_TYPE.DPAD_VERTICAL:
-                            if ((floor((point_direction(0, 0, __normalized_x, __normalized_y)) / 180) mod 2) == 1)
-                            {
-                                _player.__verb_set_from_virtual(__verb_down, 1, 1, false);
-                            }
-                            else
-                            {
-                                _player.__verb_set_from_virtual(__verb_up, 1, 1, false)   
-                            }
-                        break;
-                        
-                        case INPUT_VIRTUAL_TYPE.DPAD_HORIZONTAL:
-                            if ((floor((point_direction(0, 0, __normalized_x, __normalized_y) + 270) / 180) mod 2) == 1)
-                            {
-                                _player.__verb_set_from_virtual(__verb_right, 1, 1, false);
-                            }
-                            else
-                            {
-                                _player.__verb_set_from_virtual(__verb_left, 1, 1, false)   
-                            }
-                        break;
-
                         case INPUT_VIRTUAL_TYPE.DPAD_4DIR:
                             //Split the input direction into 4 discrete parts
                             var _direction = floor((point_direction(0, 0, __normalized_x, __normalized_y) + 45) / 90) mod 4;

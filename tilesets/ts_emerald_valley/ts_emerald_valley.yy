@@ -1,0 +1,38 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"ts_emerald_valley",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"ts_emerald_valley",
+  "out_columns":20,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Emerald Valley",
+    "path":"folders/Conjuntos de casillas/Emerald Valley.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_emerald_valley",
+    "path":"sprites/spr_emerald_valley/spr_emerald_valley.yy",
+  },
+  "spriteNoExport":true,
+  "textureGroupId":{
+    "name":"grp_texturas",
+    "path":"texturegroups/grp_texturas",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":96,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":96,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":399,
+}

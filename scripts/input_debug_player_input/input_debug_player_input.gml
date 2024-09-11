@@ -62,12 +62,12 @@ function input_debug_player_input(_player_index = 0)
                     if (_global.__any_keyboard_binding_defined)
                     {
                         var _j = __INPUT_KEYCODE_MIN;
-                        repeat(1 + (0x100 - __INPUT_KEYCODE_MIN))
+                        repeat(1 + (256 - __INPUT_KEYCODE_MIN))
                         {
-                            if (_j == 0x100)
+                            if (_j == 256)
                             {
                                 var _keyboard_key = __input_keyboard_key();
-                                if (_keyboard_key <= 0x100) break;
+                                if (_keyboard_key <= 256) break;
                             }
                             else
                             {
@@ -109,7 +109,7 @@ function input_debug_player_input(_player_index = 0)
                 {
                     if (INPUT_MOUSE_ALLOW_SCANNING)
                     {
-                        if (_global.__mouse_allowed && _global.__game_input_allowed && !_global.__window_focus_block_mouse)
+                        if (_global.__mouse_allowed && _global.__game_focus && !_global.__window_focus_block_mouse)
                         {
                             if (_filter_func(mb_left, _ignore_struct, _allow_struct)
                             && mouse_check_button(mb_left))
@@ -163,9 +163,13 @@ function input_debug_player_input(_player_index = 0)
                                             gp_padu,      gp_padd,      gp_padl,       gp_padr, 
                                             gp_shoulderl, gp_shoulderr, gp_shoulderlb, gp_shoulderrb,
                                             gp_start,     gp_select,    gp_stickl,     gp_stickr,
-                                            gp_axislh,    gp_axislv,    gp_axisrh,     gp_axisrv,
-                                            gp_paddle1,   gp_paddle2,   gp_paddle3,   gp_paddle4,                                            
-                                            gp_guide,     gp_touchpad,  gp_misc1];
+                                            gp_axislh,    gp_axislv,    gp_axisrh,     gp_axisrv,    ];
+                        
+                        //Extended buttons
+                        if (INPUT_SDL2_ALLOW_EXTENDED)
+                        {
+                            array_push(_check_array, gp_guide, gp_misc1, gp_touchpad, gp_paddle1, gp_paddle2, gp_paddle3, gp_paddle4);
+                        }
                         
                         var _j = 0;
                         repeat(array_length(_check_array))
@@ -174,7 +178,7 @@ function input_debug_player_input(_player_index = 0)
                             if (input_gamepad_is_axis(__gamepad, _check))
                             {
                                 var _value = input_gamepad_value(__gamepad, _check);
-                                if ((abs(_value) > input_axis_threshold_get(_check, _player_index).__mini) && _filter_func(_check, _ignore_struct, _allow_struct))
+                                if ((abs(_value) > input_axis_threshold_get(_check, _player_index).mini) && _filter_func(_check, _ignore_struct, _allow_struct))
                                 {
                                     var _binding = input_binding_gamepad_axis(_check, (_value < 0));
                                     if (_global.__source_mode == INPUT_SOURCE_MODE.MULTIDEVICE) _binding.__gamepad_set(__gamepad);

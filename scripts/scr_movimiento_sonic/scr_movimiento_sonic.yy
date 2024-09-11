@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_movimiento_sonic",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_movimiento_sonic",
+  "parent":{
+    "name":"Gestor",
+    "path":"folders/Scripts/Entidades/Jugador/Sonic/Movimientos/Gestor.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

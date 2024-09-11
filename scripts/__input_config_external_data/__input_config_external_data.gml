@@ -7,10 +7,21 @@
 //This is useful for compatibility with external gamepad mapping software
 #macro INPUT_SDL2_ALLOW_EXTERNAL  true
 
+//Whether to allow use of SDL2's extended bindings, accessed using the extended gp_* constants
+//Setting this macro to <true> will enable the use of:
+//   gp_guide
+//   gp_misc1
+//   gp_touchpad
+//   gp_paddle1
+//   gp_paddle2
+//   gp_paddle3
+//   gp_paddle4
+#macro INPUT_SDL2_ALLOW_EXTENDED  true
+
 //Whether to allow identified non-gamepad joystick devices including wheels, flightsticks, throttles
 #macro INPUT_SDL2_ALLOW_NONGAMEPAD_JOYSTICKS  false
 
 //The following macros hold the names of various source files that Input uses to hold gamepad data
-#macro INPUT_SDL2_DATABASE_PATH    "packages/input/sdl2.txt"                //Path to the SDL2 database to read gamepad remapping definitions from
-#macro INPUT_CONTROLLER_TYPE_PATH  "packages/input/controllertypes.csv"     //Path to the controller type database to read gamepad types from
-#macro INPUT_BLACKLIST_PATH        "packages/input/controllerblacklist.csv" //Path to the controller blacklist database to read from
+#macro INPUT_SDL2_DATABASE_PATH    "sdl2.txt"                //Path to the SDL2 database to read gamepad remapping definitions from
+#macro INPUT_CONTROLLER_TYPE_PATH  "controllertypes.csv"     //Path to the controller type database to read gamepad types from
+#macro INPUT_BLACKLIST_PATH        "controllerblacklist.csv" //Path to the controller blacklist database to read from

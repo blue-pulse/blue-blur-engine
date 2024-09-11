@@ -6,7 +6,7 @@
   "name":"input_cursor_set",
   "parent":{
     "name":"10  Cursor Control",
-    "path":"folders/Packages/Input v6.3.1/10  Cursor Control.yy",
+    "path":"folders/Extensiones/Input v6.2.0/10  Cursor Control.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

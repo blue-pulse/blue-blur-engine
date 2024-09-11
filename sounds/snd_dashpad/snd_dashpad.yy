@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_dashpad",
+  "audioGroupId":{
+    "name":"grp_efectos_sonido",
+    "path":"audiogroups/grp_efectos_sonido",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":1,
+  "conversionMode":0,
+  "duration":3.002063,
+  "name":"snd_dashpad",
+  "parent":{
+    "name":"Dashpad",
+    "path":"folders/Sonidos/Efectos de sonido/Elementos de niveles/Dashpad.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_dashpad.wav",
+  "type":1,
+  "volume":0.7,
+}

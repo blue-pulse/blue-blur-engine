@@ -1,0 +1,38 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"ts_groovy_badlands",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"ts_groovy_badlands",
+  "out_columns":19,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Groovy Badlands",
+    "path":"folders/Conjuntos de casillas/Groovy Badlands.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_groovy_badlands",
+    "path":"sprites/spr_groovy_badlands/spr_groovy_badlands.yy",
+  },
+  "spriteNoExport":true,
+  "textureGroupId":{
+    "name":"grp_texturas",
+    "path":"texturegroups/grp_texturas",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":96,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":96,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":360,
+}

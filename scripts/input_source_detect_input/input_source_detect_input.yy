@@ -6,7 +6,7 @@
   "name":"input_source_detect_input",
   "parent":{
     "name":"18  Sources",
-    "path":"folders/Packages/Input v6.3.1/18  Sources.yy",
+    "path":"folders/Extensiones/Input v6.2.0/18  Sources.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_colisiones_circulares",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_colisiones_circulares",
+  "parent":{
+    "name":"Funciones",
+    "path":"folders/Scripts/Entidades/Jugador/General/Colisiones/Funciones.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

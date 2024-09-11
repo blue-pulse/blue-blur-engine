@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_anunciador_great",
+  "audioGroupId":{
+    "name":"grp_voces",
+    "path":"audiogroups/grp_voces",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":1,
+  "conversionMode":0,
+  "duration":1.043542,
+  "name":"snd_anunciador_great",
+  "parent":{
+    "name":"Anunciador",
+    "path":"folders/Sonidos/Voces/Anunciador.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_anunciador_great.wav",
+  "type":1,
+  "volume":1.0,
+}

@@ -7,9 +7,9 @@ function input_led_pattern_get(_index)
     __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
 
     static _led_pattern_unknown = {
-        __value:   0,
-        __pattern: [],
-        __layout:  "unknown",
+        value:   0,
+        pattern: [],
+        layout:  "unknown",
     }
     
     if ((_index == undefined)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_animaciones_sonic",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_animaciones_sonic",
+  "parent":{
+    "name":"Animaciones",
+    "path":"folders/Scripts/Entidades/Jugador/Sonic/Animaciones.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

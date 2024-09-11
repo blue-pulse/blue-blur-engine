@@ -6,7 +6,7 @@
   "name":"input_hotswap_params_get",
   "parent":{
     "name":"17  Source Modes",
-    "path":"folders/Packages/Input v6.3.1/17  Source Modes.yy",
+    "path":"folders/Extensiones/Input v6.2.0/17  Source Modes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

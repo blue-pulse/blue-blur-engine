@@ -3,9 +3,9 @@
 
 function __input_gamepad_set_description()
 {
-    if (__xinput || __INPUT_ON_XBOX)
+    if (xinput || __INPUT_ON_XBOX)
     {
-        __description = "XInput";
+        description = "XInput";
     }
     else if (__INPUT_ON_OPERAGX)
     {
@@ -13,9 +13,9 @@ function __input_gamepad_set_description()
         //        It turns out that the GUID is actually a hex-encoded string of the first few characters of the device's name
         //        This... feels like a bug, but we can at least use that to recover a *little* information about the device
         
-        __description = "";
+        description = "";
         
-        var _work_string = __guid;
+        var _work_string = guid;
         var _i = 1;
         repeat(string_length(_work_string) div 2)
         {
@@ -25,7 +25,7 @@ function __input_gamepad_set_description()
             var _value = (((_ord_msf >= 97)? (_ord_msf - 87) : (_ord_msf - 48)) << 4)
                         | ((_ord_lsf >= 97)? (_ord_lsf - 87) : (_ord_lsf - 48));
             
-            __description += chr(_value);
+            description += chr(_value);
             
             _i += 2;
         }
@@ -33,12 +33,12 @@ function __input_gamepad_set_description()
     else if (!__INPUT_SDL2_SUPPORT)
     {
         if (!__INPUT_SILENT) __input_trace("SDL2 remapping unsupported for this platform");
-        __description = gamepad_get_description(__index);
+        description = gamepad_get_description(index);
     }
     else if (!INPUT_SDL2_REMAPPING)
     {
         if (!__INPUT_SILENT) __input_trace("Skipping SDL2 remapping");
-        __description = gamepad_get_description(__index);
+        description = gamepad_get_description(index);
     }
     else
     {

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_accion_shadow_pisoton",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_accion_shadow_pisoton",
+  "parent":{
+    "name":"Habilidades",
+    "path":"folders/Scripts/Entidades/Jugador/Shadow/Movimientos/Habilidades.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_luminous_bingo",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":3,
+  "conversionMode":0,
+  "duration":113.16748,
+  "name":"msc_luminous_bingo",
+  "parent":{
+    "name":"Canciones",
+    "path":"folders/Sonidos/Canciones.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"msc_luminous_bingo.wav",
+  "type":1,
+  "volume":1.0,
+}

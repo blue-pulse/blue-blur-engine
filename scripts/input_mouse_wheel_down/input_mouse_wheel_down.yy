@@ -6,7 +6,7 @@
   "name":"input_mouse_wheel_down",
   "parent":{
     "name":"24  Mouse (Direct)",
-    "path":"folders/Packages/Input v6.3.1/24  Mouse (Direct).yy",
+    "path":"folders/Extensiones/Input v6.2.0/24  Mouse (Direct).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

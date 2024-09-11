@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_gestion_mining_mayhem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_gestion_mining_mayhem",
+  "parent":{
+    "name":"Niveles",
+    "path":"folders/Scripts/Niveles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

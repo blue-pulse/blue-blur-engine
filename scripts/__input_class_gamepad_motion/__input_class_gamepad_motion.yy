@@ -6,7 +6,7 @@
   "name":"__input_class_gamepad_motion",
   "parent":{
     "name":"Classes",
-    "path":"folders/Packages/Input v6.3.1/(System)/Classes.yy",
+    "path":"folders/Extensiones/Input v6.2.0/(System)/Classes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,0 +1,1 @@
+if (fase_animacion == 2) then fase_animacion = 3;

@@ -6,7 +6,7 @@
   "name":"input_profile_set",
   "parent":{
     "name":"16  Profiles",
-    "path":"folders/Packages/Input v6.3.1/16  Profiles.yy",
+    "path":"folders/Extensiones/Input v6.2.0/16  Profiles.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

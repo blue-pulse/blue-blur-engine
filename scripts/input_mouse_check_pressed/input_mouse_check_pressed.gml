@@ -7,7 +7,7 @@ function input_mouse_check_pressed(_binding)
     __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
     if (!_global.__mouse_allowed 
-    ||  !_global.__game_input_allowed 
+    ||  !_global.__game_focus 
     ||   _global.__window_focus_block_mouse 
     ||   _global.__cleared)
     {
@@ -21,21 +21,15 @@ function input_mouse_check_pressed(_binding)
     }
     
     var _left = false;
-    if (__INPUT_TOUCH_SUPPORT && INPUT_MOBILE_MOUSE)
+    if (_global.__mouse_allowed)
+    {
+        //Mouse and touchpad
+        _left = device_mouse_check_button_pressed(0, mb_left) || _global.__tap_click;
+    }
+    else if (_global.__touch_allowed)
     {
         //Touch
         _left = _global.__pointer_pressed;
-    }
-    else
-    {
-        //Mouse
-        _left = device_mouse_check_button_pressed(0, mb_left);
-    }
-    
-    if (_global.__tap_click)
-    {
-        //Trackpad
-        _left = true;
     }
     
     switch(_binding)

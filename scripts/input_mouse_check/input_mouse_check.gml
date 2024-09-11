@@ -7,7 +7,7 @@ function input_mouse_check(_binding)
     __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
     
     if (!_global.__mouse_allowed 
-    ||  !_global.__game_input_allowed 
+    ||  !_global.__game_focus 
     ||   _global.__window_focus_block_mouse)
     {
         return (_binding == mb_none);
@@ -27,14 +27,8 @@ function input_mouse_check(_binding)
     }
     else
     {
-        //Mouse
-        _left = device_mouse_check_button(0, mb_left);
-    }
-    
-    if (_global.__tap_click)
-    {
-        //Trackpad
-        _left = true;
+        //Mouse and touchpad
+        _left = device_mouse_check_button(0, mb_left) || _global.__tap_click;
     }
     
     switch(_binding)

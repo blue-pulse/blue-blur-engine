@@ -1,0 +1,1 @@
+dispositivo_conectado = inst_637EE6F1;

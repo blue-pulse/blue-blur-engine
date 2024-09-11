@@ -1,12 +1,14 @@
 // Feather disable all
 
-#macro __INPUT_VERSION "6.3.1 Beta"
-#macro __INPUT_DATE    "2024-06-11"
+#macro __INPUT_VERSION "6.2.0 beta"
+#macro __INPUT_DATE    "2023-10-11"
 #macro __INPUT_DEBUG   false
 
 
 
 #region Forbidden Fruit
+
+#macro __INPUT_2D_CHECKER_STATIC_RESULT  true
 
 #macro __INPUT_DEBUG_PROFILES  false
 #macro __INPUT_DEBUG_SOURCES   false
@@ -20,14 +22,6 @@
 //How many frames to wait before scanning for connected gamepads
 //This works around Steam sometimes reporting confusing connection/disconnection events on boot
 #macro __INPUT_GAMEPADS_TICK_PREDELAY  10     
-
-//How many frames to wait before considering a gamepad disconnected
-//This works around momentary disconnections such as a jiggled cable or low battery level
-#macro __INPUT_GAMEPADS_DISCONNECTION_TIMEOUT 5
-
-//How many frames to wait after game regains focus before hotswapping on axis
-//This works around resting non-zero axes showing a false-positive delta value when focus changes
-#macro __INPUT_GAMEPADS_FOCUS_TIMEOUT 2
 
 #macro __INPUT_GLOBAL_STATIC_LOCAL     static _global = __input_global();
 #macro __INPUT_GLOBAL_STATIC_VARIABLE  static __global = __input_global();
@@ -48,6 +42,8 @@
 #macro INPUT_MOUSE     __input_global().__source_mouse
 #macro INPUT_GAMEPAD   __input_global().__source_gamepad
 #macro INPUT_TOUCH     __input_global().__source_touch
+
+#macro INPUT_MAX_GAMEPADS  12
 
 #macro INPUT_KEYBOARD_LOCALE  __input_global().__keyboard_locale
 #macro INPUT_KEYBOARD_TYPE    __input_global().__keyboard_type
@@ -84,7 +80,6 @@
 #macro __INPUT_KEYBOARD_NORMATIVE   (INPUT_ON_PC || INPUT_ON_WEB || __INPUT_ON_SWITCH)
 #macro __INPUT_LED_PATTERN_SUPPORT  ((os_type == os_ps5) || __INPUT_ON_SWITCH || __INPUT_ON_IOS || (__INPUT_ON_WINDOWS && !INPUT_ON_WEB))
 #macro __INPUT_STEAMWORKS_SUPPORT   ((__INPUT_ON_LINUX || __INPUT_ON_WINDOWS) && !INPUT_ON_WEB)
-#macro __INPUT_TOUCH_SUPPORT        (__INPUT_ON_WINDOWS || __INPUT_ON_SWITCH || INPUT_ON_MOBILE)
 
 #macro __INPUT_HOLD_THRESHOLD           0.2  //Minimum value from an axis for that axis to be considered activated at the gamepad layer. This is *not* the same as min/max thresholds for players
 #macro __INPUT_DELTA_HOTSWAP_THRESHOLD  0.1  //Minimum (absolute) change in gamepad mapping value between frames to register as new input. This triggers hotswapping
@@ -95,17 +90,17 @@
 #macro __INPUT_CONTROLLER_OBJECT_DEPTH  16001
 
 //Valid keycode bounds
-#macro __INPUT_KEYCODE_MIN 0x08
-#macro __INPUT_KEYCODE_MAX 0xDFFF
+#macro __INPUT_KEYCODE_MIN 8
+#macro __INPUT_KEYCODE_MAX 57343
 
 //Extended gamepad constants
-#macro gp_guide     __input_global().__gp_guide
-#macro gp_misc1     __input_global().__gp_misc1
-#macro gp_touchpad  __input_global().__gp_touchpad
-#macro gp_paddle1   __input_global().__gp_paddle1
-#macro gp_paddle2   __input_global().__gp_paddle2
-#macro gp_paddle3   __input_global().__gp_paddle3
-#macro gp_paddle4   __input_global().__gp_paddle4
+#macro gp_guide     32889
+#macro gp_misc1     32890
+#macro gp_touchpad  32891
+#macro gp_paddle1   32892
+#macro gp_paddle2   32893
+#macro gp_paddle3   32894
+#macro gp_paddle4   32895
 
 //Enables analogue axis checks from triggers on XInput
 #macro __XINPUT_AXIS_LT  4106
@@ -124,68 +119,56 @@
                                          //gp_axis_orientation_z = 32797
                                          //gp_axis_orientation_w = 32798
 
-//GameMaker now natively supports extended SDL buttons
-#macro __INPUT_LEGACY_GP_ALT_GUIDE     32889
-#macro __INPUT_LEGACY_GP_ALT_MISC1     32890
-#macro __INPUT_LEGACY_GP_ALT_TOUCHPAD  32891
-#macro __INPUT_LEGACY_GP_ALT_PADDLE1   32892
-#macro __INPUT_LEGACY_GP_ALT_PADDLE2   32893
-#macro __INPUT_LEGACY_GP_ALT_PADDLE3   32894
-#macro __INPUT_LEGACY_GP_ALT_PADDLE4   32895
-
 //Extended keycode constants
-#macro vk_clear       0x0C
-#macro vk_capslock    0x14
-#macro vk_menu        0x5D
-#macro vk_scrollock   0x91
+#macro vk_clear       12
+#macro vk_capslock    20
+#macro vk_menu        93
+#macro vk_scrollock   145
+                      
+#macro vk_semicolon   186
+#macro vk_comma       188
+#macro vk_fslash      191
+#macro vk_bslash      220
+#macro vk_lbracket    219
+#macro vk_rbracket    221
 
-#macro vk_semicolon   0xBA
-#macro vk_comma       0xBC
-#macro vk_fslash      0xBF
-#macro vk_bslash      0xDC
-#macro vk_lbracket    0xDB
-#macro vk_rbracket    0xDD
+#macro vk_apostrophe ((__INPUT_ON_MACOS && !INPUT_ON_WEB)? 192 : 222)
+#macro vk_equals     ((__INPUT_ON_MACOS && !INPUT_ON_WEB)?  24 : 187)
+#macro vk_numlock    ((__INPUT_ON_APPLE &&  INPUT_ON_WEB)?  12 : 144)
+#macro vk_hyphen     ((__INPUT_ON_SWITCH || (__INPUT_ON_MACOS && !INPUT_ON_WEB))? 109 : 189)
+#macro vk_rmeta      (__INPUT_ON_MACOS? ((__INPUT_ON_APPLE && INPUT_ON_WEB)? 93 : 91) : 92)
+#macro vk_backtick   (__INPUT_ON_MACOS?   50 : (__INPUT_ON_LINUX? 223 : 192))
+#macro vk_lmeta      (__INPUT_ON_MACOS?   92 :  91)
+#macro vk_period     (__INPUT_ON_SWITCH? 110 : 190)
 
-#macro vk_numlock     ((__INPUT_ON_APPLE &&  INPUT_ON_WEB)                      ? 0x0C : 0x90)
-#macro vk_equals      ((__INPUT_ON_MACOS && !INPUT_ON_WEB)                      ? 0x18 : 0xBB)
-#macro vk_apostrophe (((__INPUT_ON_MACOS || __INPUT_ON_LINUX)  && !INPUT_ON_WEB)? 0xC0 : 0xDE)
-#macro vk_hyphen     (((__INPUT_ON_MACOS || __INPUT_ON_SWITCH) && !INPUT_ON_WEB)? 0x6D : 0xBD)
-#macro vk_rmeta        (__INPUT_ON_MACOS? ((__INPUT_ON_APPLE   &&  INPUT_ON_WEB)? 0x5D : 0x5B) : 0x5C)
-#macro vk_backtick    (!__INPUT_ON_MACOS?  (__INPUT_ON_LINUX                    ? 0xDF : 0xC0) : 0x32)
-#macro vk_lmeta        (__INPUT_ON_MACOS                                        ? 0x5C : 0x5B)
-#macro vk_period       (__INPUT_ON_SWITCH                                       ? 0x6E : 0xBE)
-
-// gp_axislv         = 32786             32769 = gp_face1
-// gp_axisrh         = 32787             32770 = gp_face2
-// gp_axisrv         = 32788             32771 = gp_face3
-// gp_extra1         = 32800             32772 = gp_face4
-// gp_extra2         = 32801             32773 = gp_shoulderl
-// gp_extra3         = 32802             32774 = gp_shoulderr
-// gp_extra4         = 32803             32775 = gp_shoulderlb
-// gp_extra5         = 32809             32776 = gp_shoulderrb
-// gp_extra6         = 32810             32777 = gp_select
-// gp_face1          = 32769             32778 = gp_start
-// gp_face2          = 32770             32779 = gp_stickl
-// gp_face3          = 32771             32780 = gp_stickr
-// gp_face4          = 32772             32781 = gp_padu
-// gp_home           = 32799             32782 = gp_padd
-// gp_padd           = 32782             32783 = gp_padl
-// gp_paddlel        = 32805             32784 = gp_padr
-// gp_paddlelb       = 32807             32786 = gp_axislv
-// gp_paddler        = 32804             32787 = gp_axisrh
-// gp_paddlerb       = 32806             32788 = gp_axisrv
-// gp_padl           = 32783             32799 = gp_home
-// gp_padr           = 32784             32800 = gp_extra1
-// gp_padu           = 32781             32801 = gp_extra2
-// gp_select         = 32777             32802 = gp_extra3
-// gp_shoulderl      = 32773             32803 = gp_extra4
-// gp_shoulderlb     = 32775             32804 = gp_paddler
-// gp_shoulderr      = 32774             32805 = gp_paddlel
-// gp_shoulderrb     = 32776             32806 = gp_paddlerb
-// gp_start          = 32778             32807 = gp_paddlelb
-// gp_stickl         = 32779             32808 = gp_touchpadbutton
-// gp_stickr         = 32780             32809 = gp_extra5
-// gp_touchpadbutton = 32808             32810 = gp_extra6
+// gp_axislh     = 32785             32769 = gp_face1
+// gp_axislv     = 32786             32770 = gp_face2
+// gp_axisrh     = 32787             32771 = gp_face3
+// gp_axisrv     = 32788             32772 = gp_face4
+// gp_shoulderl  = 32773             32773 = gp_shoulderl
+// gp_shoulderr  = 32774             32774 = gp_shoulderr
+// gp_shoulderlb = 32775             32775 = gp_shoulderlb
+// gp_shoulderrb = 32776             32776 = gp_shoulderrb
+// gp_padu       = 32781             32777 = gp_select
+// gp_padd       = 32782             32778 = gp_start
+// gp_padl       = 32783             32779 = gp_stickl
+// gp_padr       = 32784             32780 = gp_stickr
+// gp_face1      = 32769             32781 = gp_padu
+// gp_face2      = 32770             32782 = gp_padd
+// gp_face3      = 32771             32783 = gp_padl
+// gp_face4      = 32772             32784 = gp_padr
+// gp_stickl     = 32779             32785 = gp_axislh
+// gp_stickr     = 32780             32786 = gp_axislv
+// gp_select     = 32777             32787 = gp_axisrh
+// gp_start      = 32778             32788 = gp_axisrv
+// Plus custom buttons:
+// gp_guide      = 32889             32889 = gp_guide
+// gp_misc1      = 32890             32890 = gp_misc1
+// gp_touchpad   = 32891             32891 = gp_touchpad
+// gp_paddle1    = 32892             32892 = gp_paddle1
+// gp_paddle2    = 32893             32893 = gp_paddle2
+// gp_paddle3    = 32894             32894 = gp_paddle3
+// gp_paddle4    = 32895             32895 = gp_paddle4
 
 enum __INPUT_SOURCE
 {
@@ -284,8 +267,6 @@ enum INPUT_VIRTUAL_TYPE
     BUTTON,
     DPAD_4DIR,
     DPAD_8DIR,
-    DPAD_HORIZONTAL,
-    DPAD_VERTICAL,
     THUMBSTICK,
     TOUCHPAD,
 }
@@ -394,6 +375,13 @@ enum INPUT_VIRTUAL_RELEASE
                                              if (!_global.__any_mouse_binding_defined)\
                                              {\
                                                  __input_error("Cannot claim ", _source, ", no mouse bindings have been created in a default profile (see __input_config_verbs())");\
+                                             }\
+                                         }\
+                                         else if (_source == INPUT_TOUCH)\
+                                         {\
+                                             if (!_global.__any_touch_binding_defined)\
+                                             {\
+                                                 __input_error("Cannot claim ", _source, ", no virtual button bindings have been created in a default profile (see __input_config_verbs())");\
                                              }\
                                          }\
                                          else if (_source.__source == __INPUT_SOURCE.GAMEPAD)\

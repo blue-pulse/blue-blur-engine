@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_animaciones_shadow",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_animaciones_shadow",
+  "parent":{
+    "name":"Animaciones",
+    "path":"folders/Scripts/Entidades/Jugador/Shadow/Animaciones.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

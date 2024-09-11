@@ -1,0 +1,51 @@
+function calcular_angulo(angulo, espaciado_horizontal, cantidad_puntos_verificacion) {
+  // Declarar variables
+  var angulo_aproximado = floor(angulo);
+  var valor_acos = dcos(angulo_aproximado);
+  var valor_asin = dsin(angulo_aproximado);
+  var primer_subconjunto = false;
+  var segundo_subconjunto = false;
+  
+  // Declarar puntos
+  var pos_x_1 = round(x - (valor_acos * espaciado_horizontal));
+  var pos_y_1 = round(y + (valor_asin * espaciado_horizontal));
+  var pos_x_2 = round(x + (valor_acos * espaciado_horizontal));
+  var pos_y_2 = round(y - (valor_asin * espaciado_horizontal));
+  
+  // Declarar requisitos de colision
+  var evaluar_plataforma = permitir_grinding;
+  var evaluar_riel = permitir_grinding;
+  var evaluar_agua = caminar_sobre_agua;
+  
+  // Logica
+  while (cantidad_puntos_verificacion > 0) {
+    if (not primer_subconjunto) {
+		// Determinar estado del primer subconjunto
+		primer_subconjunto = colision_punto(pos_x_1, pos_y_1, evaluar_plataforma, evaluar_riel, evaluar_agua);
+		
+		// Actualizar posiciones
+		pos_x_1 += valor_asin;
+		pos_y_1 += valor_acos;
+    }
+	
+    if (not segundo_subconjunto) {
+		// Determinar estado del segundo subconjunto
+		segundo_subconjunto = colision_punto(pos_x_2, pos_y_2, evaluar_plataforma, evaluar_riel, evaluar_agua);
+		
+		// Actualizar posiciones
+		pos_x_2 += valor_asin;
+		pos_y_2 += valor_acos;
+    }
+	
+	// Verificar si se ha encontrado un angulo valido
+	if (primer_subconjunto and segundo_subconjunto) {
+		break;
+	} else {
+		cantidad_puntos_verificacion--;
+	}
+  }
+  
+  // Retornar angulo
+  var angulo_calculado = point_direction(pos_x_1, pos_y_1, pos_x_2, pos_y_2);
+  return round(angulo_calculado);
+}

@@ -6,7 +6,7 @@
   "name":"input_player_reset",
   "parent":{
     "name":"13  Exporting and Importing",
-    "path":"folders/Packages/Input v6.3.1/13  Exporting and Importing.yy",
+    "path":"folders/Extensiones/Input v6.2.0/13  Exporting and Importing.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

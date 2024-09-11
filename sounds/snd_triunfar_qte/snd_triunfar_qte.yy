@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_triunfar_qte",
+  "audioGroupId":{
+    "name":"grp_efectos_sonido",
+    "path":"audiogroups/grp_efectos_sonido",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":1,
+  "conversionMode":0,
+  "duration":2.98585,
+  "name":"snd_triunfar_qte",
+  "parent":{
+    "name":"Quick Time Events",
+    "path":"folders/Sonidos/Efectos de sonido/Elementos de niveles/Quick Time Events.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_triunfar_qte.wav",
+  "type":1,
+  "volume":1.0,
+}

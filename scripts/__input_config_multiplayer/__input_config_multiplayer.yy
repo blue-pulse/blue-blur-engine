@@ -6,7 +6,7 @@
   "name":"__input_config_multiplayer",
   "parent":{
     "name":"00  Configuration - Please edit these scripts!",
-    "path":"folders/Packages/Input v6.3.1/00  Configuration - Please edit these scripts!.yy",
+    "path":"folders/Extensiones/Input v6.2.0/00  Configuration - Please edit these scripts!.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

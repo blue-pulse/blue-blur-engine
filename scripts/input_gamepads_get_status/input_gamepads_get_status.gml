@@ -4,14 +4,14 @@
 /// N.B. Do not edit the returned struct! You may encounter undefined behaviour if you do
 /// 
 /// {
-///     __any_changes: <boolean that indicates whether anything has changed at all>
-///     __new_connections: [
+///     any_changes: <boolean that indicates whether anything has changed at all>
+///     new_connections: [
 ///         <array of gamepad indexes that are newly connected this step>
 ///     ],
-///     __new_disconnections: [
+///     new_disconnections: [
 ///         <array of gamepad indexes that are newly disconnected this step>
 ///     ],
-///     __gamepads: [
+///     gamepads: [
 ///         <array of values from the INPUT_STATUS enum, one for each gamepad available on this platform>
 ///     ],
 /// }
