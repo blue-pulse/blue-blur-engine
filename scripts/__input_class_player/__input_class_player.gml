@@ -862,7 +862,7 @@ function __input_class_player() constructor
                     with(__verb_state_dict[$ _array[_i]])
                     {
                         __group_inactive = true;
-                        previous_held    = true; //Force the held state on to avoid unwanted early reset of an inactive verb
+                        __previous_held  = true; //Force the held state on to avoid unwanted early reset of an inactive verb
                         __inactive       = true;
                         __toggle_state   = false; //Used for "toggle momentary" accessibility feature
                     }
@@ -1454,6 +1454,7 @@ function __input_class_player() constructor
             return;
         }
 
+        //Apply the effect and get the interception outcome
         var _intercepted = (__global.__gamepads[_gamepad].__trigger_effect_apply(_trigger, _effect, __trigger_effect_strength) == false);
         
         if (!_set) return;
@@ -1498,13 +1499,13 @@ function __input_class_player() constructor
             static __mixed_motion = {};
             with  (__mixed_motion)
             {
-                __acceleration_x = 0.0;
-                __acceleration_y = 0.0;
-                __acceleration_z = 0.0;
+                acceleration_x = 0.0;
+                acceleration_y = 0.0;
+                acceleration_z = 0.0;
 
-                __angular_velocity_x = 0.0;
-                __angular_velocity_y = 0.0;
-                __angular_velocity_z = 0.0;
+                angular_velocity_x = 0.0;
+                angular_velocity_y = 0.0;
+                angular_velocity_z = 0.0;
             }
     
             var _source_motion = undefined;
@@ -1530,7 +1531,7 @@ function __input_class_player() constructor
                 ++_gamepad;
             }
     
-            if not (_using_motion) __mixed_motion.__acceleration_y = -1.0;
+            if not (_using_motion) __mixed_motion.acceleration_y = -1.0;
             return __mixed_motion;
         }
     

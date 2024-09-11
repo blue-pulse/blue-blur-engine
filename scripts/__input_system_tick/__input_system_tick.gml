@@ -94,7 +94,7 @@ function __input_system_tick()
     
     #region Application state
     
-    if (INPUT_ON_PC && !INPUT_ON_WEB)
+    if (INPUT_ON_PC || INPUT_ON_WEB)
     {
         if (os_is_paused())
         {
@@ -122,8 +122,8 @@ function __input_system_tick()
             }
             else if ((keyboard_key != vk_nokey) 
                  ||  (mouse_button != mb_none)
-                 ||  (__INPUT_ON_WINDOWS && window_has_focus())
-                 ||  (__INPUT_ON_MACOS   && _global.__pointer_moved))
+                 ||  (_global.__use_native_focus && window_has_focus())
+                 ||  (__INPUT_ON_MACOS && !INPUT_ON_WEB && _global.__pointer_moved))
             {
                 //Regained focus
                 _global.__window_focus = true;
@@ -136,6 +136,11 @@ function __input_system_tick()
                 if (_global.__mouse_capture) _global.__mouse_capture_frame = _global.__frame;
                 
                 __input_player_apply_trigger_effects(all);
+            }
+            else if not (_global.__use_native_focus)
+            {
+                //Reevaluate native focus support
+                if (window_has_focus() == false) _global.__use_native_focus = true;
             }
         }
     }

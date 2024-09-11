@@ -6,7 +6,7 @@
   "name":"input_mouse_dy",
   "parent":{
     "name":"24  Mouse (Direct)",
-    "path":"folders/Packages/Input v6.3.1/24  Mouse (Direct).yy",
+    "path":"folders/Packages/Input v7.0.1/24  Mouse (Direct).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

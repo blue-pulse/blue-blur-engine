@@ -6,7 +6,7 @@
   "name":"__input_class_trigger_effect_weapon",
   "parent":{
     "name":"Classes",
-    "path":"folders/Packages/Input v6.3.1/(System)/Classes.yy",
+    "path":"folders/Packages/Input v7.0.1/(System)/Classes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
