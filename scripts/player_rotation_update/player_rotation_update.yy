@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_rotation_update",
   "parent":{
-    "name":"Physics",
-    "path":"folders/Player/Parent/Scripts/Physics.yy",
+    "name":"Methods",
+    "path":"folders/Player/Parent/Scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sonic_params_update",
   "parent":{
-    "name":"Physics",
-    "path":"folders/Player/Sonic/Scripts/Physics.yy",
+    "name":"Methods",
+    "path":"folders/Player/Sonic/Scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
