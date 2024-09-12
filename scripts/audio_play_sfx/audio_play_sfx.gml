@@ -3,5 +3,5 @@ function audio_play_sfx(sound, let_it_finish=false, loops=false) {
 		return false;
 	}
 	audio_stop_sound(sound);
-	audio_play_sound(sound, orders.sfx, loops);
+	return audio_play_sound(sound, orders.sfx, loops);
 }

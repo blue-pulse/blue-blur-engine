@@ -63,6 +63,18 @@ is_sliding = false;
 is_stomping = false;
 is_underwater = false;
 
+// Footsteps sfx	
+snd_footsteps = [
+	snd_player_fs_generic,
+	snd_player_fs_grass,
+	snd_player_fs_dirt,
+	snd_player_fs_wood,
+	snd_player_fs_metal,
+	snd_player_fs_stone,
+	snd_player_fs_glass,
+	snd_player_fs_water,
+]
+	
 // Assets
 ast_attack = {
 	snd_clips: [],

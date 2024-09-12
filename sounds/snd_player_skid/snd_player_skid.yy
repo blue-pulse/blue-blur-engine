@@ -12,8 +12,8 @@
   "duration":0.835918,
   "name":"snd_player_skid",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Player/Parent/Sounds.yy",
+    "name":"Roll",
+    "path":"folders/Player/Parent/Sounds/Roll.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_player_fs_dirt",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.284444,
+  "name":"snd_player_fs_dirt",
+  "parent":{
+    "name":"Footstep",
+    "path":"folders/Player/Parent/Sounds/Footstep.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_player_fs_dirt.wav",
+  "type":1,
+  "volume":1.0,
+}

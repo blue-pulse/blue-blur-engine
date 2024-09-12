@@ -3,9 +3,12 @@
   "%Name":"ts_terrain_collision",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":0,
-    "SerialiseWidth":0,
-    "TileSerialiseData":[],
+    "SerialiseHeight":11,
+    "SerialiseWidth":10,
+    "TileCompressedData":[
+      -59,0,1,49,-9,0,1,48,-9,0,1,47,-8,0,2,45,46,-7,0,3,43,44,1,-4,0,6,39,40,41,42,1,1,
+    ],
+    "TileDataFormat":1,
   },
   "name":"ts_terrain_collision",
   "out_columns":28,

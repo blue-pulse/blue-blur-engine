@@ -12,8 +12,8 @@
   "duration":1.507324,
   "name":"snd_player_spindash_release",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Player/Parent/Sounds.yy",
+    "name":"Spindash",
+    "path":"folders/Player/Parent/Sounds/Spindash.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

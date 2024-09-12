@@ -12,4 +12,5 @@ function audio_play_bgm(sound, loop_start=0, loop_end=0) {
 	// Play the song
 	var song = audio_play_sound(sound, orders.bgm, true);
 	audio_sound_loop(song, true);
+	return song;
 }

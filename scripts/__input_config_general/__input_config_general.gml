@@ -25,8 +25,6 @@
 //Xbox One and Xbox Series console platforms
 #macro INPUT_XBOX_VIBRATION       true
 
-
-
 //Whether to allow input while game window is out of focus on desktop platforms
 #macro INPUT_ALLOW_OUT_OF_FOCUS  false
 

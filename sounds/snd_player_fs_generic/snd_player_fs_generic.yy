@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_player_fs_generic",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.227551,
+  "name":"snd_player_fs_generic",
+  "parent":{
+    "name":"Footstep",
+    "path":"folders/Player/Parent/Sounds/Footstep.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_player_fs_generic.wav",
+  "type":1,
+  "volume":1.0,
+}

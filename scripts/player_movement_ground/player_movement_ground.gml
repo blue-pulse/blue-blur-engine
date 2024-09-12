@@ -51,7 +51,7 @@ function player_movement_ground() {
 		if (state != states.skidding and (angle <= 45 or angle >= 316.41)) {
 			if (button_check("btn_left") and gnd_speed >= 4 or button_check("btn_right") and gnd_speed <= -4) {
 				player_set_state(states.skidding);
-				audio_play_sfx(snd_player_skid, true);
+				audio_play_sfx(snd_player_skid, false);
 			}
 		}
 	}
