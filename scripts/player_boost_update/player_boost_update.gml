@@ -2,7 +2,7 @@ function player_boost_update() {
 	// Variables
 	static air_timer = 45;
 	var allowed_states = [states.idle, states.moving, states.jumping, states.landing, states.falling];
-	var denied_states = [states.skidding, states.rolling];
+	var denied_states = [states.sliding, states.skidding, states.rolling];
 
 	// Handling when boost is inactive
 	if (!is_boosting) {

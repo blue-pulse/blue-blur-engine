@@ -1,4 +1,4 @@
-function player_roll_update() {
+function player_roll_start() {
 	// Early exit
 	if (spindash_revolutions != -1 or (!forced_roll and (button_check("btn_left") or button_check("btn_right")))) {
 		return;

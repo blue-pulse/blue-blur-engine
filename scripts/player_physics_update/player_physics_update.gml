@@ -27,8 +27,8 @@ function player_physics_update() {
 			player_balance_update();
 			player_collision_wall();
 			nosequenombre();
-			player_roll_update();
-			player_slide_update();
+			player_roll_start();
+			player_slide_start();
 		}
 		// Finally
 		player_position_update();
