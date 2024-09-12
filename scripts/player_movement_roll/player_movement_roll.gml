@@ -1,6 +1,7 @@
 function player_movement_roll() {
 	// Decelerate
 	if (!gnd_lock) {
+		// Handle movement to the left
 		if (button_check("btn_left")) {
 			if (gnd_speed > 0) {
 				gnd_speed -= roll_decel;
@@ -8,10 +9,12 @@ function player_movement_roll() {
 					gnd_speed = -0.5;
 				}
 			} else {
-				is_pushing = false;
 				dir = LEFT;
+				is_pushing = false;
 			}
 		}
+		
+		// Handle movement to the right
 		if (button_check("btn_right")) {
 			if (gnd_speed < 0) {
 				gnd_speed += roll_decel;
@@ -19,8 +22,8 @@ function player_movement_roll() {
 					gnd_speed = 0.5;
 				}
 			} else {
-				is_pushing = false;
 				dir = RIGHT;
+				is_pushing = false;
 			}
 		}
 	}
@@ -31,14 +34,6 @@ function player_movement_roll() {
 	} else if (gnd_speed < 0) {
 		gnd_speed = min(gnd_speed + roll_frict, 0);
 	}
-
-	// Convert ground inertia to speeds
-	hor_speed = gnd_speed * dcos(angle);
-	ver_speed = gnd_speed * -dsin(angle);
-
-	// Speed cap
-	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
-	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
 
 	// Unroll
 	if (!forced_roll) {
@@ -53,6 +48,15 @@ function player_movement_roll() {
 
 	// If forced to roll, continue rolling
 	else if (gnd_speed == 0) {
-		gnd_speed = 2;
+		gnd_speed = 4 * dir;
 	}
+	
+	// Convert ground inertia to speeds
+	hor_speed = gnd_speed * dcos(angle);
+	ver_speed = gnd_speed * -dsin(angle);
+
+	// Limit horizontal velocity
+	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
+	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
+
 }

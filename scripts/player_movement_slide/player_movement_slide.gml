@@ -1,15 +1,16 @@
 function player_movement_slide() {
 	// Early exit
-	if (angle > 45 and angle < 316.41) {
+	if ((angle > 45 and angle < 316.41) or button_check("btn_down")) {
 		is_sliding = false;
 		is_rolling = true;
 		player_set_state(states.rolling);
 		audio_play_sfx(snd_player_roll);
 		return;
 	}
-	
+
 	// Decelerate
 	if (!gnd_lock) {
+		// Handle movement to the right
 		if (button_check("btn_left")) {
 			if (gnd_speed > 0) {
 				gnd_speed -= decel;
@@ -21,6 +22,8 @@ function player_movement_slide() {
 				dir = LEFT;
 			}
 		}
+		
+		// Handle movement to the right
 		if (button_check("btn_right")) {
 			if (gnd_speed < 0) {
 				gnd_speed += decel;
@@ -40,21 +43,28 @@ function player_movement_slide() {
 	} else if (gnd_speed < 0) {
 		gnd_speed = min(gnd_speed + frict, 0);
 	}
+	
+	// Stop sliding
+	if (!forced_slide) {
+		if (gnd_speed == 0 or abs(gnd_speed) < 1) {
+			pos_y -= df_radius_y - sm_radius_y;
+			radius_x = df_radius_x;
+			radius_y = df_radius_y;
+			is_sliding = false;
+			player_set_state(states.moving);
+		}
+	}
+	
+	// If forced to slide, continue sliding
+	else if (gnd_speed == 0) {
+		gnd_speed = 2 * dir;
+	}
 
 	// Convert ground inertia to speeds
 	hor_speed = gnd_speed * dcos(angle);
 	ver_speed = gnd_speed * -dsin(angle);
 
-	// Speed cap
+	// Limit horizontal velocity
 	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
 	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
-	
-	// Stop sliding
-	if (abs(gnd_speed) <= 1 or !button_check("btn_2")) {
-		pos_y -= df_radius_y - sm_radius_y;
-		radius_x = df_radius_x;
-		radius_y = df_radius_y;
-		is_sliding = false;
-		player_set_state(states.moving);
-	}
 }

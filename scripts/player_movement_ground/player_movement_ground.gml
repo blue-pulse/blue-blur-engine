@@ -118,7 +118,7 @@ function player_movement_ground() {
 	hor_speed = gnd_speed * dcos(angle);
 	ver_speed = gnd_speed * -dsin(angle);
 	
-	// Limit ground speed
+	// Limit horizontal velocity
 	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
 	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
 }
