@@ -2,7 +2,7 @@ function player_boost_update() {
 	// Variables
 	static air_timer = 45;
 	var allowed_states = [states.idle, states.moving, states.jumping, states.landing, states.falling];
-	var denied_states = [states.sliding, states.skidding, states.rolling];
+	var denied_states = [states.pushing, states.sliding, states.skidding, states.rolling];
 
 	// Handling when boost is inactive
 	if (!is_boosting) {
@@ -10,14 +10,14 @@ function player_boost_update() {
 		air_timer = 45;
 		audio_stop_sound(snd_player_boost);
 		audio_stop_sound(snd_player_boost_loop);
-	} else if (air_timer <= 0 or stamina <= 0 or abs(gnd_speed) <= 6 or !button_check("btn_3") or array_contains(denied_states, state)) {
+	} else if (is_dashing or air_timer <= 0 or stamina <= 0 or abs(gnd_speed) <= 6 or !button_check("btn_3") or array_contains(denied_states, state)) {
 		// Stop boost
 		is_boosting = false;
 		return;
 	}
 	
 	// Handling when boost is active
-	if (!is_pushing and stamina > 0) {
+	if (stamina > 0) {
 		// Start boosting
 		if (!is_boosting and button_check_pressed("btn_3") and array_contains(allowed_states, state)) {
 			// Flags

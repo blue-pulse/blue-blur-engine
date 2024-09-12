@@ -6,15 +6,15 @@ function player_movement_air() {
 	}
 	
 	// Rotate angle back to 360 degrees
-	if (angle < 180) {
+	if (angle != 0 and angle < 180) {
 		angle = max(angle - 2.8125, 0);
 	} else {
 		angle = min(angle + 2.8125, 360);
 	}
 
-	// Limit vertical speed if not jumping
-	if (!is_jumping and ver_speed < -max_ver_speed) {
-		ver_speed = -max_ver_speed;
+	// Adjust vertical speed
+	if (!is_jumping and !forced_roll and state != states.spindash) {
+		ver_speed = max(-max_ver_speed, ver_speed);
 	}
 	
 	// Handle movement

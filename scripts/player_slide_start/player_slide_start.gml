@@ -5,7 +5,7 @@ function player_slide_start() {
 	}
 	
 	// Check if we should slide
-	var manual_slide = (abs(gnd_speed) >= 2 and button_check("btn_2"));
+	var manual_slide = (abs(gnd_speed) >= 2 and button_check_pressed("btn_2"));
 	if (manual_slide or forced_slide) {
 		pos_y += df_radius_y - sm_radius_y;
 		radius_y = sm_radius_y;

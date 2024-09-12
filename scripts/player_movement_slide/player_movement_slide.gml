@@ -64,7 +64,7 @@ function player_movement_slide() {
 	hor_speed = gnd_speed * dcos(angle);
 	ver_speed = gnd_speed * -dsin(angle);
 
-	// Limit horizontal velocity
+	// Limit horizontal speed
 	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
 	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
 }

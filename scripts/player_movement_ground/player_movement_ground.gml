@@ -3,7 +3,7 @@ function player_movement_ground() {
 	if (spindash_revolutions != -1) {
 		return;
 	}
-
+	
 	if (!gnd_lock) {
 		// Variables
 		var do_skid = false;
@@ -72,11 +72,6 @@ function player_movement_ground() {
 			}
 		}
 		
-		// Start pushing
-		if (is_pushing) {
-			player_set_state(states.pushing, false);
-		}
-		
 		// Handle skid or movement animation
 		var required_angle = (angle <= 45 or angle >= 316.41);
 		if (!required_angle or gnd_speed != 0) {
@@ -103,6 +98,11 @@ function player_movement_ground() {
 			// Reset flag
 			is_pushing = false;
 		}
+		
+		// Start pushing
+		if (is_pushing) {
+			player_set_state(states.pushing, false);
+		}
 	}
 
 	// Apply friction
@@ -118,7 +118,7 @@ function player_movement_ground() {
 	hor_speed = gnd_speed * dcos(angle);
 	ver_speed = gnd_speed * -dsin(angle);
 	
-	// Limit horizontal velocity
+	// Limit horizontal speed
 	gnd_speed = clamp(gnd_speed, -max_abs_speed, max_abs_speed);
 	hor_speed = clamp(hor_speed, -max_abs_speed, max_abs_speed);
 }
