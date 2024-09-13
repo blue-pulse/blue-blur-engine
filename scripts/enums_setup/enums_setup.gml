@@ -16,13 +16,13 @@ enum orders {
 // Floor materials
 enum materials {
 	generic,
-	grass,
 	dirt,
-	wood,
+	glass,
+	grass,
 	metal,
 	stone,
-	glass,
 	water,
+	wood,
 }
 
 // Player enums

@@ -64,17 +64,39 @@ is_sliding = false;
 is_stomping = false;
 is_underwater = false;
 
-// Footsteps sfx	
+// SFX
+snd_skid = [
+	snd_player_skid,
+	snd_player_skid_dirt,
+	snd_player_skid_glass,
+	snd_player_skid_grass,
+	snd_player_skid_metal,
+	snd_player_skid_stone,
+	snd_player_skid_water,
+	snd_player_skid_wood,
+];
+
+snd_land = [
+	snd_player_land,
+	snd_player_land_dirt,
+	snd_player_land_glass,
+	snd_player_land_grass,
+	snd_player_land_metal,
+	snd_player_land_stone,
+	snd_player_land_water,
+	snd_player_land_wood,
+];
+
 snd_footsteps = [
-	snd_player_fs_generic,
-	snd_player_fs_grass,
-	snd_player_fs_dirt,
-	snd_player_fs_wood,
-	snd_player_fs_metal,
-	snd_player_fs_stone,
-	snd_player_fs_glass,
-	snd_player_fs_water,
-]
+	[snd_player_lfs, snd_player_rfs],
+	[snd_player_lfs_dirt, snd_player_rfs_dirt],
+	[snd_player_lfs_glass, snd_player_rfs_glass],
+	[snd_player_lfs_grass, snd_player_rfs_grass],
+	[snd_player_lfs_metal, snd_player_rfs_metal],
+	[snd_player_lfs_stone, snd_player_rfs_stone],
+	[snd_player_lfs_water, snd_player_rfs_water],
+	[snd_player_lfs_wood, snd_player_rfs_wood],
+];
 	
 // Assets
 ast_attack = {

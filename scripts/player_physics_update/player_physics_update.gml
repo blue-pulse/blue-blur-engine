@@ -26,7 +26,6 @@ function player_physics_update() {
 			player_movement_ground();
 			player_balance_update();
 			player_collision_wall();
-			nosequenombre();
 			player_roll_start();
 			player_slide_start();
 		}
@@ -40,6 +39,6 @@ function player_physics_update() {
 		player_movement_air();
 		player_position_update();
 		player_collision_air();
-		player_reset_on_floor();
+		player_land();
 	}
 }

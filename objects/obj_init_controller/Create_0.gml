@@ -2,6 +2,7 @@
 game_is_loading = 60;
 
 // Load assets in memory (Asynchronous)
+audio_group_load(grp_music);
 audio_group_load(grp_sfx);
 audio_group_load(grp_voices);
 print("[INFO] Loading assets in memory...");

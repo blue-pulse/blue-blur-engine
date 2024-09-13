@@ -75,15 +75,19 @@ function player_movement_ground() {
 		// Handle skid or movement animation
 		var required_angle = (angle <= 45 or angle >= 316.41);
 		if (!required_angle or gnd_speed != 0) {
+			// Variables
+			var material = player_find_material();
+			
 			// Continue moving
 			if (state != states.skidding or state != states.pushing) {
 				player_set_state(states.moving, false);
+				player_sfx_footsteps(material);
 			}
 			
 			// Start skidding
 			if (required_angle and do_skid and abs(gnd_speed) >= 4 and state != states.skidding) {
 				player_set_state(states.skidding, false);
-				audio_play_sfx(snd_player_skid, true);
+				audio_play_sfx(snd_skid[material], true);
 			}
 		} else {
 			// Idle actions
