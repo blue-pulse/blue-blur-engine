@@ -1,14 +1,17 @@
-// Macros for general variables
-#macro max_fps 60
-#macro paused global.game_is_paused
+// Macros for constants
+#macro TITLE "Blue Blur Engine"
+#macro MAX_SOUNDS 200
+#macro MAX_FPS 60
+#macro RIGHT 1
+#macro LEFT -1
+#macro UP 2
+#macro DOWN -2
 
-// Macros for directions
-#macro right 1
-#macro left -1
-#macro up 2
-#macro down -2
+// Macros for general variables
+#macro is_paused global.game_is_paused
+#macro part_sys global.part_system
 
 // Macros for objects
-#macro Screen global
-#macro Window global
+#macro Core obj_core_controller
+#macro Stage obj_stage_controller
 #macro Player obj_player

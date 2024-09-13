@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_get_device",
   "parent":{
-    "name":"Input",
-    "path":"folders/Core/Input.yy",
+    "name":"Scripts",
+    "path":"folders/Core/Input/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

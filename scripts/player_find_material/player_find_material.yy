@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_find_material",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_find_material",
+  "parent":{
+    "name":"Methods",
+    "path":"folders/Player/Parent/Scripts/Methods.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

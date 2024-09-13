@@ -6,10 +6,10 @@ function sonic_params_update() {
 		decel = 0.25;
 		roll_decel = 0.125;
 		frict = 0.0234375;
-		roll_frict  = 0.01171875;
-		top_speed = 3;
-		jump_height = -3.5;
-		min_jump_height = -2;
+		roll_frict = 0.01171875;
+		jmp_height = -3.5;
+		min_jmp_height = -2;
+		max_hor_speed = 3;
 	} else {
 		if (is_boosting) {
 			// Boosting parameters
@@ -17,19 +17,20 @@ function sonic_params_update() {
 			air_accel = 0.1875;
 			frict = 0.09375;
 			roll_frict = 0.046875;
-			top_speed = 12;
+			max_hor_speed = 12;
 		} else {
 			// Common parameters
 			accel = 0.046875;
 			air_accel = 0.09375;
 			frict = 0.046875;
 			roll_frict = 0.0234375;
-			top_speed = 10;
+			max_hor_speed = 10;
 		}
 		// Finally
 		decel = 0.5;
 		roll_decel = 0.125;
-		jump_height = -6.5;
-		min_jump_height = -4;
+		jmp_height = -6.5;
+		min_jmp_height = -4;
+		stamina = clamp(stamina, 0, 100);
 	}
 }

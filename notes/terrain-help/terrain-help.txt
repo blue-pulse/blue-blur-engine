@@ -1,0 +1,3 @@
+White tiles: Solid from all sides (You'll want to use them 90% of the time).
+Blue tiles: Solid only from above (Use them for platforms that can be jumped through). 
+Green tiles: Solid from all sides but above (Use them when making a ceiling you don't want Sonic to land on).

@@ -12,8 +12,8 @@
   "duration":1.215669,
   "name":"snd_player_spindash_charge",
   "parent":{
-    "name":"Audio",
-    "path":"folders/Player/Parent/Audio.yy",
+    "name":"Spindash",
+    "path":"folders/Player/Parent/Sounds/Spindash.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

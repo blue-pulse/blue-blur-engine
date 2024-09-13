@@ -12,8 +12,8 @@
   "duration":1.527778,
   "name":"snd_player_roll",
   "parent":{
-    "name":"Audio",
-    "path":"folders/Player/Parent/Audio.yy",
+    "name":"Roll",
+    "path":"folders/Player/Parent/Sounds/Roll.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

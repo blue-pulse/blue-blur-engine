@@ -1,56 +1,61 @@
 function player_movement_air() {
+	// Cancel sliding
+	if (is_sliding) {
+		is_sliding = false;
+		player_set_state(states.falling);
+	}
+	
 	// Rotate angle back to 360 degrees
-	if (angle < 180) {
+	if (angle != 0 and angle < 180) {
 		angle = max(angle - 2.8125, 0);
 	} else {
 		angle = min(angle + 2.8125, 360);
 	}
-	
-	// Limit vertical speed if not jumping
-	if (!is_jumping and (vertical_speed < -15.75)) {
-		vertical_speed = -15.75;
+
+	// Adjust vertical speed
+	if (!is_jumping and !forced_roll and state != states.spindash) {
+		ver_speed = max(-max_ver_speed, ver_speed);
 	}
 	
+	// Handle movement
 	if (!air_lock) {
-		// Go left
 		if (button_check("btn_left")) {
-			if (horizontal_speed > 0) {
-				// Decelerate
-				horizontal_speed -= air_accel;
-			} else if (horizontal_speed > -top_speed) {
-				// Accelerate
-				horizontal_speed -= air_accel;
-				
-				if (horizontal_speed <= -top_speed) {
-					horizontal_speed = -top_speed;
+			// Decelerate
+			if hor_speed > 0 {
+				hor_speed -= air_accel;
+			}
+
+			// Accelerate
+			else if (hor_speed > -max_hor_speed) {
+				hor_speed -= air_accel;
+				if (hor_speed <= -max_hor_speed) {
+					hor_speed = -max_hor_speed;
 				}
 			}
-			
-			// Set facing direction
-			facing = left;
+			dir = LEFT;
 		}
-		
-		// Go right
 		if (button_check("btn_right")) {
-			if (horizontal_speed < 0) {	
-				// Decelerate
-				horizontal_speed += air_accel;
-			} else if (horizontal_speed < top_speed) {
-				// Accelerate
-				horizontal_speed += air_accel;
-				
-				if (horizontal_speed >= top_speed) {
-					horizontal_speed = top_speed;
+			// Decelerate
+			if (hor_speed < 0) {
+				hor_speed += air_accel;
+			}
+
+			// Accelerate
+			else if (hor_speed < max_hor_speed) {
+				hor_speed += air_accel;
+				if (hor_speed >= max_hor_speed) {
+					hor_speed = max_hor_speed;
 				}
 			}
-			
-			// Set facing direction
-			facing = right;
-		}	
+			dir = RIGHT;
+		}
 	}
 	
+	// Airspeed cap
+	ver_speed = clamp(ver_speed, -max_abs_speed, max_abs_speed);
+
 	// Apply air drag
-	if (!is_being_hurt and (vertical_speed < 0) and (vertical_speed > -4)) {
-		horizontal_speed -= floor(horizontal_speed / 0.125) / 256;
+	if (!is_being_hurt and ver_speed < 0 and ver_speed > -4) {
+		hor_speed -= floor(hor_speed / 0.125) / 256;
 	}
 }

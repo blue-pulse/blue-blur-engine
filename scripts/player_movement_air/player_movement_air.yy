@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_movement_air",
   "parent":{
-    "name":"Physics",
-    "path":"folders/Player/Parent/Scripts/Physics.yy",
+    "name":"States",
+    "path":"folders/Player/Parent/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

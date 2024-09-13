@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_position_update",
   "parent":{
-    "name":"Physics",
-    "path":"folders/Player/Parent/Scripts/Physics.yy",
+    "name":"Functions",
+    "path":"folders/Player/Parent/Scripts/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

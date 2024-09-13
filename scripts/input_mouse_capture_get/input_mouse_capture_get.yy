@@ -6,7 +6,7 @@
   "name":"input_mouse_capture_get",
   "parent":{
     "name":"11  Mouse Capture",
-    "path":"folders/Packages/Input v6.3.1/11  Mouse Capture.yy",
+    "path":"folders/Packages/Input v7.0.1/11  Mouse Capture.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Core/Global/Sprites.yy",
+    "path":"folders/Core/Controllers/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -59,7 +59,7 @@
     },
     "name":"spr_controllers",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

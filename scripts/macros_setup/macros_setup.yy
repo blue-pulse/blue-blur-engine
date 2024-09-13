@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"macros_setup",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Core/Global/Scripts.yy",
+    "name":"Setup",
+    "path":"folders/Core/Setup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

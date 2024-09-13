@@ -1,2 +1,2 @@
-// Allow input to be read after the timer ends
+// Read input after timer ends
 global.allow_input = true;

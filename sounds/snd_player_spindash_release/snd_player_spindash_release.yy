@@ -9,11 +9,11 @@
   "bitRate":320,
   "compression":0,
   "conversionMode":0,
-  "duration":1.857596,
+  "duration":1.507324,
   "name":"snd_player_spindash_release",
   "parent":{
-    "name":"Audio",
-    "path":"folders/Player/Parent/Audio.yy",
+    "name":"Spindash",
+    "path":"folders/Player/Parent/Sounds/Spindash.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_player_spindash_release.wav",
   "type":1,
-  "volume":0.7,
+  "volume":0.5,
 }

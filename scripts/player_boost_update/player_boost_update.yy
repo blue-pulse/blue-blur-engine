@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_boost_update",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_boost_update",
+  "parent":{
+    "name":"States",
+    "path":"folders/Player/Parent/Scripts/States.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

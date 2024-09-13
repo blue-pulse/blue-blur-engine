@@ -6,7 +6,7 @@
   "name":"input_gamepad_value",
   "parent":{
     "name":"25  Gamepads (Direct)",
-    "path":"folders/Packages/Input v6.3.1/25  Gamepads (Direct).yy",
+    "path":"folders/Packages/Input v7.0.1/25  Gamepads (Direct).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

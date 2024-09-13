@@ -1,0 +1,9 @@
+alarm[0] = 10;
+depth = orders.player;
+image_alpha = 0.5;
+image_angle = Player.image_angle;
+image_blend = Player.ast_boost.img_blend;
+image_index = Player.image_index;
+image_speed = 0;
+image_xscale = Player.image_xscale;
+sprite_index = Player.sprite_index;

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_tidal_tempest",
+  "audioGroupId":{
+    "name":"grp_music",
+    "path":"audiogroups/grp_music",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":1,
+  "conversionMode":0,
+  "duration":283.36426,
+  "name":"snd_tidal_tempest",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Stages/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_tidal_tempest.wav",
+  "type":1,
+  "volume":0.8,
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_sonic_boost_a",
+  "audioGroupId":{
+    "name":"grp_voices",
+    "path":"audiogroups/grp_voices",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.990907,
+  "name":"snd_sonic_boost_a",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Player/Sonic/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_sonic_boost_a.wav",
+  "type":1,
+  "volume":1.0,
+}
