@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_movement_slide",
   "parent":{
-    "name":"Methods",
-    "path":"folders/Player/Parent/Scripts/Methods.yy",
+    "name":"States",
+    "path":"folders/Player/Parent/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

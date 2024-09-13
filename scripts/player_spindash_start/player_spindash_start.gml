@@ -23,7 +23,7 @@ function player_spindash_start() {
 	else if (button_check("btn_down")) {
 		if (button_check_pressed("btn_1")) {
 			// Increase the revolutions
-			spindash_revolutions = min(spindash_revolutions + 2, 8);
+			spindash_revolutions = min(spindash_revolutions + 2, 16);
 
 			// VFX
 			shake_effect(7);

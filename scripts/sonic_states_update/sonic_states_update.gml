@@ -1,3 +1,3 @@
 function sonic_states_update() {
-	sonic_stomp_handle();
+	sonic_stomp_start();
 }

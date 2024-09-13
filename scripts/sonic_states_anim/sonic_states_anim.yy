@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sonic_states_anim",
   "parent":{
-    "name":"Setup",
-    "path":"folders/Player/Sonic/Scripts/States/Setup.yy",
+    "name":"Functions",
+    "path":"folders/Player/Sonic/Scripts/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

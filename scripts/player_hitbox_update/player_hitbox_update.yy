@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_hitbox_update",
   "parent":{
-    "name":"Methods",
-    "path":"folders/Player/Parent/Scripts/Methods.yy",
+    "name":"Functions",
+    "path":"folders/Player/Parent/Scripts/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

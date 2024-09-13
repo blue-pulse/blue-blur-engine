@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sonic_params_update",
   "parent":{
-    "name":"Methods",
-    "path":"folders/Player/Sonic/Scripts/Methods.yy",
+    "name":"Functions",
+    "path":"folders/Player/Sonic/Scripts/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

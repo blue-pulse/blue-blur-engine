@@ -1,4 +1,4 @@
-function sonic_stomp_handle() {
+function sonic_stomp_start() {
 	if (is_stomping) {
 		// Draw trail while stomping
 		player_draw_trail();
