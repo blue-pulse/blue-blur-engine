@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"VFX",
-    "path":"folders/Player/VFX.yy",
+    "path":"folders/Player/Parent/VFX.yy",
   },
   "parentObjectId":{
     "name":"obj_vfx",

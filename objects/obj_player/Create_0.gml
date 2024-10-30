@@ -2,6 +2,7 @@
 depth = orders.player;
 score = global.player_score;
 lives = global.player_lives;
+rings = 0;
 
 // Set basic parameters
 pos_x = x;
@@ -9,6 +10,8 @@ pos_y = y;
 angle = 0;
 opacity = 1;
 rotation = 360;
+prev_pos_x = pos_x;
+prev_pos_y = pos_y;
 
 // Initialise physics variables
 accel = 0;
@@ -44,6 +47,7 @@ hitbox = [0, 0];
 on_object = noone;
 plane = 0;
 spindash_revolutions = -1;
+invincibility_frames = 0;
 state = states.falling;
 stamina = 100;
 stick_to_convex = 0;
@@ -125,10 +129,6 @@ ast_stomp = {
 	spr_aura: 0,
 	snd_clips: [],
 }
-
-// Remember last position
-prev_pos_x = pos_x;
-prev_pos_y = pos_y;
 
 // Player startup
 player_params_update();

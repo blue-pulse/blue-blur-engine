@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"object_check_player",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"object_check_player",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/Core/Utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

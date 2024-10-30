@@ -12,8 +12,8 @@
   "duration":13.536009,
   "name":"snd_player_stomp_start",
   "parent":{
-    "name":"Stomp",
-    "path":"folders/Player/Parent/Sounds/Stomp.yy",
+    "name":"Common",
+    "path":"folders/Player/Parent/Sounds/Common.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

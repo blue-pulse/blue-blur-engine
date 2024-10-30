@@ -8,7 +8,9 @@ enum orders {
 	// Depths
 	entities = 0,
 	effects = 0,
+	backstage = 1,
 	player = -1,
+    frontstage = -2,
 	gui = -100,
 	controller = -4096,
 }
