@@ -56,5 +56,5 @@ ast_stomp = {
 }
 
 // Handle startup
-sonic_params_update();
-player_hitbox_update();
+sonic_update_physics();
+player_update_hitbox();

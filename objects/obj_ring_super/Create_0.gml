@@ -1,10 +1,11 @@
 // Inherit the parent event
 event_inherited();
 
-// Set basic parameters
+// Set variables
+instance_set_hitbox(8, 8);
 increase = 10;
 
 // Set methods
-ring_play_sfx = function() {
-	audio_play_sfx(snd_ring_super);
+get_sfx = function() {
+	return snd_ring_super;
 }

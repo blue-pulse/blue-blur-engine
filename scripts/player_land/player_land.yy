@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_land",
   "parent":{
-    "name":"Functions",
-    "path":"folders/Player/Parent/Scripts/Functions.yy",
+    "name":"States",
+    "path":"folders/Player/Parent/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_ring_super.wav",
   "type":1,
-  "volume":0.5,
+  "volume":0.8,
 }

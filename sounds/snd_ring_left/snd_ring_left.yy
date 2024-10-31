@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_ring_left.wav",
   "type":1,
-  "volume":0.45,
+  "volume":0.5,
 }

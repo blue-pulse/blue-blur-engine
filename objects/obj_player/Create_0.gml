@@ -1,10 +1,12 @@
-// Set global variables
+// Set basic parameters
 depth = orders.player;
+
+// Set score variables
+rings = 0;
 score = global.player_score;
 lives = global.player_lives;
-rings = 0;
 
-// Set basic parameters
+// Set basic variables
 pos_x = x;
 pos_y = y;
 angle = 0;
@@ -131,5 +133,5 @@ ast_stomp = {
 }
 
 // Player startup
-player_params_update();
-player_hitbox_update();
+player_update_physics();
+player_update_hitbox();

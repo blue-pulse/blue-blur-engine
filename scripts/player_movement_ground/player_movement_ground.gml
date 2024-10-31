@@ -81,7 +81,7 @@ function player_movement_ground() {
 			// Continue moving
 			if (state != states.skidding or state != states.pushing) {
 				player_set_state(states.moving, false);
-				player_sfx_footsteps(material);
+				player_play_footsteps(material);
 			}
 			
 			// Start skidding

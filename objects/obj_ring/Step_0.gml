@@ -1,13 +1,12 @@
-// Collect ring
 if (!Player.is_being_hurt and Player.invincibility_frames < 90) {
-	// object_check_player(ColHitbox)
-	if (object_check_player()) {
-		// Increase amount
+	if (instance_check_collision(hitbox, Player.hitbox)) {
+		// Increase player's rings
 		Player.rings += increase;
 		
 		// FX
-		ring_play_sfx();
-		//instance_create(x, y, RingSparkle);	
+		var snd_clip = get_sfx();
+		audio_play_sfx(snd_clip);
+		instance_create_vfx(x, y, obj_ring_spark, true);
 		
 		// Destroy object
 		instance_destroy();

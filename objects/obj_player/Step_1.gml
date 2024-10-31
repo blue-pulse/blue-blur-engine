@@ -1,7 +1,7 @@
 if (allow_movement) {
-	// Update states
-	player_physics_update();
+	// Main logic
+	player_main();
 	
-	// Update hitbox based on state
-	player_hitbox_update();
+	// Hitbox
+	player_update_hitbox();
 }

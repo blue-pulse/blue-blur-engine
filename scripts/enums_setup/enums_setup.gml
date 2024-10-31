@@ -1,4 +1,4 @@
-// Drawing depths and audio priorities
+// Drawing and audio priorities
 enum orders {
 	// Audio
 	bgm = 100,
@@ -6,8 +6,8 @@ enum orders {
 	voices = 2,
 	
 	// Depths
-	entities = 0,
 	effects = 0,
+	enemies = 0,
 	backstage = 1,
 	player = -1,
     frontstage = -2,
@@ -27,7 +27,7 @@ enum materials {
 	wood,
 }
 
-// Player enums
+// States enums
 enum states {
     idle,
     moving,
@@ -46,4 +46,5 @@ enum states {
     balancing_turn,
 	stomping,
 	sliding,
+	turning,
 }

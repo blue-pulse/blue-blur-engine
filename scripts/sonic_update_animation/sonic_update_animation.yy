@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sonic_update_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sonic_update_animation",
+  "parent":{
+    "name":"Functions",
+    "path":"folders/Player/Sonic/Scripts/Functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
