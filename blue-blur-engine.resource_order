@@ -68,8 +68,8 @@
     {"name":"VFX","order":3,"path":"folders/Player/VFX.yy",},
     {"name":"Resources","order":10,"path":"folders/Resources.yy",},
     {"name":"Enemies","order":3,"path":"folders/Resources/Enemies.yy",},
-    {"name":"Sprites","order":2,"path":"folders/Resources/Enemies/Sprites.yy",},
     {"name":"Objects","order":1,"path":"folders/Resources/Enemies/Objects.yy",},
+    {"name":"Sprites","order":2,"path":"folders/Resources/Enemies/Sprites.yy",},
     {"name":"Items","order":1,"path":"folders/Resources/Items.yy",},
     {"name":"Objects","order":1,"path":"folders/Resources/Items/Objects.yy",},
     {"name":"Sounds","order":3,"path":"folders/Resources/Items/Sounds.yy",},
@@ -586,5 +586,6 @@
     {"name":"spr_sonic_walking","order":17,"path":"sprites/spr_sonic_walking/spr_sonic_walking.yy",},
     {"name":"spr_spawner","order":5,"path":"sprites/spr_spawner/spr_spawner.yy",},
     {"name":"spr_vfx","order":2,"path":"sprites/spr_vfx/spr_vfx.yy",},
+    {"name":"Sprite47","order":14,"path":"sprites/Sprite47/Sprite47.yy",},
   ],
 }
