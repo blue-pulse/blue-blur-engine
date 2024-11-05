@@ -2,8 +2,8 @@
 event_inherited();
 
 // Variables
+value = 10;
 instance_set_hitbox(8, 8);
-increase = 10;
 
 // Methods
 get_sfx = function() {

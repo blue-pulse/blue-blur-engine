@@ -1,6 +1,6 @@
 // Variables
 depth = orders.backstage;
-increase = 1;
+value = 1;
 instance_set_hitbox(6, 6);
 
 // Methods

@@ -13,7 +13,7 @@ function player_land() {
 		is_grounded = false;
 		on_object = false;
 
-		// FX
+		// Effects
 		shake_effect(25);
 		audio_stop_sound(snd_player_stomp_start);
 		audio_play_sfx(snd_player_stomp_end);

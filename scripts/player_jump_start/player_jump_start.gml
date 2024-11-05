@@ -50,7 +50,7 @@ function player_jump_start() {
 		radius_y = small_radius_y;
 	}
 
-    // FX
+    // SFX
     audio_play_sfx(snd_player_jump);
     audio_play_sfx(snd_player_wind);
 

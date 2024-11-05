@@ -9,11 +9,9 @@ function player_spindash_start() {
 			spindash_revolutions = 0;
 			hor_speed = 0;
 
-			// VFX
+			// Effects
 			shake_effect(7);
 			instance_create_vfx(pos_x, pos_y + radius_y, obj_spindash_dust);
-
-			// SFX
 			audio_sound_pitch(snd_player_spindash_charge, spindash_sound_pitch);
 			audio_play_sfx(snd_player_spindash_charge);
 		}
@@ -24,12 +22,10 @@ function player_spindash_start() {
 		if (button_check_pressed("btn_1")) {
 			// Increase the revolutions
 			spindash_revolutions = min(spindash_revolutions + 2, 16);
-
-			// VFX
-			shake_effect(7);
-
-			// SFX
 			spindash_sound_pitch += spindash_revolutions / 100;
+
+			// Effects
+			shake_effect(7);
 			audio_sound_pitch(snd_player_spindash_charge, min(1.15, spindash_sound_pitch));
 			audio_play_sfx(snd_player_spindash_charge);
 		} else {
@@ -43,6 +39,7 @@ function player_spindash_start() {
 		// Parameters
 		gnd_speed = (8 + round(spindash_revolutions) / 2) * dir;
 		spindash_revolutions = -1;
+		spindash_sound_pitch = 1;
 		is_rolling = true;
 		player_set_state(states.rolling);
 
@@ -51,11 +48,8 @@ function player_spindash_start() {
 		radius_y = small_radius_y;
 		pos_y += big_radius_y - small_radius_y;
 
-		// VFX
+		// Effects
 		shake_effect(15);
-
-		// SFX
-		spindash_sound_pitch = 1;
 		audio_stop_sound(snd_player_spindash_charge);
 		audio_play_sfx(snd_player_spindash_release);
 

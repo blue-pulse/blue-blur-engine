@@ -32,11 +32,9 @@ function player_boost() {
 			shake_effect(25);
 			instance_create_vfx(pos_x, pos_y, obj_boost_aura);
 			instance_create_vfx(pos_x, pos_y, obj_boost_wave);
-			
-			// Voice clip
-			audio_play_speech(ast_boost.snd_clips);
-			
+
 			// SFX
+			audio_play_speech(ast_boost.snd_clips);
 			audio_play_sfx(snd_player_boost);
 			audio_play_sfx(snd_player_boost_start);
 			audio_play_sfx(snd_player_boost_loop, false, true);
@@ -48,7 +46,7 @@ function player_boost() {
 			stamina -= 0.35;
 			air_timer = (is_grounded) ? (45) : (air_timer - 1);
 			
-			// VFX
+			// Effects
 			player_draw_trail(true);
 		}
 	}
