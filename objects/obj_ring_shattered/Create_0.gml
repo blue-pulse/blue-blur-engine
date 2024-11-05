@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-// Set variables
+// Variables
 pos_x = x;
 pos_y = y;
 hor_speed = 0;

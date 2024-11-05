@@ -1,12 +1,10 @@
-// Set basic parameters
+// Basic variables
 depth = orders.player;
-
-// Set score variables
-rings = 0;
 score = global.player_score;
 lives = global.player_lives;
+rings = 0;
 
-// Set basic variables
+// Position variables
 pos_x = x;
 pos_y = y;
 angle = 0;
@@ -15,7 +13,15 @@ rotation = 360;
 prev_pos_x = pos_x;
 prev_pos_y = pos_y;
 
-// Initialise physics variables
+// Collision radiuses
+big_radius_x = 9;
+big_radius_y = 19;
+small_radius_x = 7;
+small_radius_y = 14;
+radius_x = big_radius_x;
+radius_y = big_radius_y;
+
+// Physics variables
 accel = 0;
 air_accel = 0;
 decel = 0;
@@ -24,28 +30,20 @@ grv = 0.21875;
 gnd_speed = 0;
 hor_speed = 0;
 ver_speed = 0;
-jmp_height = 0;
-min_jmp_height = 0;
+jump_height = 0;
+min_jump_height = 0;
 max_hor_speed = 0;
 max_ver_speed = 15.75;
 max_abs_speed = 16;
 roll_decel = 0;
 roll_frict = 0;
 
-// Set collision radiuses
-df_radius_x = 9;
-df_radius_y = 19;
-sm_radius_x = 7;
-sm_radius_y = 14;
-radius_x = df_radius_x;
-radius_y = df_radius_y;
-
-// Set control variables
+// Control variables
 allow_collision = true;
 allow_movement = true;
 collision_mode = [0, 0];
 dir = RIGHT;
-hitbox = [0, 0];
+hitbox = [0, 0, 0, 0];
 on_object = noone;
 plane = 0;
 spindash_revolutions = -1;
@@ -54,7 +52,7 @@ state = states.falling;
 stamina = 100;
 stick_to_convex = 0;
 
-// Set flags
+// Flags
 air_lock = false;
 gnd_lock = false;
 forced_roll = false;
@@ -70,7 +68,7 @@ is_sliding = false;
 is_stomping = false;
 is_underwater = false;
 
-// SFX
+// Sound effects
 snd_skid = [
 	snd_player_skid,
 	snd_player_skid_dirt,
@@ -132,6 +130,6 @@ ast_stomp = {
 	snd_clips: [],
 }
 
-// Player startup
+// Handle startups
 player_update_physics();
 player_update_hitbox();

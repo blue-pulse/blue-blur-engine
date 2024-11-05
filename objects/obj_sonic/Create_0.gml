@@ -1,15 +1,15 @@
 // Inherit the parent event
 event_inherited();
 
-// Set collision radiuses
-df_radius_x = 9;
-df_radius_y = 17;
-sm_radius_x = 7;
-sm_radius_y = 12;
-radius_x = df_radius_x;
-radius_y = df_radius_y;
+// Collision radiuses
+big_radius_x = 9;
+big_radius_y = 17;
+small_radius_x = 7;
+small_radius_y = 12;
+radius_x = big_radius_x;
+radius_y = big_radius_y;
 
-// Set spawn point
+// Spawn point
 pos_x = x;
 pos_y = y - radius_y - 1;
 

@@ -46,9 +46,9 @@ function player_land() {
 		grv = (is_underwater) ? (0.0625) : (0.21875);
 
 		// Reset collision radiuses assuming the player isn't rolling or sliding
-		pos_y -= df_radius_y - radius_y;
-		radius_x = df_radius_x;
-		radius_y = df_radius_y;
+		pos_y -= big_radius_y - radius_y;
+		radius_x = big_radius_x;
+		radius_y = big_radius_y;
 		
 		// SFX
 		if (!audio_is_playing(snd_player_stomp_end)) {

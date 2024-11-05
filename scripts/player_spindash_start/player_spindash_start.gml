@@ -47,9 +47,9 @@ function player_spindash_start() {
 		player_set_state(states.rolling);
 
 		// Player's radius
-		radius_x = sm_radius_x;
-		radius_y = sm_radius_y;
-		pos_y += df_radius_y - sm_radius_y;
+		radius_x = small_radius_x;
+		radius_y = small_radius_y;
+		pos_y += big_radius_y - small_radius_y;
 
 		// VFX
 		shake_effect(15);

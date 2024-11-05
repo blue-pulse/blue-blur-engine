@@ -2,7 +2,7 @@ function sonic_stomp() {
 	if (is_stomping) {
 		// Draw trail while stomping
 		player_draw_trail();
-	} else if (!is_grounded and ver_speed >= min_jmp_height and button_check_pressed("btn_2")) {
+	} else if (!is_grounded and ver_speed >= min_jump_height and button_check_pressed("btn_2")) {
 		// Change speed
 		gnd_speed = 0;
 		hor_speed = 0;

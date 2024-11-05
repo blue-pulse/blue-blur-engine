@@ -5,7 +5,7 @@ function player_collision_air() {
 	}
 
 	// Define radius of our collision
-	var hor_radius = df_radius_x + 1;
+	var hor_radius = big_radius_x + 1;
 
 	// Define direction of our movement
 	if (abs(hor_speed) >= abs(ver_speed)) {

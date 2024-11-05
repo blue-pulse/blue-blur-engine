@@ -7,8 +7,8 @@ function sonic_update_physics() {
 		roll_decel = 0.125;
 		frict = 0.0234375;
 		roll_frict = 0.01171875;
-		jmp_height = -3.5;
-		min_jmp_height = -2;
+		jump_height = -3.5;
+		min_jump_height = -2;
 		max_hor_speed = 3;
 	} else {
 		if (is_boosting) {
@@ -29,8 +29,8 @@ function sonic_update_physics() {
 		// Finally
 		decel = 0.5;
 		roll_decel = 0.125;
-		jmp_height = -6.5;
-		min_jmp_height = -4;
+		jump_height = -6.5;
+		min_jump_height = -4;
 		stamina = clamp(stamina, 0, 100);
 	}
 }

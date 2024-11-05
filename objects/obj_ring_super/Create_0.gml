@@ -1,11 +1,11 @@
 // Inherit the parent event
 event_inherited();
 
-// Set variables
+// Variables
 instance_set_hitbox(8, 8);
 increase = 10;
 
-// Set methods
+// Methods
 get_sfx = function() {
 	return snd_ring_super;
 }

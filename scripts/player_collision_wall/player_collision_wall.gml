@@ -13,7 +13,7 @@ function player_collision_wall() {
 
 	// Define collision variables
 	var ver_offset = 8 * (angle == 360);
-	var hor_radius = df_radius_x + 1;
+	var hor_radius = big_radius_x + 1;
 
 	// Get current angle quadrant for direction, while collision_mode uses angle ranges to determine push direction.
 	if (angle <= 43.59 or angle >= 316.41) {
