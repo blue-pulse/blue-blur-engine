@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_vfx",
+  "%Name":"obj_camera",
   "eventList":[],
   "managed":true,
-  "name":"obj_vfx",
+  "name":"obj_camera",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Core/Controllers/Objects.yy",
+    "name":"Camera",
+    "path":"folders/GUI/Camera.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_vfx",
-    "path":"sprites/spr_vfx/spr_vfx.yy",
+    "name":"spr_camera",
+    "path":"sprites/spr_camera/spr_camera.yy",
   },
   "spriteMaskId":null,
   "visible":true,

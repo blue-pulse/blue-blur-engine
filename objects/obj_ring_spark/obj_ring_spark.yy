@@ -9,8 +9,8 @@
   "name":"obj_ring_spark",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Resources/VFX/Objects.yy",
+    "name":"Effects",
+    "path":"folders/Resources/Items/Effects.yy",
   },
   "parentObjectId":{
     "name":"obj_vfx",
