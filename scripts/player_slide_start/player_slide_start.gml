@@ -1,6 +1,6 @@
 function player_slide_start() {
 	// Early exit
-	if (is_rolling or spindash_revolutions != -1) {
+	if (is_rolling or state == states.spindash) {
 		return;
 	}
 	

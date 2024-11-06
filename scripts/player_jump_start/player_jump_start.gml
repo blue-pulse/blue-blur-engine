@@ -1,6 +1,6 @@
 function player_jump_start() {
 	// Early exit
-	if (!button_check_pressed("btn_1") or spindash_revolutions != -1) {
+	if (!button_check_pressed("btn_1") or state == states.spindash) {
 		return;
 	}
 

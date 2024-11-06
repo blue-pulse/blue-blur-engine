@@ -1,6 +1,6 @@
 function player_movement_ground() {
 	// Early exit
-	if (spindash_revolutions != -1) {
+	if (state == states.spindash) {
 		return;
 	}
 	

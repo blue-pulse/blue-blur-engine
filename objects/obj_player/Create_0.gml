@@ -46,7 +46,6 @@ dir = RIGHT;
 hitbox = [0, 0, 0, 0];
 on_object = noone;
 plane = 0;
-spindash_revolutions = -1;
 invincibility_frames = 0;
 state = states.falling;
 stamina = 100;

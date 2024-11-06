@@ -1,19 +1,21 @@
 function player_spindash_start() {
 	// Variables
-	static spindash_sound_pitch = 1;
+	static spindash_charge = 0;
+	static spindash_pitch = 1;
 
 	// Start spindash
-	if (spindash_revolutions == -1) {
+	if (state != states.spindash) {
 		if (state == states.crouching and button_check_pressed("btn_1")) {
 			// Parameters
-			spindash_revolutions = 0;
 			hor_speed = 0;
+			spindash_charge = 0;
+			spindash_pitch = 1;
+			player_set_state(states.spindash, false);
 
 			// Effects
-			shake_effect(7);
 			instance_create_vfx(pos_x, pos_y + radius_y, obj_spindash_dust);
-			audio_sound_pitch(snd_player_spindash_charge, spindash_sound_pitch);
 			audio_play_sfx(snd_player_spindash_charge);
+			shake_effect(7);
 		}
 	}
 
@@ -21,46 +23,37 @@ function player_spindash_start() {
 	else if (button_check("btn_down")) {
 		if (button_check_pressed("btn_1")) {
 			// Increase the revolutions
-			spindash_revolutions = min(spindash_revolutions + 2, 16);
-			spindash_sound_pitch += spindash_revolutions / 100;
+			spindash_charge = min(spindash_charge + 2, 16);
+			spindash_pitch = min(spindash_charge + 0.1, 1.15);
 
 			// Effects
+			var snd_charge = audio_play_sfx(snd_player_spindash_charge);
+			audio_sound_pitch(snd_charge, spindash_pitch);
 			shake_effect(7);
-			audio_sound_pitch(snd_player_spindash_charge, min(1.15, spindash_sound_pitch));
-			audio_play_sfx(snd_player_spindash_charge);
 		} else {
 			// Decrease the revolutions
-			spindash_revolutions -= floor(spindash_revolutions / 0.125) / 256;
+			spindash_charge -= floor(spindash_charge / 0.125) / 256;
 		}
 	}
 
 	// Release spindash
 	else {
 		// Parameters
-		gnd_speed = (8 + round(spindash_revolutions) / 2) * dir;
-		spindash_revolutions = -1;
-		spindash_sound_pitch = 1;
 		is_rolling = true;
-		player_set_state(states.rolling);
-
-		// Player's radius
+		gnd_speed = (8 + round(spindash_charge) / 2) * dir;
 		radius_x = small_radius_x;
 		radius_y = small_radius_y;
 		pos_y += big_radius_y - small_radius_y;
-
-		// Effects
-		shake_effect(15);
-		audio_stop_sound(snd_player_spindash_charge);
-		audio_play_sfx(snd_player_spindash_release);
+		player_set_state(states.rolling);
 
 		// Convert ground speed to real speed
 		hor_speed = gnd_speed * dcos(angle);
 		ver_speed = gnd_speed * -dsin(angle);
-	}
-
-	// Apply spindash animation
-	if (spindash_revolutions >= 0) {
-		player_set_state(states.spindash, false);
+		
+		// Effects
+		audio_stop_sound(snd_player_spindash_charge);
+		audio_play_sfx(snd_player_spindash_release);
+		shake_effect(15);
 	}
 
 	// Return flag
