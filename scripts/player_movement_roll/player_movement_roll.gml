@@ -37,7 +37,7 @@ function player_movement_roll() {
 
 	// Unroll
 	if (!forced_roll) {
-		if (gnd_speed == 0 or abs(gnd_speed) < 0.5) {
+		if (abs(gnd_speed) < 0.5) {
 			pos_y -= big_radius_y - small_radius_y;
 			radius_x = big_radius_x;
 			radius_y = big_radius_y;
