@@ -14,4 +14,5 @@
 // Macros for objects
 #macro Core obj_core_controller
 #macro Stage obj_stage_controller
+#macro Camera obj_camera
 #macro Player obj_player
