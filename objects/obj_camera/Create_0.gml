@@ -1,7 +1,3 @@
-// View
-def_width = global.width;
-def_height = global.height;
-
 // Position
 target = self;
 disp_x = 0;
@@ -22,5 +18,5 @@ view_enabled = true;
 view_visible[0] = true;
 
 // Create view
-view = camera_create_view(x, y, def_width, def_height);
+view = camera_create_view(x, y, WIDTH, HEIGHT);
 view_set_camera(0, view);

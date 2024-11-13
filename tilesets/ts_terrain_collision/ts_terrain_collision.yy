@@ -26,8 +26,8 @@
   },
   "spriteNoExport":true,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"grp_resources",
+    "path":"texturegroups/grp_resources",
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

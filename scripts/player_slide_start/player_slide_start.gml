@@ -12,6 +12,6 @@ function player_slide_start() {
 		radius_x = small_radius_x;
 		is_sliding = true;
 		player_set_state(states.sliding);
-		audio_play_speech(ast_attack.snd_clips);
+		audio_play_speech(snd_attack);
 	}
 }

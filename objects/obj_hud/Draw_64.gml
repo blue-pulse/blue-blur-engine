@@ -1,8 +1,23 @@
-if (global.debug) {
-	draw_text(10, 10, "FPS: " + string(fps));
-	draw_text(10, 25, "GND: " + string(Player.gnd_speed));
-	draw_text(10, 40, "HOR: " + string(Player.hor_speed));
-	draw_text(10, 55, "VER: " + string(Player.ver_speed));
-	draw_text(10, 70, "Stamina: " + string(Player.stamina));
-	draw_text(10, 85, "Rings: " + string(Player.rings));
+// Timer
+if (timer.display) {
+	var value = "00:00.00";
+	hud_draw_element(timer, value);
+}
+
+// Rings
+if (rings.display) {
+	var value = int_to_text(Player.rings, 3);
+	hud_draw_element(rings, value);
+}
+
+// Stamina
+if (stamina.display) {
+	var value = Player.stamina * 1.4;
+	hud_draw_stamina(value);
+}
+
+// Lives
+if (life.display) {
+	var value = int_to_text(global.lives, 2);
+	hud_draw_element(life, value);
 }

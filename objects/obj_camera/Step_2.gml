@@ -14,14 +14,14 @@ pos_y = lerp(pos_y, target_y, smooth_lerp);
 
 // Zoom
 if (zoom_timer) {
-	view_width = lerp(view_width, def_width * zoom_amount, zoom_lerp);
-	view_height = lerp(view_height, def_height * zoom_amount, zoom_lerp);
+	view_width = lerp(view_width, WIDTH * zoom_amount, zoom_lerp);
+	view_height = lerp(view_height, HEIGHT * zoom_amount, zoom_lerp);
 	pos_x = target_x;
 	pos_y = target_y;
 	zoom_timer--;
-} else if (view_width != def_height) {
-	view_width = lerp(view_width, def_width, zoom_lerp);
-	view_height = lerp(view_height, def_height, zoom_lerp);
+} else if (view_width != HEIGHT) {
+	view_width = lerp(view_width, WIDTH, zoom_lerp);
+	view_height = lerp(view_height, HEIGHT, zoom_lerp);
 	zoom_amount = 1;
 }
 

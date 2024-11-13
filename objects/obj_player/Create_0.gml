@@ -1,7 +1,6 @@
 // Basic variables
 depth = orders.player;
-score = global.player_score;
-lives = global.player_lives;
+score = global.score;
 rings = 0;
 
 // Position variables
@@ -67,7 +66,9 @@ is_sliding = false;
 is_stomping = false;
 is_underwater = false;
 
-// Sound effects
+// Assets
+snd_attack = [];
+
 snd_skid = [
 	snd_player_skid,
 	snd_player_skid_dirt,
@@ -100,34 +101,31 @@ snd_footsteps = [
 	[snd_player_lfs_water, snd_player_rfs_water],
 	[snd_player_lfs_wood, snd_player_rfs_wood],
 ];
-	
-// Assets
-ast_attack = {
-	snd_clips: [],
-}
 
 ast_boost = {
-	img_blend: #FFFFFF,
-	par_trail: part_type_create_trail(#FFFFFF),
+	img_blend: c_white,
+	par_trail: part_type_create_trail(c_white),
 	spr_aura: 0,
 	spr_spark: 0,
 	spr_wave: 0,
 	snd_clips: [],
-}
+};
 
 ast_dash = {
 	spr_aura: 0,
 	snd_sfx: 0,
-}
-
-ast_hud = {
-	spr_icon: 0,
-}
+};
 
 ast_stomp = {
 	spr_aura: 0,
 	snd_clips: [],
-}
+};
+
+ast_hud = {
+	font: fnt_hud_black,
+	spr_lives: 0,
+	colors_stamina: [c_white, c_white],
+};
 
 // Handle startups
 player_update_physics();

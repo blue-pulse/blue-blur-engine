@@ -14,14 +14,12 @@ pos_x = x;
 pos_y = y - radius_y - 1;
 
 // Assets
-ast_attack = {
-	snd_clips: [
-		snd_sonic_attack_a,
-		snd_sonic_attack_b,
-		snd_sonic_attack_c,
-		snd_sonic_attack_d,
-	],
-}
+snd_attack = [
+	snd_sonic_attack_a,
+	snd_sonic_attack_b,
+	snd_sonic_attack_c,
+	snd_sonic_attack_d,
+];
 
 ast_boost = {
 	img_blend: #64DCFF,
@@ -42,10 +40,6 @@ ast_dash = {
 	snd_sfx: snd_sonic_dash,
 }
 
-ast_hud = {
-	spr_icon: spr_sonic_icon,
-}
-
 ast_stomp = {
 	spr_aura: spr_sonic_stomp_aura,
 	snd_clips: [
@@ -54,6 +48,15 @@ ast_stomp = {
 		snd_sonic_stomp_b,
 	],
 }
+
+ast_hud = {
+	font: fnt_hud_blue,
+	spr_lives: spr_sonic_lives,
+	colors_stamina: [
+		make_color_rgb(33, 74, 223),
+		make_color_rgb(78, 194, 252)
+	],
+};
 
 // Handle startup
 sonic_update_physics();
