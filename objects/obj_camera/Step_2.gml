@@ -9,31 +9,27 @@ var target_x = (target.x + disp_x) - view_width / 2;
 var target_y = (target.y + disp_y) - view_height / 2;
 
 // Smoothly move the camera to the target position
-pos_x = lerp(pos_x, target_x, lerp_index);
-pos_y = lerp(pos_y, target_y, lerp_index);
+pos_x = lerp(pos_x, target_x, smooth_lerp);
+pos_y = lerp(pos_y, target_y, smooth_lerp);
 
-// Shaking
-if (shake_timer > 0) {
-	var shake = power(shake_timer, 2) * shake_index;
-	pos_x += random_range(-shake, shake);
-	pos_y += random_range(-shake, shake);
-	shake_timer--;
+// Zoom
+if (zoom_timer) {
+	view_width = lerp(view_width, def_width * zoom_amount, zoom_lerp);
+	view_height = lerp(view_height, def_height * zoom_amount, zoom_lerp);
+	pos_x = target_x;
+	pos_y = target_y;
+	zoom_timer--;
+} else if (view_width != def_height) {
+	view_width = lerp(view_width, def_width, zoom_lerp);
+	view_height = lerp(view_height, def_height, zoom_lerp);
+	zoom_amount = 1;
 }
 
-// Zooming
-if (zoom_amount != 0) {
-	// Variables
-	var zoom = zoom_amount * lerp_index;
-	var zoom_width = view_width * zoom;
-	var zoom_height = view_height * zoom;
-	
-	// Add to size
-	view_width += zoom_width;
-	view_height += zoom_height;
-	
-	// Position
-	pos_x -= zoom_width / 2;
-	pos_y -= zoom_height / 2;
+// Screen shake
+if (shake_timer) {
+	pos_x += random_range(-shake_power, shake_power);
+	pos_y += random_range(-shake_power, shake_power);
+	shake_timer--;
 }
 
 // Clamp the camera to room bounds

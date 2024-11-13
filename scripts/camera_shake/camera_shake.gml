@@ -1,4 +1,4 @@
-function camera_shake(_shake_timer, _shake_index) {
-	Camera.shake_timer = clamp(_shake_timer, 1, 100);
-	Camera.shake_index = clamp(_shake_index, 0.01, 1);
+function camera_shake(strength=2, duration=25) {
+	Camera.shake_power = clamp(strength, 1, 3);
+	Camera.shake_timer = max(duration, 0);
 }

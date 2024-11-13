@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"shake_effect",
+  "%Name":"input_shake",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"shake_effect",
+  "name":"input_shake",
   "parent":{
-    "name":"Utils",
-    "path":"folders/Core/Utils.yy",
+    "name":"Scripts",
+    "path":"folders/Core/Input/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"camera_zoom",
+  "%Name":"camera_zoom_in",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"camera_zoom",
+  "name":"camera_zoom_in",
   "parent":{
     "name":"Scripts",
     "path":"folders/GUI/Camera/Scripts.yy",

@@ -15,7 +15,7 @@ function player_spindash_start() {
 			// Effects
 			instance_create_vfx(pos_x, pos_y + radius_y, obj_spindash_dust);
 			audio_play_sfx(snd_player_spindash_charge);
-			shake_effect(7);
+			screen_shake(7);
 		}
 	}
 
@@ -29,7 +29,7 @@ function player_spindash_start() {
 			// Effects
 			var snd_charge = audio_play_sfx(snd_player_spindash_charge);
 			audio_sound_pitch(snd_charge, spindash_pitch);
-			shake_effect(7);
+			screen_shake(7);
 		} else {
 			// Decrease the revolutions
 			spindash_charge -= floor(spindash_charge / 0.125) / 256;
@@ -53,7 +53,7 @@ function player_spindash_start() {
 		// Effects
 		audio_stop_sound(snd_player_spindash_charge);
 		audio_play_sfx(snd_player_spindash_release);
-		shake_effect(15);
+		screen_shake(15);
 	}
 
 	// Return flag
