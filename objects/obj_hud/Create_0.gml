@@ -1,5 +1,5 @@
 // Parameters
-depth = orders.gui;
+depth = queue.gui;
 sprite_index = noone;
 
 // Variables

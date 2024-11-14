@@ -1,5 +1,5 @@
 // Basic variables
-depth = orders.player;
+depth = queue.player;
 score = global.score;
 rings = 0;
 

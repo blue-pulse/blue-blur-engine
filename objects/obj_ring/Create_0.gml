@@ -1,5 +1,5 @@
 // Variables
-depth = orders.backstage;
+depth = queue.backstage;
 value = 1;
 instance_set_hitbox(6, 6);
 

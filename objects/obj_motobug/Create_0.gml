@@ -1,5 +1,5 @@
 // Set parameters
-depth = orders.enemies;
+depth = queue.enemies;
 
 // Set variables
 pos_x = x;

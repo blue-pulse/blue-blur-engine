@@ -10,7 +10,7 @@ function audio_play_bgm(sound, loop_start=0, loop_end=0) {
 	audio_sound_loop_end(sound, loop_end);
 	
 	// Play the song
-	var song = audio_play_sound(sound, orders.bgm, true);
+	var song = audio_play_sound(sound, queue.bgm, true);
 	audio_sound_loop(song, true);
 	return song;
 }
