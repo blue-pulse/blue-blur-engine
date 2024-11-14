@@ -1,3 +1,8 @@
+// Early exit
+if (!instance_exists(Player)) {
+	return;
+}
+
 // Timer
 if (timer.display) {
 	var value = "00:00.00";

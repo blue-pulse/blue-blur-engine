@@ -1,3 +1,8 @@
+// Early exit
+if (!instance_exists(target)) {
+	return;
+}
+
 // Get current camera position
 var pos_x = camera_get_view_x(view);
 var pos_y = camera_get_view_y(view);

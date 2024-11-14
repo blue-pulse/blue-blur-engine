@@ -1,5 +1,5 @@
 // Position
-target = self;
+target = noone;
 disp_x = 0;
 disp_y = 0;
 smooth_lerp = 0.3;

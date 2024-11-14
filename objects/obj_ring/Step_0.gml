@@ -1,3 +1,9 @@
+// Early exit
+if (!instance_exists(Player)) {
+	return;
+}
+
+// Ring logic
 if (!Player.is_being_hurt and Player.invincibility_frames < 90) {
 	if (instance_check_collision(hitbox, Player.hitbox)) {
 		// Increase player's rings
