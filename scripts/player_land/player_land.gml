@@ -5,13 +5,18 @@ function player_land() {
 	}
 
 	// Is the player stomping?
-	if (is_stomping) {
+	if (state == states.stomping) {
 		// Update player parameters
-		var force = (is_underwater) ? (-4) : (-7.5);
-		hor_speed = force * dsin(angle);
-		is_stomping = false;
+		var strength = (is_underwater) ? (-4) : (-7.5);
+		hor_speed = strength * dsin(angle);
 		is_grounded = false;
 		on_object = false;
+
+		// Change state
+		pos_y -= big_radius_y - radius_y;
+		radius_x = big_radius_x;
+		radius_y = big_radius_y;
+		player_set_state(states.crouching);
 
 		// Effects
 		screen_shake(25);
@@ -29,7 +34,6 @@ function player_land() {
 		is_jumping = false;
 		is_pushing = false;
 		is_rolling = false;
-		is_sliding = false;
 		
 		// Reset flags when hurt
 		if (is_being_hurt) {

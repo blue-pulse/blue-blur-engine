@@ -62,8 +62,6 @@ is_grounded = false;
 is_jumping = false;
 is_pushing = false;
 is_rolling = false;
-is_sliding = false;
-is_stomping = false;
 is_underwater = false;
 
 // Assets

@@ -1,4 +1,4 @@
-if (Player.is_stomping) {
+if (Player.state == states.stomping) {
 	// Stick to the player position
 	x = floor(Player.pos_x);
 	y = floor(Player.pos_y - Player.small_radius_y);

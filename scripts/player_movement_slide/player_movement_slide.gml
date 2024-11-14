@@ -1,7 +1,6 @@
 function player_movement_slide() {
 	// Early exit
 	if ((angle > 45 and angle < 316.41) or button_check("btn_down")) {
-		is_sliding = false;
 		is_rolling = true;
 		player_set_state(states.rolling);
 		audio_play_sfx(snd_player_roll);
@@ -50,7 +49,6 @@ function player_movement_slide() {
 			pos_y -= big_radius_y - small_radius_y;
 			radius_x = big_radius_x;
 			radius_y = big_radius_y;
-			is_sliding = false;
 			player_set_state(states.moving);
 		}
 	}

@@ -12,11 +12,12 @@ var view_height = camera_get_view_height(view);
 // Set target camera position
 var target_x = (target.x + disp_x) - view_width / 2;
 var target_y = (target.y + disp_y) - view_height / 2;
-
+print("Z: ", disp_y);
+print("A: ", target_y);
 // Smoothly move the camera to the target position
 pos_x = lerp(pos_x, target_x, smooth_lerp);
 pos_y = lerp(pos_y, target_y, smooth_lerp);
-
+print("B: ", pos_y);
 // Zoom
 if (zoom_timer) {
 	view_width = lerp(view_width, WIDTH * zoom_amount, zoom_lerp);
@@ -40,7 +41,7 @@ if (shake_timer) {
 // Clamp the camera to room bounds
 pos_x = clamp(pos_x, 0, room_width - view_width);
 pos_y = clamp(pos_y, 0, room_height - view_height);
-
+print("C: ", pos_y);
 // Apply camera position
 camera_set_view_pos(view, pos_x, pos_y);
 camera_set_view_size(view, view_width, view_height);

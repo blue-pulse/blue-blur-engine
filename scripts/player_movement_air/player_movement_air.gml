@@ -1,7 +1,6 @@
 function player_movement_air() {
 	// Cancel sliding
-	if (is_sliding) {
-		is_sliding = false;
+	if (state == states.sliding) {
 		player_set_state(states.falling);
 	}
 	

@@ -32,7 +32,6 @@ function player_jump_start() {
 	is_grounded = false;
 	is_jumping = true;
 	is_pushing = false;
-	is_sliding = false;
 	on_object = false;
 	stick_to_convex = false;
 	radius_x = big_radius_x;
