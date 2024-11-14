@@ -18,9 +18,9 @@ global.tile_widths = [];
 
 // Internal parameters
 global.allow_input = true;
-global.character = obj_sonic;
 global.debug = true;
 global.game_is_paused = false;
-global.lives = 3;
 global.part_system = part_system_create();
+global.character = obj_sonic;
 global.score = 0;
+global.lives = 3;

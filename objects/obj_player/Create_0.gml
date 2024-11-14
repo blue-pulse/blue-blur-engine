@@ -1,6 +1,6 @@
 // Basic variables
 depth = queue.player;
-score = global.score;
+tmp_score = global.score;
 rings = 0;
 
 // Position variables

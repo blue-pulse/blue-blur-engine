@@ -1,5 +1,5 @@
 // Drawing and audio priorities
-enum orders {
+enum queue {
 	// Audio
 	bgm = 100,
 	sfx = 1,
