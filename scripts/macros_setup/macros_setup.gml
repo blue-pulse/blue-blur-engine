@@ -1,15 +1,15 @@
 // Macros for constants
+#macro TITLE "Blue Blur Engine"
 #macro UNICODE "abcdefghijklmnopqrstuvwxyz1234567890:."
+#macro WIDTH 426
+#macro HEIGHT 240
+#macro SCALE 2
 #macro DOWN -2
 #macro LEFT -1
 #macro RIGHT 1
 #macro UP 2
-#macro HEIGHT 256
-#macro WIDTH 456
 #macro MAX_FPS 60
 #macro MAX_SOUNDS 200
-#macro SCALE 2
-#macro TITLE "Blue Blur Engine"
 
 // Macros for globals
 #macro fnt_hud_black global.font_black
