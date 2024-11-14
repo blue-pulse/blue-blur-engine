@@ -8,8 +8,8 @@
   "name":"obj_stage_spawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spawners",
-    "path":"folders/Player/Spawners.yy",
+    "name":"Spawner",
+    "path":"folders/Player/Spawner.yy",
   },
   "parentObjectId":null,
   "persistent":false,

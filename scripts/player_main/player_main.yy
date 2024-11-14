@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_main",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_main",
+  "parent":{
+    "name":"Functions",
+    "path":"folders/Player/Parent/Scripts/Functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

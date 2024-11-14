@@ -12,8 +12,8 @@
   "duration":0.991995,
   "name":"snd_player_wind",
   "parent":{
-    "name":"Jump",
-    "path":"folders/Player/Parent/Sounds/Jump.yy",
+    "name":"Common",
+    "path":"folders/Player/Parent/Sounds/Common.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -12,8 +12,8 @@
   "duration":3.68,
   "name":"snd_player_boost_start",
   "parent":{
-    "name":"Boost",
-    "path":"folders/Player/Parent/Sounds/Boost.yy",
+    "name":"Common",
+    "path":"folders/Player/Parent/Sounds/Common.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

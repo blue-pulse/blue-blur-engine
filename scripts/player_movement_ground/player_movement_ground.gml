@@ -1,6 +1,6 @@
 function player_movement_ground() {
 	// Early exit
-	if (spindash_revolutions != -1) {
+	if (state == states.spindash) {
 		return;
 	}
 	
@@ -81,7 +81,7 @@ function player_movement_ground() {
 			// Continue moving
 			if (state != states.skidding or state != states.pushing) {
 				player_set_state(states.moving, false);
-				player_sfx_footsteps(material);
+				player_play_footsteps(material);
 			}
 			
 			// Start skidding

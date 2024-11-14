@@ -9,5 +9,15 @@ if (state != states.rolling) {
 	image_xscale = dir;
 }
 
+// Blink sprite
+if (invincibility_frames and !is_being_hurt) {
+	var should_maintain = invincibility_frames mod 4;
+	if (!should_maintain) {
+		image_alpha = !image_alpha;
+	}
+} else {
+	image_alpha = 1;
+}
+
 // Draw player
 draw_self();

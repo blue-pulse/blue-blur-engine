@@ -100,8 +100,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"grp_resources",
-    "path":"texturegroups/grp_resources",
+    "name":"grp_player",
+    "path":"texturegroups/grp_player",
   },
   "type":0,
   "VTile":false,

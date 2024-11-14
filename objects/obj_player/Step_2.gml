@@ -1,7 +1,8 @@
 if (allow_movement) {
-	// Update physics parameters
-	player_params_update();
+	// Parameters
+	player_update_params();
+	player_update_physics();
 	
-	// Update animations
-	player_rotation_update();
+	// Animation
+	player_update_rotation();
 }

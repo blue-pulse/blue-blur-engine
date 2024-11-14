@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"int_to_text",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"int_to_text",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/Core/Utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

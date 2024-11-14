@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_ring_left",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.668526,
+  "name":"snd_ring_left",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Resources/Items/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_ring_left.wav",
+  "type":1,
+  "volume":0.5,
+}

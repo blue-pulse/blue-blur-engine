@@ -47,9 +47,9 @@ function player_movement_slide() {
 	// Stop sliding
 	if (!forced_slide) {
 		if (gnd_speed == 0 or abs(gnd_speed) < 1) {
-			pos_y -= df_radius_y - sm_radius_y;
-			radius_x = df_radius_x;
-			radius_y = df_radius_y;
+			pos_y -= big_radius_y - small_radius_y;
+			radius_x = big_radius_x;
+			radius_y = big_radius_y;
 			is_sliding = false;
 			player_set_state(states.moving);
 		}

@@ -1,8 +1,9 @@
 if (allow_movement) {
-	// Update physics parameters
-	sonic_params_update();
+	// Parameters
+	player_update_params();
+	sonic_update_physics();
 	
-	// Update animations
-	sonic_states_anim();
-	player_rotation_update();
+	// Animation
+	sonic_update_animation();
+	player_update_rotation();
 }

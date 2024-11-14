@@ -6,8 +6,8 @@
   "name":"obj_vfx",
   "overriddenProperties":[],
   "parent":{
-    "name":"VFX",
-    "path":"folders/Player/VFX.yy",
+    "name":"Objects",
+    "path":"folders/Core/Controllers/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

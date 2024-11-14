@@ -1,4 +1,4 @@
 // Destroy if not spindashing anymore
-if (Player.spindash_revolutions == -1) {
+if (Player.state != states.spindash) {
 	instance_destroy();
 }

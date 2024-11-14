@@ -1,6 +1,6 @@
 function player_jump_start() {
 	// Early exit
-	if (!button_check_pressed("btn_1") or spindash_revolutions != -1) {
+	if (!button_check_pressed("btn_1") or state == states.spindash) {
 		return;
 	}
 
@@ -27,30 +27,30 @@ function player_jump_start() {
 	}
 
 	// Change player's parameters
-	hor_speed += jmp_height * dsin(angle);
-	ver_speed += jmp_height * dcos(angle);
+	hor_speed += jump_height * dsin(angle);
+	ver_speed += jump_height * dcos(angle);
 	is_grounded = false;
 	is_jumping = true;
 	is_pushing = false;
 	is_sliding = false;
 	on_object = false;
 	stick_to_convex = false;
-	radius_x = df_radius_x;
-	radius_y = df_radius_y;
+	radius_x = big_radius_x;
+	radius_y = big_radius_y;
 	player_set_state(states.jumping);
 
 	// Change player's radius
 	if (!is_rolling) {
 		is_rolling = true;
-		pos_y += df_radius_y - sm_radius_y;
-		radius_x = sm_radius_x;
-		radius_y = sm_radius_y;
+		pos_y += big_radius_y - small_radius_y;
+		radius_x = small_radius_x;
+		radius_y = small_radius_y;
 	} else {
-		radius_x = sm_radius_x;
-		radius_y = sm_radius_y;
+		radius_x = small_radius_x;
+		radius_y = small_radius_y;
 	}
 
-    // FX
+    // SFX
     audio_play_sfx(snd_player_jump);
     audio_play_sfx(snd_player_wind);
 

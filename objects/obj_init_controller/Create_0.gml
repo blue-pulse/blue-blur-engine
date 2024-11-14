@@ -16,10 +16,6 @@ print("[INFO] Setting initial game parameters...");
 randomize();
 print("[INFO] Random seed was generated!");
 
-// Resize surface
-surface_resize(application_surface, global.width, global.height);
-print("[INFO] Surface resize was completed!");
-
 // Set screen parameters
 window_set_caption(TITLE);
 screen_prepare_gpu();

@@ -6,7 +6,7 @@ if (Player.is_boosting) {
 
 	// Animation angle
 	image_angle = point_direction(xprevious, yprevious, x, y);
-
+	
 	// Increase alpha
 	if (image_alpha < 0.65) {
 		image_alpha += 0.125;

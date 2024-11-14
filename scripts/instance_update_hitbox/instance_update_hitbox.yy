@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"instance_update_hitbox",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"instance_update_hitbox",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/Core/Utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
