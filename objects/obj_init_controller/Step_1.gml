@@ -6,4 +6,4 @@ if !audio_group_is_loaded(grp_voices) then return;
 
 // Start the game
 print("[INFO] Starting game...");
-room_goto_next();
+room_goto(rm_practice_zone)//room_goto_next();

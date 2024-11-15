@@ -40,7 +40,7 @@ if (target == Player) {
 			overview_delay--;
 		}
 	} else {
-		overview_delay = 120;
+		overview_delay = 96;
 	}
 	
 	// Offset vertically

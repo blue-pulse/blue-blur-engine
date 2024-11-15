@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"stage_setup",
+  "%Name":"stage_background_practice",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"stage_setup",
+  "name":"stage_background_practice",
   "parent":{
     "name":"Scripts",
     "path":"folders/Stages/Scripts.yy",

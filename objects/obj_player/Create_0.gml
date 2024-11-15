@@ -55,6 +55,7 @@ air_lock = false;
 gnd_lock = false;
 forced_roll = false;
 forced_slide = false;
+infinite_stamina = false;
 is_being_hurt = false;
 is_boosting = false;
 is_dashing = false;

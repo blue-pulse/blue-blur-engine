@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"stage_setup_practice",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"stage_setup_practice",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Stages/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

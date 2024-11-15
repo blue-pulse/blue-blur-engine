@@ -26,7 +26,7 @@ function player_boost() {
 			// Parameters
 			gnd_speed = max_hor_speed * dir;
 			hor_speed = gnd_speed * dcos(angle);
-			stamina -= 1.5;
+			stamina -= (infinite_stamina) ? (0) : (1.5);
 
 			// VFX
 			screen_shake(25);
@@ -43,7 +43,7 @@ function player_boost() {
 		// Continue boosting
 		if (is_boosting and button_check("btn_3")) {
 			// Parameters
-			stamina -= 0.35;
+			stamina -= (infinite_stamina) ? (0) : (0.35);
 			air_timer = (is_grounded) ? (45) : (air_timer - 1);
 			
 			// Effects

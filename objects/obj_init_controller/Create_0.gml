@@ -8,13 +8,10 @@ audio_group_load(grp_voices);
 print("[INFO] Loading assets in memory...");
 
 // Set game parameters
+randomize();
 audio_channel_num(MAX_SOUNDS);
 game_set_speed(MAX_FPS, gamespeed_fps);
 print("[INFO] Setting initial game parameters...");
-
-// Randomize seed
-randomize();
-print("[INFO] Random seed was generated!");
 
 // Set screen parameters
 window_set_caption(TITLE);
