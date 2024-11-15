@@ -1,7 +1,22 @@
-// Position
+// Basic
+enabled = true;
+pos_x = x;
+pos_y = y;
+view_x = x;
+view_y = y;
+view_width = WIDTH;
+view_height = HEIGHT;
 target = noone;
-disp_x = 0;
-disp_y = 0;
+target_x = 0;
+target_y = 0;
+
+// Extended camera
+shift_value = 64;
+shift_speed = floor(shift_value / 32);
+scroll_delay = 0;
+overview_delay = 0;
+overview_offset = 0;
+extended_offset = 0;
 smooth_lerp = 0.3;
 
 // Shake
@@ -13,10 +28,8 @@ zoom_amount = 1;
 zoom_timer = 0;
 zoom_lerp = 0.15;
 
-// Enable views
+// Enable view
 view_enabled = true;
 view_visible[0] = true;
-
-// Create view
-view = camera_create_view(x, y, WIDTH, HEIGHT);
+var view = camera_create_view(view_x, view_y, view_width, view_height);
 view_set_camera(0, view);

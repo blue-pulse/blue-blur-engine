@@ -6,7 +6,6 @@ global.font_gray = font_add_sprite_ext(spr_font_gray, UNICODE, true, 0);
 global.font_silver = font_add_sprite_ext(spr_font_silver, UNICODE, true, 0);
 
 // Resolution parameters
-global.buffer = 8;
 global.fullscreen = false;
 
 // Tiles parameters

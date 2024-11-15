@@ -23,7 +23,7 @@ function player_spindash_start() {
 	else if (button_check("btn_down")) {
 		if (button_check_pressed("btn_1")) {
 			// Increase the revolutions
-			spindash_charge = min(spindash_charge + 2, 16);
+			spindash_charge = min(spindash_charge + 2, max_abs_speed);
 			spindash_pitch = min(spindash_charge + 0.1, 1.15);
 
 			// Effects

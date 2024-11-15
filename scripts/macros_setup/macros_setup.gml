@@ -20,8 +20,8 @@
 #macro is_paused global.game_is_paused
 #macro part_sys global.part_system
 
-// Macros for objects
-#macro Camera obj_camera
+// Macros for resources
+#macro Camera view_camera[0]
 #macro Core obj_core_controller
 #macro Player obj_player
 #macro Stage obj_stage_controller

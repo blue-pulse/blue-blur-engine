@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_controllers",
-    "path":"sprites/spr_controllers/spr_controllers.yy",
+    "name":"spr_logic",
+    "path":"sprites/spr_logic/spr_logic.yy",
   },
   "spriteMaskId":null,
   "visible":false,

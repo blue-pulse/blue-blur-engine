@@ -11,12 +11,14 @@ function player_land() {
 		hor_speed = strength * dsin(angle);
 		is_grounded = false;
 		on_object = false;
-
-		// Change state
+		
+		// Reset collision radiuses
 		pos_y -= big_radius_y - radius_y;
 		radius_x = big_radius_x;
 		radius_y = big_radius_y;
-		player_set_state(states.crouching);
+		
+		// Change state
+		player_set_state(hor_speed == 0 ? states.crouching : states.moving);
 
 		// Effects
 		screen_shake(25);

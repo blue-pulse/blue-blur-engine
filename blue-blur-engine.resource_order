@@ -207,6 +207,7 @@
     {"name":"button_check_pressed","order":1,"path":"scripts/button_check_pressed/button_check_pressed.yy",},
     {"name":"button_check_released","order":2,"path":"scripts/button_check_released/button_check_released.yy",},
     {"name":"button_get_icon","order":3,"path":"scripts/button_get_icon/button_get_icon.yy",},
+    {"name":"camera_set_target","order":4,"path":"scripts/camera_set_target/camera_set_target.yy",},
     {"name":"camera_zoom_in","order":2,"path":"scripts/camera_zoom_in/camera_zoom_in.yy",},
     {"name":"camera_zoom_out","order":3,"path":"scripts/camera_zoom_out/camera_zoom_out.yy",},
     {"name":"draw_font","order":13,"path":"scripts/draw_font/draw_font.yy",},
