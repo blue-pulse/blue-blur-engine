@@ -17,8 +17,8 @@ function player_slope_repel() {
 		gnd_speed = 0;
 
 		// Change the state
-		if (state == states.moving) {
-			player_set_state(states.falling);
+		if (state == states.move) {
+			player_set_state(states.fall);
 		}
 	}
 }

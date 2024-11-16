@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_player_energy_orb",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":1,
+  "conversionMode":0,
+  "duration":0.957052,
+  "name":"snd_player_energy_orb",
+  "parent":{
+    "name":"Common",
+    "path":"folders/Player/Parent/Sounds/Common.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_player_energy_orb.wav",
+  "type":1,
+  "volume":1.0,
+}

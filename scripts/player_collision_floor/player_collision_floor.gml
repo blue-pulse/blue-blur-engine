@@ -103,8 +103,8 @@ function player_collision_floor() {
 			if (!stick_to_convex) {
 				var dist = min(4 + abs(floor(hor_speed)), 14);
 				if (find_floor[0] > dist) {
-					if (state == states.moving) {
-						player_set_state(states.falling);
+					if (state == states.move) {
+						player_set_state(states.fall);
 					}
 					is_pushing = false;
 					is_grounded = false;
@@ -128,8 +128,8 @@ function player_collision_floor() {
 			if (!stick_to_convex) {
 				var dist = min(4 + abs(floor(ver_speed)), 14);
 				if (find_floor[0] > dist) {
-					if (state == states.moving) {
-						player_set_state(states.falling);
+					if (state == states.move) {
+						player_set_state(states.fall);
 					}
 					is_pushing = false;
 					is_grounded = false;
@@ -153,8 +153,8 @@ function player_collision_floor() {
 			if (!stick_to_convex) {
 				var dist = min(4 + abs(floor(hor_speed)), 14);
 				if (find_floor[0] > dist) {
-					if (state == states.moving) {
-						player_set_state(states.falling);
+					if (state == states.move) {
+						player_set_state(states.fall);
 					}
 					is_pushing = false;
 					is_grounded = false;
@@ -178,8 +178,8 @@ function player_collision_floor() {
 			if (!stick_to_convex) {
 				var dist = min(4 + abs(floor(ver_speed)), 14);
 				if (find_floor[0] > dist) {
-					if (state == states.moving) {
-						player_set_state(states.falling);
+					if (state == states.move) {
+						player_set_state(states.fall);
 					}
 					is_pushing = false;
 					is_grounded = false;

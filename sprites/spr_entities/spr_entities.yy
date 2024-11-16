@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Core/Controllers/Sprites.yy",
+    "path":"folders/Core/Call-Only/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -46,7 +46,7 @@ hitbox = [0, 0, 0, 0];
 on_object = noone;
 plane = 0;
 invincibility_frames = 0;
-state = states.falling;
+state = states.fall;
 stamina = 100;
 stick_to_convex = 0;
 

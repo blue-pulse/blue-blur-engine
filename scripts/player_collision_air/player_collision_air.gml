@@ -35,7 +35,7 @@ function player_collision_air() {
 			var find_floor_1 = tile_find_v(pos_x - radius_x, pos_y + radius_y, true, plane);
 			var find_floor_2 = tile_find_v(pos_x + radius_x, pos_y + radius_y, true, plane);
 
-			if find_floor_1[0] <= find_floor_2[0] {
+			if (find_floor_1[0] <= find_floor_2[0]) {
 				var dist = find_floor_1[0];
 				var ang = find_floor_1[1];
 			} else {

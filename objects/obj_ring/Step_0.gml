@@ -5,7 +5,7 @@ if (!instance_exists(Player)) {
 
 // Ring logic
 if (!Player.is_being_hurt and Player.invincibility_frames < 90) {
-	if (instance_check_collision(hitbox, Player.hitbox)) {
+	if (hitbox_in_hitbox(hitbox, Player.hitbox)) {
 		// Increase player's rings
 		Player.rings += value;
 		

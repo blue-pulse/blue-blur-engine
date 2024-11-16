@@ -32,8 +32,8 @@ if (target == Player) {
 	}
 	
 	// Check for overview delay
-	var shift_up = (target.state == states.searching);
-	var shift_down = (target.state == states.crouching);
+	var shift_up = (target.state == states.search);
+	var shift_down = (target.state == states.crouch);
 	
 	if (shift_up or shift_down) {
 		if (overview_delay) {

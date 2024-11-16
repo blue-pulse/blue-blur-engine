@@ -1,5 +1,5 @@
 // Destroy effect
-if (Player.state != states.jumping) {
+if (Player.state != states.jump) {
 	instance_destroy();
 }
 

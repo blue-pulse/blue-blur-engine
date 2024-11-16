@@ -1,7 +1,7 @@
 function player_movement_air() {
 	// Cancel sliding
-	if (state == states.sliding) {
-		player_set_state(states.falling);
+	if (state == states.slide) {
+		player_set_state(states.fall);
 	}
 	
 	// Rotate angle back to 360 degrees

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Core/Controllers/Objects.yy",
+    "path":"folders/Core/Call-Only/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

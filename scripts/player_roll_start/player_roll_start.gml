@@ -11,7 +11,7 @@ function player_roll_start() {
 		radius_y = small_radius_y;
 		radius_x = small_radius_x;
 		is_rolling = true;
-		player_set_state(states.rolling);
+		player_set_state(states.roll);
 		audio_play_sfx(snd_player_roll);
 	}
 }

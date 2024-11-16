@@ -5,7 +5,7 @@ function player_spindash_start() {
 
 	// Start spindash
 	if (state != states.spindash) {
-		if (state == states.crouching and button_check_pressed("btn_1")) {
+		if (state == states.crouch and button_check_pressed("btn_1")) {
 			// Parameters
 			hor_speed = 0;
 			spindash_charge = 0;
@@ -44,7 +44,7 @@ function player_spindash_start() {
 		radius_x = small_radius_x;
 		radius_y = small_radius_y;
 		pos_y += big_radius_y - small_radius_y;
-		player_set_state(states.rolling);
+		player_set_state(states.roll);
 
 		// Convert ground speed to real speed
 		hor_speed = gnd_speed * dcos(angle);

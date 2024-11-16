@@ -14,7 +14,7 @@ function player_jump() {
 	
 	// Homing dash
 	if (is_dashing) {
-		if (state == states.jumping) {
+		if (state == states.jump) {
 			player_draw_trail();
 		}
 	} else if (ver_speed >= min_jump_height and button_check_pressed("btn_1")) {
@@ -22,7 +22,7 @@ function player_jump() {
 		is_dashing = true;
 		hor_speed = 8 * dir;
 		ver_speed = 0;
-		player_set_state(states.jumping);
+		player_set_state(states.jump);
 		audio_play_sfx(ast_dash.snd_sfx);
 	}
 }

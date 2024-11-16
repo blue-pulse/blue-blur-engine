@@ -18,6 +18,6 @@ function sonic_anim_skidding() {
 				break;
 		}
 	} else {
-		player_set_state(states.falling);
+		player_set_state(states.fall);
 	}
 }

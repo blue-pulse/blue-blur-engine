@@ -10,7 +10,7 @@ function player_slide_start() {
 		pos_y += big_radius_y - small_radius_y;
 		radius_y = small_radius_y;
 		radius_x = small_radius_x;
-		player_set_state(states.sliding);
+		player_set_state(states.slide);
 		audio_play_speech(snd_attack);
 	}
 }

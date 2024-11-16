@@ -122,8 +122,8 @@
 			}
 	
 			// Check for overview delay
-			var ShiftDown = Player.state == states.crouching;
-			var ShiftUp   = Player.state == states.searching;
+			var ShiftDown = Player.state == states.crouch;
+			var ShiftUp   = Player.state == states.search;
 	
 			if (ShiftUp or ShiftDown)
 			{

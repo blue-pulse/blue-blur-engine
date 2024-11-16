@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"part_type_create_orb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"part_type_create_orb",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/Core/Utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

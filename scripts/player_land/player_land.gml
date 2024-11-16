@@ -5,7 +5,7 @@ function player_land() {
 	}
 
 	// Is the player stomping?
-	if (state == states.stomping) {
+	if (state == states.stomp) {
 		// Update player parameters
 		var strength = (is_underwater) ? (-4) : (-7.5);
 		hor_speed = strength * dsin(angle);
@@ -18,7 +18,7 @@ function player_land() {
 		radius_y = big_radius_y;
 		
 		// Change state
-		player_set_state(hor_speed == 0 ? states.crouching : states.moving);
+		player_set_state(hor_speed == 0 ? states.crouch : states.move);
 
 		// Effects
 		screen_shake(25);
@@ -27,7 +27,7 @@ function player_land() {
 	} else {
 		// Update player animation
 		if (!on_object and state != states.idle and state != states.spindash) {
-			player_set_state(states.moving);
+			player_set_state(states.move);
 		}
 
 		// Reset flags

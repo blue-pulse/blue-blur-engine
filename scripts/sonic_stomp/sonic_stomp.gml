@@ -1,5 +1,5 @@
 function sonic_stomp() {
-	if (state == states.stomping) {
+	if (state == states.stomp) {
 		// Draw trail while stomping
 		player_draw_trail();
 	} else if (!is_grounded and ver_speed >= min_jump_height and button_check_pressed("btn_2")) {
@@ -11,7 +11,7 @@ function sonic_stomp() {
 		// Parameters
 		air_lock = true;
 		is_jumping = false;
-		player_set_state(states.stomping);
+		player_set_state(states.stomp);
 		
 		// Effects
 		instance_create_vfx(prev_pos_x, prev_pos_y, obj_stomp_aura);

@@ -31,6 +31,7 @@ function player_jump_start() {
 	ver_speed += jump_height * dcos(angle);
 	is_grounded = false;
 	is_jumping = true;
+	is_dashing = false;
 	is_pushing = false;
 	on_object = false;
 	stick_to_convex = false;
@@ -44,7 +45,7 @@ function player_jump_start() {
 	// Change player's radius
 	radius_x = small_radius_x;
 	radius_y = small_radius_y;
-	player_set_state(states.jumping);
+	player_set_state(states.jump);
 
     // SFX
     audio_play_sfx(snd_player_jump);

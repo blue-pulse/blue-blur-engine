@@ -8,7 +8,7 @@ function player_main() {
 			player_slope_resist_roll();
 			player_movement_roll();
 			player_collision_wall();
-		} else if (state == states.sliding) {
+		} else if (state == states.slide) {
 			// Doing an action
 			if player_jump_start() then return false;
 			

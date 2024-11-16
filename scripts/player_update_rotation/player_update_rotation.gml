@@ -1,6 +1,6 @@
 function player_update_rotation() {
 	// Only rotate when moving
-	if (state != states.moving) {
+	if (state != states.move) {
 		rotation = 360;
 	} else {
 		// Apply smooth rotation

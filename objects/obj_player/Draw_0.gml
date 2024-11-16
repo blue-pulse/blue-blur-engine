@@ -5,7 +5,7 @@ image_angle = rotation;
 image_alpha = opacity;
 
 // Update the direction only if not rolling
-if (state != states.rolling) {
+if (state != states.roll) {
 	image_xscale = dir;
 }
 

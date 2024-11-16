@@ -30,12 +30,12 @@ function player_movement_ground() {
 				if (dir != LEFT) {
 					dir = LEFT;
 					is_pushing = false;
-					player_set_state(states.moving);
+					player_set_state(states.move);
 				}
 				
 				// Stop skidding
-				if (state == states.skidding) {
-					player_set_state(states.moving, false);
+				if (state == states.skid) {
+					player_set_state(states.move, false);
 				}
 			}
 		} 
@@ -62,12 +62,12 @@ function player_movement_ground() {
 				if (dir != RIGHT) {
 					dir = RIGHT;
 					is_pushing = false;
-					player_set_state(states.moving);
+					player_set_state(states.move);
 				}
 				
 				// Stop skidding
-				if (state == states.skidding) {
-					player_set_state(states.moving, false);
+				if (state == states.skid) {
+					player_set_state(states.move, false);
 				}
 			}
 		}
@@ -79,22 +79,22 @@ function player_movement_ground() {
 			var material = player_find_material();
 			
 			// Continue moving
-			if (state != states.skidding or state != states.pushing) {
-				player_set_state(states.moving, false);
+			if (state != states.skid or state != states.push) {
+				player_set_state(states.move, false);
 				player_play_footsteps(material);
 			}
 			
 			// Start skidding
-			if (required_angle and do_skid and abs(gnd_speed) >= 4 and state != states.skidding) {
-				player_set_state(states.skidding, false);
+			if (required_angle and do_skid and abs(gnd_speed) >= 4 and state != states.skid) {
+				player_set_state(states.skid, false);
 				audio_play_sfx(snd_skid[material], true);
 			}
 		} else {
 			// Idle actions
 			if (button_check("btn_up")) {
-				player_set_state(states.searching, false);
+				player_set_state(states.search, false);
 			} else if (button_check("btn_down")) {
-				player_set_state(states.crouching, false);
+				player_set_state(states.crouch, false);
 			} else {
 				player_set_state(states.idle, false);
 			}
@@ -105,7 +105,7 @@ function player_movement_ground() {
 		
 		// Start pushing
 		if (is_pushing) {
-			player_set_state(states.pushing, false);
+			player_set_state(states.push, false);
 		}
 	}
 

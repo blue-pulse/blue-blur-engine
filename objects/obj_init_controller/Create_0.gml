@@ -17,7 +17,6 @@ print("[INFO] Setting initial game parameters...");
 window_set_caption(TITLE);
 screen_prepare_gpu();
 screen_set_properties();
-screen_verify_resolution();
 print("[INFO] Screen setup was completed!");
 
 // Create an instance of each controller
