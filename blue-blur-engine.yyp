@@ -420,6 +420,7 @@
     {"id":{"name":"player_collision_floor","path":"scripts/player_collision_floor/player_collision_floor.yy",},},
     {"id":{"name":"player_collision_resource","path":"scripts/player_collision_resource/player_collision_resource.yy",},},
     {"id":{"name":"player_collision_wall","path":"scripts/player_collision_wall/player_collision_wall.yy",},},
+    {"id":{"name":"player_get_angle","path":"scripts/player_get_angle/player_get_angle.yy",},},
     {"id":{"name":"player_get_reaction","path":"scripts/player_get_reaction/player_get_reaction.yy",},},
     {"id":{"name":"player_get_stage_objects","path":"scripts/player_get_stage_objects/player_get_stage_objects.yy",},},
     {"id":{"name":"player_movement_air","path":"scripts/player_movement_air/player_movement_air.yy",},},
