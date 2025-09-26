@@ -1,9 +1,9 @@
 function player_movement_air() {
-	// Variables
+	// Variables for horizontal movement
 	var total_steps = 1 + (abs(hor_speed) div hor_radius);
 	var steps = hor_speed / total_steps;
 	
-	// Process horizontal movement loop
+	// Horizontal movement
 	repeat (total_steps) {
 		// Apply movement step
 		x += dcos(angle) * steps;
@@ -41,11 +41,11 @@ function player_movement_air() {
 		}
 	}
 	
-	// Initialize vertical movement loop
+	// Variables for vertical movement
 	total_steps = 1 + (abs(ver_speed) div ver_radius);
 	steps = ver_speed / total_steps;
 	
-	// Process vertical movement loop
+	// Vertical movement
 	repeat (total_steps) {
 		// Apply movement steps
 		x += dsin(angle) * steps;
