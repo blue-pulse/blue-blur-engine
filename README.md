@@ -5,7 +5,7 @@
 [![Project Status: WIP](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
-<img src="https://raw.githubusercontent.com/blue-pulse/blue-blur-engine/main/assets/img/blue-blur-engine.png" alt="blue-blur-engine" width="500">
+<img src="https://raw.githubusercontent.com/blue-pulse/blue-blur-engine/4b0edf39eaa9c501c28c23c0ecaef26df9172ac1/assets/img/blue-blur-engine.png" alt="blue-blur-engine" width="500">
 
 </div>
 
@@ -17,12 +17,12 @@ It's important to note that *Sonic The Hedgehog* and all its content, including 
 
 ## Credits
 
-This project is a labor of love -- built by fans, for fans -- and we're grateful to everyone who made it possible:
+This project is a labor of love --built by fans, for fans-- and we're grateful to everyone who made it possible:
 
 - **Sonic Team:** Owners of all character sprites, designs, and sound effects.
 - **SEGA SOUND TEAM:** Composers of all the music used.
 - **@ddenicc:** Designer of the project's beautiful logo.
-- **@triangly, @singleshotgamer and @abhmughal:** Developers of the additional code used for the collision system and physics implementations.
+- **@triangly, @singleshotgamer and @monolith4007:** Developers of the additional code used for the collision system and physics implementations.
 
 ## License
 

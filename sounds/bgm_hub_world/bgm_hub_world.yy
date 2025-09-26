@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"bgm_hub_world",
+  "audioGroupId":{
+    "name":"grp_bgm",
+    "path":"audiogroups/grp_bgm",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":1,
+  "conversionMode":0,
+  "duration":105.89599,
+  "name":"bgm_hub_world",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/6. Stages/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgm_hub_world.wav",
+  "type":1,
+  "volume":1.0,
+}
