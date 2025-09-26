@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"CollisionCheckingFunctions",
+  "%Name":"collision_box",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"CollisionCheckingFunctions",
+  "name":"collision_box",
   "parent":{
-    "name":"Game",
-    "path":"folders/tmp/Scripts/Game.yy",
+    "name":"Utils",
+    "path":"folders/3. Framework/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
