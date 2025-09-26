@@ -26,8 +26,8 @@ function player_is_standing(phase)
 			// Reset score combo
 			if (invincibility_time <= 0) score_combo = 0;
 			
-			// Find nearest cliff edge
-			player_find_cliff();
+			// Find the direction of the nearest cliff
+			player_in_cliff();
 			
 			// Animate
 			animation_index = (cliff_sign != 0) ? "teeter" : "idle";
