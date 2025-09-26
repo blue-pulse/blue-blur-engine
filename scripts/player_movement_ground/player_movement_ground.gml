@@ -1,30 +1,31 @@
 function player_movement_ground() {
 	// Ride moving platforms
-	with (ground_id)
-	{
+	with (ground_id) {
 		// Horizontal motion
-		var ox = x - xprevious;
-		if (ox != 0) other.x += ox;
+		var hor_offset = x - xprevious;
+		if (hor_offset != 0) {
+			other.x += hor_offset;
+		}
 		
 		// Vertical motion
-		var oy = y - yprevious;
-		if (oy != 0) other.y += oy;
+		var ver_offset = y - yprevious;
+		if (ver_offset != 0) {
+			other.y += ver_offset;
+		}
 	}
 	
-	// Initialize movement loop
+	// Variables for horizontal movement
 	var total_steps = 1 + (abs(hor_speed) div hor_radius);
 	var step = hor_speed / total_steps;
 	
 	// Process movement loop
-	repeat (total_steps)
-	{
+	repeat (total_steps) {
 		// Apply movement step
 		x += dcos(angle) * step;
 		y -= dsin(angle) * step;
 		
 		// Die if out of bounds
-		if (not player_in_camera_bounds())
-		{
+		if (!player_in_camera_bounds()) {
 			player_is_dead(-1);
 			return false;
 		}
@@ -34,23 +35,23 @@ function player_movement_ground() {
 		
 		// Handle wall collision
 		var hit_wall = player_collision_wall(0);
-		if (hit_wall != noone)
-		{
-			// Eject from wall
+		if (hit_wall) {
+			// Try to eject from wall
 			var wall_sign = player_wall_eject(hit_wall);
 			
 			// Trigger reaction
-			if (player_get_reaction(hit_wall, wall_sign)) return false;
+			if (player_get_reaction(hit_wall, wall_sign)) {
+				return false;
+			}
 			
 			// Stop if moving towards wall
-			if (sign(hor_speed) == wall_sign)
-			{
+			if (sign(hor_speed) == wall_sign) {
+				// Cancel speed
 				hor_speed = 0;
 				
 				// Set pushing animation, if applicable
 				var input_sign = input_right - input_left;
-				if (animation_index != "push" and input_sign == wall_sign and image_xscale == wall_sign)
-				{
+				if (animation_index != "push" and input_sign == wall_sign and image_xscale == wall_sign) {
 					animation_index = "push";
 					timeline_speed = 1;
 				}
@@ -59,21 +60,30 @@ function player_movement_ground() {
 		
 		// Handle floor collision
 		var hit_floor = player_collision_floor(ver_radius * 2);
-		if (hit_floor != noone)
-		{
+		if (hit_floor) {
 			// Trigger reaction
-			if (player_get_reaction(hit_floor, DIR_BOTTOM)) return false;
+			if (player_get_reaction(hit_floor, DIR_BOTTOM)) {
+				return false;
+			}
 			
 			// Get floor data
 			player_set_ground(hit_floor);
 		}
-		else on_ground = false; // Fall off
+		
+		// Fall off
+		else {
+			on_ground = false; 
+		}
 		
 		// Update mask direction
-		if (on_ground) player_rotate_mask();
+		if (on_ground) {
+			player_rotate_mask();
+		}
 		
 		// Handle non-solid object collision
-		if (player_collision_resource()) return false;
+		if (player_collision_resource()) {
+			return false;
+		}
 	}
 	
 	// Success
