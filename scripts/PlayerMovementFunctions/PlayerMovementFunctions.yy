@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"PlayerMovementFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PlayerMovementFunctions",
+  "parent":{
+    "name":"Physics",
+    "path":"folders/tmp/Scripts/Player/Physics.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
