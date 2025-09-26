@@ -9,7 +9,7 @@ jump_action = false;
 
 // Movement and collision
 resource_list = [];
-solid_objects = [];
+terrain_list = [];
 collision_layer = 0;
 cliff_sign = 0;
 x_speed = 0;

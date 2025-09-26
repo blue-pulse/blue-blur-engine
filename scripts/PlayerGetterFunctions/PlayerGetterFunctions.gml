@@ -38,10 +38,10 @@ function player_get_angle(obj, rot)
 		repeat (y_radius)
 		{
 			// Evaluate all solids
-			for (var n = array_length(solid_objects) - 1; n > -1; --n)
+			for (var n = array_length(terrain_list) - 1; n > -1; --n)
 			{
 				// Get the current solid
-				var inst = solid_objects[n];
+				var inst = terrain_list[n];
 				
 				// Check if the sensors have found the solid
 				if (not left and collision_point(x1, y1, inst, true, false) != noone)
@@ -148,7 +148,7 @@ function player_get_stage_objects()
 {
 	// Erase recorded objects
 	array_resize(resource_list, 0);
-	array_resize(solid_objects, 0);
+	array_resize(terrain_list, 0);
 	
 	// Initialize bounding rectangle
 	var x_int = x div 1;
@@ -178,7 +178,7 @@ function player_get_stage_objects()
 		{
 			// Continue on collision layer mismatch
 			if (collision_layer != -1 and collision_layer != other.collision_layer) continue;
-			array_push(other.solid_objects, id);
+			array_push(other.terrain_list, id);
 		}
 	}
 }
@@ -195,10 +195,10 @@ function player_find_cliff()
 	var height = y_radius * 2;
 	
 	// Evaluate all solids
-	for (var n = array_length(solid_objects) - 1; n > -1; --n)
+	for (var n = array_length(terrain_list) - 1; n > -1; --n)
 	{
 		// Get the current solid
-		var inst = solid_objects[n];
+		var inst = terrain_list[n];
 		
 		// Check sensors
 		if (collision_ray_vertical(0, height, mask_direction, inst) != noone)
