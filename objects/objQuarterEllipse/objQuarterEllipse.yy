@@ -8,8 +8,8 @@
   "name":"objQuarterEllipse",
   "overriddenProperties":[],
   "parent":{
-    "name":"Terrain Masks",
-    "path":"folders/tmp/Objects/Stage/Terrain Masks.yy",
+    "name":"Objects",
+    "path":"folders/5. Resources/Terrain/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

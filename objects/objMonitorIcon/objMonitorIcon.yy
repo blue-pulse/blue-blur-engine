@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Monitor",
-    "path":"folders/tmp/Objects/Stage/General/Monitor.yy",
+    "path":"folders/5. Resources/Monitor.yy",
   },
   "parentObjectId":null,
   "persistent":false,

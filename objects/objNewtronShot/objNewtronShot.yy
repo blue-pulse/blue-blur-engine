@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Projectiles",
-    "path":"folders/tmp/Objects/Stage/General/Badniks/Projectiles.yy",
+    "path":"folders/5. Resources/Enemies/Projectiles.yy",
   },
   "parentObjectId":{
     "name":"objProjectile",
