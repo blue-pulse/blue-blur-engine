@@ -1,7 +1,7 @@
 function player_movement_air() {
 	// Variables
-	var total_steps = 1 + (abs(x_speed) div hor_radius);
-	var steps = x_speed / total_steps;
+	var total_steps = 1 + (abs(hor_speed) div hor_radius);
+	var steps = hor_speed / total_steps;
 	
 	// Process horizontal movement loop
 	repeat (total_steps) {
@@ -30,8 +30,8 @@ function player_movement_air() {
 			}
 			
 			// Stop if moving towards wall
-			if (sign(x_speed) == wall_sign) {
-				x_speed = 0;
+			if (sign(hor_speed) == wall_sign) {
+				hor_speed = 0;
 			}
 		}
 		
@@ -42,8 +42,8 @@ function player_movement_air() {
 	}
 	
 	// Initialize vertical movement loop
-	total_steps = 1 + (abs(y_speed) div ver_radius);
-	steps = y_speed / total_steps;
+	total_steps = 1 + (abs(ver_speed) div ver_radius);
+	steps = ver_speed / total_steps;
 	
 	// Process vertical movement loop
 	repeat (total_steps) {
@@ -61,7 +61,7 @@ function player_movement_air() {
 		player_get_stage_objects();
 		
 		// Floor collision
-		if (y_speed >= 0) {
+		if (ver_speed >= 0) {
 			var hit_floor = player_collision_floor(ver_radius);
 			if (hit_floor) {
 				// Trigger reaction
@@ -91,13 +91,13 @@ function player_movement_air() {
 				player_set_ground(hit_floor);
 				
 				// Abort if rising too slow or ceiling is too shallow
-				if (y_speed > ceiling_land_threshold or (relative_angle > 135 and relative_angle < 225)) {
+				if (ver_speed > ceiling_land_threshold or (relative_angle > 135 and relative_angle < 225)) {
 					// Slide against ceiling
 					var sine = dsin(relative_angle);
 					var cosine = dcos(relative_angle);
-					var g_speed = (cosine * x_speed) - (sine * y_speed);
-	                x_speed = cosine * g_speed;
-					y_speed = -sine * g_speed;
+					var g_speed = (cosine * hor_speed) - (sine * ver_speed);
+	                hor_speed = cosine * g_speed;
+					ver_speed = -sine * g_speed;
 					
 					// Reset air state and exit loop
 					player_set_ground(noone);
@@ -109,14 +109,14 @@ function player_movement_air() {
 		// Landing
 		if (ground_id) {
 			// Calculate landing speed
-			if (abs(x_speed) <= abs(y_speed) and relative_angle >= 22.5 and relative_angle <= 337.5) {
+			if (abs(hor_speed) <= abs(ver_speed) and relative_angle >= 22.5 and relative_angle <= 337.5) {
 				// Scale speed to incline
-			    x_speed = -y_speed * sign(dsin(relative_angle));
-			    if (relative_angle < 45 or relative_angle > 315) x_speed *= 0.5;
+			    hor_speed = -ver_speed * sign(dsin(relative_angle));
+			    if (relative_angle < 45 or relative_angle > 315) hor_speed *= 0.5;
 			}
 			
 			// Stop falling
-			y_speed = 0;
+			ver_speed = 0;
 			
 			// Set flags and exit loop
 			jumping = false;

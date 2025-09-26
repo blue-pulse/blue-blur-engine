@@ -16,15 +16,15 @@ function player_is_falling(phase)
 	        // Movement
 			var sine = dsin(relative_angle);
 			var cosine = dcos(relative_angle);
-			y_speed = (-sine * x_speed) - (cosine * jump_height);
-	        x_speed = (cosine * x_speed) - (sine * jump_height);
+			ver_speed = (-sine * hor_speed) - (cosine * jump_height);
+	        hor_speed = (cosine * hor_speed) - (sine * jump_height);
 
 	        // Set air state
 			player_set_ground(noone);
 			
 			// Animate
 			animation_index = "spin";
-	        timeline_speed = 1 / max(5 - (abs(x_speed) div 1), 1);
+	        timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
 	        image_angle = gravity_direction;
 			
 			// Sound
@@ -37,8 +37,8 @@ function player_is_falling(phase)
 			state = player_is_falling;
 			
 			// Movement
-			y_speed = -dsin(relative_angle) * x_speed;
-			x_speed = dcos(relative_angle) * x_speed;
+			ver_speed = -dsin(relative_angle) * hor_speed;
+			hor_speed = dcos(relative_angle) * hor_speed;
 			
 			// Set air state
 			player_set_ground(noone);
@@ -53,17 +53,17 @@ function player_is_falling(phase)
 	        if (input_left)
 	        {
 	            image_xscale = -1;
-	            if (x_speed > -speed_cap)
+	            if (hor_speed > -speed_cap)
 	            {
-	                x_speed = max(x_speed - air_acceleration, -speed_cap);
+	                hor_speed = max(hor_speed - air_acceleration, -speed_cap);
 	            }
 	        }
 	        if (input_right)
 	        {
 	            image_xscale = 1;
-	            if (x_speed < speed_cap)
+	            if (hor_speed < speed_cap)
 	            {
-	                x_speed = min(x_speed + air_acceleration, speed_cap);
+	                hor_speed = min(hor_speed + air_acceleration, speed_cap);
 	            }
 	        }
 			
@@ -73,23 +73,23 @@ function player_is_falling(phase)
 	        // Landing
 	        if (on_ground)
 	        {
-				return (x_speed != 0) ? player_is_running(-1) : player_is_standing(-1);
+				return (hor_speed != 0) ? player_is_running(-1) : player_is_standing(-1);
 	        }
 			
 			// Variable jump height
-	        if (jumping and not input_action and y_speed < -jump_release)
+	        if (jumping and not input_action and ver_speed < -jump_release)
 	        {
-	            y_speed = -jump_release;
+	            ver_speed = -jump_release;
 	        }
 			
 	        // Air friction
-	        if (y_speed < 0 and y_speed > -4 and abs(x_speed) > air_friction_threshold)
+	        if (ver_speed < 0 and ver_speed > -4 and abs(hor_speed) > air_friction_threshold)
 	        {
-				x_speed *= air_friction;
+				hor_speed *= air_friction;
 	        }
 			
 	        // Gravity
-			if (y_speed < gravity_cap) y_speed = min(y_speed + gravity_force, gravity_cap);
+			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + gravity_force, gravity_cap);
 			
 			// Homing actions
 			if (spinning)
@@ -138,8 +138,8 @@ function player_is_falling(phase)
 					}
 					else
 					{
-						x_speed = 8 * image_xscale;
-						y_speed = 0;
+						hor_speed = 8 * image_xscale;
+						ver_speed = 0;
 						jump_action = false;
 					}
 				}
@@ -152,12 +152,12 @@ function player_is_falling(phase)
 				
 				// Animate
 				animation_index = "spin";
-		        timeline_speed = 1 / max(5 - (abs(x_speed) div 1), 1);
+		        timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
 		        image_angle = gravity_direction;
 			}
 			
 			// Animate
-			if (animation_index == "rise" and y_speed >= 0)
+			if (animation_index == "rise" and ver_speed >= 0)
 			{
 				animation_index = "fall";
 			}
@@ -200,8 +200,8 @@ function player_is_homing(phase)
 			// Move towards the reticle
 			var homing_speed = 12;
 			var dir = point_direction(x, y, objReticle.x, objReticle.y) - mask_direction;
-			x_speed = lengthdir_x(homing_speed, dir);
-			y_speed = lengthdir_y(homing_speed, dir);
+			hor_speed = lengthdir_x(homing_speed, dir);
+			ver_speed = lengthdir_y(homing_speed, dir);
 		}
 	}
 }
@@ -241,7 +241,7 @@ function player_is_hurt(phase)
 			if (on_ground)
 			{
 				// Stop moving
-				x_speed = 0;
+				hor_speed = 0;
 				
 				// Gain temporary invulnerability
 				recovery_time = 120;
@@ -251,7 +251,7 @@ function player_is_hurt(phase)
 			}
 			
 			// Gravity
-			if (y_speed < gravity_cap) y_speed = min(y_speed + recoil_gravity, gravity_cap);
+			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + recoil_gravity, gravity_cap);
 		}
 	}
 }
@@ -270,7 +270,7 @@ function player_is_dead(phase)
 			objStage.timer_enabled = false;
 			
 			// Movement
-			y_speed = -7;
+			ver_speed = -7;
 			
 			// Remove effects
 			instance_destroy(invincibility_effect);
@@ -286,14 +286,14 @@ function player_is_dead(phase)
 		default:
 		{
 			// Update position
-			x += dsin(gravity_direction) * y_speed;
-			y += dcos(gravity_direction) * y_speed;
+			x += dsin(gravity_direction) * ver_speed;
+			y += dcos(gravity_direction) * ver_speed;
 			
 			// Gravity
-			if (y_speed < gravity_cap) y_speed = min(y_speed + gravity_force, gravity_cap);
+			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + gravity_force, gravity_cap);
 			
 			// Finish
-			if (not in_view(id, 24) and y_speed > 3)
+			if (not in_view(id, 24) and ver_speed > 3)
 			{
 				// Deduct lives; is the game over?
 				if (--objGameData.player_lives <= 0 or objStage.time_over)
@@ -320,8 +320,8 @@ function player_is_debugging(phase)
 			spinning = false;
 			
 			// Movement
-			x_speed = 0;
-			y_speed = 0;
+			hor_speed = 0;
+			ver_speed = 0;
 			
 			// Set air state
 			player_set_ground(noone);

@@ -12,8 +12,8 @@ resource_list = [];
 terrain_list = [];
 plane = 0;
 cliff_sign = 0;
-x_speed = 0;
-y_speed = 0;
+hor_speed = 0;
+ver_speed = 0;
 gravity_direction = 0;
 
 // Collision mask

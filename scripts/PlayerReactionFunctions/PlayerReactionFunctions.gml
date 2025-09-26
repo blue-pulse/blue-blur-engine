@@ -47,21 +47,21 @@ function player_reaction_badnik(obj)
 	{
 		// Stop moving and bounce
 		state = player_is_falling;
-		x_speed = 0;
-		y_speed = -jump_height div 1;
+		hor_speed = 0;
+		ver_speed = -jump_height div 1;
 		homing_rebound = true;
 	}
 	else if (not on_ground)
 	{
 		// Weigh down slightly
-		if (y_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, obj) != noone)
+		if (ver_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, obj) != noone)
 		{
-			++y_speed;
+			++ver_speed;
 		}
-		else if (y_speed >= 0 and collision_box_vertical(hor_radius, ver_radius, mask_direction, obj) != noone)
+		else if (ver_speed >= 0 and collision_box_vertical(hor_radius, ver_radius, mask_direction, obj) != noone)
 		{
 			// Bounce
-			y_speed *= -1;
+			ver_speed *= -1;
 		}
 	}
 	
@@ -155,7 +155,7 @@ function player_reaction_dash_panel(obj)
 	
 	// Launch
 	image_xscale = obj.image_xscale;
-	x_speed = max(abs(x_speed), 12) * image_xscale;
+	hor_speed = max(abs(hor_speed), 12) * image_xscale;
 	control_lock_time = 16;
 	
 	// Roll, if applicable
@@ -188,19 +188,19 @@ function player_reaction_monitor(obj, side)
 	}
 	
 	// Ignore if...
-	if (y_speed < 0 or not spinning) return false; // Moving upwards or not spinning
+	if (ver_speed < 0 or not spinning) return false; // Moving upwards or not spinning
 	if (side == DIR_BOTTOM and on_ground) return false; // Spinning on top of the monitor
 	
 	// Rebound in air
 	if (state == player_is_homing)
 	{
 		state = player_is_falling;
-		x_speed = 0;
-		y_speed = -jump_height div 1;
+		hor_speed = 0;
+		ver_speed = -jump_height div 1;
 	}
 	else if (not on_ground)
 	{
-		y_speed *= -1;
+		ver_speed *= -1;
 	}
 	
 	// Create icon
@@ -243,8 +243,8 @@ function player_reaction_spring(obj, side)
 	// Bounce from spring
 	if (x_spring_speed != 0)
 	{
-		x_speed = x_spring_speed;
-		image_xscale = sign(x_speed);
+		hor_speed = x_spring_speed;
+		image_xscale = sign(hor_speed);
 		control_lock_time = 16;
 	}
 	if (y_spring_speed != 0)
@@ -253,7 +253,7 @@ function player_reaction_spring(obj, side)
 		player_is_falling(-1);
 		
 		// Movement
-		y_speed = y_spring_speed;
+		ver_speed = y_spring_speed;
 		
 		// Set flags and animate if rising
 		if (side == DIR_BOTTOM)

@@ -214,12 +214,12 @@ function player_in_camera_bounds()
 			if (x1 < camera.bound_left)
 			{
 				x = camera.bound_left + hor_radius;
-				if (x_speed < 0) x_speed = 0;
+				if (hor_speed < 0) hor_speed = 0;
 			}
 			if (x2 > camera.bound_right)
 			{
 				x = camera.bound_right - hor_radius;
-				if (x_speed > 0) x_speed = 0;
+				if (hor_speed > 0) hor_speed = 0;
 			}
 			if (y2 + ver_radius < camera.bound_top)
 			{
@@ -240,12 +240,12 @@ function player_in_camera_bounds()
 			if (y1 < camera.bound_top)
 			{
 				y = camera.bound_top + hor_radius;
-				if (x_speed > 0) x_speed = 0;
+				if (hor_speed > 0) hor_speed = 0;
 			}
 			if (y2 > camera.bound_bottom)
 			{
 				y = camera.bound_bottom - hor_radius;
-				if (x_speed < 0) x_speed = 0;
+				if (hor_speed < 0) hor_speed = 0;
 			}
 			if (x2 + ver_radius < camera.bound_left)
 			{
@@ -265,12 +265,12 @@ function player_in_camera_bounds()
 			if (x1 < camera.bound_left)
 			{
 				x = camera.bound_left + hor_radius;
-				if (x_speed > 0) x_speed = 0;
+				if (hor_speed > 0) hor_speed = 0;
 			}
 			if (x2 > camera.bound_right)
 			{
 				x = camera.bound_right - hor_radius;
-				if (x_speed < 0) x_speed = 0;
+				if (hor_speed < 0) hor_speed = 0;
 			}
 			if (y1 - ver_radius > camera.bound_bottom)
 			{
@@ -290,12 +290,12 @@ function player_in_camera_bounds()
 			if (y1 < camera.bound_top)
 			{
 				y = camera.bound_top + hor_radius;
-				if (x_speed < 0) x_speed = 0;
+				if (hor_speed < 0) hor_speed = 0;
 			}
 			if (y2 > camera.bound_bottom)
 			{
 				y = camera.bound_bottom - hor_radius;
-				if (x_speed > 0) x_speed = 0;
+				if (hor_speed > 0) hor_speed = 0;
 			}
 			if (x1 - ver_radius > camera.bound_right)
 			{

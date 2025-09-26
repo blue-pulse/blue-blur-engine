@@ -43,11 +43,11 @@ function player_drop_rings()
 		{
 			gravity_direction = other.gravity_direction;
 			image_angle = gravity_direction;
-			x_speed = lengthdir_x(spd, dir);
-			y_speed = lengthdir_y(spd, dir);
+			hor_speed = lengthdir_x(spd, dir);
+			ver_speed = lengthdir_y(spd, dir);
 			if (ring mod 2 != 0)
 			{
-				x_speed *= -1;
+				hor_speed *= -1;
 				dir += 22.5;
 			}
 		}
@@ -75,9 +75,9 @@ function player_get_hit(obj)
 		player_is_hurt(-1);
 		
 		// Movement
-		x_speed = 2 * sign(x - obj.x);
-		if (x_speed == 0) x_speed = 2;
-		y_speed = -4;
+		hor_speed = 2 * sign(x - obj.x);
+		if (hor_speed == 0) hor_speed = 2;
+		ver_speed = -4;
 	}
 	else player_is_dead(-1); // Otherwise, die
 	return true;

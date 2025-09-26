@@ -2,8 +2,8 @@
 reaction_index = player_reaction_ring;
 
 // Movement
-x_speed = 0;
-y_speed = 0;
+hor_speed = 0;
+ver_speed = 0;
 gravity_force = 0.09375;
 
 // Animation

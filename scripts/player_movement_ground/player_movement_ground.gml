@@ -12,8 +12,8 @@ function player_movement_ground() {
 	}
 	
 	// Initialize movement loop
-	var total_steps = 1 + (abs(x_speed) div hor_radius);
-	var step = x_speed / total_steps;
+	var total_steps = 1 + (abs(hor_speed) div hor_radius);
+	var step = hor_speed / total_steps;
 	
 	// Process movement loop
 	repeat (total_steps)
@@ -43,9 +43,9 @@ function player_movement_ground() {
 			if (player_get_reaction(hit_wall, wall_sign)) return false;
 			
 			// Stop if moving towards wall
-			if (sign(x_speed) == wall_sign)
+			if (sign(hor_speed) == wall_sign)
 			{
-				x_speed = 0;
+				hor_speed = 0;
 				
 				// Set pushing animation, if applicable
 				var input_sign = input_right - input_left;

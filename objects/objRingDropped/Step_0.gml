@@ -3,8 +3,8 @@ var sine = dsin(gravity_direction);
 var cosine = dcos(gravity_direction);
 
 // Move horizontally
-var ox = cosine * x_speed;
-var oy = sine * x_speed;
+var ox = cosine * hor_speed;
+var oy = sine * hor_speed;
 x += ox;
 y -= oy;
 
@@ -17,12 +17,12 @@ if (place_meeting(x + ox, y - oy, obj_solid) and not place_meeting(xprevious, yp
 		x -= sign(ox);
 		y += sign(oy);
 	}
-	x_speed *= -0.25;
+	hor_speed *= -0.25;
 }
 
 // Move vertically
-ox = sine * y_speed;
-oy = cosine * y_speed;
+ox = sine * ver_speed;
+oy = cosine * ver_speed;
 x += ox;
 y += oy;
 
@@ -35,8 +35,8 @@ if (place_meeting(x + ox, y + oy, obj_solid) and not place_meeting(xprevious, yp
 		x -= sign(ox);
 		y -= sign(oy);
 	}
-	y_speed *= -0.75;
+	ver_speed *= -0.75;
 }
 
 // Gravity
-y_speed += gravity_force;
+ver_speed += gravity_force;

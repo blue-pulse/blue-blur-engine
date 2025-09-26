@@ -55,7 +55,7 @@ function player_is_standing(phase)
 			}
 
 	        // Running
-	        if (input_left or input_right or x_speed != 0)
+	        if (input_left or input_right or hor_speed != 0)
 	        {
 	            return player_is_running(-1);
 	        }
@@ -101,10 +101,10 @@ function player_is_running(phase)
 				if (input_sign != 0)
 				{
 					// Moving in the opposite direction
-					if (x_speed != 0 and sign(x_speed) != input_sign)
+					if (hor_speed != 0 and sign(hor_speed) != input_sign)
 					{
 						// Braking
-						if (animation_index != "brake" and abs(x_speed) > brake_threshold and mask_direction == gravity_direction)
+						if (animation_index != "brake" and abs(hor_speed) > brake_threshold and mask_direction == gravity_direction)
 						{
 							animation_index = "brake";
 							timeline_speed = 1;
@@ -113,24 +113,24 @@ function player_is_running(phase)
 						}
 						
 						// Decelerate and reverse direction
-						x_speed += land_deceleration * input_sign;
-						if (sign(x_speed) == input_sign) x_speed = land_deceleration * input_sign;
+						hor_speed += land_deceleration * input_sign;
+						if (sign(hor_speed) == input_sign) hor_speed = land_deceleration * input_sign;
 					}
 					else
 					{
 						// Accelerate
 						image_xscale = input_sign;
-						if (abs(x_speed) < speed_cap)
+						if (abs(hor_speed) < speed_cap)
 						{
-							x_speed += land_acceleration * input_sign;
-							if (abs(x_speed) > speed_cap) x_speed = speed_cap * input_sign;
+							hor_speed += land_acceleration * input_sign;
+							if (abs(hor_speed) > speed_cap) hor_speed = speed_cap * input_sign;
 						}
 					}
 				}
 				else
 				{
 					// Friction
-					x_speed -= min(abs(x_speed), land_friction) * sign(x_speed);
+					hor_speed -= min(abs(hor_speed), land_friction) * sign(hor_speed);
 				}
 			}
 			
@@ -141,7 +141,7 @@ function player_is_running(phase)
 			if (not on_ground) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
-	        if (abs(x_speed) < slide_threshold)
+	        if (abs(hor_speed) < slide_threshold)
 	        {
 	            if (relative_angle >= 90 and relative_angle <= 270)
 	            {
@@ -157,7 +157,7 @@ function player_is_running(phase)
 			player_set_slope_friction(slope_friction);
 			
 	        // Standing
-			if (x_speed == 0 and input_sign == 0)
+			if (hor_speed == 0 and input_sign == 0)
 	        {
 	            return player_is_standing(-1);
 	        }
@@ -166,7 +166,7 @@ function player_is_running(phase)
 	        if (input_action_pressed) return player_is_falling(-2);
 			
 			// Rolling
-			if (input_down and input_sign == 0 and abs(x_speed) >= roll_threshold)
+			if (input_down and input_sign == 0 and abs(hor_speed) >= roll_threshold)
 			{
 				audio_play_sfx(sfxRoll);
 				return player_is_rolling(-1);
@@ -176,7 +176,7 @@ function player_is_running(phase)
 			if (not ((animation_index == "push" and image_xscale == input_sign) or
 					(animation_index == "brake" and timeline_position < 24 and mask_direction == gravity_direction and image_xscale != input_sign)))
 	        {
-				var velocity = (abs(x_speed) div 1);
+				var velocity = (abs(hor_speed) div 1);
 				if (velocity < 10)
 				{
 					animation_index = (velocity < 6) ? "walk" : "run";
@@ -250,7 +250,7 @@ function player_is_looking(phase)
 			if (not input_up) return player_is_standing(-1);
 			
 			// Running
-	        if (x_speed != 0) return player_is_running(-1);
+	        if (hor_speed != 0) return player_is_running(-1);
 			
 			// Peelouting
 	        if (input_action_pressed) return player_is_peelouting(-1);
@@ -310,7 +310,7 @@ function player_is_crouching(phase)
 			if (not input_down) return player_is_standing(-1);
 			
 			// Running
-	        if (x_speed != 0) return player_is_running(-1);
+	        if (hor_speed != 0) return player_is_running(-1);
 			
 			// Spindashing
 	        if (input_action_pressed) return player_is_spindashing(-1);
@@ -341,19 +341,19 @@ function player_is_rolling(phase)
 			if (control_lock_time <= 0)
 			{
 				// Deceleration
-				if (input_left and x_speed > 0)
+				if (input_left and hor_speed > 0)
 				{
-					x_speed -= roll_deceleration;
-					if (x_speed < 0) x_speed = 0;
+					hor_speed -= roll_deceleration;
+					if (hor_speed < 0) hor_speed = 0;
 				}
-				if (input_right and x_speed < 0)
+				if (input_right and hor_speed < 0)
 				{
-					x_speed += roll_deceleration;
-					if (x_speed > 0) x_speed = 0;
+					hor_speed += roll_deceleration;
+					if (hor_speed > 0) hor_speed = 0;
 				}
 				
 				// Friction
-				x_speed -= min(abs(x_speed), roll_friction) * sign(x_speed);
+				hor_speed -= min(abs(hor_speed), roll_friction) * sign(hor_speed);
 			}
 			
 			// Update position
@@ -363,7 +363,7 @@ function player_is_rolling(phase)
 			if (not on_ground) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
-	        if (abs(x_speed) < slide_threshold)
+	        if (abs(hor_speed) < slide_threshold)
 	        {
 	            if (relative_angle >= 90 and relative_angle <= 270)
 	            {
@@ -376,22 +376,22 @@ function player_is_rolling(phase)
 	        }
 			
 			// Slope friction
-			var roll_slope_friction = (sign(x_speed) == sign(dsin(relative_angle))) ? roll_slope_friction_up : roll_slope_friction_down;
+			var roll_slope_friction = (sign(hor_speed) == sign(dsin(relative_angle))) ? roll_slope_friction_up : roll_slope_friction_down;
 			player_set_slope_friction(roll_slope_friction);
 			
 			// Jumping
 	        if (input_action_pressed) return player_is_falling(-2);
 			
 			// Unroll
-			if (abs(x_speed) < unroll_threshold) return player_is_running(-1);
+			if (abs(hor_speed) < unroll_threshold) return player_is_running(-1);
 			
 			// Animate
-			timeline_speed = 1 / max(5 - (abs(x_speed) div 1), 1);
+			timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
 			
 	        // Set facing direction
-			if ((input_left and x_speed < 0) or (input_right and x_speed > 0))
+			if ((input_left and hor_speed < 0) or (input_right and hor_speed > 0))
 	        {
-	            image_xscale = sign(x_speed);
+	            image_xscale = sign(hor_speed);
 	        }
 		}
 	}
@@ -443,7 +443,7 @@ function player_is_spindashing(phase)
 			if (not input_down)
 			{
 				// Launch
-				x_speed = image_xscale * (8 + (spindash_charge div 2));
+				hor_speed = image_xscale * (8 + (spindash_charge div 2));
 				
 				// Camera scroll lag
 				camera.alarm[0] = 16;
@@ -520,7 +520,7 @@ function player_is_peelouting(phase)
 				// Launch if fully charged
 				if (peelout_charge >= 30)
 				{
-					x_speed = image_xscale * 12;
+					hor_speed = image_xscale * 12;
 					audio_stop_sound(sfxPeeloutRev);
 					audio_play_sfx(sfxPeelout);
 					return player_is_running(-1);

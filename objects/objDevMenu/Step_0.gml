@@ -6,7 +6,7 @@ with (obj_player)
 	other.player_data += "STATE: " + script_get_name(state) + "\n\n";
 	other.player_data += "LAYER: " + string(plane) + "\n\n";
 	other.player_data += "GRAVITY DIRECTION: " + string(gravity_direction) + "\n\n";
-	other.player_data += "SPEED:" + string_format(x_speed, 3, 2) + " |" + string_format(y_speed, 3, 2) + "\n\n";
+	other.player_data += "SPEED:" + string_format(hor_speed, 3, 2) + " |" + string_format(ver_speed, 3, 2) + "\n\n";
 	other.player_data += "ANGLE: " + string_format(angle, 3, 2) + "\n\n";
 	other.player_data += "MASK DIRECTION: " + string(mask_direction) + "\n\n";
 	other.player_data += "CONTROL LOCK: " + string(control_lock_time);
