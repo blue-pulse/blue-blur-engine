@@ -7,12 +7,12 @@ function player_collision_floor(height) {
 			var object = terrain_list[j];
 			
 			// Continue if passing through it
-			if (object.semisolid and collision_ray(x_radius, 0, mask_direction, object)) {
+			if (object.semisolid and collision_ray(hor_radius, 0, mask_direction, object)) {
 				continue;
 			}
 			
 			// Continue if not intersecting it
-			if (!collision_box_vertical(x_radius, i, mask_direction, object)) {
+			if (!collision_box_vertical(hor_radius, i, mask_direction, object)) {
 				continue;
 			}
 			

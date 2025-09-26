@@ -26,16 +26,16 @@ function player_get_angle(obj, rot)
 		var sine = dsin(rot);
 		var cosine = dcos(rot);
 		
-		var x1 = x_int - (cosine * x_radius) + (sine * y_radius);
-		var y1 = y_int + (sine * x_radius) + (cosine * y_radius);
-		var x2 = x_int + (cosine * x_radius) + (sine * y_radius);
-		var y2 = y_int - (sine * x_radius) + (cosine * y_radius);
+		var x1 = x_int - (cosine * hor_radius) + (sine * ver_radius);
+		var y1 = y_int + (sine * hor_radius) + (cosine * ver_radius);
+		var x2 = x_int + (cosine * hor_radius) + (sine * ver_radius);
+		var y2 = y_int - (sine * hor_radius) + (cosine * ver_radius);
 		
 		var left = false;
 		var right = false;
 		
 		// Scan below feet
-		repeat (y_radius)
+		repeat (ver_radius)
 		{
 			// Evaluate all solids
 			for (var n = array_length(terrain_list) - 1; n > -1; --n)
@@ -86,14 +86,14 @@ function player_get_angle(obj, rot)
 		// Default if out of the solid's bounds
 		if (rot mod 180 != 0)
 		{
-			if ((yscale == -1 and y - x_radius < top_side) or (yscale == 1 and y + x_radius > bottom_side))
+			if ((yscale == -1 and y - hor_radius < top_side) or (yscale == 1 and y + hor_radius > bottom_side))
 			{
 				return rot;
 			}
 		}
 		else
 		{
-			if ((xscale == -1 and x - x_radius < left_side) or (xscale == 1 and x + x_radius > right_side))
+			if ((xscale == -1 and x - hor_radius < left_side) or (xscale == 1 and x + hor_radius > right_side))
 			{
 				return rot;
 			}
@@ -152,7 +152,7 @@ function player_find_cliff()
 	// Initialize
 	var left = false;
 	var right = false;
-	var height = y_radius * 2;
+	var height = ver_radius * 2;
 	
 	// Evaluate all solids
 	for (var n = array_length(terrain_list) - 1; n > -1; --n)
@@ -166,11 +166,11 @@ function player_find_cliff()
 			// Center collision means not on a cliff
 			exit;
 		}
-		if (not left and collision_ray_vertical(-x_radius, height, mask_direction, inst) != noone)
+		if (not left and collision_ray_vertical(-hor_radius, height, mask_direction, inst) != noone)
 		{
 			left = true;
 		}
-		if (not right and collision_ray_vertical(x_radius, height, mask_direction, inst) != noone)
+		if (not right and collision_ray_vertical(hor_radius, height, mask_direction, inst) != noone)
 		{
 			right = true;
 		}
@@ -187,17 +187,17 @@ function player_in_camera_bounds()
 	// Check if already within bounds (early out)
 	if (mask_direction mod 180 != 0)
 	{
-		var x1 = x - y_radius;
-		var y1 = y - x_radius;
-		var x2 = x + y_radius;
-		var y2 = y + x_radius;
+		var x1 = x - ver_radius;
+		var y1 = y - hor_radius;
+		var x2 = x + ver_radius;
+		var y2 = y + hor_radius;
 	}
 	else
 	{
-		var x1 = x - x_radius;
-		var y1 = y - y_radius;
-		var x2 = x + x_radius;
-		var y2 = y + y_radius;
+		var x1 = x - hor_radius;
+		var y1 = y - ver_radius;
+		var x2 = x + hor_radius;
+		var y2 = y + ver_radius;
 	}
 	
 	if (rectangle_in_rectangle(x1, y1, x2, y2, camera.bound_left, camera.bound_top, camera.bound_right, camera.bound_bottom) == 1)
@@ -213,22 +213,22 @@ function player_in_camera_bounds()
 		{
 			if (x1 < camera.bound_left)
 			{
-				x = camera.bound_left + x_radius;
+				x = camera.bound_left + hor_radius;
 				if (x_speed < 0) x_speed = 0;
 			}
 			if (x2 > camera.bound_right)
 			{
-				x = camera.bound_right - x_radius;
+				x = camera.bound_right - hor_radius;
 				if (x_speed > 0) x_speed = 0;
 			}
-			if (y2 + y_radius < camera.bound_top)
+			if (y2 + ver_radius < camera.bound_top)
 			{
-				y = camera.bound_top - y_radius * 2;
+				y = camera.bound_top - ver_radius * 2;
 			}
 			if (y1 > camera.bound_bottom)
 			{
 				// Out of bounds
-				y = camera.bound_bottom + y_radius;
+				y = camera.bound_bottom + ver_radius;
 				return false;
 			}
 			break;
@@ -239,21 +239,21 @@ function player_in_camera_bounds()
 		{
 			if (y1 < camera.bound_top)
 			{
-				y = camera.bound_top + x_radius;
+				y = camera.bound_top + hor_radius;
 				if (x_speed > 0) x_speed = 0;
 			}
 			if (y2 > camera.bound_bottom)
 			{
-				y = camera.bound_bottom - x_radius;
+				y = camera.bound_bottom - hor_radius;
 				if (x_speed < 0) x_speed = 0;
 			}
-			if (x2 + y_radius < camera.bound_left)
+			if (x2 + ver_radius < camera.bound_left)
 			{
-				x = camera.bound_left - y_radius * 2;
+				x = camera.bound_left - ver_radius * 2;
 			}
 			if (x1 > camera.bound_right)
 			{
-				x = camera.bound_right + y_radius;
+				x = camera.bound_right + ver_radius;
 				return false;
 			}
 			break;
@@ -264,21 +264,21 @@ function player_in_camera_bounds()
 		{
 			if (x1 < camera.bound_left)
 			{
-				x = camera.bound_left + x_radius;
+				x = camera.bound_left + hor_radius;
 				if (x_speed > 0) x_speed = 0;
 			}
 			if (x2 > camera.bound_right)
 			{
-				x = camera.bound_right - x_radius;
+				x = camera.bound_right - hor_radius;
 				if (x_speed < 0) x_speed = 0;
 			}
-			if (y1 - y_radius > camera.bound_bottom)
+			if (y1 - ver_radius > camera.bound_bottom)
 			{
-				y = camera.bound_bottom + y_radius * 2;
+				y = camera.bound_bottom + ver_radius * 2;
 			}
 			if (y2 < camera.bound_top)
 			{
-				y = camera.bound_top - y_radius;
+				y = camera.bound_top - ver_radius;
 				return false;
 			}
 			break;
@@ -289,21 +289,21 @@ function player_in_camera_bounds()
 		{
 			if (y1 < camera.bound_top)
 			{
-				y = camera.bound_top + x_radius;
+				y = camera.bound_top + hor_radius;
 				if (x_speed < 0) x_speed = 0;
 			}
 			if (y2 > camera.bound_bottom)
 			{
-				y = camera.bound_bottom - x_radius;
+				y = camera.bound_bottom - hor_radius;
 				if (x_speed > 0) x_speed = 0;
 			}
-			if (x1 - y_radius > camera.bound_right)
+			if (x1 - ver_radius > camera.bound_right)
 			{
-				x = camera.bound_right + y_radius * 2;
+				x = camera.bound_right + ver_radius * 2;
 			}
 			if (x2 < camera.bound_left)
 			{
-				x = camera.bound_left - y_radius;
+				x = camera.bound_left - ver_radius;
 				return false;
 			}
 			break;

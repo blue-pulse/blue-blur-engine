@@ -189,7 +189,7 @@ function player_is_running(phase)
 			// Brake dust
 			if (animation_index == "brake" and objScreen.image_index mod 4 == 0)
 			{
-				var height = y_radius - 6;
+				var height = ver_radius - 6;
 				var ox = x + dsin(angle) * height;
 				var oy = y + dcos(angle) * height;
 				part_particles_create(objResources.particles, ox, oy, objResources.brake_dust, 1);

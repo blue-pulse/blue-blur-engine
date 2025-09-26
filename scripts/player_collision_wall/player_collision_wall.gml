@@ -5,7 +5,7 @@ function player_collision_wall(radius) {
 		var object = terrain_list[i];
 		
 		// Continue if passing through or not intersecting it
-		if (object.semisolid or !collision_ray(x_wall_radius + radius, 0, mask_direction, object)) {
+		if (object.semisolid or !collision_ray(wall_radius + radius, 0, mask_direction, object)) {
 			continue;
 		}
 		

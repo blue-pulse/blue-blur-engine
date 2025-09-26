@@ -54,11 +54,11 @@ function player_reaction_badnik(obj)
 	else if (not on_ground)
 	{
 		// Weigh down slightly
-		if (y_speed < 0 and collision_box_vertical(x_radius, -y_radius, mask_direction, obj) != noone)
+		if (y_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, obj) != noone)
 		{
 			++y_speed;
 		}
-		else if (y_speed >= 0 and collision_box_vertical(x_radius, y_radius, mask_direction, obj) != noone)
+		else if (y_speed >= 0 and collision_box_vertical(hor_radius, ver_radius, mask_direction, obj) != noone)
 		{
 			// Bounce
 			y_speed *= -1;

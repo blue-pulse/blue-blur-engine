@@ -17,9 +17,9 @@ y_speed = 0;
 gravity_direction = 0;
 
 // Collision mask
-x_radius = 8;
-y_radius = 15;
-x_wall_radius = 10;
+hor_radius = 8;
+ver_radius = 15;
+wall_radius = 10;
 
 // Timers
 control_lock_time = 0;

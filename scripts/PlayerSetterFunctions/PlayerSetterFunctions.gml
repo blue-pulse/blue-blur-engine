@@ -10,20 +10,20 @@ function player_wall_eject(obj)
 	if (collision_point(x, y, obj, true, false) != noone)
 	{
 		// Find and move to the closest side outside of collision
-		for (var ox = x_wall_radius; ox < x_wall_radius * 2; ++ox)
+		for (var ox = wall_radius; ox < wall_radius * 2; ++ox)
 		{
 			// Right of the wall
 			if (collision_ray_vertical(ox, 0, mask_direction, obj) == noone)
 			{
-				x += cosine * (x_wall_radius + ox);
-				y -= sine * (x_wall_radius + ox);
+				x += cosine * (wall_radius + ox);
+				y -= sine * (wall_radius + ox);
 				return -1;
 			}
 			else if (collision_ray_vertical(-ox, 0, mask_direction, obj) == noone)
 			{
 				// Left of the wall
-				x -= cosine * (x_wall_radius + ox);
-				y += sine * (x_wall_radius + ox);
+				x -= cosine * (wall_radius + ox);
+				y += sine * (wall_radius + ox);
 				return 1;
 			}
 		}
@@ -31,22 +31,22 @@ function player_wall_eject(obj)
 	else
 	{
 		// Find the closest side within collision
-		for (var ox = x_wall_radius; ox > -1; --ox)
+		for (var ox = wall_radius; ox > -1; --ox)
 		{
 			if (collision_ray(ox, 0, mask_direction, obj) == noone)
 			{
 				// Left of the wall
 				if (collision_ray_vertical(ox + 1, 0, mask_direction, obj) != noone)
 				{
-					x -= cosine * (x_wall_radius - ox);
-					y += sine * (x_wall_radius - ox);
+					x -= cosine * (wall_radius - ox);
+					y += sine * (wall_radius - ox);
 					return 1;
 				}
 				else if (collision_ray_vertical(-(ox + 1), 0, mask_direction, obj) != noone)
 				{
 					// Right of the wall
-					x += cosine * (x_wall_radius - ox);
-					y -= sine * (x_wall_radius - ox);
+					x += cosine * (wall_radius - ox);
+					y -= sine * (wall_radius - ox);
 					return -1;
 				}
 			}
@@ -93,11 +93,11 @@ function player_set_ground(obj)
 	
 	// Align to ground
 	var rotation = round(angle / 90) * 90;
-	for (var oy = 0; oy < y_radius * 2; ++oy)
+	for (var oy = 0; oy < ver_radius * 2; ++oy)
 	{
-		if (collision_box_vertical(x_radius, oy, rotation, ground_id) != noone)
+		if (collision_box_vertical(hor_radius, oy, rotation, ground_id) != noone)
 		{
-			var height = (y_radius - oy) + 1;
+			var height = (ver_radius - oy) + 1;
 			x -= dsin(rotation) * height;
 			y -= dcos(rotation) * height;
 			break;
@@ -113,7 +113,7 @@ function player_rotate_mask()
 	
 	// Abort if...
 	if (abs(diff) <= 45 or abs(diff) >= 90) exit; // Offset is too steep or shallow
-	if (collision_box(y_radius * 2, x_radius, (mask_direction mod 180 != 0), ground_id) == noone) exit; // Rotating would make the player fall
+	if (collision_box(ver_radius * 2, hor_radius, (mask_direction mod 180 != 0), ground_id) == noone) exit; // Rotating would make the player fall
 	
 	// Calculate...
 	var new_dir = angle_wrap(mask_direction + 90 * sign(diff)); // New mask direction

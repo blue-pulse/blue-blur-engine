@@ -6,7 +6,7 @@ function player_collision_resource() {
 		
 		// Continue if not intersecting it
 		var facing_dir = (mask_direction mod 180) != 0;
-		if (!collision_box(x_radius, y_radius, facing_dir, object)) {
+		if (!collision_box(hor_radius, ver_radius, facing_dir, object)) {
 			continue;
 		}
 		

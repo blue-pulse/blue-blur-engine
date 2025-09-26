@@ -12,7 +12,7 @@ function player_movement_ground() {
 	}
 	
 	// Initialize movement loop
-	var total_steps = 1 + (abs(x_speed) div x_radius);
+	var total_steps = 1 + (abs(x_speed) div hor_radius);
 	var step = x_speed / total_steps;
 	
 	// Process movement loop
@@ -58,7 +58,7 @@ function player_movement_ground() {
 		}
 		
 		// Handle floor collision
-		var hit_floor = player_collision_floor(y_radius * 2);
+		var hit_floor = player_collision_floor(ver_radius * 2);
 		if (hit_floor != noone)
 		{
 			// Trigger reaction

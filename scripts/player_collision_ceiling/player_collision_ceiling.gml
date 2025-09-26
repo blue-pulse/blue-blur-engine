@@ -7,7 +7,7 @@ function player_collision_ceiling(height) {
 			var object = terrain_list[j];
 			
 			// Continue if passing through or not intersecting it
-			if (object.semisolid or !collision_box_vertical(x_radius, -i, mask_direction, object)) {
+			if (object.semisolid or !collision_box_vertical(hor_radius, -i, mask_direction, object)) {
 				continue;
 			}
 			
