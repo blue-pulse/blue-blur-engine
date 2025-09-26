@@ -30,7 +30,7 @@ function player_is_standing(phase)
 			player_in_cliff();
 			
 			// Animate
-			animation_index = (cliff_sign != 0) ? "teeter" : "idle";
+			animation_index = (cliff_dir != 0) ? "teeter" : "idle";
 			timeline_speed = 1;
 			image_angle = gravity_direction;
 			break;
@@ -64,7 +64,7 @@ function player_is_standing(phase)
 	        if (input_action_pressed) return player_is_falling(-2);
 			
 			// Looking/crouching
-			if (cliff_sign == 0)
+			if (cliff_dir == 0)
 			{
 				if (input_up) return player_is_looking(-1);
 				if (input_down) return player_is_crouching(-1);

@@ -1,10 +1,4 @@
-
-
-
-/// @description Keeps the player within the camera boundary.
-/// @returns {Bool} Whether or not the player has fallen below the boundary relative to their rotation.
-function player_in_camera_bounds()
-{
+function player_in_camera_bounds() {
 	// Check if already within bounds (early out)
 	if (mask_direction mod 180 != 0)
 	{

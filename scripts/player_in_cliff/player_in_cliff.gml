@@ -5,7 +5,7 @@ function player_in_cliff() {
 	var right_sensor = false;
 	
 	// Reset cliff direction
-	cliff_sign = 0;
+	cliff_dir = 0;
 	
 	// Evaluate all solids
 	for (var i = array_length(terrain_list) - 1; i > -1; --i) {
@@ -30,6 +30,6 @@ function player_in_cliff() {
 	
 	// Check if only one edge is touching
 	if (left_sensor xor right_sensor) {
-		cliff_sign = left_sensor - right_sensor;
+		cliff_dir = left_sensor - right_sensor;
 	}
 }
