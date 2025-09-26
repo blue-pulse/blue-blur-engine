@@ -1,15 +1,16 @@
 function player_collision_wall(radius) {
 	// Evaluate all solids
-	for (var n = array_length(solid_objects) - 1; n > -1; --n)
-	{
+	for (var i = array_length(solid_objects) - 1; i > -1; --i) {
 		// Get the current solid
-		var inst = solid_objects[n];
+		var object = solid_objects[i];
 		
 		// Continue if passing through or not intersecting it
-		if (inst.semisolid or collision_ray(x_wall_radius + radius, 0, mask_direction, inst) == noone) continue;
+		if (object.semisolid or !collision_ray(x_wall_radius + radius, 0, mask_direction, object)) {
+			continue;
+		}
 		
 		// Confirm matching solid
-		return inst;
+		return object;
 	}
 	
 	// No solid found

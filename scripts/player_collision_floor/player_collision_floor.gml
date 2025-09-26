@@ -1,19 +1,23 @@
 function player_collision_floor(height) {
 	// Extend mask up to height
-	for (var oy = 0; oy < height; ++oy)
-	{
+	for (var i = 0; i < height; ++i) {
 		// Evaluate all solids
-		for (var n = array_length(solid_objects) - 1; n > -1; --n)
-		{
-			// Get the current solid
-			var inst = solid_objects[n];
+		for (var j = array_length(solid_objects) - 1; j > -1; --j) {
+			// Get the current object
+			var object = solid_objects[j];
 			
-			// Continue if...
-			if (inst.semisolid and collision_ray(x_radius, 0, mask_direction, inst) != noone) continue; // Passing through it
-			if (collision_box_vertical(x_radius, oy, mask_direction, inst) == noone) continue; // Not intersecting it
+			// Continue if passing through it
+			if (object.semisolid and collision_ray(x_radius, 0, mask_direction, object)) {
+				continue;
+			}
 			
-			// Confirm matching solid
-			return inst;
+			// Continue if not intersecting it
+			if (!collision_box_vertical(x_radius, i, mask_direction, object)) {
+				continue;
+			}
+			
+			// Confirm matching object
+			return object;
 		}
 	}
 	

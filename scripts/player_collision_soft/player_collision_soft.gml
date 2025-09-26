@@ -1,15 +1,18 @@
 function player_collision_soft() {
-	// Evaluate all non-solids
-	for (var n = array_length(soft_objects) - 1; n > -1; --n)
-	{
-		// Get the current non-solid
-		var inst = soft_objects[n];
+	// Evaluate all non-terrain objects
+	for (var i = array_length(soft_objects) - 1; i > -1; --i) {
+		// Get the current object
+		var object = soft_objects[i];
 		
 		// Continue if not intersecting it
-		if (collision_box(x_radius, y_radius, (mask_direction mod 180 != 0), inst) == noone) continue;
+		if (!collision_box(x_radius, y_radius, (mask_direction mod 180 != 0), object)) {
+			continue;
+		}
 		
-		// Trigger reaction; abort state if applicable
-		if (player_react(inst)) return true;
+		// Trigger reaction to end current state
+		if (player_react(object)) {
+			return true;
+		}
 	}
 	
 	// Do not abort state
