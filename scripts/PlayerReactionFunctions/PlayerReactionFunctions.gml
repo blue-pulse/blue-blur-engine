@@ -51,7 +51,7 @@ function player_reaction_badnik(obj)
 		ver_speed = -jump_height div 1;
 		homing_rebound = true;
 	}
-	else if (not on_ground)
+	else if (not is_grounded)
 	{
 		// Weigh down slightly
 		if (ver_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, obj) != noone)
@@ -119,7 +119,7 @@ function player_reaction_projectile(obj)
 function player_reaction_layer_flip(obj)
 {
 	// Flip layer if on ground
-	if (on_ground) plane = (sign(obj.image_xscale) != sign(x - xprevious));
+	if (is_grounded) plane = (sign(obj.image_xscale) != sign(x - xprevious));
 	
 	// Do not abort state
 	return false;
@@ -143,7 +143,7 @@ function player_reaction_layer_set(obj)
 function player_reaction_dash_panel(obj)
 {
 	// Ignore if airborne, the dash panel is already triggered, or we're not inside it
-	if (not on_ground or obj.alarm[0] != -1 or
+	if (not is_grounded or obj.alarm[0] != -1 or
 		not point_in_rectangle(x, y, obj.bbox_left, obj.bbox_top, obj.bbox_right, obj.bbox_bottom))
 	{
 		return false;
@@ -189,7 +189,7 @@ function player_reaction_monitor(obj, side)
 	
 	// Ignore if...
 	if (ver_speed < 0 or not spinning) return false; // Moving upwards or not spinning
-	if (side == DIR_BOTTOM and on_ground) return false; // Spinning on top of the monitor
+	if (side == DIR_BOTTOM and is_grounded) return false; // Spinning on top of the monitor
 	
 	// Rebound in air
 	if (state == player_is_homing)
@@ -198,7 +198,7 @@ function player_reaction_monitor(obj, side)
 		hor_speed = 0;
 		ver_speed = -jump_height div 1;
 	}
-	else if (not on_ground)
+	else if (not is_grounded)
 	{
 		ver_speed *= -1;
 	}

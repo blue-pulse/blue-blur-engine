@@ -65,7 +65,7 @@ function player_set_ground(obj)
 	if (obj == noone)
 	{
 		ground_id = noone;
-		on_ground = false;
+		is_grounded = false;
 		angle = gravity_direction;
 		relative_angle = 0;
 		mask_direction = angle;
@@ -77,15 +77,15 @@ function player_set_ground(obj)
 	var new_angle = player_get_angle(obj, mask_direction);
 	
 	// Abort if terrain is too steep to map to
-	if (on_ground and abs(angle_difference(new_angle, angle)) > 45)
+	if (is_grounded and abs(angle_difference(new_angle, angle)) > 45)
 	{
-		on_ground = false;
+		is_grounded = false;
 		exit;
 	}
 	
 	// Confirm ground
 	ground_id = obj;
-	on_ground = true;
+	is_grounded = true;
 	
 	// Set new ground angle
 	angle = new_angle;

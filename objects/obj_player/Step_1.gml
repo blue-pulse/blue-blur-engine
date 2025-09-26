@@ -19,7 +19,7 @@ if (input_left and input_right)
 }
 
 // Count down timers
-if (control_lock_time > 0 and on_ground)
+if (control_lock_time > 0 and is_grounded)
 {
 	--control_lock_time;
 }

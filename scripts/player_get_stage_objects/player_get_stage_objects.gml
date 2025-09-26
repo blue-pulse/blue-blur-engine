@@ -9,6 +9,7 @@ function player_get_stage_objects() {
 	var sine = dsin(mask_direction);
 	var cosine = dcos(mask_direction);
 	
+	// Setup positions
 	var pos_x_1 = pos_x - (cosine * wall_radius * 2) - (sine * ver_radius * 2);
 	var pos_y_1 = pos_y + (sine * wall_radius * 2) - (cosine * ver_radius * 2);
 	var pos_x_2 = pos_x + (cosine * wall_radius * 2) + (sine * ver_radius * 2);

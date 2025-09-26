@@ -71,7 +71,7 @@ function player_is_falling(phase)
 			if (not player_movement_air()) exit;
 			
 	        // Landing
-	        if (on_ground)
+	        if (is_grounded)
 	        {
 				return (hor_speed != 0) ? player_is_running(-1) : player_is_standing(-1);
 	        }
@@ -238,7 +238,7 @@ function player_is_hurt(phase)
 			}
 			
 			// Landing
-			if (on_ground)
+			if (is_grounded)
 			{
 				// Stop moving
 				hor_speed = 0;

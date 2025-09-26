@@ -19,7 +19,7 @@ with (obj_player)
 	{
 		gravity_direction = (keyboard_key == ord("A")) ? angle_wrap(gravity_direction - 90) : angle_wrap(gravity_direction + 90);
 		camera.gravity_direction = gravity_direction;
-		if (not on_ground) player_set_ground(noone);
+		if (not is_grounded) player_set_ground(noone);
 	}
 	
 	// Transition to the debugging state

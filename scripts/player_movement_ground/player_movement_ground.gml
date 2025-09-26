@@ -72,11 +72,11 @@ function player_movement_ground() {
 		
 		// Fall off
 		else {
-			on_ground = false; 
+			is_grounded = false; 
 		}
 		
 		// Update mask direction
-		if (on_ground) {
+		if (is_grounded) {
 			player_rotate_mask();
 		}
 		

@@ -41,7 +41,7 @@ function player_is_standing(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not on_ground) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
@@ -138,7 +138,7 @@ function player_is_running(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not on_ground) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
 	        if (abs(hor_speed) < slide_threshold)
@@ -223,7 +223,7 @@ function player_is_looking(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not on_ground) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
@@ -283,7 +283,7 @@ function player_is_crouching(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not on_ground) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
@@ -360,7 +360,7 @@ function player_is_rolling(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not on_ground) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
 	        if (abs(hor_speed) < slide_threshold)
@@ -426,7 +426,7 @@ function player_is_spindashing(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not on_ground) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
@@ -501,7 +501,7 @@ function player_is_peelouting(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not on_ground) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(-1);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
