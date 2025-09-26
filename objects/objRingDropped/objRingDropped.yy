@@ -15,8 +15,8 @@
     "path":"folders/tmp/Objects/Stage/General/Rings.yy",
   },
   "parentObjectId":{
-    "name":"objDeactivable",
-    "path":"objects/objDeactivable/objDeactivable.yy",
+    "name":"obj_resource",
+    "path":"objects/obj_resource/obj_resource.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

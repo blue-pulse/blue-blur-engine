@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"objSolid",
+  "%Name":"obj_resource",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objSolid",
+  "name":"obj_resource",
   "overriddenProperties":[],
   "parent":{
     "name":"Parents",
-    "path":"folders/tmp/Objects/Stage/Parents.yy",
+    "path":"folders/5. Resources/Parents.yy",
   },
-  "parentObjectId":{
-    "name":"objDeactivable",
-    "path":"objects/objDeactivable/objDeactivable.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

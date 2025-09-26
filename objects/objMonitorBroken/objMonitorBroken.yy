@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"objMonitorBroken",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"objSolid","path":"objects/objSolid/objSolid.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"objMonitorBroken",
@@ -12,8 +12,8 @@
     "path":"folders/tmp/Objects/Stage/General/Monitor.yy",
   },
   "parentObjectId":{
-    "name":"objDeactivable",
-    "path":"objects/objDeactivable/objDeactivable.yy",
+    "name":"obj_resource",
+    "path":"objects/obj_resource/obj_resource.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

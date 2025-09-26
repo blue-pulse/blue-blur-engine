@@ -129,7 +129,7 @@ function player_reaction_projectile(obj)
 function player_reaction_layer_flip(obj)
 {
 	// Flip layer if on ground
-	if (on_ground) collision_layer = (sign(obj.image_xscale) != sign(x - xprevious));
+	if (on_ground) plane = (sign(obj.image_xscale) != sign(x - xprevious));
 	
 	// Do not abort state
 	return false;
@@ -141,7 +141,7 @@ function player_reaction_layer_flip(obj)
 function player_reaction_layer_set(obj)
 {
 	// Set layer according to scale
-	collision_layer = (obj.image_xscale < 0);
+	plane = (obj.image_xscale < 0);
 	
 	// Do not abort state
 	return false;

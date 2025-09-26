@@ -9,10 +9,10 @@ x += ox;
 y -= oy;
 
 // Bounce, if not previously in collision
-if (place_meeting(x + ox, y - oy, objSolid) and not place_meeting(xprevious, yprevious, objSolid))
+if (place_meeting(x + ox, y - oy, obj_solid) and not place_meeting(xprevious, yprevious, obj_solid))
 {
 	// Move outside of collision
-	while (place_meeting(x, y, objSolid))
+	while (place_meeting(x, y, obj_solid))
 	{
 		x -= sign(ox);
 		y += sign(oy);
@@ -27,10 +27,10 @@ x += ox;
 y += oy;
 
 // Bounce, if not previously in collision
-if (place_meeting(x + ox, y + oy, objSolid) and not place_meeting(xprevious, yprevious, objSolid))
+if (place_meeting(x + ox, y + oy, obj_solid) and not place_meeting(xprevious, yprevious, obj_solid))
 {
 	// Move outside of collision
-	while (place_meeting(x, y, objSolid))
+	while (place_meeting(x, y, obj_solid))
 	{
 		x -= sign(ox);
 		y -= sign(oy);

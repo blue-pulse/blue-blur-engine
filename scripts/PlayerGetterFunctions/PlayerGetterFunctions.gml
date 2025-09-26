@@ -143,46 +143,6 @@ function player_get_angle(obj, rot)
 	return rot;
 }
 
-/// @description Finds and records any stage objects intersecting a bounding rectangle centered on the player.
-function player_get_stage_objects()
-{
-	// Erase recorded objects
-	array_resize(resource_list, 0);
-	array_resize(terrain_list, 0);
-	
-	// Initialize bounding rectangle
-	var x_int = x div 1;
-	var y_int = y div 1;
-	var sine = dsin(mask_direction);
-	var cosine = dcos(mask_direction);
-	
-	var x1 = x_int - (cosine * x_wall_radius * 2) - (sine * y_radius * 2);
-	var y1 = y_int + (sine * x_wall_radius * 2) - (cosine * y_radius * 2);
-	var x2 = x_int + (cosine * x_wall_radius * 2) + (sine * y_radius * 2);
-	var y2 = y_int - (sine * x_wall_radius * 2) + (cosine * y_radius * 2);
-	
-	// Evaluate all stage objects
-	with (objDeactivable)
-	{
-		// Continue if not intersecting the bounding rectangle
-		if (collision_rectangle(x1, y1, x2, y2, id, true, false) == noone) continue;
-		
-		// Sort based on solidity, or lack thereof
-		if (not object_is_ancestor(object_index, objSolid))
-		{
-			// Continue if no reaction exists
-			if (reaction_index == -1) continue;
-			array_push(other.resource_list, id);
-		}
-		else
-		{
-			// Continue on collision layer mismatch
-			if (collision_layer != -1 and collision_layer != other.collision_layer) continue;
-			array_push(other.terrain_list, id);
-		}
-	}
-}
-
 /// @description Finds the direction of the nearest cliff from the player's position.
 function player_find_cliff()
 {

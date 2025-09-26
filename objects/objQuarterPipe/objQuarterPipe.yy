@@ -12,8 +12,8 @@
     "path":"folders/tmp/Objects/Stage/Terrain Masks.yy",
   },
   "parentObjectId":{
-    "name":"objSolid",
-    "path":"objects/objSolid/objSolid.yy",
+    "name":"obj_solid",
+    "path":"objects/obj_solid/obj_solid.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

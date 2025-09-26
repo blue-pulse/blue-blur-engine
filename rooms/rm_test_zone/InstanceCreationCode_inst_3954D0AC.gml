@@ -1,2 +1,2 @@
 /// @description Set layer
-collision_layer = 0;
+plane = 0;

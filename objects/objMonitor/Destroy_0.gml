@@ -2,7 +2,7 @@
 
 // Create broken base
 var base = instance_create_layer(x, y, layer, objMonitorBroken);
-if (not place_meeting(x, y + 1, objSolid))
+if (not place_meeting(x, y + 1, obj_solid))
 {
 	// Fall if not on ground
 	base.vspeed = vspeed;

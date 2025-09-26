@@ -1,9 +1,9 @@
 /// @description Movement and collision
 
 // Vertical
-if (place_meeting(x, y + 1, objSolid))
+if (place_meeting(x, y + 1, obj_solid))
 {
-	while (place_meeting(x, y, objSolid))
+	while (place_meeting(x, y, obj_solid))
 	{
 		--y;
 	}
@@ -11,10 +11,10 @@ if (place_meeting(x, y + 1, objSolid))
 else ++y;
 
 // Horizontal
-if (place_meeting(x + hspeed, y - 1, objSolid))
+if (place_meeting(x + hspeed, y - 1, obj_solid))
 {
 	// Move outside of wall
-	while (place_meeting(x, y, objSolid)) x -= hspeed;
+	while (place_meeting(x, y, obj_solid)) x -= hspeed;
 	
 	// Initialize turnaround
 	if (image_xscale == hspeed)

@@ -94,7 +94,7 @@ function player_can_lock_on(obj)
 	// Abort on an indirect line of sight
 	with (obj)
 	{
-		if (collision_line(x, y, other.x, other.y, objSolid, false, true) != noone)
+		if (collision_line(x, y, other.x, other.y, obj_solid, false, true) != noone)
 		{
 			return false;
 		}

@@ -4,15 +4,13 @@ function player_movement_air() {
 	var step = x_speed / total_steps;
 	
 	// Process horizontal movement loop
-	repeat (total_steps)
-	{
+	repeat (total_steps) {
 		// Apply movement step
 		x += dcos(angle) * step;
 		y -= dsin(angle) * step;
 		
 		// Die if out of bounds
-		if (not player_in_camera_bounds())
-		{
+		if (not player_in_camera_bounds()) {
 			player_is_dead(-1);
 			return false;
 		}
@@ -22,8 +20,7 @@ function player_movement_air() {
 		
 		// Handle wall collision
 		var hit_wall = player_collision_wall(0);
-		if (hit_wall != noone)
-		{
+		if (hit_wall != noone) {
 			// Eject from wall
 			var wall_sign = player_wall_eject(hit_wall);
 			
