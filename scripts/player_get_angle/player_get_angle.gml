@@ -1,140 +1,146 @@
-function player_get_angle(obj, rot)
-{
+function player_get_angle(object, fallback) {
+	// Variables
+	var obj_shape = noone;
+	var obj_angle = 0;
+	var obj_xscale = 1;
+	var obj_yscale = 1;
+	var obj_bbox_left = 0;
+	var obj_bbox_right = 0;
+	var obj_bbox_top = 0;
+	var obj_bbox_bottom = 0;
+	
 	// Get the solid's collision and image data
-	with (obj)
-	{
-		var kind = shape;
-		var normal = surface_angle;
-		var xscale = sign(image_xscale);
-		var yscale = sign(image_yscale);
-		var left_side = bbox_left;
-		var right_side = bbox_right + 1;
-		var top_side = bbox_top;
-		var bottom_side = bbox_bottom + 1;
+	with (object) {
+		obj_shape = shape;
+		obj_angle = surface_angle;
+		obj_xscale = sign(image_xscale);
+		obj_yscale = sign(image_yscale);
+		obj_bbox_left = bbox_left;
+		obj_bbox_right = bbox_right + 1;
+		obj_bbox_top = bbox_top;
+		obj_bbox_bottom = bbox_bottom + 1;
 	}
 	
 	// Custom shape
-	if (kind == SHP_CUSTOM)
-	{
+	if (obj_shape == SHP_CUSTOM) {
 		// Initialize sensors
-		var x_int = x div 1;
-		var y_int = y div 1;
-		var sine = dsin(rot);
-		var cosine = dcos(rot);
+		var pos_x = floor(x);
+		var pos_y = floor(y);
+		var sine = dsin(fallback);
+		var cosine = dcos(fallback);
+		var left_sensor = false;
+		var right_sensor = false;
 		
-		var x1 = x_int - (cosine * hor_radius) + (sine * ver_radius);
-		var y1 = y_int + (sine * hor_radius) + (cosine * ver_radius);
-		var x2 = x_int + (cosine * hor_radius) + (sine * ver_radius);
-		var y2 = y_int - (sine * hor_radius) + (cosine * ver_radius);
-		
-		var left = false;
-		var right = false;
-		
+		// Setup positions
+		var pos_x_1 = pos_x - (cosine * hor_radius) + (sine * ver_radius);
+		var pos_y_1 = pos_y + (sine * hor_radius) + (cosine * ver_radius);
+		var pos_x_2 = pos_x + (cosine * hor_radius) + (sine * ver_radius);
+		var pos_y_2 = pos_y - (sine * hor_radius) + (cosine * ver_radius);
+
 		// Scan below feet
-		repeat (ver_radius)
-		{
+		repeat (ver_radius) {
 			// Evaluate all solids
-			for (var n = array_length(terrain_list) - 1; n > -1; --n)
-			{
+			for (var i = array_length(terrain_list) - 1; i > -1; --i) {
 				// Get the current solid
-				var inst = terrain_list[n];
+				var instance = terrain_list[i];
 				
-				// Check if the sensors have found the solid
-				if (not left and collision_point(x1, y1, inst, true, false) != noone)
-				{
-					left = true;
+				// Check if the left sensor found the solid
+				if (not left_sensor and collision_point(pos_x_1, pos_y_1, instance, true, false)) {
+					left_sensor = true;
 				}
-				if (not right and collision_point(x2, y2, inst, true, false) != noone)
-				{
-					right = true;
+				
+				// Check if the right sensor found the solid
+				if (not right_sensor and collision_point(pos_x_2, pos_y_2, instance, true, false)) {
+					right_sensor = true;
 				}
 				
 				// Calculate the direction from left to right
-				if (left and right) return (point_direction(x1, y1, x2, y2) div 1);
+				if (left_sensor and right_sensor) {
+					return floor(point_direction(pos_x_1, pos_y_1, pos_x_2, pos_y_2));
+				}
 			}
 			
-			// Push the sensors down
-			if (not left)
-			{
-				x1 += sine;
-				y1 += cosine;
+			// Push the left sensor down
+			if (!left_sensor) {
+				pos_x_1 += sine;
+				pos_y_1 += cosine;
 			}
-			if (not right)
-			{
-				x2 += sine;
-				y2 += cosine;
+			
+			// Push the right sensor down
+			if (!right_sensor) {
+				pos_x_2 += sine;
+				pos_y_2 += cosine;
 			}
 		}
-		
-		/* AUTHOR NOTE: the height at which the sensors are pushed down is dependent on that used to record instances local to the player.
-		Currently, the maximum height sits at double the player's vertical radius.
-		If you want to increase the height at which the sensors are pushed down, you must make sure it matches that in the `player_get_stage_objects` function. */
 	}
-	else if (not (kind == SHP_RECTANGLE and normal == -1))
-	{
+	
+	// Hard-coded shapes
+	else if (not (obj_shape == SHP_RECTANGLE and obj_angle == -1)) {
 		// Default if on a flat side of the solid
-		if ((rot == 0 and yscale == -1) or (rot == 90 and xscale == -1) or
-			(rot == 180 and yscale == 1) or (rot == 270 and xscale == 1))
-		{
-			return rot;
+		if ((fallback == 0 and !obj_yscale)
+			or (fallback == 90 and !obj_xscale)
+			or (fallback == 180 and obj_yscale)
+			or (fallback == 270 and obj_xscale)
+			) {
+			return fallback;
 		}
 		
 		// Default if out of the solid's bounds
-		if (rot mod 180 != 0)
-		{
-			if ((yscale == -1 and y - hor_radius < top_side) or (yscale == 1 and y + hor_radius > bottom_side))
-			{
-				return rot;
+		if (fallback mod 180 != 0) {
+			if ((!obj_yscale and y - hor_radius < obj_bbox_top) or (obj_yscale and y + hor_radius > obj_bbox_bottom)) {
+				return fallback;
 			}
-		}
-		else
-		{
-			if ((xscale == -1 and x - hor_radius < left_side) or (xscale == 1 and x + hor_radius > right_side))
-			{
-				return rot;
+		} else {
+			if ((!obj_xscale and x - hor_radius < obj_bbox_left) or (obj_xscale and x + hor_radius > obj_bbox_right)) {
+				return fallback;
 			}
 		}
 		
 		// If the solid's angle is hard-coded, return it
-		if (normal != -1) return normal;
+		if (obj_angle != undefined) {
+			return obj_angle;
+		}
 		
 		// Determine calculation method
-		if (kind == SHP_RIGHT_TRIANGLE)
-		{
+		if (obj_shape == SHP_RIGHT_TRIANGLE) {
 			// Get triangle dimensions
-			var x1 = left_side;
-			var y1 = bottom_side;
-			var x2 = right_side;
-			var y2 = top_side;
+			var pos_x_1 = obj_bbox_left;
+			var pos_y_1 = obj_bbox_bottom;
+			var pos_x_2 = obj_bbox_right;
+			var pos_y_2 = obj_bbox_top;
 			
-			if (yscale == -1)
-			{
-				x1 = right_side;
-				x2 = left_side;
+			if (!obj_yscale) {
+				pos_x_1 = obj_bbox_right;
+				pos_x_2 = obj_bbox_left;
 			}
-			if (xscale == -1)
-			{
-				y1 = top_side;
-				y2 = bottom_side;
+			
+			if (!obj_xscale) {
+				pos_y_1 = obj_bbox_top;
+				pos_y_2 = obj_bbox_bottom;
 			}
 			
 			// Calculate the angle of the hypotenuse
-			return (point_direction(x1, y1, x2, y2) div 1);
-		}
-		else
-		{
+			return floor(point_direction(pos_x_1, pos_y_1, pos_x_2, pos_y_2));
+		} else {
 			// Get ellipse center and player position
-			var cx = (kind == SHP_QUARTER_ELLIPSE xor xscale == 1) ? left_side : right_side;
-			var cy = (kind == SHP_QUARTER_ELLIPSE xor yscale == 1) ? top_side : bottom_side;
-			var px = clamp(x, left_side, right_side);
-			var py = clamp(y, top_side, bottom_side);
+			var ellipse_x = (obj_shape == SHP_QUARTER_ELLIPSE xor obj_xscale) ? (obj_bbox_left) : (obj_bbox_right);
+			var ellipse_y = (obj_shape == SHP_QUARTER_ELLIPSE xor obj_yscale) ? (obj_bbox_top) : (obj_bbox_bottom);
+			var player_x = clamp(x, obj_bbox_left, obj_bbox_right);
+			var player_y = clamp(y, obj_bbox_top, obj_bbox_bottom);
 			
 			// Calculate the direction from the player to the ellipse center
-			var dir = (kind == SHP_QUARTER_ELLIPSE) ? point_direction(px, py, cx, cy) : point_direction(cx, cy, px, py);
-			return (((dir div 1) + 90) mod 360);
+			var dir_to_center = 0;
+			if (obj_shape == SHP_QUARTER_ELLIPSE) {
+				dir_to_center = floor(point_direction(player_x, player_y, ellipse_x, ellipse_y));
+			} else {
+				dir_to_center = floor(point_direction(ellipse_x, ellipse_y, player_x, player_y));
+			}
+			
+			// Return direction
+			return (dir_to_center + 90) mod 360;
 		}
 	}
 	
 	// Failure
-	return rot;
+	return fallback;
 }
