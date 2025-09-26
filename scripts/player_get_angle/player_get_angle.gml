@@ -97,7 +97,7 @@ function player_get_angle(object, fallback) {
 		}
 		
 		// If the solid's angle is hard-coded, return it
-		if (obj_angle != undefined) {
+		if (obj_angle != -1) {
 			return obj_angle;
 		}
 		
