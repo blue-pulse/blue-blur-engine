@@ -1,5 +1,5 @@
 /// @description Draw collision masks
-with (objPlayer)
+with (obj_player)
 {
 	var x_int = x div 1;
 	var y_int = y div 1;

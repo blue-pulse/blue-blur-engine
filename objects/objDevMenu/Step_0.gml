@@ -1,6 +1,6 @@
 /// @description Get player data
 player_data = "";
-with (objPlayer)
+with (obj_player)
 {
 	// Display movement properties
 	other.player_data += "STATE: " + script_get_name(state) + "\n\n";
@@ -41,6 +41,6 @@ with (objPlayer)
 	// Restart stage
 	if (keyboard_check_pressed(ord("R")))
 	{
-		transition_to(room);
+		room_fadeto(room);
 	}
 }

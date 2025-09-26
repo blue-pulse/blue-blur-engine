@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_icon_logic",
+    "path":"sprites/spr_icon_logic/spr_icon_logic.yy",
+  },
   "spriteMaskId":null,
   "visible":false,
 }

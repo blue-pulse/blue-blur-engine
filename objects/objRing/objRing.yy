@@ -9,8 +9,8 @@
   "name":"objRing",
   "overriddenProperties":[],
   "parent":{
-    "name":"Rings",
-    "path":"folders/tmp/Objects/Stage/General/Rings.yy",
+    "name":"Items",
+    "path":"folders/5. Resources/Items.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

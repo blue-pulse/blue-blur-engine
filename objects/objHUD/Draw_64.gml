@@ -27,7 +27,7 @@ draw_set_halign(fa_left);
 draw_text(56, 25, timestamp);
 
 // Power-up bars
-with (objPlayer)
+with (obj_player)
 {
 	if (superspeed_time > 0)
 	{

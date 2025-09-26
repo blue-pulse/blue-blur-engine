@@ -4,7 +4,7 @@ switch (state)
 	// Waiting
 	case 1:
 	{
-		var player = instance_nearest(x, y, objPlayer);
+		var player = instance_nearest(x, y, obj_player);
 		if (player != noone and distance_to_object(player) < 30)
 		{
 			visible = true;

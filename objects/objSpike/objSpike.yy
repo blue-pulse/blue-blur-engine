@@ -9,8 +9,8 @@
   "name":"objSpike",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/tmp/Objects/Stage/General.yy",
+    "name":"Items",
+    "path":"folders/5. Resources/Items.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

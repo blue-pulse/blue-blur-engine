@@ -12,7 +12,7 @@ if (turn_time <= 0 and shoot_time <= 0)
 		else
 		{
 			// Prepare to fire at the player
-			var player = instance_nearest(x, y, objPlayer);
+			var player = instance_nearest(x, y, obj_player);
 			if (player != noone and y < player.y and can_shoot)
 			{
 				var x_diff = x - player.x;

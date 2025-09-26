@@ -2,7 +2,7 @@
 show_debug_overlay(false);
 
 // Release player
-with (objPlayer)
+with (obj_player)
 {
 	if (state == player_is_debugging) player_is_falling(-1);
 }

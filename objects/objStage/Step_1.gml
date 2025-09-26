@@ -4,13 +4,13 @@
 if (timer_enabled and ++stage_time >= time_limit)
 {
 	time_over = true;
-	with (objPlayer) player_is_dead(-1);
+	with (obj_player) player_is_dead(-1);
 }
 
 // Reset time
 if (reset_time > 0 and --reset_time <= 0)
 {
-	transition_to(room);
+	room_fadeto(room);
 }
 
 // Create debug overlay

@@ -24,7 +24,7 @@ function player_get_stage_objects() {
 		// Get all solid objects
 		if (!object_is_ancestor(object_index, obj_solid)) {
 			// Continue if no reaction exists
-			if (reaction_index == -1) {
+			if (!reaction_index) {
 				continue;
 			}
 			array_push(other.resource_list, id);

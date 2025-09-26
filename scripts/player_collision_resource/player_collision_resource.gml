@@ -11,7 +11,7 @@ function player_collision_resource() {
 		}
 		
 		// Trigger reaction to end current state
-		if (player_react(object)) {
+		if (player_get_reaction(object)) {
 			return true;
 		}
 	}

@@ -11,7 +11,7 @@ var view_bottom = SCREEN_HEIGHT + CAMERA_PADDING * 2;
 instance_activate_region(view_left, view_top, view_right, view_bottom, true);
 
 // Activate instances around the player
-with (objPlayer)
+with (obj_player)
 {
 	if (not in_view(id, CAMERA_PADDING))
 	{

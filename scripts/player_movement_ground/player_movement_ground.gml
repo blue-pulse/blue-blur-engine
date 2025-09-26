@@ -40,7 +40,7 @@ function player_movement_ground() {
 			var wall_sign = player_wall_eject(hit_wall);
 			
 			// Trigger reaction
-			if (player_react(hit_wall, wall_sign)) return false;
+			if (player_get_reaction(hit_wall, wall_sign)) return false;
 			
 			// Stop if moving towards wall
 			if (sign(x_speed) == wall_sign)
@@ -62,7 +62,7 @@ function player_movement_ground() {
 		if (hit_floor != noone)
 		{
 			// Trigger reaction
-			if (player_react(hit_floor, DIR_BOTTOM)) return false;
+			if (player_get_reaction(hit_floor, DIR_BOTTOM)) return false;
 			
 			// Get floor data
 			player_set_ground(hit_floor);

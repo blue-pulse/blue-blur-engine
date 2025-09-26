@@ -7,16 +7,6 @@ Solid objects only:
 
 If any of the conditions above are met, the reaction function MUST return true, otherwise it should return false. */
 
-/// @description Executes the reaction function of the given instance in context of the player.
-/// @param {Id.Instance} obj Object or instance to check.
-/// @param {Real} [side] Direction of collision to check (optional, unused for non-solid objects.)
-/// @returns {Bool} Whether or not the player's state should be aborted.
-function player_react(obj, side)
-{
-	var reaction = obj.reaction_index;
-	if (reaction == -1) return false;
-	return (side == undefined) ? reaction(obj) : reaction(obj, side);
-}
 
 /// @description Handles how the player should react upon collision with the given ring instance.
 /// @param {Id.Instance} obj Object or instance to check.

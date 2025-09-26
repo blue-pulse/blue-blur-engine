@@ -2,7 +2,7 @@
 var mean_node = -1;
 
 // Get bridge position
-with (objPlayer)
+with (obj_player)
 {
 	if (ground_id == other.id)
 	{

@@ -8,8 +8,8 @@
   "name":"objSpringRed",
   "overriddenProperties":[],
   "parent":{
-    "name":"Springs",
-    "path":"folders/tmp/Objects/Stage/General/Springs.yy",
+    "name":"Items",
+    "path":"folders/5. Resources/Items.yy",
   },
   "parentObjectId":{
     "name":"objSpring",
