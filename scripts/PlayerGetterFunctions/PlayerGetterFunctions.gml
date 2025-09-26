@@ -147,7 +147,7 @@ function player_get_angle(obj, rot)
 function player_get_stage_objects()
 {
 	// Erase recorded objects
-	array_resize(soft_objects, 0);
+	array_resize(resource_list, 0);
 	array_resize(solid_objects, 0);
 	
 	// Initialize bounding rectangle
@@ -172,7 +172,7 @@ function player_get_stage_objects()
 		{
 			// Continue if no reaction exists
 			if (reaction_index == -1) continue;
-			array_push(other.soft_objects, id);
+			array_push(other.resource_list, id);
 		}
 		else
 		{

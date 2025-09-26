@@ -76,7 +76,7 @@ function player_movement_ground()
 		if (on_ground) player_rotate_mask();
 		
 		// Handle non-solid object collision
-		if (player_collision_soft()) return false;
+		if (player_collision_resource()) return false;
 	}
 	
 	// Success
@@ -123,7 +123,7 @@ function player_movement_air()
 		}
 		
 		// Handle non-solid object collision
-		if (player_collision_soft()) return false;
+		if (player_collision_resource()) return false;
 	}
 	
 	// Initialize vertical movement loop
@@ -221,7 +221,7 @@ function player_movement_air()
 		if (hit_wall != noone) player_wall_eject(hit_wall);
 		
 		// Handle non-solid object collision
-		if (player_collision_soft()) return false;
+		if (player_collision_resource()) return false;
 	}
 	
 	// Success

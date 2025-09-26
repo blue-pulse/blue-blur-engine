@@ -337,7 +337,7 @@
     {"name":"pick","order":8,"path":"scripts/pick/pick.yy",},
     {"name":"player_collision_ceiling","order":2,"path":"scripts/player_collision_ceiling/player_collision_ceiling.yy",},
     {"name":"player_collision_floor","order":1,"path":"scripts/player_collision_floor/player_collision_floor.yy",},
-    {"name":"player_collision_soft","order":3,"path":"scripts/player_collision_soft/player_collision_soft.yy",},
+    {"name":"player_collision_resource","order":3,"path":"scripts/player_collision_resource/player_collision_resource.yy",},
     {"name":"PlayerGeneralFunctions","order":3,"path":"scripts/PlayerGeneralFunctions/PlayerGeneralFunctions.yy",},
     {"name":"PlayerGetterFunctions","order":1,"path":"scripts/PlayerGetterFunctions/PlayerGetterFunctions.yy",},
     {"name":"PlayerGroundedStates","order":1,"path":"scripts/PlayerGroundedStates/PlayerGroundedStates.yy",},

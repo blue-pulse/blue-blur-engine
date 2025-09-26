@@ -415,7 +415,7 @@
     {"id":{"name":"pick","path":"scripts/pick/pick.yy",},},
     {"id":{"name":"player_collision_ceiling","path":"scripts/player_collision_ceiling/player_collision_ceiling.yy",},},
     {"id":{"name":"player_collision_floor","path":"scripts/player_collision_floor/player_collision_floor.yy",},},
-    {"id":{"name":"player_collision_soft","path":"scripts/player_collision_soft/player_collision_soft.yy",},},
+    {"id":{"name":"player_collision_resource","path":"scripts/player_collision_resource/player_collision_resource.yy",},},
     {"id":{"name":"player_collision_wall","path":"scripts/player_collision_wall/player_collision_wall.yy",},},
     {"id":{"name":"PlayerAerialStates","path":"scripts/PlayerAerialStates/PlayerAerialStates.yy",},},
     {"id":{"name":"PlayerGeneralFunctions","path":"scripts/PlayerGeneralFunctions/PlayerGeneralFunctions.yy",},},

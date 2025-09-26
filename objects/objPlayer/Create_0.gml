@@ -8,7 +8,7 @@ jumping = false;
 jump_action = false;
 
 // Movement and collision
-soft_objects = [];
+resource_list = [];
 solid_objects = [];
 collision_layer = 0;
 cliff_sign = 0;
