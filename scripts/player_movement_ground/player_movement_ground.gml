@@ -16,13 +16,13 @@ function player_movement_ground() {
 	
 	// Variables for horizontal movement
 	var total_steps = 1 + (abs(hor_speed) div hor_radius);
-	var step = hor_speed / total_steps;
+	var increment = hor_speed / total_steps;
 	
 	// Process movement loop
 	repeat (total_steps) {
 		// Apply movement step
-		x += dcos(angle) * step;
-		y -= dsin(angle) * step;
+		x += dcos(angle) * increment;
+		y -= dsin(angle) * increment;
 		
 		// Die if out of bounds
 		if (!player_in_camera_bounds()) {

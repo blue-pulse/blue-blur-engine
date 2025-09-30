@@ -1,13 +1,13 @@
 function player_movement_air() {
 	// Variables for horizontal movement
 	var total_steps = 1 + (abs(hor_speed) div hor_radius);
-	var steps = hor_speed / total_steps;
+	var increment = hor_speed / total_steps;
 	
 	// Horizontal movement
 	repeat (total_steps) {
 		// Apply movement step
-		x += dcos(angle) * steps;
-		y -= dsin(angle) * steps;
+		x += dcos(angle) * increment;
+		y -= dsin(angle) * increment;
 		
 		// Die if out of bounds
 		if (!player_in_camera_bounds()) {
@@ -43,13 +43,13 @@ function player_movement_air() {
 	
 	// Variables for vertical movement
 	total_steps = 1 + (abs(ver_speed) div ver_radius);
-	steps = ver_speed / total_steps;
+	increment = ver_speed / total_steps;
 	
 	// Vertical movement
 	repeat (total_steps) {
-		// Apply movement steps
-		x += dsin(angle) * steps;
-		y += dcos(angle) * steps;
+		// Apply movement step
+		x += dsin(angle) * increment;
+		y += dcos(angle) * increment;
 		
 		// Die if out of bounds
 		if (!player_in_camera_bounds()) {
