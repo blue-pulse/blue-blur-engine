@@ -346,6 +346,7 @@
     {"name":"player_in_camera_bounds","order":6,"path":"scripts/player_in_camera_bounds/player_in_camera_bounds.yy",},
     {"name":"player_in_cliff","order":5,"path":"scripts/player_in_cliff/player_in_cliff.yy",},
     {"name":"player_movement_air","order":1,"path":"scripts/player_movement_air/player_movement_air.yy",},
+    {"name":"player_wall_eject","order":7,"path":"scripts/player_wall_eject/player_wall_eject.yy",},
     {"name":"PlayerGeneralFunctions","order":2,"path":"scripts/PlayerGeneralFunctions/PlayerGeneralFunctions.yy",},
     {"name":"PlayerGroundedStates","order":1,"path":"scripts/PlayerGroundedStates/PlayerGroundedStates.yy",},
     {"name":"PlayerReactionFunctions","order":3,"path":"scripts/PlayerReactionFunctions/PlayerReactionFunctions.yy",},

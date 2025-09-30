@@ -422,6 +422,7 @@
     {"id":{"name":"player_in_cliff","path":"scripts/player_in_cliff/player_in_cliff.yy",},},
     {"id":{"name":"player_movement_air","path":"scripts/player_movement_air/player_movement_air.yy",},},
     {"id":{"name":"player_movement_ground","path":"scripts/player_movement_ground/player_movement_ground.yy",},},
+    {"id":{"name":"player_wall_eject","path":"scripts/player_wall_eject/player_wall_eject.yy",},},
     {"id":{"name":"PlayerAerialStates","path":"scripts/PlayerAerialStates/PlayerAerialStates.yy",},},
     {"id":{"name":"PlayerGeneralFunctions","path":"scripts/PlayerGeneralFunctions/PlayerGeneralFunctions.yy",},},
     {"id":{"name":"PlayerGroundedStates","path":"scripts/PlayerGroundedStates/PlayerGroundedStates.yy",},},
