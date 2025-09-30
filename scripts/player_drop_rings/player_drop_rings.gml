@@ -1,19 +1,13 @@
-
-/// @description Spawns up to 32 dropped rings in circles of 16 at the player's coordinates, and resets their ring count.
-function player_drop_rings()
-{
+function player_drop_rings() {
 	// Loop until no rings remain
 	var spd = 4;
 	var dir = 101.25;
-	for (var ring = min(objGameData.player_rings, 32); ring > 0; --ring)
-	{
-		if (ring == 16)
-		{
+	for (var ring = min(objGameData.player_rings, 32); ring > 0; --ring) {
+		if (ring == 16) {
 			spd = 2;
 			dir = 101.25;
 		}
-		with (instance_create_layer(x, y, layer, objRingDropped))
-		{
+		with (instance_create_layer(x, y, layer, objRingDropped)) {
 			gravity_direction = other.gravity_direction;
 			image_angle = gravity_direction;
 			hor_speed = lengthdir_x(spd, dir);
