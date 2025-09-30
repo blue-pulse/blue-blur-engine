@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerGroundedStates",
+  "%Name":"player_get_lives",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerGroundedStates",
+  "name":"player_get_lives",
   "parent":{
-    "name":"Player",
-    "path":"folders/tmp/Scripts/Player.yy",
+    "name":"Scripts",
+    "path":"folders/4. Player/Player/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

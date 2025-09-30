@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PlayerAerialStates",
   "parent":{
-    "name":"States",
-    "path":"folders/tmp/Scripts/Player/States.yy",
+    "name":"Player",
+    "path":"folders/tmp/Scripts/Player.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

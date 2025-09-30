@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PlayerReactionFunctions",
   "parent":{
-    "name":"Physics",
-    "path":"folders/tmp/Scripts/Player/Physics.yy",
+    "name":"Player",
+    "path":"folders/tmp/Scripts/Player.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
