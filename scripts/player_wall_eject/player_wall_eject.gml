@@ -1,10 +1,12 @@
 function player_wall_eject(object) {
 	// Variables
+	var pos_x = floor(x);
+	var pos_y = floor(y);
 	var sine = dsin(mask_direction);
 	var cosine = dcos(mask_direction);
 	
 	// Check if we're inside the wall
-	if (collision_point(x, y, object, true, false)) {
+	if (collision_point(pos_x, pos_y, object, true, false)) {
 		// Find and move to the closest side outside of collision
 		for (var i = wall_radius; i < wall_radius * 2; ++i) {
 			// Right of the wall
