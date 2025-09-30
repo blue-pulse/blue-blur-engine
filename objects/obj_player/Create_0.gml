@@ -44,7 +44,7 @@ invincibility_effect = noone;
 player_set_ground(noone);
 
 // Physics values
-player_reset_physics();
+player_update_physics();
 
 // Physics constants
 ceiling_land_threshold = -4;

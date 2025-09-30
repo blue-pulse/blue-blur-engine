@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_in_camera_bounds",
+  "%Name":"player_update_angle",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_in_camera_bounds",
+  "name":"player_update_angle",
   "parent":{
     "name":"Scripts",
     "path":"folders/4. Player/Player/Scripts.yy",

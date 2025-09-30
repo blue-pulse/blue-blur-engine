@@ -332,7 +332,7 @@ function player_is_debugging(phase)
 			// Fly around, whilst staying within bounds
 			x += (input_right - input_left) * 8;
 			y += (input_down - input_up) * 8;
-			player_in_camera_bounds();
+			player_in_view();
 		}
 	}
 }

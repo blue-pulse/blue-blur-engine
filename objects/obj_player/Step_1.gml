@@ -35,5 +35,5 @@ if (invincibility_time > 0 and --invincibility_time <= 0)
 }
 if (superspeed_time > 0 and --superspeed_time <= 0)
 {
-	player_reset_physics();
+	player_update_physics();
 }

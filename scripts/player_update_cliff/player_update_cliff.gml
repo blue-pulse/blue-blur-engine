@@ -1,4 +1,4 @@
-function player_in_cliff() {
+function player_update_cliff() {
 	// Variables
 	var height = ver_radius * 2;
 	var left_sensor = false;

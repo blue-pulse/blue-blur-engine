@@ -1,20 +1,19 @@
-function player_in_camera_bounds() {
-	// Check if already within bounds (early out)
+function player_in_view() {
+	// Variables
 	if (mask_direction mod 180 != 0)
 	{
 		var x1 = x - ver_radius;
 		var y1 = y - hor_radius;
 		var x2 = x + ver_radius;
 		var y2 = y + hor_radius;
-	}
-	else
-	{
+	} else {
 		var x1 = x - hor_radius;
 		var y1 = y - ver_radius;
 		var x2 = x + hor_radius;
 		var y2 = y + ver_radius;
 	}
 	
+	// Check if already within bounds (early out)
 	if (rectangle_in_rectangle(x1, y1, x2, y2, camera.bound_left, camera.bound_top, camera.bound_right, camera.bound_bottom) == 1)
 	{
 		return true;

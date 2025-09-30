@@ -25,13 +25,13 @@ function player_movement_ground() {
 		y -= dsin(angle) * increment;
 		
 		// Die if out of bounds
-		if (!player_in_camera_bounds()) {
+		if (!player_in_view()) {
 			player_is_dead(-1);
 			return false;
 		}
 		
 		// Find surrounding stage objects
-		player_get_stage_objects();
+		player_update_objects();
 		
 		// Handle wall collision
 		var hit_wall = player_collision_wall(0);
@@ -77,7 +77,7 @@ function player_movement_ground() {
 		
 		// Update mask direction
 		if (is_grounded) {
-			player_rotate_mask();
+			player_update_angle();
 		}
 		
 		// Handle non-solid object collision

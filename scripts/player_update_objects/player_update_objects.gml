@@ -1,4 +1,4 @@
-function player_get_stage_objects() {
+function player_update_objects() {
 	// Erase recorded objects
 	terrain_list = [];
 	resource_list = [];

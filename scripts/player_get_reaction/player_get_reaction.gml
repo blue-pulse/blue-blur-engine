@@ -1,8 +1,6 @@
 function player_get_reaction(object, dir=undefined) {
-	// Get reaction
-	var reaction = object.reaction_index;
-	
 	// Early exit
+	var reaction = object.reaction_index;
 	if (!reaction) {
 		return false;
 	}

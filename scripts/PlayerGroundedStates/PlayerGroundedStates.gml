@@ -27,7 +27,7 @@ function player_is_standing(phase)
 			if (invincibility_time <= 0) score_combo = 0;
 			
 			// Find the direction of the nearest cliff
-			player_in_cliff();
+			player_update_cliff();
 			
 			// Animate
 			animation_index = (cliff_dir != 0) ? "teeter" : "idle";
@@ -154,7 +154,7 @@ function player_is_running(phase)
 	        }
 			
 			// Slope friction
-			player_set_slope_friction(slope_friction);
+			player_set_friction(slope_friction);
 			
 	        // Standing
 			if (hor_speed == 0 and input_sign == 0)
@@ -377,7 +377,7 @@ function player_is_rolling(phase)
 			
 			// Slope friction
 			var roll_slope_friction = (sign(hor_speed) == sign(dsin(relative_angle))) ? roll_slope_friction_up : roll_slope_friction_down;
-			player_set_slope_friction(roll_slope_friction);
+			player_set_friction(roll_slope_friction);
 			
 			// Jumping
 	        if (input_action_pressed) return player_is_falling(-2);

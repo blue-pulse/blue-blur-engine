@@ -10,13 +10,13 @@ function player_movement_air() {
 		y -= dsin(angle) * increment;
 		
 		// Die if out of bounds
-		if (!player_in_camera_bounds()) {
+		if (!player_in_view()) {
 			player_is_dead(-1);
 			return false;
 		}
 		
 		// Find surrounding stage objects
-		player_get_stage_objects();
+		player_update_objects();
 		
 		// Handle wall collision
 		var hit_wall = player_collision_wall(0);
@@ -52,13 +52,13 @@ function player_movement_air() {
 		y += dcos(angle) * increment;
 		
 		// Die if out of bounds
-		if (!player_in_camera_bounds()) {
+		if (!player_in_view()) {
 			player_is_dead(-1);
 			return false;
 		}
 		
 		// Find surrounding stage objects
-		player_get_stage_objects();
+		player_update_objects();
 		
 		// Floor collision
 		if (ver_speed >= 0) {
@@ -71,7 +71,7 @@ function player_movement_air() {
 				player_set_ground(hit_floor);
 				
 				// Update mask direction
-				player_rotate_mask();
+				player_update_angle();
 			}
 		}
 		

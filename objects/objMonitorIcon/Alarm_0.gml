@@ -19,7 +19,7 @@ with (player_id)
 		case 1: // Superspeed
 		{
 			superspeed_time = 1200;
-			player_reset_physics();
+			player_update_physics();
 			break;
 		}
 		case 2: // Invincibility
