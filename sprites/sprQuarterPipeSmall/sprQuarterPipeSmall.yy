@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Terrain Masks",
-    "path":"folders/tmp/Sprites/Stage/Terrain Masks.yy",
+    "name":"Sprites",
+    "path":"folders/5. Resources/Terrain/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

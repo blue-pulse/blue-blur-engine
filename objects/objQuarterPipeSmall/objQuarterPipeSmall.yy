@@ -8,8 +8,8 @@
   "name":"objQuarterPipeSmall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/5. Resources/Terrain/Objects.yy",
+    "name":"Solids",
+    "path":"folders/5. Resources/Terrain/Solids.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"AudioFunctions",
   "parent":{
-    "name":"Game",
-    "path":"folders/tmp/Scripts/Game.yy",
+    "name":"Scripts",
+    "path":"folders/tmp/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

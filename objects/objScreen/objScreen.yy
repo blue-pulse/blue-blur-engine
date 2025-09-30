@@ -11,8 +11,8 @@
   "name":"objScreen",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game",
-    "path":"folders/tmp/Objects/Game.yy",
+    "name":"Objects",
+    "path":"folders/tmp/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

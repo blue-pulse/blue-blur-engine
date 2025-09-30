@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Overlays",
-    "path":"folders/tmp/Objects/Stage/Overlays.yy",
+    "path":"folders/tmp/Objects/Overlays.yy",
   },
   "parentObjectId":null,
   "persistent":true,

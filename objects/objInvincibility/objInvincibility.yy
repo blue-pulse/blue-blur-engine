@@ -10,8 +10,8 @@
   "name":"objInvincibility",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/tmp/Objects/Stage/Player/Effects.yy",
+    "name":"Player",
+    "path":"folders/tmp/Objects/Player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

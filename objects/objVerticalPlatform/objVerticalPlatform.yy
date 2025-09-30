@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Platforms",
-    "path":"folders/tmp/Objects/Stage/Platforms.yy",
+    "path":"folders/5. Resources/Terrain/Platforms.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

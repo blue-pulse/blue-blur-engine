@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PlayerReactionFunctions",
   "parent":{
-    "name":"Player",
-    "path":"folders/tmp/Scripts/Player.yy",
+    "name":"Scripts",
+    "path":"folders/tmp/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

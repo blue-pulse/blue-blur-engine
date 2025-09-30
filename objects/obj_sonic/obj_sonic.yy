@@ -9,7 +9,10 @@
     "name":"Object",
     "path":"folders/4. Player/Sonic/Object.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_player",
+    "path":"objects/obj_player/obj_player.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -27,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprSonicIdle",
+    "path":"sprites/sprSonicIdle/sprSonicIdle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
