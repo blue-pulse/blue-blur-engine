@@ -1,6 +1,6 @@
 /// @description Initialize
 image_speed = 0;
-image_index = (objStage.time_over and objGameData.player_lives > 0); // Determine game over type
+image_index = (objStage.time_over and global.lives > 0); // Determine game over type
 
 // Music
 audio_enqueue_bgm(bgmGameOver, 4, false);

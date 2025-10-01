@@ -1,5 +1,5 @@
 /// @description Timestamp
-image_index = objScreen.image_index div 8;
+image_index = global.ticks div 8;
 var time = objStage.stage_time;
 
 // Minutes

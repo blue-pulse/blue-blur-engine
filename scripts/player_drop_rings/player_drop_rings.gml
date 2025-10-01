@@ -2,7 +2,7 @@ function player_drop_rings() {
 	// Loop until no rings remain
 	var spd = 4;
 	var dir = 101.25;
-	for (var ring = min(objGameData.player_rings, 32); ring > 0; --ring) {
+	for (var ring = min(rings, 32); ring > 0; --ring) {
 		if (ring == 16) {
 			spd = 2;
 			dir = 101.25;
@@ -21,7 +21,7 @@ function player_drop_rings() {
 	}
 	
 	// Reset ring count
-	objGameData.player_rings = 0;
+	rings = 0;
 	
 	// Sound
 	audio_play_sfx(sfxRingLoss);

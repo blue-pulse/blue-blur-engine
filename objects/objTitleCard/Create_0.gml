@@ -16,7 +16,7 @@ banner_offset = fold_width;
 
 // Labels
 var screen_offset = SCREEN_WIDTH * 0.1;
-draw_set_font(objResources.font_title);
+draw_set_font(global.font_title);
 name_ox = SCREEN_WIDTH - string_width(name) - screen_offset;
 zone_ox = SCREEN_WIDTH - string_width("ZONE") - sprite_get_width(sprActNumber) - screen_offset;
 label_offset = SCREEN_WIDTH;

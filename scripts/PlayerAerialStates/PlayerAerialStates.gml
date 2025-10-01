@@ -128,7 +128,7 @@ function player_is_falling(phase)
 				if (input_action_pressed and jump_action)
 				{
 					// Burst effect and sound
-					part_particles_create(objResources.particles, x, y, objResources.homing_burst, 1);
+					part_particles_create(global.particles, x, y, global.homing_burst, 1);
 					audio_play_sfx(sfxSpinDash);
 					
 					// Homing attack if the reticle is present; dash otherwise
@@ -296,7 +296,7 @@ function player_is_dead(phase)
 			if (not in_view(id, 24) and ver_speed > 3)
 			{
 				// Deduct lives; is the game over?
-				if (--objGameData.player_lives <= 0 or objStage.time_over)
+				if (--global.lives <= 0 or objStage.time_over)
 				{
 					instance_create_layer(0, 0, "Overlays", objGameOver);
 				}

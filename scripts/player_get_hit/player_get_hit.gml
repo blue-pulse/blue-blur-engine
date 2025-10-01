@@ -5,7 +5,7 @@ function player_get_hit(object) {
 	}
 	
 	// Drop rings and recoil
-	if (objGameData.player_rings > 0) {
+	if (rings > 0) {
 		player_drop_rings();
 		player_is_hurt(-1);
 		

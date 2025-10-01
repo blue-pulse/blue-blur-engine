@@ -28,14 +28,14 @@ if (banner_offset > fold_width)
 	var fold_height = sprite_get_height(sprTitleCardFold);
 	for (var oy = -8; oy < SCREEN_HEIGHT; oy += fold_height)
 	{
-		draw_sprite(sprTitleCardFold, 0, banner_offset, oy + 8 * (objScreen.image_index mod 32 < 16));
+		draw_sprite(sprTitleCardFold, 0, banner_offset, oy + 8 * (global.ticks mod 32 < 16));
 	}
 }
 
 // Name tag
 if (label_offset < SCREEN_WIDTH)
 {
-	draw_set_font(objResources.font_title);
+	draw_set_font(global.font_title);
 	draw_text(name_ox + label_offset, SCREEN_HEIGHT * 0.25, name);
 	draw_text(zone_ox - label_offset, SCREEN_HEIGHT * 0.25 + 24, "ZONE");
 	if (act > 0) draw_sprite(sprActNumber, act - 1, zone_ox - label_offset + string_width("ZONE"), SCREEN_HEIGHT * 0.25 + 24);

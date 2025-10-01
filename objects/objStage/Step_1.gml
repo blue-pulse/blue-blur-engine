@@ -1,4 +1,5 @@
 /// @description Timers and debug
+global.ticks++;
 
 // Stage time / time over
 if (timer_enabled and ++stage_time >= time_limit)
@@ -14,7 +15,7 @@ if (reset_time > 0 and --reset_time <= 0)
 }
 
 // Create debug overlay
-if (input_check_pressed("start") and started)
+if (input_pressed(vb_start) and started)
 {
 	if (not instance_exists(objDevMenu))
 	{

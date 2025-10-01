@@ -9,20 +9,20 @@ if (objStage.stage_time < 32400 or image_index mod 2 != 0) // 32400 steps = 9 mi
 {
 	draw_sprite(sprHUD, 1, 16, 25);
 }
-if (objGameData.player_rings > 0 or image_index mod 2 != 0)
+if (Player.rings > 0 or image_index mod 2 != 0)
 {
 	draw_sprite(sprHUD, 2, 16, 41);
 }
 
 // Lives text
 draw_set_halign(fa_right);
-draw_set_font(objResources.font_lives);
-draw_text(64, SCREEN_HEIGHT - 15, objGameData.player_lives);
+draw_set_font(global.font_lives);
+draw_text(64, SCREEN_HEIGHT - 15, global.lives);
 
 // Score/Time/Rings text
-draw_set_font(objResources.font_hud);
-draw_text(112, 9, objGameData.player_score);
-draw_text(88, 41, objGameData.player_rings);
+draw_set_font(global.font_hud);
+draw_text(112, 9, global.score);
+draw_text(88, 41, Player.rings);
 draw_set_halign(fa_left);
 draw_text(56, 25, timestamp);
 

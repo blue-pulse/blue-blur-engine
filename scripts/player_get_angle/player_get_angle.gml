@@ -131,12 +131,13 @@ function player_get_angle(object, fallback) {
 			// Calculate the direction from the player to the ellipse center
 			var dir_to_center = 0;
 			if (obj_shape == SHP_QUARTER_ELLIPSE) {
-				dir_to_center = floor(point_direction(player_x, player_y, ellipse_x, ellipse_y));
+				dir_to_center = point_direction(player_x, player_y, ellipse_x, ellipse_y);
 			} else {
-				dir_to_center = floor(point_direction(ellipse_x, ellipse_y, player_x, player_y));
+				dir_to_center = point_direction(ellipse_x, ellipse_y, player_x, player_y);
 			}
 			
 			// Return direction
+			dir_to_center = floor(dir_to_center);
 			return (dir_to_center + 90) mod 360;
 		}
 	}

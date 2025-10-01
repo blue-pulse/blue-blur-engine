@@ -33,6 +33,7 @@ pan_distance_down = 88;
 
 // Counters
 score_combo = 0;
+rings = 0;
 spindash_charge = 0;
 peelout_charge = 0;
 
@@ -61,8 +62,8 @@ spindash_atrophy = 0.96875;
 
 // Position table and trail
 table_size = 16;
-x_table = array_create(table_size, xstart);
-y_table = array_create(table_size, ystart);
+x_table = array_create(table_size, x);
+y_table = array_create(table_size, y);
 trail_alpha = array_create(table_size, 0);
 
 // On-time input

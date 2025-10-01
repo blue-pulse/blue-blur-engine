@@ -29,5 +29,5 @@ draw_sprite_ext(sprite_index, image_index, x_int, y_int, image_xscale, 1, round(
 // Dash smoke
 if (state == player_is_spindashing or state == player_is_peelouting)
 {
-	draw_sprite_ext(sprDashSmoke, objScreen.image_index div 2, x_int, y_int, image_xscale, 1, mask_direction, c_white, 1);
+	draw_sprite_ext(sprDashSmoke, global.ticks div 2, x_int, y_int, image_xscale, 1, mask_direction, c_white, 1);
 }

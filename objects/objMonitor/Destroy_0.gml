@@ -10,4 +10,4 @@ if (not place_meeting(x, y + 1, obj_solid))
 }
 
 // Explosion
-part_particles_create(objResources.particles, x, y, objResources.explosion, 1);
+part_particles_create(global.particles, x, y, global.explosion, 1);

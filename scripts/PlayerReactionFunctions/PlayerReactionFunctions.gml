@@ -20,7 +20,7 @@ function player_reaction_ring(obj)
 	player_get_rings(1);
 	
 	// Ring sparkle
-	part_particles_create(objResources.particles, obj.x, obj.y, objResources.ring_sparkle, 1);
+	part_particles_create(global.particles, obj.x, obj.y, global.ring_sparkle, 1);
 	
 	// Destroy ring
 	instance_destroy(obj);
@@ -90,7 +90,7 @@ function player_reaction_badnik(obj)
 		index = 2;
 	}
 	
-	objGameData.player_score += bonus;
+	global.score += bonus;
 	instance_create_layer(obj.x, obj.y, "Overlays", objPoints, { image_index : index });
 	
 	// Sound

@@ -1,14 +1,14 @@
 /// @description Inputs and timers
-var input_abc = input_check_held("a") or input_check_held("b") or input_check_held("c");
+var input_abc = input_check(vb_a);
 
 // On-time input
 input_action_pressed = (input_abc and not input_action);
 
 // Continuous input
-input_up = input_check_held("up");
-input_down = input_check_held("down");
-input_left = input_check_held("left");
-input_right = input_check_held("right");
+input_up = input_check(vb_up);
+input_down = input_check(vb_down);
+input_left = input_check(vb_left);
+input_right = input_check(vb_right);
 input_action = input_abc;
 
 // Negate contradictory inputs
