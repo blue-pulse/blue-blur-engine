@@ -15,7 +15,7 @@ if (reset_time > 0 and --reset_time <= 0)
 }
 
 // Create debug overlay
-if (input_pressed(vb_start) and started)
+if (keyboard_check_pressed(vk_tab) and started)
 {
 	if (not instance_exists(objDevMenu))
 	{
