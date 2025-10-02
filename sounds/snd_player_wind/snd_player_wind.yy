@@ -13,7 +13,7 @@
   "name":"snd_player_wind",
   "parent":{
     "name":"Common",
-    "path":"folders/4. Player/Player/Sounds/Common.yy",
+    "path":"folders/3. Player/Player/Sounds/Common.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -9,8 +9,8 @@
   "name":"objProjectile",
   "overriddenProperties":[],
   "parent":{
-    "name":"Projectiles",
-    "path":"folders/5. Resources/Enemies/Projectiles.yy",
+    "name":"Enemies",
+    "path":"folders/5. Resources/Enemies.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

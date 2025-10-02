@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Triggers",
-    "path":"folders/tmp/Sprites/Stage/General/Triggers.yy",
+    "name":"Sprites",
+    "path":"folders/5. Resources/Triggers/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -83,8 +83,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"grp_visuals",
+    "path":"texturegroups/grp_visuals",
   },
   "type":0,
   "VTile":false,

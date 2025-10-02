@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/2. Assets/Sprites.yy",
+    "name":"Assets",
+    "path":"folders/2. Framework/Assets.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -83,8 +83,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"grp_assets",
-    "path":"texturegroups/grp_assets",
+    "name":"grp_framework",
+    "path":"texturegroups/grp_framework",
   },
   "type":0,
   "VTile":false,

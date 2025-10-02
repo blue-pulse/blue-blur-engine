@@ -8,8 +8,8 @@
   "name":"objBuzzerShot",
   "overriddenProperties":[],
   "parent":{
-    "name":"Projectiles",
-    "path":"folders/5. Resources/Enemies/Projectiles.yy",
+    "name":"Enemies",
+    "path":"folders/5. Resources/Enemies.yy",
   },
   "parentObjectId":{
     "name":"objProjectile",

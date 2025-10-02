@@ -192,7 +192,7 @@
   "name":"font_main_regular",
   "parent":{
     "name":"Fonts",
-    "path":"folders/2. Assets/Fonts.yy",
+    "path":"folders/4. Visuals/Fonts/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[
@@ -206,10 +206,7 @@
   "sdfSpread":8,
   "size":12.0,
   "styleName":"Regular",
-  "textureGroupId":{
-    "name":"grp_assets",
-    "path":"texturegroups/grp_assets",
-  },
+  "textureGroupId":null,
   "TTFName":"",
   "usesSDF":false,
 }

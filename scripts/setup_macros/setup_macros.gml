@@ -18,7 +18,7 @@
 #macro font_gray global.font_hud_gray
 #macro font_silver global.font_hud_silver
 
-// Shortcuts
+// Inputs
 #macro vb_up INPUT_VERB.UP
 #macro vb_down INPUT_VERB.DOWN
 #macro vb_left INPUT_VERB.LEFT
@@ -28,5 +28,8 @@
 #macro vb_b INPUT_VERB.B
 #macro vb_x INPUT_VERB.X
 #macro vb_y INPUT_VERB.Y
+
+// Shortcuts
+#macro Camera obj_camera
 #macro Player obj_player
 #macro View view_camera[0]

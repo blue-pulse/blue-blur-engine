@@ -6,7 +6,7 @@
   "name":"player_collision_floor",
   "parent":{
     "name":"Collisions",
-    "path":"folders/4. Player/Player/Collisions.yy",
+    "path":"folders/3. Player/Player/Collisions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

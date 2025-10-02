@@ -8,8 +8,8 @@
   "name":"objLayerFlip",
   "overriddenProperties":[],
   "parent":{
-    "name":"Triggers",
-    "path":"folders/5. Resources/Triggers.yy",
+    "name":"Objects",
+    "path":"folders/5. Resources/Triggers/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

@@ -13,7 +13,7 @@
   "name":"snd_sonic_stomp_a",
   "parent":{
     "name":"Sounds",
-    "path":"folders/4. Player/Sonic/Sounds.yy",
+    "path":"folders/3. Player/Sonic/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

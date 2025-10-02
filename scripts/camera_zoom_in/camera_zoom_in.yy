@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"GlobalVariables",
+  "%Name":"camera_zoom_in",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"GlobalVariables",
+  "name":"camera_zoom_in",
   "parent":{
     "name":"Scripts",
-    "path":"folders/tmp/Scripts.yy",
+    "path":"folders/4. Visuals/GUI/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
