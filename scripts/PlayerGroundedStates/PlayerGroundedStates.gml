@@ -5,7 +5,7 @@ function player_is_starting()
 	if (objStage.started)
 	{
 		timeline_running = true;
-		camera.ground_mode = true;
+		//camera.ground_mode = true;
 		return player_is_standing(-1);
 	}
 }
@@ -21,10 +21,10 @@ function player_is_standing(phase)
 		{
 			// Set state and flags
 			state = player_is_standing;
-	        spinning = false;
+	        is_rolling = false;
 			
 			// Reset score combo
-			if (invincibility_time <= 0) score_combo = 0;
+			if (invincibility_timer <= 0) score_combo = 0;
 			
 			// Find the direction of the nearest cliff
 			player_update_cliff();
@@ -50,24 +50,24 @@ function player_is_standing(phase)
 	        }
 			else if (relative_angle >= 45 and relative_angle <= 315)
 			{
-				control_lock_time = default_slide_lock;
+				gnd_lock = slide_timer;
 				return player_is_running(-1);
 			}
 
 	        // Running
-	        if (input_left or input_right or hor_speed != 0)
+	        if (input_check(vb_left) or input_check(vb_right) or hor_speed != 0)
 	        {
 	            return player_is_running(-1);
 	        }
 			
 			// Jumping
-	        if (input_action_pressed) return player_is_falling(-2);
+	        if (input_pressed(vb_a)) return player_is_falling(-2);
 			
 			// Looking/crouching
 			if (cliff_dir == 0)
 			{
-				if (input_up) return player_is_looking(-1);
-				if (input_down) return player_is_crouching(-1);
+				if (input_check(vb_up)) return player_is_looking(-1);
+				if (input_check(vb_down)) return player_is_crouching(-1);
 			}
 		}
 	}
@@ -84,19 +84,19 @@ function player_is_running(phase)
 		{
 			// Set state and flags
 	        state = player_is_running;
-	        spinning = false;
+	        is_rolling = false;
 			
 			// Reset score combo
-			if (invincibility_time <= 0) score_combo = 0;
+			if (invincibility_timer <= 0) score_combo = 0;
 	        break;
 		}
 		default:
 		{
 			// Get input direction
-			var input_sign = input_right - input_left;
+			var input_sign = input_check(vb_right) - input_check(vb_left);
 			
 			// Handle ground movement if not sliding down
-			if (control_lock_time <= 0)
+			if (gnd_lock <= 0)
 			{
 				if (input_sign != 0)
 				{
@@ -149,12 +149,12 @@ function player_is_running(phase)
 	            }
 	            else if (relative_angle >= 45 and relative_angle <= 315)
 				{
-					control_lock_time = default_slide_lock;
+					gnd_lock = slide_timer;
 				}
 	        }
 			
 			// Slope friction
-			player_set_friction(slope_friction);
+			player_set_friction(slope_frict);
 			
 	        // Standing
 			if (hor_speed == 0 and input_sign == 0)
@@ -163,10 +163,10 @@ function player_is_running(phase)
 	        }
 			
 			// Jumping
-	        if (input_action_pressed) return player_is_falling(-2);
+	        if (input_pressed(vb_a)) return player_is_falling(-2);
 			
 			// Rolling
-			if (input_down and input_sign == 0 and abs(hor_speed) >= roll_threshold)
+			if (input_check(vb_down) and input_sign == 0 and abs(hor_speed) >= roll_threshold)
 			{
 				audio_play_sfx(sfxRoll);
 				return player_is_rolling(-1);
@@ -210,9 +210,6 @@ function player_is_looking(phase)
 			// Set state and flags
 			state = player_is_looking;
 			
-			// Reset look time
-			camera_look_time = 120;
-			
 			// Animate
 			animation_index = "look";
 			break;
@@ -232,28 +229,18 @@ function player_is_looking(phase)
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
-				control_lock_time = default_slide_lock;
+				gnd_lock = slide_timer;
 				return player_is_running(-1);
 			}
 			
-			// Camera panning
-			if (camera_look_time > 0)
-			{
-				--camera_look_time;
-			}
-			else if (camera.panning_oy > pan_distance_up)
-			{
-				camera.panning_oy -= 2;
-			}
-			
 	        // Standing
-			if (not input_up) return player_is_standing(-1);
+			if (not input_check(vb_up)) return player_is_standing(-1);
 			
 			// Running
 	        if (hor_speed != 0) return player_is_running(-1);
 			
 			// Peelouting
-	        if (input_action_pressed) return player_is_peelouting(-1);
+	        if (input_pressed(vb_a)) return player_is_peelouting(-1);
 		}
 	}
 }
@@ -269,9 +256,6 @@ function player_is_crouching(phase)
 		{
 			// Set state and flags
 			state = player_is_crouching;
-			
-			// Reset look time
-			camera_look_time = 120;
 			
 			// Animate
 			animation_index = "crouch";
@@ -292,28 +276,18 @@ function player_is_crouching(phase)
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
-				control_lock_time = default_slide_lock;
+				gnd_lock = slide_timer;
 				return player_is_running(-1);
 			}
 			
-			// Camera panning
-			if (camera_look_time > 0)
-			{
-				--camera_look_time;
-			}
-			else if (camera.panning_oy < pan_distance_down)
-			{
-				camera.panning_oy += 2;
-			}
-			
 	        // Standing
-			if (not input_down) return player_is_standing(-1);
+			if (not input_check(vb_down)) return player_is_standing(-1);
 			
 			// Running
 	        if (hor_speed != 0) return player_is_running(-1);
 			
 			// Spindashing
-	        if (input_action_pressed) return player_is_spindashing(-1);
+	        if (input_pressed(vb_a)) return player_is_spindashing(-1);
 		}
 	}
 }
@@ -329,7 +303,7 @@ function player_is_rolling(phase)
 		{
 			// Set state and flags
 	        state = player_is_rolling;
-	        spinning = true;
+	        is_rolling = true;
 			
 			// Animate
 			animation_index = "spin";
@@ -338,15 +312,15 @@ function player_is_rolling(phase)
 		}
 		default:
 		{
-			if (control_lock_time <= 0)
+			if (gnd_lock <= 0)
 			{
 				// Deceleration
-				if (input_left and hor_speed > 0)
+				if (input_check(vb_left) and hor_speed > 0)
 				{
 					hor_speed -= roll_deceleration;
 					if (hor_speed < 0) hor_speed = 0;
 				}
-				if (input_right and hor_speed < 0)
+				if (input_check(vb_right) and hor_speed < 0)
 				{
 					hor_speed += roll_deceleration;
 					if (hor_speed > 0) hor_speed = 0;
@@ -371,16 +345,16 @@ function player_is_rolling(phase)
 	            }
 	            else if (relative_angle >= 45 and relative_angle <= 315)
 				{
-					control_lock_time = default_slide_lock;
+					gnd_lock = slide_timer;
 				}
 	        }
 			
 			// Slope friction
-			var roll_slope_friction = (sign(hor_speed) == sign(dsin(relative_angle))) ? roll_slope_friction_up : roll_slope_friction_down;
+			var roll_slope_friction = (sign(hor_speed) == sign(dsin(relative_angle))) ? slope_frict_up : slope_frict_down;
 			player_set_friction(roll_slope_friction);
 			
 			// Jumping
-	        if (input_action_pressed) return player_is_falling(-2);
+	        if (input_pressed(vb_a)) return player_is_falling(-2);
 			
 			// Unroll
 			if (abs(hor_speed) < unroll_threshold) return player_is_running(-1);
@@ -389,7 +363,7 @@ function player_is_rolling(phase)
 			timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
 			
 	        // Set facing direction
-			if ((input_left and hor_speed < 0) or (input_right and hor_speed > 0))
+			if ((input_check(vb_left) and hor_speed < 0) or (input_check(vb_right) and hor_speed > 0))
 	        {
 	            image_xscale = sign(hor_speed);
 	        }
@@ -408,7 +382,7 @@ function player_is_spindashing(phase)
 		{
 			// Set state and flags
 			state = player_is_spindashing;
-			spinning = true;
+			is_rolling = true;
 			
 			// Reset counters
 			spindash_charge = 0;
@@ -435,18 +409,18 @@ function player_is_spindashing(phase)
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
-				control_lock_time = default_slide_lock;
+				gnd_lock = slide_timer;
 				return player_is_rolling(-1);
 			}
 			
 	        // Release
-			if (not input_down)
+			if (not input_check(vb_down))
 			{
 				// Launch
 				hor_speed = image_xscale * (8 + (spindash_charge div 2));
 				
 				// Camera scroll lag
-				camera.alarm[0] = 16;
+				//camera.alarm[0] = 16;
 				
 				// Sound
 				audio_stop_sound(sfxSpinRev);
@@ -460,7 +434,7 @@ function player_is_spindashing(phase)
 			if (spindash_charge > 0) spindash_charge *= spindash_atrophy;
 			
 			// Charging
-			if (input_action_pressed)
+			if (input_pressed(vb_a))
 			{
 				spindash_charge = min(spindash_charge + 2, 8);
 				
@@ -510,12 +484,12 @@ function player_is_peelouting(phase)
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
-				control_lock_time = default_slide_lock;
+				gnd_lock = slide_timer;
 				return player_is_running(-1);
 			}
 			
 	        // Release
-			if (not input_up)
+			if (not input_check(vb_up))
 			{
 				// Launch if fully charged
 				if (peelout_charge >= 30)

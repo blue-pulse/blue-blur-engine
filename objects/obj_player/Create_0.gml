@@ -1,10 +1,11 @@
-/// @description Initialize
+// Initialize
 image_speed = 0;
+layer = layer_get_id("General");
 
 // States and flags
 state = player_is_starting;
-spinning = false;
-jumping = false;
+is_rolling = false;
+is_jumping = false;
 jump_action = false;
 
 // Movement and collision
@@ -22,14 +23,11 @@ ver_radius = 15;
 wall_radius = 10;
 
 // Timers
-control_lock_time = 0;
-recovery_time = 0;
-invincibility_time = 0;
-superspeed_time = 0;
-default_slide_lock = 30;
-camera_look_time = 0;
-pan_distance_up = -104;
-pan_distance_down = 88;
+gnd_lock = 0;
+recovery_timer = 0;
+invincibility_timer = 0;
+superspeed_timer = 0;
+slide_timer = 30;
 
 // Counters
 score_combo = 0;
@@ -38,7 +36,6 @@ spindash_charge = 0;
 peelout_charge = 0;
 
 // Camera and effects
-camera = instance_create_layer(x, y, layer, objCamera, { gravity_direction });
 invincibility_effect = noone;
 
 // Ground and rotation values
@@ -48,33 +45,25 @@ player_set_ground(noone);
 player_update_physics();
 
 // Physics constants
-ceiling_land_threshold = -4;
+ceiling_threshold = -4;
 slide_threshold = 2.5;
 roll_threshold = 1.03125;
 unroll_threshold = 0.5;
 brake_threshold = 4;
-air_friction_threshold = 0.125;
-air_friction = 0.96875;
-slope_friction = 0.125;
-roll_slope_friction_up = 0.078125;
-roll_slope_friction_down = 0.3125;
+air_threshold = 0.125;
+air_frict = 0.96875;
+slope_frict = 0.125;
+slope_frict_up = 0.078125;
+slope_frict_down = 0.3125;
 spindash_atrophy = 0.96875;
 
 // Position table and trail
 table_size = 16;
-x_table = array_create(table_size, x);
-y_table = array_create(table_size, y);
+pos_grid = [
+	array_create(table_size, x),
+	array_create(table_size, y),
+];
 trail_alpha = array_create(table_size, 0);
-
-// On-time input
-input_action_pressed = false;
-
-// Continuous input
-input_left = false;
-input_right = false;
-input_up = false;
-input_down = false;
-input_action = false;
 
 // Animations
 animations =

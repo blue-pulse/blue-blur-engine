@@ -29,15 +29,15 @@ draw_text(56, 25, timestamp);
 // Power-up bars
 with (obj_player)
 {
-	if (superspeed_time > 0)
+	if (superspeed_timer > 0)
 	{
 		draw_sprite(sprMonitorIcon, 1, 24, 65);
-		draw_healthbar(32, 58, 110, 71, superspeed_time div 12, c_red, c_red, c_red, 0, false, false);
+		draw_healthbar(32, 58, 110, 71, superspeed_timer div 12, c_red, c_red, c_red, 0, false, false);
 	}
-	if (invincibility_time > 0)
+	if (invincibility_timer > 0)
 	{
-		var oy = 21 * (superspeed_time > 0);
+		var oy = 21 * (superspeed_timer > 0);
 		draw_sprite(sprMonitorIcon, 2, 24, 65 + oy);
-		draw_healthbar(32, 58 + oy, 110, 71 + oy, invincibility_time div 12, c_white, c_white, c_white, 0, false, false);
+		draw_healthbar(32, 58 + oy, 110, 71 + oy, invincibility_timer div 12, c_white, c_white, c_white, 0, false, false);
 	}
 }

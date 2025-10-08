@@ -8,8 +8,8 @@ y = player_id.y div 1;
 for (var n = array_length(circle_ox) - 1; n > -1; --n)
 {
 	var offset = player_id.table_size - 1 - (n + 1) * 3;
-	circle_ox[n] = player_id.x_table[offset] div 1;
-	circle_oy[n] = player_id.y_table[offset] div 1;
+	circle_ox[n] = player_id.pos_grid[0, offset] div 1;
+	circle_oy[n] = player_id.pos_grid[1, offset] div 1;
 }
 
 // Rotate circles

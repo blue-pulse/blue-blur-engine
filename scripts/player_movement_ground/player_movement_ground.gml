@@ -50,7 +50,7 @@ function player_movement_ground() {
 				hor_speed = 0;
 				
 				// Set pushing animation, if applicable
-				var input_sign = input_right - input_left;
+				var input_sign = input_check(vb_right) - input_check(vb_left);
 				if (animation_index != "push" and input_sign == wall_sign and image_xscale == wall_sign) {
 					animation_index = "push";
 					timeline_speed = 1;

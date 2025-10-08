@@ -3,13 +3,16 @@ if (!enabled or !instance_exists(target)) {
 	exit;
 }
 
-// Follow target
-if (target == Player) {
+// Folow player
+if (instance_is_ancestor(target, Player)) {
 	camera_follow_player();
-} else {
+}
+
+// Follow target
+else {
 	// Set target camera position
-	target_x = target.x - view_width / 2;
-	target_y = target.y - view_height / 2;
+	var target_x = target.x - view_width / 2;
+	var target_y = target.y - view_height / 2;
 	
 	// Smoothly move the camera to the target position
 	x = lerp(x, target_x, smooth_lerp);

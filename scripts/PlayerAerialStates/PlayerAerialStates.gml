@@ -1,5 +1,5 @@
 /// @description The player's falling state.
-/// @param {Real} phase The state's current step (-2 for jumping, -1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (-2 for is_jumping, -1 for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_falling(phase)
 {
@@ -9,8 +9,8 @@ function player_is_falling(phase)
 		{
 			// Set state and flags
 	        state = player_is_falling;
-	        spinning = true;
-	        jumping = true;
+	        is_rolling = true;
+	        is_jumping = true;
 	        jump_action = true;
 
 	        // Movement
@@ -44,13 +44,13 @@ function player_is_falling(phase)
 			player_set_ground(noone);
 			
 			// Animate
-			if (not spinning) animation_index = "fall";
+			if (not is_rolling) animation_index = "fall";
 			break;
 		}
 		default:
 		{
 			// Handle aerial acceleration
-	        if (input_left)
+	        if (input_check(vb_left))
 	        {
 	            image_xscale = -1;
 	            if (hor_speed > -speed_cap)
@@ -58,7 +58,7 @@ function player_is_falling(phase)
 	                hor_speed = max(hor_speed - air_acceleration, -speed_cap);
 	            }
 	        }
-	        if (input_right)
+	        if (input_check(vb_right))
 	        {
 	            image_xscale = 1;
 	            if (hor_speed < speed_cap)
@@ -77,22 +77,22 @@ function player_is_falling(phase)
 	        }
 			
 			// Variable jump height
-	        if (jumping and not input_action and ver_speed < -jump_release)
+	        if (is_jumping and not input_check(vb_a) and ver_speed < -jump_release)
 	        {
 	            ver_speed = -jump_release;
 	        }
 			
 	        // Air friction
-	        if (ver_speed < 0 and ver_speed > -4 and abs(hor_speed) > air_friction_threshold)
+	        if (ver_speed < 0 and ver_speed > -4 and abs(hor_speed) > air_threshold)
 	        {
-				hor_speed *= air_friction;
+				hor_speed *= air_frict;
 	        }
 			
 	        // Gravity
 			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + gravity_force, gravity_cap);
 			
 			// Homing actions
-			if (spinning)
+			if (is_rolling)
 			{
 				// Reticle creation/destruction
 				if (not instance_exists(objReticle))
@@ -125,7 +125,7 @@ function player_is_falling(phase)
 				}
 				
 				// Perform a homing action
-				if (input_action_pressed and jump_action)
+				if (input_pressed(vb_a) and jump_action)
 				{
 					// Burst effect and sound
 					part_particles_create(global.particles, x, y, global.homing_burst, 1);
@@ -144,10 +144,10 @@ function player_is_falling(phase)
 					}
 				}
 			}
-			else if (input_action_pressed) // Curl up
+			else if (input_pressed(vb_a)) // Curl up
 			{
 				// Set flags
-				spinning = true;
+				is_rolling = true;
 				jump_action = true;
 				
 				// Animate
@@ -161,7 +161,7 @@ function player_is_falling(phase)
 			{
 				animation_index = "fall";
 			}
-			if (image_angle != angle and not spinning)
+			if (image_angle != angle and not is_rolling)
 	        {
 	            image_angle = angle_wrap(image_angle + 2.8125 * sign(angle_difference(angle, image_angle)));
 	        }
@@ -180,7 +180,7 @@ function player_is_homing(phase)
 		{
 			// Set state and flags
 			state = player_is_homing;
-			jumping = false;
+			is_jumping = false;
 			break;
 		}
 		default:
@@ -191,7 +191,7 @@ function player_is_homing(phase)
 			// Fall if the reticle can no longer be locked on to
 			if (not player_can_lock_on(objReticle.target_id))
 			{
-				jumping = true;
+				is_jumping = true;
 				jump_action = false;
 				instance_destroy(objReticle);
 				return player_is_falling(-1);
@@ -217,7 +217,7 @@ function player_is_hurt(phase)
 		{
 			// Set state and flags
 			state = player_is_hurt;
-	        spinning = false;
+	        is_rolling = false;
 			
 			// Set air state
 			player_set_ground(noone);
@@ -233,7 +233,7 @@ function player_is_hurt(phase)
 			// Update position
 			if (not player_movement_air())
 			{
-				recovery_time = 120;
+				recovery_timer = 120;
 				exit;
 			}
 			
@@ -244,7 +244,7 @@ function player_is_hurt(phase)
 				hor_speed = 0;
 				
 				// Gain temporary invulnerability
-				recovery_time = 120;
+				recovery_timer = 120;
 				
 				// Stand
 				return player_is_standing(-1);
@@ -252,57 +252,6 @@ function player_is_hurt(phase)
 			
 			// Gravity
 			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + recoil_gravity, gravity_cap);
-		}
-	}
-}
-
-/// @description The player's death state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
-function player_is_dead(phase)
-{
-	switch (phase)
-	{
-		case -1:
-		{
-			// Set state and flags
-			state = player_is_dead;
-			spinning = false;
-			objStage.timer_enabled = false;
-			
-			// Movement
-			ver_speed = -7;
-			
-			// Remove effects
-			instance_destroy(invincibility_effect);
-			
-			// Animate
-			animation_index = "dead";
-			image_angle = gravity_direction;
-			
-			// Sound
-			audio_play_sfx(sfxDeath);
-			break;
-		}
-		default:
-		{
-			// Update position
-			x += dsin(gravity_direction) * ver_speed;
-			y += dcos(gravity_direction) * ver_speed;
-			
-			// Gravity
-			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + gravity_force, gravity_cap);
-			
-			// Finish
-			if (not in_view(id, 24) and ver_speed > 3)
-			{
-				// Deduct lives; is the game over?
-				if (--global.lives <= 0 or objStage.time_over)
-				{
-					instance_create_layer(0, 0, "Overlays", objGameOver);
-				}
-				else objStage.reset_time = 60; // If not, restart
-				instance_destroy();
-			}
 		}
 	}
 }
@@ -317,7 +266,7 @@ function player_is_debugging(phase)
 		{
 			// Set state and flags
 			state = player_is_debugging;
-			spinning = false;
+			is_rolling = false;
 			
 			// Movement
 			hor_speed = 0;
@@ -330,8 +279,8 @@ function player_is_debugging(phase)
 		default:
 		{
 			// Fly around, whilst staying within bounds
-			x += (input_right - input_left) * 8;
-			y += (input_down - input_up) * 8;
+			x += (input_check(vb_right) - input_check(vb_left)) * 8;
+			y += (input_check(vb_down) - input_check(vb_up)) * 8;
 			player_in_view();
 		}
 	}

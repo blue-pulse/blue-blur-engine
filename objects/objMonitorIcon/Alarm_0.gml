@@ -18,13 +18,13 @@ with (player_id)
 		}
 		case 1: // Superspeed
 		{
-			superspeed_time = 1200;
+			superspeed_timer = 1200;
 			player_update_physics();
 			break;
 		}
 		case 2: // Invincibility
 		{
-			invincibility_time = 1200;
+			invincibility_timer = 1200;
 			audio_enqueue_bgm(bgmInvincibility, 1, true);
 			
 			// Create invincibility effect

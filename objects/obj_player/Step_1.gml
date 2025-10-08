@@ -1,39 +1,19 @@
-/// @description Inputs and timers
-var input_abc = input_check(vb_a);
-
-// On-time input
-input_action_pressed = (input_abc and not input_action);
-
-// Continuous input
-input_up = input_check(vb_up);
-input_down = input_check(vb_down);
-input_left = input_check(vb_left);
-input_right = input_check(vb_right);
-input_action = input_abc;
-
-// Negate contradictory inputs
-if (input_left and input_right)
-{
-    input_left = false;
-    input_right = false;
-}
-
 // Count down timers
-if (control_lock_time > 0 and is_grounded)
+if (gnd_lock > 0 and is_grounded)
 {
-	--control_lock_time;
+	--gnd_lock;
 }
-if (recovery_time > 0)
+if (recovery_timer > 0)
 {
-	image_alpha = (--recovery_time mod 8 < 4); // Flash on-and-off every 4 steps
+	image_alpha = (--recovery_timer mod 8 < 4); // Flash on-and-off every 4 steps
 }
-if (invincibility_time > 0 and --invincibility_time <= 0)
+if (invincibility_timer > 0 and --invincibility_timer <= 0)
 {
 	instance_destroy(invincibility_effect);
 	invincibility_effect = noone;
 	audio_dequeue_bgm(bgmInvincibility, true);
 }
-if (superspeed_time > 0 and --superspeed_time <= 0)
+if (superspeed_timer > 0 and --superspeed_timer <= 0)
 {
 	player_update_physics();
 }

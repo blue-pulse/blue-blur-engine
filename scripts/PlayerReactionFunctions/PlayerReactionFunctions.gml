@@ -14,7 +14,7 @@ If any of the conditions above are met, the reaction function MUST return true, 
 function player_reaction_ring(obj)
 {
 	// Ignore if hit or starting to recover
-	if (state == player_is_hurt or recovery_time > 90) return false;
+	if (state == player_is_hurt or recovery_timer > 90) return false;
 	
 	// Collect ring
 	player_get_rings(1);
@@ -35,7 +35,7 @@ function player_reaction_ring(obj)
 function player_reaction_badnik(obj)
 {
 	// Take damage if not in an attacking state
-	if (not (spinning or invincibility_time > 0))
+	if (not (is_rolling or invincibility_timer > 0))
 	{
 		// Abort state if successful
 		return player_get_hit(obj);
@@ -156,7 +156,7 @@ function player_reaction_dash_panel(obj)
 	// Launch
 	image_xscale = obj.image_xscale;
 	hor_speed = max(abs(hor_speed), 12) * image_xscale;
-	control_lock_time = 16;
+	gnd_lock = 16;
 	
 	// Roll, if applicable
 	if (obj.force_roll and state != player_is_rolling)
@@ -188,7 +188,7 @@ function player_reaction_monitor(obj, side)
 	}
 	
 	// Ignore if...
-	if (ver_speed < 0 or not spinning) return false; // Moving upwards or not spinning
+	if (ver_speed < 0 or not is_rolling) return false; // Moving upwards or not is_rolling
 	if (side == DIR_BOTTOM and is_grounded) return false; // Spinning on top of the monitor
 	
 	// Rebound in air
@@ -245,7 +245,7 @@ function player_reaction_spring(obj, side)
 	{
 		hor_speed = x_spring_speed;
 		image_xscale = sign(hor_speed);
-		control_lock_time = 16;
+		gnd_lock = 16;
 	}
 	if (y_spring_speed != 0)
 	{
@@ -258,8 +258,8 @@ function player_reaction_spring(obj, side)
 		// Set flags and animate if rising
 		if (side == DIR_BOTTOM)
 		{
-			spinning = false;
-			jumping = false;
+			is_rolling = false;
+			is_jumping = false;
 			animation_index = "rise";
 			image_angle = gravity_direction;
 		}

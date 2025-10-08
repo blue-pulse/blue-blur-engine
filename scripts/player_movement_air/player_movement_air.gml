@@ -91,7 +91,7 @@ function player_movement_air() {
 				player_set_ground(hit_floor);
 				
 				// Abort if rising too slow or ceiling is too shallow
-				if (ver_speed > ceiling_land_threshold or (relative_angle > 135 and relative_angle < 225)) {
+				if (ver_speed > ceiling_threshold or (relative_angle > 135 and relative_angle < 225)) {
 					// Slide against ceiling
 					var sine = dsin(relative_angle);
 					var cosine = dcos(relative_angle);
@@ -119,8 +119,8 @@ function player_movement_air() {
 			ver_speed = 0;
 			
 			// Set flags and exit loop
-			jumping = false;
-			camera.ground_mode = true;
+			is_jumping = false;
+			//camera.ground_mode = true;
 			break;
 		}
 		

@@ -16,7 +16,7 @@ function player_update_physics() {
 	jump_release = 4;
 	
 	// Superspeed modification
-	if (superspeed_time > 0) {
+	if (superspeed_timer > 0) {
 		speed_cap *= 2;
 		land_acceleration *= 2;
 		land_friction *= 2;

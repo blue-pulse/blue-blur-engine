@@ -1,4 +1,5 @@
 function player_in_view() {
+	return true
 	// Variables
 	if (mask_direction mod 180 != 0)
 	{

@@ -1,7 +1,7 @@
 /// @description Move and animate
 
-// Abort if the player is no longer jumping
-if (not player_id.spinning)
+// Abort if the player is no longer is_jumping
+if (not player_id.is_rolling)
 {
 	instance_destroy();
 	exit;

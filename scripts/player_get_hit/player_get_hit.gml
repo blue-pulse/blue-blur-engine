@@ -1,6 +1,6 @@
 function player_get_hit(object) {
 	// Abort if already invulnerable in any way
-	if (state == player_is_hurt or recovery_time > 0 or invincibility_time > 0) {
+	if (state == player_is_hurt or recovery_timer > 0 or invincibility_timer > 0) {
 		return false;
 	}
 	

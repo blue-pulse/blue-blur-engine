@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_platform_hor",
+  "%Name":"obj_platform_1",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_platform_hor",
+  "name":"obj_platform_1",
   "overriddenProperties":[],
   "parent":{
     "name":"Solids",
@@ -34,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_platform_2",
-    "path":"sprites/spr_platform_2/spr_platform_2.yy",
+    "name":"spr_platform_1",
+    "path":"sprites/spr_platform_1/spr_platform_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

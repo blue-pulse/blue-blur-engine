@@ -9,7 +9,7 @@ with (obj_player)
 	other.player_data += "SPEED:" + string_format(hor_speed, 3, 2) + " |" + string_format(ver_speed, 3, 2) + "\n\n";
 	other.player_data += "ANGLE: " + string_format(angle, 3, 2) + "\n\n";
 	other.player_data += "MASK DIRECTION: " + string(mask_direction) + "\n\n";
-	other.player_data += "CONTROL LOCK: " + string(control_lock_time);
+	other.player_data += "CONTROL LOCK: " + string(gnd_lock);
 	
 	// Abort if dead
 	if (state == player_is_dead) exit;
@@ -18,7 +18,7 @@ with (obj_player)
 	if (keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("S")))
 	{
 		gravity_direction = (keyboard_key == ord("A")) ? angle_wrap(gravity_direction - 90) : angle_wrap(gravity_direction + 90);
-		camera.gravity_direction = gravity_direction;
+		//camera.gravity_direction = gravity_direction;
 		if (not is_grounded) player_set_ground(noone);
 	}
 	

@@ -1,6 +1,6 @@
 function player_set_friction(force) {
 	// Not moving or sliding down
-	if (hor_speed == 0 and control_lock_time <= 0) {
+	if (hor_speed == 0 and gnd_lock <= 0) {
 		exit;
 	}
 	

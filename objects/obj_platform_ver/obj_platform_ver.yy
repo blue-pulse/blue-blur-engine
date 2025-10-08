@@ -9,8 +9,8 @@
   "name":"obj_platform_ver",
   "overriddenProperties":[],
   "parent":{
-    "name":"Platforms",
-    "path":"folders/5. Resources/Terrain/Platforms.yy",
+    "name":"Solids",
+    "path":"folders/5. Resources/Terrain/Solids.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_platform_1",
-    "path":"sprites/spr_platform_1/spr_platform_1.yy",
+    "name":"spr_platform_2",
+    "path":"sprites/spr_platform_2/spr_platform_2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

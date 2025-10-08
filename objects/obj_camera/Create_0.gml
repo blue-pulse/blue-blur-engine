@@ -5,8 +5,6 @@ view_y = y;
 view_width = WIDTH;
 view_height = HEIGHT;
 target = noone;
-target_x = 0;
-target_y = 0;
 
 // Extended camera
 shift_value = 64;
