@@ -2,4 +2,4 @@
 event_inherited();
 
 // Variables
-shape = SHP_CUSTOM;
+shape = shapes.custom;

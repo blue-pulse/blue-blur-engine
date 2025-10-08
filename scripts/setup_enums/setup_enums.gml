@@ -1,9 +1,9 @@
 // Shapes
 enum shapes {
-	rectangle = 0,
-	right_triangle = 1,
-	quarter_pipe = 2,
-	quarter_ellipse = 3,
+	wall = 0,
+	slope = 1,
+	pipe = 2,
+	ellipse = 3,
 	custom = 4,
 }
 
@@ -43,11 +43,4 @@ enum chars {
 	shadow,
 	sonic,
 	tails,
-}
-
-// States
-enum states {
-	init = 0,
-	run = 1,
-	stop = 2,
 }

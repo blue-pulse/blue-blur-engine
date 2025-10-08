@@ -1,4 +1,4 @@
-// Constants
+// Game parameters
 #macro TITLE "Blue Blur Engine"
 #macro UNICODE "abcdefghijklmnopqrstuvwxyz1234567890:."
 #macro WIDTH 500
@@ -6,10 +6,17 @@
 #macro SCALE 2
 #macro MAX_FPS 60
 #macro MAX_SOUNDS 200
+
+// Effects
 #macro RAW 0
 #macro NATIVE 1
 #macro REPLACE 2
 #macro SKIP 3
+
+// States phases
+#macro INIT -1
+#macro STEP 0
+#macro STOP 1
 
 // Globals
 #macro font_black global.font_hud_black

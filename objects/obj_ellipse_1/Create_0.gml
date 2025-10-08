@@ -2,4 +2,4 @@
 event_inherited();
 
 // Variables
-shape = SHP_QUARTER_ELLIPSE;
+shape = shapes.ellipse;

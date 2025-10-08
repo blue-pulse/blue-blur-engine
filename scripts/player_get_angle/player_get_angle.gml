@@ -22,7 +22,7 @@ function player_get_angle(object, fallback) {
 	}
 	
 	// Custom shape
-	if (obj_shape == SHP_CUSTOM) {
+	if (obj_shape == shapes.custom) {
 		// Initialize sensors
 		var pos_x = floor(x);
 		var pos_y = floor(y);
@@ -75,7 +75,7 @@ function player_get_angle(object, fallback) {
 	}
 	
 	// Hard-coded shapes
-	else if (not (obj_shape == SHP_RECTANGLE and obj_angle == -1)) {
+	else if (not (obj_shape == shapes.wall and obj_angle == -1)) {
 		// Default if on a flat side of the solid
 		if ((fallback == 0 and !obj_yscale)
 			or (fallback == 90 and !obj_xscale)
@@ -102,7 +102,7 @@ function player_get_angle(object, fallback) {
 		}
 		
 		// Determine calculation method
-		if (obj_shape == SHP_RIGHT_TRIANGLE) {
+		if (obj_shape == shapes.slope) {
 			// Get triangle dimensions
 			var pos_x_1 = obj_bbox_left;
 			var pos_y_1 = obj_bbox_bottom;
@@ -123,14 +123,14 @@ function player_get_angle(object, fallback) {
 			return floor(point_direction(pos_x_1, pos_y_1, pos_x_2, pos_y_2));
 		} else {
 			// Get ellipse center and player position
-			var ellipse_x = (obj_shape == SHP_QUARTER_ELLIPSE xor obj_xscale) ? (obj_bbox_left) : (obj_bbox_right);
-			var ellipse_y = (obj_shape == SHP_QUARTER_ELLIPSE xor obj_yscale) ? (obj_bbox_top) : (obj_bbox_bottom);
+			var ellipse_x = (obj_shape == shapes.ellipse xor obj_xscale) ? (obj_bbox_left) : (obj_bbox_right);
+			var ellipse_y = (obj_shape == shapes.ellipse xor obj_yscale) ? (obj_bbox_top) : (obj_bbox_bottom);
 			var player_x = clamp(x, obj_bbox_left, obj_bbox_right);
 			var player_y = clamp(y, obj_bbox_top, obj_bbox_bottom);
 			
 			// Calculate the direction from the player to the ellipse center
 			var dir_to_center = 0;
-			if (obj_shape == SHP_QUARTER_ELLIPSE) {
+			if (obj_shape == shapes.ellipse) {
 				dir_to_center = point_direction(player_x, player_y, ellipse_x, ellipse_y);
 			} else {
 				dir_to_center = point_direction(ellipse_x, ellipse_y, player_x, player_y);
