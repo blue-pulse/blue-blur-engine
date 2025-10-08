@@ -94,7 +94,7 @@ function player_reaction_badnik(obj)
 	instance_create_layer(obj.x, obj.y, "Overlays", objPoints, { image_index : index });
 	
 	// Sound
-	audio_play_sfx(sfxDestroy);
+	//audio_play_sfx(sfxDestroy);
 	
 	// Destroy badnik and reticle
 	instance_destroy(objReticle);
@@ -151,7 +151,7 @@ function player_reaction_dash_panel(obj)
 	
 	// Trigger
 	obj.alarm[0] = 5;
-	audio_play_sfx(sfxPeelout);
+	//audio_play_sfx(sfxPeelout);
 	
 	// Launch
 	image_xscale = obj.image_xscale;
@@ -211,7 +211,7 @@ function player_reaction_monitor(obj, side)
 	}
 	
 	// Sound
-	audio_play_sfx(sfxDestroy);
+	//audio_play_sfx(sfxDestroy);
 	
 	// Destroy monitor and reticle
 	instance_destroy(objReticle);
@@ -270,7 +270,7 @@ function player_reaction_spring(obj, side)
 	obj.alarm[0] = 1;
 	
 	// Sound
-	audio_play_sfx(sfxSpring);
+	//audio_play_sfx(sfxSpring);
 	
 	// Abort state only if bouncing vertically
 	return (y_spring_speed != 0);

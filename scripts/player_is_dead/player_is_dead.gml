@@ -19,7 +19,7 @@ function player_is_dead(phase) {
 			image_angle = gravity_direction;
 			
 			// Sound
-			audio_play_sfx(sfxDeath);
+			//audio_play_sfx(sfxDeath);
 			break;
 		}
 		default:

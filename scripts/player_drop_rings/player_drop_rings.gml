@@ -24,5 +24,5 @@ function player_drop_rings() {
 	rings = 0;
 	
 	// Sound
-	audio_play_sfx(sfxRingLoss);
+	//audio_play_sfx(sfxRingLoss);
 }

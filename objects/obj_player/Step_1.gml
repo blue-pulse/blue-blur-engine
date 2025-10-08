@@ -11,7 +11,7 @@ if (invincibility_timer > 0 and --invincibility_timer <= 0)
 {
 	instance_destroy(invincibility_effect);
 	invincibility_effect = noone;
-	audio_dequeue_bgm(bgmInvincibility, true);
+	//audio_dequeue_bgm(bgmInvincibility, true);
 }
 if (superspeed_timer > 0 and --superspeed_timer <= 0)
 {

@@ -17,4 +17,4 @@ circle_angle = 0;
 arrow_angle = 45;
 
 // Sound
-audio_play_sfx(sfxBeep);
+//audio_play_sfx(sfxBeep);

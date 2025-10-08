@@ -28,7 +28,7 @@ function player_is_falling(phase)
 	        image_angle = gravity_direction;
 			
 			// Sound
-			audio_play_sfx(sfxJump);
+			//audio_play_sfx(sfxJump);
 			break;
 		}
 		case -1:
@@ -129,7 +129,7 @@ function player_is_falling(phase)
 				{
 					// Burst effect and sound
 					part_particles_create(global.particles, x, y, global.homing_burst, 1);
-					audio_play_sfx(sfxSpinDash);
+					//audio_play_sfx(sfxSpinDash);
 					
 					// Homing attack if the reticle is present; dash otherwise
 					if (instance_exists(objReticle))

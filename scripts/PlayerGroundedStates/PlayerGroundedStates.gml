@@ -1,13 +1,8 @@
 /// @description The player's transitionary state until the stage has begun.
 /// @returns {Function} The player's standing state.
-function player_is_starting()
-{
-	if (objStage.started)
-	{
-		timeline_running = true;
-		//camera.ground_mode = true;
-		return player_is_standing(-1);
-	}
+function player_is_starting() {
+	timeline_running = true;
+	return player_is_standing(-1);
 }
 
 /// @description The player's standing state.
@@ -109,7 +104,7 @@ function player_is_running(phase)
 							animation_index = "brake";
 							timeline_speed = 1;
 							image_xscale = -input_sign;
-							audio_play_sfx(sfxBrake);
+							//audio_play_sfx(sfxBrake);
 						}
 						
 						// Decelerate and reverse direction
@@ -168,7 +163,7 @@ function player_is_running(phase)
 			// Rolling
 			if (input_check(vb_down) and input_sign == 0 and abs(hor_speed) >= roll_threshold)
 			{
-				audio_play_sfx(sfxRoll);
+				//audio_play_sfx(sfxRoll);
 				return player_is_rolling(-1);
 			}
 			
@@ -391,7 +386,7 @@ function player_is_spindashing(phase)
 			animation_index = "spindash";
 			
 			// Sound
-			audio_play_sfx(sfxSpinRev);
+			//audio_play_sfx(sfxSpinRev);
 			break;
 		}
 		default:
@@ -424,7 +419,7 @@ function player_is_spindashing(phase)
 				
 				// Sound
 				audio_stop_sound(sfxSpinRev);
-				audio_play_sfx(sfxSpinDash);
+				//audio_play_sfx(sfxSpinDash);
 				
 				// Roll
 				return player_is_rolling(-1);
@@ -439,8 +434,8 @@ function player_is_spindashing(phase)
 				spindash_charge = min(spindash_charge + 2, 8);
 				
 				// Sound
-				var rev_sound = audio_play_sfx(sfxSpinRev);
-				audio_sound_pitch(rev_sound, 1 + spindash_charge * 0.0625);
+				//var rev_sound = //audio_play_sfx(sfxSpinRev);
+				//audio_sound_pitch(rev_sound, 1 + spindash_charge * 0.0625);
 			}
 		}
 	}
@@ -466,7 +461,7 @@ function player_is_peelouting(phase)
 			timeline_speed = 0.5;
 			
 			// Sound
-			audio_play_sfx(sfxPeeloutRev);
+			//audio_play_sfx(sfxPeeloutRev);
 			break;
 		}
 		default:
@@ -496,7 +491,7 @@ function player_is_peelouting(phase)
 				{
 					hor_speed = image_xscale * 12;
 					audio_stop_sound(sfxPeeloutRev);
-					audio_play_sfx(sfxPeelout);
+					//audio_play_sfx(sfxPeelout);
 					return player_is_running(-1);
 				}
 				else return player_is_standing(-1);

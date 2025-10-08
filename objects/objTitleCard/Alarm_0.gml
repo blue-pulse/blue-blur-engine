@@ -1,2 +1,0 @@
-/// @description Advance state
-++state;
