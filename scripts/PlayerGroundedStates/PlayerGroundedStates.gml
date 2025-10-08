@@ -2,17 +2,17 @@
 /// @returns {Function} The player's standing state.
 function player_is_starting() {
 	timeline_running = true;
-	return player_is_standing(-1);
+	return player_is_standing(INIT);
 }
 
 /// @description The player's standing state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (INIT for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_standing(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_standing;
@@ -36,23 +36,23 @@ function player_is_standing(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
 	        {
-	            return player_is_falling(-1);
+	            return player_is_falling(INIT);
 	        }
 			else if (relative_angle >= 45 and relative_angle <= 315)
 			{
 				gnd_lock = slide_timer;
-				return player_is_running(-1);
+				return player_is_running(INIT);
 			}
 
 	        // Running
 	        if (input_check(vb_left) or input_check(vb_right) or hor_speed != 0)
 	        {
-	            return player_is_running(-1);
+	            return player_is_running(INIT);
 	        }
 			
 			// Jumping
@@ -61,21 +61,21 @@ function player_is_standing(phase)
 			// Looking/crouching
 			if (cliff_dir == 0)
 			{
-				if (input_check(vb_up)) return player_is_looking(-1);
-				if (input_check(vb_down)) return player_is_crouching(-1);
+				if (input_check(vb_up)) return player_is_looking(INIT);
+				if (input_check(vb_down)) return player_is_crouching(INIT);
 			}
 		}
 	}
 }
 
 /// @description The player's running state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (INIT for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_running(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 	        state = player_is_running;
@@ -133,14 +133,14 @@ function player_is_running(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (abs(hor_speed) < slide_threshold)
 	        {
 	            if (relative_angle >= 90 and relative_angle <= 270)
 	            {
-	                return player_is_falling(-1);
+	                return player_is_falling(INIT);
 	            }
 	            else if (relative_angle >= 45 and relative_angle <= 315)
 				{
@@ -154,7 +154,7 @@ function player_is_running(phase)
 	        // Standing
 			if (hor_speed == 0 and input_sign == 0)
 	        {
-	            return player_is_standing(-1);
+	            return player_is_standing(INIT);
 	        }
 			
 			// Jumping
@@ -164,7 +164,7 @@ function player_is_running(phase)
 			if (input_check(vb_down) and input_sign == 0 and abs(hor_speed) >= roll_threshold)
 			{
 				//audio_play_sfx(sfxRoll);
-				return player_is_rolling(-1);
+				return player_is_rolling(INIT);
 			}
 			
 			// Animate
@@ -194,13 +194,13 @@ function player_is_running(phase)
 }
 
 /// @description The player's looking state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (INIT for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_looking(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_looking;
@@ -215,39 +215,39 @@ function player_is_looking(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
 	        {
-	            return player_is_falling(-1);
+	            return player_is_falling(INIT);
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
 				gnd_lock = slide_timer;
-				return player_is_running(-1);
+				return player_is_running(INIT);
 			}
 			
 	        // Standing
-			if (not input_check(vb_up)) return player_is_standing(-1);
+			if (not input_check(vb_up)) return player_is_standing(INIT);
 			
 			// Running
-	        if (hor_speed != 0) return player_is_running(-1);
+	        if (hor_speed != 0) return player_is_running(INIT);
 			
 			// Peelouting
-	        if (input_pressed(vb_a)) return player_is_peelouting(-1);
+	        if (input_pressed(vb_a)) return player_is_peelouting(INIT);
 		}
 	}
 }
 
 /// @description The player's crouching state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (INIT for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_crouching(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_crouching;
@@ -262,39 +262,39 @@ function player_is_crouching(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
 	        {
-	            return player_is_falling(-1);
+	            return player_is_falling(INIT);
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
 				gnd_lock = slide_timer;
-				return player_is_running(-1);
+				return player_is_running(INIT);
 			}
 			
 	        // Standing
-			if (not input_check(vb_down)) return player_is_standing(-1);
+			if (not input_check(vb_down)) return player_is_standing(INIT);
 			
 			// Running
-	        if (hor_speed != 0) return player_is_running(-1);
+	        if (hor_speed != 0) return player_is_running(INIT);
 			
 			// Spindashing
-	        if (input_pressed(vb_a)) return player_is_spindashing(-1);
+	        if (input_pressed(vb_a)) return player_is_spindashing(INIT);
 		}
 	}
 }
 
 /// @description The player's rolling state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (INIT for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_rolling(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 	        state = player_is_rolling;
@@ -329,14 +329,14 @@ function player_is_rolling(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (abs(hor_speed) < slide_threshold)
 	        {
 	            if (relative_angle >= 90 and relative_angle <= 270)
 	            {
-	                return player_is_falling(-1);
+	                return player_is_falling(INIT);
 	            }
 	            else if (relative_angle >= 45 and relative_angle <= 315)
 				{
@@ -352,7 +352,7 @@ function player_is_rolling(phase)
 	        if (input_pressed(vb_a)) return player_is_falling(-2);
 			
 			// Unroll
-			if (abs(hor_speed) < unroll_threshold) return player_is_running(-1);
+			if (abs(hor_speed) < unroll_threshold) return player_is_running(INIT);
 			
 			// Animate
 			timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
@@ -367,13 +367,13 @@ function player_is_rolling(phase)
 }
 
 /// @description The player's spindashing state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (INIT for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_spindashing(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_spindashing;
@@ -395,17 +395,17 @@ function player_is_spindashing(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
 	        {
-	            return player_is_falling(-1);
+	            return player_is_falling(INIT);
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
 				gnd_lock = slide_timer;
-				return player_is_rolling(-1);
+				return player_is_rolling(INIT);
 			}
 			
 	        // Release
@@ -422,7 +422,7 @@ function player_is_spindashing(phase)
 				//audio_play_sfx(sfxSpinDash);
 				
 				// Roll
-				return player_is_rolling(-1);
+				return player_is_rolling(INIT);
 			}
 			
 			// Atrophy
@@ -442,13 +442,13 @@ function player_is_spindashing(phase)
 }
 
 /// @description The player's peelouting state.
-/// @param {Real} phase The state's current step (-1 for starting, 0 for main).
+/// @param {Real} phase The state's current step (INIT for starting, 0 for main).
 /// @returns {Function} The state that the player will change to given the applicable conditions.
 function player_is_peelouting(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_peelouting;
@@ -470,17 +470,17 @@ function player_is_peelouting(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(-1);
+			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
 	        {
-	            return player_is_falling(-1);
+	            return player_is_falling(INIT);
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
 				gnd_lock = slide_timer;
-				return player_is_running(-1);
+				return player_is_running(INIT);
 			}
 			
 	        // Release
@@ -492,9 +492,9 @@ function player_is_peelouting(phase)
 					hor_speed = image_xscale * 12;
 					//audio_stop_sound(sfxPeeloutRev);
 					//audio_play_sfx(sfxPeelout);
-					return player_is_running(-1);
+					return player_is_running(INIT);
 				}
-				else return player_is_standing(-1);
+				else return player_is_standing(INIT);
 			}
 			
 			// Charge and animate

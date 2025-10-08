@@ -31,7 +31,7 @@ function player_is_falling(phase)
 			//audio_play_sfx(sfxJump);
 			break;
 		}
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_falling;
@@ -176,7 +176,7 @@ function player_is_homing(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_homing;
@@ -213,7 +213,7 @@ function player_is_hurt(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_hurt;
@@ -262,7 +262,7 @@ function player_is_debugging(phase)
 {
 	switch (phase)
 	{
-		case -1:
+		case INIT:
 		{
 			// Set state and flags
 			state = player_is_debugging;
