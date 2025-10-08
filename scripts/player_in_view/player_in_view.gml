@@ -19,7 +19,7 @@ function player_in_view() {
 	{
 		return true;
 	}
-	
+
 	// Move the player back within bounds according to their rotation
 	switch (mask_direction)
 	{

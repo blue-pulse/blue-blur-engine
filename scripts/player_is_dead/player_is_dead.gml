@@ -37,7 +37,7 @@ function player_is_dead(phase) {
 				// Deduct lives; is the game over?
 				if (--global.lives <= 0 or objStage.time_over)
 				{
-					instance_create_layer(0, 0, "Overlays", objGameOver);
+					//instance_create_layer(0, 0, "Overlays", objGameOver);
 				}
 				else objStage.reset_time = 60; // If not, restart
 				//instance_destroy();

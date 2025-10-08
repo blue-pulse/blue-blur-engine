@@ -11,8 +11,8 @@
   "name":"objRingDropped",
   "overriddenProperties":[],
   "parent":{
-    "name":"Items",
-    "path":"folders/5. Resources/Items.yy",
+    "name":"Objects",
+    "path":"folders/5. Resources/Items/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",
@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprRing",
-    "path":"sprites/sprRing/sprRing.yy",
+    "name":"spr_ring",
+    "path":"sprites/spr_ring/spr_ring.yy",
   },
   "spriteMaskId":null,
   "visible":true,

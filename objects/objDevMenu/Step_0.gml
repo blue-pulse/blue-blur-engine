@@ -35,7 +35,7 @@ with (obj_player)
 	// Gain 50 rings
 	if (keyboard_check_pressed(ord("F")))
 	{
-		player_get_rings(50);
+		player_add_rings(50);
 	}
 	
 	// Restart stage

@@ -1,8 +1,4 @@
-/// @description Initializes global variables
 // Fonts
-global.font_hud = font_add_sprite(sprFontHUD, ord("0"), false, 1);
-global.font_lives = font_add_sprite(sprFontLives, ord("0"), false, 0);
-global.font_title = font_add_sprite(sprFontTitle, ord("A"), true, 0);
 global.font_debug = font_add_sprite(sprFontDebug, ord("!"), false, 1);
 
 // Particle system
@@ -33,7 +29,6 @@ global.homing_burst = part_type_create();
 part_type_sprite(global.homing_burst, sprHomingBurst, true, true, false);
 part_type_life(global.homing_burst, 10, 10);
 
-/// @description Initialize game
 function start_engine() {
 	surface_depth_disable(true);
 	randomize();
@@ -56,10 +51,7 @@ function start_engine() {
 	#macro DIR_RIGHT 1
 	#macro DIR_TOP -2
 	#macro DIR_BOTTOM 2
-
-	// Create global controllers
-	instance_create_layer(0, 0, "Instances", objAudio);
-
+	
 	// Start game
 	room_fadeto(rm_test_zone);
 }

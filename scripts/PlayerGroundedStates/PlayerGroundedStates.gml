@@ -418,7 +418,7 @@ function player_is_spindashing(phase)
 				//camera.alarm[0] = 16;
 				
 				// Sound
-				audio_stop_sound(sfxSpinRev);
+				//audio_stop_sound(sfxSpinRev);
 				//audio_play_sfx(sfxSpinDash);
 				
 				// Roll
@@ -490,7 +490,7 @@ function player_is_peelouting(phase)
 				if (peelout_charge >= 30)
 				{
 					hor_speed = image_xscale * 12;
-					audio_stop_sound(sfxPeeloutRev);
+					//audio_stop_sound(sfxPeeloutRev);
 					//audio_play_sfx(sfxPeelout);
 					return player_is_running(-1);
 				}

@@ -12,8 +12,8 @@
   "name":"objDevMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overlays",
-    "path":"folders/tmp/Objects/Overlays.yy",
+    "name":"Objects",
+    "path":"folders/tmp/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

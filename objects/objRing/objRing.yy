@@ -3,14 +3,13 @@
   "%Name":"objRing",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"objRing",
   "overriddenProperties":[],
   "parent":{
-    "name":"Items",
-    "path":"folders/5. Resources/Items.yy",
+    "name":"Objects",
+    "path":"folders/5. Resources/Items/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",
@@ -34,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprRing",
-    "path":"sprites/sprRing/sprRing.yy",
+    "name":"spr_ring",
+    "path":"sprites/spr_ring/spr_ring.yy",
   },
   "spriteMaskId":null,
   "visible":true,

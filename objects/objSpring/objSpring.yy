@@ -9,8 +9,8 @@
   "name":"objSpring",
   "overriddenProperties":[],
   "parent":{
-    "name":"Items",
-    "path":"folders/5. Resources/Items.yy",
+    "name":"Objects",
+    "path":"folders/5. Resources/Items/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

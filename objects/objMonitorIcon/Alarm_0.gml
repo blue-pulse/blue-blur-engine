@@ -13,7 +13,7 @@ with (player_id)
 	{
 		case 0: // 10 rings
 		{
-			player_get_rings(10);
+			player_add_rings(10);
 			break;
 		}
 		case 1: // Superspeed
@@ -37,7 +37,7 @@ with (player_id)
 		}
 		case 8: // Life
 		{
-			player_get_lives(1);
+			player_add_lives(1);
 			break;
 		}
 	}
