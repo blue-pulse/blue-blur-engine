@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerAerialStates",
+  "%Name":"player_is_peelouting",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerAerialStates",
+  "name":"player_is_peelouting",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/tmp/Scripts.yy",
+    "name":"States",
+    "path":"folders/3. Player/Player/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

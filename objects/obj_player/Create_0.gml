@@ -4,6 +4,7 @@ layer = layer_get_id("General");
 
 // States and flags
 state = player_is_starting;
+state_prev = state;
 is_rolling = false;
 is_jumping = false;
 jump_action = false;
@@ -59,11 +60,11 @@ spindash_atrophy = 0.96875;
 
 // Position table and trail
 table_size = 16;
+trail_alpha = array_create(table_size, 0);
 pos_grid = [
 	array_create(table_size, x),
 	array_create(table_size, y),
 ];
-trail_alpha = array_create(table_size, 0);
 
 // Animations
 animations =

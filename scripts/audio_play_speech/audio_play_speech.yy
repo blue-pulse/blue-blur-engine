@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerGroundedStates",
+  "%Name":"audio_play_speech",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerGroundedStates",
+  "name":"audio_play_speech",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/tmp/Scripts.yy",
+    "name":"Utils",
+    "path":"folders/2. Framework/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

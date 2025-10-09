@@ -1,0 +1,121 @@
+function player_is_running(phase)
+{
+	switch (phase)
+	{
+		case INIT:
+		{
+			// Set state and flags
+	        state = player_is_running;
+	        is_rolling = false;
+			
+			// Reset score combo
+			if (invincibility_timer <= 0) score_combo = 0;
+	        break;
+		}
+		default:
+		{
+			// Get input direction
+			var input_sign = input_check(vb_right) - input_check(vb_left);
+			
+			// Handle ground movement if not sliding down
+			if (gnd_lock <= 0)
+			{
+				if (input_sign != 0)
+				{
+					// Moving in the opposite direction
+					if (hor_speed != 0 and sign(hor_speed) != input_sign)
+					{
+						// Braking
+						if (animation_index != "brake" and abs(hor_speed) > brake_threshold and mask_direction == gravity_direction)
+						{
+							animation_index = "brake";
+							timeline_speed = 1;
+							image_xscale = -input_sign;
+							//audio_play_sfx(sfxBrake);
+						}
+						
+						// Decelerate and reverse direction
+						hor_speed += land_deceleration * input_sign;
+						if (sign(hor_speed) == input_sign) hor_speed = land_deceleration * input_sign;
+					}
+					else
+					{
+						// Accelerate
+						image_xscale = input_sign;
+						if (abs(hor_speed) < speed_cap)
+						{
+							hor_speed += land_acceleration * input_sign;
+							if (abs(hor_speed) > speed_cap) hor_speed = speed_cap * input_sign;
+						}
+					}
+				}
+				else
+				{
+					// Friction
+					hor_speed -= min(abs(hor_speed), land_friction) * sign(hor_speed);
+				}
+			}
+			
+			// Update position
+			if (not player_movement_ground()) exit;
+			
+			// Falling
+			if (not is_grounded) return player_is_falling(INIT);
+			
+			// Fall / slide down steep surfaces
+	        if (abs(hor_speed) < slide_threshold)
+	        {
+	            if (relative_angle >= 90 and relative_angle <= 270)
+	            {
+	                return player_is_falling(INIT);
+	            }
+	            else if (relative_angle >= 45 and relative_angle <= 315)
+				{
+					gnd_lock = slide_timer;
+				}
+	        }
+			
+			// Slope friction
+			player_set_friction(slope_frict);
+			
+	        // Standing
+			if (hor_speed == 0 and input_sign == 0)
+	        {
+	            return player_is_standing(INIT);
+	        }
+			
+			// Jumping
+	        if (input_pressed(vb_a)) return player_is_falling(-2);
+			
+			// Rolling
+			if (input_check(vb_down) and input_sign == 0 and abs(hor_speed) >= roll_threshold)
+			{
+				//audio_play_sfx(sfxRoll);
+				return player_is_rolling(INIT);
+			}
+			
+			// Animate
+			if (not ((animation_index == "push" and image_xscale == input_sign) or
+					(animation_index == "brake" and timeline_position < 24 and mask_direction == gravity_direction and image_xscale != input_sign)))
+	        {
+				var velocity = (abs(hor_speed) div 1);
+				if (velocity < 10)
+				{
+					animation_index = (velocity < 6) ? "walk" : "run";
+				}
+				else animation_index = "sprint";
+	            timeline_speed = 1 / max(8 - velocity, 1);
+	        }
+	        image_angle = angle;
+			
+			// Brake dust
+			if (animation_index == "brake" and global.ticks mod 4 == 0)
+			{
+				var height = ver_radius - 6;
+				var ox = x + dsin(angle) * height;
+				var oy = y + dcos(angle) * height;
+				part_particles_create(global.particles, ox, oy, global.brake_dust, 1);
+			}
+		}
+	}
+}
