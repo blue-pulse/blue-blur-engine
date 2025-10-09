@@ -38,7 +38,7 @@ function player_reaction_monitor(obj, side)
 	//audio_play_sfx(sfxDestroy);
 	
 	// Destroy monitor and reticle
-	instance_destroy(objReticle);
+	instance_destroy(obj_reticle);
 	instance_destroy(obj);
 	
 	// Abort state

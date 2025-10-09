@@ -63,7 +63,7 @@ function player_reaction_badnik(obj)
 	//audio_play_sfx(sfxDestroy);
 	
 	// Destroy badnik and reticle
-	instance_destroy(objReticle);
+	instance_destroy(obj_reticle);
 	instance_destroy(obj);
 	
 	// Abort state if rebounded from a homing attack

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_draw_trail",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/3. Player/Player/Scripts.yy",
+    "name":"General",
+    "path":"folders/3. Player/Scripts/General.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

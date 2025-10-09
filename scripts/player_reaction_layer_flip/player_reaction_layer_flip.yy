@@ -6,7 +6,7 @@
   "name":"player_reaction_layer_flip",
   "parent":{
     "name":"Reactions",
-    "path":"folders/3. Player/Player/Reactions.yy",
+    "path":"folders/3. Player/Scripts/Reactions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

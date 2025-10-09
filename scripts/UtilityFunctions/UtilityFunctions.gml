@@ -6,7 +6,7 @@ global.particles = part_system_create();
 
 // Ring sparkle
 global.ring_sparkle = part_type_create();
-part_type_sprite(global.ring_sparkle, sprRingSparkle, true, true, false);
+part_type_sprite(global.ring_sparkle, spr_ring_sparkle, true, true, false);
 part_type_life(global.ring_sparkle, 24, 24);
 
 // Brake dust

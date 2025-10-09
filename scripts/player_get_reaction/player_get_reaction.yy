@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_get_reaction",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/3. Player/Player/Scripts.yy",
+    "name":"Methods",
+    "path":"folders/3. Player/Scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

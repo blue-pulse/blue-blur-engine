@@ -92,7 +92,7 @@ function player_is_falling(phase)
 			if (is_rolling)
 			{
 				// Reticle creation/destruction
-				if (not instance_exists(objReticle))
+				if (not instance_exists(obj_reticle))
 				{
 					if (jump_action)
 					{
@@ -106,19 +106,19 @@ function player_is_falling(phase)
 							var inst = target_list[n];
 							if (inst != noone and player_can_lock_on(inst))
 							{
-								with (instance_create_depth(inst.x, inst.y, depth - 1, objReticle))
+								with (instance_create_depth(inst.x, inst.y, depth - 1, obj_reticle))
 								{
-									target_id = inst;
-									player_id = other.id;
+									target = inst;
+									owner = other.id;
 								}
 								break;
 							}
 						}
 					}
 				}
-				else if (not player_can_lock_on(objReticle.target_id))
+				else if (not player_can_lock_on(obj_reticle.target))
 				{
-					instance_destroy(objReticle);
+					instance_destroy(obj_reticle);
 				}
 				
 				// Perform a homing action
@@ -129,7 +129,7 @@ function player_is_falling(phase)
 					//audio_play_sfx(sfxSpinDash);
 					
 					// Homing attack if the reticle is present; dash otherwise
-					if (instance_exists(objReticle))
+					if (instance_exists(obj_reticle))
 					{
 						return player_is_homing(-1);
 					}

@@ -5,7 +5,7 @@ player_update_params();
 state(STEP);
 
 // Save position
-player_save_position();
+player_update_grid();
 
 // Update animation
 player_update_animations();
