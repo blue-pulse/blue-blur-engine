@@ -38,7 +38,7 @@ function player_is_spindashing(phase)
 			}
 			
 	        // Release
-			if (not input_check(vb_down))
+			if (not input_holded(vb_down))
 			{
 				// Launch
 				hor_speed = image_xscale * (8 + (spindash_charge div 2));

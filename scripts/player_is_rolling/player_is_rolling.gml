@@ -18,12 +18,12 @@ function player_is_rolling(phase)
 			if (gnd_lock <= 0)
 			{
 				// Deceleration
-				if (input_check(vb_left) and hor_speed > 0)
+				if (input_holded(vb_left) and hor_speed > 0)
 				{
 					hor_speed -= roll_deceleration;
 					if (hor_speed < 0) hor_speed = 0;
 				}
-				if (input_check(vb_right) and hor_speed < 0)
+				if (input_holded(vb_right) and hor_speed < 0)
 				{
 					hor_speed += roll_deceleration;
 					if (hor_speed > 0) hor_speed = 0;
@@ -69,7 +69,7 @@ function player_is_rolling(phase)
 			timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
 			
 	        // Set facing direction
-			if ((input_check(vb_left) and hor_speed < 0) or (input_check(vb_right) and hor_speed > 0))
+			if ((input_holded(vb_left) and hor_speed < 0) or (input_holded(vb_right) and hor_speed > 0))
 	        {
 	            image_xscale = sign(hor_speed);
 	        }

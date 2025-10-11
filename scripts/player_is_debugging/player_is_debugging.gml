@@ -19,8 +19,8 @@ function player_is_debugging(phase)
 		default:
 		{
 			// Fly around, whilst staying within bounds
-			x += (input_check(vb_right) - input_check(vb_left)) * 8;
-			y += (input_check(vb_down) - input_check(vb_up)) * 8;
+			x += (input_holded(vb_right) - input_holded(vb_left)) * 8;
+			y += (input_holded(vb_down) - input_holded(vb_up)) * 8;
 			player_in_view();
 		}
 	}

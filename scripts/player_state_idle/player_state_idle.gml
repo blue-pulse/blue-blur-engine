@@ -50,7 +50,7 @@ function player_state_idle(phase) {
 			}
 
 	        // Running
-	        if (hor_speed != 0 or input_check(vb_left) or input_check(vb_right)) {
+	        if (hor_speed != 0 or input_holded(vb_left) or input_holded(vb_right)) {
 	            player_set_state(player_state_run);
 				exit;
 	        }
@@ -64,13 +64,13 @@ function player_state_idle(phase) {
 			// Idle actions
 			if (cliff_dir == 0) {
 				// Look-up
-				if (input_check(vb_up)) {
+				if (input_holded(vb_up)) {
 					player_is_looking(INIT);
 					exit;
 				}
 				
 				// Crouch
-				if (input_check(vb_down)) {
+				if (input_holded(vb_down)) {
 					player_is_crouching(INIT);
 					exit;
 				}

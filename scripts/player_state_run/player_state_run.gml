@@ -82,7 +82,7 @@ function player_state_run(phase) {
 	        if (input_pressed(vb_a)) return player_is_falling(-2);
 			
 			// Rolling
-			if (input_check(vb_down) and input_sign == 0 and abs(hor_speed) >= roll_threshold)
+			if (input_holded(vb_down) and input_sign == 0 and abs(hor_speed) >= roll_threshold)
 			{
 				//audio_play_sfx(sfxRoll);
 				return player_is_rolling(INIT);

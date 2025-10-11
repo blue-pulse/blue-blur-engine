@@ -1,3 +1,3 @@
-function input_check(button) {
+function input_holded(button) {
 	return InputCheck(button, 0);
 }

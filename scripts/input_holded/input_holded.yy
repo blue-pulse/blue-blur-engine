@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"input_check",
+  "%Name":"input_holded",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"input_check",
+  "name":"input_holded",
   "parent":{
     "name":"Utils",
     "path":"folders/2. Framework/Utils.yy",

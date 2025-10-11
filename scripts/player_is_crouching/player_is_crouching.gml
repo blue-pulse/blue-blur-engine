@@ -32,7 +32,7 @@ function player_is_crouching(phase)
 			}
 			
 	        // Standing
-			if (not input_check(vb_down)) {
+			if (not input_holded(vb_down)) {
 				player_set_state(player_state_idle);
 				exit;
 			}

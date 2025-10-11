@@ -47,7 +47,7 @@ function player_is_falling(phase)
 		default:
 		{
 			// Handle aerial acceleration
-	        if (input_check(vb_left))
+	        if (input_holded(vb_left))
 	        {
 	            image_xscale = -1;
 	            if (hor_speed > -speed_cap)
@@ -55,7 +55,7 @@ function player_is_falling(phase)
 	                hor_speed = max(hor_speed - air_acceleration, -speed_cap);
 	            }
 	        }
-	        if (input_check(vb_right))
+	        if (input_holded(vb_right))
 	        {
 	            image_xscale = 1;
 	            if (hor_speed < speed_cap)
@@ -79,7 +79,7 @@ function player_is_falling(phase)
 	        }
 			
 			// Variable jump height
-	        if (is_jumping and not input_check(vb_a) and ver_speed < -jump_release)
+	        if (is_jumping and not input_holded(vb_a) and ver_speed < -jump_release)
 	        {
 	            ver_speed = -jump_release;
 	        }

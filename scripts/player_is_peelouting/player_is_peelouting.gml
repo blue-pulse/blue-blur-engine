@@ -39,7 +39,7 @@ function player_is_peelouting(phase)
 			}
 			
 	        // Release
-			if (not input_check(vb_up))
+			if (not input_holded(vb_up))
 			{
 				// Launch if fully charged
 				if (peelout_charge >= 30)
