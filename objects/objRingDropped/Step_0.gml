@@ -39,4 +39,4 @@ if (place_meeting(x + ox, y + oy, obj_solid) and not place_meeting(xprevious, yp
 }
 
 // Gravity
-ver_speed += gravity_force;
+ver_speed += grav_force;

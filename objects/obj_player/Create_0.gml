@@ -48,17 +48,29 @@ player_set_ground(noone);
 player_update_physics();
 
 // Physics constants
-ceiling_threshold = -4;
-slide_threshold = 2.5;
-roll_threshold = 1.03125;
-unroll_threshold = 0.5;
-brake_threshold = 4;
-air_threshold = 0.125;
+accel = 0.046875;
+air_accel = 0.09375;
 air_frict = 0.96875;
+air_threshold = 0.125;
+skid_threshold = 4;
+ceiling_threshold = -4;
+decel = 0.5;
+frict = 0.046875;
+grav_cap = 16;
+grav_force = 0.21875;
+grav_recoil = 0.1875;
+jump_height = 6.5;
+jump_min_height = 4;
+roll_decel = 0.125;
+roll_frict = 0.0234375;
+roll_threshold = 1.03125;
+slide_threshold = 2.5;
 slope_frict = 0.125;
-slope_frict_up = 0.078125;
 slope_frict_down = 0.3125;
+slope_frict_up = 0.078125;
+speed_cap = 6;
 spindash_atrophy = 0.96875;
+unroll_threshold = 0.5;
 
 // Position table and trail
 table_size = 16;
@@ -67,6 +79,9 @@ pos_grid = [
 	array_create(table_size, x),
 	array_create(table_size, y),
 ];
+
+// Initialize values
+player_init_animations();
 
 // Animations
 animations =

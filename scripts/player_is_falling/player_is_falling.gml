@@ -52,7 +52,7 @@ function player_is_falling(phase)
 	            image_xscale = -1;
 	            if (hor_speed > -speed_cap)
 	            {
-	                hor_speed = max(hor_speed - air_acceleration, -speed_cap);
+	                hor_speed = max(hor_speed - air_accel, -speed_cap);
 	            }
 	        }
 	        if (input_holded(vb_right))
@@ -60,7 +60,7 @@ function player_is_falling(phase)
 	            image_xscale = 1;
 	            if (hor_speed < speed_cap)
 	            {
-	                hor_speed = min(hor_speed + air_acceleration, speed_cap);
+	                hor_speed = min(hor_speed + air_accel, speed_cap);
 	            }
 	        }
 			
@@ -79,9 +79,9 @@ function player_is_falling(phase)
 	        }
 			
 			// Variable jump height
-	        if (is_jumping and not input_holded(vb_a) and ver_speed < -jump_release)
+	        if (is_jumping and not input_holded(vb_a) and ver_speed < -jump_min_height)
 	        {
-	            ver_speed = -jump_release;
+	            ver_speed = -jump_min_height;
 	        }
 			
 	        // Air friction
@@ -91,7 +91,7 @@ function player_is_falling(phase)
 	        }
 			
 	        // Gravity
-			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + gravity_force, gravity_cap);
+			if (ver_speed < grav_cap) ver_speed = min(ver_speed + grav_force, grav_cap);
 			
 			// Homing actions
 			if (is_rolling)

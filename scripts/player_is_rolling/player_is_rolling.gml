@@ -20,17 +20,17 @@ function player_is_rolling(phase)
 				// Deceleration
 				if (input_holded(vb_left) and hor_speed > 0)
 				{
-					hor_speed -= roll_deceleration;
+					hor_speed -= roll_decel;
 					if (hor_speed < 0) hor_speed = 0;
 				}
 				if (input_holded(vb_right) and hor_speed < 0)
 				{
-					hor_speed += roll_deceleration;
+					hor_speed += roll_decel;
 					if (hor_speed > 0) hor_speed = 0;
 				}
 				
 				// Friction
-				hor_speed -= min(abs(hor_speed), roll_friction) * sign(hor_speed);
+				hor_speed -= min(abs(hor_speed), roll_frict) * sign(hor_speed);
 			}
 			
 			// Update position

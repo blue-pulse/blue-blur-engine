@@ -41,7 +41,7 @@ function player_is_hurt(phase)
 			}
 			
 			// Gravity
-			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + recoil_gravity, gravity_cap);
+			if (ver_speed < grav_cap) ver_speed = min(ver_speed + grav_recoil, grav_cap);
 		}
 	}
 }

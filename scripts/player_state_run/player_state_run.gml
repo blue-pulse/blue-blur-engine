@@ -10,42 +10,48 @@ function player_state_run(phase) {
 		// Run state
 		case STEP:
 			// Get input direction
-			var input_sign = input_opposing(vb_left, vb_right);
+			var input_dir = input_opposing(vb_left, vb_right);
 
 			// Handle ground movement if not sliding down
 			if (gnd_lock <= 0) {
-				if (input_sign != 0) {
+				if (input_dir != 0) {
 					// Moving in the opposite direction
-					if (hor_speed != 0 and sign(hor_speed) != input_sign)
-					{
-						// Braking
-						if (animation_index != "brake" and abs(hor_speed) > brake_threshold and mask_direction == gravity_direction)
-						{
-							animation_index = "brake";
-							timeline_speed = 1;
-							image_xscale = -input_sign;
-							//audio_play_sfx(sfxBrake);
+					if (hor_speed != 0 and sign(hor_speed) != input_dir) {
+						// Turn around
+						if (sign(image_xscale) == -input_dir and abs(hor_speed) <= skid_threshold) {
+							player_set_state(player_state_turn);
+							exit;
+						}
+				
+						// Skidding
+						if (state != player_state_skid and abs(hor_speed) > skid_threshold and mask_direction == gravity_direction) {
+							audio_play_sfx(snd_player_skid);
+							player_set_state(player_state_skid);
+							exit;
 						}
 						
 						// Decelerate and reverse direction
-						hor_speed += land_deceleration * input_sign;
-						if (sign(hor_speed) == input_sign) hor_speed = land_deceleration * input_sign;
+						hor_speed += decel * input_dir;
+						if (sign(hor_speed) == input_dir) {
+							hor_speed = decel * input_dir;
+						}
 					}
-					else
-					{
-						// Accelerate
-						image_xscale = input_sign;
-						if (abs(hor_speed) < speed_cap)
-						{
-							hor_speed += land_acceleration * input_sign;
-							if (abs(hor_speed) > speed_cap) hor_speed = speed_cap * input_sign;
+					
+					// Accelerate
+					else {
+						image_xscale = input_dir;
+						if (abs(hor_speed) < speed_cap) {
+							hor_speed += accel * input_dir;
+							if (abs(hor_speed) > speed_cap) {
+								hor_speed = speed_cap * input_dir;
+							}
 						}
 					}
 				}
-				else
-				{
-					// Friction
-					hor_speed -= min(abs(hor_speed), land_friction) * sign(hor_speed);
+				
+				// Friction
+				else {
+					hor_speed -= min(abs(hor_speed), frict) * sign(hor_speed);
 				}
 			}
 			
@@ -72,7 +78,7 @@ function player_state_run(phase) {
 			player_set_friction(slope_frict);
 			
 	        // Standing
-			if (hor_speed == 0 and input_sign == 0)
+			if (hor_speed == 0 and input_dir == 0)
 	        {
 	            player_set_state(player_state_idle);
 				exit;
@@ -82,15 +88,15 @@ function player_state_run(phase) {
 	        if (input_pressed(vb_a)) return player_is_falling(-2);
 			
 			// Rolling
-			if (input_holded(vb_down) and input_sign == 0 and abs(hor_speed) >= roll_threshold)
+			if (input_holded(vb_down) and input_dir == 0 and abs(hor_speed) >= roll_threshold)
 			{
 				//audio_play_sfx(sfxRoll);
 				return player_is_rolling(INIT);
 			}
 			
 			// Animate
-			if (not ((animation_index == "push" and image_xscale == input_sign) or
-					(animation_index == "brake" and timeline_position < 24 and mask_direction == gravity_direction and image_xscale != input_sign)))
+			if (not ((animation_index == "push" and image_xscale == input_dir) or
+					(animation_index == "brake" and timeline_position < 24 and mask_direction == gravity_direction and image_xscale != input_dir)))
 	        {
 				var velocity = (abs(hor_speed) div 1);
 				if (velocity < 10)

@@ -29,7 +29,7 @@ function player_is_dead(phase) {
 			y += dcos(gravity_direction) * ver_speed;
 			
 			// Gravity
-			if (ver_speed < gravity_cap) ver_speed = min(ver_speed + gravity_force, gravity_cap);
+			if (ver_speed < grav_cap) ver_speed = min(ver_speed + grav_force, grav_cap);
 			
 			// Finish
 			if (not in_view(id, 24) and ver_speed > 3)

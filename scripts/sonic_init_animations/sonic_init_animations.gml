@@ -15,4 +15,10 @@ function sonic_init_animations(){
 	anim_jog = new Snip(spr_sonic_jog, 1);
 	anim_run = new Snip(spr_sonic_run, 1);
 	anim_sprint = new Snip(spr_sonic_sprint, 1);
+	
+	// Skid
+	anim_skid_slow = new Snip(spr_sonic_skid_slow, 1, 1);
+	anim_skid_slow_start = new Snip(spr_sonic_skid_slow, 1, 0, 0);
+	anim_skid_fast = new Snip(spr_sonic_skid_fast, 1, 4);
+	anim_skid_fast_start = new Snip(spr_sonic_skid_fast, 1, 0, 3);
 }
