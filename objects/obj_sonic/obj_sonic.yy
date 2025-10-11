@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_sonic",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_sonic",
   "overriddenProperties":[],
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprSonicIdle",
-    "path":"sprites/sprSonicIdle/sprSonicIdle.yy",
+    "name":"spr_sonic_icon",
+    "path":"sprites/spr_sonic_icon/spr_sonic_icon.yy",
   },
   "spriteMaskId":null,
   "visible":true,

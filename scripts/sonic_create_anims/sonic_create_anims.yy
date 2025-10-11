@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_is_standing",
+  "%Name":"sonic_create_anims",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_is_standing",
+  "name":"sonic_create_anims",
   "parent":{
-    "name":"States",
-    "path":"folders/3. Player/Scripts/States.yy",
+    "name":"Scripts",
+    "path":"folders/3. Player/Sonic/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

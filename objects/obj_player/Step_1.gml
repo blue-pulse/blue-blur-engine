@@ -1,11 +1,13 @@
-// Update timers
-player_update_params();
+if (allow_movement) {
+	// Update timers
+	player_update_params();
 
-// State machine
-state(STEP);
+	// State machine
+	state(STEP);
 
-// Save position
-player_update_grid();
+	// Save position
+	player_update_grid();
 
-// Update animation
-player_update_animations();
+	// Update animation
+	player_update_anims();
+}

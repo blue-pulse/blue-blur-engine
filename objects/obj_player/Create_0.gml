@@ -8,6 +8,7 @@ state_prev = state;
 is_rolling = false;
 is_jumping = false;
 jump_action = false;
+allow_movement = true;
 
 // Movement and collision
 resource_list = [];
