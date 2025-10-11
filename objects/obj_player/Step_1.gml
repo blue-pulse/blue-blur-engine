@@ -9,5 +9,5 @@ if (allow_movement) {
 	player_update_grid();
 
 	// Update animation
-	player_update_anims();
+	player_update_animation();
 }

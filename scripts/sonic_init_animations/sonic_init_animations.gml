@@ -1,4 +1,4 @@
-function sonic_create_anims(){
+function sonic_init_animations(){
 	// Initialize variables
 	snip_create_event();
 	

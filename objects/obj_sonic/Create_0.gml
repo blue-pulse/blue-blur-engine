@@ -2,4 +2,4 @@
 event_inherited();
 
 // Create animations
-sonic_create_anims();
+sonic_init_animations();

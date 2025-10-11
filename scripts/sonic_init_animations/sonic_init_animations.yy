@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sonic_create_anims",
+  "%Name":"sonic_init_animations",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sonic_create_anims",
+  "name":"sonic_init_animations",
   "parent":{
     "name":"Scripts",
     "path":"folders/3. Player/Sonic/Scripts.yy",

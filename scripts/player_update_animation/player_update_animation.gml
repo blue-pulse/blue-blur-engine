@@ -1,4 +1,4 @@
-function player_update_anims() {
+function player_update_animation() {
 	// Enable animations
 	snip_step_event();
 

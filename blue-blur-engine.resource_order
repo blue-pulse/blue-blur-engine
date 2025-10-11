@@ -379,7 +379,7 @@
     {"name":"player_set_state","order":2,"path":"scripts/player_set_state/player_set_state.yy",},
     {"name":"player_state_idle","order":6,"path":"scripts/player_state_idle/player_state_idle.yy",},
     {"name":"player_update_angle","order":3,"path":"scripts/player_update_angle/player_update_angle.yy",},
-    {"name":"player_update_anims","order":4,"path":"scripts/player_update_anims/player_update_anims.yy",},
+    {"name":"player_update_animation","order":4,"path":"scripts/player_update_animation/player_update_animation.yy",},
     {"name":"player_update_cliff","order":5,"path":"scripts/player_update_cliff/player_update_cliff.yy",},
     {"name":"player_update_grid","order":16,"path":"scripts/player_update_grid/player_update_grid.yy",},
     {"name":"player_update_objects","order":6,"path":"scripts/player_update_objects/player_update_objects.yy",},
