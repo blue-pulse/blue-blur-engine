@@ -12,8 +12,8 @@
   "name":"objDevMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/tmp/Objects.yy",
+    "name":"Menus",
+    "path":"folders/6. Stages/Menus.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_icon_visuals",
+    "path":"sprites/spr_icon_visuals/spr_icon_visuals.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

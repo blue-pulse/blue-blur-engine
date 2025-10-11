@@ -34,7 +34,7 @@ function player_is_peelouting(phase)
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
 				gnd_lock = slide_timer;
-				return player_is_running(INIT);
+				return player_state_run(INIT);
 			}
 			
 	        // Release
@@ -46,7 +46,7 @@ function player_is_peelouting(phase)
 					hor_speed = image_xscale * 12;
 					//audio_stop_sound(sfxPeeloutRev);
 					//audio_play_sfx(sfxPeelout);
-					return player_is_running(INIT);
+					return player_state_run(INIT);
 				}
 				else {
 					player_set_state(player_state_idle);

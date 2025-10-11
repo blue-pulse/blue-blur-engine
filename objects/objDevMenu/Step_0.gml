@@ -9,7 +9,8 @@ with (obj_player)
 	other.player_data += "SPEED:" + string_format(hor_speed, 3, 2) + " |" + string_format(ver_speed, 3, 2) + "\n\n";
 	other.player_data += "ANGLE: " + string_format(angle, 3, 2) + "\n\n";
 	other.player_data += "MASK DIRECTION: " + string(mask_direction) + "\n\n";
-	other.player_data += "CONTROL LOCK: " + string(gnd_lock);
+	other.player_data += "CONTROL LOCK: " + string(gnd_lock) + "\n\n";
+	other.player_data += "ANIMATION: " + string(snip_get_sprite(animation));
 	
 	// Abort if dead
 	if (state == player_is_dead) exit;

@@ -206,7 +206,10 @@
   "sdfSpread":8,
   "size":12.0,
   "styleName":"Regular",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"grp_visuals",
+    "path":"texturegroups/grp_visuals",
+  },
   "TTFName":"",
   "usesSDF":false,
 }

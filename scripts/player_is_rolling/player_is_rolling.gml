@@ -60,7 +60,7 @@ function player_is_rolling(phase)
 	        if (input_pressed(vb_a)) return player_is_falling(-2);
 			
 			// Unroll
-			if (abs(hor_speed) < unroll_threshold) return player_is_running(INIT);
+			if (abs(hor_speed) < unroll_threshold) return player_state_run(INIT);
 			
 			// Animate
 			timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);

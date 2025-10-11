@@ -1,11 +1,10 @@
-function player_is_running(phase)
-{
+function player_state_run(phase) {
 	switch (phase)
 	{
 		case INIT:
 		{
 			// Set state and flags
-	        state = player_is_running;
+	        state = player_state_run;
 	        is_rolling = false;
 			
 			// Reset score combo
@@ -102,9 +101,15 @@ function player_is_running(phase)
 				var velocity = (abs(hor_speed) div 1);
 				if (velocity < 10)
 				{
-					animation_index = (velocity < 6) ? "walk" : "run";
+					if (velocity < 6) {
+						player_set_animation(anim_walk);
+					} else {
+						player_set_animation(anim_run);
+					}
 				}
-				else animation_index = "sprint";
+				else {
+					player_set_animation(anim_sprint);
+				}
 	            timeline_speed = 1 / max(8 - velocity, 1);
 	        }
 	        image_angle = angle;
