@@ -1,66 +1,84 @@
-function player_is_standing(phase) {
+function player_state_idle(phase) {
 	switch (phase) {
+		// Start state
 		case INIT:
-			// Set state and flags
-			state = player_is_standing;
+			// Update variables
 	        is_rolling = false;
-			
-			// Reset score combo
-			if (invincibility_timer <= 0) {
-				score_combo = 0;
-			}
-			
-			// Find the direction of the nearest cliff
+			player_reset_combo();
 			player_update_cliff();
 			
 			// Animate idle
 			if (cliff_dir == 0) {
-				player_play_anim(anim_idle);
+				player_set_animation(anim_idle);
 			}
 			
 			// Animate balance
-			else {
-				if (cliff_dir == image_xscale) {
-					player_play_anim(anim_balance_front);
-				} else {
-					player_play_anim(anim_balance_back);
-				}
+			else if (cliff_dir == image_xscale) {
+				player_set_animation(anim_balance_front);
+			} else {
+				player_set_animation(anim_balance_back);
 			}
+			
+			// Set angle
 			image_angle = gravity_direction;
 			break;
 		
-		default:
+		// Run state
+		case STEP:
 			// Update position
-			if (not player_movement_ground()) exit;
+			if (!player_movement_ground()) {
+				exit;
+			}
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(INIT);
+			if (!is_grounded) {
+				player_is_falling(INIT);
+				exit;
+			}
 			
-			// Fall / slide down steep surfaces
-	        if (relative_angle >= 90 and relative_angle <= 270)
-	        {
-	            return player_is_falling(INIT);
+			// Fall from steep surfaces
+	        if (relative_angle >= 90 and relative_angle <= 270) {
+	            player_is_falling(INIT);
+				exit;
 	        }
-			else if (relative_angle >= 45 and relative_angle <= 315)
-			{
+			
+			// Slide down from steep surfaces
+			else if (relative_angle >= 45 and relative_angle <= 315) {
 				gnd_lock = slide_timer;
-				return player_is_running(INIT);
+				player_is_running(INIT);
+				exit;
 			}
 
 	        // Running
-	        if (input_check(vb_left) or input_check(vb_right) or hor_speed != 0)
-	        {
-	            return player_is_running(INIT);
+	        if (hor_speed != 0 or input_check(vb_left) or input_check(vb_right)) {
+	            player_is_running(INIT);
+				exit;
 	        }
 			
 			// Jumping
-	        if (input_pressed(vb_a)) return player_is_falling(-2);
-			
-			// Looking/crouching
-			if (cliff_dir == 0)
-			{
-				if (input_check(vb_up)) return player_is_looking(INIT);
-				if (input_check(vb_down)) return player_is_crouching(INIT);
+	        if (input_pressed(vb_a)) {
+				player_is_falling(-2);
+				exit;
 			}
+			
+			// Idle actions
+			if (cliff_dir == 0) {
+				// Look-up
+				if (input_check(vb_up)) {
+					player_is_looking(INIT);
+					exit;
+				}
+				
+				// Crouch
+				if (input_check(vb_down)) {
+					player_is_crouching(INIT);
+					exit;
+				}
+			}
+			break;
+			
+		// Stop state
+		case STOP:
+			break;
 	}
 }

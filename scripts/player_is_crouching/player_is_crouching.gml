@@ -31,7 +31,10 @@ function player_is_crouching(phase)
 			}
 			
 	        // Standing
-			if (not input_check(vb_down)) return player_is_standing(INIT);
+			if (not input_check(vb_down)) {
+				player_set_state(player_state_idle);
+				exit;
+			}
 			
 			// Running
 	        if (hor_speed != 0) return player_is_running(INIT);

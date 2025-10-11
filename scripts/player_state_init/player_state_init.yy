@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_play_anim",
+  "%Name":"player_state_init",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_play_anim",
+  "name":"player_state_init",
   "parent":{
-    "name":"General",
-    "path":"folders/3. Player/Scripts/General.yy",
+    "name":"States",
+    "path":"folders/3. Player/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

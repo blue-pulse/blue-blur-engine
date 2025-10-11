@@ -81,7 +81,8 @@ function player_is_running(phase)
 	        // Standing
 			if (hor_speed == 0 and input_sign == 0)
 	        {
-	            return player_is_standing(INIT);
+	            player_set_state(player_state_idle);
+				exit;
 	        }
 			
 			// Jumping

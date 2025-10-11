@@ -3,7 +3,7 @@ image_speed = 0;
 layer = layer_get_id("General");
 
 // States and flags
-state = player_is_starting;
+state = player_state_init;
 state_prev = state;
 is_rolling = false;
 is_jumping = false;

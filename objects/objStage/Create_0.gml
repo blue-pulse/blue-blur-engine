@@ -2,7 +2,7 @@
 image_speed = 0;
 
 // State
-started = false; // The player cannot move until the stage has started
+started = true; // The player cannot move until the stage has started
 finished = false; // When the stage has ended, this is set so all game values are reset properly
 
 // Timing

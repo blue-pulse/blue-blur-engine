@@ -70,7 +70,12 @@ function player_is_falling(phase)
 	        // Landing
 	        if (is_grounded)
 	        {
-				return (hor_speed != 0) ? player_is_running(-1) : player_is_standing(-1);
+				if (hor_speed == 0) {
+					player_set_state(player_state_idle);
+				} else {
+					player_is_running(-1);
+				}
+				exit;
 	        }
 			
 			// Variable jump height

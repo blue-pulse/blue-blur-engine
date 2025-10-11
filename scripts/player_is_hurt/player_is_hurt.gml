@@ -36,7 +36,8 @@ function player_is_hurt(phase)
 				recovery_timer = 120;
 				
 				// Stand
-				return player_is_standing(-1);
+				player_set_state(player_state_idle);
+				exit;
 			}
 			
 			// Gravity

@@ -48,7 +48,10 @@ function player_is_peelouting(phase)
 					//audio_play_sfx(sfxPeelout);
 					return player_is_running(INIT);
 				}
-				else return player_is_standing(INIT);
+				else {
+					player_set_state(player_state_idle);
+					exit;
+				}
 			}
 			
 			// Charge and animate
