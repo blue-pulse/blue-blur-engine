@@ -1,26 +1,20 @@
 function player_state_run(phase) {
-	switch (phase)
-	{
+	switch (phase) {
+		// Start state
 		case INIT:
-		{
-			// Set state and flags
-	        state = player_state_run;
+			// Update variables
 	        is_rolling = false;
-			
-			// Reset score combo
-			if (invincibility_timer <= 0) score_combo = 0;
+			player_reset_combo();
 	        break;
-		}
-		default:
-		{
+		
+		// Run state
+		case STEP:
 			// Get input direction
-			var input_sign = input_check(vb_right) - input_check(vb_left);
-			
+			var input_sign = input_opposing(vb_left, vb_right);
+
 			// Handle ground movement if not sliding down
-			if (gnd_lock <= 0)
-			{
-				if (input_sign != 0)
-				{
+			if (gnd_lock <= 0) {
+				if (input_sign != 0) {
 					// Moving in the opposite direction
 					if (hor_speed != 0 and sign(hor_speed) != input_sign)
 					{
@@ -122,6 +116,11 @@ function player_state_run(phase) {
 				var oy = y + dcos(angle) * height;
 				part_particles_create(global.particles, ox, oy, global.brake_dust, 1);
 			}
-		}
+			break;
+		
+		// Stop state
+		case STOP:
+			gnd_lock = 0;
+			break;
 	}
 }

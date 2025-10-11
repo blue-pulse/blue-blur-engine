@@ -73,7 +73,7 @@ function player_is_falling(phase)
 				if (hor_speed == 0) {
 					player_set_state(player_state_idle);
 				} else {
-					player_state_run(-1);
+					player_set_state(player_state_run);
 				}
 				exit;
 	        }

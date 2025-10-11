@@ -275,6 +275,7 @@
     {"id":{"name":"input_check","path":"scripts/input_check/input_check.yy",},},
     {"id":{"name":"input_clear_all","path":"scripts/input_clear_all/input_clear_all.yy",},},
     {"id":{"name":"input_clear","path":"scripts/input_clear/input_clear.yy",},},
+    {"id":{"name":"input_opposing","path":"scripts/input_opposing/input_opposing.yy",},},
     {"id":{"name":"input_pressed","path":"scripts/input_pressed/input_pressed.yy",},},
     {"id":{"name":"input_released","path":"scripts/input_released/input_released.yy",},},
     {"id":{"name":"InputBindingFind","path":"scripts/InputBindingFind/InputBindingFind.yy",},},

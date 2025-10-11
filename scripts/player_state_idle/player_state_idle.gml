@@ -45,13 +45,13 @@ function player_state_idle(phase) {
 			// Slide down from steep surfaces
 			else if (relative_angle >= 45 and relative_angle <= 315) {
 				gnd_lock = slide_timer;
-				player_state_run(INIT);
+				player_set_state(player_state_run);
 				exit;
 			}
 
 	        // Running
 	        if (hor_speed != 0 or input_check(vb_left) or input_check(vb_right)) {
-	            player_state_run(INIT);
+	            player_set_state(player_state_run);
 				exit;
 	        }
 			

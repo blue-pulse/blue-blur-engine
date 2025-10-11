@@ -211,6 +211,7 @@
     {"name":"input_check","order":4,"path":"scripts/input_check/input_check.yy",},
     {"name":"input_clear_all","order":6,"path":"scripts/input_clear_all/input_clear_all.yy",},
     {"name":"input_clear","order":5,"path":"scripts/input_clear/input_clear.yy",},
+    {"name":"input_opposing","order":21,"path":"scripts/input_opposing/input_opposing.yy",},
     {"name":"input_pressed","order":7,"path":"scripts/input_pressed/input_pressed.yy",},
     {"name":"input_released","order":8,"path":"scripts/input_released/input_released.yy",},
     {"name":"InputBindingFindCollisions","order":1,"path":"scripts/InputBindingFindCollisions/InputBindingFindCollisions.yy",},

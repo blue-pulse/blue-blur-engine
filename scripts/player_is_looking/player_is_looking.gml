@@ -27,7 +27,8 @@ function player_is_looking(phase)
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
 				gnd_lock = slide_timer;
-				return player_state_run(INIT);
+				player_set_state(player_state_run);
+				exit;
 			}
 			
 	        // Standing
@@ -37,7 +38,10 @@ function player_is_looking(phase)
 			}
 			
 			// Running
-	        if (hor_speed != 0) return player_state_run(INIT);
+	        if (hor_speed != 0) {
+				player_set_state(player_state_run);
+				exit;
+			}
 			
 			// Peelouting
 	        if (input_pressed(vb_a)) return player_is_peelouting(INIT);
