@@ -15,7 +15,7 @@ function player_is_rolling(phase)
 		}
 		default:
 		{
-			if (gnd_lock <= 0)
+			if (ground_lock <= 0)
 			{
 				// Deceleration
 				if (input_holded(vb_left) and hor_speed > 0)
@@ -40,7 +40,7 @@ function player_is_rolling(phase)
 			if (not is_grounded) return player_is_falling(INIT);
 			
 			// Fall / slide down steep surfaces
-	        if (abs(hor_speed) < slide_threshold)
+	        if (abs(hor_speed) < stumble_threshold)
 	        {
 	            if (relative_angle >= 90 and relative_angle <= 270)
 	            {
@@ -48,7 +48,7 @@ function player_is_rolling(phase)
 	            }
 	            else if (relative_angle >= 45 and relative_angle <= 315)
 				{
-					gnd_lock = slide_timer;
+					ground_lock = stumble_timer;
 				}
 	        }
 			

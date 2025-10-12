@@ -9,16 +9,25 @@ function sonic_init_animations(){
 	// Idle
 	anim_idle = new Snip(spr_sonic_idle, 1);
 	
+	// Push
+	anim_push = new Snip(spr_sonic_push, 1, 3);
+	anim_push_start = new Snip(spr_sonic_push, 1.5, 0, 2);
+	
 	// Run
 	anim_stroll = new Snip(spr_sonic_stroll, 1);
 	anim_walk = new Snip(spr_sonic_walk, 1);
 	anim_jog = new Snip(spr_sonic_jog, 1);
 	anim_run = new Snip(spr_sonic_run, 1);
 	anim_sprint = new Snip(spr_sonic_sprint, 1);
+	anim_peelout = new Snip(spr_sonic_peelout, 1);
 	
 	// Skid
-	anim_skid_slow = new Snip(spr_sonic_skid_slow, 1, 1);
-	anim_skid_slow_start = new Snip(spr_sonic_skid_slow, 1, 0, 0);
-	anim_skid_fast = new Snip(spr_sonic_skid_fast, 1, 4);
-	anim_skid_fast_start = new Snip(spr_sonic_skid_fast, 1, 0, 3);
+	anim_skid_slow = new Snip(spr_sonic_skid_slow, 1);
+	anim_skid_fast = new Snip(spr_sonic_skid_fast, 1);
+	anim_skid_turn = new Snip(spr_sonic_skid_turn, 1);
+	animation_set_callback(anim_skid_turn, player_set_state, player_state_idle);
+	
+	// Turn
+	anim_turn = new Snip(spr_sonic_turn, 1);
+	animation_set_callback(anim_turn, player_set_state, player_state_idle);
 }

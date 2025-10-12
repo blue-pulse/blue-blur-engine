@@ -18,7 +18,7 @@ function player_reaction_spring(obj, side)
 	{
 		hor_speed = x_spring_speed;
 		image_xscale = sign(hor_speed);
-		gnd_lock = 16;
+		ground_lock = 16;
 	}
 	if (y_spring_speed != 0)
 	{

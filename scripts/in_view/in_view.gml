@@ -1,4 +1,7 @@
 function in_view(object, padding) {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Get view dimensions
 	var view_left = camera_get_view_x(CAMERA_ID) - padding;
 	var view_top = camera_get_view_y(CAMERA_ID) - padding;

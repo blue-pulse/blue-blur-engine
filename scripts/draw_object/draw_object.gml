@@ -1,4 +1,7 @@
 function draw_object() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Variables
 	var pos_x = floor(x);
 	var pos_y = floor(y);

@@ -49,11 +49,10 @@ function player_movement_ground() {
 				// Cancel speed
 				hor_speed = 0;
 				
-				// Set pushing animation, if applicable
-				var input_sign = input_holded(vb_right) - input_holded(vb_left);
-				if (animation_index != "push" and input_sign == wall_sign and image_xscale == wall_sign) {
-					animation_index = "push";
-					timeline_speed = 1;
+				// Set pushing animation
+				var input_dir = input_opposing(vb_left, vb_right);
+				if (input_dir == wall_sign and image_xscale == wall_sign) {
+					player_wall_push(hit_wall, wall_sign);
 				}
 			}
 		}

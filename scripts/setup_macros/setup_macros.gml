@@ -24,6 +24,7 @@
 #macro font_golden global.font_hud_golden
 #macro font_gray global.font_hud_gray
 #macro font_silver global.font_hud_silver
+#macro ticks global.framecount
 
 // Inputs
 #macro vb_up INPUT_VERB.UP

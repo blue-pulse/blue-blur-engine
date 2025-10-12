@@ -18,27 +18,27 @@ function player_init_animations() {
 	anim_balance_turn = new Snip(sprite_index, 1);
 	
 	// Crouch
-	anim_crouch = new Snip(sprite_index, 1, 3);
-	anim_crouch_start = new Snip(sprite_index, 1, 0, 2);
-	anim_crouch_stop = new Snip(sprite_index, 1, 0, 2);
+	anim_crouch = new Snip(sprite_index, 1);
+	anim_crouch_start = new Snip(sprite_index, 1);
+	anim_crouch_stop = new Snip(sprite_index, 1);
 	snip_set_backward(anim_crouch_stop);
 	
 	// Fall
-	anim_fall_a = new Snip(sprite_index, 1, 2);
-	anim_fall_a_start = new Snip(sprite_index, 1, 0, 1);
+	anim_fall_a = new Snip(sprite_index, 1);
+	anim_fall_a_start = new Snip(sprite_index, 1);
 	anim_fall_b = new Snip(sprite_index, 1);
-	anim_fall_c = new Snip(sprite_index, 1, 1);
+	anim_fall_c = new Snip(sprite_index, 1);
 	
 	// Hurt
-	anim_hurt = new Snip(sprite_index, 1, 4, 4);
-	anim_hurt_start = new Snip(sprite_index, 1, 0, 3);
+	anim_hurt = new Snip(sprite_index, 1);
+	anim_hurt_start = new Snip(sprite_index, 1);
 	
 	// Idle
 	anim_idle = new Snip(sprite_index, 1);
 	
 	// Knock-out
-	anim_knockout = new Snip(sprite_index, 1, 3);
-	anim_knockout_start = new Snip(sprite_index, 1, 0, 2);
+	anim_knockout = new Snip(sprite_index, 1);
+	anim_knockout_start = new Snip(sprite_index, 1);
 	
 	// Land
 	anim_land = new Snip(sprite_index, 1);
@@ -54,8 +54,8 @@ function player_init_animations() {
 	anim_sprint = new Snip(sprite_index, 1);
 	
 	// Push
-	anim_push = new Snip(sprite_index, 1, 3);
-	anim_push_start = new Snip(sprite_index, 1.5, 0, 2);
+	anim_push = new Snip(sprite_index, 1);
+	anim_push_start = new Snip(sprite_index, 1);
 	
 	// Roll
 	anim_roll = new Snip(sprite_index, 1);
@@ -63,16 +63,16 @@ function player_init_animations() {
 	anim_roll_slow = new Snip(sprite_index, 1);
 	
 	// Search
-	anim_search = new Snip(sprite_index, 1, 3);
-	anim_search_start = new Snip(sprite_index, 1, 0, 2);
-	anim_search_stop = new Snip(sprite_index, 1, 0, 2);
+	anim_search = new Snip(sprite_index, 1);
+	anim_search_start = new Snip(sprite_index, 1);
+	anim_search_stop = new Snip(sprite_index, 1);
 	snip_set_backward(anim_search_stop);
 	
 	// Skid
-	anim_skid_slow = new Snip(sprite_index, 1, 1);
-	anim_skid_slow_start = new Snip(sprite_index, 1, 0, 0);
-	anim_skid_fast = new Snip(sprite_index, 1, 4);
-	anim_skid_fast_start = new Snip(sprite_index, 1, 0, 3);
+	anim_skid_slow = new Snip(sprite_index, 1);
+	anim_skid_slow_start = new Snip(sprite_index, 1);
+	anim_skid_fast = new Snip(sprite_index, 1);
+	anim_skid_fast_start = new Snip(sprite_index, 1);
 	
 	// Slide
 	anim_slide = new Snip(sprite_index, 1);

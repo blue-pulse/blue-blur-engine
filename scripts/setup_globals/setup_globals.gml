@@ -6,7 +6,7 @@ global.font_hud_gray = font_add_sprite_ext(spr_font_gray, UNICODE, true, 0);
 global.font_hud_silver = font_add_sprite_ext(spr_font_silver, UNICODE, true, 0);
 
 // Global parameters
-global.ticks = 0;
+global.framecount = 0;
 global.is_fullscreen = false;
 global.is_paused = false;
 

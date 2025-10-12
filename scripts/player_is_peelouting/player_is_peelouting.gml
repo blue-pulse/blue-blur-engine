@@ -33,7 +33,7 @@ function player_is_peelouting(phase)
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
-				gnd_lock = slide_timer;
+				ground_lock = stumble_timer;
 				player_set_state(player_state_run);
 				exit;
 			}

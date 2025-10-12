@@ -9,11 +9,11 @@ function player_state_run(phase) {
 		
 		// Run state
 		case STEP:
-			// Get input direction
+			// Variables
 			var input_dir = input_opposing(vb_left, vb_right);
 
 			// Handle ground movement if not sliding down
-			if (gnd_lock <= 0) {
+			if (ground_lock <= 0) {
 				if (input_dir != 0) {
 					// Moving in the opposite direction
 					if (hor_speed != 0 and sign(hor_speed) != input_dir) {
@@ -24,8 +24,8 @@ function player_state_run(phase) {
 						}
 				
 						// Skidding
-						if (state != player_state_skid and abs(hor_speed) > skid_threshold and mask_direction == gravity_direction) {
-							audio_play_sfx(snd_player_skid);
+						if (abs(hor_speed) > skid_threshold and mask_direction == gravity_direction) {
+							player_play_sfx_skid();
 							player_set_state(player_state_skid);
 							exit;
 						}
@@ -56,21 +56,27 @@ function player_state_run(phase) {
 			}
 			
 			// Update position
-			if (not player_movement_ground()) exit;
+			if (!player_movement_ground()) {
+				exit;
+			}
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(INIT);
+			if (!is_grounded) {
+				player_is_falling(INIT);
+				exit;
+			}
 			
-			// Fall / slide down steep surfaces
-	        if (abs(hor_speed) < slide_threshold)
-	        {
-	            if (relative_angle >= 90 and relative_angle <= 270)
-	            {
-	                return player_is_falling(INIT);
-	            }
-	            else if (relative_angle >= 45 and relative_angle <= 315)
-				{
-					gnd_lock = slide_timer;
+			// Steep surfaces
+	        if (abs(hor_speed) < stumble_threshold) {
+				// Fall
+	            if (relative_angle >= 90 and relative_angle <= 270) {
+					player_is_falling(INIT);
+					exit;
+	            } 
+				
+				// Slide down
+				else if (relative_angle >= 45 and relative_angle <= 315) {
+					ground_lock = stumble_timer;
 				}
 	        }
 			
@@ -78,55 +84,39 @@ function player_state_run(phase) {
 			player_set_friction(slope_frict);
 			
 	        // Standing
-			if (hor_speed == 0 and input_dir == 0)
-	        {
+			if (hor_speed == 0 and input_dir == 0) {
 	            player_set_state(player_state_idle);
 				exit;
 	        }
 			
 			// Jumping
-	        if (input_pressed(vb_a)) return player_is_falling(-2);
+	        if (input_pressed(vb_a)) {
+				player_is_falling(-2);
+				exit;
+			}
 			
 			// Rolling
-			if (input_holded(vb_down) and input_dir == 0 and abs(hor_speed) >= roll_threshold)
-			{
-				//audio_play_sfx(sfxRoll);
-				return player_is_rolling(INIT);
+			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
+				audio_play_sfx(snd_player_roll, REPLACE);
+				player_is_rolling(INIT);
+				exit;
+			}
+			
+			// Exit if pushing
+			if (animation == anim_push and sign(image_xscale) == input_dir) {
+				exit;
 			}
 			
 			// Animate
-			if (not ((animation_index == "push" and image_xscale == input_dir) or
-					(animation_index == "brake" and timeline_position < 24 and mask_direction == gravity_direction and image_xscale != input_dir)))
-	        {
-				var velocity = (abs(hor_speed) div 1);
-				if (velocity < 10)
-				{
-					if (velocity < 6) {
-						player_set_animation(anim_walk);
-					} else {
-						player_set_animation(anim_run);
-					}
-				}
-				else {
-					player_set_animation(anim_sprint);
-				}
-	            timeline_speed = 1 / max(8 - velocity, 1);
-	        }
-	        image_angle = angle;
+			player_play_run();
 			
-			// Brake dust
-			if (animation_index == "brake" and global.ticks mod 4 == 0)
-			{
-				var height = ver_radius - 6;
-				var ox = x + dsin(angle) * height;
-				var oy = y + dcos(angle) * height;
-				part_particles_create(global.particles, ox, oy, global.brake_dust, 1);
-			}
+			// Set angle
+	        image_angle = angle;
 			break;
 		
 		// Stop state
 		case STOP:
-			gnd_lock = 0;
+			ground_lock = 0;
 			break;
 	}
 }

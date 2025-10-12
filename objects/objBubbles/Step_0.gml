@@ -1,2 +1,2 @@
 /// @description Movement
-y = ystart + dcos(global.ticks * 3) * 6;
+y = ystart + dcos(global.framecount * 3) * 6;

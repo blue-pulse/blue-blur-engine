@@ -1,4 +1,7 @@
 function audio_play_bgm(sound, loop_start=0, loop_end=0) {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Set the end of the loop as the end of the song
 	if (loop_end == 0) {
 		loop_end = audio_sound_length(sound);

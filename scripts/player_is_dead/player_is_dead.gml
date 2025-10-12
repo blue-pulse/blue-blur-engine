@@ -12,7 +12,7 @@ function player_is_dead(phase) {
 			ver_speed = -7;
 			
 			// Remove effects
-			instance_destroy(invincibility_effect);
+			instance_destroy(invincibility_fx);
 			
 			// Animate
 			animation_index = "dead";

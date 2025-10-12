@@ -1,8 +1,8 @@
 function player_update_params() {
 	// Count down timers
-	if (gnd_lock > 0 and is_grounded)
+	if (ground_lock > 0 and is_grounded)
 	{
-		--gnd_lock;
+		--ground_lock;
 	}
 	if (recovery_timer > 0)
 	{
@@ -10,8 +10,8 @@ function player_update_params() {
 	}
 	if (invincibility_timer > 0 and --invincibility_timer <= 0)
 	{
-		instance_destroy(invincibility_effect);
-		invincibility_effect = noone;
+		instance_destroy(invincibility_fx);
+		invincibility_fx = noone;
 		//audio_dequeue_bgm(bgmInvincibility, true);
 	}
 	if (superspeed_timer > 0 and --superspeed_timer <= 0)

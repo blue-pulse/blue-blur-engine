@@ -3,6 +3,7 @@ event_inherited();
 
 // Variables
 plane = -1;
-surface_angle = -1;
-shape = shapes.wall;
+pushable = false;
 semisolid = false;
+shape = shapes.wall;
+surface_angle = -1;

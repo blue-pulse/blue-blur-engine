@@ -1,5 +1,5 @@
 /// @description Timers and debug
-global.ticks++;
+global.framecount++;
 
 // Stage time / time over
 if (timer_enabled and ++stage_time >= time_limit)

@@ -14,7 +14,7 @@ function player_reaction_dash_panel(obj)
 	// Launch
 	image_xscale = obj.image_xscale;
 	hor_speed = max(abs(hor_speed), 12) * image_xscale;
-	gnd_lock = 16;
+	ground_lock = 16;
 	
 	// Roll, if applicable
 	if (obj.force_roll and state != player_is_rolling)

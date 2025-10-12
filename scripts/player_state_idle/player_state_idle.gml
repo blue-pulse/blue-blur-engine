@@ -9,14 +9,14 @@ function player_state_idle(phase) {
 			
 			// Animate idle
 			if (cliff_dir == 0) {
-				player_set_animation(anim_idle);
+				animation_play(anim_idle);
 			}
 			
 			// Animate balance
 			else if (cliff_dir == image_xscale) {
-				player_set_animation(anim_balance_front);
+				animation_play(anim_balance_front);
 			} else {
-				player_set_animation(anim_balance_back);
+				animation_play(anim_balance_back);
 			}
 			
 			// Set angle
@@ -25,6 +25,9 @@ function player_state_idle(phase) {
 		
 		// Run state
 		case STEP:
+			// Variables
+			var input_dir = input_opposing(vb_left, vb_right);
+			
 			// Update position
 			if (!player_movement_ground()) {
 				exit;
@@ -44,13 +47,19 @@ function player_state_idle(phase) {
 			
 			// Slide down from steep surfaces
 			else if (relative_angle >= 45 and relative_angle <= 315) {
-				gnd_lock = slide_timer;
+				ground_lock = stumble_timer;
 				player_set_state(player_state_run);
 				exit;
 			}
-
+			
+			// Turn-around
+			if (input_dir != 0 and sign(image_xscale) != input_dir) {
+				player_set_state(player_state_turn);
+				exit;
+			}
+			
 	        // Running
-	        if (hor_speed != 0 or input_holded(vb_left) or input_holded(vb_right)) {
+	        if (input_dir != 0 or hor_speed != 0) {
 	            player_set_state(player_state_run);
 				exit;
 	        }

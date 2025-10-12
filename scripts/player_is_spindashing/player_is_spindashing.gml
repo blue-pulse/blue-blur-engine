@@ -33,7 +33,7 @@ function player_is_spindashing(phase)
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{
-				gnd_lock = slide_timer;
+				ground_lock = stumble_timer;
 				return player_is_rolling(INIT);
 			}
 			

@@ -28,10 +28,10 @@ with (player_id)
 			//audio_enqueue_bgm(bgmInvincibility, 1, true);
 			
 			// Create invincibility effect
-			if (invincibility_effect == noone)
+			if (invincibility_fx == noone)
 			{
-				invincibility_effect = instance_create_depth(x, y, depth - 1, objInvincibility);
-				invincibility_effect.player_id = id;
+				invincibility_fx = instance_create_depth(x, y, depth - 1, objInvincibility);
+				invincibility_fx.player_id = id;
 			}
 			break;
 		}

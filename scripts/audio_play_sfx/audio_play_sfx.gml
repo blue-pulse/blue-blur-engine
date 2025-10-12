@@ -1,4 +1,7 @@
 function audio_play_sfx(sound, mode=RAW, loops=false) {	
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Logic before playing anything
 	switch (mode) {
 		// Don't do anything

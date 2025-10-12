@@ -1,4 +1,7 @@
 function framework_start() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Load assets in memory (Asynchronous)
 	audio_group_load(grp_bgm);
 	audio_group_load(grp_sfx);

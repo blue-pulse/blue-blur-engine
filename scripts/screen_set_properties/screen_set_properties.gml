@@ -1,4 +1,7 @@
 function screen_set_properties() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Adjust window size
 	if (global.is_fullscreen) {
 		window_enable_borderless_fullscreen(os_type == os_windows);
