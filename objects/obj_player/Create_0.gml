@@ -76,6 +76,7 @@ player_play_run = player_play_placeholder;
 // Initialize values
 player_set_ground(noone);
 player_update_physics();
+player_init_effects();
 player_init_animations();
 
 // Trash

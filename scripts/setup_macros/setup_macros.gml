@@ -39,5 +39,6 @@
 
 // Shortcuts
 #macro Camera obj_camera
+#macro Particles global.particles
 #macro Player obj_player
 #macro View view_camera[0]

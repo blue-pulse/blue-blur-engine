@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_init_animations",
+  "%Name":"player_init_effects",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_init_animations",
+  "name":"player_init_effects",
   "parent":{
     "name":"General",
     "path":"folders/3. Player/Scripts/General.yy",
