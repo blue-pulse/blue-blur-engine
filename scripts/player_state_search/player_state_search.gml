@@ -1,10 +1,12 @@
 function player_state_search(phase) {
 	switch (phase) {
+		// Start state
 		case INIT:
 			// Set animation
 			animation_play(anim_search);
 			break;
 
+		// Run state
 		case STEP:
 			// Update position
 			if (!player_movement_ground()) {
