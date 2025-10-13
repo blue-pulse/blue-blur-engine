@@ -6,6 +6,12 @@ function sonic_init_animations(){
 	anim_balance_back = new Snip(spr_sonic_balance_back, 1);
 	anim_balance_front = new Snip(spr_sonic_balance_front, 1);
 	
+	// Crouch
+	anim_crouch = new Snip(spr_sonic_crouch, 1, 3);
+	anim_crouch_start = new Snip(spr_sonic_crouch, 1, 0, 2);
+	anim_crouch_stop = new Snip(spr_sonic_crouch, 1, 0, 2);
+	snip_set_backward(anim_crouch_stop);
+	
 	// Idle
 	anim_idle = new Snip(spr_sonic_idle, 1);
 	
@@ -21,9 +27,15 @@ function sonic_init_animations(){
 	anim_sprint = new Snip(spr_sonic_sprint, 1);
 	anim_peelout = new Snip(spr_sonic_peelout, 1);
 	
+	// Search
+	anim_search = new Snip(spr_sonic_search, 1, 3);
+	anim_search_start = new Snip(spr_sonic_search, 1, 0, 2);
+	anim_search_stop = new Snip(spr_sonic_search, 1, 0, 2);
+	snip_set_backward(anim_search_stop);
+	
 	// Skid
-	anim_skid_slow = new Snip(spr_sonic_skid_slow, 1);
 	anim_skid_fast = new Snip(spr_sonic_skid_fast, 1);
+	anim_skid_slow = new Snip(spr_sonic_skid_slow, 1);
 	anim_skid_turn = new Snip(spr_sonic_skid_turn, 1);
 	animation_set_callback(anim_skid_turn, player_set_state, player_state_idle);
 	

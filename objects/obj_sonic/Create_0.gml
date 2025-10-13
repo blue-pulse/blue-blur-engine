@@ -6,3 +6,4 @@ player_play_run = sonic_play_run;
 
 // Create animations
 sonic_init_animations();
+sonic_init_transitions();

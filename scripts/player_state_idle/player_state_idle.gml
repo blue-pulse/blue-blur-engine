@@ -74,13 +74,13 @@ function player_state_idle(phase) {
 			if (cliff_dir == 0) {
 				// Look-up
 				if (input_holded(vb_up)) {
-					player_is_looking(INIT);
+					player_set_state(player_state_search);
 					exit;
 				}
 				
 				// Crouch
 				if (input_holded(vb_down)) {
-					player_is_crouching(INIT);
+					player_set_state(player_is_crouching);
 					exit;
 				}
 			}
