@@ -34,12 +34,18 @@ function sonic_init_animations(){
 	snip_set_backward(anim_search_stop);
 	
 	// Skid
-	anim_skid_fast = new Snip(spr_sonic_skid_fast, 1);
-	anim_skid_slow = new Snip(spr_sonic_skid_slow, 1);
+	anim_skid_fast = new Snip(spr_sonic_skid_fast, 1, 0, 1);
+	anim_skid_fast_loop = new Snip(spr_sonic_skid_fast, 1, 2, 3);
+	anim_skid_slow = new Snip(spr_sonic_skid_slow, 1, 0, 0);
+	anim_skid_slow_loop = new Snip(spr_sonic_skid_slow, 1, 1, 2);
 	anim_skid_turn = new Snip(spr_sonic_skid_turn, 1);
-	animation_set_callback(anim_skid_turn, player_set_state, player_state_idle);
 	
 	// Turn
 	anim_turn = new Snip(spr_sonic_turn, 1);
+	
+	// Additional parameters
+	animation_set_callback(anim_skid_turn, player_set_state, player_state_idle);
 	animation_set_callback(anim_turn, player_set_state, player_state_idle);
+	animation_set_successor(anim_skid_fast, anim_skid_fast_loop);
+	animation_set_successor(anim_skid_slow, anim_skid_slow_loop);
 }

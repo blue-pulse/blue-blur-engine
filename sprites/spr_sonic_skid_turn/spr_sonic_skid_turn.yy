@@ -26,7 +26,7 @@
   ],
   "name":"spr_sonic_skid_turn",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/3. Player/Sonic/Sprites.yy",
@@ -90,7 +90,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":16,
-    "yorigin":17,
+    "yorigin":19,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

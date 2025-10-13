@@ -187,6 +187,7 @@
     {"name":"animation_get_frame","order":24,"path":"scripts/animation_get_frame/animation_get_frame.yy",},
     {"name":"animation_play","order":23,"path":"scripts/animation_play/animation_play.yy",},
     {"name":"animation_set_callback","order":22,"path":"scripts/animation_set_callback/animation_set_callback.yy",},
+    {"name":"animation_set_successor","order":27,"path":"scripts/animation_set_successor/animation_set_successor.yy",},
     {"name":"array_rand","order":1,"path":"scripts/array_rand/array_rand.yy",},
     {"name":"audio_play_bgm","order":18,"path":"scripts/audio_play_bgm/audio_play_bgm.yy",},
     {"name":"audio_play_sfx","order":19,"path":"scripts/audio_play_sfx/audio_play_sfx.yy",},

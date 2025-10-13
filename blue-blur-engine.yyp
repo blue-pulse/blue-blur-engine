@@ -249,6 +249,7 @@
     {"id":{"name":"animation_get_frame","path":"scripts/animation_get_frame/animation_get_frame.yy",},},
     {"id":{"name":"animation_play","path":"scripts/animation_play/animation_play.yy",},},
     {"id":{"name":"animation_set_callback","path":"scripts/animation_set_callback/animation_set_callback.yy",},},
+    {"id":{"name":"animation_set_successor","path":"scripts/animation_set_successor/animation_set_successor.yy",},},
     {"id":{"name":"array_duplicate","path":"scripts/array_duplicate/array_duplicate.yy",},},
     {"id":{"name":"array_rand","path":"scripts/array_rand/array_rand.yy",},},
     {"id":{"name":"audio_play_bgm","path":"scripts/audio_play_bgm/audio_play_bgm.yy",},},

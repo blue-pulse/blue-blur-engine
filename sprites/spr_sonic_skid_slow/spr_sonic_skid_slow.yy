@@ -25,7 +25,7 @@
   ],
   "name":"spr_sonic_skid_slow",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/3. Player/Sonic/Sprites.yy",
@@ -86,7 +86,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":16,
-    "yorigin":18,
+    "yorigin":20,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

@@ -94,6 +94,8 @@ function player_state_skid(phase) {
 				exit;
 			}
 
+	        image_angle = angle;
+			
 			// Skid dust
 			if (hor_speed != 0 and ticks mod 4 == 0) {
 				var height = ver_radius - 6;
