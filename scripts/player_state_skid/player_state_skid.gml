@@ -15,38 +15,36 @@ function player_state_skid(phase) {
 			// Variables
 			var input_dir = input_opposing(vb_left, vb_right);
 			
-			// Handle ground movement
-			if (input_dir != 0) {
-				if (sign(hor_speed) != input_dir) {
-					if (ground_lock == 0) {
-						// Apply deceleration
-						hor_speed += decel * input_dir;
-						
-						// Turn around
-						if (sign(hor_speed) == input_dir) {
-							hor_speed = decel * input_dir;
-
-	                        if (sign(image_xscale) != sign(hor_speed)) {
-	                            animation_play(anim_skid_turn);
-	                            player_set_state(player_state_turn);
-								exit;
-	                        }
-
-	                        player_set_state(player_state_run);
-							exit;
-	                    }
-					}
-				}
-				
-				// Continue running
-				else {
-					player_set_state(player_state_run);
-					exit;
-				}
-			} else {
+			// Early exit
+			if (input_dir == 0 or mask_direction != gravity_direction) {
 	            player_set_state(player_state_run);
 				exit;
-	        }
+			}
+			
+			// Handle ground movement
+			if (sign(hor_speed) != input_dir) {
+				if (ground_lock == 0) {
+					// Apply deceleration
+					hor_speed += decel * input_dir;
+						
+					// Trying to turn aroung
+					if (sign(hor_speed) == input_dir) {
+						hor_speed = decel * input_dir;
+							
+						// Turn around
+						if (sign(image_xscale) != sign(hor_speed)) {
+							animation_play(anim_skid_turn);
+							player_set_state(player_state_turn);
+						} else {
+							player_set_state(player_state_run);
+						}
+						exit;
+					}
+				}
+			} else {
+				player_set_state(player_state_run);
+				exit;
+			}
 			
 			// Update position
 			if (!player_movement_ground()) {
@@ -70,6 +68,7 @@ function player_state_skid(phase) {
 				// Slide down
 				else if (relative_angle >= 45 and relative_angle <= 315) {
 					ground_lock = stumble_timer;
+					player_set_state(player_state_run);
 				}
 	        }
 			
