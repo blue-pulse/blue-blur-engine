@@ -18,7 +18,7 @@ function camera_follow_player() {
 	y = lerp(y, target_y, smooth_lerp);
 	
 	// Offset camera horizontally depending on the speed
-	if (abs(target_speed) >= 6 or target_state == player_is_spindashing) {
+	if (abs(target_speed) >= 6 or target_state == player_state_spindash) {
 		if (!scroll_delay and extended_offset != shift_value * shift_direction) {
 			extended_offset += shift_speed * shift_direction;
 		}

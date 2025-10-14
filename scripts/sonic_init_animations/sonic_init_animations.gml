@@ -38,6 +38,10 @@ function sonic_init_animations(){
 	anim_skid_slow_loop = animation_create(spr_sonic_skid_slow, 1, 1, 2);
 	anim_skid_turn = animation_create(spr_sonic_skid_turn);
 	
+	// Spindash
+	anim_spindash = animation_create(spr_sonic_spindash);
+	anim_spindash_charge =animation_create(spr_sonic_spindash_charge);
+	
 	// Turn
 	anim_turn = animation_create(spr_sonic_turn);
 	
@@ -46,4 +50,5 @@ function sonic_init_animations(){
 	animation_set_callback(anim_turn, player_set_state, player_state_idle);
 	animation_set_successor(anim_skid_fast, anim_skid_fast_loop);
 	animation_set_successor(anim_skid_slow, anim_skid_slow_loop);
+	animation_set_successor(anim_spindash_charge, anim_spindash);
 }

@@ -46,7 +46,7 @@ function player_state_crouch(phase) {
 			
 			// Spindash
 	        if (input_pressed(vb_a)) {
-				player_is_spindashing(INIT);
+				player_set_state(player_state_spindash);
 				break;
 			}
 			break;

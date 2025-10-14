@@ -13,6 +13,7 @@ is_rolling = false;
 jump_action = false;
 peelout_charge = 0;
 spindash_charge = 0;
+spindash_pitch = 1;
 state = player_state_init;
 state_prev = state;
 
@@ -66,7 +67,6 @@ slope_frict = 0.125;
 slope_frict_down = 0.3125;
 slope_frict_up = 0.078125;
 speed_cap = 6;
-spindash_atrophy = 0.96875;
 stumble_threshold = 2.5;
 unroll_threshold = 0.5;
 
