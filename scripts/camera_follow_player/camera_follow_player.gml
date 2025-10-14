@@ -7,7 +7,7 @@ function camera_follow_player() {
 	var target_state = target.state;
 	var shift_direction = (target_speed != 0) ? sign(target_speed) : target_dir;
 	var shift_up = (target_state == player_state_search);
-	var shift_down = (target_state == player_is_crouching);
+	var shift_down = (target_state == player_state_crouch);
 	
 	// Smoothly move the camera to the target position
 	if (scroll_delay) {

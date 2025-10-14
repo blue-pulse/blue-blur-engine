@@ -26,7 +26,7 @@
   ],
   "name":"spr_sonic_crouch",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/3. Player/Sonic/Sprites.yy",
@@ -89,7 +89,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":14,
+    "xorigin":13,
     "yorigin":15,
   },
   "swatchColours":null,

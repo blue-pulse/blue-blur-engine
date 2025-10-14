@@ -80,7 +80,7 @@ function player_state_idle(phase) {
 				
 				// Crouch
 				if (input_holded(vb_down)) {
-					player_set_state(player_is_crouching);
+					player_set_state(player_state_crouch);
 					exit;
 				}
 			}

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_is_crouching",
+  "%Name":"player_state_crouch",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_is_crouching",
+  "name":"player_state_crouch",
   "parent":{
     "name":"States",
     "path":"folders/3. Player/Scripts/States.yy",
