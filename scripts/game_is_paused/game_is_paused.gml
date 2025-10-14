@@ -3,5 +3,5 @@ function game_is_paused() {
 	gml_pragma("forceinline");
 	
 	// Return value
-	return window_has_focus();
+	return InputGameHasFocus();
 }
