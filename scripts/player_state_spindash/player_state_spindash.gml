@@ -15,7 +15,7 @@ function player_is_spindashing(phase)
 			animation_index = "spindash";
 			
 			// Sound
-			//audio_play_sfx(sfxSpinRev);
+			audio_play_sfx(snd_player_spindash_charge, REPLACE);
 			break;
 		}
 		default:
@@ -43,12 +43,12 @@ function player_is_spindashing(phase)
 				// Launch
 				hor_speed = image_xscale * (8 + (spindash_charge div 2));
 				
-				// Camera scroll lag
-				//camera.alarm[0] = 16;
+				// Camera
+				screen_shake(15);
 				
 				// Sound
-				//audio_stop_sound(sfxSpinRev);
-				//audio_play_sfx(sfxSpinDash);
+				audio_stop_sound(snd_player_spindash_charge);
+				audio_play_sfx(snd_player_spindash_release, REPLACE);
 				
 				// Roll
 				return player_is_rolling(INIT);
@@ -63,8 +63,8 @@ function player_is_spindashing(phase)
 				spindash_charge = min(spindash_charge + 2, 8);
 				
 				// Sound
-				//var rev_sound = //audio_play_sfx(sfxSpinRev);
-				//audio_sound_pitch(rev_sound, 1 + spindash_charge * 0.0625);
+				var rev_sound = audio_play_sfx(snd_player_spindash_charge, REPLACE);
+				audio_sound_pitch(rev_sound, 1 + spindash_charge * 0.0625);
 			}
 		}
 	}
