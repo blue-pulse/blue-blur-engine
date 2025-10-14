@@ -20,14 +20,14 @@ function player_state_run(phase) {
 						// Turn around
 						if (sign(image_xscale) == -input_dir and abs(hor_speed) <= skid_threshold) {
 							player_set_state(player_state_turn);
-							exit;
+							break;
 						}
 				
 						// Skidding
 						if (abs(hor_speed) > skid_threshold and mask_direction == gravity_direction) {
 							player_play_sfx_skid();
 							player_set_state(player_state_skid);
-							exit;
+							break;
 						}
 						
 						// Decelerate and reverse direction
@@ -57,13 +57,13 @@ function player_state_run(phase) {
 			
 			// Update position
 			if (!player_movement_ground()) {
-				exit;
+				break;
 			}
 			
 			// Falling
 			if (!is_grounded) {
 				player_is_falling(INIT);
-				exit;
+				break;
 			}
 			
 			// Steep surfaces
@@ -71,7 +71,7 @@ function player_state_run(phase) {
 				// Fall
 	            if (relative_angle >= 90 and relative_angle <= 270) {
 					player_is_falling(INIT);
-					exit;
+					break;
 	            } 
 				
 				// Slide down
@@ -86,25 +86,25 @@ function player_state_run(phase) {
 	        // Standing
 			if (hor_speed == 0 and input_dir == 0) {
 	            player_set_state(player_state_idle);
-				exit;
+				break;
 	        }
 			
 			// Jumping
 	        if (input_pressed(vb_a)) {
 				player_is_falling(-2);
-				exit;
+				break;
 			}
 			
 			// Rolling
 			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
 				audio_play_sfx(snd_player_roll, REPLACE);
 				player_is_rolling(INIT);
-				exit;
+				break;
 			}
 			
 			// Exit if pushing
 			if (animation == anim_push and sign(image_xscale) == input_dir) {
-				exit;
+				break;
 			}
 			
 			// Animate

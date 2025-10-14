@@ -10,44 +10,44 @@ function player_state_crouch(phase) {
 		case STEP:
 			// Update position
 			if (!player_movement_ground()) {
-				exit;
+				break;
 			}
 			
 			// Falling
 			if (!is_grounded) {
 				player_is_falling(INIT);
-				exit;
+				break;
 			}
 			
 			// Fall from steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270) {
 	            player_is_falling(INIT);
-				exit;
+				break;
 	        }
 			
 			// Slide down from steep surfaces
 			else if (relative_angle >= 45 and relative_angle <= 315) {
 				ground_lock = stumble_timer;
 				player_set_state(player_state_run);
-				exit;
+				break;
 			}
 			
 	        // Idle
 			if (!input_holded(vb_down)) {
 				player_set_state(player_state_idle);
-				exit;
+				break;
 			}
 			
 			// Running
 	        if (hor_speed != 0) {
 				player_set_state(player_state_run);
-				exit;
+				break;
 			}
 			
 			// Spindash
 	        if (input_pressed(vb_a)) {
 				player_is_spindashing(INIT);
-				exit;
+				break;
 			}
 			break;
 		

@@ -19,45 +19,45 @@ function player_state_turn(phase) {
 			
 			// Update position
 			if (!player_movement_ground()) {
-				exit;
+				break;
 			}
 			
 			// Falling
 			if (!is_grounded) {
 				player_is_falling(INIT);
-				exit;
+				break;
 			}
 			
 			// Fall from steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270) {
 	            player_is_falling(INIT);
-				exit;
+				break;
 	        }
 			
 			// Slide down from steep surfaces
 			else if (relative_angle >= 45 and relative_angle <= 315) {
 				ground_lock = stumble_timer;
 				player_set_state(player_state_run);
-				exit;
+				break;
 			}
 			
 			// Return to idle
 			if (!animation_get_callback(animation) and animation_ended()) {
 				player_set_state(player_state_idle)
-				exit;
+				break;
 			}
 
 			// Jumping
 	        if (input_pressed(vb_a)) {
 				player_is_falling(-2);
-				exit;
+				break;
 			}
 			
 			// Rolling
 			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
 				//audio_play_sfx(sfxRoll);
 				player_is_rolling(INIT);
-				exit;
+				break;
 			}
 	        break;
 		

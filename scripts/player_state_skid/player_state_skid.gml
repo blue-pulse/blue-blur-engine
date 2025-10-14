@@ -18,7 +18,7 @@ function player_state_skid(phase) {
 			// Early exit
 			if (input_dir == 0 or mask_direction != gravity_direction) {
 	            player_set_state(player_state_run);
-				exit;
+				break;
 			}
 			
 			// Handle ground movement
@@ -38,23 +38,23 @@ function player_state_skid(phase) {
 						} else {
 							player_set_state(player_state_run);
 						}
-						exit;
+						break;
 					}
 				}
 			} else {
 				player_set_state(player_state_run);
-				exit;
+				break;
 			}
 			
 			// Update position
 			if (!player_movement_ground()) {
-				exit;
+				break;
 			}
 			
 			// Falling
 			if (!is_grounded) {
 				player_is_falling(INIT);
-				exit;
+				break;
 			}
 						
 			// Steep surfaces
@@ -62,13 +62,14 @@ function player_state_skid(phase) {
 				// Fall
 	            if (relative_angle >= 90 and relative_angle <= 270) {
 					player_is_falling(INIT);
-					exit;
+					break;
 	            } 
 				
 				// Slide down
 				else if (relative_angle >= 45 and relative_angle <= 315) {
 					ground_lock = stumble_timer;
 					player_set_state(player_state_run);
+					break;
 				}
 	        }
 			
@@ -78,22 +79,23 @@ function player_state_skid(phase) {
 	        // Standing
 			if (hor_speed == 0 and input_dir == 0) {
 	            player_set_state(player_state_idle);
-				exit;
+				break;
 	        }
 			
 			// Jumping
 	        if (input_pressed(vb_a)) {
 				player_is_falling(-2);
-				exit;
+				break;
 			}
 			
 			// Rolling
 			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
 				//audio_play_sfx(sfxRoll);
 				player_is_rolling(INIT);
-				exit;
+				break;
 			}
-
+			
+			// Set angle
 	        image_angle = angle;
 			
 			// Skid dust
