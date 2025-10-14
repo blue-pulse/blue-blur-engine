@@ -94,11 +94,11 @@ function __InputClassPlayer(_playerIndex) constructor
     
     static __UpdateStatus = function()
     {
-        var _connected = __ghost or InputDeviceIsConnected(__device);
+        var _connected = __ghost || InputDeviceIsConnected(__device);
         
         if (_connected)
         {
-            if ((__status == INPUT_PLAYER_STATUS.NEWLY_DISCONNECTED) or (__status == INPUT_PLAYER_STATUS.DISCONNECTED))
+            if ((__status == INPUT_PLAYER_STATUS.NEWLY_DISCONNECTED) || (__status == INPUT_PLAYER_STATUS.DISCONNECTED))
             {
                 __status = INPUT_PLAYER_STATUS.NEWLY_CONNECTED;
                 if (InputDeviceIsGamepad(__device)) __lastConnectedGamepadType = InputDeviceGetGamepadType(__device);
@@ -110,7 +110,7 @@ function __InputClassPlayer(_playerIndex) constructor
         }
         else
         {
-            if ((__status == INPUT_PLAYER_STATUS.NEWLY_CONNECTED) or (__status == INPUT_PLAYER_STATUS.CONNECTED))
+            if ((__status == INPUT_PLAYER_STATUS.NEWLY_CONNECTED) || (__status == INPUT_PLAYER_STATUS.CONNECTED))
             {
                 __status = INPUT_PLAYER_STATUS.NEWLY_DISCONNECTED;
             }
@@ -137,7 +137,7 @@ function __InputClassPlayer(_playerIndex) constructor
                 if (_binding != undefined)
                 {
                     _binding = abs(_binding);
-                    _thresholdType |= ((_binding == gp_axislh) or (_binding == gp_axislv))? 1 : (((_binding == gp_axisrh) or (_binding == gp_axisrv))? 2 : 0);
+                    _thresholdType |= ((_binding == gp_axislh) || (_binding == gp_axislv))? 1 : (((_binding == gp_axisrh) || (_binding == gp_axisrv))? 2 : 0);
                 }
                 
                 ++_alternate;

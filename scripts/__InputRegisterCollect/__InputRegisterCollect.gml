@@ -44,11 +44,11 @@ function __InputRegisterCollect()
         })();
         
         //Unstick
-        if ((not INPUT_BAN_KBM) and keyboard_check(vk_anykey))
+        if ((not INPUT_BAN_KBM) && keyboard_check(vk_anykey))
         {
             if (INPUT_ON_WINDOWS)
             {
-                if (keyboard_check(vk_alt) and keyboard_check_pressed(vk_space))
+                if (keyboard_check(vk_alt) && keyboard_check_pressed(vk_space))
                 {
                     //Unstick Alt Space
                     keyboard_key_release(vk_alt);
@@ -57,15 +57,15 @@ function __InputRegisterCollect()
                     keyboard_key_release(vk_ralt);
                 }
                 
-                if (keyboard_check(0xE6) and !keyboard_check_pressed(0xE6))
+                if (keyboard_check(0xE6) && !keyboard_check_pressed(0xE6))
                 {
                     //Unstick OEM key (Power button on Steam Deck)
                     keyboard_key_release(0x0E6);
                 }
             }
-            else if (INPUT_ON_WEB and INPUT_ON_APPLE)
+            else if (INPUT_ON_WEB && INPUT_ON_APPLE)
             {
-                if (keyboard_check_released(vk_lmeta) or keyboard_check_released(vk_rmeta))
+                if (keyboard_check_released(vk_lmeta) || keyboard_check_released(vk_rmeta))
                 {
                     //Meta release sticks every key pressed during hold
                     //This is "the nuclear option", but the problem is severe
@@ -104,7 +104,7 @@ function __InputRegisterCollect()
                 {
                     keyboard_key_release(vk_rmeta);
                 }
-                else if (keyboard_check_released(vk_rmeta) and keyboard_check(vk_lmeta))
+                else if (keyboard_check_released(vk_rmeta) && keyboard_check(vk_lmeta))
                 {
                     keyboard_key_release(vk_lmeta);
                 }
@@ -116,7 +116,7 @@ function __InputRegisterCollect()
             steam_input_run_frame();
             
             //Enable Windows IME for Steam Overlay
-            if (INPUT_ON_WINDOWS and __windowFocus)
+            if (INPUT_ON_WINDOWS && __windowFocus)
             {
                 var _overlayEnabled = steam_is_overlay_activated();
                 var _imeEnabled = keyboard_virtual_status();
@@ -136,12 +136,17 @@ function __InputRegisterCollect()
             
             if (__InputSteamHandlesChanged())
             {
+                if (__INPUT_DEBUG_STEAM_INPUT)
+                {
+                    show_debug_message(__steamHandlesArray);
+                }
+                
                 __InputTrace("Steam handles changed, disconnecting all gamepads for reconnection");
                 
                 var _device = 0;
                 repeat(array_length(_gamepadArray))
                 {
-                    if (InputDeviceIsConnected(_device))
+                    if (_gamepadArray[_device] != undefined)
                     {
                         __InputPlugInExecuteCallbacks(INPUT_PLUG_IN_CALLBACK.GAMEPAD_DISCONNECTED, _device, true);
                     }
@@ -151,9 +156,21 @@ function __InputRegisterCollect()
             }
         }
         
-        if ((not INPUT_BAN_GAMEPADS) and (current_time > INPUT_GAMEPADS_COLLECT_PREDELAY))
+        if ((not INPUT_BAN_GAMEPADS) && (current_time > INPUT_GAMEPADS_COLLECT_PREDELAY))
         {
             __InputUpdateGamepadPresence();
+            
+            _i = 0;
+            repeat(array_length(__gamepadArray))
+            {
+                var _gamepad = __gamepadArray[_i];
+                if (is_struct(_gamepad))
+                {
+                    _gamepad.__UpdatePrevValues();
+                }
+                
+                ++_i;
+            }
         }
         
         //Handle rebinding
@@ -165,15 +182,23 @@ function __InputRegisterCollect()
         }
         
         //Handle hotswap
-        if ((not INPUT_BAN_HOTSWAP) and __hotswap)
+        if (not INPUT_BAN_HOTSWAP)
         {
-            if (InputPlayerGetInactive())
+            if (__hotswap)
             {
-                var _device = InputDeviceGetNewActivity();
-                if (_device != INPUT_NO_DEVICE)
+                //No active verb
+                if (InputPlayerGetInactive())
                 {
-                    InputPlayerSetDevice(_device);
-                    if (is_callable(__hotswapCallback)) __hotswapCallback();
+                    //No active device input
+                    if (not InputDeviceIsActive(InputPlayerGetDevice()))
+                    {
+                        var _device = InputDeviceGetNewActivity();
+                        if (_device != INPUT_NO_DEVICE)
+                        {
+                            InputPlayerSetDevice(_device);
+                            if (is_callable(__hotswapCallback)) __hotswapCallback();
+                        }
+                    }
                 }
             }
         }
@@ -192,7 +217,7 @@ function __InputUpdateGamepadPresence()
 {
     static _gamepadArray = __gamepadArray;
     
-    if (INPUT_ON_ANDROID and (__time - __androidEnumerationTime > INPUT_ANDROID_GAMEPAD_ENUMERATION_INTERVAL))
+    if (INPUT_ON_ANDROID && (__time - __androidEnumerationTime > INPUT_ANDROID_GAMEPAD_ENUMERATION_INTERVAL))
     {
         __androidEnumerationTime = __time;
         gamepad_enumerate();
@@ -214,7 +239,7 @@ function __InputUpdateGamepadPresence()
         {
             if (_connected)
             {
-                if (INPUT_ON_SWITCH and (_gamepad.__type != __InputGamepadIdentifySwitchType(_device)))
+                if (INPUT_ON_SWITCH && (_gamepad.__type != __InputGamepadIdentifySwitchType(_device)))
                 {
                     //When Switch L+R assignment is used to pair two gamepads we won't see a normal disconnection/reconnection
                     //Instead we have to check for changes via the gamepad description or Joy-Con left/right connected state

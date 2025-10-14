@@ -36,7 +36,7 @@ function InputBindingSetSafe(_forGamepad, _verbIndexA, _binding, _alternateA = 0
         var _verbIndexB = _collisionArray[0].verbIndex;
         var _alternateB = _collisionArray[0].alternate;
             
-        if ((_verbIndexA != _verbIndexB) or (_alternateA != _alternateB))
+        if ((_verbIndexA != _verbIndexB) || (_alternateA != _alternateB))
         {
             __InputTrace("Collision found in (forGamepad=", _forGamepad, ", verb=", InputVerbGetExportName(_verbIndexB), ", alternate=", _alternateB, ")");
             InputBindingSwap(_forGamepad, _verbIndexA, _alternateA, _verbIndexB, _alternateB, _playerIndex);

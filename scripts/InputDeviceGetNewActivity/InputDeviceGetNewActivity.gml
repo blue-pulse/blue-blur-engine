@@ -9,7 +9,7 @@ function InputDeviceGetNewActivity()
     repeat(array_length(_array))
     {
         var _device = _array[_i];
-        if (InputDeviceIsAvailable(_device) and InputDeviceIsActive(_device))
+        if (InputDeviceIsAvailable(_device) && InputDeviceIsActive(_device))
         {
             return _device;
         }

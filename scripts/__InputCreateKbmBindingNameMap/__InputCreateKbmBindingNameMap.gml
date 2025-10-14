@@ -97,14 +97,14 @@ function __InputCreateKbmBindingNameMap()
     ds_map_add(_map, 10, _map[? vk_enter]);
     
     //Reset F11 and F12 keycodes on certain platforms
-    if (INPUT_ON_LINUX or INPUT_ON_MACOS)
+    if (INPUT_ON_LINUX || INPUT_ON_MACOS)
     {
         ds_map_add(_map, 128, "f11");
         ds_map_add(_map, 129, "f12");
     }
    
     //F13 to F32 on Windows and Web
-    if (INPUT_ON_WINDOWS or INPUT_ON_WEB)
+    if (INPUT_ON_WINDOWS || INPUT_ON_WEB)
     {
         for(var _i = vk_f1 + 12; _i < vk_f1 + 32; _i++) ds_map_add(_map, _i, "f" + string(_i));
     }

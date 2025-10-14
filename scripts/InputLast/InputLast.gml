@@ -17,7 +17,7 @@ function InputLast(_verbIndexArray = -1, _playerIndex = 0)
     __INPUT_VALIDATE_PLAYER_INDEX
     
     //Convert `-1` to the array of all verb definitions
-    if (is_numeric(_verbIndexArray) and (_verbIndexArray == -1))
+    if (is_numeric(_verbIndexArray) && (_verbIndexArray == -1))
     {
         _verbIndexArray = _verbDefIndexArray;
     }
@@ -28,9 +28,9 @@ function InputLast(_verbIndexArray = -1, _playerIndex = 0)
         var _maxVerb = undefined;
         
         var _i = 0;
-        repeat(array_length(_verbDefIndexArray))
+        repeat(array_length(_verbIndexArray))
         {
-            var _verbIndex = _verbDefIndexArray[_i];
+            var _verbIndex = _verbIndexArray[_i];
             
             var _verbState = __verbStateArray[_verbIndex];
             if (_verbState.__pressFrame > _maxTime)

@@ -19,7 +19,7 @@ function InputDirection(_default, _clusterIndex, _playerIndex = 0)
         var _x = __clusterXArray[_clusterIndex];
         var _y = __clusterYArray[_clusterIndex];
         
-        if ((_x == 0) and (_y == 0)) return _default;
+        if ((_x == 0) && (_y == 0)) return _default;
         return point_direction(0, 0, _x, _y);
     }
 }

@@ -7,7 +7,7 @@
 function InputMouseCheck(_binding = mb_left)
 {
     static _system = __InputSystem();
-    if (INPUT_BLOCK_MOUSE_CHECKS or _system.__pointerBlocked) return false;
+    if (INPUT_BLOCK_MOUSE_CHECKS || _system.__pointerBlocked) return false;
     
     return __InputMouseCheckRaw(_binding);
 }
@@ -16,13 +16,13 @@ function __InputMouseCheckRaw(_binding)
 {
     static _system = __InputSystem();
     
-    if not ((_binding == mb_left) or (_binding == mb_any) or (_binding == mb_none))
+    if not ((_binding == mb_left) || (_binding == mb_any) || (_binding == mb_none))
     {
         //Extended mouse buttons
         return device_mouse_check_button(0, _binding);
     }
     
-    var _left = (INPUT_ON_WINDOWS and _system.__tapClick)? true : device_mouse_check_button(0, mb_left);
+    var _left = (INPUT_ON_WINDOWS && _system.__tapClick)? true : device_mouse_check_button(0, mb_left);
     
     if (_binding == mb_left)
     {
@@ -30,11 +30,11 @@ function __InputMouseCheckRaw(_binding)
     }
     else if (_binding == mb_any)
     {
-        return (_left or device_mouse_check_button(0, mb_any));
+        return (_left || device_mouse_check_button(0, mb_any));
     }
     else if (_binding == mb_none)
     {
-        return ((not _left) and device_mouse_check_button(0, mb_none));
+        return ((not _left) && device_mouse_check_button(0, mb_none));
     }
     
     __InputError("Mouse button out of range (", _binding, ")");

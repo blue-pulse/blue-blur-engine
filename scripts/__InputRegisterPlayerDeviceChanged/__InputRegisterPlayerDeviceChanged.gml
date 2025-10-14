@@ -11,7 +11,7 @@ function __InputRegisterPlayerDeviceChanged()
         with(_playerArray[_playerIndex])
         {
             //Unset the device for the player previously using it
-            if ((_device != INPUT_NO_DEVICE) and (_device != INPUT_GENERIC_DEVICE))
+            if ((_device != INPUT_NO_DEVICE) && (_device != INPUT_GENERIC_DEVICE))
             {
                 var _oldPlayerIndex = _deviceMap[? _device];
                 if (_oldPlayerIndex != undefined)
@@ -53,8 +53,11 @@ function __InputRegisterPlayerDeviceChanged()
             //Immediately update status
             __UpdateStatus();
             
+            //Make sure this device isn't rebinding
+            InputDeviceSetRebinding(__device, false);
+            
             //Block other players from using this device
-            if ((_device != INPUT_NO_DEVICE) and (_device != INPUT_GENERIC_DEVICE))
+            if ((_device != INPUT_NO_DEVICE) && (_device != INPUT_GENERIC_DEVICE))
             {
                 _deviceMap[? _device] = _playerIndex;
             }

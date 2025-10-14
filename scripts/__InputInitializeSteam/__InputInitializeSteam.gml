@@ -4,6 +4,7 @@ function __InputInitializeSteam()
 {
     with(__InputSystem())
     {
+        __usingSteam      = false;
         __usingSteamworks = false;
         __onSteamDeck     = false;
         __onWINE          = false;
@@ -14,6 +15,12 @@ function __InputInitializeSteam()
         __steamTypeToInputTypeMap    = ds_map_create();
         __steamTypeToDescriptionMap  = ds_map_create();
         __steamInputTypeIgnoreMap    = ds_map_create();
+         
+        var _steamEnviron = environment_get_variable("SteamEnv");
+        if ((_steamEnviron != "") && (_steamEnviron == "1"))
+        {
+            __usingSteam = true;
+        }
         
         try
         {
@@ -26,9 +33,9 @@ function __InputInitializeSteam()
             __InputTrace("Steamworks extension unavailable");
         }
         
-        if (__usingSteamworks and (string(steam_get_app_id()) == "480"))
+        if (__usingSteamworks && (string(steam_get_app_id()) == "480"))
         {
-            __InputError("Steam application ID 480 is not supported.\nPlease change to your game's actual Steam application ID.\n \nIf you need a testing ID you should:\n1. Use ID 378090\n2. Install the game itself (Rebel Wings) on Steam.");
+            __InputError("Steam application ID 480 is not supported.\nPlease change to your game's actual Steam application ID.\n \nIf you need a testing ID you should:\n1. Use ID 378090\n2. Set Debug to Enabled\n3. Install the game itself (Rebel Wings) on Steam.");
         }
         
         //Identify Steam Deck in absence of Steamworks
@@ -51,7 +58,7 @@ function __InputInitializeSteam()
                     if (INPUT_ON_WINDOWS) _identifier = _map[? "video_adapter_description"];
                     
                     //Steam Deck GPU identifier
-                    if ((_identifier != undefined) and __InputStringContains(_identifier, "AMD Custom GPU 0"))
+                    if ((_identifier != undefined) && __InputStringContains(_identifier, "AMD Custom GPU 0"))
                     {
                         __onSteamDeck = true;
                     }
@@ -115,11 +122,10 @@ function __InputInitializeSteam()
         //Build a Linux-only gamepad ignore map
         if (INPUT_ON_LINUX)
         {
-            var _steamEnviron = environment_get_variable("SteamEnv");
             var _steamConfigs = environment_get_variable("EnableConfiguratorSupport");
-        
-            if (((_steamEnviron != "") and (_steamEnviron == "1") or __usingSteamworks)
-            and   (_steamConfigs != "") and (_steamConfigs == string_digits(_steamConfigs)))
+            
+            if ((__usingSteam || __usingSteamworks)
+            &&  (_steamConfigs != "") && (_steamConfigs == string_digits(_steamConfigs)))
             {
                 var _bitmask = real(_steamConfigs);
                 
@@ -129,7 +135,7 @@ function __InputInitializeSteam()
                 var _steamGeneric = (_bitmask & 4);
                 var _steamSwitch  = (_bitmask & 8);
                 
-                if (__usingSteamworks or (environment_get_variable("SDL_GAMECONTROLLER_IGNORE_DEVICES") == ""))
+                if (__usingSteamworks || (environment_get_variable("SDL_GAMECONTROLLER_IGNORE_DEVICES") == ""))
                 {
                     //If ignore hint isn't set, GM accesses controllers meant to be blocked
                     //We address this by adding the Steam config types to our own blocklist
@@ -158,7 +164,7 @@ function __InputInitializeSteam()
                 }
                 
                 //Check for a reducible type configuration
-                if (!_steamGeneric and !_steamPS and (!_steamSwitch or __steamSwitchLabels))
+                if (!_steamGeneric && !_steamPS && (!_steamSwitch || __steamSwitchLabels))
                 {
                     //The remaining configurations are in the Xbox Controller style including:
                     //Steam Controller, Steam Link, Steam Deck, Xbox or Switch with AB/XY swap

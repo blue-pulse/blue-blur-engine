@@ -13,7 +13,7 @@ function __InputRegisterUpdate()
         __pointerBlockedByUserThisFrame = false;
         
         //Handle window state
-        if (INPUT_ON_DESKTOP and (not INPUT_ON_WEB))
+        if (INPUT_ON_DESKTOP && (not INPUT_ON_WEB))
         {
             if (os_is_paused())
             {
@@ -50,9 +50,9 @@ function __InputRegisterUpdate()
                     }
                 }
                 else if ((keyboard_key != vk_nokey) 
-                     or  (mouse_button != mb_none)
-                     or  (INPUT_ON_WINDOWS and window_has_focus())
-                     or  (INPUT_ON_MACOS   and __pointerMoved))
+                     ||  (mouse_button != mb_none)
+                     ||  (INPUT_ON_WINDOWS && window_has_focus())
+                     ||  (INPUT_ON_MACOS   && __pointerMoved))
                 {
                     //Regained focus
                     __windowFocus                   = true;
@@ -76,7 +76,7 @@ function __InputRegisterUpdate()
             __prevPointerDeviceX = __pointerDeviceX;
             __prevPointerDeviceY = __pointerDeviceY;
             
-            if (__pointerBlockedByUser or (__pointerBlockedByWindowDefocus and (not INPUT_ON_MACOS)) or ((not INPUT_BAN_KBM) and InputDeviceGetRebinding(INPUT_KBM)))
+            if (__pointerBlockedByUser || (__pointerBlockedByWindowDefocus && (not INPUT_ON_MACOS)) || ((not INPUT_BAN_KBM) && InputDeviceGetRebinding(INPUT_KBM)))
             {
                 __pointerBlocked = true;
             }

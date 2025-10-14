@@ -17,7 +17,7 @@ function InputDeviceEnumerate(_includeGenericDevice = false)
     {
         var _gamepadCount = gamepad_get_device_count();
         
-        if ((not INPUT_ON_WEB) and (INPUT_ON_MACOS or ((not _system.__usingSteamworks) and INPUT_ON_WINDOWS) or (_system.__usingSteamworks and INPUT_ON_LINUX)))
+        if ((not INPUT_ON_WEB) && (INPUT_ON_MACOS || ((not _system.__usingSteamworks) && INPUT_ON_WINDOWS) || (_system.__usingSteamworks && INPUT_ON_LINUX)))
         {
             //Search last-to-first on platforms with low-index virtual controllers (Steam Input, ViGEm)
             //We want real devices to take priority over virtual ones where possible to avoid thrashing

@@ -18,7 +18,7 @@ function InputDeviceGetDescription(_device)
         if (not InputDeviceIsConnected(_device)) return string_concat("gamepad ", _device);
         
         var _gamepad = _gamepadArray[_device];
-        if ((_gamepad == undefined) or _gamepad.__blocked) return string_concat("gamepad ", _device);
+        if ((_gamepad == undefined) || _gamepad.__blocked) return string_concat("gamepad ", _device);
         
         return _gamepad.__description;
     }

@@ -16,7 +16,7 @@ function InputDeviceGetNewActivityOnVerb(_verbIndex, _playerIndex = 0)
     {
         var _device = _array[_i];
         if (InputDeviceIsAvailable(_device)
-        and  InputDeviceCheckViaPlayer(_device, _verbIndex, _playerIndex))
+        &&  InputDeviceCheckViaPlayer(_device, _verbIndex, _playerIndex))
         {
             return _device;
         }

@@ -12,10 +12,10 @@ function InputDeviceIsConnected(_device)
     
     if (_device >= 0)
     {
-        if (INPUT_BAN_GAMEPADS or (_device >= array_length(_gamepadArray))) return false;
+        if (INPUT_BAN_GAMEPADS || (_device >= array_length(_gamepadArray))) return false;
         
         var _struct = _gamepadArray[_device];
-        return ((_struct != undefined) and (not _struct.__blocked));
+        return ((_struct != undefined) && (not _struct.__blocked));
     }
     else if (_device == INPUT_KBM)
     {
@@ -23,7 +23,7 @@ function InputDeviceIsConnected(_device)
     }
     else if (_device == INPUT_TOUCH)
     {
-        return ((not INPUT_BAN_TOUCH) or (INPUT_ALLOW_TOUCH_ON_DESKTOP and INPUT_ON_DESKTOP));
+        return ((not INPUT_BAN_TOUCH) || (INPUT_ALLOW_TOUCH_ON_DESKTOP && INPUT_ON_DESKTOP));
     }
     else if (_device == INPUT_GENERIC_DEVICE)
     {

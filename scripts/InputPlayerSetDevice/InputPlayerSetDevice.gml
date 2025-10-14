@@ -23,7 +23,7 @@ function InputPlayerSetDevice(_device, _playerIndex = 0)
     
     if (_system.__hotswap)
     {
-        if ((_playerIndex != 0) and (_device != INPUT_NO_DEVICE))
+        if ((_playerIndex != 0) && (_device != INPUT_NO_DEVICE))
         {
             __InputError($"Cannot set player {_playerIndex} device to {_device}, hotswap mode is enabled");
         }

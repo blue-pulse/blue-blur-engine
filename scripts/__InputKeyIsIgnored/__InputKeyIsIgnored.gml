@@ -26,7 +26,7 @@ function __InputKeyIsIgnored(_keyCode)
             _ignoreMap[? vk_backspace] = true; //Emmitted by hard and soft "Back" buttons, gamepad "B" button
         }
         
-        if (INPUT_ON_MOBILE and INPUT_ON_APPLE)
+        if (INPUT_ON_MOBILE && INPUT_ON_APPLE)
         {
             _ignoreMap[? 0x7C] = true; //Screenshot
         }
@@ -47,7 +47,7 @@ function __InputKeyIsIgnored(_keyCode)
         _ignoreMap[? vk_numlock] = true;   //Num Lock
         _ignoreMap[? vk_scrollock] = true; //Scroll Lock
         
-        if (INPUT_ON_WEB or INPUT_ON_WINDOWS)
+        if (INPUT_ON_WEB || INPUT_ON_WINDOWS)
         {
             _ignoreMap[? 0x15] = true; //IME Kana/Hanguel
             _ignoreMap[? 0x16] = true; //IME On
@@ -89,7 +89,7 @@ function __InputKeyIsIgnored(_keyCode)
     })();
     
     if (_keyCode == undefined) return true;
-    if ((_keyCode < INPUT_KEYCODE_MIN) or (_keyCode > INPUT_KEYCODE_MAX)) return true;
+    if ((_keyCode < INPUT_KEYCODE_MIN) || (_keyCode > INPUT_KEYCODE_MAX)) return true;
     
     return ds_map_exists(_ignoreMap, _keyCode);
 }

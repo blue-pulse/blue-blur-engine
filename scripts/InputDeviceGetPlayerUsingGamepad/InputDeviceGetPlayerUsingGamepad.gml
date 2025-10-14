@@ -15,7 +15,7 @@ function InputDeviceGetPlayerUsingGamepad(_ignoreDisconnected = true)
     var _playerIndex = 0;
     repeat(INPUT_MAX_PLAYERS)
     {
-        if (((not _ignoreDisconnected) or InputPlayerIsConnected(_playerIndex)) and InputDeviceIsGamepad(_playerArray[_playerIndex].__device))
+        if (((not _ignoreDisconnected) || InputPlayerIsConnected(_playerIndex)) && InputDeviceIsGamepad(_playerArray[_playerIndex].__device))
         {
             return _playerIndex;
         }

@@ -14,7 +14,7 @@ function InputPressedMany(_verbIndexArray, _playerIndexArray = 0)
     static _playerArray = __InputSystemPlayerArray();
     
     //Convert `-1` to the array of all verb definitions
-    if (is_numeric(_verbIndexArray) and (_verbIndexArray == -1))
+    if (is_numeric(_verbIndexArray) && (_verbIndexArray == -1))
     {
         _verbIndexArray = _verbDefIndexArray;
     }

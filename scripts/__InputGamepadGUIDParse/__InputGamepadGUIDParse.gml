@@ -1,7 +1,6 @@
 // Feather disable all
 
 /// @param GUID
-/// @param legacy
 
 function __InputGamepadGUIDParse(_guid)
 {
@@ -44,7 +43,7 @@ function __InputGamepadGUIDParse(_guid)
         //Check to see if N1 for this GUID is what we expect (OS bus for USB or Bluetooth)
         //In some cases, what we expect for this value is going to be different, so this isn't necessarily something that invalidates VID+PID checking
         if ((string_copy(_guid, 1, 4) != "0300") 
-        and  (string_copy(_guid, 1, 4) != "0500"))
+        &&  (string_copy(_guid, 1, 4) != "0500"))
         {
             __InputTrace("Warning! GUID \"", _guid, "\" driver ID does not match expected (Found ", string_copy(_guid, 1, 4), ", expect either 0300 or 0500)");
         }

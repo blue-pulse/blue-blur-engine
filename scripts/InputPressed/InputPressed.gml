@@ -13,6 +13,6 @@ function InputPressed(_verb, _playerIndex = 0)
     
     with(_playerArray[_playerIndex].__verbStateArray[_verb])
     {
-        return ((not __prevHeld) and __held);
+        return ((not __prevHeld) && __held);
     }
 }

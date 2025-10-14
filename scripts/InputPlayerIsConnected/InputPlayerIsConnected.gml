@@ -14,6 +14,6 @@ function InputPlayerIsConnected(_playerIndex = 0)
     
     with(_playerArray[_playerIndex])
     {
-        return ((__status == INPUT_PLAYER_STATUS.NEWLY_CONNECTED) or (__status == INPUT_PLAYER_STATUS.CONNECTED));
+        return ((__status == INPUT_PLAYER_STATUS.NEWLY_CONNECTED) || (__status == INPUT_PLAYER_STATUS.CONNECTED));
     }
 }

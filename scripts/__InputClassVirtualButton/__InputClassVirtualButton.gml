@@ -353,7 +353,7 @@ function __InputClassVirtualButton() constructor
         if (__destroyed) return self;
         
         //Clear state when deactivating
-        if (!_state and __active) __ClearState();
+        if (!_state && __active) __ClearState();
         
         __active = _state;
         
@@ -412,7 +412,7 @@ function __InputClassVirtualButton() constructor
     static FirstTouchOnly = function(_state)
     {
         //If this Button has captured 
-        if (_state and (__touchDevice > 0)) __ClearState();
+        if (_state && (__touchDevice > 0)) __ClearState();
         
         __firstTouchOnly = _state;
         
@@ -458,7 +458,7 @@ function __InputClassVirtualButton() constructor
     {
         if (__destroyed) return false;
         
-        return ((not __prevHeld) and __held);
+        return ((not __prevHeld) && __held);
     }
     
     static Check = function()
@@ -472,7 +472,7 @@ function __InputClassVirtualButton() constructor
     {
         if (__destroyed) return false;
         
-        return (__prevHeld and (not __held));
+        return (__prevHeld && (not __held));
     }
     
     static GetX = function()
@@ -708,7 +708,7 @@ function __InputClassVirtualButton() constructor
         
         if (__releaseBehavior == INPUT_VIRTUAL_RELEASE.RESET_POSITION)
         {
-            if ((__startX != undefined) and (__startY != undefined))
+            if ((__startX != undefined) && (__startY != undefined))
             {
                 var _dx = __startX - __x;
                 var _dy = __startY - __y;
@@ -733,7 +733,7 @@ function __InputClassVirtualButton() constructor
         if (__touchDevice != undefined) return false;
         if (__circular == undefined) return false;
         if (!__active) return false;
-        if (__firstTouchOnly and (_device > 0)) return false;
+        if (__firstTouchOnly && (_device > 0)) return false;
         
         var _touch_x = device_mouse_x_to_gui(_device);
         var _touch_y = device_mouse_y_to_gui(_device);
@@ -770,14 +770,14 @@ function __InputClassVirtualButton() constructor
     {
         var _touchDevice = __touchDevice;
         
-        if (__destroyed or (_touchDevice == undefined))
+        if (__destroyed || (_touchDevice == undefined))
         {
             __held = false;
             return undefined;
         }
         
         //We released last frame, clear state entirely
-        if (__prevHeld and (not __held))
+        if (__prevHeld && (not __held))
         {
             __ClearState();
             
@@ -814,7 +814,7 @@ function __InputClassVirtualButton() constructor
                 //Guard iOS dropping a sustained hold on SystemGestureGate timeout
                 if (INPUT_ON_IOS)
                 {
-                    if (!_sustain and (_system.__frame - __captureFrame > 20))
+                    if (!_sustain && (_system.__frame - __captureFrame > 20))
                     {
                         __heldBuffer = not __heldBuffer;
                         if (__heldBuffer) _sustain = true;
@@ -837,7 +837,7 @@ function __InputClassVirtualButton() constructor
                 __prevX = __touchX;
                 __prevY = __touchY;
                 
-                if ((not INPUT_ON_IOS) or (not __heldBuffer))
+                if ((not INPUT_ON_IOS) || (not __heldBuffer))
                 {
                     __touchX = device_mouse_x_to_gui(_touchDevice);
                     __touchY = device_mouse_y_to_gui(_touchDevice);

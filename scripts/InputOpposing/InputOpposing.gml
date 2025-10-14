@@ -19,10 +19,10 @@ function InputOpposing(_verbNeg, _verbPos, _playerIndex = 0, _mostRecent = INPUT
     var _heldPos = InputCheck(_verbPos, _playerIndex);
     
     //Neither
-    if ((not _heldNeg) and (not _heldPos)) return 0;
+    if ((not _heldNeg) && (not _heldPos)) return 0;
     
     //Both
-    if (_heldNeg and _heldPos and (not _mostRecent)) return 0;
+    if (_heldNeg && _heldPos && (not _mostRecent)) return 0;
         
     //Exclusive
     if (not _heldPos) return (_heldNeg? -1 : 0);

@@ -16,6 +16,6 @@ function InputLongReleased(_verbIndex, _playerIndex = 0, _duration = INPUT_LONG_
     
     with(_playerArray[_playerIndex].__verbStateArray[_verbIndex])
     {
-        return (__prevHeld and (not __held) and ((_system.__frame - __pressFrame) >= _duration));
+        return (__prevHeld && (not __held) && ((_system.__frame - __pressFrame) >= _duration));
     }
 }

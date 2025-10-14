@@ -31,15 +31,15 @@ function InputDeviceCheckViaPlayer(_device, _verbIndex, _playerIndex = 0)
                 if (_rawBinding != undefined)
                 {
                     var _absBinding = abs(_rawBinding);
-                    if ((_absBinding == gp_shoulderlb) or (_absBinding == gp_shoulderrb))
+                    if ((_absBinding == gp_shoulderlb) || (_absBinding == gp_shoulderrb))
                     {
                         return (_readArray[_absBinding - INPUT_GAMEPAD_BINDING_MIN](_device, _absBinding) > INPUT_GAMEPAD_TRIGGER_MIN_THRESHOLD);
                     }
-                    else if ((_absBinding == gp_axislh) or (_absBinding == gp_axislv))
+                    else if ((_absBinding == gp_axislh) || (_absBinding == gp_axislv))
                     {
                         return (_readArray[_absBinding - INPUT_GAMEPAD_BINDING_MIN](_device, _absBinding) > _minLeft);
                     }
-                    else if ((_absBinding == gp_axisrh) or (_absBinding == gp_axisrv))
+                    else if ((_absBinding == gp_axisrh) || (_absBinding == gp_axisrv))
                     {
                         return (_readArray[_absBinding - INPUT_GAMEPAD_BINDING_MIN](_device, _absBinding) > _minRight);
                     }
@@ -61,10 +61,10 @@ function InputDeviceCheckViaPlayer(_device, _verbIndex, _playerIndex = 0)
                 var _binding = _alternateArray[_i];
                 
                 if ((_binding == mb_left)
-                 or (_binding == mb_middle)
-                 or (_binding == mb_right)
-                 or (_binding == mb_side1)
-                 or (_binding == mb_side2))
+                 || (_binding == mb_middle)
+                 || (_binding == mb_right)
+                 || (_binding == mb_side1)
+                 || (_binding == mb_side2))
                 {
                     if (mouse_check_button(_binding)) return true;
                 }

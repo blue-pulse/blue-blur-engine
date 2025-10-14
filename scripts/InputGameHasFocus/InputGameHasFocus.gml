@@ -5,5 +5,5 @@
 function InputGameHasFocus()
 {
     static _system = __InputSystem();
-    return (_system.__windowFocus and !os_is_paused());
+    return (_system.__windowFocus && !os_is_paused());
 }

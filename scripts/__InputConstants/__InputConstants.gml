@@ -11,8 +11,8 @@
 //                                                                        //
 ////////////////////////////////////////////////////////////////////////////
 
-#macro INPUT_VERSION  "10.2.0"
-#macro INPUT_DATE     "2025-08-09"
+#macro INPUT_VERSION  "10.2.2"
+#macro INPUT_DATE     "2025-09-20"
 
 #macro INPUT_NO_DEVICE       -666
 #macro INPUT_KBM             -1
@@ -106,24 +106,24 @@ enum INPUT_PLUG_IN_CALLBACK
 #macro INPUT_ON_WINDOWS  (os_type == os_windows)
 #macro INPUT_ON_MACOS    (os_type == os_macosx)
 #macro INPUT_ON_LINUX    (os_type == os_linux)
-#macro INPUT_ON_IOS      (os_type == os_ios or os_type == os_tvos)
+#macro INPUT_ON_IOS      (os_type == os_ios || os_type == os_tvos)
 #macro INPUT_ON_ANDROID  (os_type == os_android)
-#macro INPUT_ON_XBOX     ((os_type == os_xboxone) or (os_type == os_xboxseriesxs))
+#macro INPUT_ON_XBOX     ((os_type == os_xboxone) || (os_type == os_xboxseriesxs))
 #macro INPUT_ON_PS4      (os_type == os_ps4)
 #macro INPUT_ON_PS5      (os_type == os_ps5)
 #macro INPUT_ON_SWITCH   (os_type == os_switch)
-#macro INPUT_ON_CONSOLE  (INPUT_ON_XBOX or INPUT_ON_PS4 or INPUT_ON_PS5 or INPUT_ON_SWITCH)
-#macro INPUT_ON_APPLE    (INPUT_ON_MACOS or INPUT_ON_IOS)
+#macro INPUT_ON_CONSOLE  (INPUT_ON_XBOX || INPUT_ON_PS4 || INPUT_ON_PS5 || INPUT_ON_SWITCH)
+#macro INPUT_ON_APPLE    (INPUT_ON_MACOS || INPUT_ON_IOS)
 #macro INPUT_ON_OPERAGX  (os_type == os_operagx)
-#macro INPUT_ON_WEB      ((os_browser != browser_not_a_browser) or INPUT_ON_OPERAGX)
+#macro INPUT_ON_WEB      ((os_browser != browser_not_a_browser) || INPUT_ON_OPERAGX)
 
 //Runtime on web, constant on native as of 2024.2
 //Tested and confirmed in VM bytecode disassembly
-#macro INPUT_ON_DESKTOP  (INPUT_ON_WINDOWS or INPUT_ON_MACOS or INPUT_ON_LINUX or (INPUT_ON_OPERAGX and !__InputOnOperaGXMobile()))
-#macro INPUT_ON_MOBILE   (INPUT_ON_ANDROID or INPUT_ON_IOS or (INPUT_ON_OPERAGX and __InputOnOperaGXMobile()))
+#macro INPUT_ON_DESKTOP  (INPUT_ON_WINDOWS || INPUT_ON_MACOS || INPUT_ON_LINUX || (INPUT_ON_OPERAGX && !__InputOnOperaGXMobile()))
+#macro INPUT_ON_MOBILE   (INPUT_ON_ANDROID || INPUT_ON_IOS || (INPUT_ON_OPERAGX && __InputOnOperaGXMobile()))
 
-#macro INPUT_STEAMWORKS_SUPPORT   ((INPUT_ON_LINUX or INPUT_ON_WINDOWS) and (not INPUT_ON_WEB))
-#macro INPUT_SDL_SUPPORT          ((not INPUT_ON_WEB) and INPUT_ON_DESKTOP)
+#macro INPUT_STEAMWORKS_SUPPORT   ((INPUT_ON_LINUX || INPUT_ON_WINDOWS) && (not INPUT_ON_WEB))
+#macro INPUT_SDL_SUPPORT          ((not INPUT_ON_WEB) && INPUT_ON_DESKTOP)
 
 #macro INPUT_BAN_KBM       (not INPUT_ON_DESKTOP)
 #macro INPUT_BAN_TOUCH     (not INPUT_ON_MOBILE)
@@ -187,5 +187,6 @@ enum INPUT_PLUG_IN_CALLBACK
 // 32809 = gp_extra5
 // 32810 = gp_extra6
 
-#macro INPUT_GAMEPAD_BINDING_MIN  gp_face1
-#macro INPUT_GAMEPAD_BINDING_MAX  gp_extra6
+#macro INPUT_GAMEPAD_BINDING_MIN    gp_face1
+#macro INPUT_GAMEPAD_BINDING_MAX    gp_extra6
+#macro INPUT_GAMEPAD_BINDING_COUNT  (1 + INPUT_GAMEPAD_BINDING_MAX - INPUT_GAMEPAD_BINDING_MIN)

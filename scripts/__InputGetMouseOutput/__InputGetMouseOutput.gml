@@ -15,7 +15,7 @@ function __InputGetMouseOutput()
             return undefined;
         }
         
-        if (INPUT_ON_DESKTOP and (not INPUT_ON_WEB))
+        if (INPUT_ON_DESKTOP && (not INPUT_ON_WEB))
         {
             //Desktop native
             if (mouse_button != mb_none)

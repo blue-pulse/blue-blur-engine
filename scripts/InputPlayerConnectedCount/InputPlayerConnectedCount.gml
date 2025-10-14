@@ -12,7 +12,7 @@ function InputPlayerConnectedCount()
     repeat(INPUT_MAX_PLAYERS)
     {
         var _status = _playerArray[_i].__status;
-        if ((_status == INPUT_PLAYER_STATUS.NEWLY_CONNECTED) or (_status == INPUT_PLAYER_STATUS.CONNECTED))
+        if ((_status == INPUT_PLAYER_STATUS.NEWLY_CONNECTED) || (_status == INPUT_PLAYER_STATUS.CONNECTED))
         {
             ++_count;
         }

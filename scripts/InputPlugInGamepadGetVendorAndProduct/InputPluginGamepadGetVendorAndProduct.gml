@@ -7,7 +7,7 @@ function InputPlugInGamepadGetVendorAndProduct(_device)
 {
     static _gamepadArray = __InputSystem().__gamepadArray;
     
-    if ((_device >= 0) and (_device < array_length(_gamepadArray)))
+    if ((_device >= 0) && (_device < array_length(_gamepadArray)))
     {
         with(_gamepadArray[_device])
         {

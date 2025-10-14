@@ -18,14 +18,14 @@ function __InputRegisterCollectPlayer()
             var _valueRawArray   = __valueRawArray;
             var _valueClampArray = __valueClampArray;
             
-            if ((not _connected) or __blocked or __ghost or InputDeviceGetRebinding(_device) or (not InputGameHasFocus()) or __InputRestartTimeout())
+            if ((not _connected) || __blocked || __ghost || InputDeviceGetRebinding(_device) || (not InputGameHasFocus()) || __InputRestartTimeout())
             {
                 array_map_ext(_valueRawArray,   function() { return 0; });
                 array_map_ext(_valueClampArray, function() { return 0; });
             }
             else
             {
-                if ((_device == INPUT_TOUCH) or (INPUT_MOUSE_CAN_USE_VIRTUAL_BUTTONS and (_device == INPUT_KBM)))
+                if ((_device == INPUT_TOUCH) || (INPUT_MOUSE_CAN_USE_VIRTUAL_BUTTONS && (_device == INPUT_KBM)))
                 {
                     //Detect any new touch points and find the top-most button to handle it
                     var _i = 0;
@@ -83,15 +83,15 @@ function __InputRegisterCollectPlayer()
                                 {
                                     _valueRaw = _raw;
                                     
-                                    if ((_absBinding == gp_shoulderlb) or (_absBinding == gp_shoulderrb))
+                                    if ((_absBinding == gp_shoulderlb) || (_absBinding == gp_shoulderrb))
                                     {
                                         _valueClamp = clamp((_raw - INPUT_GAMEPAD_TRIGGER_MIN_THRESHOLD) / (INPUT_GAMEPAD_TRIGGER_MAX_THRESHOLD - INPUT_GAMEPAD_TRIGGER_MIN_THRESHOLD), 0, 1);
                                     }
-                                    else if ((_absBinding == gp_axislh) or (_absBinding == gp_axislv))
+                                    else if ((_absBinding == gp_axislh) || (_absBinding == gp_axislv))
                                     {
                                         _valueClamp = clamp((_raw - _minLeft) / (_maxLeft - _minLeft), 0, 1);
                                     }
-                                    else if ((_absBinding == gp_axisrh) or (_absBinding == gp_axisrv))
+                                    else if ((_absBinding == gp_axisrh) || (_absBinding == gp_axisrv))
                                     {
                                         _valueClamp = clamp((_raw - _minRight) / (_maxRight - _minRight), 0, 1);
                                     }
@@ -149,10 +149,10 @@ function __InputRegisterCollectPlayer()
                                 if (_binding != undefined)
                                 {
                                     if ((_binding == mb_left)
-                                    or (_binding == mb_middle)
-                                    or (_binding == mb_right)
-                                    or (_binding == mb_side1)
-                                    or (_binding == mb_side2))
+                                    || (_binding == mb_middle)
+                                    || (_binding == mb_right)
+                                    || (_binding == mb_side1)
+                                    || (_binding == mb_side2))
                                     {
                                         if (mouse_check_button(_binding)) _newHeld = true;
                                     }
@@ -198,10 +198,10 @@ function __InputRegisterCollectPlayer()
                                 if (_binding != undefined)
                                 {
                                     if ((_binding == mb_left)
-                                    or  (_binding == mb_middle)
-                                    or  (_binding == mb_right)
-                                    or  (_binding == mb_side1)
-                                    or  (_binding == mb_side2))
+                                    ||  (_binding == mb_middle)
+                                    ||  (_binding == mb_right)
+                                    ||  (_binding == mb_side1)
+                                    ||  (_binding == mb_side2))
                                     {
                                         if (mouse_check_button(_binding)) _newHeld = true;
                                     }

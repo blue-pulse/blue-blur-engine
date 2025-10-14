@@ -85,7 +85,7 @@ function __InputCompareVersions(_targetVersion, _actualVersion)
         function(_char)
         {
             var _ord = ord(_char);
-            if (((_ord >= 48) and (_ord <= 57)) or (_ord == 46))
+            if (((_ord >= 48) && (_ord <= 57)) || (_ord == 46))
             {
                 array_push(__array, _char);
             }

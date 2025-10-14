@@ -14,13 +14,14 @@
 /// @param {Bool} state
 /// @param {Array<Enum.INPUT_VERB,Real>} [ignoreArray]
 /// @param {Array<Enum.INPUT_VERB,Real>} [allowArray]
+/// @param {Bool} [consume=true]
 
-function InputDeviceSetRebinding(_device, _state, _ignoreArray = undefined, _allowArray = undefined)
+function InputDeviceSetRebinding(_device, _state, _ignoreArray = undefined, _allowArray = undefined, _consume = true)
 {
     static _rebindingMap   = __InputSystem().__rebindingMap;
     static _rebindingArray = __InputSystem().__rebindingArray;
     
-    if ((_device != INPUT_KBM) and (_device < 0))
+    if ((_device != INPUT_KBM) && (_device < 0))
     {
         return;
     }
@@ -33,7 +34,10 @@ function InputDeviceSetRebinding(_device, _state, _ignoreArray = undefined, _all
             _rebindingMap[? _device] = _handler;
             array_push(_rebindingArray, _handler);
             
-            InputVerbConsumeAll(InputDeviceGetPlayer(_device));
+            if (_consume)
+            {
+                InputVerbConsumeAll(InputDeviceGetPlayer(_device));
+            }
         }
     }
     else
@@ -55,7 +59,10 @@ function InputDeviceSetRebinding(_device, _state, _ignoreArray = undefined, _all
                 }
             }
             
-            InputVerbConsumeAll(InputDeviceGetPlayer(_device));
+            if (_consume)
+            {
+                InputVerbConsumeAll(InputDeviceGetPlayer(_device));
+            }
         }
     }
 }

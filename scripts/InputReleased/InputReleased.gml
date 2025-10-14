@@ -13,6 +13,6 @@ function InputReleased(_verb, _playerIndex = 0)
     
     with(_playerArray[_playerIndex].__verbStateArray[_verb])
     {
-        return (__prevHeld and (not __held));
+        return (__prevHeld && (not __held));
     }
 }

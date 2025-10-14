@@ -20,7 +20,7 @@ function InputBindingGet(_forGamepad, _verbIndex, _alternate = 0, _playerIndex =
         var _bindingArray = _forGamepad? __gamepadBindingArray : __kbmBindingArray;
         var _alternateArray = _bindingArray[_verbIndex];
         
-        if ((_alternate < 0) or (_alternate >= array_length(_alternateArray))) return undefined;
+        if ((_alternate < 0) || (_alternate >= array_length(_alternateArray))) return undefined;
         return _alternateArray[_alternate];
     }
 }
