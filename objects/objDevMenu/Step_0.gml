@@ -30,7 +30,7 @@ with (obj_player)
 		{
 			player_is_debugging(-1);
 		}
-		else player_is_falling(-1);
+		else player_state_airbone(-1);
 	}
 	
 	// Gain 50 rings

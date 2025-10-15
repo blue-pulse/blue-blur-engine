@@ -15,13 +15,13 @@ function player_state_search(phase) {
 			
 			// Falling
 			if (!is_grounded) {
-				player_is_falling(INIT);
+				player_state_airbone(INIT);
 				break;
 			}
 			
 			// Fall from steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270) {
-	            player_is_falling(INIT);
+	            player_state_airbone(INIT);
 				break;
 	        }
 			

@@ -18,7 +18,7 @@ function player_reaction_monitor(obj, side)
 	// Rebound in air
 	if (state == player_is_homing)
 	{
-		state = player_is_falling;
+		state = player_state_airbone;
 		hor_speed = 0;
 		ver_speed = -jump_height div 1;
 	}

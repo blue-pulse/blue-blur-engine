@@ -24,12 +24,12 @@ function player_is_peelouting(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(INIT);
+			if (not is_grounded) return player_state_airbone(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270)
 	        {
-	            return player_is_falling(INIT);
+	            return player_state_airbone(INIT);
 	        }
 	        else if (relative_angle >= 45 and relative_angle <= 315)
 			{

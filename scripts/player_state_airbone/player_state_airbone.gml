@@ -1,50 +1,23 @@
-function player_is_falling(phase)
-{
-	switch (phase)
-	{
-		case -2:
-		{
-			// Set state and flags
-	        state = player_is_falling;
-	        is_rolling = true;
-	        is_jumping = true;
-	        jump_action = true;
-
-	        // Movement
-			var sine = dsin(relative_angle);
-			var cosine = dcos(relative_angle);
-			ver_speed = (-sine * hor_speed) - (cosine * jump_height);
-	        hor_speed = (cosine * hor_speed) - (sine * jump_height);
-
-	        // Set air state
-			player_set_ground(noone);
-			
-			// Animate
-			animation_index = "spin";
-	        timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
-	        image_angle = gravity_direction;
-			
-			// Sound
-			//audio_play_sfx(sfxJump);
-			break;
-		}
+function player_state_airbone(phase) {
+	switch (phase) {
+		// Start state
 		case INIT:
-		{
 			// Set state and flags
-			state = player_is_falling;
+			state = player_state_airbone;
 			
-			// Movement
+			// Variables
 			ver_speed = -dsin(relative_angle) * hor_speed;
 			hor_speed = dcos(relative_angle) * hor_speed;
-			
-			// Set air state
 			player_set_ground(noone);
 			
 			// Animate
-			if (not is_rolling) animation_index = "fall";
+			if (!is_rolling) {
+				animation_play(anim_skid_slow);
+			}
 			break;
-		}
-		default:
+
+		// Run state
+		case STEP:
 		{
 			// Handle aerial acceleration
 	        if (input_holded(vb_left))
@@ -168,5 +141,8 @@ function player_is_falling(phase)
 	            image_angle = angle_wrap(image_angle + 2.8125 * sign(angle_difference(angle, image_angle)));
 	        }
 		}
+		
+		case STOP:
+			break;
 	}
 }

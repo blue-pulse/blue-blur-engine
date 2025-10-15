@@ -20,7 +20,7 @@ function player_is_homing(phase)
 				is_jumping = true;
 				jump_action = false;
 				instance_destroy(obj_reticle);
-				return player_is_falling(-1);
+				return player_state_airbone(-1);
 			}
 			
 			// Move towards the reticle

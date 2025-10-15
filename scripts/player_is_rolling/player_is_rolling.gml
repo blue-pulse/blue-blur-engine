@@ -37,14 +37,14 @@ function player_is_rolling(phase)
 			if (not player_movement_ground()) exit;
 			
 			// Falling
-			if (not is_grounded) return player_is_falling(INIT);
+			if (not is_grounded) return player_state_airbone(INIT);
 			
 			// Fall / slide down steep surfaces
 	        if (abs(hor_speed) < stumble_threshold)
 	        {
 	            if (relative_angle >= 90 and relative_angle <= 270)
 	            {
-	                return player_is_falling(INIT);
+	                return player_state_airbone(INIT);
 	            }
 	            else if (relative_angle >= 45 and relative_angle <= 315)
 				{
@@ -57,7 +57,10 @@ function player_is_rolling(phase)
 			player_set_friction(roll_slope_friction);
 			
 			// Jumping
-	        if (input_pressed(vb_a)) return player_is_falling(-2);
+	        if (input_pressed(vb_a)) {
+				player_set_state(player_state_jump);
+				break;
+			}
 			
 			// Unroll
 			if (abs(hor_speed) < unroll_threshold) {

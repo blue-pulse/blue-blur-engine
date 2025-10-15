@@ -23,7 +23,7 @@ function player_reaction_spring(obj, side)
 	if (y_spring_speed != 0)
 	{
 		// Set state
-		player_is_falling(-1);
+		player_state_airbone(-1);
 		
 		// Movement
 		ver_speed = y_spring_speed;

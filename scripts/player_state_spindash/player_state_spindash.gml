@@ -30,7 +30,7 @@ function player_state_spindash(phase) {
 						
 			// Fall from steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270) {
-	            player_is_falling(INIT);
+	            player_state_airbone(INIT);
 				break;
 	        }
 			

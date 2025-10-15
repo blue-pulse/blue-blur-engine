@@ -12,7 +12,7 @@ function player_reaction_badnik(obj)
 	if (state == player_is_homing)
 	{
 		// Stop moving and bounce
-		state = player_is_falling;
+		state = player_state_airbone;
 		hor_speed = 0;
 		ver_speed = -jump_height div 1;
 		homing_rebound = true;

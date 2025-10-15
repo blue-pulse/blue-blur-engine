@@ -35,13 +35,13 @@ function player_state_idle(phase) {
 			
 			// Falling
 			if (!is_grounded) {
-				player_is_falling(INIT);
+				player_state_airbone(INIT);
 				break;
 			}
 			
 			// Fall from steep surfaces
 	        if (relative_angle >= 90 and relative_angle <= 270) {
-	            player_is_falling(INIT);
+	            player_state_airbone(INIT);
 				break;
 	        }
 			
@@ -66,7 +66,7 @@ function player_state_idle(phase) {
 			
 			// Jumping
 	        if (input_pressed(vb_a)) {
-				player_is_falling(-2);
+				player_set_state(player_state_jump);
 				break;
 			}
 			
