@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"bgm_hub_world",
   "audioGroupId":{
     "name":"grp_bgm",
     "path":"audiogroups/grp_bgm",
   },
   "bitDepth":1,
-  "bitRate":320,
+  "channelFormat":1,
   "compression":1,
+  "compressionQuality":9,
   "conversionMode":0,
   "duration":105.89599,
+  "exportDir":"",
   "name":"bgm_hub_world",
   "parent":{
     "name":"Sounds",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"bgm_hub_world.wav",
-  "type":1,
   "volume":1.0,
 }

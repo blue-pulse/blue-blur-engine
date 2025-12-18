@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_sonic_stomp_a",
   "audioGroupId":{
     "name":"grp_voices",
     "path":"audiogroups/grp_voices",
   },
   "bitDepth":1,
-  "bitRate":320,
+  "channelFormat":1,
   "compression":1,
+  "compressionQuality":9,
   "conversionMode":0,
   "duration":0.5,
+  "exportDir":"",
   "name":"snd_sonic_stomp_a",
   "parent":{
     "name":"Sounds",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_sonic_stomp_a.wav",
-  "type":1,
   "volume":1.0,
 }

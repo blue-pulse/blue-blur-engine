@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_player_spindash_release",
   "audioGroupId":{
     "name":"grp_sfx",
     "path":"audiogroups/grp_sfx",
   },
   "bitDepth":1,
-  "bitRate":320,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":9,
   "conversionMode":0,
   "duration":1.5073242,
+  "exportDir":"",
   "name":"snd_player_spindash_release",
   "parent":{
     "name":"Common",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_player_spindash_release.wav",
-  "type":1,
   "volume":0.5,
 }

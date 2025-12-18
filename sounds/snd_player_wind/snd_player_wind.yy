@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_player_wind",
   "audioGroupId":{
     "name":"grp_sfx",
     "path":"audiogroups/grp_sfx",
   },
   "bitDepth":1,
-  "bitRate":320,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":9,
   "conversionMode":0,
   "duration":0.99199545,
+  "exportDir":"",
   "name":"snd_player_wind",
   "parent":{
     "name":"Common",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_player_wind.wav",
-  "type":1,
   "volume":1.0,
 }
