@@ -24,10 +24,9 @@ function sonic_init_animations(){
 	anim_jog = animation_create(spr_sonic_jog);
 	anim_run = animation_create(spr_sonic_run);
 	anim_sprint = animation_create(spr_sonic_sprint);
-	anim_peelout = animation_create(spr_sonic_peelout);
 	
 	// Roll
-	anim_roll = new Snip(spr_sonic_roll, 1);
+	anim_roll = animation_create(spr_sonic_roll);
 	
 	// Search
 	anim_search = animation_create(spr_sonic_search, 1, 3, -1);
@@ -42,8 +41,8 @@ function sonic_init_animations(){
 	anim_skid_turn = animation_create(spr_sonic_skid_turn);
 	
 	// Spin
-	anim_spin_fast = new Snip(spr_sonic_spin_fast, 1);
-	anim_spin_slow = new Snip(spr_sonic_spin_slow, 1);
+	anim_spin_fast = animation_create(spr_sonic_spin_fast);
+	anim_spin_slow = animation_create(spr_sonic_spin_slow);
 	anim_spindash = animation_create(spr_sonic_spindash);
 	anim_spindash_charge =animation_create(spr_sonic_spindash_charge);
 	

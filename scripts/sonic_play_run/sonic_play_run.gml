@@ -28,14 +28,8 @@ function sonic_play_run() {
 	}
 
 	// Sprint
-	else if (current_speed >= 6.0 and current_speed < 9.0) {
+	else if (current_speed >= 6.0) {
 		var anim_speed = map(current_speed, 6.0, 9.0, 1.5, 2.0);
 		animation_play(anim_sprint, anim_speed);
-	}
-
-	// Peelout
-	else if (current_speed >= 9.0) {
-		anim_speed = map(current_speed, 9, 12, 1.5, 2.5);
-		animation_play(anim_peelout, anim_speed);
 	}
 }

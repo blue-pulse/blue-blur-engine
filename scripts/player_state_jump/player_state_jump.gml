@@ -46,54 +46,49 @@ function player_state_jump(phase) {
 	        }
 			
 	        // Update position
-			if (not player_movement_air()) exit;
+			if (!player_movement_air()) {
+				break;
+			}
 			
 	        // Landing
-	        if (is_grounded)
-	        {
+	        if (is_grounded) {
 				if (hor_speed == 0) {
 					player_set_state(player_state_idle);
 				} else {
 					player_set_state(player_state_run);
 				}
-				exit;
+				break;
 	        }
 			
 			// Variable jump height
-	        if (is_jumping and not input_holded(vb_a) and ver_speed < -jump_min_height)
-	        {
+	        if (is_jumping and not input_holded(vb_a) and ver_speed < -jump_min_height) {
 	            ver_speed = -jump_min_height;
 	        }
 			
 	        // Air friction
-	        if (ver_speed < 0 and ver_speed > -4 and abs(hor_speed) > air_threshold)
-	        {
+	        if (ver_speed < 0 and ver_speed > -4 and abs(hor_speed) > air_threshold) {
 				hor_speed *= air_frict;
 	        }
 			
 	        // Gravity
-			if (ver_speed < grav_cap) ver_speed = min(ver_speed + grav_force, grav_cap);
+			if (ver_speed < grav_cap) {
+				ver_speed = min(ver_speed + grav_force, grav_cap);
+			}
 			
 			// Homing actions
-			if (is_rolling)
-			{
-				// Reticle creation/destruction
-				if (not instance_exists(obj_reticle))
-				{
-					if (jump_action)
-					{
+			if (is_rolling) {
+				// Create reticle
+				if (!instance_exists(obj_reticle)) {
+					if (jump_action) {
 						// Record targets (higher priority ones should be added at the end of the list)
 						var target_list = [instance_nearest(x, y, objMonitor), instance_nearest(x, y, objBadnik)];
 						
 						// Evaluate all targets
-						for (var n = array_length(target_list) - 1; n > -1; --n)
-						{
+						for (var i = array_length(target_list) - 1; i > -1; --i) {
 							// Get the current target; lock on to it if possible
-							var inst = target_list[n];
-							if (inst != noone and player_can_lock_on(inst))
-							{
-								with (instance_create_depth(inst.x, inst.y, depth - 1, obj_reticle))
-								{
+							var inst = target_list[i];
+							if (inst != noone and player_can_lock_on(inst)) {
+								with (instance_create_depth(inst.x, inst.y, depth - 1, obj_reticle)) {
 									target = inst;
 									owner = other.id;
 								}
@@ -102,33 +97,31 @@ function player_state_jump(phase) {
 						}
 					}
 				}
-				else if (not player_can_lock_on(obj_reticle.target))
-				{
+				
+				// Destroy reticle
+				else if (!player_can_lock_on(obj_reticle.target)) {
 					instance_destroy(obj_reticle);
 				}
 				
 				// Perform a homing action
-				if (input_pressed(vb_a) and jump_action)
-				{
+				if (input_pressed(vb_a) and jump_action) {
 					// Burst effect and sound
 					part_particles_create(global.particles, x, y, global.homing_burst, 1);
-					//audio_play_sfx(sfxSpinDash);
+					audio_play_sfx(snd_player_homing_dash, REPLACE);
 					
 					// Homing attack if the reticle is present; dash otherwise
-					if (instance_exists(obj_reticle))
-					{
+					if (instance_exists(obj_reticle)) {
 						return player_is_homing(-1);
-					}
-					else
-					{
+					} else {
 						hor_speed = 8 * image_xscale;
 						ver_speed = 0;
 						jump_action = false;
 					}
 				}
 			}
-			else if (input_pressed(vb_a)) // Curl up
-			{
+			
+			// Curl up
+			else if (input_pressed(vb_a)) {
 				// Set flags
 				is_rolling = true;
 				jump_action = true;
@@ -140,12 +133,10 @@ function player_state_jump(phase) {
 			}
 			
 			// Animate
-			if (animation_index == "rise" and ver_speed >= 0)
-			{
+			if (animation_index == "rise" and ver_speed >= 0) {
 				animation_index = "fall";
 			}
-			if (image_angle != angle and not is_rolling)
-	        {
+			if (image_angle != angle and not is_rolling) {
 	            image_angle = angle_wrap(image_angle + 2.8125 * sign(angle_difference(angle, image_angle)));
 	        }
 	        break;

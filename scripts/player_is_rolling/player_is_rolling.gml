@@ -13,6 +13,8 @@ function player_is_rolling(phase)
 			image_angle = gravity_direction;
 	        break;
 		}
+		case STOP:
+			break;
 		default:
 		{
 			if (ground_lock <= 0)
