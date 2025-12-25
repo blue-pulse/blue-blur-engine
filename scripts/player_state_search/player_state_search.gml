@@ -43,12 +43,7 @@ function player_state_search(phase) {
 				player_set_state(player_state_run);
 				break;
 			}
-			
-			// Peelouting
-	        if (input_pressed(vb_a)) {
-				player_is_peelouting(INIT);
-				break;
-			}
+			break;
 		
 		// Stop state
 		case STOP:
