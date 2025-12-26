@@ -1,9 +1,6 @@
 function sonic_begin_homing() {
-	// Variables
-	var reticle_exist = instance_exists(Reticle);
-	
 	// Create reticle
-	if (!reticle_exist) {
+	if (!instance_exists(Reticle)) {
 		if (allow_jump_action) {
 			// Record targets
 			var target_list = [
@@ -39,7 +36,7 @@ function sonic_begin_homing() {
 		audio_play_sfx(snd_player_homing_dash, REPLACE);
 
 		// Homing attack
-		if (reticle_exist) {
+		if (instance_exists(Reticle)) {
 			player_set_state(player_state_homing);
 			exit;
 		} 

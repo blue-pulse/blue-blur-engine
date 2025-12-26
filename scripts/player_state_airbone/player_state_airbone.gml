@@ -85,8 +85,7 @@ function player_state_airbone(phase) {
 			
 			// Rotate angle
 			if (!is_rolling and image_angle != angle) {
-				var angle_diff = angle_difference(angle, image_angle);
-				image_angle = angle_wrap(image_angle + sign(angle_diff) * 5);
+				image_angle = approach_angle(image_angle, gravity_direction, 4);
 	        }
 			break;
 		

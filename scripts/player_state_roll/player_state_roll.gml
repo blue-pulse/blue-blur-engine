@@ -4,9 +4,9 @@ function player_state_roll(phase) {
 		case INIT:
 			// Variables
 	        is_rolling = true;
-			image_angle = gravity_direction;
 			
-			// SFX
+			// FX
+			play_roll_anim();
 			if (state_prev != player_state_spindash) {
 				audio_play_sfx(snd_player_roll, REPLACE);
 			}
@@ -14,9 +14,6 @@ function player_state_roll(phase) {
 		
 		// Run state
 		case STEP:
-			// Variables
-			var abs_speed = abs(hor_speed);
-			
 			// Deceleration
 			if (ground_lock <= 0) {
 				// Left
@@ -36,7 +33,7 @@ function player_state_roll(phase) {
 				}
 				
 				// Friction
-				abs_speed = abs(hor_speed);
+				var abs_speed = abs(hor_speed);
 				hor_speed -= sign(hor_speed) * min(abs_speed, roll_frict);
 			}
 			
@@ -82,14 +79,7 @@ function player_state_roll(phase) {
 			}
 			
 			// Animate
-			image_angle = angle;
-			if (abs_speed > 5) {
-				var anim_speed = map(abs_speed, 5, 12, 1.25, 2.25);
-				animation_play(anim_roll, anim_speed);
-			} else {
-				var anim_speed = clamp(abs_speed, 1, 1.5);
-				animation_play(anim_roll_slow, anim_speed);
-			}
+			play_roll_anim();
 			
 	        // Set facing direction
 			if ((hor_speed < 0 and input_holded(vb_left)) or (hor_speed > 0 and input_holded(vb_right))) {
