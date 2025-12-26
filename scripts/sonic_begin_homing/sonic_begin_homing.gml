@@ -5,8 +5,11 @@ function sonic_begin_homing() {
 	// Create reticle
 	if (!reticle_exist) {
 		if (allow_jump_action) {
-			// Record targets (higher priority ones should be added at the end of the list)
-			var target_list = [instance_nearest(x, y, objMonitor), instance_nearest(x, y, objBadnik)];
+			// Record targets
+			var target_list = [
+				instance_nearest(x, y, objMonitor), 
+				instance_nearest(x, y, objBadnik), // Higher priority
+			];
 
 			// Evaluate all targets
 			for (var i = array_length(target_list) - 1; i > -1; --i) {
