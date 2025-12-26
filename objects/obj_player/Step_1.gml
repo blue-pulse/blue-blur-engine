@@ -4,10 +4,12 @@ if (allow_movement) {
 
 	// State machine
 	state(STEP);
+	
+	// Clamp speed
+	hor_speed = clamp(hor_speed, -speed_cap, speed_cap);
+	ver_speed = clamp(ver_speed, -speed_cap, speed_cap);
 
-	// Save position
+	// Update values
 	player_update_grid();
-
-	// Update animation
 	player_update_animation();
 }

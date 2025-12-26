@@ -21,6 +21,7 @@ state_prev = state;
 cliff_dir = 0;
 hor_speed = 0;
 ver_speed = 0;
+speed_cap = 16;
 plane = 0;
 
 // Collision
@@ -46,7 +47,6 @@ stumble_timer = 30;
 superspeed_timer = 0;
 
 // Physics
-gravity_direction = 0;
 accel = 0.046875;
 air_accel = 0.09375;
 air_frict = 0.96875;
@@ -57,8 +57,10 @@ frict = 0.046875;
 grav_cap = 16;
 grav_force = 0.21875;
 grav_recoil = 0.1875;
+gravity_direction = 0;
 jump_height = 6.5;
 jump_min_height = 4;
+max_speed = 6;
 roll_decel = 0.125;
 roll_frict = 0.0234375;
 roll_threshold = 1.03125;
@@ -66,7 +68,6 @@ skid_threshold = 4;
 slope_frict = 0.125;
 slope_frict_down = 0.3125;
 slope_frict_up = 0.078125;
-speed_cap = 6;
 stumble_threshold = 2.5;
 unroll_threshold = 0.5;
 

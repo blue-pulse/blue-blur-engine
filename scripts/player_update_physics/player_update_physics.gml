@@ -1,6 +1,6 @@
 function player_update_physics() {
 	// Speed values
-	speed_cap = 6;
+	max_speed = 6;
 	accel = 0.046875;
 	decel = 0.5;
 	frict = 0.046875;
@@ -17,7 +17,7 @@ function player_update_physics() {
 	
 	// Superspeed modification
 	if (superspeed_timer > 0) {
-		speed_cap *= 2;
+		max_speed *= 2;
 		accel *= 2;
 		frict *= 2;
 		air_accel *= 2;

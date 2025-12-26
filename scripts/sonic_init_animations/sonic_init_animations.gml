@@ -12,14 +12,12 @@ function sonic_init_animations(){
 	anim_crouch_stop = animation_create(spr_sonic_crouch, -1, 0, 2);
 	
 	// Fall
+	anim_fall = animation_create(spr_sonic_fall, 1, 0, 5);
+	anim_fall_loop = animation_create(spr_sonic_fall, 1, 5, -1);
 	anim_fall_fast = animation_create(spr_sonic_somersault);
 	anim_fall_fast_loop = animation_create(spr_sonic_fall_fast);
 	anim_fall_slow = animation_create(spr_sonic_somersault);
 	anim_fall_slow_loop = animation_create(spr_sonic_fall_slow);
-	
-	// Freefall
-	anim_freefall = animation_create(spr_sonic_freefall, 1, 0, 5);
-	anim_freefall_loop = animation_create(spr_sonic_freefall, 1, 5, -1);
 	
 	// Idle
 	anim_idle = animation_create(spr_sonic_idle);
@@ -41,6 +39,8 @@ function sonic_init_animations(){
 	
 	// Roll
 	anim_roll = animation_create(spr_sonic_roll);
+	anim_roll_fast = animation_create(spr_sonic_roll_fast);
+	anim_roll_slow = animation_create(spr_sonic_roll_slow);
 	
 	// Search
 	anim_search = animation_create(spr_sonic_search, 1, 3, -1);
@@ -54,9 +54,7 @@ function sonic_init_animations(){
 	anim_skid_slow_loop = animation_create(spr_sonic_skid_slow, 1, 1, 2);
 	anim_skid_turn = animation_create(spr_sonic_skid_turn);
 	
-	// Spin
-	anim_spin_fast = animation_create(spr_sonic_spin_fast);
-	anim_spin_slow = animation_create(spr_sonic_spin_slow);
+	// Spindash
 	anim_spindash = animation_create(spr_sonic_spindash);
 	anim_spindash_charge =animation_create(spr_sonic_spindash_charge);
 	
@@ -68,7 +66,7 @@ function sonic_init_animations(){
 	animation_set_callback(anim_turn, player_set_state, player_state_idle);
 	animation_set_successor(anim_fall_fast, anim_fall_fast_loop);
 	animation_set_successor(anim_fall_slow, anim_fall_slow_loop);
-	animation_set_successor(anim_freefall, anim_freefall_loop);
+	animation_set_successor(anim_fall, anim_fall_loop);
 	animation_set_successor(anim_rise, anim_rise_loop);
 	animation_set_successor(anim_skid_fast, anim_skid_fast_loop);
 	animation_set_successor(anim_skid_slow, anim_skid_slow_loop);

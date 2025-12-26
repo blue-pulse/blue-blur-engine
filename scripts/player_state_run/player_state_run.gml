@@ -40,10 +40,10 @@ function player_state_run(phase) {
 					// Accelerate
 					else {
 						image_xscale = input_dir;
-						if (abs(hor_speed) < speed_cap) {
+						if (abs(hor_speed) < max_speed) {
 							hor_speed += accel * input_dir;
-							if (abs(hor_speed) > speed_cap) {
-								hor_speed = speed_cap * input_dir;
+							if (abs(hor_speed) > max_speed) {
+								hor_speed = max_speed * input_dir;
 							}
 						}
 					}
@@ -97,8 +97,8 @@ function player_state_run(phase) {
 			
 			// Rolling
 			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
-				audio_play_sfx(snd_player_roll, REPLACE);
-				player_is_rolling(INIT);
+				//audio_play_sfx(snd_player_roll, REPLACE);
+				player_set_state(player_state_roll);
 				break;
 			}
 			

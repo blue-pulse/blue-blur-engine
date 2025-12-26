@@ -17,7 +17,7 @@ function player_state_jump(phase) {
 			// Animate
 			var abs_speed = abs(hor_speed);
 			var anim_speed = map(abs_speed, 0, 8, 2, 3);
-			animation_play(anim_spin_fast, anim_speed);
+			animation_play(anim_roll_fast, anim_speed);
 	        image_angle = gravity_direction;
 			
 			// Sound
@@ -30,13 +30,13 @@ function player_state_jump(phase) {
 			// Handle aerial acceleration
 			if (input_holded(vb_left)) {
 				image_xscale = -1;
-				if (hor_speed > -speed_cap) {
-	                hor_speed = max(hor_speed - air_accel, -speed_cap);
+				if (hor_speed > -max_speed) {
+	                hor_speed = max(hor_speed - air_accel, -max_speed);
 				}
 			} else if (input_holded(vb_right)) {
 				image_xscale = 1;
-	            if (hor_speed < speed_cap) {
-	                hor_speed = min(hor_speed + air_accel, speed_cap);
+	            if (hor_speed < max_speed) {
+	                hor_speed = min(hor_speed + air_accel, max_speed);
 	            }
 			}
 			

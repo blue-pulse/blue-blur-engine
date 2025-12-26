@@ -24,7 +24,7 @@ function player_state_spindash(phase) {
 			
 			// Falling
 			if (!is_grounded) {
-				player_is_rolling(INIT)
+				player_set_state(player_state_roll);
 				break;
 			}
 						
@@ -37,8 +37,7 @@ function player_state_spindash(phase) {
 			// Slide down from steep surfaces
 			else if (relative_angle >= 45 and relative_angle <= 315) {
 				ground_lock = stumble_timer;
-				audio_play_sfx(snd_player_roll, REPLACE);
-				player_is_rolling(INIT);
+				player_set_state(player_state_roll);;
 				break;
 			}
 			
@@ -72,7 +71,7 @@ function player_state_spindash(phase) {
 				// Launch
 				var dash_speed = 10 + round(spindash_charge) / 2;
 				hor_speed = dash_speed * image_xscale;
-				player_set_state(player_is_rolling)
+				player_set_state(player_state_roll)
 				
 				// FX
 				audio_stop_sound(snd_player_spindash_charge);

@@ -17,10 +17,10 @@ function player_reaction_dash_panel(obj)
 	ground_lock = 16;
 	
 	// Roll, if applicable
-	if (obj.force_roll and state != player_is_rolling)
+	if (obj.force_roll and state != player_state_roll)
 	{
 		// Abort state
-		player_is_rolling(-1);
+		player_set_state(player_state_roll);
 		return true;
 	}
 	

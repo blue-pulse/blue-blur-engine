@@ -1,66 +1,73 @@
-function player_is_rolling(phase)
-{
-	switch (phase)
-	{
+function player_state_roll(phase) {
+	switch (phase) {
+		// Start state
 		case INIT:
-		{
-			// Set state and flags
-	        state = player_is_rolling;
+			// Variables
 	        is_rolling = true;
-			
-			// Animate
-			animation_index = "spin";
 			image_angle = gravity_direction;
+			
+			// SFX
+			if (state_prev != player_state_spindash) {
+				audio_play_sfx(snd_player_roll, REPLACE);
+			}
 	        break;
-		}
-		case STOP:
-			break;
-		default:
-		{
-			if (ground_lock <= 0)
-			{
-				// Deceleration
-				if (input_holded(vb_left) and hor_speed > 0)
-				{
+		
+		// Run state
+		case STEP:
+			// Variables
+			var abs_speed = abs(hor_speed);
+			
+			// Deceleration
+			if (ground_lock <= 0) {
+				// Left
+				if (hor_speed > 0 and input_holded(vb_left)) {
 					hor_speed -= roll_decel;
-					if (hor_speed < 0) hor_speed = 0;
+					if (hor_speed < 0) {
+						hor_speed = 0;
+					}
 				}
-				if (input_holded(vb_right) and hor_speed < 0)
-				{
+				
+				// Right
+				if (hor_speed < 0 and input_holded(vb_right)) {
 					hor_speed += roll_decel;
-					if (hor_speed > 0) hor_speed = 0;
+					if (hor_speed > 0) {
+						hor_speed = 0;
+					}
 				}
 				
 				// Friction
-				hor_speed -= min(abs(hor_speed), roll_frict) * sign(hor_speed);
+				abs_speed = abs(hor_speed);
+				hor_speed -= sign(hor_speed) * min(abs_speed, roll_frict);
 			}
 			
 			// Update position
-			if (not player_movement_ground()) exit;
+			if (!player_movement_ground()) {
+				break;
+			}
 			
 			// Falling
-			if (not is_grounded) {
+			if (!is_grounded) {
+				image_angle = gravity_direction;
 				player_set_state(player_state_airbone);
 				break;
 			}
 			
-			// Fall / slide down steep surfaces
-	        if (abs(hor_speed) < stumble_threshold)
-	        {
-	            if (relative_angle >= 90 and relative_angle <= 270)
-	            {
+			// Slide down steep surfaces
+	        if (abs(hor_speed) < stumble_threshold) {
+	            if (relative_angle >= 90 and relative_angle <= 270) {
 					player_set_state(player_state_airbone);
 					break;
-	            }
-	            else if (relative_angle >= 45 and relative_angle <= 315)
-				{
+	            } else if (relative_angle >= 45 and relative_angle <= 315) {
 					ground_lock = stumble_timer;
 				}
 	        }
 			
 			// Slope friction
-			var roll_slope_friction = (sign(hor_speed) == sign(dsin(relative_angle))) ? slope_frict_up : slope_frict_down;
-			player_set_friction(roll_slope_friction);
+			if (sign(hor_speed) == sign(dsin(relative_angle))) {
+				player_set_friction(slope_frict_up);
+			} else {
+				player_set_friction(slope_frict_down);
+			}
 			
 			// Jumping
 	        if (input_pressed(vb_a)) {
@@ -71,17 +78,27 @@ function player_is_rolling(phase)
 			// Unroll
 			if (abs(hor_speed) < unroll_threshold) {
 				player_set_state(player_state_run);
-				exit;
+				break;
 			}
 			
 			// Animate
-			timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
+			image_angle = angle;
+			if (abs_speed > 5) {
+				var anim_speed = map(abs_speed, 5, 12, 1.25, 2.25);
+				animation_play(anim_roll, anim_speed);
+			} else {
+				var anim_speed = clamp(abs_speed, 1, 1.5);
+				animation_play(anim_roll_slow, anim_speed);
+			}
 			
 	        // Set facing direction
-			if ((input_holded(vb_left) and hor_speed < 0) or (input_holded(vb_right) and hor_speed > 0))
-	        {
+			if ((hor_speed < 0 and input_holded(vb_left)) or (hor_speed > 0 and input_holded(vb_right))) {
 	            image_xscale = sign(hor_speed);
 	        }
-		}
+			break;
+		
+		// Stop state
+		case STOP:
+			break;	
 	}
 }
