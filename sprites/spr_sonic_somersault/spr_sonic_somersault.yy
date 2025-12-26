@@ -61,7 +61,7 @@
     },
     "name":"spr_sonic_somersault",
     "playback":1,
-    "playbackSpeed":25.0,
+    "playbackSpeed":20.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

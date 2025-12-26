@@ -9,7 +9,7 @@ function player_reaction_badnik(obj)
 	
 	// Rebound in air
 	var homing_rebound = false;
-	if (state == player_is_homing)
+	if (state == player_state_homing)
 	{
 		// Stop moving and bounce
 		state = player_state_airbone;

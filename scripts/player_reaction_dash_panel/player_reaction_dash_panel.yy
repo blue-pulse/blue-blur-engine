@@ -6,7 +6,7 @@
   "name":"player_reaction_dash_panel",
   "parent":{
     "name":"Reactions",
-    "path":"folders/3. Player/Scripts/Reactions.yy",
+    "path":"folders/3. Player/Main scripts/Reactions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

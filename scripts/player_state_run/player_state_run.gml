@@ -62,7 +62,7 @@ function player_state_run(phase) {
 			
 			// Falling
 			if (!is_grounded) {
-				player_state_airbone(INIT);
+				player_set_state(player_state_airbone);
 				break;
 			}
 			
@@ -70,7 +70,7 @@ function player_state_run(phase) {
 	        if (abs(hor_speed) < stumble_threshold) {
 				// Fall
 	            if (relative_angle >= 90 and relative_angle <= 270) {
-					player_state_airbone(INIT);
+					player_set_state(player_state_airbone);
 					break;
 	            } 
 				
@@ -108,7 +108,7 @@ function player_state_run(phase) {
 			}
 			
 			// Animate
-			player_play_run();
+			play_run_anim();
 			
 			// Set angle
 	        image_angle = angle;

@@ -7,10 +7,10 @@ scoring = global.score;
 
 // State flags
 allow_movement = true;
+allow_jump_action = false;
 invincibility_fx = noone;
 is_jumping = false;
 is_rolling = false;
-jump_action = false;
 peelout_charge = 0;
 spindash_charge = 0;
 spindash_pitch = 1;

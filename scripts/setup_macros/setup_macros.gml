@@ -41,4 +41,5 @@
 #macro Camera obj_camera
 #macro Particles global.particles
 #macro Player obj_player
+#macro Reticle obj_reticle
 #macro View view_camera[0]

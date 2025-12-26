@@ -6,7 +6,7 @@
   "name":"player_collision_resource",
   "parent":{
     "name":"General",
-    "path":"folders/3. Player/Scripts/General.yy",
+    "path":"folders/3. Player/Main scripts/General.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -2,7 +2,8 @@
 event_inherited();
 
 // Specific character functions
-player_play_run = sonic_play_run;
+play_run_anim = sonic_play_run;
+begin_jump_action = sonic_begin_homing;
 
 // Create animations
 sonic_init_animations();

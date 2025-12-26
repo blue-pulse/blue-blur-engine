@@ -6,7 +6,7 @@
   "name":"player_can_lock_on",
   "parent":{
     "name":"Methods",
-    "path":"folders/3. Player/Scripts/Methods.yy",
+    "path":"folders/3. Player/Main scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

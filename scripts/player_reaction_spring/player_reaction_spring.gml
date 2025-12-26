@@ -23,7 +23,7 @@ function player_reaction_spring(obj, side)
 	if (y_spring_speed != 0)
 	{
 		// Set state
-		player_state_airbone(-1);
+		player_set_state(player_state_airbone);
 		
 		// Movement
 		ver_speed = y_spring_speed;
@@ -33,7 +33,7 @@ function player_reaction_spring(obj, side)
 		{
 			is_rolling = false;
 			is_jumping = false;
-			animation_index = "rise";
+			animation_play(anim_rise);
 			image_angle = gravity_direction;
 		}
 	}

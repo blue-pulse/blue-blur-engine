@@ -6,7 +6,7 @@
   "name":"player_is_hurt",
   "parent":{
     "name":"States",
-    "path":"folders/3. Player/Scripts/States.yy",
+    "path":"folders/3. Player/Main scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,9 +1,8 @@
-function player_is_homing(phase) {
+function player_state_homing(phase) {
 	switch (phase) {
 		// Start state
 		case INIT:
 			// Set flags
-			state = player_is_homing;
 			is_jumping = false;
 			break;
 		
@@ -18,7 +17,7 @@ function player_is_homing(phase) {
 			if (!player_can_lock_on(obj_reticle.target)) {
 				// Variables
 				is_jumping = true;
-				jump_action = false;
+				allow_jump_action = false;
 				ver_speed = -dsin(relative_angle) * hor_speed;
 				hor_speed = dcos(relative_angle) * hor_speed;
 			

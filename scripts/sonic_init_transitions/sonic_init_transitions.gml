@@ -8,4 +8,7 @@ function sonic_init_transitions() {
 	
 	// Search
 	animation_set_transition(anim_search, anim_idle, anim_search_stop);
+	
+	
+	animation_set_transition(anim_freefall, anim_idle, anim_search_stop);
 }

@@ -5,7 +5,7 @@ function player_state_jump(phase) {
 			// Set flags
 	        is_rolling = true;
 	        is_jumping = true;
-	        jump_action = true;
+	        allow_jump_action = true;
 			
 	        // Movement
 			var sine = dsin(relative_angle);
@@ -28,22 +28,17 @@ function player_state_jump(phase) {
 		// Run state
 	    case STEP:
 			// Handle aerial acceleration
-	        if (input_holded(vb_left))
-	        {
-	            image_xscale = -1;
-	            if (hor_speed > -speed_cap)
-	            {
+			if (input_holded(vb_left)) {
+				image_xscale = -1;
+				if (hor_speed > -speed_cap) {
 	                hor_speed = max(hor_speed - air_accel, -speed_cap);
-	            }
-	        }
-	        if (input_holded(vb_right))
-	        {
-	            image_xscale = 1;
-	            if (hor_speed < speed_cap)
-	            {
+				}
+			} else if (input_holded(vb_right)) {
+				image_xscale = 1;
+	            if (hor_speed < speed_cap) {
 	                hor_speed = min(hor_speed + air_accel, speed_cap);
 	            }
-	        }
+			}
 			
 	        // Update position
 			if (!player_movement_air()) {
@@ -61,7 +56,7 @@ function player_state_jump(phase) {
 	        }
 			
 			// Variable jump height
-	        if (is_jumping and not input_holded(vb_a) and ver_speed < -jump_min_height) {
+	        if (is_jumping and ver_speed < -jump_min_height and !input_holded(vb_a)) {
 	            ver_speed = -jump_min_height;
 	        }
 			
@@ -75,70 +70,10 @@ function player_state_jump(phase) {
 				ver_speed = min(ver_speed + grav_force, grav_cap);
 			}
 			
-			// Homing actions
+			// Jump actions
 			if (is_rolling) {
-				// Create reticle
-				if (!instance_exists(obj_reticle)) {
-					if (jump_action) {
-						// Record targets (higher priority ones should be added at the end of the list)
-						var target_list = [instance_nearest(x, y, objMonitor), instance_nearest(x, y, objBadnik)];
-						
-						// Evaluate all targets
-						for (var i = array_length(target_list) - 1; i > -1; --i) {
-							// Get the current target; lock on to it if possible
-							var inst = target_list[i];
-							if (inst != noone and player_can_lock_on(inst)) {
-								with (instance_create_depth(inst.x, inst.y, depth - 1, obj_reticle)) {
-									target = inst;
-									owner = other.id;
-								}
-								break;
-							}
-						}
-					}
-				}
-				
-				// Destroy reticle
-				else if (!player_can_lock_on(obj_reticle.target)) {
-					instance_destroy(obj_reticle);
-				}
-				
-				// Perform a homing action
-				if (input_pressed(vb_a) and jump_action) {
-					// Burst effect and sound
-					part_particles_create(global.particles, x, y, global.homing_burst, 1);
-					audio_play_sfx(snd_player_homing_dash, REPLACE);
-					
-					// Homing attack if the reticle is present; dash otherwise
-					if (instance_exists(obj_reticle)) {
-						return player_is_homing(-1);
-					} else {
-						hor_speed = 8 * image_xscale;
-						ver_speed = 0;
-						jump_action = false;
-					}
-				}
+				begin_jump_action();
 			}
-			
-			// Curl up
-			else if (input_pressed(vb_a)) {
-				// Set flags
-				is_rolling = true;
-				jump_action = true;
-				
-				// Animate
-				animation_index = "spin";
-		        timeline_speed = 1 / max(5 - (abs(hor_speed) div 1), 1);
-		        image_angle = gravity_direction;
-			}
-			
-			// Animate
-			if (animation_index == "rise" and ver_speed >= 0) {
-				animation_index = "fall";
-			}
-			if (image_angle != angle and not is_rolling) {
-	            image_angle = angle_wrap(image_angle + 2.8125 * sign(angle_difference(angle, image_angle)));
-	        }
 	        break;
 		
 		// Stop state

@@ -16,7 +16,7 @@ function player_reaction_monitor(obj, side)
 	if (side == DIR_BOTTOM and is_grounded) return false; // Spinning on top of the monitor
 	
 	// Rebound in air
-	if (state == player_is_homing)
+	if (state == player_state_homing)
 	{
 		state = player_state_airbone;
 		hor_speed = 0;

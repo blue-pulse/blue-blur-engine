@@ -53,7 +53,7 @@ function player_state_skid(phase) {
 			
 			// Falling
 			if (!is_grounded) {
-				player_state_airbone(INIT);
+				player_set_state(player_state_airbone);
 				break;
 			}
 						
@@ -61,7 +61,7 @@ function player_state_skid(phase) {
 	        if (abs(hor_speed) < stumble_threshold) {
 				// Fall
 	            if (relative_angle >= 90 and relative_angle <= 270) {
-					player_state_airbone(INIT);
+					player_set_state(player_state_airbone);
 					break;
 	            } 
 				
