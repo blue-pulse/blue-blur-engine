@@ -22,6 +22,9 @@ function sonic_init_animations(){
 	// Idle
 	anim_idle = animation_create(spr_sonic_idle);
 	
+	// Land
+	anim_land = animation_create(spr_sonic_land);
+	
 	// Push
 	anim_push = animation_create(spr_sonic_push, 1, 3, -1);
 	anim_push_start = animation_create(spr_sonic_push, 1.5, 0, 2);
