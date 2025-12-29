@@ -31,14 +31,14 @@ function sonic_begin_homing() {
 
 	// Perform a homing action
 	if (allow_jump_action and input_pressed(vb_a)) {
-		// Burst effect and sound
-		part_particles_create(Particles, x, y, global.homing_burst, 1);
+		// FX
 		audio_play_sfx(snd_player_homing_dash, REPLACE);
+		part_particles_create(Particles, x, y, global.homing_burst, 1);
+		play_jump_anim();
 
 		// Homing attack
 		if (instance_exists(Reticle)) {
 			player_set_state(player_state_homing);
-			exit;
 		} 
 		
 		// Homing dash

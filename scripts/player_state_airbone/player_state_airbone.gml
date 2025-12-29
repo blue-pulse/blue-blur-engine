@@ -64,16 +64,11 @@ function player_state_airbone(phase) {
 			// Curl up
 			else if (input_pressed(vb_a)) {
 				// Set flags
-				allow_jump_action = true;
 				is_rolling = true;
+				allow_jump_action = true;
 				
-				// Animate
-				var abs_speed = abs(hor_speed);
-				var anim_speed = map(abs_speed, 0, 8, 2, 3);
-				animation_play(anim_roll_fast, anim_speed);
-		        image_angle = gravity_direction;
-			
-				// Sound
+				// FX
+				play_jump_anim();
 			    audio_play_sfx(snd_player_wind, REPLACE);
 				break;
 			}

@@ -17,6 +17,7 @@
 #macro INIT -1
 #macro STEP 0
 #macro STOP 1
+#macro NONE 2
 
 // Globals
 #macro font_black global.font_hud_black

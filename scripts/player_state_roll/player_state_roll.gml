@@ -4,6 +4,7 @@ function player_state_roll(phase) {
 		case INIT:
 			// Variables
 	        is_rolling = true;
+			allow_jump_action = false;
 			
 			// FX
 			play_roll_anim();
@@ -52,6 +53,7 @@ function player_state_roll(phase) {
 			// Slide down steep surfaces
 	        if (abs(hor_speed) < stumble_threshold) {
 	            if (relative_angle >= 90 and relative_angle <= 270) {
+					image_angle = gravity_direction;
 					player_set_state(player_state_airbone);
 					break;
 	            } else if (relative_angle >= 45 and relative_angle <= 315) {

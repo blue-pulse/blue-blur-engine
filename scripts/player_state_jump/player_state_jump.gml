@@ -13,14 +13,9 @@ function player_state_jump(phase) {
 			ver_speed = (-sine * hor_speed) - (cosine * jump_height);
 	        hor_speed = (cosine * hor_speed) - (sine * jump_height);
 			player_set_ground(noone);
-
-			// Animate
-			var abs_speed = abs(hor_speed);
-			var anim_speed = map(abs_speed, 0, 8, 2, 3);
-			animation_play(anim_roll_fast, anim_speed);
-	        image_angle = gravity_direction;
 			
-			// Sound
+			// FX
+			play_jump_anim();
 		    audio_play_sfx(snd_player_jump, REPLACE);
 		    audio_play_sfx(snd_player_wind, REPLACE);
 	        break;
