@@ -45,7 +45,6 @@ function player_state_roll(phase) {
 			
 			// Falling
 			if (!is_grounded) {
-				image_angle = gravity_direction;
 				player_set_state(player_state_airbone);
 				break;
 			}
@@ -53,7 +52,6 @@ function player_state_roll(phase) {
 			// Slide down steep surfaces
 	        if (abs(hor_speed) < stumble_threshold) {
 	            if (relative_angle >= 90 and relative_angle <= 270) {
-					image_angle = gravity_direction;
 					player_set_state(player_state_airbone);
 					break;
 	            } else if (relative_angle >= 45 and relative_angle <= 315) {
@@ -91,6 +89,7 @@ function player_state_roll(phase) {
 		
 		// Stop state
 		case STOP:
+			image_angle = gravity_direction;
 			break;	
 	}
 }

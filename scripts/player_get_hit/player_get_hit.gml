@@ -1,13 +1,13 @@
 function player_get_hit(object) {
 	// Abort if already invulnerable in any way
-	if (state == player_is_hurt or recovery_timer > 0 or invincibility_timer > 0) {
+	if (state == player_state_hurt or recovery_timer > 0 or invincibility_timer > 0) {
 		return false;
 	}
 	
 	// Drop rings and recoil
 	if (rings > 0) {
 		player_drop_rings();
-		player_is_hurt(-1);
+		player_state_hurt(-1);
 		
 		// Movement
 		hor_speed = 2 * sign(x - object.x);

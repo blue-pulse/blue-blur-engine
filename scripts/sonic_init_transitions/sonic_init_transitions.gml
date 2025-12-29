@@ -5,14 +5,20 @@ function sonic_init_transitions() {
 	// Fall
 	animation_set_transition(anim_fall_fast_loop, anim_idle, anim_land);
 	animation_set_transition(anim_fall_fast_loop, anim_stroll, anim_land);
+	animation_set_transition(anim_fall_fast_loop, anim_turn, anim_land);
 	animation_set_transition(anim_fall_loop, anim_idle, anim_land);
 	animation_set_transition(anim_fall_loop, anim_stroll, anim_land);
+	animation_set_transition(anim_fall_loop, anim_turn, anim_land);
 	animation_set_transition(anim_fall_slow_loop, anim_idle, anim_land);
 	animation_set_transition(anim_fall_slow_loop, anim_stroll, anim_land);
+	animation_set_transition(anim_fall_slow_loop, anim_turn, anim_land);
 	
 	// Idle
 	animation_set_transition(anim_idle, anim_crouch, anim_crouch_start);
 	animation_set_transition(anim_idle, anim_search, anim_search_start);
+	
+	// Knock-out
+	animation_set_transition(anim_knockout_loop, anim_idle, anim_recovery);
 	
 	// Roll
 	animation_set_transition(anim_roll, anim_idle, anim_land);

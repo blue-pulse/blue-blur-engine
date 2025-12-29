@@ -19,8 +19,16 @@ function sonic_init_animations(){
 	anim_fall_slow = animation_create(spr_sonic_somersault);
 	anim_fall_slow_loop = animation_create(spr_sonic_fall_slow);
 	
+	// Hurt
+	anim_hurt = animation_create(spr_sonic_hurt, 1, 0, 3);
+	anim_hurt_loop = animation_create(spr_sonic_hurt, 1, 4, 4);
+	
 	// Idle
 	anim_idle = animation_create(spr_sonic_idle);
+	
+	// Knock-out
+	anim_knockout = animation_create(spr_sonic_knockout, 1, 0, 2);
+	anim_knockout_loop = animation_create(spr_sonic_knockout, 1, 3);
 	
 	// Land
 	anim_land = animation_create(spr_sonic_land);
@@ -28,6 +36,9 @@ function sonic_init_animations(){
 	// Push
 	anim_push = animation_create(spr_sonic_push, 1, 3, -1);
 	anim_push_start = animation_create(spr_sonic_push, 1.5, 0, 2);
+	
+	// Recovery
+	anim_recovery = animation_create(spr_sonic_recovery);
 	
 	// Rise
 	anim_rise = animation_create(spr_sonic_rise, 1, 0, 0);
@@ -67,9 +78,11 @@ function sonic_init_animations(){
 	// Additional parameters
 	animation_set_callback(anim_skid_turn, player_set_state, player_state_idle);
 	animation_set_callback(anim_turn, player_set_state, player_state_idle);
+	animation_set_successor(anim_fall, anim_fall_loop);
 	animation_set_successor(anim_fall_fast, anim_fall_fast_loop);
 	animation_set_successor(anim_fall_slow, anim_fall_slow_loop);
-	animation_set_successor(anim_fall, anim_fall_loop);
+	animation_set_successor(anim_hurt, anim_hurt_loop);
+	animation_set_successor(anim_knockout, anim_knockout_loop);
 	animation_set_successor(anim_rise, anim_rise_loop);
 	animation_set_successor(anim_skid_fast, anim_skid_fast_loop);
 	animation_set_successor(anim_skid_slow, anim_skid_slow_loop);

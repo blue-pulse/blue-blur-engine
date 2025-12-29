@@ -3,8 +3,8 @@ function player_state_jump(phase) {
 		// Start state
 	    case INIT:
 			// Set flags
-	        is_rolling = true;
 	        is_jumping = true;
+	        is_rolling = true;
 	        allow_jump_action = true;
 			
 	        // Movement

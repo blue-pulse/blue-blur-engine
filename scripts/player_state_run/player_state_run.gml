@@ -97,7 +97,6 @@ function player_state_run(phase) {
 			
 			// Rolling
 			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
-				//audio_play_sfx(snd_player_roll, REPLACE);
 				player_set_state(player_state_roll);
 				break;
 			}

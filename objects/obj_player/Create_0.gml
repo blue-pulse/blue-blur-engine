@@ -5,6 +5,11 @@ rings = 0;
 score_combo = 0;
 scoring = global.score;
 
+// Position variables
+angle = 0;
+alpha = 1;
+rotation = 360;
+
 // State flags
 allow_movement = true;
 allow_jump_action = false;
@@ -18,6 +23,7 @@ state = player_state_init;
 state_prev = state;
 
 // Movement
+dir = 1;
 cliff_dir = 0;
 hor_speed = 0;
 ver_speed = 0;
@@ -80,6 +86,6 @@ player_update_physics();
 player_init_effects();
 player_init_animations();
 
-// Trash
+//tmp
 layer = layer_get_id("General");
 animation_index = "idle";

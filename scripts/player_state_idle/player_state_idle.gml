@@ -52,6 +52,11 @@ function player_state_idle(phase) {
 				break;
 			}
 			
+			// Wait for next frame
+			if (ground_lock) {
+				break;
+			}
+			
 			// Turn-around
 			if (input_dir != 0 and sign(image_xscale) != input_dir) {
 				player_set_state(player_state_turn);
@@ -72,13 +77,13 @@ function player_state_idle(phase) {
 			
 			// Idle actions
 			if (cliff_dir == 0) {
-				// Look-up
+				// Looking up
 				if (input_holded(vb_up)) {
 					player_set_state(player_state_search);
 					break;
 				}
 				
-				// Crouch
+				// Crouching
 				if (input_holded(vb_down)) {
 					player_set_state(player_state_crouch);
 					break;

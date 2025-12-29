@@ -1,6 +1,6 @@
 function player_reaction_ring(obj) {
 	// Ignore if hit or starting to recover
-	if (state == player_is_hurt or recovery_timer > 90) return false;
+	if (state == player_state_hurt or recovery_timer > 90) return false;
 	
 	// Collect ring
 	player_add_rings(1);
