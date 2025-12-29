@@ -32,9 +32,9 @@ function player_state_homing(phase) {
 			
 			// Move towards the reticle
 			var homing_speed = 12;
-			var dir = point_direction(x, y, Reticle.x, Reticle.y) - mask_direction;
-			hor_speed = lengthdir_x(homing_speed, dir);
-			ver_speed = lengthdir_y(homing_speed, dir);
+			var homing_dir = point_direction(x, y, Reticle.x, Reticle.y) - mask_direction;
+			hor_speed = lengthdir_x(homing_speed, homing_dir);
+			ver_speed = lengthdir_y(homing_speed, homing_dir);
 			break;
 		
 		// Stop state

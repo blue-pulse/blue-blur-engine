@@ -70,7 +70,7 @@ function player_state_spindash(phase) {
 			if (!input_holded(vb_down)) {
 				// Launch
 				var dash_speed = 10 + round(spindash_charge) / 2;
-				hor_speed = dash_speed * image_xscale;
+				hor_speed = dash_speed * dir;
 				player_set_state(player_state_roll)
 				
 				// FX

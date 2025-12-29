@@ -3,7 +3,7 @@ function player_state_turn(phase) {
 		// Start state
 	    case INIT:
 			// Update variables
-			image_xscale *= -1;
+			dir *= -1;
 			hor_speed = 0;
 			
 			// Set animation

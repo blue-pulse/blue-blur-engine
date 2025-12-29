@@ -7,7 +7,7 @@ function player_get_hit(object) {
 	// Drop rings and recoil
 	if (rings > 0) {
 		player_drop_rings();
-		player_state_hurt(-1);
+		player_set_state(player_state_hurt);
 		
 		// Movement
 		hor_speed = 2 * sign(x - object.x);

@@ -1,7 +1,7 @@
 function sonic_play_roll() {
 	// Variables
 	var abs_speed = abs(hor_speed);
-	image_angle = angle;
+	rotation = angle;
 	
 	// Fast roll
 	if (abs_speed > 5) {

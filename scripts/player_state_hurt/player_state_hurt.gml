@@ -3,7 +3,6 @@ function player_state_hurt(phase) {
 		// Start state
 		case INIT:
 			// Set variables
-			state = player_state_hurt;
 	        is_rolling = false;
 			allow_jump_action = false;
 			player_set_ground(noone);
@@ -11,7 +10,7 @@ function player_state_hurt(phase) {
 			// Animate
 			screen_shake(15);
 			animation_play(anim_hurt);
-			image_angle = gravity_direction;
+			rotation = gravity_direction;
 			break;
 		
 		// Run state

@@ -12,8 +12,8 @@ function player_reaction_dash_panel(obj)
 	//audio_play_sfx(sfxPeelout);
 	
 	// Launch
-	image_xscale = obj.image_xscale;
-	hor_speed = max(abs(hor_speed), 12) * image_xscale;
+	dir = obj.image_xscale;
+	hor_speed = max(abs(hor_speed), 12) * dir;
 	ground_lock = 16;
 	
 	// Roll, if applicable

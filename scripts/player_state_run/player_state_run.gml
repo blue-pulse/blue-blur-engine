@@ -18,7 +18,7 @@ function player_state_run(phase) {
 					// Moving in the opposite direction
 					if (hor_speed != 0 and sign(hor_speed) != input_dir) {
 						// Turn around
-						if (sign(image_xscale) == -input_dir and abs(hor_speed) <= skid_threshold) {
+						if (dir == -input_dir and abs(hor_speed) <= skid_threshold) {
 							player_set_state(player_state_turn);
 							break;
 						}
@@ -39,7 +39,7 @@ function player_state_run(phase) {
 					
 					// Accelerate
 					else {
-						image_xscale = input_dir;
+						dir = input_dir;
 						if (abs(hor_speed) < max_speed) {
 							hor_speed += accel * input_dir;
 							if (abs(hor_speed) > max_speed) {
@@ -102,7 +102,7 @@ function player_state_run(phase) {
 			}
 			
 			// Exit if pushing
-			if (animation == anim_push and sign(image_xscale) == input_dir) {
+			if (animation == anim_push and dir == input_dir) {
 				break;
 			}
 			
@@ -110,7 +110,7 @@ function player_state_run(phase) {
 			play_run_anim();
 			
 			// Set angle
-	        image_angle = angle;
+	        rotation = angle;
 			break;
 		
 		// Stop state

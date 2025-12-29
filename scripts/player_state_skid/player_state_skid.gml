@@ -32,7 +32,7 @@ function player_state_skid(phase) {
 						hor_speed = decel * input_dir;
 							
 						// Turn around
-						if (sign(image_xscale) != sign(hor_speed)) {
+						if (dir != sign(hor_speed)) {
 							animation_play(anim_skid_turn);
 							player_set_state(player_state_turn);
 						} else {
@@ -93,9 +93,6 @@ function player_state_skid(phase) {
 				player_set_state(player_state_roll);
 				break;
 			}
-			
-			// Set angle
-	        image_angle = angle;
 			
 			// Skid dust
 			if (hor_speed != 0 and ticks mod 4 == 0) {

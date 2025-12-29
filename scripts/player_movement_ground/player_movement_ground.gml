@@ -51,7 +51,7 @@ function player_movement_ground() {
 				
 				// Set pushing animation
 				var input_dir = input_opposing(vb_left, vb_right);
-				if (input_dir == wall_sign and image_xscale == wall_sign) {
+				if (input_dir == wall_sign and dir == wall_sign) {
 					player_wall_push(hit_wall, wall_sign);
 				}
 			}

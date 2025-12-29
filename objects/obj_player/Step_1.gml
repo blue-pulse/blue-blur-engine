@@ -11,5 +11,6 @@ if (allow_movement) {
 
 	// Update values
 	player_update_grid();
+	player_update_rotation();
 	player_update_animation();
 }

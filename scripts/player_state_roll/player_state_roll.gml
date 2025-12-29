@@ -80,16 +80,11 @@ function player_state_roll(phase) {
 			
 			// Animate
 			play_roll_anim();
-			
-	        // Set facing direction
-			if ((hor_speed < 0 and input_holded(vb_left)) or (hor_speed > 0 and input_holded(vb_right))) {
-	            image_xscale = sign(hor_speed);
-	        }
 			break;
 		
 		// Stop state
 		case STOP:
-			image_angle = gravity_direction;
-			break;	
+			rotation = gravity_direction;
+			break;
 	}
 }

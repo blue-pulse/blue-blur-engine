@@ -17,7 +17,7 @@ function player_state_airbone(phase) {
 		case STEP:
 			// Left acceleration
 			if (input_holded(vb_left)) {
-				image_xscale = -1;
+				dir = -1;
 				if (hor_speed > -max_speed) {
 	                hor_speed = max(hor_speed - air_accel, -max_speed);
 				}
@@ -25,7 +25,7 @@ function player_state_airbone(phase) {
 			
 			// Right acceleration
 			if (input_holded(vb_right)) {
-				image_xscale = 1;
+				dir = 1;
 	            if (hor_speed < max_speed) {
 	                hor_speed = min(hor_speed + air_accel, max_speed);
 	            }
@@ -77,11 +77,6 @@ function player_state_airbone(phase) {
 			if (animation == anim_rise and ver_speed >= 0) {
 				animation_play(anim_fall);
 			}
-			
-			// Rotate angle
-			if (!is_rolling and image_angle != angle) {
-				image_angle = approach_angle(image_angle, gravity_direction, 4);
-	        }
 			break;
 		
 		// Stop state

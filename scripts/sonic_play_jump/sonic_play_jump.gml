@@ -10,7 +10,7 @@ function sonic_play_jump() {
 	
 	// Roll
 	animation_play(anim_roll_fast, anim_speed);
-	image_angle = gravity_direction;
+	rotation = gravity_direction;
 	
 	// Jumpball
 	//TODO

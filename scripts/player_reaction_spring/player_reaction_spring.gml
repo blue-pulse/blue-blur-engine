@@ -17,7 +17,7 @@ function player_reaction_spring(obj, side)
 	if (x_spring_speed != 0)
 	{
 		hor_speed = x_spring_speed;
-		image_xscale = sign(hor_speed);
+		dir = sign(hor_speed);
 		ground_lock = 16;
 	}
 	if (y_spring_speed != 0)
@@ -34,7 +34,7 @@ function player_reaction_spring(obj, side)
 			is_rolling = false;
 			is_jumping = false;
 			animation_play(anim_rise);
-			image_angle = gravity_direction;
+			rotation = gravity_direction;
 		}
 	}
 	

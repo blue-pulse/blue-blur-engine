@@ -20,25 +20,25 @@ function player_can_lock_on(object) {
 	// Check against rotation
 	switch (mask_direction) {
 		case 0:
-			if (sign(object_x - player_x) != image_xscale or player_y >= object_y) {
+			if (sign(object_x - player_x) != dir or player_y >= object_y) {
 				return false;
 			}
 			break;
 			
 		case 90:
-			if (sign(player_y - object_y) != image_xscale or player_x >= object_x) {
+			if (sign(player_y - object_y) != dir or player_x >= object_x) {
 				return false;
 			}
 			break;
 
 		case 180:
-			if (sign(player_x - object_x) != image_xscale or player_y <= object_y) {
+			if (sign(player_x - object_x) != dir or player_y <= object_y) {
 				return false;
 			}
 			break;
 		
 		case 270:
-			if (sign(object_y - player_y) != image_xscale or player_x <= object_x) {
+			if (sign(object_y - player_y) != dir or player_x <= object_x) {
 				return false;
 			}
 			break;

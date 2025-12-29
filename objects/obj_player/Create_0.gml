@@ -10,20 +10,29 @@ angle = 0;
 alpha = 1;
 rotation = 360;
 
-// State flags
-allow_movement = true;
+// State variables
 allow_jump_action = false;
+allow_movement = true;
+direction_denied_states = [
+	player_state_airbone,
+	player_state_roll,
+];
 invincibility_fx = noone;
 is_jumping = false;
 is_rolling = false;
-peelout_charge = 0;
+rotation_allowed_states = [
+	player_state_airbone,
+	player_state_roll,
+	player_state_run,
+	player_state_skid,
+];
 spindash_charge = 0;
 spindash_pitch = 1;
 state = player_state_init;
 state_prev = state;
 
 // Movement
-dir = 1;
+dir = sign(image_xscale);
 cliff_dir = 0;
 hor_speed = 0;
 ver_speed = 0;

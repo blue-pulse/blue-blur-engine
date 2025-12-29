@@ -528,6 +528,7 @@
     {"id":{"name":"player_update_objects","path":"scripts/player_update_objects/player_update_objects.yy",},},
     {"id":{"name":"player_update_params","path":"scripts/player_update_params/player_update_params.yy",},},
     {"id":{"name":"player_update_physics","path":"scripts/player_update_physics/player_update_physics.yy",},},
+    {"id":{"name":"player_update_rotation","path":"scripts/player_update_rotation/player_update_rotation.yy",},},
     {"id":{"name":"player_wall_eject","path":"scripts/player_wall_eject/player_wall_eject.yy",},},
     {"id":{"name":"player_wall_push","path":"scripts/player_wall_push/player_wall_push.yy",},},
     {"id":{"name":"print","path":"scripts/print/print.yy",},},

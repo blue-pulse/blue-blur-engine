@@ -44,7 +44,7 @@ function sonic_begin_homing() {
 		// Homing dash
 		else {
 			allow_jump_action = false;
-			hor_speed = 8 * image_xscale;
+			hor_speed = 8 * dir;
 			ver_speed = 0;
 		}
 	}

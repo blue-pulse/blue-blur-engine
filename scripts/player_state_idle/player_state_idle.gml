@@ -13,14 +13,11 @@ function player_state_idle(phase) {
 			}
 			
 			// Animate balance
-			else if (cliff_dir == image_xscale) {
+			else if (cliff_dir == dir) {
 				animation_play(anim_balance_front);
 			} else {
 				animation_play(anim_balance_back);
 			}
-			
-			// Set angle
-			image_angle = gravity_direction;
 			break;
 		
 		// Run state
@@ -58,7 +55,7 @@ function player_state_idle(phase) {
 			}
 			
 			// Turn-around
-			if (input_dir != 0 and sign(image_xscale) != input_dir) {
+			if (input_dir != 0 and dir != input_dir) {
 				player_set_state(player_state_turn);
 				break;
 			}

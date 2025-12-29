@@ -16,7 +16,7 @@ function player_is_dead(phase) {
 			
 			// Animate
 			animation_index = "dead";
-			image_angle = gravity_direction;
+			rotation = gravity_direction;
 			
 			// Sound
 			//audio_play_sfx(sfxDeath);

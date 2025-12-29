@@ -24,12 +24,12 @@ function player_state_jump(phase) {
 	    case STEP:
 			// Handle aerial acceleration
 			if (input_holded(vb_left)) {
-				image_xscale = -1;
+				dir = -1;
 				if (hor_speed > -max_speed) {
 	                hor_speed = max(hor_speed - air_accel, -max_speed);
 				}
 			} else if (input_holded(vb_right)) {
-				image_xscale = 1;
+				dir = 1;
 	            if (hor_speed < max_speed) {
 	                hor_speed = min(hor_speed + air_accel, max_speed);
 	            }
