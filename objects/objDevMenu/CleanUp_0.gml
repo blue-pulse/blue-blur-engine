@@ -4,7 +4,9 @@ show_debug_overlay(false);
 // Release player
 with (obj_player)
 {
-	if (state == player_is_debugging) player_state_airbone(-1);
+	if (state == player_state_debug) {
+		player_set_state(player_state_airbone);
+	}
 }
 
 // Hide layer objects

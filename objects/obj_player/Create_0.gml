@@ -38,6 +38,7 @@ rotation_allowed_states = [
 	player_state_roll,
 	player_state_run,
 	player_state_skid,
+	player_state_knockout
 ];
 
 // Movement

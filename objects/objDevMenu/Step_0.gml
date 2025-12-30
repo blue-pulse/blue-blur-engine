@@ -26,11 +26,13 @@ with (obj_player)
 	// Transition to the debugging state
 	if (keyboard_check_pressed(ord("D")))
 	{
-		if (state != player_is_debugging)
+		if (state != player_state_debug)
 		{
-			player_is_debugging(-1);
+			player_set_state(player_state_debug);
 		}
-		else player_state_airbone(-1);
+		else {
+			player_set_state(player_state_airbone);
+		}
 	}
 	
 	// Gain 50 rings

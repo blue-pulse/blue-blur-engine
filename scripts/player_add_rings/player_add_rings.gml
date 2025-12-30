@@ -11,7 +11,4 @@ function player_add_rings(amount) {
 	
 	// Get rings
 	rings = min(total, 999);
-	
-	// Sound
-	//audio_play_sfx(sfxRing);
 }
