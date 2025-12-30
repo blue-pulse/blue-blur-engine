@@ -1,6 +1,6 @@
 function sonic_init_animations(){
 	// Initialize variables
-	snip_create_event();
+	animation_setup_init();
 	
 	// Balance
 	anim_balance_back = animation_create(spr_sonic_balance_back);

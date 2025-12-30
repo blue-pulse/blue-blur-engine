@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"animation_get_frame",
+  "%Name":"animation_setup_run",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"animation_get_frame",
+  "name":"animation_setup_run",
   "parent":{
     "name":"Animations",
     "path":"folders/2. Framework/Wrappers/Animations.yy",

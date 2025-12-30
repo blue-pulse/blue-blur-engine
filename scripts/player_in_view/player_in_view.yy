@@ -6,7 +6,7 @@
   "name":"player_in_view",
   "parent":{
     "name":"Methods",
-    "path":"folders/3. Player/Main scripts/Methods.yy",
+    "path":"folders/3. Player/Main/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

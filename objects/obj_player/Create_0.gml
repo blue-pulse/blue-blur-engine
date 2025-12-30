@@ -57,7 +57,7 @@ resource_list = [];
 terrain_list = [];
 
 // Position grid
-table_size = 16;
+table_size = 12;
 trail_alpha = array_create(table_size, 0);
 pos_grid = [
 	array_create(table_size, x),

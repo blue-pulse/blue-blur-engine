@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"animation_get_callback",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Utils.yy",
+    "name":"Animations",
+    "path":"folders/2. Framework/Wrappers/Animations.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

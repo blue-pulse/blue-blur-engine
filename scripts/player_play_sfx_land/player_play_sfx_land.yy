@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_play_sfx_land",
   "parent":{
-    "name":"General",
-    "path":"folders/3. Player/Main scripts/General.yy",
+    "name":"Scripts",
+    "path":"folders/3. Player/Player/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

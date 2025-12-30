@@ -6,7 +6,7 @@
   "name":"player_set_ground",
   "parent":{
     "name":"Methods",
-    "path":"folders/3. Player/Main scripts/Methods.yy",
+    "path":"folders/3. Player/Main/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

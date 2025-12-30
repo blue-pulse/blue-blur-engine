@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_shake",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Utils.yy",
+    "name":"Input",
+    "path":"folders/2. Framework/Wrappers/Input.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

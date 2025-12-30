@@ -6,7 +6,7 @@
   "name":"player_state_crouch",
   "parent":{
     "name":"States",
-    "path":"folders/3. Player/Main scripts/States.yy",
+    "path":"folders/3. Player/Main/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
