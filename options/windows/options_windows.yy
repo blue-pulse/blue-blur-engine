@@ -8,7 +8,7 @@
   "option_windows_copyright_info":"Blue Pulse",
   "option_windows_copy_exe_to_dest":false,
   "option_windows_d3dswapeffectdiscard":false,
-  "option_windows_description_info":"A Sonic the Hedgehog Game Engine",
+  "option_windows_description_info":"Blue Blur Engine",
   "option_windows_disable_sandbox":false,
   "option_windows_display_cursor":true,
   "option_windows_display_name":"Blue Blur Engine",
