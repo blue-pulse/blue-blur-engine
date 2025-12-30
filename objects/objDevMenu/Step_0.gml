@@ -13,7 +13,7 @@ with (obj_player)
 	other.player_data += "ANIMATION: " + string(snip_get_sprite(animation));
 	
 	// Abort if dead
-	if (state == player_is_dead) exit;
+	if (state == player_state_death) exit;
 	
 	// Rotate the player's gravity direction
 	if (keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("S")))

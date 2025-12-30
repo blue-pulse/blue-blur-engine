@@ -1,12 +1,7 @@
 function player_update_params() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
-	
-	// Reduce ground lock
-	if (is_grounded and ground_lock) {
-		--ground_lock;
-	}
-	
+
 	// Recovery frames handling
 	if (recovery_timer) {
 		alpha = (recovery_timer & 4 > 0) * 1;
@@ -25,5 +20,16 @@ function player_update_params() {
 	// Superspeed
 	if (superspeed_timer and --superspeed_timer <= 0) {
 		player_update_physics();
+	}
+	
+	// Ground flags
+	if (is_grounded) {
+		// Reset flags
+		allow_jump_action = false;
+		
+		// Reduce ground lock
+		if (ground_lock) {	
+			--ground_lock;
+		}
 	}
 }

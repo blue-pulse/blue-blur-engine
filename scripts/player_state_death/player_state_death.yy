@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_is_dead",
+  "%Name":"player_state_death",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_is_dead",
+  "name":"player_state_death",
   "parent":{
     "name":"States",
     "path":"folders/3. Player/Main scripts/States.yy",

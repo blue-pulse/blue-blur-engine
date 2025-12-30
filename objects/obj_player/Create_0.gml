@@ -10,26 +10,35 @@ angle = 0;
 alpha = 1;
 rotation = 360;
 
-// State variables
+// State flags
 allow_jump_action = false;
 allow_movement = true;
+invincibility_fx = noone;
+is_jumping = false;
+is_rolling = false;
+is_underwater = false;
+spindash_charge = 0;
+spindash_pitch = 1;
+state = player_state_init;
+state_prev = state;
+
+// State arrays
 direction_denied_states = [
 	player_state_airbone,
 	player_state_roll,
 ];
-invincibility_fx = noone;
-is_jumping = false;
-is_rolling = false;
+hurt_denied_state = [
+	player_state_death, 
+	player_state_hurt,
+	player_state_init,
+	player_state_knockout,
+];
 rotation_allowed_states = [
 	player_state_airbone,
 	player_state_roll,
 	player_state_run,
 	player_state_skid,
 ];
-spindash_charge = 0;
-spindash_pitch = 1;
-state = player_state_init;
-state_prev = state;
 
 // Movement
 dir = sign(image_xscale);

@@ -4,7 +4,6 @@ function player_state_roll(phase) {
 		case INIT:
 			// Variables
 	        is_rolling = true;
-			allow_jump_action = false;
 			
 			// FX
 			play_roll_anim();

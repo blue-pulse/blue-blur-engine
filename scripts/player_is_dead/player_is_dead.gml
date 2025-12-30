@@ -1,10 +1,10 @@
-function player_is_dead(phase) {
+function player_state_death(phase) {
 	switch (phase)
 	{
 		case -1:
 		{
 			// Set state and flags
-			state = player_is_dead;
+			state = player_state_death;
 			is_rolling = false;
 			objStage.timer_enabled = false;
 			

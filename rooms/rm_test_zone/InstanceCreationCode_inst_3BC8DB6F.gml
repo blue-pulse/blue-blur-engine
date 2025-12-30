@@ -1,2 +1,1 @@
-/// @description Enable movement
-moving = true;
+allow_movement = true;

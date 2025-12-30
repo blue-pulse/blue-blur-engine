@@ -6,7 +6,7 @@ vspeed = 0;
 with (player_id)
 {
 	// Abort if dead
-	if (state == player_is_dead) break;
+	if (state == player_state_death) break;
 	
 	// Get reward type
 	switch (other.image_index)

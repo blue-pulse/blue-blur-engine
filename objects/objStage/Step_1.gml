@@ -5,7 +5,7 @@ global.framecount++;
 if (timer_enabled and ++stage_time >= time_limit)
 {
 	time_over = true;
-	with (obj_player) player_is_dead(-1);
+	with (obj_player) player_set_state(player_state_death);
 }
 
 // Reset time

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_player_hurt",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":2,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":0.9017234,
+  "exportDir":"",
+  "name":"snd_player_hurt",
+  "parent":{
+    "name":"Common",
+    "path":"folders/3. Player/Player/Sounds/Common.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_player_hurt.wav",
+  "volume":1.0,
+}

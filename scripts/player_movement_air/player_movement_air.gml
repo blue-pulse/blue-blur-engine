@@ -11,7 +11,7 @@ function player_movement_air() {
 		
 		// Die if out of bounds
 		if (!player_in_view()) {
-			player_is_dead(-1);
+			player_set_state(player_state_death);
 			return false;
 		}
 		
@@ -53,7 +53,7 @@ function player_movement_air() {
 		
 		// Die if out of bounds
 		if (!player_in_view()) {
-			player_is_dead(-1);
+			player_set_state(player_state_death);
 			return false;
 		}
 		
