@@ -6,7 +6,7 @@
   "name":"player_state_death",
   "parent":{
     "name":"States",
-    "path":"folders/3. Player/Main/States.yy",
+    "path":"folders/4. Player/Player/Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

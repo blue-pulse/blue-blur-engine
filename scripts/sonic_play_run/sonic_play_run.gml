@@ -1,4 +1,9 @@
 function sonic_play_run() {
+	// Early exit
+	if (animation_is_playing(anim_dashpad)) {
+		exit;
+	}
+	
 	// Variables
 	var current_speed = abs(hor_speed);
 	var anim_speed = 1;

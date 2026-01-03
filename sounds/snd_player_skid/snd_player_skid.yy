@@ -15,7 +15,7 @@
   "name":"snd_player_skid",
   "parent":{
     "name":"Skid",
-    "path":"folders/3. Player/Player/Sounds/Skid.yy",
+    "path":"folders/4. Player/Player/Sounds/Skid.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

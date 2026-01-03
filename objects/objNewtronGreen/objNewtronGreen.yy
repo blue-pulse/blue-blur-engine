@@ -9,8 +9,8 @@
   "name":"objNewtronGreen",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/5. Resources/Enemies.yy",
+    "name":"Objects",
+    "path":"folders/5. Enemies/Objects.yy",
   },
   "parentObjectId":{
     "name":"objBadnik",

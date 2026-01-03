@@ -1,5 +1,5 @@
 // Basic variables
-depth = queue.player;
+depth = depths.player;
 animation = noone;
 rings = 0;
 score_combo = 0;
@@ -27,7 +27,7 @@ direction_denied_states = [
 	player_state_airbone,
 	player_state_roll,
 ];
-hurt_denied_state = [
+damage_denied_state = [
 	player_state_death, 
 	player_state_hurt,
 	player_state_init,

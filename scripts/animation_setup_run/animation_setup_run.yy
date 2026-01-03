@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"animation_setup_run",
   "parent":{
-    "name":"Animations",
-    "path":"folders/2. Framework/Wrappers/Animations.yy",
+    "name":"Wrappers",
+    "path":"folders/3. Framework/Wrappers.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

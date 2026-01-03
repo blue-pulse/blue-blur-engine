@@ -6,7 +6,7 @@
   "name":"collision_ray",
   "parent":{
     "name":"Utils",
-    "path":"folders/2. Framework/Utils.yy",
+    "path":"folders/3. Framework/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

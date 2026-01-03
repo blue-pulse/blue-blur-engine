@@ -34,7 +34,7 @@
   "origin":4,
   "parent":{
     "name":"Sprites",
-    "path":"folders/5. Resources/Items/Sprites.yy",
+    "path":"folders/6. Items/Monitors/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

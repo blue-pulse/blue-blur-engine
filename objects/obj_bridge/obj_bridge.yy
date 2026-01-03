@@ -10,8 +10,8 @@
   "name":"obj_bridge",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/5. Resources/Items/Objects.yy",
+    "name":"Solids",
+    "path":"folders/7. Stages/Terrain/Solids.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

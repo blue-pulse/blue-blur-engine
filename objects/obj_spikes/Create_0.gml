@@ -1,8 +1,10 @@
 // Inherit the parent event
 event_inherited();
 
+// Script
+reaction_index = player_reaction_spikes;
+
 // Variables
-depth = queue.backstage;
-reaction_index = player_reaction_spike;
+depth = depths.backstage;
 allow_movement = false;
 offset = 0;

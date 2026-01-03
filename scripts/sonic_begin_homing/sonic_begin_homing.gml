@@ -4,7 +4,8 @@ function sonic_begin_homing() {
 		if (allow_jump_action) {
 			// Record targets
 			var target_list = [
-				instance_nearest(x, y, objMonitor), 
+				instance_nearest(x, y, obj_spring),
+				instance_nearest(x, y, objMonitor),
 				instance_nearest(x, y, objBadnik), // Higher priority
 			];
 
@@ -14,7 +15,7 @@ function sonic_begin_homing() {
 				var target = target_list[i];
 				
 				// Lock on to it if possible
-				if (target != noone and player_can_lock_on(target)) {
+				if (target != noone and target.usable and player_can_lock_on(target)) {
 					var reticle = vfx_create(target.x, target.y, Reticle);
 					reticle.target = target;
 					reticle.owner = id;
@@ -43,6 +44,7 @@ function sonic_begin_homing() {
 		
 		// Homing dash
 		else {
+			image_xscale = dir;
 			allow_jump_action = false;
 			hor_speed = 8 * dir;
 			ver_speed = 0;

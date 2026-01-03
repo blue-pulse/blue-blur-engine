@@ -9,9 +9,8 @@
 
 // Effects
 #macro RAW 0
-#macro NATIVE 1
+#macro SKIP 1
 #macro REPLACE 2
-#macro SKIP 3
 
 // States phases
 #macro INIT -1

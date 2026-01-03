@@ -15,7 +15,7 @@
   "name":"snd_player_spindash_release",
   "parent":{
     "name":"Common",
-    "path":"folders/3. Player/Player/Sounds/Common.yy",
+    "path":"folders/4. Player/Player/Sounds/Common.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

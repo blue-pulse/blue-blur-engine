@@ -15,6 +15,7 @@ with (obj_player)
 		draw_line_color(x_int - wall_radius, y_int, x_int + wall_radius, y_int, c_white, c_white);
 	}
 	draw_line_color(x_int, y_int, x_int + dsin(mask_direction) * ver_radius, y_int + dcos(mask_direction) * ver_radius, c_white, c_white);
+	snip_draw_debug(x-30,y+40)
 }
 with (objBadnik)
 {

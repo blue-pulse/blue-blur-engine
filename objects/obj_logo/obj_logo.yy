@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/4. Visuals/Title/Objects.yy",
+    "path":"folders/2. Visuals/Title/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

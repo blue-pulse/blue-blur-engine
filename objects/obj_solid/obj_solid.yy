@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Parents",
-    "path":"folders/5. Resources/Parents.yy",
+    "path":"folders/3. Framework/Parents.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

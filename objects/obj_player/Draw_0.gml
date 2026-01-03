@@ -16,6 +16,3 @@ image_alpha = alpha;
 // Character sprite
 player_draw_trail(c_blue);
 draw_object();
-
-//tmp
-snip_draw_debug(x-30,y+40)

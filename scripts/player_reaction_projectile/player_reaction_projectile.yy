@@ -6,7 +6,7 @@
   "name":"player_reaction_projectile",
   "parent":{
     "name":"Reactions",
-    "path":"folders/3. Player/Main/Reactions.yy",
+    "path":"folders/4. Player/Player/Scripts/Reactions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

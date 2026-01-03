@@ -4,7 +4,7 @@ function player_reaction_badnik(obj)
 	if (not (is_rolling or invincibility_timer > 0))
 	{
 		// Abort state if successful
-		return player_get_hit(obj);
+		return player_receive_damage(obj);
 	}
 	
 	// Rebound in air

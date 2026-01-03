@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Singletons",
-    "path":"folders/2. Framework/Singletons.yy",
+    "path":"folders/3. Framework/Singletons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

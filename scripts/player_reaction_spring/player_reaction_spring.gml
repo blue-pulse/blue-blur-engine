@@ -1,50 +1,47 @@
-function player_reaction_spring(obj, side)
-{
-	// Get orientation relative to current rotation
-	var rotation_offset = angle_wrap(obj.image_angle - mask_direction);
-	
-	// Ignore if not touching the correct side
-	if ((side == DIR_RIGHT and rotation_offset != 90) or
-		(side == DIR_LEFT and rotation_offset != 270) or
-		(side == DIR_BOTTOM and rotation_offset != 0) or
-		(side == DIR_TOP and rotation_offset != 180)) return false;
-	
-	// Get movement vectors
-	var x_spring_speed = -dsin(rotation_offset) * obj.force;
-	var y_spring_speed = -dcos(rotation_offset) * obj.force;
-	
-	// Bounce from spring
-	if (x_spring_speed != 0)
-	{
-		hor_speed = x_spring_speed;
-		dir = sign(hor_speed);
-		ground_lock = 16;
+function player_reaction_spring(object) {
+	// Early exit
+	if (!object.usable) {
+		return false;
 	}
-	if (y_spring_speed != 0)
-	{
-		// Set state
+	
+	// Variables
+	var spring_rotation = angle_wrap(object.image_angle - mask_direction);
+	var spring_hspeed = -dsin(spring_rotation) * object.force;
+	var spring_vspeed = -dcos(spring_rotation) * object.force;
+	
+	// Trigger
+	object.image_speed = 1;
+	object.alarm[0] = 10;
+	object.usable = false;
+	
+	// FX
+	screen_shake(7);
+	audio_play_sfx(snd_spring, REPLACE);
+	
+	// Bounce horizontally
+	if (spring_hspeed != 0) {
+		dir = sign(spring_hspeed);
+		hor_speed = spring_hspeed;
+		ground_lock = 16;
+		return false;
+	}
+	
+	// Bounce vertically
+	if (spring_vspeed != 0) {
+		// Variables
 		player_set_state(player_state_airbone);
-		
-		// Movement
-		ver_speed = y_spring_speed;
+		hor_speed = spring_hspeed;
+		ver_speed = spring_vspeed;
 		
 		// Set flags and animate if rising
-		if (side == DIR_BOTTOM)
-		{
+		if (spring_rotation == 0) {
 			is_rolling = false;
 			is_jumping = false;
-			animation_play(anim_rise);
 			rotation = gravity_direction;
+			animation_play(anim_rise);
 		}
+		
+		// Set state
+		return true;
 	}
-	
-	// Animate spring
-	obj.image_index = 0;
-	obj.alarm[0] = 1;
-	
-	// Sound
-	//audio_play_sfx(sfxSpring);
-	
-	// Abort state only if bouncing vertically
-	return (y_spring_speed != 0);
 }

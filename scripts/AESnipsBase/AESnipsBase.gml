@@ -686,7 +686,7 @@ function snip_play_next(_snip, _should_transition)
 }
 
 ///@func snip_cancel_play_next()
-///@desc This will cancel the Snip that the object has queued to play next
+///@desc This will cancel the Snip that the object has depthsd to play next
 function snip_cancel_play_next()
 {
 	//If the Snip is transitioning then the current target will have a Snip

@@ -23,5 +23,5 @@ part_type_life(global.motobug_smoke, 16, 16);
 
 // Homing burst
 global.homing_burst = part_type_create();
-part_type_sprite(global.homing_burst, sprHomingBurst, true, true, false);
+part_type_sprite(global.homing_burst, spr_homing_burst, true, true, false);
 part_type_life(global.homing_burst, 10, 10);

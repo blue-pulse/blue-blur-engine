@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Menus",
-    "path":"folders/6. Stages/Menus.yy",
+    "path":"folders/2. Visuals/Menus.yy",
   },
   "parentObjectId":null,
   "persistent":false,

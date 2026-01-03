@@ -6,7 +6,7 @@
   "name":"player_update_physics",
   "parent":{
     "name":"Methods",
-    "path":"folders/3. Player/Main/Methods.yy",
+    "path":"folders/4. Player/Player/Scripts/Methods.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

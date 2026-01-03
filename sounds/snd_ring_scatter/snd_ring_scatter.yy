@@ -15,7 +15,7 @@
   "name":"snd_ring_scatter",
   "parent":{
     "name":"Sounds",
-    "path":"folders/5. Resources/Items/Sounds.yy",
+    "path":"folders/6. Items/Rings/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

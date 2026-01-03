@@ -14,7 +14,7 @@ function player_update_params() {
 	if (invincibility_timer and --invincibility_timer <= 0) {
 		instance_destroy(invincibility_fx);
 		invincibility_fx = noone;
-		//audio_dequeue_bgm(bgmInvincibility, true);
+		//audio_dedepths_bgm(bgmInvincibility, true);
 	}
 	
 	// Superspeed

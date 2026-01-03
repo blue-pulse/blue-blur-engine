@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Solids",
-    "path":"folders/5. Resources/Terrain/Solids.yy",
+    "path":"folders/7. Stages/Terrain/Solids.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

@@ -192,7 +192,7 @@
   "name":"font_main_regular",
   "parent":{
     "name":"Fonts",
-    "path":"folders/4. Visuals/Fonts/Fonts.yy",
+    "path":"folders/2. Visuals/Fonts/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -11,8 +11,8 @@
   "name":"objMonitor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Monitor",
-    "path":"folders/5. Resources/Monitor.yy",
+    "name":"Objects",
+    "path":"folders/6. Items/Monitors/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

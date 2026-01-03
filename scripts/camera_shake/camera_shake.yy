@@ -6,7 +6,7 @@
   "name":"camera_shake",
   "parent":{
     "name":"Scripts",
-    "path":"folders/4. Visuals/GUI/Scripts.yy",
+    "path":"folders/2. Visuals/GUI/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

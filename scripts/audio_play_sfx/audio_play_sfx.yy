@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"audio_play_sfx",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Utils.yy",
+    "name":"EasyAudio v1.0.0",
+    "path":"folders/1. Packages/EasyAudio v1.0.0.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

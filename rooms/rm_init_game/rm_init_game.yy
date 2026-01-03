@@ -18,7 +18,7 @@
   "name":"rm_init_game",
   "parent":{
     "name":"Rooms",
-    "path":"folders/2. Framework/Rooms.yy",
+    "path":"folders/3. Framework/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

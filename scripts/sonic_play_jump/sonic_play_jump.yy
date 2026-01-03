@@ -6,7 +6,7 @@
   "name":"sonic_play_jump",
   "parent":{
     "name":"Scripts",
-    "path":"folders/3. Player/Sonic/Scripts.yy",
+    "path":"folders/4. Player/Sonic/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

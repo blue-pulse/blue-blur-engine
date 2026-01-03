@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Spawner",
-    "path":"folders/6. Stages/Spawner.yy",
+    "path":"folders/7. Stages/Spawner.yy",
   },
   "parentObjectId":null,
   "persistent":false,

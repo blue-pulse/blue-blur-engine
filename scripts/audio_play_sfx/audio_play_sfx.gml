@@ -1,22 +1,19 @@
-function audio_play_sfx(sound, mode=RAW, loops=false) {	
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
+function audio_play_sfx(sound, mode=0, loops=false) {	
 	// Logic before playing anything
 	switch (mode) {
 		// Don't do anything
-		case RAW:
+		case 0:
 			break;
 			
-		// Skip if is playing
-		case SKIP:
+		// Ignore if already playing
+		case 1:
 			if (audio_is_playing(sound)) {
 				return noone;
 			}
 			break;
 			
 		// Replace if is playing
-		case REPLACE:
+		case 2:
 			if (audio_is_playing(sound)) {
 				audio_stop_sound(sound);
 			}
@@ -24,5 +21,5 @@ function audio_play_sfx(sound, mode=RAW, loops=false) {
 	}
 	
 	// Play sound
-	return audio_play_sound(sound, queue.sfx, loops);
+	return audio_play_sound(sound, PRIORITY_SFX, loops, VOLUME_SFX);
 }

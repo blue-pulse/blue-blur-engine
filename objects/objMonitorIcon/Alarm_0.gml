@@ -25,7 +25,7 @@ with (player_id)
 		case 2: // Invincibility
 		{
 			invincibility_timer = 1200;
-			//audio_enqueue_bgm(bgmInvincibility, 1, true);
+			//audio_endepths_bgm(bgmInvincibility, 1, true);
 			
 			// Create invincibility effect
 			if (invincibility_fx == noone)

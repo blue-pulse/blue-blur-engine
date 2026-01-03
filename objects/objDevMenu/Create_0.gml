@@ -4,5 +4,5 @@ player_data = "";
 show_debug_overlay(true);
 
 // Show layer objects
-with (objLayerFlip) visible = true;
-with (objLayerSet) visible = true;
+with (obj_plane_toggler) visible = true;
+with (obj_plane_setter) visible = true;

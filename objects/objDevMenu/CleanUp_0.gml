@@ -10,5 +10,5 @@ with (obj_player)
 }
 
 // Hide layer objects
-with (objLayerFlip) visible = false;
-with (objLayerSet) visible = false;
+with (obj_plane_toggler) visible = false;
+with (obj_plane_setter) visible = false;

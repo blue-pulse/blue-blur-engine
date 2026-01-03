@@ -1,4 +1,9 @@
 function sonic_play_roll() {
+	// Early exit
+	if (animation_is_playing(anim_dashpad)) {
+		exit;
+	}
+	
 	// Variables
 	var abs_speed = abs(hor_speed);
 	rotation = angle;

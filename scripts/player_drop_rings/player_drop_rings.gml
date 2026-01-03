@@ -7,7 +7,7 @@ function player_drop_rings() {
 	// Handle rings on the floor
 	for (var i = 0; i < min(rings, 32); i++) {
 		// Spawn scattered ring
-		var ring = instance_create_depth(x, y, queue.backstage, obj_ring_scattered);
+		var ring = instance_create_depth(x, y, depths.backstage, obj_ring_scattered);
 		
 		// Latest rings
 		if (i == 15) {

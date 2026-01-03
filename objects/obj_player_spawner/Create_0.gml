@@ -6,10 +6,10 @@ var pos_y = floor(y);
 switch (room) {
 	default:
 		// Create player
-		var player = instance_create_depth(pos_x, pos_y, queue.player, global.character);
+		var player = instance_create_depth(pos_x, pos_y, depths.player, global.character);
 		
 		// Create camera
-		instance_create_depth(pos_x, pos_y, queue.gui, Camera);
+		instance_create_depth(pos_x, pos_y, depths.gui, Camera);
 		camera_set_target(player);
 		break;
 }

@@ -12,7 +12,7 @@ function player_state_death(phase) {
 			instance_destroy(invincibility_fx);
 			
 			// FX
-			depth = queue.effects;
+			depth = depths.effects;
 			animation_play(anim_hurt);
 			//audio_play_sfx(sfxDeath);
 			break;
