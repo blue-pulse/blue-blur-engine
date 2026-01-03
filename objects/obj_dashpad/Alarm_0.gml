@@ -1,0 +1,2 @@
+// Reset flag
+usable = true;

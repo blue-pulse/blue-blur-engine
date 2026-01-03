@@ -2,6 +2,7 @@
 event_inherited();
 
 // Variables
+depth = queue.backstage;
 sprite_index = spr_bridge_log;
 max_tension = 16;
 node_width = sprite_get_width(sprite_index);
