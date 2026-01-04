@@ -5,16 +5,11 @@ function player_state_death(phase) {
 			// Set variables
 			is_rolling = false;
 			recovery_timer = 0;
-			invincibility_frames = 0;
 			objStage.timer_enabled = false;
-			
-			// Remove effects
-			instance_destroy(invincibility_fx);
 			
 			// FX
 			depth = depths.effects;
 			animation_play(anim_hurt);
-			//audio_play_sfx(sfxDeath);
 			break;
 
 		// Run state

@@ -1,6 +1,6 @@
 function player_receive_damage(object, instant_kill=false) {
 	// Exit if player can't be damaged
-	if (!instant_kill and (recovery_timer or invincibility_timer)) {
+	if (!instant_kill and recovery_timer) {
 		return false;
 	}
 	

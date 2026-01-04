@@ -20,6 +20,7 @@ function player_reaction_spring(object) {
 	
 	// Bounce horizontally
 	if (spring_hspeed != 0) {
+		y = floor(object.y);
 		dir = sign(spring_hspeed);
 		hor_speed = spring_hspeed;
 		ground_lock = 16;
@@ -29,6 +30,7 @@ function player_reaction_spring(object) {
 	// Bounce vertically
 	if (spring_vspeed != 0) {
 		// Variables
+		x = floor(object.x);
 		player_set_state(player_state_airbone);
 		hor_speed = spring_hspeed;
 		ver_speed = spring_vspeed;

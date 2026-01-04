@@ -1,7 +1,7 @@
 function player_reaction_badnik(obj)
 {
 	// Take damage if not in an attacking state
-	if (not (is_rolling or invincibility_timer > 0))
+	if (not (is_rolling))
 	{
 		// Abort state if successful
 		return player_receive_damage(obj);
