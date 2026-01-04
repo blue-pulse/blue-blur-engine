@@ -13,7 +13,6 @@ rotation = 360;
 // State flags
 allow_jump_action = false;
 allow_movement = true;
-invincibility_fx = noone;
 is_jumping = false;
 is_rolling = false;
 is_underwater = false;
@@ -58,7 +57,6 @@ terrain_list = [];
 
 // Position grid
 table_size = 12;
-trail_alpha = array_create(table_size, 0);
 pos_grid = [
 	array_create(table_size, x),
 	array_create(table_size, y),
@@ -66,10 +64,8 @@ pos_grid = [
 
 // Timers
 ground_lock = 0;
-invincibility_timer = 0;
 recovery_timer = 0;
 stumble_timer = 30;
-superspeed_timer = 0;
 
 // Physics
 accel = 0.046875;
@@ -97,14 +93,13 @@ stumble_threshold = 2.5;
 unroll_threshold = 0.5;
 
 // Specific character functions
-player_play_run = player_play_placeholder;
+play_jump_anim = player_play_placeholder;
+play_roll_anim = player_play_placeholder;
+play_run_anim = player_play_placeholder;
 
 // Initialize values
 player_set_ground(noone);
 player_update_physics();
+player_init_config();
 player_init_effects();
 player_init_animations();
-
-//tmp
-layer = layer_get_id("General");
-animation_index = "idle";
