@@ -1,2 +1,1 @@
-/// @description Set icon
-icon_index = 0;
+item = items.rings_rand;

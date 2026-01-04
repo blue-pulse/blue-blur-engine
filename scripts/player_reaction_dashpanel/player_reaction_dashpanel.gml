@@ -1,6 +1,6 @@
 function player_reaction_dashpanel(object) {
 	// Early exit
-	if (!is_grounded or !object.usable) {
+	if (!is_grounded or !object.usable or array_contains(damage_denied_state, state) ) {
 		return false;
 	}
 	
@@ -26,5 +26,5 @@ function player_reaction_dashpanel(object) {
 	}
 	
 	// Do not abort state
-	return true;
+	return false;
 }

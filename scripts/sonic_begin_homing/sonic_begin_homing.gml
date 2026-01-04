@@ -5,7 +5,7 @@ function sonic_begin_homing() {
 			// Record targets
 			var target_list = [
 				instance_nearest(x, y, obj_spring),
-				instance_nearest(x, y, objMonitor),
+				instance_nearest(x, y, obj_monitor),
 				instance_nearest(x, y, objBadnik), // Higher priority
 			];
 

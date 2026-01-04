@@ -1,2 +1,1 @@
-/// @description Set icon
-icon_index = 2;
+item = items.rings_5;

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_monitor_explosion",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.65034014,
+  "exportDir":"",
+  "name":"snd_monitor_explosion",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/6. Items/Monitors/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_monitor_explosion.wav",
+  "volume":0.45,
+}

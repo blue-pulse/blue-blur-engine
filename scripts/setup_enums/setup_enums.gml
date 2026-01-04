@@ -41,3 +41,13 @@ enum chars {
 	sonic,
 	tails,
 }
+
+// Items
+enum items {
+	none = 0,
+	rings_5 = 1,
+	rings_10 = 2,
+	rings_rand = 3,
+	life = 4,
+	stamina = 5,
+}

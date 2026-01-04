@@ -6,18 +6,6 @@ function player_state_idle(phase) {
 	        is_rolling = false;
 			player_reset_combo();
 			player_update_cliff();
-			
-			// Animate idle
-			if (cliff_dir == 0) {
-				animation_play(anim_idle);
-			}
-			
-			// Animate balance
-			else if (cliff_dir == dir) {
-				animation_play(anim_balance_front);
-			} else {
-				animation_play(anim_balance_back);
-			}
 			break;
 		
 		// Run state
@@ -85,6 +73,13 @@ function player_state_idle(phase) {
 					player_set_state(player_state_crouch);
 					break;
 				}
+				
+				// Animate idle
+				animation_play(anim_idle);
+			} else {
+			    // Animate balance
+				var anim_balance = (cliff_dir == dir) ? (anim_balance_front) : (anim_balance_back);
+			    animation_play(anim_balance);
 			}
 			break;
 			

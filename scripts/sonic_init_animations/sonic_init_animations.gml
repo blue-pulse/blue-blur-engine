@@ -71,6 +71,9 @@ function sonic_init_animations(){
 	anim_skid_slow_loop = animation_create(spr_sonic_skid_slow, 1, 1, 2);
 	anim_skid_turn = animation_create(spr_sonic_skid_turn);
 	
+	// Somersault
+	anim_somersault = animation_create(spr_sonic_somersault, 1.25);
+	
 	// Spindash
 	anim_spindash = animation_create(spr_sonic_spindash, 1, 0, 3);
 	anim_spindash_charge = animation_create(spr_sonic_spindash, 1, 4, -1);

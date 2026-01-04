@@ -1,6 +1,6 @@
 function player_reaction_ring(object) {
 	// Ignore if hit or starting to recover
-	if (array_contains([player_state_hurt, player_state_knockout], state) or recovery_timer > 90) {
+	if (recovery_timer > 90 or array_contains([player_state_hurt, player_state_knockout], state)) {
 		return false;
 	}
 	
