@@ -96,7 +96,7 @@ function player_state_skid(phase) {
 			
 			// Skid dust
 			if (hor_speed != 0 and ticks mod 4 == 0) {
-				var height = ver_radius - 6;
+				var height = ver_radius - 2;
 				var pos_x = floor(x + dsin(angle) * height);
 				var pos_y = floor(y + dcos(angle) * height);
 				part_particles_create(Particles, pos_x, pos_y, skid_dust, 1);

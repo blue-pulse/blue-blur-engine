@@ -1,4 +1,5 @@
 // Variables
+depth = depths.effects;
 sprite_index = spr_reticle;
 image_alpha = 0;
 image_speed = 0;

@@ -13,6 +13,11 @@ function player_state_spindash(phase) {
 			screen_shake(7);
 			animation_play(anim_spindash);
 			audio_play_sfx(snd_player_spindash_charge, REPLACE);
+			
+			// Dust
+			var dust = vfx_create(x, y, obj_spindash_dust);
+			dust.owner = id;
+			dust.image_xscale = dir;
 			break;
 
 		// Run state
@@ -82,6 +87,7 @@ function player_state_spindash(phase) {
 			
 		// Stop state
 		case STOP:
+			instance_destroy(obj_spindash_dust);
 			break;
 	}
 }
