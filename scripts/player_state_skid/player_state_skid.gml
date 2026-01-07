@@ -13,7 +13,7 @@ function player_state_skid(phase) {
 		// Run state
 	    case STEP:
 			// Variables
-			var input_dir = input_opposing(vb_left, vb_right);
+			var input_dir = input_opposing(vb_right, vb_left);
 			
 			// Early exit
 			if (input_dir == 0 or mask_direction != gravity_direction) {

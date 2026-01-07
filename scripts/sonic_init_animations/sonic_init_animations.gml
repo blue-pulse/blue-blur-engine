@@ -42,6 +42,7 @@ function sonic_init_animations(){
 	// Push
 	anim_push = animation_create(spr_sonic_push, 1, 3, -1);
 	anim_push_start = animation_create(spr_sonic_push, 1.5, 0, 2);
+	anim_push_end = animation_create(spr_sonic_push, -1.5, 0, 2);
 	
 	// Recovery
 	anim_recovery = animation_create(spr_sonic_recovery);

@@ -20,6 +20,10 @@ function sonic_init_transitions() {
 	// Knock-out
 	animation_set_transition(anim_knockout_loop, anim_idle, anim_recovery);
 	
+	// Push
+	animation_set_transition(anim_push, anim_idle, anim_push_end);
+	animation_set_transition(anim_push, anim_stroll, anim_push_end);
+	
 	// Roll
 	animation_set_transition(anim_roll, anim_idle, anim_land);
 	animation_set_transition(anim_roll, anim_stroll, anim_land);

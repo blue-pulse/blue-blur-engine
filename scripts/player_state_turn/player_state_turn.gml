@@ -15,7 +15,7 @@ function player_state_turn(phase) {
 		// Run state
 	    case STEP:
 			// Variables
-			var input_dir = input_opposing(vb_left, vb_right);
+			var input_dir = input_opposing(vb_right, vb_left);
 			
 			// Update position
 			if (!player_movement_ground()) {

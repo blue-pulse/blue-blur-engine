@@ -10,7 +10,7 @@ function player_state_run(phase) {
 		// Run state
 		case STEP:
 			// Variables
-			var input_dir = input_holded(vb_right) - input_holded(vb_left);
+			var input_dir = input_opposing(vb_right, vb_left);
 
 			// Handle ground movement if not sliding down
 			if (ground_lock <= 0) {
