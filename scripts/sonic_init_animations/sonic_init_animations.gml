@@ -36,6 +36,9 @@ function sonic_init_animations(){
 	// Land
 	anim_land = animation_create(spr_sonic_land);
 	
+	// Launch
+	anim_launch = animation_create(spr_sonic_launch);
+	
 	// Push
 	anim_push = animation_create(spr_sonic_push, 1, 3, -1);
 	anim_push_start = animation_create(spr_sonic_push, 1.5, 0, 2);

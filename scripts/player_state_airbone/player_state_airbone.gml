@@ -15,20 +15,22 @@ function player_state_airbone(phase) {
 
 		// Run state
 		case STEP:
-			// Left acceleration
-			if (input_holded(vb_left)) {
-				dir = -1;
-				if (hor_speed > -max_speed) {
-	                hor_speed = max(hor_speed - air_accel, -max_speed);
+			if (!air_lock) {
+				// Left acceleration
+				if (input_holded(vb_left)) {
+					dir = -1;
+					if (hor_speed > -max_speed) {
+		                hor_speed = max(hor_speed - air_accel, -max_speed);
+					}
 				}
-			}
 			
-			// Right acceleration
-			if (input_holded(vb_right)) {
-				dir = 1;
-	            if (hor_speed < max_speed) {
-	                hor_speed = min(hor_speed + air_accel, max_speed);
-	            }
+				// Right acceleration
+				if (input_holded(vb_right)) {
+					dir = 1;
+		            if (hor_speed < max_speed) {
+		                hor_speed = min(hor_speed + air_accel, max_speed);
+		            }
+				}
 			}
 			
 	        // Update position
@@ -54,6 +56,11 @@ function player_state_airbone(phase) {
 	        // Gravity
 			if (ver_speed < grav_cap) {
 				ver_speed = min(ver_speed + grav_force, grav_cap);
+			}
+			
+			// Wait for next frame
+			if (air_lock) {
+				break;
 			}
 			
 			// Jump actions

@@ -63,6 +63,7 @@ pos_grid = [
 ];
 
 // Timers
+air_lock = 0;
 ground_lock = 0;
 recovery_timer = 0;
 stumble_timer = 30;

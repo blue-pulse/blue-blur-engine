@@ -13,11 +13,20 @@ function player_update_params() {
 	// Ground flags
 	if (is_grounded) {
 		// Reset flags
+		air_lock = 0;
 		allow_jump_action = false;
 		
 		// Reduce ground lock
 		if (ground_lock) {	
 			--ground_lock;
+		}
+	}
+	
+	// Airbone flags
+	else {
+		// Reduce air lock
+		if (air_lock) {	
+			--air_lock;
 		}
 	}
 }

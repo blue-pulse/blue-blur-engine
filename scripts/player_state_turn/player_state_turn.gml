@@ -40,7 +40,7 @@ function player_state_turn(phase) {
 				player_set_state(player_state_run);
 				break;
 			}
-			
+
 			// Return to idle
 			if (!animation_get_callback(animation) and animation_ended()) {
 				player_set_state(player_state_idle)
