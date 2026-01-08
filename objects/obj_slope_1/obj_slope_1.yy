@@ -8,8 +8,8 @@
   "name":"obj_slope_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Solids",
-    "path":"folders/7. Stages/Terrain/Solids.yy",
+    "name":"Objects",
+    "path":"folders/7. Stages/Terrain/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_reaction_projectile",
+  "%Name":"player_reaction_bullet",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_reaction_projectile",
+  "name":"player_reaction_bullet",
   "parent":{
     "name":"Reactions",
     "path":"folders/4. Player/Player/Scripts/Reactions.yy",

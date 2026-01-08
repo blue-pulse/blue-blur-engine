@@ -99,8 +99,8 @@ player_animation_roll = player_play_placeholder;
 player_animation_run = player_play_placeholder;
 
 // Initialize values
-player_set_ground(noone);
-player_update_physics();
 player_init_config();
 player_init_effects();
 player_init_animations();
+player_set_ground(noone);
+player_update_physics();

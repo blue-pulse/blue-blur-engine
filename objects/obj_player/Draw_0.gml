@@ -14,5 +14,5 @@ if (!array_contains(direction_denied_states, state)) {
 image_alpha = alpha;
 
 // Character sprite
-player_draw_trail(c_blue);
+player_draw_trail(color_blend);
 draw_object();
