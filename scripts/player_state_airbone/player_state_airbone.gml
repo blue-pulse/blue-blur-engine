@@ -65,7 +65,7 @@ function player_state_airbone(phase) {
 			
 			// Jump actions
 			if (is_rolling) {
-				begin_jump_action();
+				player_routine_midair();
 			}
 			
 			// Curl up
@@ -75,7 +75,7 @@ function player_state_airbone(phase) {
 				allow_jump_action = true;
 				
 				// FX
-				play_jump_anim();
+				player_animation_jump();
 			    audio_play_sfx(snd_player_wind, REPLACE);
 				break;
 			}

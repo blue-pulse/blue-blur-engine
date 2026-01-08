@@ -14,7 +14,7 @@ function player_state_homing(phase) {
 			}
 			
 			// Fall if the reticle can no longer be locked on to
-			if (!player_can_lock_on(Reticle.target)) {
+			if (!player_can_lockon(Reticle.target)) {
 				// Variables
 				is_jumping = true;
 				allow_jump_action = false;

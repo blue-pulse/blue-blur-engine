@@ -94,9 +94,9 @@ stumble_threshold = 2.5;
 unroll_threshold = 0.5;
 
 // Specific character functions
-play_jump_anim = player_play_placeholder;
-play_roll_anim = player_play_placeholder;
-play_run_anim = player_play_placeholder;
+player_animation_jump = player_play_placeholder;
+player_animation_roll = player_play_placeholder;
+player_animation_run = player_play_placeholder;
 
 // Initialize values
 player_set_ground(noone);

@@ -15,7 +15,7 @@ function player_state_jump(phase) {
 			player_set_ground(noone);
 			
 			// FX
-			play_jump_anim();
+			player_animation_jump();
 		    audio_play_sfx(snd_player_jump, REPLACE);
 		    audio_play_sfx(snd_player_wind, REPLACE);
 	        break;
@@ -67,7 +67,7 @@ function player_state_jump(phase) {
 			
 			// Jump actions
 			if (is_rolling) {
-				begin_jump_action();
+				player_routine_midair();
 			}
 	        break;
 		

@@ -1,4 +1,4 @@
-function sonic_play_run() {
+function sonic_animation_run() {
 	// Early exit
 	if (animation_is_playing(anim_dashpad)) {
 		exit;

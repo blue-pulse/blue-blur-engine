@@ -6,7 +6,7 @@ function player_state_roll(phase) {
 	        is_rolling = true;
 			
 			// FX
-			play_roll_anim();
+			player_animation_roll();
 			if (state_prev != player_state_spindash) {
 				audio_play_sfx(snd_player_roll, REPLACE);
 			}
@@ -78,7 +78,7 @@ function player_state_roll(phase) {
 			}
 			
 			// Animate
-			play_roll_anim();
+			player_animation_roll();
 			break;
 		
 		// Stop state

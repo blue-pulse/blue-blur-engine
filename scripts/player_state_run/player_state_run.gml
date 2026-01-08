@@ -107,7 +107,7 @@ function player_state_run(phase) {
 			}
 			
 			// Animate
-			play_run_anim();
+			player_animation_run();
 			
 			// Set angle
 	        rotation = angle;

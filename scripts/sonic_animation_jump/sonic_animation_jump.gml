@@ -1,4 +1,4 @@
-function sonic_play_jump() {
+function sonic_animation_jump() {
 	// Early exit
 	if (animation_is_playing(anim_roll_fast)) {
 		exit;

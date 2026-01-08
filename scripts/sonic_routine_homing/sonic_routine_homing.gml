@@ -1,4 +1,4 @@
-function sonic_begin_homing() {
+function sonic_routine_homing() {
 	// Create reticle
 	if (!instance_exists(Reticle)) {
 		if (allow_jump_action) {
@@ -15,7 +15,7 @@ function sonic_begin_homing() {
 				var target = target_list[i];
 				
 				// Lock on to it if possible
-				if (target != noone and target.usable and player_can_lock_on(target)) {
+				if (target != noone and target.usable and player_can_lockon(target)) {
 					var reticle = vfx_create(target.x, target.y, Reticle);
 					reticle.target = target;
 					reticle.owner = id;
@@ -26,7 +26,7 @@ function sonic_begin_homing() {
 	}
 
 	// Destroy reticle
-	else if (!player_can_lock_on(Reticle.target)) {
+	else if (!player_can_lockon(Reticle.target)) {
 		instance_destroy(Reticle);
 	}
 
@@ -35,7 +35,7 @@ function sonic_begin_homing() {
 		// FX
 		audio_play_sfx(snd_player_homing_dash, REPLACE);
 		part_particles_create(Particles, x, y, global.homing_burst, 1);
-		play_jump_anim();
+		player_animation_jump();
 
 		// Homing attack
 		if (instance_exists(Reticle)) {

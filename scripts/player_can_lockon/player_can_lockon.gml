@@ -1,4 +1,4 @@
-function player_can_lock_on(object) {
+function player_can_lockon(object) {
 	// Variables
 	var player_x = floor(x);
 	var player_y = floor(y);
