@@ -47,7 +47,7 @@ else if (turn_time > 0)
 else if (shoot_time > 0 and --shoot_time == 20)
 {
 	// Shooting
-	instance_create_layer(x - 12 * image_xscale, y + 24, layer, objBuzzerShot,
+	instance_create_depth(x - 12 * image_xscale, y + 24, depths.effects, objBuzzerShot,
 	{
 		image_xscale,
 		hspeed : 1.5 * image_xscale,

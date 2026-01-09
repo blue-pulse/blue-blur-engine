@@ -1,5 +1,6 @@
 // Particle system
 global.particles = part_system_create();
+part_system_depth(global.particles, depths.effects);
 
 // Ring sparkle
 global.ring_sparkle = part_type_create();

@@ -15,11 +15,11 @@ function player_state_spindash(phase) {
 			audio_play_sfx(snd_player_spindash_charge, REPLACE);
 			
 			// Dust
-			with (vfx_create(x, y, obj_spindash_dust)) {
-				owner = other.id;
-				image_xscale = other.dir;
-				image_angle = other.image_angle;
-			}
+			vfx_create(x, y, obj_spindash_dust, {
+				owner: id,
+				dir: image_xscale,
+				angle: image_angle,
+			});
 			break;
 
 		// Run state
@@ -73,10 +73,10 @@ function player_state_spindash(phase) {
 				screen_shake(7);
 				
 				// Wave
-				with (vfx_create(x, y, obj_spindash_wave)) {
-					owner = other.id;
-					image_blend = other.color_blend;
-				}
+				vfx_create(x, y, obj_spindash_wave, {
+					owner: id,
+					color: color_blend,
+				});
 			}
 			
 	        // Release

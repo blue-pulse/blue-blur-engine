@@ -6,19 +6,20 @@ function sonic_routine_homing() {
 			var target_list = [
 				instance_nearest(x, y, obj_spring),
 				instance_nearest(x, y, obj_monitor),
-				instance_nearest(x, y, objBadnik), // Higher priority
+				instance_nearest(x, y, obj_enemy), // Higher priority
 			];
 
 			// Evaluate all targets
 			for (var i = array_length(target_list) - 1; i > -1; --i) {
 				// Get the current target
-				var target = target_list[i];
+				var focus = target_list[i];
 				
-				// Lock on to it if possible
-				if (target != noone and target.usable and player_can_lockon(target)) {
-					var reticle = vfx_create(target.x, target.y, Reticle);
-					reticle.target = target;
-					reticle.owner = id;
+				// Lock-on to it if possible
+				if (focus != noone and focus.usable and player_can_lockon(focus)) {
+					vfx_create(focus.x, focus.y, Reticle, {
+						owner: id,
+						target: focus,
+					});
 					exit;
 				}
 			}

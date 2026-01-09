@@ -12,11 +12,10 @@ function player_reaction_monitor(object) {
 	}
 	
 	// Create icon
-	var item = vfx_create(object.x, object.y, obj_monitor_item, true);
-	with (item) {
-		image_index = object.item;
-		owner = other.id;
-	}
+	vfx_create(object.x, object.y, obj_monitor_item, {
+		owner: id,
+		index: object.item,
+	}, true);
 	
 	// Destroy monitor and reticle
 	instance_destroy(obj_reticle);

@@ -1,70 +1,56 @@
-function player_reaction_badnik(obj)
-{
+function player_reaction_badnik(object) {
 	// Take damage if not in an attacking state
-	if (not (is_rolling))
-	{
-		// Abort state if successful
-		return player_receive_damage(obj);
+	if (!is_rolling) {
+		return player_receive_damage(object);
 	}
 	
-	// Rebound in air
+	// Variables
+	var bonus = 100;
+	var points = 1;
 	var homing_rebound = false;
-	if (state == player_state_homing)
-	{
+	
+	// Rebound in the air
+	if (state == player_state_homing) {
 		// Stop moving and bounce
-		state = player_state_airbone;
+		player_set_state(player_state_airbone);
 		hor_speed = 0;
-		ver_speed = -jump_height div 1;
+		ver_speed = floor(-jump_height);
 		homing_rebound = true;
-	}
-	else if (not is_grounded)
-	{
+	} else if (!is_grounded) {
 		// Weigh down slightly
-		if (ver_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, obj) != noone)
-		{
+		if (ver_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, object)) {
 			++ver_speed;
-		}
-		else if (ver_speed >= 0 and collision_box_vertical(hor_radius, ver_radius, mask_direction, obj) != noone)
-		{
-			// Bounce
+		} 
+		
+		// Bounce
+		else if (ver_speed >= 0 and collision_box_vertical(hor_radius, ver_radius, mask_direction, object)) {
 			ver_speed *= -1;
 		}
 	}
 	
 	// Scoring
-	var bonus = 100;
-	var index = 1;
-	
-	if (++score_combo > 15)
-	{
+	if (++score_combo > 15) {
 		bonus = 10000;
-		index = 5;
-	}
-	else if (score_combo > 3)
-	{
+		points = 5;
+	} else if (score_combo > 3) {
 		bonus = 1000;
-		index = 4;
-	}
-	else if (score_combo > 2)
-	{
+		points = 4;
+	} else if (score_combo > 2) {
 		bonus = 500;
-		index = 3;
-	}
-	else if (score_combo > 1)
-	{
+		points = 3;
+	} else if (score_combo > 1) {
 		bonus = 200;
-		index = 2;
+		points = 2;
 	}
-	
+
 	global.score += bonus;
-	instance_create_layer(obj.x, obj.y, "Overlays", objPoints, { image_index : index });
-	
-	// Sound
-	//audio_play_sfx(sfxDestroy);
+	vfx_create(object.x, object.y, obj_points, {
+		index: points,
+	});
 	
 	// Destroy badnik and reticle
 	instance_destroy(obj_reticle);
-	instance_destroy(obj);
+	instance_destroy(object);
 	
 	// Abort state if rebounded from a homing attack
 	return homing_rebound;

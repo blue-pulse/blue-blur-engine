@@ -25,7 +25,7 @@ function player_state_run(phase) {
 				
 						// Skidding
 						if (abs(hor_speed) > skid_threshold and mask_direction == gravity_direction) {
-							player_play_sfx_skid();
+							player_sound_skid();
 							player_set_state(player_state_skid);
 							break;
 						}

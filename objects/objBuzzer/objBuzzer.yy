@@ -13,8 +13,8 @@
     "path":"folders/5. Enemies/Objects.yy",
   },
   "parentObjectId":{
-    "name":"objBadnik",
-    "path":"objects/objBadnik/objBadnik.yy",
+    "name":"obj_enemy",
+    "path":"objects/obj_enemy/obj_enemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

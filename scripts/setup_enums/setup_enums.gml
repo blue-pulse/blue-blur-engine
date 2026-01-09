@@ -9,11 +9,11 @@ enum shapes {
 
 // Drawing priorities
 enum depths {
-	effects = 0,
-	enemies = 0,
 	backstage = 1,
+	enemies = 0,
 	player = -1,
     frontstage = -2,
+	effects = -2,
 	gui = -100,
 	controller = -4096,
 }

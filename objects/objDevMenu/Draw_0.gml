@@ -17,7 +17,7 @@ with (obj_player)
 	draw_line_color(x_int, y_int, x_int + dsin(mask_direction) * ver_radius, y_int + dcos(mask_direction) * ver_radius, c_white, c_white);
 	snip_draw_debug(x-30,y+40)
 }
-with (objBadnik)
+with (obj_enemy)
 {
 	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
 }

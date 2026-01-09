@@ -10,8 +10,8 @@
     "path":"folders/5. Enemies/Objects.yy",
   },
   "parentObjectId":{
-    "name":"objProjectile",
-    "path":"objects/objProjectile/objProjectile.yy",
+    "name":"obj_bullet",
+    "path":"objects/obj_bullet/obj_bullet.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

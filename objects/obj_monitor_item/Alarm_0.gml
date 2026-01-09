@@ -1,5 +1,5 @@
 // Variables
-var item = image_index;
+var item = index;
 vspeed = 0;
 
 // Give reward to player
