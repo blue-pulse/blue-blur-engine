@@ -11,7 +11,7 @@ function sonic_animation_roll() {
 	// Fast roll
 	if (abs_speed > 5) {
 		var anim_speed = map(abs_speed, 5, 12, 1.25, 2.25);
-		animation_play(anim_roll, anim_speed);
+		animation_play(anim_roll_fast, anim_speed);
 	} 
 	
 	// Slow roll

@@ -59,7 +59,7 @@ function sonic_init_animations(){
 	anim_sprint = animation_create(spr_sonic_sprint);
 	
 	// Roll
-	anim_roll = animation_create(spr_sonic_roll);
+	anim_roll_jump = animation_create(spr_sonic_roll_jump);
 	anim_roll_fast = animation_create(spr_sonic_roll_fast);
 	anim_roll_slow = animation_create(spr_sonic_roll_slow);
 	

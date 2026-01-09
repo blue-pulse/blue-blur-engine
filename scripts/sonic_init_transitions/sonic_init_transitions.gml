@@ -25,10 +25,10 @@ function sonic_init_transitions() {
 	animation_set_transition(anim_push, anim_stroll, anim_push_end);
 	
 	// Roll
-	animation_set_transition(anim_roll, anim_idle, anim_land);
-	animation_set_transition(anim_roll, anim_stroll, anim_land);
 	animation_set_transition(anim_roll_fast, anim_idle, anim_land);
 	animation_set_transition(anim_roll_fast, anim_stroll, anim_land);
+	animation_set_transition(anim_roll_jump, anim_idle, anim_land);
+	animation_set_transition(anim_roll_jump, anim_stroll, anim_land);
 	animation_set_transition(anim_roll_slow, anim_idle, anim_land);
 	animation_set_transition(anim_roll_slow, anim_stroll, anim_land);
 	
