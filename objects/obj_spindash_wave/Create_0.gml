@@ -8,4 +8,7 @@ image_angle = random_range(0, 360);
 
 // Parameters
 owner ??= noone;
-color ??= image_blend;
+color ??= c_white;
+
+// Set image blend
+image_blend = color;
