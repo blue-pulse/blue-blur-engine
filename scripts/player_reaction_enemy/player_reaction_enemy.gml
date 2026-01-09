@@ -16,7 +16,7 @@ function player_reaction_enemy(object) {
 		
 		// Variables
 		hor_speed = 0;
-		ver_speed = floor(-jump_height);
+		ver_speed = round(-jump_height);
 	} else if (!is_grounded) {
 		// Move down slightly
 		if (ver_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, object)) {

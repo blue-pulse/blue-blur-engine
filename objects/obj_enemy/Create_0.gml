@@ -2,7 +2,7 @@
 event_inherited();
 
 // Script
-reaction_index = player_reaction_badnik;
+reaction_index = player_reaction_enemy;
 
 // Particles
 vfx_explosion = part_type_create();

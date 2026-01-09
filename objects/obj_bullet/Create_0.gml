@@ -5,8 +5,8 @@ event_inherited();
 reaction_index = player_reaction_bullet;
 
 // Variables
-owner = noone;
 impacted = false;
+owner ??= noone;
 
 // Particles
 vfx_explosion = part_type_create();
