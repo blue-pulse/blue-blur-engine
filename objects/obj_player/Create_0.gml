@@ -24,14 +24,17 @@ state_prev = state;
 // State arrays
 direction_denied_states = [
 	player_state_airbone,
+	player_state_jump,
 	player_state_roll,
 ];
+
 damage_denied_state = [
 	player_state_death, 
 	player_state_hurt,
 	player_state_init,
 	player_state_knockout,
 ];
+
 rotation_allowed_states = [
 	player_state_airbone,
 	player_state_roll,

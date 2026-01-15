@@ -14,7 +14,7 @@ part_type_life(global.brake_dust, 16, 16);
 
 // Explosion
 global.explosion = part_type_create();
-part_type_sprite(global.explosion, sprExplosion, true, true, false);
+part_type_sprite(global.explosion, spr_enemy_explosion, true, true, false);
 part_type_life(global.explosion, 30, 30);
 
 // Motobug smoke

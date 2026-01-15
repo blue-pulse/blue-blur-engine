@@ -2,21 +2,20 @@ function player_state_turn(phase) {
 	switch (phase) {
 		// Start state
 	    case INIT:
-			// Update variables
-			dir *= -1;
-			hor_speed = 0;
-			
 			// Set animation
-			if (animation != anim_skid_turn) {
+			if (abs(hor_speed) == decel) {
+				animation_play(anim_skid_turn);
+			} else {
 				animation_play(anim_turn);
 			}
+			
+			// Update variables
+			dir = -dir;
+			hor_speed = 0;
 	        break;
 		
 		// Run state
 	    case STEP:
-			// Variables
-			var input_dir = input_opposing(vb_right, vb_left);
-			
 			// Update position
 			if (!player_movement_ground()) {
 				break;
@@ -54,7 +53,7 @@ function player_state_turn(phase) {
 			}
 			
 			// Rolling
-			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
+			if (abs(hor_speed) >= roll_threshold and input_holded(vb_down) and input_opposing(vb_right, vb_left)) {
 				player_set_state(player_state_roll);
 				break;
 			}

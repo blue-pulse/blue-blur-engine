@@ -16,7 +16,6 @@ function player_state_spindash(phase) {
 			
 			// Dust
 			vfx_create(x, y, obj_spindash_dust, {
-				owner: id,
 				dir: image_xscale,
 				angle: image_angle,
 			});
@@ -74,7 +73,6 @@ function player_state_spindash(phase) {
 				
 				// Wave
 				vfx_create(x, y, obj_spindash_wave, {
-					owner: id,
 					color: color_blend,
 				});
 			}

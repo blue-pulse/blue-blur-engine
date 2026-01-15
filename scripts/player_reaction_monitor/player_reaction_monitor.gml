@@ -13,7 +13,6 @@ function player_reaction_monitor(object) {
 	
 	// Create icon
 	vfx_create(object.x, object.y, obj_monitor_item, {
-		owner: id,
 		index: object.item,
 	}, true);
 	

@@ -33,7 +33,6 @@ function player_state_skid(phase) {
 							
 						// Turn around
 						if (dir != sign(hor_speed)) {
-							animation_play(anim_skid_turn);
 							player_set_state(player_state_turn);
 						} else {
 							player_set_state(player_state_run);

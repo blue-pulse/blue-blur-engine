@@ -33,9 +33,8 @@ switch (state)
 		if (--shoot_time == 30)
 		{
 			image_index = 2;
-			instance_create_depth(x + image_xscale * 25, y - 7, depths.effects, objNewtronShot, { 
+			vfx_create(x + image_xscale * 25, y - 7, objNewtronShot, { 
 				hspeed : image_xscale * 3,
-				owner: id,
 			});
 		}
 		else if (shoot_time <= 0)
