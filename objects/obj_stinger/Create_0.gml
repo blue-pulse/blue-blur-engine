@@ -2,10 +2,16 @@
 event_inherited();
 
 // Variables
-mask_index = spr_stinger_fly;
 hspeed = 1.5;
-movement_wait = 30;
-shoot_wait = 50;
-turn_time = 0;
-shoot_time = 0;
 can_shoot = true;
+movement_dist = 80;
+turn_wait = 0;
+state = "fly";
+is_attacking = false;
+
+// Animations
+anim_fly = animation_create(spr_stinger_fly);
+anim_shoot = animation_create(spr_stinger_shoot);
+anim_turn = animation_create(spr_stinger_turn);
+animation_set_successor(anim_turn, anim_fly);
+//animation_set_successor(anim_shoot, anim_fly);

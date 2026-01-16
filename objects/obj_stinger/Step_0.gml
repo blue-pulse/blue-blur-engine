@@ -1,54 +1,57 @@
-if (turn_time <= 0 and shoot_time <= 0)
-{
-	if (hspeed != 0)
-	{
-		// Turn around, if applicable
-		if (x < xstart - 64 or x > xstart + 64)
-		{
-			turn_time = movement_wait;
+// Inherit the parent event
+event_inherited();
+
+// Move through the air
+if (!is_attacking and !turn_wait) {
+	if (hspeed != 0) {
+		// Turn around
+		if (x < xstart - movement_dist or x > xstart + movement_dist) {
 			hspeed = 0;
+			turn_wait = 30;
 		}
-		else
-		{
-			// Prepare to fire at the player
+		
+		// Prepare to fire at the player
+		else if (can_shoot) {
 			var player = instance_nearest(x, y, Player);
-			if (player != noone and y < player.y and can_shoot)
-			{
-				var x_diff = x - player.x;
-				if (abs(x_diff) < 45 and sign(x_diff) != image_xscale)
-				{
-					shoot_time = movement_wait;
-					can_shoot = false;
+			if (player != noone and y < player.y) {
+				var dist_to_target = x - player.x;
+				if (abs(dist_to_target) < 60 and sign(dist_to_target) != dir) {
 					hspeed = 0;
-					sprite_index = spr_stinger_shoot;
+					can_shoot = false;
+					is_attacking = true;
+					animation_play(anim_shoot);
 				}
 			}
 		}
 	}
-	else
-	{
-		// Flip if previously turning around
-		if (sprite_index != spr_stinger_shoot)
-		{
-			image_xscale *= -1;
+	
+	// Flip if previously turning around
+	else {
+		// Flip
+		if (!animation_is_playing(anim_shoot)) {
+			dir = -dir;
 			can_shoot = true;
+			animation_play(anim_turn);
 		}
-		else sprite_index = spr_stinger_fly;
-		
-		// Start moving again
-		hspeed = 1.5 * image_xscale;
+		hspeed = 1.5 * dir;
 	}
 }
-else if (turn_time > 0)
-{
-	--turn_time;
+
+// Reduce turn timer
+else if (turn_wait) {
+	--turn_wait;
 }
-else if (shoot_time > 0 and --shoot_time == 20)
-{
-	// Shooting
-	vfx_create(x + 12 * image_xscale, y + 12, obj_stinger_bullet, {
-		image_xscale,
-		hspeed : 1.5 * image_xscale,
-		vspeed : 1.5
-	});
+
+// Shooting
+else if (is_attacking) {
+	if (animation_get_frame() == 8) {
+		vfx_create(x + 12 * dir, y + 12, obj_stinger_bullet, {
+			image_xscale: dir,
+			hspeed: 1.5 * dir,
+			vspeed: 1.5,
+		});
+	} else if (animation_ended()) {
+		is_attacking = false;
+		animation_play(anim_fly);
+	}
 }

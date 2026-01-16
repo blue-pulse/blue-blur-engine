@@ -63,6 +63,7 @@
     {"name":"Scripts","order":2,"path":"folders/4. Player/Sonic/Scripts.yy",},
     {"name":"Sprites","order":3,"path":"folders/4. Player/Sonic/Sprites.yy",},
     {"name":"5. Enemies","order":16,"path":"folders/5. Enemies.yy",},
+    {"name":"Scripts","order":4,"path":"folders/5. Enemies/Scripts.yy",},
     {"name":"Parents","order":2,"path":"folders/5. Enemies/Parents.yy",},
     {"name":"Sounds","order":3,"path":"folders/5. Enemies/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/5. Enemies/Sprites.yy",},

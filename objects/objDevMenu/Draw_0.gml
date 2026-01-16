@@ -20,4 +20,5 @@ with (obj_player)
 with (obj_enemy)
 {
 	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+	snip_draw_debug(x-30,y+40)
 }
