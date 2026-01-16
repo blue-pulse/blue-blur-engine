@@ -20,6 +20,7 @@ switch (state) {
 				if (diff_y > 0 and diff_y <= attack_range) {
 					if (abs(player.x - x) <= 64) {
 						state = 1;
+						enemy_invoke_alert(18, 20);
 						animation_play(anim_attack);
 					}
 				}
