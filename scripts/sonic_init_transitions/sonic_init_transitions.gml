@@ -15,7 +15,7 @@ function sonic_init_transitions() {
 	
 	// Idle
 	animation_set_transition(anim_idle, anim_crouch, anim_crouch_start);
-	animation_set_transition(anim_idle, anim_search, anim_search_start);
+	animation_set_transition(anim_idle, anim_lookup, anim_lookup_start);
 	
 	// Knock-out
 	animation_set_transition(anim_knockout_loop, anim_idle, anim_recovery);
@@ -33,7 +33,7 @@ function sonic_init_transitions() {
 	animation_set_transition(anim_roll_slow, anim_stroll, anim_land);
 	
 	// Search
-	animation_set_transition(anim_search, anim_idle, anim_search_stop);
+	animation_set_transition(anim_lookup, anim_idle, anim_lookup_stop);
 	
 	// Stroll
 	animation_set_transition(anim_stroll, anim_push, anim_push_start);

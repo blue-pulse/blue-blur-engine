@@ -16,9 +16,7 @@ function sonic_routine_homing() {
 				
 				// Lock-on to it if possible
 				if (focus != noone and focus.usable and player_can_lockon(focus)) {
-					vfx_create(focus.x, focus.y, Reticle, {
-						target: focus,
-					});
+					vfx_create(focus.x, focus.y, Reticle, { target: focus });
 					exit;
 				}
 			}

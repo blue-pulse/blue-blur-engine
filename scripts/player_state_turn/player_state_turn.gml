@@ -10,7 +10,7 @@ function player_state_turn(phase) {
 			}
 			
 			// Update variables
-			dir = -dir;
+			dir *= -1;
 			hor_speed = 0;
 	        break;
 		

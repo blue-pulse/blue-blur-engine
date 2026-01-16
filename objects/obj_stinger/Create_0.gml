@@ -1,17 +1,21 @@
 // Inherit the parent event
 event_inherited();
 
-// Variables
-hspeed = 1.5;
-can_shoot = true;
+// Parameters
+fly_speed = 1.5;
+bullet_speed = 1.8;
 movement_dist = 80;
-turn_wait = 0;
-state = "fly";
-is_attacking = false;
+attack_range = movement_dist - 16;
+
+// Variables
+mask_index = sprite_index;
+hspeed = fly_speed;
+state = 0;
+can_attack = true;
+left_goal = xstart - movement_dist;
+right_goal = xstart + movement_dist;
 
 // Animations
+anim_attack = animation_create(spr_stinger_attack);
 anim_fly = animation_create(spr_stinger_fly);
-anim_shoot = animation_create(spr_stinger_shoot);
 anim_turn = animation_create(spr_stinger_turn);
-animation_set_successor(anim_turn, anim_fly);
-//animation_set_successor(anim_shoot, anim_fly);

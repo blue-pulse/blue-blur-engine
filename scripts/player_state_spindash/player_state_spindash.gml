@@ -72,9 +72,7 @@ function player_state_spindash(phase) {
 				screen_shake(7);
 				
 				// Wave
-				vfx_create(x, y, obj_spindash_wave, {
-					color: color_blend,
-				});
+				vfx_create(x, y, obj_spindash_wave, { color: color_blend });
 			}
 			
 	        // Release

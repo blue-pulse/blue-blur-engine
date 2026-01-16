@@ -15,7 +15,7 @@ function player_movement_ground() {
 	}
 	
 	// Variables for horizontal movement
-	var total_steps = 1 + (abs(hor_speed) div hor_radius);
+	var total_steps = 1 + floor(abs(hor_speed) / hor_radius);
 	var increment = hor_speed / total_steps;
 	
 	// Process movement loop

@@ -1,3 +1,3 @@
 function trunc(a) {
-	return (a < 0) ? ceil(a) : floor(a);
+	return a div 1;
 }

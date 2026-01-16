@@ -64,9 +64,9 @@ function sonic_init_animations(){
 	anim_roll_slow = animation_create(spr_sonic_roll_slow);
 	
 	// Search
-	anim_search = animation_create(spr_sonic_search, 1, 3, -1);
-	anim_search_start = animation_create(spr_sonic_search, 1, 0, 2);
-	anim_search_stop = animation_create(spr_sonic_search, -1, 0, 2);
+	anim_lookup = animation_create(spr_sonic_lookup, 1, 3, -1);
+	anim_lookup_start = animation_create(spr_sonic_lookup, 1, 0, 2);
+	anim_lookup_stop = animation_create(spr_sonic_lookup, -1, 0, 2);
 	
 	// Skid
 	anim_skid_fast = animation_create(spr_sonic_skid_fast, 1, 0, 1);

@@ -48,9 +48,7 @@ function player_reaction_enemy(object) {
 	}
 
 	// Display points
-	vfx_create(object.x, object.y, obj_points, {
-		index: points,
-	}, true);
+	vfx_create(object.x, object.y, obj_points, { index: points }, true);
 	
 	// Destroy badnik and reticle
 	instance_destroy(obj_reticle);

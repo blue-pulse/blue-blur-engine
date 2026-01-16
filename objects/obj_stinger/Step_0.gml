@@ -1,57 +1,58 @@
-// Inherit the parent event
+// Inherit parent
 event_inherited();
 
-// Move through the air
-if (!is_attacking and !turn_wait) {
-	if (hspeed != 0) {
+// State machine
+switch (state) {
+	// Fly
+	case 0:
 		// Turn around
-		if (x < xstart - movement_dist or x > xstart + movement_dist) {
+		if (x < left_goal or x > right_goal) {
+			state = 1;
 			hspeed = 0;
-			turn_wait = 30;
+			can_attack = true;
+			animation_play(anim_turn);
 		}
-		
-		// Prepare to fire at the player
-		else if (can_shoot) {
+
+		// Shoot
+		else if (can_attack) {
 			var player = instance_nearest(x, y, Player);
 			if (player != noone and y < player.y) {
-				var dist_to_target = x - player.x;
-				if (abs(dist_to_target) < 60 and sign(dist_to_target) != dir) {
+				var target_dist = x - player.x;
+				if (abs(target_dist) < attack_range and sign(target_dist) != dir) {
+					state = 2;
 					hspeed = 0;
-					can_shoot = false;
-					is_attacking = true;
-					animation_play(anim_shoot);
+					can_attack = false;
+					animation_play(anim_attack);
 				}
 			}
 		}
-	}
-	
-	// Flip if previously turning around
-	else {
-		// Flip
-		if (!animation_is_playing(anim_shoot)) {
-			dir = -dir;
-			can_shoot = true;
-			animation_play(anim_turn);
+		break;
+		
+	// Turn
+	case 1:
+		if (animation_ended()) {
+			state = 0;
+			dir *= -1;
+			hspeed = fly_speed * dir;
+			animation_play(anim_fly);
 		}
-		hspeed = 1.5 * dir;
-	}
-}
-
-// Reduce turn timer
-else if (turn_wait) {
-	--turn_wait;
-}
-
-// Shooting
-else if (is_attacking) {
-	if (animation_get_frame() == 8) {
-		vfx_create(x + 12 * dir, y + 12, obj_stinger_bullet, {
-			image_xscale: dir,
-			hspeed: 1.5 * dir,
-			vspeed: 1.5,
-		});
-	} else if (animation_ended()) {
-		is_attacking = false;
-		animation_play(anim_fly);
-	}
+		break;
+		
+	// Attack
+	case 2:
+		// Shoot
+		if (animation_get_frame() == 8) {
+			vfx_create(x + 16 * dir, y + 13, obj_stinger_bullet, {
+				hspeed: bullet_speed * dir,
+				vspeed: bullet_speed,
+			}, true);
+		}
+		
+		// Return to patrol
+		else if (animation_ended()) {
+			state = 0;
+			hspeed = fly_speed * dir;
+			animation_play(anim_fly);
+		}
+		break;
 }

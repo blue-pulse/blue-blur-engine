@@ -42,7 +42,7 @@ function player_movement_air() {
 	}
 	
 	// Variables for vertical movement
-	total_steps = 1 + (abs(ver_speed) div ver_radius);
+	total_steps = 1 + floor(abs(ver_speed) / ver_radius);
 	increment = ver_speed / total_steps;
 	
 	// Vertical movement
@@ -65,7 +65,9 @@ function player_movement_air() {
 			var hit_floor = player_collision_floor(ver_radius);
 			if (hit_floor) {
 				// Trigger reaction
-				if (player_get_reaction(hit_floor, DIR_BOTTOM)) return false;
+				if (player_get_reaction(hit_floor, DIR_BOTTOM)) {
+					return false;
+				}
 				
 				// Get floor data
 				player_set_ground(hit_floor);
@@ -117,10 +119,7 @@ function player_movement_air() {
 			
 			// Stop falling
 			ver_speed = 0;
-			
-			// Set flags and exit loop
 			is_jumping = false;
-			//camera.ground_mode = true;
 			break;
 		}
 		

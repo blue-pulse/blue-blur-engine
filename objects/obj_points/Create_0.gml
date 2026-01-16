@@ -6,6 +6,7 @@ image_speed = 0;
 alarm[0] = 32;
 
 // Parameters
+owner ??= noone;
 index ??= 0;
 
 // Set image index
