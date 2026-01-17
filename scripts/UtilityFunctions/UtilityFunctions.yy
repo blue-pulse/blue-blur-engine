@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"UtilityFunctions",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/tmp/Scripts.yy",
+    "name":"tmp",
+    "path":"folders/tmp.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
