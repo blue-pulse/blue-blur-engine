@@ -571,7 +571,6 @@
     {"name":"spr_spindash_dust","order":3,"path":"sprites/spr_spindash_dust/spr_spindash_dust.yy",},
     {"name":"spr_spindash_wave","order":5,"path":"sprites/spr_spindash_wave/spr_spindash_wave.yy",},
     {"name":"spr_wall_1","order":7,"path":"sprites/spr_wall_1/spr_wall_1.yy",},
-    {"name":"sprMotobug","order":5,"path":"sprites/sprMotobug/sprMotobug.yy",},
     {"name":"sprMotobugSmoke","order":6,"path":"sprites/sprMotobugSmoke/sprMotobugSmoke.yy",},
   ],
 }

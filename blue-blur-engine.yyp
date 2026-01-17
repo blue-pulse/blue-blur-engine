@@ -693,7 +693,6 @@
     {"id":{"name":"spr_spindash_wave","path":"sprites/spr_spindash_wave/spr_spindash_wave.yy",},},
     {"id":{"name":"spr_spring","path":"sprites/spr_spring/spr_spring.yy",},},
     {"id":{"name":"spr_wall_1","path":"sprites/spr_wall_1/spr_wall_1.yy",},},
-    {"id":{"name":"sprMotobug","path":"sprites/sprMotobug/sprMotobug.yy",},},
     {"id":{"name":"sprMotobugSmoke","path":"sprites/sprMotobugSmoke/sprMotobugSmoke.yy",},},
   ],
   "resourceType":"GMProject",
