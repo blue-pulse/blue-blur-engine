@@ -1,6 +1,3 @@
-/// @description Cleanup
-show_debug_overlay(false);
-
 // Release player
 with (Player) {
 	if (state == player_state_debug) {
@@ -9,5 +6,13 @@ with (Player) {
 }
 
 // Hide layer objects
-with (obj_plane_toggler) visible = false;
-with (obj_plane_setter) visible = false;
+with (obj_plane_toggler) {
+	visible = false;
+}
+
+with (obj_plane_setter) {
+	visible = false;
+}
+
+// Disable overlay
+show_debug_overlay(false);
