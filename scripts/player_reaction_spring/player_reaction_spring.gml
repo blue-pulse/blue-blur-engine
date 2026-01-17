@@ -24,9 +24,9 @@ function player_reaction_spring(object) {
 	// Fix position
 	air_lock = 16;
 	ground_lock = 16;
-	x = object.x;
-	y = object.y;
-	
+	x = object.x + object.hor_offset;
+	y = object.y + object.ver_offset;
+
 	// Bounce diagonally
 	if (spring_rotation mod 90 != 0) {
 		// State
@@ -61,7 +61,6 @@ function player_reaction_spring(object) {
 		// Set flags if rising
 		if (spring_rotation == 90) {
 			animation_play(anim_rise);
-			y += lengthdir_y(object.draw_offset, spring_angle);
 			rotation = gravity_direction;
 			is_rolling = false;
 			is_jumping = false;
