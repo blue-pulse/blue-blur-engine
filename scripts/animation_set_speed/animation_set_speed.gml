@@ -1,4 +1,4 @@
-function animation_set_speed(_animation, _speed=1) {
+function animation_set_speed(_animation, _speed) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

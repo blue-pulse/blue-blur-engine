@@ -101,8 +101,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"grp_resources",
-    "path":"texturegroups/grp_resources",
+    "name":"grp_visuals",
+    "path":"texturegroups/grp_visuals",
   },
   "type":0,
   "VTile":false,

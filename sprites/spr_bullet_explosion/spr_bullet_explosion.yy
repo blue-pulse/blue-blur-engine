@@ -93,8 +93,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"grp_resources",
-    "path":"texturegroups/grp_resources",
+    "name":"grp_enemies",
+    "path":"texturegroups/grp_enemies",
   },
   "type":0,
   "VTile":false,

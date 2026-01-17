@@ -10,3 +10,4 @@ angle ??= image_angle;
 
 // Set direction
 image_xscale = sign(dir);
+gravity_direction = (owner != noone) ? (owner.gravity_direction) : (0);

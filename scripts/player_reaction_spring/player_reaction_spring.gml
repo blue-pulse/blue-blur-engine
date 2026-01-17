@@ -1,6 +1,6 @@
 function player_reaction_spring(object) {
 	// Early exit
-	if (!object.usable) {
+	if (!object.usable or array_contains(damage_denied_state, state)) {
 		return false;
 	}
 	

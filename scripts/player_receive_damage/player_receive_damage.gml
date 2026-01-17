@@ -29,11 +29,11 @@ function player_receive_damage(object, instant_kill=false) {
 
 	// Movement
 	if (is_underwater) {
-		hor_speed = (floor(x) > floor(other.x)) ? (1) : (-1);
+		hor_speed = (floor(x) > floor(object.x)) ? (1) : (-1);
 		ver_speed = -2;
 		grav_recoil = 0.0625;
 	} else {
-		hor_speed = (floor(x) > floor(other.x)) ? (2) : (-2);
+		hor_speed = (floor(x) > floor(object.x)) ? (2) : (-2);
 		ver_speed = -4;
 		grav_recoil = 0.1875;
 	}

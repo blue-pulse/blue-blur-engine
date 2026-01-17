@@ -1,5 +1,4 @@
 // Fonts
-global.font_debug = font_add_sprite(sprFontDebug, ord("!"), false, 1);
 
 function start_engine() {
 	surface_depth_disable(true);

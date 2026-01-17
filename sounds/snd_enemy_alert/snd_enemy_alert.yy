@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_enemy_alert.wav",
-  "volume":0.5,
+  "volume":1.0,
 }

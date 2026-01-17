@@ -8,6 +8,8 @@ function camera_follow_player() {
 	var shift_direction = (target_speed != 0) ? sign(target_speed) : target_dir;
 	var shift_up = (target_state == player_state_lookup);
 	var shift_down = (target_state == player_state_crouch);
+	var hor_offset = 0;
+	var ver_offset = 0;
 	
 	// Smoothly move the camera to the target position
 	if (scroll_delay) {
@@ -46,7 +48,27 @@ function camera_follow_player() {
 		overview_offset -= shift_speed * sign(overview_offset);
 	}
 
+	// Set offsets
+	switch (gravity_direction) {
+		case 0:
+			hor_offset = extended_offset;
+			ver_offset = overview_offset;
+			break;
+		case 90:
+			hor_offset = -overview_offset;
+			ver_offset = extended_offset;
+			break;
+		case 180:
+			hor_offset = -extended_offset;
+			ver_offset = -overview_offset;
+			break;
+		case 270:
+			hor_offset = overview_offset;
+			ver_offset = -extended_offset;
+			break;
+	}
+	
 	// Clamp the camera to room bounds
-	view_x = clamp(x + extended_offset, 0, room_width - view_width);
-	view_y = clamp(y + overview_offset, 0, room_height - view_height);
+	view_x = clamp(x + hor_offset, 0, room_width - view_width);
+	view_y = clamp(y + ver_offset, 0, room_height - view_height);
 }

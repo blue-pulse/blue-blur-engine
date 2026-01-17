@@ -15,11 +15,9 @@ if (reset_time > 0 and --reset_time <= 0)
 }
 
 // Create debug overlay
-if (keyboard_check_pressed(vk_tab) and started)
-{
-	if (not instance_exists(objDevMenu))
-	{
-		instance_create_layer(0, 0, "Controllers", objDevMenu);
+if (debug_mode and keyboard_check_pressed(vk_tab) and started) {
+	if (not instance_exists(obj_debug_menu)) {
+		instance_create_depth(0, 0, depths.gui, obj_debug_menu);
 	}
-	else instance_destroy(objDevMenu);
+	else instance_destroy(obj_debug_menu);
 }

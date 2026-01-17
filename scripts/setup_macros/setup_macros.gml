@@ -21,6 +21,7 @@
 // Globals
 #macro font_black global.font_hud_black
 #macro font_blue global.font_hud_blue
+#macro font_debug global.font_hud_debug
 #macro font_golden global.font_hud_golden
 #macro font_gray global.font_hud_gray
 #macro font_silver global.font_hud_silver
