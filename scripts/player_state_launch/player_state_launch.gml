@@ -2,6 +2,7 @@ function player_state_launch(phase) {
 	switch (phase) {
 		// Start state
 		case INIT:
+			// Update variables
 			player_set_ground(noone);
 			animation_play(anim_launch);
 			break;

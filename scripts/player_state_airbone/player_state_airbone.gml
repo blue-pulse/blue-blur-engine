@@ -3,6 +3,7 @@ function player_state_airbone(phase) {
 		// Start state
 		case INIT:
 			// Variables
+			force_roll = false;
 			ver_speed = -dsin(relative_angle) * hor_speed;
 			hor_speed = dcos(relative_angle) * hor_speed;
 			player_set_ground(noone);

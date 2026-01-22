@@ -5,6 +5,7 @@ function player_state_jump(phase) {
 			// Set flags
 	        is_jumping = true;
 	        is_rolling = true;
+			force_roll = false;
 	        allow_jump_action = true;
 			
 	        // Movement

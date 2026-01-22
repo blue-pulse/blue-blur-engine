@@ -10,16 +10,21 @@ angle = 0;
 alpha = 1;
 rotation = 360;
 
-// State flags
+// State variables
+air_lock = 0;
 allow_jump_action = false;
 allow_movement = true;
+force_roll = false;
+ground_lock = 0;
 is_jumping = false;
 is_rolling = false;
 is_underwater = false;
+recovery_timer = 0;
 spindash_charge = 0;
 spindash_pitch = 1;
 state = player_state_init;
 state_prev = state;
+stumble_timer = 30;
 
 // State arrays
 direction_denied_states = [
@@ -65,12 +70,6 @@ pos_grid = [
 	array_create(table_size, y),
 ];
 
-// Timers
-air_lock = 0;
-ground_lock = 0;
-recovery_timer = 0;
-stumble_timer = 30;
-
 // Physics
 accel = 0.046875;
 air_accel = 0.09375;
@@ -98,7 +97,6 @@ unroll_threshold = 0.5;
 
 // Specific character functions
 player_animation_jump = player_play_placeholder;
-player_animation_roll = player_play_placeholder;
 player_animation_run = player_play_placeholder;
 
 // Initialize values

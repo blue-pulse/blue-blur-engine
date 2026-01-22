@@ -4,6 +4,7 @@ function player_state_idle(phase) {
 		case INIT:
 			// Update variables
 	        is_rolling = false;
+			force_roll = false;
 			player_reset_combo();
 			player_update_cliff();
 			

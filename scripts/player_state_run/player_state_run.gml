@@ -4,6 +4,7 @@ function player_state_run(phase) {
 		case INIT:
 			// Update variables
 	        is_rolling = false;
+			force_roll = false;
 			player_reset_combo();
 	        break;
 		
@@ -108,9 +109,6 @@ function player_state_run(phase) {
 			
 			// Animate
 			player_animation_run();
-			
-			// Set angle
-	        rotation = angle;
 			break;
 		
 		// Stop state

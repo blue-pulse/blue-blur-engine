@@ -5,26 +5,23 @@ function player_reaction_dashpanel(object) {
 	}
 	
 	// Trigger object
-	object.alarm[0] = 10;
+	object.alarm[0] = 16;
 	object.usable = false;
 	
-	// Launch player
-	dir = object.dir;
-	ground_lock = 16;
-	hor_speed = max(abs(hor_speed), 12) * dir;
-	
 	// FX
-	image_xscale = dir;
-	animation_play(anim_dashpad);
 	screen_shake(7);
 	audio_play_sfx(snd_dashpanel, REPLACE);
+
+	// Launch player
+	dir = object.dir;
+	hor_speed = max(abs(hor_speed), 12) * dir;
 	
 	// Force roll
-	if (state != player_state_roll and object.force_roll) {
-		player_set_state(player_state_roll);
-		return true;
+	if (object.force_roll) {
+		force_roll = true;
 	}
 	
-	// Do not abort state
-	return false;
+	// Set state
+	player_set_state(player_state_dashpanel);
+	return true;
 }

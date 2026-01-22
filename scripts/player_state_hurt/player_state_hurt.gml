@@ -4,6 +4,7 @@ function player_state_hurt(phase) {
 		case INIT:
 			// Set variables
 	        is_rolling = false;
+			force_roll = false;
 			player_set_ground(noone);
 			
 			// Animate
