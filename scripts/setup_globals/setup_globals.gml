@@ -16,3 +16,7 @@ global.character = obj_sonic;
 global.checkpoint_data = [];
 global.lives = 3;
 global.score = 0;
+
+// Particle system
+global.particles = part_system_create();
+part_system_depth(global.particles, depths.effects);

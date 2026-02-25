@@ -32,7 +32,7 @@ function sonic_routine_homing() {
 	if (allow_jump_action and input_pressed(vb_a)) {
 		// FX
 		audio_play_sfx(snd_player_homing_dash, REPLACE);
-		part_particles_create(Particles, x, y, global.homing_burst, 1);
+		part_particles_create(Particles, x, y, vfx_homing_burst, 1);
 		player_animation_jump();
 
 		// Homing attack

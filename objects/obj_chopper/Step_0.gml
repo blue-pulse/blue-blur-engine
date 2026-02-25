@@ -3,5 +3,5 @@ event_inherited();
 
 // Bounce
 if (y >= ystart) {
-	vspeed = accel;
+	vspeed = movement_speed * -1;
 }

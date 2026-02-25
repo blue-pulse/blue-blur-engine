@@ -2,14 +2,14 @@
 event_inherited();
 
 // Parameters
-fly_speed = 1.5;
 bullet_speed = 1.8;
 movement_dist = 80;
+movement_speed = 1.5;
 attack_range = movement_dist - 16;
 
 // Variables
 mask_index = sprite_index;
-hspeed = fly_speed;
+hspeed = movement_speed;
 state = 0;
 can_attack = true;
 left_goal = xstart - movement_dist;

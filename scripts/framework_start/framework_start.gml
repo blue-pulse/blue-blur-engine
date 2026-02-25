@@ -2,7 +2,6 @@ function framework_start() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
-
 	// Set game parameters
 	randomize();
 	audio_channel_num(MAX_SOUNDS);
@@ -17,5 +16,6 @@ function framework_start() {
 	print("[INFO] Screen setup was completed!");
 
 	// Create an instance of each manager
-	print("[INFO] All singletons were created!");
+	init_global_particles();
+	print("[INFO] All global components were created!");
 }

@@ -98,7 +98,7 @@ function player_state_skid(phase) {
 				var height = ver_radius - 2;
 				var pos_x = floor(x + dsin(angle) * height);
 				var pos_y = floor(y + dcos(angle) * height);
-				part_particles_create(Particles, pos_x, pos_y, skid_dust, 1);
+				part_particles_create(Particles, pos_x, pos_y, vfx_skid_dust, 1);
 			}
 	        break;
 		

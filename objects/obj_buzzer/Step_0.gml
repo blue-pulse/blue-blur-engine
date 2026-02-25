@@ -7,10 +7,8 @@ switch (state) {
 	case 0:
 		// Turn around
 		if (x < left_goal or x > right_goal) {
-			state = 1;
-			hspeed = 0;
 			can_attack = true;
-			animation_play(anim_turn);
+			enemy_invoke_turn();
 		}
 
 		// Shoot
@@ -34,7 +32,7 @@ switch (state) {
 		if (animation_ended()) {
 			state = 0;
 			dir *= -1;
-			hspeed = fly_speed * dir;
+			hspeed = movement_speed * dir;
 			animation_play(anim_fly);
 		}
 		break;
@@ -52,7 +50,7 @@ switch (state) {
 		// Return to patrol
 		else if (animation_ended()) {
 			state = 0;
-			hspeed = fly_speed * dir;
+			hspeed = movement_speed * dir;
 			animation_play(anim_fly);
 		}
 		break;

@@ -2,7 +2,7 @@
 event_inherited();
 
 // Parameters
-accel = -5;
+movement_speed = 5;
 
 // Variables
 gravity = 0.09375;

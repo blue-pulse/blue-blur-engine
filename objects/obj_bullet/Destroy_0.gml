@@ -1,2 +1,3 @@
 // FX
-part_particles_create(Particles, x, y, vfx_explosion, 1);
+part_particles_create(Particles, x, y, global.vfx_small_explosion, 1);
+	

@@ -15,7 +15,6 @@ function player_state_hurt(phase) {
 		case STEP:
 			// Update position
 			if (!player_movement_air()) {
-				recovery_timer = 120;
 				break;
 			}
 			

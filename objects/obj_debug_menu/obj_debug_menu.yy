@@ -12,8 +12,8 @@
   "name":"obj_debug_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menus",
-    "path":"folders/2. Visuals/Menus.yy",
+    "name":"Debug",
+    "path":"folders/2. Visuals/Menus/Debug.yy",
   },
   "parentObjectId":null,
   "persistent":false,
