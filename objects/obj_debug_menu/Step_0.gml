@@ -9,6 +9,7 @@ with (Player) {
 	}
 	
 	// Display movement properties
+	player_info += "FPS:	" + string_format(fps, 3, 0) + "\n\n";
 	player_info += "HSPEED:	" + string_format(hor_speed, 3, 2) + "\n\n";
 	player_info += "VSPEED:	" + string_format(ver_speed, 3, 2) + "\n\n";
 	player_info += "ANGLE:	" + string_format(angle, 3, 2) + "\n\n";

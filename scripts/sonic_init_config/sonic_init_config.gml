@@ -2,6 +2,7 @@ function sonic_init_config() {
 	// Variables
 	color_blend = make_color_rgb(33, 74, 223);
 	trail_alpha = array_create(table_size, 0);
+	spr_jumpball = spr_sonic_jumpball;
 
 	// Dict
 	boost_params = {

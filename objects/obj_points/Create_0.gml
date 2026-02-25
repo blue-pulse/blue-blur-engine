@@ -1,4 +1,5 @@
 // Variables
+depth = depths.gui;
 sprite_index = spr_points;
 gravity = 0.09375;
 vspeed = -3;
