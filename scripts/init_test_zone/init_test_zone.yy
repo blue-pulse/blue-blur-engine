@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"UtilityFunctions",
+  "%Name":"init_test_zone",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"UtilityFunctions",
+  "name":"init_test_zone",
   "parent":{
-    "name":"tmp",
-    "path":"folders/tmp.yy",
+    "name":"Scripts",
+    "path":"folders/7. Stages/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,5 +1,5 @@
 // Create flame
-if (--explosion_timer == 0) {
+if (explosion_timer and --explosion_timer == 0) {
 	part_particles_create(Particles, x, y, global.vfx_big_explosion, 1);
 }
 

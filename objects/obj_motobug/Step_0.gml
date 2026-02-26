@@ -7,6 +7,9 @@ switch (state) {
 	case 0:
 		// Meeting with floor
 		if (place_meeting(x, y + 1, obj_solid)) {
+			// Stop falling
+			vspeed = 0;
+			
 			// Move outside of floor
 			while (place_meeting(x, y, obj_solid)) {
 				--y;
@@ -17,15 +20,12 @@ switch (state) {
 				smoke_timer = 16;
 				part_particles_create(Particles, x - 16 * dir, y + 3, vfx_smoke, 1);
 			}
-						
-			// Variables
-			hspeed = movement_speed * dir;
-			vspeed = 0;
-			var out_of_bounds = (x < left_goal) or (x > right_goal);
 			
 			// Turn around
+			var out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
 			if (out_of_bounds or !collision_point(x + 8 * dir, y + 20, obj_solid, false, false)) {
 			    enemy_invoke_turn();
+				break;
 			}
 		}
 		
@@ -40,11 +40,10 @@ switch (state) {
 			while (place_meeting(x, y, obj_solid)) {
 				--x;
 			}
-	
+			
 			// Turn around
-			if (dir == sign(hspeed)) {
-				enemy_invoke_turn();
-			}
+			enemy_invoke_turn();
+			break;
 		}
 		break;
 		

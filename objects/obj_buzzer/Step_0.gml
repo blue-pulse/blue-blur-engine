@@ -6,7 +6,8 @@ switch (state) {
 	// Fly
 	case 0:
 		// Turn around
-		if (x < left_goal or x > right_goal) {
+		var out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
+		if (out_of_bounds) {
 			can_attack = true;
 			enemy_invoke_turn();
 		}

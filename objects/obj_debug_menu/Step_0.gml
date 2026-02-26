@@ -58,6 +58,15 @@ with (Player) {
 	if (keyboard_check_pressed(vk_numpad2)) {
 		room_fadeto(room);
 	}
+	
+	// Focus random object
+	if (keyboard_check_pressed(vk_numpad3)) {
+		if (camera_get_target() != Player) {
+			camera_set_target(Player);
+		} else {
+			camera_set_target(obj_resource);
+		}
+	}
 }
 
 // Set player data

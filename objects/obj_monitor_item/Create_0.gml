@@ -2,7 +2,7 @@
 depth = depths.effects;
 image_speed = 0;
 vspeed = -1;
-alarm[0] = 32;
+alarm_set(0, 32);
 
 // Parameters
 owner ??= noone;

@@ -13,9 +13,11 @@ function player_reaction_spring(object) {
 	var spring_vspeed = -spring_dsin * object.force;
 
 	// Trigger
-	object.image_speed = 1;
-	object.alarm[0] = 10;
-	object.usable = false;
+	with (object) {
+		usable = false;
+		image_speed = 1;
+		alarm_set(0, 10);
+	}
 	
 	// FX
 	screen_shake(7);

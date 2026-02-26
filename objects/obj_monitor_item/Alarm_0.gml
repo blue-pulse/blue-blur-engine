@@ -38,4 +38,4 @@ with (owner) {
 }
 
 // Finish
-alarm[1] = 32;
+alarm_set(1, 32);

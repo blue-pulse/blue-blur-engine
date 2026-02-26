@@ -18,6 +18,15 @@
 #macro STOP 1
 #macro NONE 2
 
+// Misc
+#macro CULL_FREQ 10
+#macro CULL_OFFSET 96
+#macro CULL_MARGIN 192
+#macro DIR_LEFT -1
+#macro DIR_RIGHT 1
+#macro DIR_TOP -2
+#macro DIR_BOTTOM 2
+
 // Globals
 #macro font_black global.font_hud_black
 #macro font_blue global.font_hud_blue
@@ -33,6 +42,7 @@
 #macro vb_left INPUT_VERB.LEFT
 #macro vb_right INPUT_VERB.RIGHT
 #macro vb_start INPUT_VERB.START
+#macro vb_select INPUT_VERB.SELECT
 #macro vb_a INPUT_VERB.A
 #macro vb_b INPUT_VERB.B
 #macro vb_x INPUT_VERB.X
@@ -43,4 +53,5 @@
 #macro Particles global.particles
 #macro Player obj_player
 #macro Reticle obj_reticle
-#macro View view_camera[0]
+#macro View view_get_camera(0)
+#macro Stage obj_stage_manager

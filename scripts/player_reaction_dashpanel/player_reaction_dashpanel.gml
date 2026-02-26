@@ -5,8 +5,10 @@ function player_reaction_dashpanel(object) {
 	}
 	
 	// Trigger object
-	object.alarm[0] = 16;
-	object.usable = false;
+	with (object) {
+		usable = false;
+		alarm_set(0, 16);
+	}
 	
 	// FX
 	screen_shake(7);

@@ -5,7 +5,6 @@ function player_state_death(phase) {
 			// Set variables
 			is_rolling = false;
 			recovery_timer = 0;
-			objStage.timer_enabled = false;
 			
 			// FX
 			depth = depths.effects;
@@ -26,13 +25,13 @@ function player_state_death(phase) {
 			// Finish
 			if (!in_view(id, 24) and ver_speed > 3) {
 				// Reduce life counter
-				if (--global.lives <= 0 or objStage.time_over) {
+				if (--global.lives <= 0) {
 					//instance_create_layer(0, 0, "Overlays", objGameOver);
 				}
 				
 				// If not, restart
 				else {
-					objStage.reset_time = 60; 
+					Stage.reset_timer = 60; 
 				}
 				instance_destroy();
 			}

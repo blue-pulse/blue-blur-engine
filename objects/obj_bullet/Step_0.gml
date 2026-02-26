@@ -5,6 +5,6 @@ if (impacted) {
 }
 
 // Destroy if offscreen
-if (!in_view(id, CAMERA_PADDING)) {
+if (!in_view(id, CULL_OFFSET)) {
 	instance_terminate();
 }
