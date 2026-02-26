@@ -2,14 +2,8 @@ function player_state_roll(phase) {
 	switch (phase) {
 		// Start state
 		case INIT:
-			// Variables
 	        is_rolling = true;
-			
-			// FX
-			play_roll_anim();
-			if (state_prev != player_state_spindash) {
-				audio_play_sfx(snd_player_roll, REPLACE);
-			}
+			audio_play_sfx(snd_player_roll, REPLACE);
 	        break;
 		
 		// Run state
@@ -33,10 +27,12 @@ function player_state_roll(phase) {
 				}
 				
 				// Friction
-				var abs_speed = abs(hor_speed);
-				hor_speed -= sign(hor_speed) * min(abs_speed, roll_frict);
+				hor_speed -= sign(hor_speed) * min(abs(hor_speed), roll_frict);
 			}
 			
+			// Variables
+			var abs_speed = abs(hor_speed);
+	
 			// Update position
 			if (!player_movement_ground()) {
 				break;
@@ -49,7 +45,7 @@ function player_state_roll(phase) {
 			}
 			
 			// Slide down steep surfaces
-	        if (abs(hor_speed) < stumble_threshold) {
+	        if (abs_speed < stumble_threshold) {
 	            if (relative_angle >= 90 and relative_angle <= 270) {
 					player_set_state(player_state_airbone);
 					break;
@@ -72,13 +68,19 @@ function player_state_roll(phase) {
 			}
 			
 			// Unroll
-			if (abs(hor_speed) < unroll_threshold) {
+			if (abs_speed < unroll_threshold) {
 				player_set_state(player_state_run);
 				break;
 			}
 			
 			// Animate
-			play_roll_anim();
+			if (abs_speed > 5) {
+				var anim_speed = map(abs_speed, 5, 12, 1.25, 2.25);
+				animation_play(anim_roll_fast, anim_speed);
+			} else {
+				var anim_speed = clamp(abs_speed, 1, 1.5);
+				animation_play(anim_roll_slow, anim_speed);
+			}
 			break;
 		
 		// Stop state

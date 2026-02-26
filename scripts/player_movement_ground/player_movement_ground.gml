@@ -15,7 +15,7 @@ function player_movement_ground() {
 	}
 	
 	// Variables for horizontal movement
-	var total_steps = 1 + (abs(hor_speed) div hor_radius);
+	var total_steps = 1 + floor(abs(hor_speed) / hor_radius);
 	var increment = hor_speed / total_steps;
 	
 	// Process movement loop
@@ -50,7 +50,7 @@ function player_movement_ground() {
 				hor_speed = 0;
 				
 				// Set pushing animation
-				var input_dir = input_opposing(vb_left, vb_right);
+				var input_dir = input_opposing(vb_right, vb_left);
 				if (input_dir == wall_sign and dir == wall_sign) {
 					player_wall_push(hit_wall, wall_sign);
 				}

@@ -25,6 +25,6 @@ function player_update_rotation() {
 	
 	// Airbone
 	else {
-		rotation = approach_angle(rotation, gravity_direction, 4);
+		rotation = angle_approach(rotation, gravity_direction, 4);
 	}
 }

@@ -4,26 +4,28 @@ function player_state_idle(phase) {
 		case INIT:
 			// Update variables
 	        is_rolling = false;
+			force_roll = false;
 			player_reset_combo();
 			player_update_cliff();
 			
-			// Animate idle
-			if (cliff_dir == 0) {
-				animation_play(anim_idle);
-			}
-			
-			// Animate balance
-			else if (cliff_dir == dir) {
-				animation_play(anim_balance_front);
-			} else {
-				animation_play(anim_balance_back);
+			// Animate
+			switch (cliff_dir) {
+			    case 0:
+					animation_play(anim_idle);
+					break;
+			    case dir:
+					animation_play(anim_balance_front);
+					break;
+			    default:
+					animation_play(anim_balance_back);
+					break;
 			}
 			break;
 		
 		// Run state
 		case STEP:
 			// Variables
-			var input_dir = input_opposing(vb_left, vb_right);
+			var input_dir = input_opposing(vb_right, vb_left);
 			
 			// Update position
 			if (!player_movement_ground()) {
@@ -76,7 +78,7 @@ function player_state_idle(phase) {
 			if (cliff_dir == 0) {
 				// Looking up
 				if (input_holded(vb_up)) {
-					player_set_state(player_state_search);
+					player_set_state(player_state_lookup);
 					break;
 				}
 				

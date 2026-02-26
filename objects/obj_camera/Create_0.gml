@@ -6,6 +6,11 @@ view_width = WIDTH;
 view_height = HEIGHT;
 target = noone;
 
+// Angle
+angle = 0;
+smooth_rotate = 2.5;
+gravity_direction = 0;
+
 // Extended camera
 shift_value = 64;
 shift_speed = floor(shift_value / 32);

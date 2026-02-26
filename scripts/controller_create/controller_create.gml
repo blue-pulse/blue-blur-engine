@@ -3,5 +3,5 @@ function controller_create(object) {
 	gml_pragma("forceinline");
 	
 	// Return value
-	return instance_create_depth(0, 0, queue.controller, object);
+	return instance_create_depth(0, 0, depths.controller, object);
 }

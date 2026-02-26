@@ -11,6 +11,9 @@ function sonic_init_animations(){
 	anim_crouch_start = animation_create(spr_sonic_crouch, 1, 0, 2);
 	anim_crouch_stop = animation_create(spr_sonic_crouch, -1, 0, 2);
 	
+	// Dashpanel
+	anim_dashpanel = animation_create(spr_sonic_spindash, 1.25);
+	
 	// Fall
 	anim_fall = animation_create(spr_sonic_fall, 1, 0, 5);
 	anim_fall_loop = animation_create(spr_sonic_fall, 1, 5, -1);
@@ -33,9 +36,13 @@ function sonic_init_animations(){
 	// Land
 	anim_land = animation_create(spr_sonic_land);
 	
+	// Launch
+	anim_launch = animation_create(spr_sonic_launch);
+	
 	// Push
 	anim_push = animation_create(spr_sonic_push, 1, 3, -1);
 	anim_push_start = animation_create(spr_sonic_push, 1.5, 0, 2);
+	anim_push_end = animation_create(spr_sonic_push, -1.5, 0, 2);
 	
 	// Recovery
 	anim_recovery = animation_create(spr_sonic_recovery);
@@ -52,14 +59,14 @@ function sonic_init_animations(){
 	anim_sprint = animation_create(spr_sonic_sprint);
 	
 	// Roll
-	anim_roll = animation_create(spr_sonic_roll);
+	anim_roll_jump = animation_create(spr_sonic_roll_jump);
 	anim_roll_fast = animation_create(spr_sonic_roll_fast);
 	anim_roll_slow = animation_create(spr_sonic_roll_slow);
 	
 	// Search
-	anim_search = animation_create(spr_sonic_search, 1, 3, -1);
-	anim_search_start = animation_create(spr_sonic_search, 1, 0, 2);
-	anim_search_stop = animation_create(spr_sonic_search, -1, 0, 2);
+	anim_lookup = animation_create(spr_sonic_lookup, 1, 3, -1);
+	anim_lookup_start = animation_create(spr_sonic_lookup, 1, 0, 2);
+	anim_lookup_stop = animation_create(spr_sonic_lookup, -1, 0, 2);
 	
 	// Skid
 	anim_skid_fast = animation_create(spr_sonic_skid_fast, 1, 0, 1);
@@ -68,9 +75,12 @@ function sonic_init_animations(){
 	anim_skid_slow_loop = animation_create(spr_sonic_skid_slow, 1, 1, 2);
 	anim_skid_turn = animation_create(spr_sonic_skid_turn);
 	
+	// Somersault
+	anim_somersault = animation_create(spr_sonic_somersault, 1.25);
+	
 	// Spindash
-	anim_spindash = animation_create(spr_sonic_spindash);
-	anim_spindash_charge =animation_create(spr_sonic_spindash_charge);
+	anim_spindash = animation_create(spr_sonic_spindash, 1, 0, 3);
+	anim_spindash_charge = animation_create(spr_sonic_spindash, 1, 4, -1);
 	
 	// Turn
 	anim_turn = animation_create(spr_sonic_turn);

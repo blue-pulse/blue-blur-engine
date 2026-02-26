@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"bgm_test_zone",
+  "audioGroupId":{
+    "name":"grp_bgm",
+    "path":"audiogroups/grp_bgm",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":266.05423,
+  "exportDir":"",
+  "name":"bgm_test_zone",
+  "parent":{
+    "name":"Music",
+    "path":"folders/7. Stages/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgm_test_zone.wav",
+  "volume":1.0,
+}

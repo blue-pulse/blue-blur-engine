@@ -6,7 +6,6 @@ function player_set_ground(object) {
 		angle = gravity_direction;
 		relative_angle = 0;
 		mask_direction = angle;
-		//camera.ground_mode = false;
 		exit;
 	}
 	

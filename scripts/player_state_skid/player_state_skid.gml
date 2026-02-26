@@ -13,7 +13,7 @@ function player_state_skid(phase) {
 		// Run state
 	    case STEP:
 			// Variables
-			var input_dir = input_opposing(vb_left, vb_right);
+			var input_dir = input_opposing(vb_right, vb_left);
 			
 			// Early exit
 			if (input_dir == 0 or mask_direction != gravity_direction) {
@@ -33,7 +33,6 @@ function player_state_skid(phase) {
 							
 						// Turn around
 						if (dir != sign(hor_speed)) {
-							animation_play(anim_skid_turn);
 							player_set_state(player_state_turn);
 						} else {
 							player_set_state(player_state_run);
@@ -96,10 +95,10 @@ function player_state_skid(phase) {
 			
 			// Skid dust
 			if (hor_speed != 0 and ticks mod 4 == 0) {
-				var height = ver_radius - 6;
+				var height = ver_radius - 2;
 				var pos_x = floor(x + dsin(angle) * height);
 				var pos_y = floor(y + dcos(angle) * height);
-				part_particles_create(Particles, pos_x, pos_y, skid_dust, 1);
+				part_particles_create(Particles, pos_x, pos_y, vfx_skid_dust, 1);
 			}
 	        break;
 		

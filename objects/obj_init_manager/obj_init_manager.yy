@@ -10,8 +10,8 @@
   "name":"obj_init_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Singletons",
-    "path":"folders/2. Framework/Singletons.yy",
+    "name":"Managers",
+    "path":"folders/2. Framework/Managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

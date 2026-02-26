@@ -15,7 +15,7 @@
   "name":"snd_player_stabbed",
   "parent":{
     "name":"Common",
-    "path":"folders/3. Player/Player/Sounds/Common.yy",
+    "path":"folders/4. Player/Player/Sounds/Common.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

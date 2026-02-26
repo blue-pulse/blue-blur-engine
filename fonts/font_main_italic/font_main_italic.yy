@@ -192,7 +192,7 @@
   "name":"font_main_italic",
   "parent":{
     "name":"Fonts",
-    "path":"folders/4. Visuals/Fonts/Fonts.yy",
+    "path":"folders/3. Visuals/Assets/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[
@@ -207,8 +207,8 @@
   "size":12.0,
   "styleName":"Regular",
   "textureGroupId":{
-    "name":"grp_visuals",
-    "path":"texturegroups/grp_visuals",
+    "name":"grp_assets",
+    "path":"texturegroups/grp_assets",
   },
   "TTFName":"",
   "usesSDF":false,

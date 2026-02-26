@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/5. Resources/Items/Objects.yy",
+    "path":"folders/8. Usable/Terrain/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

@@ -1,2 +1,1 @@
-/// @description Set icon
-icon_index = 8;
+item = items.life;

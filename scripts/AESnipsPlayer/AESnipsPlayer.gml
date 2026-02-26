@@ -578,7 +578,7 @@ function SnipPlayer() constructor
 	}
 	
 	///@func snip_cancel_play_next()
-	///@desc This will cancel the Snip that the object has queued to play next
+	///@desc This will cancel the Snip that the object has depthsd to play next
 	static snip_cancel_play_next = function()
 	{
 		//If the Snip is transitioning then the current target will have a Snip

@@ -3,6 +3,7 @@ function player_state_airbone(phase) {
 		// Start state
 		case INIT:
 			// Variables
+			force_roll = false;
 			ver_speed = -dsin(relative_angle) * hor_speed;
 			hor_speed = dcos(relative_angle) * hor_speed;
 			player_set_ground(noone);
@@ -15,20 +16,22 @@ function player_state_airbone(phase) {
 
 		// Run state
 		case STEP:
-			// Left acceleration
-			if (input_holded(vb_left)) {
-				dir = -1;
-				if (hor_speed > -max_speed) {
-	                hor_speed = max(hor_speed - air_accel, -max_speed);
+			if (!air_lock) {
+				// Left acceleration
+				if (input_holded(vb_left)) {
+					dir = -1;
+					if (hor_speed > -max_speed) {
+		                hor_speed = max(hor_speed - air_accel, -max_speed);
+					}
 				}
-			}
 			
-			// Right acceleration
-			if (input_holded(vb_right)) {
-				dir = 1;
-	            if (hor_speed < max_speed) {
-	                hor_speed = min(hor_speed + air_accel, max_speed);
-	            }
+				// Right acceleration
+				if (input_holded(vb_right)) {
+					dir = 1;
+		            if (hor_speed < max_speed) {
+		                hor_speed = min(hor_speed + air_accel, max_speed);
+		            }
+				}
 			}
 			
 	        // Update position
@@ -56,9 +59,14 @@ function player_state_airbone(phase) {
 				ver_speed = min(ver_speed + grav_force, grav_cap);
 			}
 			
+			// Wait for next frame
+			if (air_lock) {
+				break;
+			}
+			
 			// Jump actions
 			if (is_rolling) {
-				begin_jump_action();
+				player_routine_midair();
 			}
 			
 			// Curl up
@@ -68,7 +76,7 @@ function player_state_airbone(phase) {
 				allow_jump_action = true;
 				
 				// FX
-				play_jump_anim();
+				player_animation_jump();
 			    audio_play_sfx(snd_player_wind, REPLACE);
 				break;
 			}

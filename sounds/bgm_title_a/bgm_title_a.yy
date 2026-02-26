@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"bgm_title_a",
+  "audioGroupId":{
+    "name":"grp_bgm",
+    "path":"audiogroups/grp_bgm",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":169.701,
+  "exportDir":"",
+  "name":"bgm_title_a",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/3. Visuals/Assets/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgm_title_a.wav",
+  "volume":1.0,
+}

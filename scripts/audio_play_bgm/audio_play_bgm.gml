@@ -1,7 +1,4 @@
 function audio_play_bgm(sound, loop_start=0, loop_end=0) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Set the end of the loop as the end of the song
 	if (loop_end == 0) {
 		loop_end = audio_sound_length(sound);
@@ -13,7 +10,7 @@ function audio_play_bgm(sound, loop_start=0, loop_end=0) {
 	audio_sound_loop_end(sound, loop_end);
 	
 	// Play the song
-	var song = audio_play_sound(sound, queue.bgm, true);
+	var song = audio_play_sound(sound, PRIORITY_BGM, true, VOLUME_BGM);
 	audio_sound_loop(song, true);
 	return song;
 }

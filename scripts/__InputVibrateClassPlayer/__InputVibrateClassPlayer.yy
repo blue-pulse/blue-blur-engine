@@ -6,7 +6,7 @@
   "name":"__InputVibrateClassPlayer",
   "parent":{
     "name":"(System)",
-    "path":"folders/1. Packages/Input v10.2.2/Plug-Ins/Vibration/(System).yy",
+    "path":"folders/1. Packages/Input v10.3.0/Plug-Ins/Vibration/(System).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

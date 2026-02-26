@@ -2,12 +2,6 @@ function framework_start() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
-	// Load assets in memory (Asynchronous)
-	audio_group_load(grp_bgm);
-	audio_group_load(grp_sfx);
-	audio_group_load(grp_voices);
-	print("[INFO] Loading assets in memory...");
-
 	// Set game parameters
 	randomize();
 	audio_channel_num(MAX_SOUNDS);
@@ -22,5 +16,5 @@ function framework_start() {
 	print("[INFO] Screen setup was completed!");
 
 	// Create an instance of each manager
-	print("[INFO] All singletons were created!");
+	print("[INFO] All global components were created!");
 }

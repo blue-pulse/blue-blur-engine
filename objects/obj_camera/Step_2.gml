@@ -23,6 +23,11 @@ else {
 	view_y = clamp(y, 0, room_height - view_height);
 }
 
+// Smooth rotation
+if (angle != gravity_direction) {
+	angle = angle_rotate(angle, gravity_direction, smooth_rotate);
+}
+
 // Screen shake
 if (shake_timer) {
 	view_x += random_range(-shake_power, shake_power);
@@ -42,3 +47,4 @@ if (zoom_timer) {
 // Apply camera position
 camera_set_view_pos(View, view_x, view_y);
 camera_set_view_size(View, floor(view_width), floor(view_height));
+camera_set_view_angle(View, angle);

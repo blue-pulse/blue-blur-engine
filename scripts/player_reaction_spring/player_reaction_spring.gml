@@ -1,50 +1,72 @@
-function player_reaction_spring(obj, side)
-{
-	// Get orientation relative to current rotation
-	var rotation_offset = angle_wrap(obj.image_angle - mask_direction);
-	
-	// Ignore if not touching the correct side
-	if ((side == DIR_RIGHT and rotation_offset != 90) or
-		(side == DIR_LEFT and rotation_offset != 270) or
-		(side == DIR_BOTTOM and rotation_offset != 0) or
-		(side == DIR_TOP and rotation_offset != 180)) return false;
-	
-	// Get movement vectors
-	var x_spring_speed = -dsin(rotation_offset) * obj.force;
-	var y_spring_speed = -dcos(rotation_offset) * obj.force;
-	
-	// Bounce from spring
-	if (x_spring_speed != 0)
-	{
-		hor_speed = x_spring_speed;
-		dir = sign(hor_speed);
-		ground_lock = 16;
+function player_reaction_spring(object) {
+	// Early exit
+	if (!object.usable or array_contains(damage_denied_state, state)) {
+		return false;
 	}
-	if (y_spring_speed != 0)
-	{
-		// Set state
+	
+	// Variables
+	var spring_angle = object.image_angle;
+	var spring_rotation = angle_wrap(spring_angle - mask_direction);
+	var spring_dcos = dcos(spring_rotation);
+	var spring_dsin = dsin(spring_rotation);
+	var spring_hspeed = spring_dcos * object.force;
+	var spring_vspeed = -spring_dsin * object.force;
+
+	// Trigger
+	with (object) {
+		usable = false;
+		image_speed = 1;
+		alarm_set(0, 10);
+	}
+	
+	// FX
+	screen_shake(7);
+	audio_play_sfx(snd_spring, REPLACE);
+	
+	// Fix position
+	air_lock = 16;
+	ground_lock = 16;
+	x = object.x + object.hor_offset;
+	y = object.y + object.ver_offset;
+
+	// Bounce diagonally
+	if (spring_rotation mod 90 != 0) {
+		// State
+		player_set_state(player_state_launch);
+		
+		// Variables
+		is_rolling = false;
+		is_jumping = false;
+		hor_speed = spring_hspeed;
+		ver_speed = spring_vspeed;
+		dir = (spring_rotation > 90 and spring_rotation < 270) ? (-1) : (1);
+		return true;
+	}
+		
+	// Bounce horizontally
+	else if (spring_rotation mod 180 == 0) {
+		hor_speed = spring_hspeed;
+		ver_speed = 0;
+		dir = sign(spring_hspeed);
+		return false;
+	}
+	
+	// Bounce vertically
+	else {
+		// State
 		player_set_state(player_state_airbone);
 		
-		// Movement
-		ver_speed = y_spring_speed;
+		// Variables
+		hor_speed = 0;
+		ver_speed = spring_vspeed;
 		
-		// Set flags and animate if rising
-		if (side == DIR_BOTTOM)
-		{
-			is_rolling = false;
-			is_jumping = false;
+		// Set flags if rising
+		if (spring_rotation == 90) {
 			animation_play(anim_rise);
 			rotation = gravity_direction;
+			is_rolling = false;
+			is_jumping = false;
 		}
+		return true;
 	}
-	
-	// Animate spring
-	obj.image_index = 0;
-	obj.alarm[0] = 1;
-	
-	// Sound
-	//audio_play_sfx(sfxSpring);
-	
-	// Abort state only if bouncing vertically
-	return (y_spring_speed != 0);
 }

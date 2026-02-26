@@ -13,6 +13,12 @@ function player_state_spindash(phase) {
 			screen_shake(7);
 			animation_play(anim_spindash);
 			audio_play_sfx(snd_player_spindash_charge, REPLACE);
+			
+			// Dust
+			vfx_create(x, y, obj_spindash_dust, {
+				dir: image_xscale,
+				angle: image_angle,
+			});
 			break;
 
 		// Run state
@@ -64,6 +70,9 @@ function player_state_spindash(phase) {
 				// VFX
 				animation_play(anim_spindash_charge);
 				screen_shake(7);
+				
+				// Wave
+				vfx_create(x, y, obj_spindash_wave, { color: color_blend });
 			}
 			
 	        // Release

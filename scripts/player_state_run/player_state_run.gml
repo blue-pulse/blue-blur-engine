@@ -4,13 +4,14 @@ function player_state_run(phase) {
 		case INIT:
 			// Update variables
 	        is_rolling = false;
+			force_roll = false;
 			player_reset_combo();
 	        break;
 		
 		// Run state
 		case STEP:
 			// Variables
-			var input_dir = input_opposing(vb_left, vb_right);
+			var input_dir = input_opposing(vb_right, vb_left);
 
 			// Handle ground movement if not sliding down
 			if (ground_lock <= 0) {
@@ -25,7 +26,7 @@ function player_state_run(phase) {
 				
 						// Skidding
 						if (abs(hor_speed) > skid_threshold and mask_direction == gravity_direction) {
-							player_play_sfx_skid();
+							player_sound_skid();
 							player_set_state(player_state_skid);
 							break;
 						}
@@ -101,16 +102,13 @@ function player_state_run(phase) {
 				break;
 			}
 			
-			// Exit if pushing
-			if (animation == anim_push and dir == input_dir) {
+			// Skip to next frame if pushing
+			if (dir == input_dir and animation_is_playing(anim_push)) {
 				break;
 			}
 			
 			// Animate
-			play_run_anim();
-			
-			// Set angle
-	        rotation = angle;
+			player_animation_run();
 			break;
 		
 		// Stop state

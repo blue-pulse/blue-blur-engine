@@ -10,26 +10,23 @@ function player_update_params() {
 		}
 	}
 	
-	// Invincibility effect
-	if (invincibility_timer and --invincibility_timer <= 0) {
-		instance_destroy(invincibility_fx);
-		invincibility_fx = noone;
-		//audio_dequeue_bgm(bgmInvincibility, true);
-	}
-	
-	// Superspeed
-	if (superspeed_timer and --superspeed_timer <= 0) {
-		player_update_physics();
-	}
-	
 	// Ground flags
 	if (is_grounded) {
 		// Reset flags
+		air_lock = 0;
 		allow_jump_action = false;
 		
 		// Reduce ground lock
 		if (ground_lock) {	
 			--ground_lock;
+		}
+	}
+	
+	// Airbone flags
+	else {
+		// Reduce air lock
+		if (air_lock) {	
+			--air_lock;
 		}
 	}
 }

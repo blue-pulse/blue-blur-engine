@@ -8,8 +8,8 @@
   "name":"obj_pipe_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Solids",
-    "path":"folders/5. Resources/Terrain/Solids.yy",
+    "name":"Objects",
+    "path":"folders/8. Usable/Terrain/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

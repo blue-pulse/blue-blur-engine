@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/5. Resources/Items/Objects.yy",
+    "path":"folders/6. Items/Rings/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_ring",

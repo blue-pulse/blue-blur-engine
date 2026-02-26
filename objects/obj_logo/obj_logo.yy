@@ -8,8 +8,8 @@
   "name":"obj_logo",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/4. Visuals/Title/Objects.yy",
+    "name":"Main",
+    "path":"folders/3. Visuals/Menus/Main.yy",
   },
   "parentObjectId":null,
   "persistent":false,

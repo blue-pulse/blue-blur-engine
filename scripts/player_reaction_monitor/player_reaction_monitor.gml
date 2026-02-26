@@ -1,46 +1,38 @@
-function player_reaction_monitor(obj, side)
-{
-	// Top collision
-	if (side == DIR_TOP)
-	{
-		// Knock down monitor
-		obj.vspeed = -2;
-		obj.gravity = 0.21875;
-		
-		// The monitor is too flat to land on; no need to abort state
-		return false;
-	}
-	
-	// Ignore if...
-	if (ver_speed < 0 or not is_rolling) return false; // Moving upwards or not is_rolling
-	if (side == DIR_BOTTOM and is_grounded) return false; // Spinning on top of the monitor
+function player_reaction_monitor(object) {
+	// Variables
+	var change_state = false;
 	
 	// Rebound in air
-	if (state == player_state_homing)
-	{
-		state = player_state_airbone;
+	if (state == player_state_homing) {
+		// Stop moving and bounce
+		player_set_state(player_state_airbone);
+		change_state = true;
+		
+		// Variables
 		hor_speed = 0;
-		ver_speed = -jump_height div 1;
-	}
-	else if (not is_grounded)
-	{
-		ver_speed *= -1;
+		ver_speed = round(-jump_height);
+	} else if (!is_grounded) {
+		// Move down slightly
+		if (ver_speed < 0 and collision_box_vertical(hor_radius, -ver_radius, mask_direction, object)) {
+			ver_speed++;
+		}
+		
+		// Bounce
+		else if (ver_speed >= 0 and collision_box_vertical(hor_radius, ver_radius, mask_direction, object)) {
+			ver_speed *= -1;
+			if (!is_rolling) {
+				animation_play(anim_fall_slow);
+			}
+		}
 	}
 	
 	// Create icon
-	with (instance_create_layer(obj.x, obj.y - 5, layer, objMonitorIcon))
-	{
-		image_index = obj.icon_index;
-		player_id = other.id;
-	}
-	
-	// Sound
-	//audio_play_sfx(sfxDestroy);
+	vfx_create(object.x, object.y, obj_monitor_item, { index: object.item }, true);
 	
 	// Destroy monitor and reticle
 	instance_destroy(obj_reticle);
-	instance_destroy(obj);
+	instance_destroy(object);
 	
-	// Abort state
-	return true;
+	// Should abort state
+	return change_state;
 }

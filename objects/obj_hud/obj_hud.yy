@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/4. Visuals/GUI/Objects.yy",
+    "path":"folders/3. Visuals/GUI/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

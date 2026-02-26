@@ -1,5 +1,5 @@
 // Early exit if not in view
-if (!in_view(id, CAMERA_PADDING)) {
+if (!in_view(id, CULL_OFFSET)) {
 	instance_destroy();
 	exit;
 }

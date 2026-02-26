@@ -7,16 +7,13 @@ enum shapes {
 	custom = 4,
 }
 
-// Logic priorities
-enum queue {
-	bgm = 100,
-	sfx = 1,
-	voices = 2,
-	effects = 0,
-	enemies = 0,
+// Drawing priorities
+enum depths {
 	backstage = 1,
+	enemies = 0,
 	player = -1,
     frontstage = -2,
+	effects = -2,
 	gui = -100,
 	controller = -4096,
 }
@@ -43,4 +40,14 @@ enum chars {
 	shadow,
 	sonic,
 	tails,
+}
+
+// Items
+enum items {
+	none = 0,
+	rings_5 = 1,
+	rings_10 = 2,
+	rings_rand = 3,
+	life = 4,
+	stamina = 5,
 }

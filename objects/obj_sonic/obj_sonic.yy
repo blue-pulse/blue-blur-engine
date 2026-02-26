@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Object",
-    "path":"folders/3. Player/Sonic/Object.yy",
+    "path":"folders/4. Player/Sonic/Object.yy",
   },
   "parentObjectId":{
     "name":"obj_player",
