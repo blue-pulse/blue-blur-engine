@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Debug",
-    "path":"folders/2. Assets/Menus/Debug.yy",
+    "path":"folders/3. Visuals/Menus/Debug.yy",
   },
   "parentObjectId":null,
   "persistent":false,

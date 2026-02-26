@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"Sprites",
-    "path":"folders/2. Assets/Resources/Sprites.yy",
+    "path":"folders/3. Visuals/Assets/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

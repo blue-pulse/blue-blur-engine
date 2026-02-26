@@ -4,5 +4,4 @@ function input_opposing(positive_input, negative_input) {
 	
 	// Return value
 	return input_holded(positive_input) - input_holded(negative_input);
-	//return InputOpposing(negative_input, positive_input, 0);
 }

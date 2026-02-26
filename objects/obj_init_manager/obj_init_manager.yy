@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Managers",
-    "path":"folders/3. Framework/Managers.yy",
+    "path":"folders/2. Framework/Managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

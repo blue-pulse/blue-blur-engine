@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Main",
-    "path":"folders/2. Assets/Menus/Main.yy",
+    "path":"folders/3. Visuals/Menus/Main.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

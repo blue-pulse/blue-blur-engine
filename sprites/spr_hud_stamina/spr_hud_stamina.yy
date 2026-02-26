@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Sprites",
-    "path":"folders/2. Assets/GUI/Sprites.yy",
+    "path":"folders/3. Visuals/GUI/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Pause",
-    "path":"folders/2. Assets/Menus/Pause.yy",
+    "path":"folders/3. Visuals/Menus/Pause.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

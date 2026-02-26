@@ -15,7 +15,7 @@
   "name":"snd_menu_confirm",
   "parent":{
     "name":"Sounds",
-    "path":"folders/2. Assets/Resources/Sounds.yy",
+    "path":"folders/3. Visuals/Assets/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

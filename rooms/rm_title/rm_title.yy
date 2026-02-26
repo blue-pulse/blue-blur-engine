@@ -39,7 +39,7 @@
   "name":"rm_title",
   "parent":{
     "name":"Rooms",
-    "path":"folders/3. Framework/Rooms.yy",
+    "path":"folders/2. Framework/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

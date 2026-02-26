@@ -192,7 +192,7 @@
   "name":"font_main_italic",
   "parent":{
     "name":"Fonts",
-    "path":"folders/2. Assets/Resources/Fonts.yy",
+    "path":"folders/3. Visuals/Assets/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -15,7 +15,7 @@
   "name":"bgm_title_a",
   "parent":{
     "name":"Sounds",
-    "path":"folders/2. Assets/Resources/Sounds.yy",
+    "path":"folders/3. Visuals/Assets/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -6,7 +6,7 @@
   "name":"camera_follow_player",
   "parent":{
     "name":"Scripts",
-    "path":"folders/2. Assets/GUI/Scripts.yy",
+    "path":"folders/3. Visuals/GUI/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
