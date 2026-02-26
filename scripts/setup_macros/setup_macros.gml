@@ -37,6 +37,10 @@
 #macro ticks global.framecount
 
 // Inputs
+#macro vb_keyboard 0
+#macro vb_gamepad 1
+#macro vb_touch 2
+#macro vb_generic 3
 #macro vb_up INPUT_VERB.UP
 #macro vb_down INPUT_VERB.DOWN
 #macro vb_left INPUT_VERB.LEFT
