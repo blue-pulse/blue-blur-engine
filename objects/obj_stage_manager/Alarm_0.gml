@@ -8,7 +8,7 @@ var view_bottom = HEIGHT + CULL_MARGIN;
 instance_deactivate_object(obj_resource);
 
 // Activate resources around player
-if (camera_get_target() != Player) {
+if (camera_get_target() != Player and instance_exists(Player)) {
 	var player_left = Player.x - CULL_OFFSET;
 	var player_top = Player.y - CULL_OFFSET;
 	instance_activate_region(player_left, player_top, CULL_MARGIN, CULL_MARGIN, true);
