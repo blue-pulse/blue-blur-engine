@@ -6,7 +6,7 @@
   "name":"camera_restore_zoom",
   "parent":{
     "name":"Scripts",
-    "path":"folders/2. Visuals/GUI/Scripts.yy",
+    "path":"folders/2. Assets/GUI/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

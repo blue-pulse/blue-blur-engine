@@ -16,6 +16,5 @@ function framework_start() {
 	print("[INFO] Screen setup was completed!");
 
 	// Create an instance of each manager
-	init_global_particles();
 	print("[INFO] All global components were created!");
 }

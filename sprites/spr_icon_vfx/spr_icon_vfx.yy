@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Assets",
-    "path":"folders/2. Visuals/Assets.yy",
+    "name":"Icons",
+    "path":"folders/3. Framework/Icons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

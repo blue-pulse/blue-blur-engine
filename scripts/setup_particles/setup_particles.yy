@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"init_stage_data",
+  "%Name":"setup_particles",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"init_stage_data",
+  "name":"setup_particles",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/7. Stages/Scripts.yy",
+    "name":"Setup",
+    "path":"folders/3. Framework/Setup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

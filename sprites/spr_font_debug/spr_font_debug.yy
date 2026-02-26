@@ -120,7 +120,7 @@
   "origin":0,
   "parent":{
     "name":"Sprites",
-    "path":"folders/2. Visuals/Fonts/Sprites.yy",
+    "path":"folders/2. Assets/Resources/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -457,8 +457,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"grp_visuals",
-    "path":"texturegroups/grp_visuals",
+    "name":"grp_assets",
+    "path":"texturegroups/grp_assets",
   },
   "type":0,
   "VTile":false,

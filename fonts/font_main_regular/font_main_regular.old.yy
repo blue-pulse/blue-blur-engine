@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"font_main_italic",
+  "%Name":"font_main_regular",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":14,
@@ -189,10 +189,10 @@
   "last":0,
   "lineHeight":18,
   "maintainGms1Font":false,
-  "name":"font_main_italic",
+  "name":"font_main_regular",
   "parent":{
     "name":"Fonts",
-    "path":"folders/2. Assets/Resources/Fonts.yy",
+    "path":"folders/2. Visuals/Fonts/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[
@@ -207,8 +207,8 @@
   "size":12.0,
   "styleName":"Regular",
   "textureGroupId":{
-    "name":"grp_assets",
-    "path":"texturegroups/grp_assets",
+    "name":"grp_visuals",
+    "path":"texturegroups/grp_visuals",
   },
   "TTFName":"",
   "usesSDF":false,

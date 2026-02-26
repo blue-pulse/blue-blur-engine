@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/7. Stages/Triggers/Objects.yy",
+    "path":"folders/8. Usable/Triggers/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

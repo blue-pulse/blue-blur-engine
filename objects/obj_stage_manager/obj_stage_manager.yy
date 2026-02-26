@@ -11,8 +11,8 @@
   "name":"obj_stage_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Singletons",
-    "path":"folders/3. Framework/Singletons.yy",
+    "name":"Managers",
+    "path":"folders/7. Stages/Managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

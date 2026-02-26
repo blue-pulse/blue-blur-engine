@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Main",
-    "path":"folders/2. Visuals/Menus/Main.yy",
+    "path":"folders/2. Assets/Menus/Main.yy",
   },
   "parentObjectId":null,
   "persistent":false,

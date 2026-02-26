@@ -8,7 +8,7 @@ name = "None";
 reset_timer = 0;
 
 // Set stage data
-init_stage_data();
+stage_init_data();
 
 // Set culling interval
 if (allow_culling) {

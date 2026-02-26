@@ -1,4 +1,4 @@
-function init_stage_data() {
+function stage_init_data() {
 	// Setup level
 	switch (room) {
 		// Main title

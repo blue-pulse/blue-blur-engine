@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Pause",
-    "path":"folders/2. Visuals/Menus/Pause.yy",
+    "path":"folders/2. Assets/Menus/Pause.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -81,8 +81,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"grp_visuals",
-    "path":"texturegroups/grp_visuals",
+    "name":"grp_assets",
+    "path":"texturegroups/grp_assets",
   },
   "type":0,
   "VTile":false,

@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"bgm_title_b",
   "parent":{
-    "name":"Music",
-    "path":"folders/7. Stages/Music.yy",
+    "name":"Sounds",
+    "path":"folders/2. Assets/Resources/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
