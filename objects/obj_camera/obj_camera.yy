@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/3. Visuals/GUI/Objects.yy",
+    "path":"folders/3. Visuals/Camera/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -11,6 +11,7 @@ function player_state_spindash(phase) {
 			
 			// FX
 			screen_shake(7);
+			camera_zoom_in(0.125, 120);
 			animation_play(anim_spindash);
 			audio_play_sfx(snd_player_spindash_charge, REPLACE);
 			
@@ -69,6 +70,7 @@ function player_state_spindash(phase) {
 				
 				// VFX
 				animation_play(anim_spindash_charge);
+				camera_zoom_in(spindash_charge * 0.08, 30);
 				screen_shake(7);
 				
 				// Wave
@@ -91,6 +93,7 @@ function player_state_spindash(phase) {
 			
 		// Stop state
 		case STOP:
+			camera_restore_zoom();
 			break;
 	}
 }

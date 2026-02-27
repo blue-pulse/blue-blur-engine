@@ -1,3 +1,3 @@
-function player_play_placeholder() {
-	return animation_play(anim_idle);
+function player_animation_placeholder() {
+	return undefined;
 }

@@ -95,13 +95,14 @@ slope_frict_up = 0.078125;
 stumble_threshold = 2.5;
 unroll_threshold = 0.5;
 
-// Specific character functions
-player_animation_jump = player_play_placeholder;
-player_animation_run = player_play_placeholder;
-
 // Initialize values
 player_init_config();
 player_init_effects();
 player_init_animations();
 player_set_ground(noone);
 player_update_physics();
+
+// Specific character functions
+player_animation_jump = player_animation_placeholder;
+player_animation_run = player_animation_placeholder;
+player_routine_midair = player_routine_placeholder;

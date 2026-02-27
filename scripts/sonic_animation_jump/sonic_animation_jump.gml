@@ -14,6 +14,6 @@ function sonic_animation_jump() {
 	vfx_create(x, y, obj_jumpball, {
 		angle: rotation,
 		hook: anim_roll_jump,
-		sprite: spr_jumpball,
+		sprite: data_dash.sprite,
 	});
 }

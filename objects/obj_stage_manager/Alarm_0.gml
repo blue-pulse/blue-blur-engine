@@ -1,8 +1,8 @@
 // Variables
 var view_left = camera_get_view_x(View) - CULL_OFFSET;
 var view_top = camera_get_view_y(View) - CULL_OFFSET;
-var view_right = WIDTH + CULL_MARGIN;
-var view_bottom = HEIGHT + CULL_MARGIN;
+var view_right = camera_get_view_width(View) + CULL_MARGIN;
+var view_bottom = camera_get_view_height(View) + CULL_MARGIN;
 
 // Deactivate resources
 instance_deactivate_object(obj_resource);

@@ -3,7 +3,7 @@ owner ??= noone;
 color ??= c_white;
 
 // Variables
-depth = depths.backstage;
+depth = depths.effects;
 sprite_index = spr_spindash_wave;
 sprite_index = spr_spindash_wave;
 image_xscale = 0.47;

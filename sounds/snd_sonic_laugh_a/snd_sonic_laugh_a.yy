@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_sonic_laugh_a",
+  "audioGroupId":{
+    "name":"grp_voices",
+    "path":"audiogroups/grp_voices",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":0.9892517,
+  "exportDir":"",
+  "name":"snd_sonic_laugh_a",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/4. Player/Sonic/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_sonic_laugh_a.wav",
+  "volume":1.0,
+}

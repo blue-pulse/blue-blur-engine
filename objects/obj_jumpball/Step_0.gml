@@ -1,11 +1,10 @@
-// Stick to the player position
-if (owner.animation == hook) {
-	x = floor(owner.x);
-	y = floor(owner.y);
-	image_xscale = owner.dir;
-} 
-
-// Destroy effect
-else {
+// Abort if not jumping
+if (owner.animation != hook) {
 	instance_destroy();
+	exit;
 }
+
+// Update position
+x = floor(owner.x);
+y = floor(owner.y);
+image_xscale = owner.dir;
