@@ -1,5 +1,5 @@
 // Early exit if not in view
-if (!in_view(id, CULL_OFFSET)) {
+if (!in_view(id, 24)) {
 	instance_destroy();
 	exit;
 }
