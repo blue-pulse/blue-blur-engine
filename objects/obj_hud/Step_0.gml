@@ -1,7 +1,3 @@
-if (input_pressed(vb_select)) {
-	viewable = !viewable
-}
-
 // Early exit
 if (!instance_exists(target) or is_faiding) {
 	exit;

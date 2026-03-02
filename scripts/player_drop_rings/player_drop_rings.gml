@@ -27,7 +27,24 @@ function player_drop_rings() {
 		if (scatter_dir) then angle += 22.5;
 		scatter_dir *= -1;
 	}
-
+	
+	// Handle rings on the screen
+	if (rings > 20) {
+		// Parameters
+		angle = 360;
+		abs_speed = 12;
+		
+		// Show rings
+		repeat (20) {
+			vfx_create(x, y, obj_ring_screen, {
+				hor_speed: abs_speed * dcos(angle) * -scatter_dir,
+				ver_speed: abs_speed * -dsin(angle),
+			}, true);
+			if (scatter_dir) then angle -= 30;
+			scatter_dir *= -1;
+	    }
+	}
+	
 	// Reset ring count
 	rings = 0;
 	

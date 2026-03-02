@@ -204,6 +204,7 @@
     {"id":{"name":"obj_reticle","path":"objects/obj_reticle/obj_reticle.yy",},},
     {"id":{"name":"obj_ring_lightdash","path":"objects/obj_ring_lightdash/obj_ring_lightdash.yy",},},
     {"id":{"name":"obj_ring_scattered","path":"objects/obj_ring_scattered/obj_ring_scattered.yy",},},
+    {"id":{"name":"obj_ring_screen","path":"objects/obj_ring_screen/obj_ring_screen.yy",},},
     {"id":{"name":"obj_ring_super","path":"objects/obj_ring_super/obj_ring_super.yy",},},
     {"id":{"name":"obj_ring","path":"objects/obj_ring/obj_ring.yy",},},
     {"id":{"name":"obj_slope_1","path":"objects/obj_slope_1/obj_slope_1.yy",},},

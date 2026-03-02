@@ -134,6 +134,7 @@
     {"name":"obj_resource","order":1,"path":"objects/obj_resource/obj_resource.yy",},
     {"name":"obj_ring_lightdash","order":3,"path":"objects/obj_ring_lightdash/obj_ring_lightdash.yy",},
     {"name":"obj_ring_scattered","order":1,"path":"objects/obj_ring_scattered/obj_ring_scattered.yy",},
+    {"name":"obj_ring_screen","order":4,"path":"objects/obj_ring_screen/obj_ring_screen.yy",},
     {"name":"obj_ring_super","order":2,"path":"objects/obj_ring_super/obj_ring_super.yy",},
     {"name":"obj_slope_1","order":5,"path":"objects/obj_slope_1/obj_slope_1.yy",},
     {"name":"obj_spikes","order":4,"path":"objects/obj_spikes/obj_spikes.yy",},

@@ -67,6 +67,12 @@ with (Player) {
 			camera_set_target(obj_resource);
 		}
 	}
+	
+	// Toggle HUD
+	if (keyboard_check_pressed(vk_numpad5)) {
+		obj_hud.viewable = !obj_hud.viewable
+	}
+
 }
 
 // Set player data
