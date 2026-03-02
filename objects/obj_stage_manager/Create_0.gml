@@ -1,4 +1,5 @@
 // Variables
+ticks = 0;
 allow_culling = true;
 bgm_loop_end = 0;
 bgm_loop_start = 0;

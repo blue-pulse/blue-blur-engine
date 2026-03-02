@@ -1,2 +1,2 @@
-/// Increase ticks
+// Increase ticks
 ticks++;

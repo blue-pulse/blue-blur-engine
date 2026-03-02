@@ -15,7 +15,7 @@ enum depths {
     frontstage = -2,
 	effects = -2,
 	gui = -100,
-	controller = -4096,
+	manager = -4096,
 }
 
 // Floor materials

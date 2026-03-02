@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_player_dash",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":0.27941042,
+  "exportDir":"",
+  "name":"snd_player_dash",
+  "parent":{
+    "name":"Common",
+    "path":"folders/4. Player/Player/Sounds/Common.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_player_dash.wav",
+  "volume":1.0,
+}

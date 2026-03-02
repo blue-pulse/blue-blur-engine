@@ -1,3 +1,10 @@
+// Kill player if they reached time limit
+if (global.time > 35999) {
+	with (Protagonist) {
+		player_receive_damage(self, true);
+	}
+}
+
 // Restart room
 if (reset_timer and --reset_timer == 0) {
 	room_fadeto(room);

@@ -8,11 +8,19 @@ global.font_hud_silver = font_add_sprite_ext(spr_font_silver, UNICODE, true, 0);
 
 // Global parameters
 global.framecount = 0;
+global.time = 0;
 global.is_fullscreen = false;
 global.is_paused = false;
 
 // Player parameters
 global.character = obj_sonic;
-global.checkpoint_data = [];
+global.protagonist = noone;
 global.lives = 3;
 global.score = 0;
+
+// Checkpoint data
+global.checkpoint = {
+	timecount: 0,
+	scoring: 0,
+	pos: [0, 0],
+};

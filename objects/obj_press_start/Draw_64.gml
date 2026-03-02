@@ -13,4 +13,4 @@ switch (input_get_source()) {
 }
 
 // Draw message
-draw_font(x, y, start_message, font_black, 1, alpha, fa_center, fa_top);
+draw_text_font_ext(x, y, start_message, font_black, fa_center, fa_middle, 1, c_white, alpha);

@@ -1,2 +1,2 @@
 // Display player data
-draw_font(WIDTH - 15, 15, player_data, font_debug, 0.7, 0.8, fa_right);
+draw_text_font_ext(WIDTH - 15, 15, player_data, font_debug, fa_right, fa_top, 0.7, c_white, 1);

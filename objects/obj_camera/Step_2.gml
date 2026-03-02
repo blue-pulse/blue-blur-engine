@@ -3,7 +3,7 @@ if (!enabled or !instance_exists(target)) {
 	exit;
 }
 
-// Folow player
+// Follow player
 if (instance_is_ancestor(target, Player)) {
 	camera_follow_player();
 }

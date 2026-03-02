@@ -1,15 +1,15 @@
 function hud_get_time() {
 	// Variables
-	var timer = global.frame_counter;
+	var time = global.time;
 	var minutes = 9;
 	var seconds = 59;
 	var microseconds = 59;
 
 	// Calculate timer values
-	if (timer < 35999) {
-		minutes = floor(timer / 3600);
-		seconds = floor((timer - minutes * 3600) / 60);
-		microseconds = floor(timer % 60 / 3 * 5);
+	if (time < 35999) {
+		minutes = floor(time / 3600);
+		seconds = floor((time - minutes * 3600) / 60);
+		microseconds = floor(time % 60 / 3 * 5);
 	}
 
 	// Return string

@@ -16,7 +16,7 @@ function sonic_init_config() {
 
 	data_dash = {
 		sprite: spr_sonic_jumpball,
-		sfx: snd_player_homing_dash,
+		sfx: snd_player_dash,
 		grunt: [
 			noone,
 			noone,
@@ -38,7 +38,7 @@ function sonic_init_config() {
 
 	data_hud = {
 		font: font_blue,
-		icon: spr_sonic_icon,
+		icon: spr_sonic_lives,
 		colors: [
 			make_color_rgb(33, 74, 223),
 			make_color_rgb(78, 194, 252)

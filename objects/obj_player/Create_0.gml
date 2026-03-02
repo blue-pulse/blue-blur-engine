@@ -54,6 +54,7 @@ cliff_dir = 0;
 hor_speed = 0;
 ver_speed = 0;
 speed_cap = 16;
+stamina = 100;
 plane = 0;
 
 // Collision

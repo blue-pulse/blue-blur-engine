@@ -7,8 +7,10 @@ function player_state_death(phase) {
 			recovery_timer = 0;
 			
 			// FX
+			alpha = 1;
 			depth = depths.effects;
 			animation_play(anim_hurt);
+			camera_set_target(noone);
 			break;
 
 		// Run state
@@ -29,7 +31,7 @@ function player_state_death(phase) {
 					//instance_create_layer(0, 0, "Overlays", objGameOver);
 				}
 				
-				// If not, restart
+				// If not, restart stage
 				else {
 					Stage.reset_timer = 60; 
 				}

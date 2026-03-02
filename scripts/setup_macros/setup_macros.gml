@@ -56,6 +56,7 @@
 #macro Camera obj_camera
 #macro Particles global.particles
 #macro Player obj_player
+#macro Protagonist global.protagonist
 #macro Reticle obj_reticle
 #macro View view_get_camera(0)
 #macro Stage obj_stage_manager
