@@ -1,6 +1,7 @@
 // Variables
 var pos_x = 0;
 var pos_y = 0;
+var stamina = 0;
 
 // Set checkpoint data
 if (global.checkpoint.timecount) {
@@ -8,7 +9,8 @@ if (global.checkpoint.timecount) {
 	global.score = global.checkpoint.scoring;
 	pos_x = global.checkpoint.pos[0];
 	pos_y = global.checkpoint.pos[1];
-} 
+	stamina = 0;
+}
 
 // Set initial data
 else {
@@ -16,6 +18,7 @@ else {
 	global.score = 0;
 	pos_x = x;
 	pos_y = y;
+	stamina = 100;
 }
 
 // Create objects
@@ -23,6 +26,7 @@ switch (room) {
 	default:
 		// Create player
 		Protagonist = instance_create_depth(pos_x, pos_y, depths.player, global.character);
+		Protagonist.stamina = stamina;
 		
 		// Create camera
 		instance_create_depth(pos_x, pos_y, depths.gui, Camera);
