@@ -19,7 +19,7 @@ time_icon_xend = 15;
 time_icon_x = time_icon_xstart;
 time_icon_y = 15;
 
-time_text = hud_get_time();
+time_text = hud_get_timer();
 time_text_xstart = -string_width(time_text) - margin;
 time_text_xend = 40;
 time_text_x = time_text_xstart;
