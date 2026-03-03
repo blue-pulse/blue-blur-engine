@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"hud_get_time",
+  "%Name":"hud_set_visibility",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"hud_get_time",
+  "name":"hud_set_visibility",
   "parent":{
     "name":"Scripts",
     "path":"folders/3. Visuals/GUI/Scripts.yy",

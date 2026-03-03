@@ -1,4 +1,4 @@
-function hud_get_time() {
+function hud_get_timer() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

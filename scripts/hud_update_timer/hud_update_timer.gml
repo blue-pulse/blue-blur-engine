@@ -29,6 +29,6 @@ function hud_update_timer() {
 	else if (time_icon_x == time_icon_xend) {
 		time_tint = c_white;
 		update_time = true
-		time_text = hud_get_time();
+		time_text = hud_get_timer();
 	}
 }
