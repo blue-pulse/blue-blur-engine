@@ -7,4 +7,4 @@ if (owner.animation != hook) {
 // Update position
 x = floor(owner.x);
 y = floor(owner.y);
-image_xscale = owner.dir;
+image_xscale = owner.image_xscale;
