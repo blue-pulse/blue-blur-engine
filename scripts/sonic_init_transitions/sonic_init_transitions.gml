@@ -29,10 +29,13 @@ function sonic_init_transitions() {
 	
 	// Roll
 	animation_set_transition(anim_roll_fast, anim_idle, anim_land);
+	animation_set_transition(anim_roll_fast, anim_turn, anim_land);
 	animation_set_transition(anim_roll_fast, anim_stroll, anim_land);
 	animation_set_transition(anim_roll_jump, anim_idle, anim_land);
+	animation_set_transition(anim_roll_jump, anim_turn, anim_land);
 	animation_set_transition(anim_roll_jump, anim_stroll, anim_land);
 	animation_set_transition(anim_roll_slow, anim_idle, anim_land);
+	animation_set_transition(anim_roll_slow, anim_turn, anim_land);
 	animation_set_transition(anim_roll_slow, anim_stroll, anim_land);
 	
 	// Search
