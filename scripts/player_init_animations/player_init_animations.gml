@@ -1,4 +1,7 @@
 function player_init_animations() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Initialize variables
 	animation_setup_init();
 

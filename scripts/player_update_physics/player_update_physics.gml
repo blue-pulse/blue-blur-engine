@@ -1,4 +1,7 @@
 function player_update_physics() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Speed values
 	max_speed = 6;
 	accel = 0.046875;

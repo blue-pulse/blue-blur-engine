@@ -1,4 +1,7 @@
 function stage_setup_title() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Setup
 	allow_culling = false;
 	audio_group_stop_all(grp_bgm);

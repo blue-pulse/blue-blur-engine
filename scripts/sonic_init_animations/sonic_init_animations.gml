@@ -1,4 +1,7 @@
-function sonic_init_animations(){
+function sonic_init_animations() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Initialize variables
 	animation_setup_init();
 	

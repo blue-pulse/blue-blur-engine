@@ -1,4 +1,7 @@
-function sonic_init_transitions() {
+function sonic_init_transitions() {	
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+
 	// Crouch
 	animation_set_transition(anim_crouch, anim_idle, anim_crouch_stop);
 	

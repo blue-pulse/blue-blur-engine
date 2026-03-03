@@ -36,7 +36,7 @@ switch (room) {
 		manager_create(Stage);
 		
 		// HUD
-		instance_create_depth(0, 0, depths.gui, obj_hud, {
+		gui_create(obj_hud, {
 			target: Protagonist,
 			show_time: true,
 			show_rings: true,

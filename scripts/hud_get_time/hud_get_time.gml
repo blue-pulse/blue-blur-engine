@@ -1,4 +1,7 @@
 function hud_get_time() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Variables
 	var time = global.time;
 	var minutes = 9;

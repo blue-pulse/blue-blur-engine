@@ -16,7 +16,7 @@ function player_state_debug(phase) {
 			// Fly around
 			x += (input_holded(vb_right) - input_holded(vb_left)) * 8;
 			y += (input_holded(vb_down) - input_holded(vb_up)) * 8;
-			player_in_view();
+			player_in_room();
 			break;
 
 		// Stop state

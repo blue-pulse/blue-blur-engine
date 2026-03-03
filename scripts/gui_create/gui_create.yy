@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_in_view",
+  "%Name":"gui_create",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_in_view",
+  "name":"gui_create",
   "parent":{
-    "name":"Methods",
-    "path":"folders/4. Player/Player/Scripts/Methods.yy",
+    "name":"Utils",
+    "path":"folders/2. Framework/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

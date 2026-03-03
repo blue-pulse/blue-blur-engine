@@ -26,6 +26,10 @@
 #macro DIR_RIGHT 1
 #macro DIR_TOP -2
 #macro DIR_BOTTOM 2
+#macro ROOM_LEFT 0
+#macro ROOM_RIGHT room_width
+#macro ROOM_TOP 0
+#macro ROOM_BOTTOM room_height
 
 // Globals
 #macro font_black global.font_hud_black

@@ -1,7 +1,7 @@
-function camera_set_target(_target) {
+function player_add_stamina(amount) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Logic
-	Camera.target = _target;
+	stamina = min(stamina + amount, 100);
 }

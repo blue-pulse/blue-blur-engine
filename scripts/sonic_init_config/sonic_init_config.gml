@@ -1,4 +1,7 @@
 function sonic_init_config() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Variables
 	color_blend = make_color_rgb(33, 74, 223);
 	trail_alpha = array_create(table_size, 0);

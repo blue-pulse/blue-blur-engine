@@ -1,4 +1,7 @@
 function player_update_animation() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Enable animations
 	animation_setup_run();
 

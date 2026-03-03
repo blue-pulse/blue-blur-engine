@@ -1,4 +1,7 @@
 function player_init_effects() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Skid dust
 	vfx_skid_dust = part_type_create();
 	part_type_sprite(vfx_skid_dust, spr_skid_dust, true, true, false);

@@ -1,4 +1,7 @@
 function stage_setup_test_zone() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Set level description
 	name = "Test  Zone";
 	desc = "Practice  your  skills !";

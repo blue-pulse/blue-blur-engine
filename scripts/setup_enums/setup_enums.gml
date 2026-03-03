@@ -38,8 +38,9 @@ enum chars {
 	classic,
 	knux,
 	shadow,
-	sonic,
+	sonic = obj_sonic,
 	tails,
+	test = obj_player,
 }
 
 // Items

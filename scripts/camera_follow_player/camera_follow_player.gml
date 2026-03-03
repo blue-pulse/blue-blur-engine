@@ -1,4 +1,7 @@
-function camera_follow_player() {
+function camera_follow_player() {	
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+
 	// Variables
 	var target_x = floor(target.x) - (view_width / 2);
 	var target_y = floor(target.y) - (view_height / 2);

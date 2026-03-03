@@ -25,7 +25,7 @@ function player_movement_ground() {
 		y -= dsin(angle) * increment;
 		
 		// Die if out of bounds
-		if (!player_in_view()) {
+		if (!player_in_room()) {
 			player_set_state(player_state_death);
 			return false;
 		}
