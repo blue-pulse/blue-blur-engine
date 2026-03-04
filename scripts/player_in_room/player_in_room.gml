@@ -119,6 +119,11 @@ function player_in_room() {
 			break;
 	}
 	
+	// Go back to idle
+	if (hor_speed == 0 and state == player_state_run) {
+		player_set_state(player_state_idle);
+	}
+	
 	// Player is back within bounds
 	return true;
 }
