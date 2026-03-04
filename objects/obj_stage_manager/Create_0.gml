@@ -1,14 +1,14 @@
 // Variables
-ticks = 0;
-allow_culling = true;
+allow_gameplay = false;
+allow_culling = false;
 bgm_loop_end = 0;
 bgm_loop_start = 0;
 bgm_sound = noone;
 desc = "None";
 name = "None";
-reset_timer = 0;
 
 // Set stage data
+stage_bootstrap();
 stage_init_data();
 
 // Set culling interval

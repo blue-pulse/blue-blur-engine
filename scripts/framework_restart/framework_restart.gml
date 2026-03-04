@@ -3,7 +3,7 @@ function framework_restart() {
 	gml_pragma("forceinline");
 	
 	// Early exit
-	if (is_faiding) {
+	if (is_fading) {
 		exit;
 	}
 	

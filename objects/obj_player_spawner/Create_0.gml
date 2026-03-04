@@ -1,50 +1,59 @@
 // Variables
-var pos_x = 0;
-var pos_y = 0;
-var stamina = 0;
+var pos_x = x;
+var pos_y = y;
+var stamina = 100;
+var checkpoint_data = global.checkpoint;
+var gui_config = { 
+	target: noone,
+	show_life: true,
+	show_time: false,
+    show_rings: false,
+    show_stamina: false,
+}; 
 
-// Set checkpoint data
-if (global.checkpoint.timecount) {
-	global.time = global.checkpoint.timecount;
-	global.score = global.checkpoint.scoring;
-	pos_x = global.checkpoint.pos[0];
-	pos_y = global.checkpoint.pos[1];
-	stamina = 0;
+// Get checkpoint data
+if (checkpoint_data.timecount) {
+    global.time = checkpoint_data.timecount;
+    global.score = checkpoint_data.scoring;
+    pos_x = checkpoint_data.room_pos[0];
+    pos_y = checkpoint_data.room_pos[1];
+    stamina = 0;
+} else {
+    global.time = 0;
+    global.score = 0;
 }
 
-// Set initial data
-else {
-	global.time = 0;
-	global.score = 0;
-	pos_x = x;
-	pos_y = y;
-	stamina = 100;
+// Set config based on room
+if (room == rm_hub_world) {
+	// Set parameters
+	var hub_position = checkpoint_data.hub_pos;
+	stamina = 999;
+	
+	// Set hub position
+	if (!array_equals(hub_position, [0, 0])) {
+		pos_x = hub_position[0];
+		pos_y = hub_position[1];
+	}
+} else {
+	// Set GUI config
+	gui_config.show_time = true;
+    gui_config.show_rings = true;
+    gui_config.show_stamina = true;
 }
 
-// Create objects
-switch (room) {
-	default:
-		// Create player
-		Protagonist = instance_create_depth(pos_x, pos_y, depths.player, global.character);
-		Protagonist.stamina = stamina;
-		
-		// Create camera
-		instance_create_depth(pos_x, pos_y, depths.gui, Camera);
-		camera_set_target(Protagonist);
-		
-		// Create managers
-		manager_create(Stage);
-		
-		// HUD
-		gui_create(obj_hud, {
-			target: Protagonist,
-			show_time: true,
-			show_rings: true,
-			show_life: true,
-			show_stamina: true,
-		});
-		break;
-}
+// Create player
+var player = instance_create_depth(pos_x, pos_y, depths.player, global.character);
+player.stamina = stamina;
+gui_config.target = player;
+
+// Enable camera
+instance_create_depth(pos_x, pos_y, depths.gui, Camera);
+camera_set_target(player);
+
+// Create controllers
+manager_create(Stage);
+gui_create(obj_hud, gui_config);
+Protagonist = player;
 
 // Destroy spawner
 instance_destroy();

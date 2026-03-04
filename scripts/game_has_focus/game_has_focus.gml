@@ -1,4 +1,4 @@
-function game_is_paused() {
+function game_has_focus() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

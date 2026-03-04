@@ -1,15 +1,20 @@
-// Global parameters
+// Global
 global.framecount = 0;
 global.time = 0;
-global.is_fullscreen = false;
-global.is_paused = false;
+
+// Internal
+global.allow_upscaling = false;
 global.game_has_started = false;
+global.game_is_fullscreen = false;
+global.game_is_paused = false;
+
+// Sound
 global.master_volume = 1;
 global.bgm_volume = 1;
 global.sfx_volume = 1
 global.voices_volume = 1;
 
-// Player parameters
+// Player
 global.character = obj_sonic;
 global.protagonist = noone;
 global.lives = 3;
@@ -19,5 +24,6 @@ global.score = 0;
 global.checkpoint = {
 	timecount: 0,
 	scoring: 0,
-	pos: [0, 0],
+	room_pos: [0, 0],
+	hub_pos: [0, 0],
 };

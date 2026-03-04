@@ -1,5 +1,5 @@
 // Early exit
-if (!is_starting or is_faiding) {
+if (!is_starting or is_fading) {
 	exit;
 }
 

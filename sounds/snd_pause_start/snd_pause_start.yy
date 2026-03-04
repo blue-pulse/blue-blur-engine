@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_pause_start",
+  "audioGroupId":{
+    "name":"grp_sfx",
+    "path":"audiogroups/grp_sfx",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.40154195,
+  "exportDir":"",
+  "name":"snd_pause_start",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/7. Stages/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_pause_start.wav",
+  "volume":0.45,
+}

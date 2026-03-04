@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Pause",
-    "path":"folders/3. Visuals/Menus/Pause.yy",
+    "name":"Sprites",
+    "path":"folders/7. Stages/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

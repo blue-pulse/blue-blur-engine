@@ -1,20 +1,18 @@
 function game_init_params() {
+	// Compile with the function inlined
+	gml_pragma("forceinline");
+	
 	// Global parameters
-	global.framecount = 0;
-	global.time = 0;
-	global.is_paused = false;
 	global.game_has_started = false;
 
-	// Player parameters
+	// Player 
 	global.character = obj_sonic;
 	global.protagonist = noone;
-	global.lives = 3;
 	global.score = 0;
 
 	// Checkpoint data
-	global.checkpoint = {
-		timecount: 0,
-		scoring: 0,
-		pos: [0, 0],
-	};
+	global.checkpoint.timecount = 0;
+	global.checkpoint.scoring = 0;
+	global.checkpoint.room_pos = [0, 0];
+	global.checkpoint.hub_pos = [0, 0];
 }

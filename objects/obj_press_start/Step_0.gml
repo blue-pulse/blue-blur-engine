@@ -14,7 +14,7 @@ if (state == 0) {
 }
 
 // Press start to continue
-if (input_pressed(vb_start) and !is_faiding) {
+if (input_pressed(vb_start) and !is_fading) {
 	blink_speed = fast_blinking;
 	audio_play_sfx(snd_menu_confirm);
 	room_fadeto(next_room, 60, c_black, true);

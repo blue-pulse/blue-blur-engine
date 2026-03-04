@@ -4,7 +4,7 @@ function stage_setup_title() {
 	
 	// Setup
 	allow_culling = false;
-	audio_group_stop_all(grp_bgm);
+	allow_gameplay = false;
 	
 	// Play random song
 	if (random_range(0, 1)) {

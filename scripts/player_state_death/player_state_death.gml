@@ -28,12 +28,13 @@ function player_state_death(phase) {
 			if (!in_view(id, 24) and ver_speed > 3) {
 				// Reduce life counter
 				if (--global.lives <= 0) {
-					//instance_create_layer(0, 0, "Overlays", objGameOver);
+					//instance_create_layer(0, 0, "Overlays", objGameOver
+					stage_exit_room(80);
 				}
 				
-				// If not, restart stage
+				// Restart stage
 				else {
-					Stage.reset_timer = 60; 
+					stage_restart_room(45);
 				}
 				instance_destroy();
 			}

@@ -3,7 +3,7 @@ function screen_set_properties() {
 	gml_pragma("forceinline");
 	
 	// Adjust window size
-	if (global.is_fullscreen) {
+	if (is_fullscreen) {
 		window_enable_borderless_fullscreen(os_type == os_windows);
 		window_set_fullscreen(true);
 		window_set_cursor(cr_none);
@@ -14,7 +14,8 @@ function screen_set_properties() {
 	}
 	
 	// Resize GUI
-	surface_resize(application_surface, WIDTH * SCALE, HEIGHT * SCALE);
+	var scale_factor = (global.allow_upscaling) ? (SCALE) : (1); 
+	surface_resize(application_surface, WIDTH * scale_factor, HEIGHT * scale_factor);
 	display_set_gui_size(WIDTH, HEIGHT);
 	
 	// Finally, put the window in the center

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"debug_toggle_cheats",
   "parent":{
-    "name":"Debug",
-    "path":"folders/3. Visuals/Menus/Debug.yy",
+    "name":"Scripts",
+    "path":"folders/7. Stages/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -4,7 +4,7 @@ if (update_time) {
 }
 
 // Force visibility
-else if (force_visibility and !is_faiding) {
+else if (force_visibility and !is_fading) {
 	viewable = true;
 	force_visibility = false;
 }

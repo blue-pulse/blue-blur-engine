@@ -20,16 +20,16 @@
 
 // Misc
 #macro CULL_FREQ 10
-#macro CULL_OFFSET 96
 #macro CULL_MARGIN 192
+#macro CULL_OFFSET 96
+#macro DIR_BOTTOM 2
 #macro DIR_LEFT -1
 #macro DIR_RIGHT 1
 #macro DIR_TOP -2
-#macro DIR_BOTTOM 2
+#macro ROOM_BOTTOM room_height
 #macro ROOM_LEFT 0
 #macro ROOM_RIGHT room_width
 #macro ROOM_TOP 0
-#macro ROOM_BOTTOM room_height
 
 // Globals
 #macro font_black global.font_hud_black
@@ -38,6 +38,8 @@
 #macro font_golden global.font_hud_golden
 #macro font_gray global.font_hud_gray
 #macro font_silver global.font_hud_silver
+#macro is_fullscreen global.game_is_fullscreen
+#macro is_paused global.game_is_paused
 #macro ticks global.framecount
 
 // Inputs

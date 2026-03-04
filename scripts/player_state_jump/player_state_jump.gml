@@ -66,6 +66,11 @@ function player_state_jump(phase) {
 				ver_speed = min(ver_speed + grav_force, grav_cap);
 			}
 			
+			// Wait for next frame
+			if (air_lock) {
+				break;
+			}
+			
 			// Jump actions
 			if (is_rolling) {
 				player_routine_midair();

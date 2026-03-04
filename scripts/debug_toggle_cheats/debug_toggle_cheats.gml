@@ -5,13 +5,13 @@ function debug_toggle_cheats() {
 	}
 	
 	// Restart game
-	if (keyboard_check_pressed(vk_f11)) {
+	if (keyboard_check_pressed(ord("R"))) {
 		framework_restart();
 	}
 	
 	// Toggle fullscreen
 	if (keyboard_check_pressed(vk_f12)) {
-		global.is_fullscreen = !global.is_fullscreen;
+		is_fullscreen = !is_fullscreen;
 		screen_set_properties();
 	}
 	

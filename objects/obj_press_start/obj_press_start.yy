@@ -11,8 +11,8 @@
   "name":"obj_press_start",
   "overriddenProperties":[],
   "parent":{
-    "name":"Main",
-    "path":"folders/3. Visuals/Menus/Main.yy",
+    "name":"Main menu",
+    "path":"folders/3. Visuals/Main menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,

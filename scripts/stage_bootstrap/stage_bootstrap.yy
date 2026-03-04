@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"game_is_paused",
+  "%Name":"stage_bootstrap",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"game_is_paused",
+  "name":"stage_bootstrap",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Utils.yy",
+    "name":"Scripts",
+    "path":"folders/7. Stages/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

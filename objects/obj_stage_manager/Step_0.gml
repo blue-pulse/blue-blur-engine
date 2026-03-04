@@ -5,16 +5,11 @@ if (global.time > 35999) {
 	}
 }
 
-// Restart room
-if (reset_timer and --reset_timer == 0) {
-	room_fadeto(room);
-}
-
 // Create debug overlay
-if (debug_mode and !is_faiding and input_pressed(vb_select)) {
-	if (!instance_exists(obj_debug_menu)) {
-		gui_create(obj_debug_menu);
+if (debug_mode and !is_fading and input_pressed(vb_select)) {
+	if (!instance_exists(obj_debug_manager)) {
+		gui_create(obj_debug_manager);
 	} else {
-		instance_destroy(obj_debug_menu);
+		instance_destroy(obj_debug_manager);
 	}
 }

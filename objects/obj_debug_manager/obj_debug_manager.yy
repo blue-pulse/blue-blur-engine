@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_debug_menu",
+  "%Name":"obj_debug_manager",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -9,11 +9,11 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_debug_menu",
+  "name":"obj_debug_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Debug",
-    "path":"folders/3. Visuals/Menus/Debug.yy",
+    "name":"Managers",
+    "path":"folders/7. Stages/Managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_icon_visuals",
-    "path":"sprites/spr_icon_visuals/spr_icon_visuals.yy",
+    "name":"spr_icon_logic",
+    "path":"sprites/spr_icon_logic/spr_icon_logic.yy",
   },
   "spriteMaskId":null,
   "visible":true,

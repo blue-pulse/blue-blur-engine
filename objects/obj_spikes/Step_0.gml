@@ -4,7 +4,7 @@ if (!allow_movement) {
 }
 
 // Move spikes
-if (global.framecount mod 128 < 64) {
+if (ticks mod 128 < 64) {
 	if (offset < sprite_height) {
 		offset += sprite_height * 0.25;
 	}

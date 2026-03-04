@@ -9,4 +9,4 @@ global.__fade_exit_code = FADE_EX_SUCCESS;
 #macro FADE_W display_get_gui_width()
 #macro FADE_EX_SUCCESS 0
 #macro FADE_EX_SIGKILL 137
-#macro is_faiding instance_find(_fade_controller, 0)
+#macro is_fading instance_find(_fade_controller, 0)
