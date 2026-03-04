@@ -1,6 +1,6 @@
 function player_draw_trail() {
 	// Variables
-	var offset = (array_contains(trail_offset_states, state)) ? (dcos(rotation) * 5) : (0);
+	var offset = (is_rolling and !is_jumping) ? (dcos(rotation) * 5) : (0);
 
 	// Prepare triangles
 	draw_primitive_begin(pr_trianglestrip);

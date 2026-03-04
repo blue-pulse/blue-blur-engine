@@ -48,12 +48,6 @@ rotation_allowed_states = [
 	player_state_knockout
 ];
 
-trail_offset_states = [
-	player_state_dashpanel,
-	player_state_roll,
-	player_state_spindash,
-];
-
 // Movement
 dir = sign(image_xscale);
 cliff_dir = 0;

@@ -72,6 +72,7 @@ function player_state_airbone(phase) {
 			// Curl up
 			else if (input_pressed(vb_a)) {
 				// Set flags
+				is_jumping = true;
 				is_rolling = true;
 				allow_jump_action = true;
 				
