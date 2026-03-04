@@ -1,10 +1,10 @@
 // Early exit
-if (!instance_exists(target) or is_faiding) {
+if (!instance_exists(target)) {
 	exit;
 }
 
 // Disable when player is dead
-if (viewable and target.state == player_state_death) {
+if (viewable and (target.state == player_state_death or is_faiding)) {
 	viewable = false;
 }
 

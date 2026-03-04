@@ -1,7 +1,18 @@
 // Early exit
-if !audio_group_is_loaded(grp_bgm) then return;
-if !audio_group_is_loaded(grp_sfx) then return;
-if !audio_group_is_loaded(grp_voices) then return;
+if (!is_starting or is_faiding) {
+	exit;
+}
 
-// Start the game
-room_fadeto(rm_title, 15, c_white);
+// Skip if already started
+if (skip_loading) {
+	room_fadeto(rm_title, 15, c_white, true);
+}
+
+// Wait for EasyAudio to load audio groups
+else {
+	skip_loading = (
+		audio_group_is_loaded(GROUP_BGM) and
+		audio_group_is_loaded(GROUP_SFX) and
+		audio_group_is_loaded(GROUP_SPEECH)
+	);
+}

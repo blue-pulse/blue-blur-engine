@@ -10,8 +10,8 @@
   "name":"_fade_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"EasyFade v1.1.2",
-    "path":"folders/1. Packages/EasyFade v1.1.2.yy",
+    "name":"EasyFade v1.2.0",
+    "path":"folders/1. Packages/EasyFade v1.2.0.yy",
   },
   "parentObjectId":null,
   "persistent":true,

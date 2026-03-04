@@ -20,3 +20,8 @@ else {
 
 // Set alpha
 alpha = timer / duration;
+
+// Set audio gain
+if (silent_fading) {
+	audio_master_gain(1 - alpha);
+}

@@ -11,6 +11,7 @@ sprite_index = noone;
 font = target.data_hud.font;
 margin = 15;
 viewable = true;
+force_visibility = true;
 
 // Time
 time_icon = spr_hud_time;
@@ -25,7 +26,7 @@ time_text_xend = 40;
 time_text_x = time_text_xstart;
 time_text_y = 20;
 
-time_speed = 6;
+time_speed = 8;
 time_tint = c_gray;
 update_time = false;
 
@@ -42,7 +43,7 @@ rings_text_xend = 40;
 rings_text_x = rings_text_xstart;
 rings_text_y = 48;
 
-rings_speed = 4.25;
+rings_speed = 5.5;
 rings_tint = c_gray;
 
 // Lives
@@ -58,7 +59,7 @@ life_text_xend = WIDTH - 40;
 life_text_x = life_text_xstart;
 life_text_y = 20;
 
-life_speed = 6;
+life_speed = 7;
 life_tint = c_gray;
 
 // Stamina
@@ -76,5 +77,5 @@ stamina_value_a_y = HEIGHT - 22.5;
 stamina_value_b_x = 23;
 stamina_value_b_y = HEIGHT - 21.5;
 
-stamina_speed = 9;
+stamina_speed = 12;
 stamina_tint = c_gray;

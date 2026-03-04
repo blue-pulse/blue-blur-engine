@@ -2,7 +2,7 @@
 var player_info = "";
 
 // Get player data
-with (Player) {	
+with (Protagonist) {	
 	// Early exit
 	if (state == player_state_death) {
 		exit;

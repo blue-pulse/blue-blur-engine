@@ -1,7 +1,12 @@
 function debug_toggle_cheats() {
 	// Close game
 	if (keyboard_check_pressed(vk_escape)) {
-		game_end();
+		framework_stop();
+	}
+	
+	// Restart game
+	if (keyboard_check_pressed(vk_f11)) {
+		framework_restart();
 	}
 	
 	// Toggle fullscreen

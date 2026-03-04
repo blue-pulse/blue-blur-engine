@@ -4,4 +4,5 @@ function hud_set_visibility(_visibility) {
 
 	// Logic
 	obj_hud.viewable = _visibility;
+	obj_hud.force_visibility = _visibility;
 }
