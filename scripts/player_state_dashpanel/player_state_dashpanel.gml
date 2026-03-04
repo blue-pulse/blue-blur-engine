@@ -4,7 +4,7 @@ function player_state_dashpanel(phase) {
 		case INIT:
 			// Update variables
 			is_rolling = true;
-			ground_lock = 16;
+			ground_lock = 26;
 			animation_play(anim_dashpanel);
 			break;
 

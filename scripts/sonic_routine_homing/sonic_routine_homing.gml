@@ -34,6 +34,7 @@ function sonic_routine_homing() {
 		audio_play_sfx(data_dash.sfx, REPLACE);
 		part_particles_create(Particles, x, y, vfx_homing_burst, 1);
 		player_animation_jump();
+		player_set_trail_span(80);
 
 		// Homing attack
 		if (instance_exists(Reticle)) {

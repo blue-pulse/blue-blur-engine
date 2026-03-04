@@ -25,7 +25,7 @@ spindash_pitch = 1;
 state = player_state_init;
 state_prev = state;
 stumble_timer = 30;
-
+	
 // State arrays
 direction_denied_states = [
 	player_state_airbone,
@@ -48,6 +48,12 @@ rotation_allowed_states = [
 	player_state_knockout
 ];
 
+trail_offset_states = [
+	player_state_dashpanel,
+	player_state_roll,
+	player_state_spindash,
+];
+
 // Movement
 dir = sign(image_xscale);
 cliff_dir = 0;
@@ -65,11 +71,19 @@ resource_list = [];
 terrain_list = [];
 
 // Position grid
-table_size = 12;
+table_size = 16;
 pos_grid = [
 	array_create(table_size, x),
 	array_create(table_size, y),
 ];
+
+// Effects variables
+color_blend = c_white;
+trail_alpha = 0;
+trail_width = 10;
+trail_span = 0;
+trail_reference = 0;
+trail_decay_rate = 0.08;
 
 // Physics
 accel = 0.046875;

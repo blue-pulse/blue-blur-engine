@@ -4,11 +4,10 @@ function sonic_init_config() {
 	
 	// Variables
 	color_blend = make_color_rgb(33, 74, 223);
-	trail_alpha = array_create(table_size, 0);
+	trail_width = 10;
 
 	// Dict
 	data_boost = {
-		color: make_color_rgb(33, 74, 223),
 		aura: 0,
 		spark: 0,
 		wave: 0,

@@ -10,6 +10,11 @@ function player_update_params() {
 		}
 	}
 	
+	// Reduce trail duration
+	if (trail_span) {
+		--trail_span;
+	}
+	
 	// Ground flags
 	if (is_grounded) {
 		// Reset flags
