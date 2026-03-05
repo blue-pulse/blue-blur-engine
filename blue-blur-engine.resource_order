@@ -1,7 +1,6 @@
 {
   "FolderOrderSettings":[
     {"name":"1. Packages","order":1,"path":"folders/1. Packages.yy",},
-    {"name":"BSONGML v1.0.0","order":7,"path":"folders/1. Packages/BSONGML v1.0.0.yy",},
     {"name":"EasyAudio v1.0.0","order":4,"path":"folders/1. Packages/EasyAudio v1.0.0.yy",},
     {"name":"EasyFade v1.2.0","order":1,"path":"folders/1. Packages/EasyFade v1.2.0.yy",},
     {"name":"GMUtils v2.0.1","order":2,"path":"folders/1. Packages/GMUtils v2.0.1.yy",},
@@ -90,10 +89,10 @@
     {"name":"Sounds","order":3,"path":"folders/6. Items/Springs/Sounds.yy",},
     {"name":"Sprites","order":2,"path":"folders/6. Items/Springs/Sprites.yy",},
     {"name":"7. Stages","order":5,"path":"folders/7. Stages.yy",},
+    {"name":"Sounds","order":3,"path":"folders/7. Stages/Sounds.yy",},
     {"name":"Parents","order":5,"path":"folders/7. Stages/Parents.yy",},
     {"name":"Rooms","order":1,"path":"folders/7. Stages/Rooms.yy",},
     {"name":"Scripts","order":2,"path":"folders/7. Stages/Scripts.yy",},
-    {"name":"Sounds","order":3,"path":"folders/7. Stages/Sounds.yy",},
     {"name":"Sprites","order":4,"path":"folders/7. Stages/Sprites.yy",},
     {"name":"8. Usable","order":17,"path":"folders/8. Usable.yy",},
     {"name":"Terrain","order":2,"path":"folders/8. Usable/Terrain.yy",},
@@ -104,7 +103,6 @@
   ],
   "ResourceOrderSettings":[
     {"name":"font_main_regular","order":1,"path":"fonts/font_main_regular/font_main_regular.yy",},
-    {"name":"BSONGML - README","order":1,"path":"notes/BSONGML - README/BSONGML - README.yy",},
     {"name":"Input - README","order":15,"path":"notes/Input - README/Input - README.yy",},
     {"name":"__InputUpdateController","order":21,"path":"objects/__InputUpdateController/__InputUpdateController.yy",},
     {"name":"obj_balloon_bullet","order":7,"path":"objects/obj_balloon_bullet/obj_balloon_bullet.yy",},
@@ -237,7 +235,6 @@
     {"name":"audio_play_bgm","order":4,"path":"scripts/audio_play_bgm/audio_play_bgm.yy",},
     {"name":"audio_play_sfx","order":5,"path":"scripts/audio_play_sfx/audio_play_sfx.yy",},
     {"name":"audio_play_speech","order":6,"path":"scripts/audio_play_speech/audio_play_speech.yy",},
-    {"name":"BSON_Tests","order":2,"path":"scripts/BSON_Tests/BSON_Tests.yy",},
     {"name":"camera_get_target","order":1,"path":"scripts/camera_get_target/camera_get_target.yy",},
     {"name":"camera_restore_zoom","order":2,"path":"scripts/camera_restore_zoom/camera_restore_zoom.yy",},
     {"name":"camera_set_target","order":3,"path":"scripts/camera_set_target/camera_set_target.yy",},
