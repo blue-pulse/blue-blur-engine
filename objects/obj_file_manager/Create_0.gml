@@ -1,3 +1,3 @@
 // Define methods
-file_load_files();
-file_save_files();
+file_load_data();
+file_save_data();

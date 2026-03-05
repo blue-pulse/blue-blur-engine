@@ -1,4 +1,4 @@
-function file_load_files() {
+function file_load_data() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

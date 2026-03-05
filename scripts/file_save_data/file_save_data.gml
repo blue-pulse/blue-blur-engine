@@ -1,4 +1,4 @@
-function file_save_files() {
+function file_save_data() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
