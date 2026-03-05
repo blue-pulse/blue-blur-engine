@@ -9,6 +9,9 @@ function framework_bootstrap() {
 	input_enable_device();
 	input_clear_all();
 	
+	// Set timezone
+	date_set_timezone(TIMEZONE);
+	
 	// Reset values
 	ticks = 0;
 	is_paused = false;

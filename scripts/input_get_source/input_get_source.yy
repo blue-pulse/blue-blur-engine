@@ -6,7 +6,7 @@
   "name":"input_get_source",
   "parent":{
     "name":"Input",
-    "path":"folders/2. Framework/Wrappers/Input.yy",
+    "path":"folders/2. Framework/Scripts/Input.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

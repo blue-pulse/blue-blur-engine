@@ -1,17 +1,18 @@
 function game_load_config() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
+
+	// Load the last saved slot
+	var config = file_get_config();
+	var last_slot = config.get("last");
 	
-	// TODO
+	// Load user data
+	file_load_userdata(last_slot);
 	
-	// Game
-	is_fullscreen = false;
-	global.master_volume = 1;
-	global.bgm_volume = 1;
-	global.sfx_volume = 1
-	global.voices_volume = 1;
-	
-	// Player
-	global.character = obj_sonic;
-	global.lives = 3;
+	// Set config data
+	is_fullscreen = config.get("graphics").fullscreen;
+	global.master_volume = config.get("sound").master;
+	global.bgm_volume = config.get("sound").master;
+	global.sfx_volume = config.get("sound").sfx;
+	global.voices_volume = config.get("sound").voices;
 }

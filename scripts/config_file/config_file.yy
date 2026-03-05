@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_ssave_demo_saves",
+  "%Name":"config_file",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_ssave_demo_saves",
+  "name":"config_file",
   "parent":{
     "name":"Files",
-    "path":"folders/2. Framework/Wrappers/Files.yy",
+    "path":"folders/2. Framework/Scripts/Files.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

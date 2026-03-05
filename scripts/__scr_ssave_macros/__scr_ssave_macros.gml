@@ -15,5 +15,5 @@ enum SSAVE_PROTECTION
 	ENCRYPT,    // Save data is encrypted with a key - good if you want *most* players to be unable to tamper. This is NOT secure enough for sensitive data
 }
 
-#macro __SSAVE_FILE_EXTENSION "ssave"
+#macro __SSAVE_FILE_EXTENSION "sav"
 #macro __SSAVE_VERSION "1.5.2"

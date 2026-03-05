@@ -6,6 +6,7 @@
 #macro SCALE 2
 #macro MAX_FPS 60
 #macro MAX_SOUNDS 200
+#macro TIMEZONE timezone_utc
 
 // Effects
 #macro RAW 0
@@ -16,7 +17,9 @@
 #macro INIT -1
 #macro STEP 0
 #macro STOP 1
-#macro NONE 2
+
+// Files
+#macro SLOTS 10
 
 // Misc
 #macro CULL_FREQ 10
@@ -60,9 +63,10 @@
 
 // Shortcuts
 #macro Camera obj_camera
+#macro Files obj_file_manager
 #macro Particles global.particles
 #macro Player obj_player
 #macro Protagonist global.protagonist
 #macro Reticle obj_reticle
-#macro View view_get_camera(0)
 #macro Stage obj_stage_manager
+#macro View view_get_camera(0)

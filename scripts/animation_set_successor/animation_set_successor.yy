@@ -6,7 +6,7 @@
   "name":"animation_set_successor",
   "parent":{
     "name":"Animations",
-    "path":"folders/2. Framework/Wrappers/Animations.yy",
+    "path":"folders/2. Framework/Scripts/Animations.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

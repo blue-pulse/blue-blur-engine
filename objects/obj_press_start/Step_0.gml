@@ -19,3 +19,10 @@ if (input_pressed(vb_start) and !is_fading) {
 	audio_play_sfx(snd_menu_confirm);
 	room_fadeto(next_room, 60, c_black, true);
 }
+
+// Press select to exit
+if (input_pressed(vb_select) and !is_fading) {
+	blink_speed = fast_blinking;
+	audio_play_sfx(snd_menu_confirm);
+	room_fadeto(rm_stop_game, 60, c_black, true);
+}

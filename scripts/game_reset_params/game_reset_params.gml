@@ -1,4 +1,4 @@
-function game_init_params() {
+function game_reset_params() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

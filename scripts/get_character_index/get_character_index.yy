@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"game_init_params",
+  "%Name":"get_character_index",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"game_init_params",
+  "name":"get_character_index",
   "parent":{
     "name":"Utils",
     "path":"folders/2. Framework/Utils.yy",

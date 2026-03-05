@@ -7,6 +7,10 @@ function framework_start() {
 	
 	// Load values for the first time
 	if (!global.game_has_started) {
+		// Create an instance of each manager
+		manager_create(Files);
+		print("[INFO] All global managers were created!");
+		
 		// Set game parameters
 		game_load_config();
 		audio_channel_num(MAX_SOUNDS);
@@ -19,16 +23,13 @@ function framework_start() {
 		screen_set_properties();
 		screen_verify_size();
 		print("[INFO] Screen setup was completed!");
-	
-		// Create an instance of each manager
-		print("[INFO] All global components were created!");
 		return false;
 	}
 	
 	// Skip since values have already been loaded
 	else {
 		audio_stop_all();
-		game_init_params();
+		game_reset_params();
 		print("[INFO] Setting default game parameters...");
 		return true;
 	}
