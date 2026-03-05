@@ -3,5 +3,5 @@ function file_save_userdata() {
 	gml_pragma("forceinline");
 	
 	// Save the active slot index
-	Files.Save();
+	Files.Save(global.slot);
 }

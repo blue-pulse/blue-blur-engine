@@ -1,3 +1,3 @@
 // Define methods
-file_load_data();
-file_save_data();
+Save = method(self, _file_save);
+Load = method(self, _file_load);

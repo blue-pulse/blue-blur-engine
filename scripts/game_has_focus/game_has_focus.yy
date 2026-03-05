@@ -6,7 +6,7 @@
   "name":"game_has_focus",
   "parent":{
     "name":"Input",
-    "path":"folders/2. Framework/Scripts/Input.yy",
+    "path":"folders/2. Framework/Wrappers/Input.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,7 +1,7 @@
-function file_set_config(parameter, value) {
+function file_set_config(param, value) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
-	// Return the active slot index
-	return ssave_get(config_file).set(parameter, value);
+	// Set the given parameter
+	return ssave_get(cls_config).set(param, value);
 }

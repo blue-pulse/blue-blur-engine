@@ -1,10 +1,10 @@
 // Variables
 depth = depths.gui;
 sprite_index = noone;
-allow_pause = false;
 paused_room = noone;
 options = [];
-options_length = 0;
+options_length = 0
+in_process = false;
 pause_surface = noone;
 pos_x = WIDTH / 2;
 pos_y = HEIGHT / 2;
@@ -14,8 +14,8 @@ selected_option = 0;
 
 // Menu options
 options = [
-    new pause_option(spr_pause_resume),		// 0
-    new pause_option(spr_pause_restart),	// 1
-    new pause_option(spr_pause_exit),		// 2
+    new cls_option(spr_pause_resume),	// 0
+    new cls_option(spr_pause_restart),	// 1
+    new cls_option(spr_pause_exit),		// 2
 ];
 options_length = array_length(options);

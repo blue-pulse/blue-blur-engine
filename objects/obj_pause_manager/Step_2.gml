@@ -1,5 +1,5 @@
 // Pause game
-if (!allow_pause) {
+if (!in_process) {
 	// Early exit
 	if (!pause_is_allowed()) {
 		exit;
@@ -7,7 +7,7 @@ if (!allow_pause) {
 	
 	// Variables
 	is_paused = true;
-	allow_pause = true;
+	in_process = true;
 	paused_room = room;
 	selected_option = 0;
 	
@@ -26,17 +26,29 @@ if (!allow_pause) {
 
 // Allow player to select options
 else {
-	// SFX
-	if (input_pressed(vb_up) or input_pressed(vb_down)) {
-		audio_play_sfx(snd_menu_select, 2);
+	// Early exit
+	var confirm_option = input_pressed_many([vb_a, vb_start]);
+	if (input_pressed(vb_back)) {
+		selected_option = 0;
+		pause_resume();
+		exit;
 	}
 	
+	// Variables
+	var input_up = input_pressed(vb_up);
+	var input_down = input_pressed(vb_down);
+	
 	// Select option
-	selected_option += input_pressed(vb_down) - input_pressed(vb_up);
+	selected_option += input_down - input_up;
 	selected_option = (selected_option + options_length) % options_length;
+	
+	// SFX
+	if (input_up or input_down) {
+		audio_play_sfx(snd_menu_select, 2);
+	}
 
-	// Confirm option
-	if (input_pressed(vb_start) or input_pressed(vb_a)) {
+	// Continue
+	if (confirm_option) {
 		// Option is locked
 		if (options[selected_option].state == 3) {
 			audio_play_sfx(snd_menu_deny, 2);
@@ -44,20 +56,7 @@ else {
 		
 		// Choose option
 		else {
-			// SFX
-			audio_play_sfx(snd_menu_confirm, 2);
-			audio_play_sfx(snd_pause_stop, 2);
-			
-			// Go back to the level
-			room_goto(paused_room);
-			audio_resume_all();
-
-			// Variables
-			surface_free(pause_surface);
-			pause_surface = noone;
-			paused_room = noone;
-			allow_pause = false;
-			alarm_set(0, 5);
+			pause_resume();
 		}
 	} 
 	

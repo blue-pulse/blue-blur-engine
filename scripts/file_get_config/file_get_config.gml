@@ -3,5 +3,5 @@ function file_get_config() {
 	gml_pragma("forceinline");
 	
 	// Return the active slot index
-	return ssave_get(config_file);
+	return ssave_get(cls_config);
 }
