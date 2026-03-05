@@ -32,15 +32,14 @@ enum materials {
 
 // Characters
 enum chars {
-	advance,
-	adventure,
-	amy,
-	classic,
-	knux,
-	shadow,
-	sonic,
-	tails,
-	test,
+	adventure = 0,
+	amy = 1,
+	classic = 2,
+	knux = 3,
+	shadow = 4,
+	sonic = 5,
+	tails = 6,
+	test = 7,
 }
 
 // Items
