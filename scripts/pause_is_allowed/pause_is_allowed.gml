@@ -5,7 +5,7 @@ function pause_is_allowed() {
 	// Return boolean
 	return (
 		// Game is unpaused
-		paused_room == noone and game_has_focus() and
+		paused_room == noone and
 		
 		// Trying to pause
 		input_pressed(vb_start) and 

@@ -11,4 +11,7 @@ function game_load_config() {
 	global.bgm_volume = config.get("sound").master;
 	global.sfx_volume = config.get("sound").sfx;
 	global.voices_volume = config.get("sound").voices;
+	
+	// Print message
+	print("[INFO] Config data was loaded!");
 }

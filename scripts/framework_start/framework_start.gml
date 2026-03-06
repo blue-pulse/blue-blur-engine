@@ -28,9 +28,17 @@ function framework_start() {
 	
 	// Skip since values have already been loaded
 	else {
+		// Flip flag
+		global.game_has_started = false;
+		
+		// Reset audio
+		print("[INFO] Muting audio...");
 		audio_stop_all();
-		game_reset_params();
+		
+		// Reset parameters
 		print("[INFO] Setting default game parameters...");
+		game_reset_player();
+		game_reset_checkpoint(true);
 		return true;
 	}
 }

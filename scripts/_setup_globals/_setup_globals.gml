@@ -4,13 +4,13 @@ global.time = 0;
 
 // Internal
 global.allow_upscaling = false;
-global.game_has_started = false;
 global.fullscreen = false;
+global.game_has_started = false;
 global.game_is_paused = false;
 global.hud_is_visible = false;
-global.last_playtime = 0;
-global.slot = -1;
+global.last_played = 0;
 global.last_slot = -1;
+global.slot = -1;
 
 // Sound
 global.master_volume = 1;

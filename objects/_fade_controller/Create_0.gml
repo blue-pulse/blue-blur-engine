@@ -10,6 +10,7 @@ alpha = 0;
 width = FADE_W;
 height = FADE_H;
 start_fade = true;
+audio_gain = audio_get_master_gain(0);
 
 // Early exit
 if (instance_number(_fade_controller) > 1) {

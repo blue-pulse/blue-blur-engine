@@ -23,5 +23,5 @@ alpha = timer / duration;
 
 // Set audio gain
 if (silent_fading) {
-	audio_master_gain(1 - alpha);
+	audio_master_gain(audio_gain * (1 - alpha));
 }

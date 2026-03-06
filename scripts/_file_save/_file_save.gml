@@ -10,4 +10,7 @@ function _file_save(slot) {
 	
 	// Save to disk
 	save_data.save();
+	
+	// Print message
+	print($"[INFO] Data from slot {slot} was saved to disk!");
 }

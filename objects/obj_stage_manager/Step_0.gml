@@ -1,3 +1,6 @@
+// Reduce power mode when unfocused
+game_reduce_power();
+
 // Kill player if they reached time limit
 if (global.time > 35999) {
 	with (Protagonist) {

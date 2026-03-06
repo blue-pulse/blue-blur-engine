@@ -6,14 +6,12 @@ function stage_restart_game(_duration=10) {
 	input_disable_device();
 	camera_set_target(noone);
 	
-	// Checkpoint data
-	global.checkpoint.timecount = 0;
-	global.checkpoint.scoring = 0;
-	global.checkpoint.room_pos = [0, 0];
-	global.checkpoint.hub_pos = [0, 0];
-	
-	// Logic
+	// Schedule exit
 	with (Stage) {
-		alarm_set(3, _duration);
+		alarm_set(3, _duration);	
 	}
+	
+	// Save current data
+	file_save_userdata();
+	game_reset_checkpoint(true);
 }

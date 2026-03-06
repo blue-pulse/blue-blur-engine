@@ -15,4 +15,3 @@ start_message_y = 222;
 instance_create_depth(start_message_x, start_message_y, depths.gui, obj_press_start);
 global.slot = 10;
 game_load_save();
-
