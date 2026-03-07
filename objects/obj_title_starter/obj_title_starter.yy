@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_press_start",
+  "%Name":"obj_title_starter",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":5,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_press_start",
+  "name":"obj_title_starter",
   "overriddenProperties":[],
   "parent":{
-    "name":"Main menu",
-    "path":"folders/3. Visuals/Main menu.yy",
+    "name":"Spawner",
+    "path":"folders/8. Usable/Spawner.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,9 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_icon_visuals",
-    "path":"sprites/spr_icon_visuals/spr_icon_visuals.yy",
+    "name":"spr_icon_spawner",
+    "path":"sprites/spr_icon_spawner/spr_icon_spawner.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

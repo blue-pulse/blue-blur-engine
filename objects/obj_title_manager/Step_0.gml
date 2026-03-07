@@ -1,15 +1,15 @@
 // Blink message
 if (state == 0) {
-	if (alpha >= 1) {
+	if (message_alpha >= 1) {
 		state = 1;
 	} else {
-		alpha += blink_speed;
+		message_alpha += message_blink_speed;
 	}
 } else {
-	if (alpha <= 0.25) {
+	if (message_alpha <= 0.25) {
 		state = 0;
 	} else {
-		alpha -= blink_speed;
+		message_alpha -= message_blink_speed;
 	}
 }
 
@@ -20,7 +20,7 @@ if (is_fading) {
 
 // Press enter to continue
 if (input_pressed(vb_start)) {
-	blink_speed = fast_blinking;
+	message_blink_speed = 0.1;
 	audio_play_sfx(snd_menu_confirm);
 	room_fadeto(next_room, 60, c_black, true);
 }

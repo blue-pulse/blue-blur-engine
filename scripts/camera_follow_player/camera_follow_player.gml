@@ -37,7 +37,7 @@ function camera_follow_player() {
 			overview_delay--;
 		}
 	} else {
-		overview_delay = 96;
+		overview_delay = 32;
 	}
 	
 	// Offset vertically

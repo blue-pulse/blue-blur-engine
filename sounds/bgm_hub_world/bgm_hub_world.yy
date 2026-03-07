@@ -15,7 +15,7 @@
   "name":"bgm_hub_world",
   "parent":{
     "name":"Sounds",
-    "path":"folders/7. Stages/Sounds.yy",
+    "path":"folders/7. Stages/Assets/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

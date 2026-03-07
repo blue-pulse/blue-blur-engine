@@ -45,7 +45,7 @@
   "origin":0,
   "parent":{
     "name":"Sprites",
-    "path":"folders/7. Stages/Sprites.yy",
+    "path":"folders/7. Stages/Assets/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -100,8 +100,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"grp_resources",
-    "path":"texturegroups/grp_resources",
+    "name":"grp_textures",
+    "path":"texturegroups/grp_textures",
   },
   "type":0,
   "VTile":false,
