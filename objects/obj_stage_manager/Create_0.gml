@@ -13,5 +13,5 @@ stage_init_data();
 
 // Set culling interval
 if (allow_culling) {
-	alarm_set(0, CULL_FREQ);
+	alarm_set(0, cull.freq);
 }

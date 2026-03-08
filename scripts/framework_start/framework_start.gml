@@ -6,7 +6,8 @@ function framework_start() {
 	framework_bootstrap();
 	
 	// Load values for the first time
-	if (!global.game_has_started) {
+	var game_is_ready = game_get_initflag();
+	if (!game_is_ready) {
 		// Create an instance of each manager
 		manager_create(Files);
 		print("[INFO] All global managers were created!");
@@ -28,9 +29,6 @@ function framework_start() {
 	
 	// Skip since values have already been loaded
 	else {
-		// Flip flag
-		global.game_has_started = false;
-		
 		// Reset audio
 		print("[INFO] Muting audio...");
 		audio_stop_all();

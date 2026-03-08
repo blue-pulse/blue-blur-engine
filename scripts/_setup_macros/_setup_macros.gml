@@ -5,26 +5,21 @@
 #macro HEIGHT 280
 #macro SCALE 2
 #macro MAX_FPS 60
+#macro MAX_SLOTS 10
 #macro MAX_SOUNDS 200
 #macro TIMEZONE timezone_utc
 
 // Effects
-#macro RAW 0
-#macro SKIP 1
-#macro REPLACE 2
+#macro RAW ESAU_MODES.OVERLAP
+#macro SKIP ESAU_MODES.SINGLE
+#macro REPLACE ESAU_MODES.SWAP
 
 // States phases
 #macro INIT -1
 #macro STEP 0
 #macro STOP 1
 
-// Files
-#macro SLOTS 10
-
 // Misc
-#macro CULL_FREQ 10
-#macro CULL_MARGIN 192
-#macro CULL_OFFSET 96
 #macro DIR_BOTTOM 2
 #macro DIR_LEFT -1
 #macro DIR_RIGHT 1

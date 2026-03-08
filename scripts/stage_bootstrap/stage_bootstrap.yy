@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"stage_bootstrap",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/7. Stages/Scripts.yy",
+    "name":"Setup",
+    "path":"folders/7. Stages/Setup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

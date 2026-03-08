@@ -17,7 +17,7 @@ if (!in_process) {
 	
 	// SFX
 	audio_pause_all();
-	audio_play_sfx(snd_pause_start, 2);
+	audio_play_sfx(snd_pause_start, REPLACE);
 		
 	// Save level
 	room_persistent = true;
@@ -44,14 +44,14 @@ else {
 	
 	// SFX
 	if (input_up or input_down) {
-		audio_play_sfx(snd_menu_select, 2);
+		audio_play_sfx(snd_menu_select, REPLACE);
 	}
 
 	// Continue
 	if (confirm_option) {
 		// Option is locked
 		if (options[selected_option].state == 3) {
-			audio_play_sfx(snd_menu_deny, 2);
+			audio_play_sfx(snd_menu_deny, REPLACE);
 		}
 		
 		// Choose option
@@ -70,7 +70,7 @@ else {
 		
 		// Lock when in hub world
 		if (paused_room == rm_hub_world) {
-			var new_state = (selected_option == 1) ? (3) : (2);
+			var new_state = (selected_option == 1) ? (3) : (REPLACE);
 			options[1].set_state(new_state);
 		}
 	}

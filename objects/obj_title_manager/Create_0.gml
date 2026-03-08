@@ -1,7 +1,7 @@
 // Variables
 depth = depths.gui;
 sprite_index = noone;
-next_room = rm_hub_world;
+allow_transition = false;
 state = 0;
 
 // Logo
@@ -13,8 +13,9 @@ logo_scale = 0.08;
 message_x = 244;
 message_y = 222;
 message_alpha = 0;
-message_blink_speed = 0.04;
+message_speed = 0.04;
 
-// Temp
-global.slot = 10;
-game_load_save();
+// Transition
+transition_x = 0;
+transition_goal = WIDTH + 50;
+transition_speed = 15;

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"bgm_home",
+  "audioGroupId":{
+    "name":"grp_bgm",
+    "path":"audiogroups/grp_bgm",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":246.04735,
+  "exportDir":"",
+  "name":"bgm_home",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/7. Stages/Assets/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgm_home.wav",
+  "volume":1.0,
+}

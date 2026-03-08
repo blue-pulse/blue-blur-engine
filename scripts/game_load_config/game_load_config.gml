@@ -6,6 +6,7 @@ function game_load_config() {
 	var config = file_get_config();
 	
 	// Set config data
+	global.last_slot = config.get("last");
 	global.fullscreen = config.get("graphics").fullscreen;
 	global.master_volume = config.get("sound").master;
 	global.bgm_volume = config.get("sound").master;

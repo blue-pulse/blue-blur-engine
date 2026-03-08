@@ -4,6 +4,11 @@ function stage_init_data() {
 		// Main title
 		case rm_title:
 			stage_setup_title();
+			break
+			
+		// Main title
+		case rm_home:
+			stage_setup_home();
 			break;
 		
 		// Hub world

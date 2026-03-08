@@ -1,12 +1,11 @@
 // Start package
 show_debug_message("EasyFade: Welcome to EasyFade by Blue Pulse!");
 
-// Globals
-global.__fade_exit_code = FADE_EX_SUCCESS;
-
 // Macros
+#macro is_fading instance_find(_fade_controller, 0)
 #macro FADE_H display_get_gui_height()
 #macro FADE_W display_get_gui_width()
-#macro FADE_EX_SUCCESS 0
-#macro FADE_EX_SIGKILL 137
-#macro is_fading instance_find(_fade_controller, 0)
+enum FADE_EXIT { SUCESS = 0, SIGKILL = 137 }
+
+// Globals
+global.__fade_exit_code = FADE_EXIT.SUCESS;

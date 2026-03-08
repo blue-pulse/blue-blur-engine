@@ -18,6 +18,13 @@ enum depths {
 	manager = -4096,
 }
 
+// Culling settings
+enum cull {
+	freq = 10,
+	margin = 192,
+	offset = 96,
+}
+
 // Floor materials
 enum materials {
 	generic,

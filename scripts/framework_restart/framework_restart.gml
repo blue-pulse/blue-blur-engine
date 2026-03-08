@@ -10,10 +10,6 @@ function framework_restart() {
 	// Disable input
 	print("[INFO] Disabling input devices...");
 	input_disable_device();
-	
-	// Disable camera
-	print("[INFO] Disabling views...");
-	camera_set_target(noone);
 
 	// Fade out
 	print("[INFO] Exiting current room...");

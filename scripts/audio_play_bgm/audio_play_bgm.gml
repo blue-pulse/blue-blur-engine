@@ -10,7 +10,7 @@ function audio_play_bgm(sound, loop_start=0, loop_end=0) {
 	audio_sound_loop_end(sound, loop_end);
 	
 	// Play the song
-	var song = audio_play_sound(sound, PRIORITY_BGM, true, VOLUME_BGM);
+	var song = audio_play_sound(sound, ESAU_PRIORITIES.BGM, true, ESAU_VOLUME_BGM);
 	audio_sound_loop(song, true);
 	return song;
 }

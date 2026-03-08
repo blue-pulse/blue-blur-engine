@@ -5,6 +5,6 @@ if (impacted) {
 }
 
 // Destroy if offscreen
-if (!in_view(id, CULL_OFFSET)) {
+if (!in_view(id, cull.offset)) {
 	instance_terminate();
 }

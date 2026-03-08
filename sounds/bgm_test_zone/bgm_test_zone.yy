@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":9,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":98.64,
   "exportDir":"",
   "name":"bgm_test_zone",
   "parent":{

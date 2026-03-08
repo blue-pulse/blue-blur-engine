@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_gmutils_setup",
   "parent":{
-    "name":"GMUtils v2.0.5",
-    "path":"folders/1. Packages/GMUtils v2.0.5.yy",
+    "name":"Internal",
+    "path":"folders/1. Packages/GMUtils v2.0.5/Internal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

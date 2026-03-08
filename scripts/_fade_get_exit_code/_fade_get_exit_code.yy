@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_fade_get_exit_code",
   "parent":{
-    "name":"EasyFade v1.2.2",
-    "path":"folders/1. Packages/EasyFade v1.2.2.yy",
+    "name":"Internal",
+    "path":"folders/1. Packages/EasyFade v1.2.4/Internal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

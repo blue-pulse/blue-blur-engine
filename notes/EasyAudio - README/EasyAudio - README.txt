@@ -3,4 +3,4 @@ To use EasyAudio, you need to create three audio groups:
 	2. Sound effects group
 	3. Player's voice clips group
 
-These groups must be configurated in the _audio_config function.
+These groups must be configurated in the _easyaudio_config function.

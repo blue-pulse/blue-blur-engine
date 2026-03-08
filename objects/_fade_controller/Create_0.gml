@@ -19,7 +19,7 @@ if (instance_number(_fade_controller) > 1) {
 	show_debug_message("EasyFade: [INFO] Killing instance: " + string(id) + "...");
 	
 	// Set exit code
-	global.__fade_exit_code = FADE_EX_SIGKILL;
+	global.__fade_exit_code = FADE_EXIT.SIGKILL;
 	
 	// Kill instance
 	instance_destroy();

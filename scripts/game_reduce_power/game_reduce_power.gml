@@ -3,7 +3,7 @@ function game_reduce_power() {
 	gml_pragma("forceinline");
 	
 	// Variables
-	static low_power_mode = false;
+	static low_power_mode = !game_has_focus();
 	
 	// Logic
 	if (low_power_mode) {
@@ -22,6 +22,7 @@ function game_reduce_power() {
 	else {
 		if (!game_has_focus()) {
 			low_power_mode = true;
+			window_minimise();
 			game_set_speed(20, gamespeed_fps);
 		}
 	}

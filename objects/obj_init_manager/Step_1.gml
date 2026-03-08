@@ -1,18 +1,19 @@
 // Early exit
-if (!is_starting or is_fading) {
+if (!is_loading or is_fading) {
 	exit;
 }
 
 // Skip if already started
 if (skip_loading) {
-	room_fadeto(rm_title, 15, c_white, true);
+	audio_play_sfx(snd_start_game);
+	room_fadeto(next_room, 20, c_white, is_active);
 }
 
 // Wait for EasyAudio to load audio groups
 else {
 	skip_loading = (
-		audio_group_is_loaded(GROUP_BGM) and
-		audio_group_is_loaded(GROUP_SFX) and
-		audio_group_is_loaded(GROUP_SPEECH)
+		audio_group_is_loaded(grp_bgm) and
+		audio_group_is_loaded(grp_sfx) and
+		audio_group_is_loaded(grp_voices)
 	);
 }

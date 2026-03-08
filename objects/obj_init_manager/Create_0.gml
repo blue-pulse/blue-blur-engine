@@ -1,11 +1,19 @@
 // Variables
-is_starting = false;
+is_active = game_get_initflag();
+is_loading = false;
 skip_loading = false;
+next_room = (is_active) ? (rm_home) : (rm_title);
 
-// Start game
-if (room == rm_init_game) {
-	is_starting = true;
-	skip_loading = framework_start();
-} else {
-	framework_end();
+// Logic
+switch (room) {
+	// Start game
+	case rm_init_game:
+		is_loading = true;
+		skip_loading = framework_start();
+		break;
+		
+	// Stop game
+	case rm_stop_game:
+		framework_end();
+		break;
 }

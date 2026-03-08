@@ -6,14 +6,8 @@ function stage_setup_title() {
 	allow_culling = false;
 	allow_gameplay = false;
 	
-	// Play random song
-	if (random_range(0, 1)) {
-		bgm_sound = bgm_title_a;
-		bgm_loop_start = 58.628;
-		bgm_loop_end = 143.266;
-	} else {
-		bgm_sound = bgm_title_b;
-		bgm_loop_start = 133.964;
-		bgm_loop_end = 222.701;
-	}
+	// Song
+	bgm_sound = bgm_title;
+	bgm_loop_start = 57.109;
+	bgm_loop_end = 141.742;
 }

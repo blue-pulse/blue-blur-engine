@@ -1,7 +1,7 @@
-function game_load_save() {
+function game_load_save(slot) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 
 	// Load user data
-	file_load_userdata(global.slot);
+	file_load_userdata(slot);
 }

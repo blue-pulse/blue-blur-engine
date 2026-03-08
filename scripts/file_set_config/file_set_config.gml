@@ -3,5 +3,5 @@ function file_set_config(param, value) {
 	gml_pragma("forceinline");
 	
 	// Set the given parameter
-	return ssave_get(cls_config).set(param, value);
+	ssave_get(cls_config).set(param, value);
 }

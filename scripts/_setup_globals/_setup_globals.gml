@@ -5,7 +5,7 @@ global.time = 0;
 // Internal
 global.allow_upscaling = false;
 global.fullscreen = false;
-global.game_has_started = false;
+global.initflag = false;
 global.game_is_paused = false;
 global.hud_is_visible = false;
 global.last_played = 0;

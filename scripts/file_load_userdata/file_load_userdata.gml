@@ -3,5 +3,6 @@ function file_load_userdata(slot) {
 	gml_pragma("forceinline");
 	
 	// Load slot
+	global.slot = slot;
 	Files.Load(slot);
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"room_fadeto",
   "parent":{
-    "name":"EasyFade v1.2.2",
-    "path":"folders/1. Packages/EasyFade v1.2.2.yy",
+    "name":"EasyFade v1.2.4",
+    "path":"folders/1. Packages/EasyFade v1.2.4.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

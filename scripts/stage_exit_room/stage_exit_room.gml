@@ -6,11 +6,11 @@ function stage_exit_room(_duration=15) {
 	input_disable_device();
 	camera_set_target(noone);
 	
-	// Logic
+	// Checkpoint data
+	game_reset_checkpoint();
+	
+	// Schedule exit
 	with (Stage) {
 		alarm_set(1, _duration);
 	}
-	
-	// Checkpoint data
-	game_reset_checkpoint();
 }
