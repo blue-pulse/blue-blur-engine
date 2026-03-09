@@ -1,3 +1,13 @@
+// Async operations
+enum tasks {
+	read = 0,
+	write = 0,
+	remove = 0,
+	pending = 0,
+	completed = 0,
+	failed = 0,
+}
+
 // Shapes
 enum shapes {
 	wall = 0,

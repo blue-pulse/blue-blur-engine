@@ -3,7 +3,7 @@ function screen_set_fullscreen(_fullscreen) {
 	gml_pragma("forceinline");
 	
 	// Logic
-	global.fullscreen = _fullscreen;
-	file_set_config("graphics", { fullscreen: _fullscreen });
-	screen_set_properties();
+	db_write(global.settings, _fullscreen, "graphics", "fullscreen");
+	file_save_settings();
+	screen_adjust_properties();
 }

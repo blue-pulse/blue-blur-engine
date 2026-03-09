@@ -9,10 +9,10 @@ function framework_start() {
 	var game_is_ready = game_get_initflag();
 	if (!game_is_ready) {
 		// Create an instance of each manager
-		manager_create(Files);
 		print("[INFO] All global managers were created!");
 		
 		// Set game parameters
+		game_init_data();
 		game_load_config();
 		audio_channel_num(MAX_SOUNDS);
 		game_set_speed(MAX_FPS, gamespeed_fps);
@@ -21,8 +21,7 @@ function framework_start() {
 		// Set screen parameters
 		window_set_caption(TITLE);
 		screen_prepare_gpu();
-		screen_set_properties();
-		screen_verify_size();
+		screen_adjust_properties();
 		print("[INFO] Screen setup was completed!");
 		return false;
 	}

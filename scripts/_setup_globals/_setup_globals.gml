@@ -3,8 +3,7 @@ global.framecount = 0;
 global.time = 0;
 
 // Internal
-global.allow_upscaling = false;
-global.fullscreen = false;
+global.async_operations = [];
 global.initflag = false;
 global.game_is_paused = false;
 global.hud_is_visible = false;
@@ -35,9 +34,22 @@ global.lives = 3;
 global.score = 0;
 
 // Checkpoint data
-global.checkpoint = {
-	timecount: 0,
-	scoring: 0,
-	room_pos: [0, 0],
-	hub_pos: [0, 0],
+global.checkpoint = new _cls_checkpoint();
+
+// Databases
+global.userdata = {
+	slot: 0,
+}
+
+global.savedata = {
+	slot: 0,
+	playtime: 0,
+	character: obj_sonic,
+	life: 3,
+	position: [0, 0],
+}
+
+global.settings = {
+	graphics: { antialiasing: 2, upscaling: false, fullscreen: false },
+	sounds: { bgm: 1, sfx: 1, voices: 1, },
 };

@@ -11,8 +11,7 @@ function debug_toggle_cheats() {
 	
 	// Toggle fullscreen
 	if (keyboard_check_pressed(vk_f12)) {
-		is_fullscreen = !is_fullscreen;
-		screen_set_properties();
+		screen_set_fullscreen(!is_fullscreen);
 	}
 	
 	// Rotate the player's gravity clockwise

@@ -1,18 +1,11 @@
 function game_load_config() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
+	
+	// Load settings and userdata
+	file_load_settings();
+	file_load_userdata();
 
-	// Load the last saved slot
-	var config = file_get_config();
-	
-	// Set config data
-	global.last_slot = config.get("last");
-	global.fullscreen = config.get("graphics").fullscreen;
-	global.master_volume = config.get("sound").master;
-	global.bgm_volume = config.get("sound").master;
-	global.sfx_volume = config.get("sound").sfx;
-	global.voices_volume = config.get("sound").voices;
-	
 	// Print message
-	print("[INFO] Config data was loaded!");
+	print("[INFO] The loading operation for config-type data has been scheduled.");
 }

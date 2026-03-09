@@ -5,14 +5,23 @@
 #macro HEIGHT 280
 #macro SCALE 2
 #macro MAX_FPS 60
-#macro MAX_SLOTS 10
 #macro MAX_SOUNDS 200
 #macro TIMEZONE timezone_utc
 
-// Effects
+// File manager
+#macro SIGNER "BlueBlurEngine"
+#macro MAX_SLOTS 10
+#macro XOR_KEY 3179411283192014336
+#macro FILE_EXT ".dat"
+#macro ENCRYPT false
+
+// Packages
 #macro RAW ESAU_MODES.OVERLAP
 #macro SKIP ESAU_MODES.SINGLE
 #macro REPLACE ESAU_MODES.SWAP
+#macro SETTINGS "settings.dat"
+#macro USERDATA "userdata.dat"
+#macro SAVEDATA "savedata.dat"
 
 // States phases
 #macro INIT -1
@@ -29,15 +38,16 @@
 #macro ROOM_RIGHT room_width
 #macro ROOM_TOP 0
 
-// Globals
+// Shortcuts
+#macro async_queue global.async_operations
 #macro font_black global.font_hud_black
 #macro font_blue global.font_hud_blue
 #macro font_debug global.font_hud_debug
 #macro font_golden global.font_hud_golden
 #macro font_gray global.font_hud_gray
 #macro font_silver global.font_hud_silver
-#macro is_fullscreen global.fullscreen
 #macro is_paused global.game_is_paused
+#macro is_fullscreen window_get_fullscreen()
 #macro ticks global.framecount
 
 // Inputs
@@ -57,9 +67,8 @@
 #macro vb_x INPUT_VERB.X
 #macro vb_y INPUT_VERB.Y
 
-// Shortcuts
+// Aliases
 #macro Camera obj_camera
-#macro Files obj_file_manager
 #macro Particles global.particles
 #macro Player obj_player
 #macro Protagonist global.protagonist

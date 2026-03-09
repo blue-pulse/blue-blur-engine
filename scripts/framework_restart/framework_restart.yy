@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"framework_restart",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Utils.yy",
+    "name":"Internal",
+    "path":"folders/2. Framework/Scripts/Internal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

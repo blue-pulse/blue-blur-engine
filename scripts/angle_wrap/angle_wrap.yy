@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"angle_wrap",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Utils.yy",
+    "name":"GMUtils v2.0.5",
+    "path":"folders/1. Packages/GMUtils v2.0.5.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,21 +1,33 @@
 function file_save_userdata() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
+	// Callback
+	var callback = function(_status, _buffer) {
+	    // Clean-up
+	    buffer_delete(_buffer);
+		task_delete_item(USERDATA);
+		
+	    // File saved successfully
+	    if (_status == SPARKLE_STATUS_SUCCESS) {
+			print($"[INFO] Userdata was saved successfully!");
+	    }
+		
+		// File failed to save
+	    else {
+			print($"[ERROR] Userdata save operation exited with error code: {_status}");
+	    }
+	};
 	
-	// Early exit
-	var slot = global.slot;
-	if (!slot) {
-		print("[ERROR] An invalid slot was received!");
-		print("[WARN] No data will be saved.");
-		exit;
+	// Get buffer
+	var buffer = db_buffer_create(global.userdata);
+	
+	// Encrypt
+	if (ENCRYPT) {
+		buffer = file_encrypt_buffer(buffer);
 	}
 
-	// Save current slot
-	global.last_slot = slot;
-	ssave_get(cls_config)
-		.set("last", slot)
-		.save();
-
-	// Save player progress
-	Files.Save(slot);
+	// Add task to queue
+	task_add_item(USERDATA, tasks.write);
+	
+	// Save file
+	SparkleSetGroupName("config");
+	return SparkleSave(USERDATA, buffer, callback);
 }

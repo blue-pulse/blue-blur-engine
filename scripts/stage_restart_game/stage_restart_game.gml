@@ -6,9 +6,20 @@ function stage_restart_game(_duration=10) {
 	input_disable_device();
 	camera_set_target(noone);
 	
-	// Save current data
-	file_save_userdata();
+	// Write data to database
+	db_write(global.userdata, global.slot, "slot");
+	db_write(global.savedata, {
+		slot: global.slot,
+		playtime: ticks,
+		character: global.character,
+		life: global.lives,
+		position: global.checkpoint.hub_pos
+	});
 	game_reset_checkpoint(true);
+	
+	// Schedule saving
+	file_save_userdata();
+	file_save_savedata(global.slot);
 	
 	// Schedule exit
 	with (Stage) {
