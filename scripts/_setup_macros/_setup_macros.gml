@@ -13,7 +13,7 @@
 #macro MAX_SLOTS 10
 #macro XOR_KEY 3179411283192014336
 #macro FILE_EXT ".dat"
-#macro ENCRYPT false
+#macro ENCRYPT true
 
 // Packages
 #macro RAW ESAU_MODES.OVERLAP

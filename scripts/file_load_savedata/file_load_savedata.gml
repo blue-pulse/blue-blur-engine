@@ -2,11 +2,16 @@ function file_load_savedata(index) {
 	// Callback
 	var callback = function(_status, _buffer) {
 		// Variables
-		if (ENCRYPT) {
-			_buffer = file_decrypt_buffer(_buffer);
-		}
-	    var data = (_status) ? (db_buffer_read(_buffer)) : (undefined);
+		var data = undefined;
 		
+		// Read file
+		if (_status) {
+			if (ENCRYPT) {
+				_buffer = file_decrypt_buffer(_buffer);
+			}
+			data = db_buffer_read(_buffer);
+		}
+
 	    // Clean up
 	    buffer_delete(_buffer);
 		task_delete_item(SAVEDATA);

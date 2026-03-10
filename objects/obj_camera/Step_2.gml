@@ -44,7 +44,7 @@ if (zoom_timer) {
 	camera_restore_zoom();
 }
 
-// Apply camera position
-camera_set_view_pos(View, view_x, view_y);
-camera_set_view_size(View, floor(view_width), floor(view_height));
+// Apply camera properties
 camera_set_view_angle(View, angle);
+camera_set_view_pos(View, view_x, view_y);
+camera_set_view_size(View, view_width, view_height);

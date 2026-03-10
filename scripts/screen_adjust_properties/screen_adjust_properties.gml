@@ -26,10 +26,12 @@ function screen_adjust_properties() {
 		display_reset(0, false);
 	}
 	
-	// Resize GUI
+	// Set GUI
+	display_set_gui_size(WIDTH, HEIGHT);
+	
+	// Resize surface
 	var scale_factor = (allow_upscaling) ? (SCALE) : (1); 
 	surface_resize(application_surface, WIDTH * scale_factor, HEIGHT * scale_factor);
-	display_set_gui_size(WIDTH, HEIGHT);
 	screen_verify_size();
 	
 	// Finally, put the window in the center

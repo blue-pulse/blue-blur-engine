@@ -72,10 +72,10 @@ stamina_icon_y = HEIGHT - 30;
 stamina_color_0 = target.data_hud.colors[0];
 stamina_color_1 = target.data_hud.colors[1];
 stamina_value = 0;
-stamina_value_a_x = 22;
-stamina_value_a_y = HEIGHT - 22.5;
-stamina_value_b_x = 23;
-stamina_value_b_y = HEIGHT - 21.5;
+stamina_value_a_x = 23;
+stamina_value_a_y = HEIGHT - 21.5;
+stamina_value_b_x = 24;
+stamina_value_b_y = HEIGHT - 20.5;
 
 stamina_speed = 12;
 stamina_tint = c_gray;
