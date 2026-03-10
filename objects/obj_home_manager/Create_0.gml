@@ -6,5 +6,3 @@ is_loading = false;
 
 // Set slot index
 selected_slot = db_read(global.userdata, 1, "slot");
-
-

@@ -1,6 +1,6 @@
 function file_save_savedata(index) {
 	// Early exit
-	if (!slot or slot > MAX_SLOTS) {
+	if (!index or index > MAX_SLOTS) {
 		print("[ERROR] An invalid slot was received!");
 		print("[WARN] No data was loaded. Previous values will be used.");
 		exit;

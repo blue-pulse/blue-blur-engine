@@ -5,6 +5,21 @@ function _cls_checkpoint() constructor {
 	room_pos = [0, 0];
 	hub_pos = [0, 0];
 	
+	// Get status
+	function get_status() {
+		return (time > 0);
+	}
+	
+	// Get checkpoint
+	function get_data() {
+		return [time, scoring, room_pos];
+	}
+	
+	// Get hub data
+	function get_hub() {
+		return hub_pos;
+	}
+	
 	// Set checkpoint
 	function set_data(_time, _score, _pos) {
 		time = _time;

@@ -2,7 +2,7 @@
 var pos_x = x;
 var pos_y = y;
 var stamina = 100;
-var checkpoint_data = global.checkpoint;
+var checkpoint = global.checkpoint;
 var gui_config = { 
 	target: noone,
 	show_life: true,
@@ -12,11 +12,12 @@ var gui_config = {
 }; 
 
 // Get checkpoint data
-if (checkpoint_data.timecount) {
-    global.time = checkpoint_data.timecount;
-    global.score = checkpoint_data.scoring;
-    pos_x = checkpoint_data.room_pos[0];
-    pos_y = checkpoint_data.room_pos[1];
+if (checkpoint.get_status()) {
+	var data = checkpoint.get_data();
+    global.time = data[0];
+    global.score = data[1];
+    pos_x = data[2][0];
+    pos_y = data[2][1];
     stamina = 0;
 } else {
     global.time = 0;
@@ -26,13 +27,13 @@ if (checkpoint_data.timecount) {
 // Set config based on room
 if (room == rm_hub_world) {
 	// Set parameters
-	var hub_position = checkpoint_data.hub_pos;
+	var data = checkpoint.get_hub();
 	stamina = 999;
 	
 	// Set hub position
-	if (!array_equals(hub_position, [0, 0])) {
-		pos_x = hub_position[0];
-		pos_y = hub_position[1];
+	if (!array_equals(data, [0, 0])) {
+		pos_x = data[0];
+		pos_y = data[1];
 	}
 } else {
 	// Set GUI config

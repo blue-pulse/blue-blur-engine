@@ -6,8 +6,8 @@ if (is_fading) {
 // Select Slot
 var input_right = input_pressed(vb_right);
 var input_left = input_pressed(vb_left);
-//selected_slot += input_right - input_left;
-//selected_slot = ((selected_slot + MAX_SLOTS - 1) % MAX_SLOTS) + 1
+selected_slot += input_right - input_left;
+selected_slot = ((selected_slot + MAX_SLOTS - 1) % MAX_SLOTS) + 1
 
 // SFX
 if (input_right or input_left) {

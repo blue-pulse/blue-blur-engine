@@ -13,14 +13,19 @@ function file_load_savedata(index) {
 
 	    // File loaded successfully
 	    if (data != undefined) {
+			// Set data
 	    	global.savedata = data;
-			global.slot = db_read(data, -1, "slot");
+			
+			// Set parameters
+			var a = db_read(global.savedata, {});
+			global.character = a.character;
+			global.lives = a.life;
+			global.checkpoint.hub_pos = a.position;
 			print("[INFO] Savedata loaded successfully!");
 	    }
 		
 		// File failed to load
 		else {
-			global.slot = -1;
 			print($"[ERROR] Savedata load operation exited with error code: {_status}");	
 	    }
 	};

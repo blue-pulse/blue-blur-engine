@@ -19,6 +19,7 @@ enum shapes {
 
 // Drawing priorities
 enum depths {
+	maximum = 6144,
 	backstage = 1,
 	enemies = 0,
 	player = -1,
@@ -26,6 +27,7 @@ enum depths {
 	effects = -2,
 	gui = -100,
 	manager = -4096,
+	minimum = -6144,
 }
 
 // Culling settings

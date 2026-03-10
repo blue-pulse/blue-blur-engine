@@ -5,6 +5,7 @@ target_room ??= noone;
 silent_fading ??= false;
 
 // Variables
+depth = FADE_DEPTH;
 timer = 0;
 alpha = 0;
 width = FADE_W;

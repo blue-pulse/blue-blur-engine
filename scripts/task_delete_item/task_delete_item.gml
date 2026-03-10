@@ -1,7 +1,7 @@
 function task_delete_item(_resource) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
-
+	
 	// Variables
 	var ops = async_queue;
 	var amount_ops = array_length(ops);
