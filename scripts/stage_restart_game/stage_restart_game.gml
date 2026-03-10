@@ -13,9 +13,9 @@ function stage_restart_game(_duration=10) {
 		playtime: ticks,
 		character: global.character,
 		life: global.lives,
-		position: global.checkpoint.hub_pos
+		position: global.checkpoint.get_hub(),
 	});
-	game_reset_checkpoint(true);
+	global.checkpoint.reset_all();
 	
 	// Schedule saving
 	file_save_userdata();

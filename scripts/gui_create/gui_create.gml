@@ -3,5 +3,8 @@ function gui_create(object, var_struct={}) {
 	gml_pragma("forceinline");
 	
 	// Return value
-	return instance_create_depth(0, 0, depths.gui, object, var_struct);
+	if (!instance_exists(object)) {
+		return instance_create_depth(0, 0, depths.gui, object, var_struct);
+	}
+	return noone;
 }

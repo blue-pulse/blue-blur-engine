@@ -38,7 +38,8 @@ global.checkpoint = new _cls_checkpoint();
 
 // Databases
 global.userdata = {
-	slot: 0,
+	slot: 1,
+	wasd: true,
 }
 
 global.savedata = {

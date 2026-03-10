@@ -6,7 +6,7 @@
   "name":"animation_get_callback",
   "parent":{
     "name":"Animations",
-    "path":"folders/2. Framework/Wrappers/Animations.yy",
+    "path":"folders/2. Framework/Scripts/Wrappers/Animations.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

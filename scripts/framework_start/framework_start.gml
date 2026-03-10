@@ -35,7 +35,7 @@ function framework_start() {
 		// Reset parameters
 		print("[INFO] Setting default game parameters...");
 		game_reset_player();
-		game_reset_checkpoint(true);
+		global.checkpoint.reset_all();
 		return true;
 	}
 }

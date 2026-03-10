@@ -7,7 +7,7 @@ function stage_exit_room(_duration=15) {
 	camera_set_target(noone);
 	
 	// Checkpoint data
-	game_reset_checkpoint();
+	global.checkpoint.reset();
 	
 	// Schedule exit
 	with (Stage) {
