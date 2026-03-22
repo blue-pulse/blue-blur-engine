@@ -27,7 +27,7 @@ else if (input_pressed(vb_back)) {
 	framework_stop();
 }
 
-// Press escape to exit
+// Press tab to toggle fullscreen
 else if (input_pressed(vb_select)) {
 	screen_set_fullscreen(!is_fullscreen);
 }

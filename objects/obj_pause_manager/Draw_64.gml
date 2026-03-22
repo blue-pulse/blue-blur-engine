@@ -7,6 +7,6 @@ if (in_process) {
 	
 	// Options
 	for (var i = 0; i < options_length; ++i) {
-	    options[i].draw(pos_x, pos_y);
+	    options[i].draw();
 	}
 }

@@ -8,9 +8,12 @@ function framework_bootstrap() {
 	// Allow input
 	input_enable_device();
 	input_clear_all();
-	
+
 	// Set timezone
 	date_set_timezone(TIMEZONE);
+	
+	// Hide global UI
+	layer_set_visible(layer_get_id("ui_main"), false);
 	
 	// Reset values
 	ticks = 0;

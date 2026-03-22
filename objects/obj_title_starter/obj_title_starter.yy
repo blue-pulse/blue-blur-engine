@@ -8,8 +8,8 @@
   "name":"obj_title_starter",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spawner",
-    "path":"folders/8. Usable/Spawner.yy",
+    "name":"Managers",
+    "path":"folders/7. Stages/Managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

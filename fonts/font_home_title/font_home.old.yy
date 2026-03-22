@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"font_main_regular",
+  "%Name":"font_home",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":14,
@@ -189,7 +189,7 @@
   "last":0,
   "lineHeight":18,
   "maintainGms1Font":false,
-  "name":"font_main_regular",
+  "name":"font_home",
   "parent":{
     "name":"Fonts",
     "path":"folders/3. Visuals/Assets/Fonts.yy",

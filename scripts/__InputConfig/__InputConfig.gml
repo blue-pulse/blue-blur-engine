@@ -13,7 +13,7 @@
 // macro corresponds to the `InitialUserAlwaysLoggedIn` mode set in your `param.json`. Please note
 // that this macro (and the associated `param.json` mode) should only be used for single player
 // games.
-#macro INPUT_PS5_SINGLE_USER  false
+#macro INPUT_PS5_SINGLE_USER  true
 
 ////////////////
 //            //
