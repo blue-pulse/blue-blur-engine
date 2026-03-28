@@ -288,6 +288,7 @@
     {"name":"audio_play_bgm","order":3,"path":"scripts/audio_play_bgm/audio_play_bgm.yy",},
     {"name":"audio_play_sfx","order":4,"path":"scripts/audio_play_sfx/audio_play_sfx.yy",},
     {"name":"audio_play_speech","order":5,"path":"scripts/audio_play_speech/audio_play_speech.yy",},
+    {"name":"buffer_destroy","order":24,"path":"scripts/buffer_destroy/buffer_destroy.yy",},
     {"name":"camera_get_target","order":1,"path":"scripts/camera_get_target/camera_get_target.yy",},
     {"name":"camera_restore_zoom","order":2,"path":"scripts/camera_restore_zoom/camera_restore_zoom.yy",},
     {"name":"camera_set_target","order":3,"path":"scripts/camera_set_target/camera_set_target.yy",},

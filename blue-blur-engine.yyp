@@ -190,7 +190,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2024.14.4.221",
   },
   "name":"blue-blur-engine",
   "resources":[
@@ -395,6 +395,7 @@
     {"id":{"name":"audio_play_bgm","path":"scripts/audio_play_bgm/audio_play_bgm.yy",},},
     {"id":{"name":"audio_play_sfx","path":"scripts/audio_play_sfx/audio_play_sfx.yy",},},
     {"id":{"name":"audio_play_speech","path":"scripts/audio_play_speech/audio_play_speech.yy",},},
+    {"id":{"name":"buffer_destroy","path":"scripts/buffer_destroy/buffer_destroy.yy",},},
     {"id":{"name":"camera_follow_player","path":"scripts/camera_follow_player/camera_follow_player.yy",},},
     {"id":{"name":"camera_get_target","path":"scripts/camera_get_target/camera_get_target.yy",},},
     {"id":{"name":"camera_restore_zoom","path":"scripts/camera_restore_zoom/camera_restore_zoom.yy",},},

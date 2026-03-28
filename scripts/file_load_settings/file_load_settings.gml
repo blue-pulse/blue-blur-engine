@@ -13,7 +13,7 @@ function file_load_settings() {
 		}
 
 	    // Clean up
-	    buffer_delete(_buffer);
+	    buffer_destroy(_buffer);
 		task_delete_item(SETTINGS);
 
 	    // File loaded successfully

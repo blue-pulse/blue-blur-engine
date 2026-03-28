@@ -13,7 +13,7 @@ function file_load_savedata(index) {
 		}
 
 	    // Clean up
-	    buffer_delete(_buffer);
+	    buffer_destroy(_buffer);
 		task_delete_item(SAVEDATA);
 
 	    // File loaded successfully
@@ -22,10 +22,10 @@ function file_load_savedata(index) {
 	    	global.savedata = data;
 			
 			// Set parameters
-			var a = db_read(global.savedata, {});
-			global.character = a.character;
-			global.lives = a.life;
-			global.checkpoint.hub_pos = a.position;
+			var params = db_read(global.savedata, {});
+			global.character = params.character;
+			global.lives = params.life;
+			global.checkpoint.hub_pos = params.position;
 			print("[INFO] Savedata loaded successfully!");
 	    }
 		
