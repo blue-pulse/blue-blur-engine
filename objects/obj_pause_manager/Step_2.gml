@@ -9,7 +9,7 @@ if (!in_process) {
 	is_paused = true;
 	in_process = true;
 	paused_room = room;
-	selected_option = 0;
+	option_active = 0;
 	
 	// Save surface
 	pause_surface = surface_create(room_width, room_height);
@@ -27,51 +27,37 @@ if (!in_process) {
 // Allow player to select options
 else {
 	// Early exit
-	var confirm_option = input_pressed_many([vb_a, vb_start]);
 	if (input_pressed(vb_back)) {
-		selected_option = 0;
+		option_active = 0;
 		pause_resume();
 		exit;
 	}
 	
-	// Variables
-	var input_up = input_pressed(vb_up);
-	var input_down = input_pressed(vb_down);
-	
 	// Select option
-	selected_option += input_down - input_up;
-	selected_option = (selected_option + options_length) % options_length;
-	
-	// SFX
-	if (input_up or input_down) {
+	var delta = input_pressed(vb_down) - input_pressed(vb_up);
+	if (delta != 0) {
 		audio_play_sfx(snd_menu_select, REPLACE);
+		option_active = (delta + option_active + options_count) % options_count;
 	}
 
 	// Continue
-	if (confirm_option) {
-		// Option is locked
-		if (options[selected_option].state == 3) {
+	if (input_pressed(vb_accept)) {
+		if (options[option_active].state == 3) {
+			// Option is locked
 			audio_play_sfx(snd_menu_deny, REPLACE);
-		}
-		
-		// Choose option
-		else {
+		} else {
 			pause_resume();
 		}
 	} 
 	
 	// Gray-out options
 	else {
-		// Determinar el estado de las opciones
-		for (var i = 0; i < options_length; ++i) {
-			var new_state = (selected_option == i) ? (1) : (0);
-			options[i].set_state(new_state);
-		}
+		// Set options state
+		menu_select_option(0, 1);
 		
 		// Lock when in hub world
 		if (paused_room == rm_hub_world) {
-			var new_state = (selected_option == 1) ? (3) : (REPLACE);
-			options[1].set_state(new_state);
+			options[1].state = (option_active == 1 ? 3 : 2);
 		}
 	}
 }

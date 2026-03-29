@@ -7,6 +7,9 @@ function framework_stop() {
 		exit;
 	}
 	
+	// Change state
+	game_set_state(states.quit);
+		
 	// Disable input
 	print("[INFO] Disabling input devices...");
 	input_disable_device();

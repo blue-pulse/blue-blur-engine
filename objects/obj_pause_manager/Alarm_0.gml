@@ -4,7 +4,7 @@ paused_room = noone;
 room_persistent = false;
 
 // Logic
-switch (selected_option) {
+switch (option_active) {
 	// Restart room
 	case 1:
 		stage_restart_room(10);

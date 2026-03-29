@@ -14,4 +14,5 @@ function stage_setup_hub_world() {
 	bgm_sound = bgm_hub_world;
 	bgm_loop_start = 25.314;
 	bgm_loop_end = 82.148;
+	bgm_position = 0;
 }

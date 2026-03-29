@@ -6,7 +6,7 @@ if (in_process) {
 	draw_sprite(spr_pause_title, 0, pos_x, pos_y);
 	
 	// Options
-	for (var i = 0; i < options_length; ++i) {
+	for (var i = 0; i < options_count; ++i) {
 	    options[i].draw();
 	}
 }

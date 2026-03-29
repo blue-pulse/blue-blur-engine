@@ -25,6 +25,6 @@ function stage_init_data() {
 	// Setup music
 	audio_stop_all();
 	if (audio_exists(bgm_sound)) {
-		audio_play_bgm(bgm_sound, bgm_loop_start, bgm_loop_end);
+		audio_play_bgm(bgm_sound, bgm_loop_start, bgm_loop_end, bgm_position);
 	}
 }

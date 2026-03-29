@@ -8,9 +8,6 @@ function framework_start() {
 	// Load values for the first time
 	var game_is_ready = game_get_initflag();
 	if (!game_is_ready) {
-		// Create an instance of each manager
-		print("[INFO] All global managers were created!");
-		
 		// Set game parameters
 		game_init_data();
 		game_load_config();

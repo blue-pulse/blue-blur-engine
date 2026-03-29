@@ -1,18 +1,16 @@
-function cls_option(_sprite, _x, _y, _text="") constructor {
+function cls_option(_sprite, _x, _y, _state, _text="") constructor {
 	// Variables
     sprite = _sprite;
-    state = 0;
+    state = _state;
 	x = _x;
 	y = _y;
+	alpha = 1;
+	hspeed = 0;
+	vspeed = 0;
 	text = _text;
 	
-	// Set state
-	function set_state(_state) {
-        state = _state;
-    }
-
 	// Draw
 	function draw() {
-        draw_sprite(sprite, state, x, y);
+        draw_sprite_ext(sprite, state, x, y, 1, 1, 0, c_white, alpha);
     }
 }

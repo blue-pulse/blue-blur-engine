@@ -3,6 +3,7 @@ allow_gameplay = false;
 allow_culling = false;
 bgm_loop_end = 0;
 bgm_loop_start = 0;
+bgm_position = 0;
 bgm_sound = noone;
 desc = "None";
 name = "None";

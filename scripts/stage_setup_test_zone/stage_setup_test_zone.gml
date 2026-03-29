@@ -14,4 +14,5 @@ function stage_setup_test_zone() {
 	bgm_sound = bgm_test_zone;
 	bgm_loop_start = 18.608;
 	bgm_loop_end = 90.826;
+	bgm_position = 0;
 }

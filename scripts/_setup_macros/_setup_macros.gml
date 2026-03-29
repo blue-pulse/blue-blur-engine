@@ -48,6 +48,7 @@
 #macro font_silver global.font_hud_silver
 #macro is_paused global.game_is_paused
 #macro is_fullscreen window_get_fullscreen()
+#macro sys_active global.game_state == states.active
 #macro ticks global.framecount
 
 // Inputs
@@ -61,6 +62,7 @@
 #macro vb_right INPUT_VERB.RIGHT
 #macro vb_start INPUT_VERB.START
 #macro vb_select INPUT_VERB.SELECT
+#macro vb_accept INPUT_VERB.ACCEPT
 #macro vb_back INPUT_VERB.BACK
 #macro vb_a INPUT_VERB.A
 #macro vb_b INPUT_VERB.B

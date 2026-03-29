@@ -1,11 +1,18 @@
+// States
+enum states {
+	init,
+	active,
+	quit,
+}
+
 // Async operations
 enum tasks {
 	read = 0,
-	write = 0,
-	remove = 0,
-	pending = 0,
-	completed = 0,
-	failed = 0,
+	write = 1,
+	remove = 2,
+	pending = 3,
+	completed = 4,
+	failed = 5,
 }
 
 // Shapes

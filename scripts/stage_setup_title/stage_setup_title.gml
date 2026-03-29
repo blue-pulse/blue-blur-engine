@@ -10,4 +10,5 @@ function stage_setup_title() {
 	bgm_sound = bgm_title;
 	bgm_loop_start = 57.109;
 	bgm_loop_end = 141.742;
+	bgm_position = (sys_active) ? (40.35) : (0);
 }

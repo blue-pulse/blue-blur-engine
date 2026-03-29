@@ -6,6 +6,7 @@ global.time = 0;
 global.async_operations = [];
 global.initflag = false;
 global.game_is_paused = false;
+global.game_state = false;
 global.hud_is_visible = false;
 global.last_played = 0;
 global.last_slot = -1;

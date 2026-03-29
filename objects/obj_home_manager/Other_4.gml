@@ -1,2 +1,2 @@
-// Show UI
-layer_set_visible(ui_layer, true);
+// Change state
+game_set_state(states.active);
