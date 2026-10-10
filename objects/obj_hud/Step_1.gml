@@ -4,7 +4,7 @@ if (update_time) {
 }
 
 // Force visibility
-else if (force_visibility and !is_fading) {
+else if (force_visibility and !scene_is_changing()) {
 	viewable = true;
 	force_visibility = false;
 }

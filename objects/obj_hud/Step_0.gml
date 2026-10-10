@@ -4,7 +4,7 @@ if (!instance_exists(target)) {
 }
 
 // Disable when player is dead
-if (viewable and (target.state == player_state_death or is_fading)) {
+if (viewable and (target.state == player_state_death or scene_is_changing())) {
 	viewable = false;
 }
 

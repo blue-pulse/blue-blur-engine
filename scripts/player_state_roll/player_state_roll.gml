@@ -3,7 +3,7 @@ function player_state_roll(phase) {
 		// Start state
 		case INIT:
 	        is_rolling = true;
-			audio_play_sfx(snd_player_roll, REPLACE);
+			mixer_play_effect(snd_player_roll, REPLACE);
 	        break;
 		
 		// Run state

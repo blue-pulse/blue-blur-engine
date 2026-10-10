@@ -32,7 +32,7 @@ with (owner) {
 			break;
 			
 		default:
-			audio_play_sfx(snd_monitor_error, REPLACE);
+			mixer_play_effect(snd_monitor_error, REPLACE);
 			break;
 	}
 }

@@ -1,5 +1,5 @@
 // Skip frame
-if (is_fading) {
+if (scene_is_changing()) {
 	exit;
 }
 
@@ -8,8 +8,8 @@ if (show_menu) {
 	// Early exit
 	if (input_pressed(vb_back)) {
 		layer_hspeed(flag_layer, 10);
-		audio_play_sfx(snd_menu_back, REPLACE);
-		room_fadeto(rm_title, 40, c_black, true);
+		mixer_play_effect(snd_menu_back, REPLACE);
+		scene_change(rm_title, 40, c_black, true);
 		exit;
 	}
 	
@@ -36,7 +36,7 @@ if (show_menu) {
 	// Select option
 	var delta = input_pressed(vb_down) - input_pressed(vb_up);
 	if (delta != 0) {
-		audio_play_sfx(snd_menu_select, REPLACE);
+		mixer_play_effect(snd_menu_select, REPLACE);
 		option_active = (delta + option_active + options_count) % options_count;
 	}
 	
@@ -54,7 +54,7 @@ if (show_menu) {
 				options[1].hspeed = 16;
 				options[2].hspeed = 12;
 				layer_hspeed(flag_layer, -20);
-				audio_play_sfx(snd_menu_confirm, REPLACE);
+				mixer_play_effect(snd_menu_confirm, REPLACE);
 				break;
 			
 			// Settings
@@ -63,7 +63,7 @@ if (show_menu) {
 				options[1].hspeed = 16;
 				options[2].hspeed = 20;
 				layer_hspeed(flag_layer, -20);
-				audio_play_sfx(snd_menu_confirm, REPLACE);
+				mixer_play_effect(snd_menu_confirm, REPLACE);
 				break;
 				
 			// Quit
@@ -72,7 +72,7 @@ if (show_menu) {
 				options[1].hspeed = 16;
 				options[2].hspeed = 20;
 				layer_hspeed(flag_layer, 9.5);
-				audio_play_sfx(snd_quit_game);
+				mixer_play_effect(snd_quit_game);
 				framework_stop();
 				break;
 		}
@@ -101,8 +101,8 @@ else {
 
 		if (input_pressed(vb_accept)) {
 			game_load_save(slot_active);
-			audio_play_sfx(snd_menu_confirm);
-			room_fadeto(next_room, 60, c_black, true);
+			mixer_play_effect(snd_menu_confirm);
+			scene_change(next_room, 60, c_black, true);
 			exit;
 		}
 	}

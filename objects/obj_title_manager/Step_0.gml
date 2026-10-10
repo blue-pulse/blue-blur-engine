@@ -14,7 +14,7 @@ if (state == 0) {
 }
 
 // Skip frame
-if (is_fading) {
+if (scene_is_changing()) {
 	exit;
 }
 
@@ -22,12 +22,12 @@ if (is_fading) {
 if (!allow_transition and input_pressed(vb_start)) {
 	allow_transition = true;
 	message_speed = 0.1;
-	audio_play_sfx(snd_menu_confirm);
+	mixer_play_effect(snd_menu_confirm);
 }
 
 // Transition to next room
 if (transition_x >= transition_goal) {
-	room_fadeto(rm_home, 40, c_black, true);
+	scene_change(rm_home, 40, c_black, true);
 } else if (allow_transition) {
 	transition_x += transition_speed;
 }

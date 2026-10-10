@@ -16,14 +16,14 @@ Blue Blur Engine is a 2D game engine that runs on GameMaker. A game is a set of 
 
 The game starts in the room `rm_init_game`. Its object `obj_init_manager` calls `framework_start()`, which resets the base state and, on the first run, creates the global data structures for user data, save data and settings, schedules the loading of the configuration, and prepares the screen and the audio. When the audio groups are loaded and the asynchronous queue is empty, the object fades to `rm_title`, or to `rm_home` if the game was already initialised. The room `rm_stop_game` ends the process.
 
-A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creation runs `stage_bootstrap()`, which resets the counters and the player's score and time, and `stage_init_data()`, which selects the setup function for the current room and starts its music. A room change goes through `stage_goto()` or `room_fadeto()`.
+A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creation runs `stage_bootstrap()`, which resets the counters and the player's score and time, and `stage_init_data()`, which selects the setup function for the current room and starts its music. A room change goes through `stage_goto()` or `scene_change()`.
 
 ## Codemap
 
 The folders below are the project's logical organisation. An element that has sprites or sounds splits its folder into `Logic`, `Sprites` and `Audio`, keeping only those that exist.
 
 - `01. Vendor` holds the third-party components, listed under Boundaries. Their internal layout is their authors' and is exempt from the structure rules.
-- `02. Core` holds the engine's services, in nine folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` wraps the input devices and their checks, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Animation` plays animations and their events, `08. Physics` answers collision queries by ray and by box, and `09. Tooling` holds the debugging tools and the editor icons.
+- `02. Core` holds the engine's services, in ten folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` wraps the input devices and their checks, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Animation` plays animations and their events, `08. Physics` answers collision queries by ray and by box, `09. Tooling` holds the debugging tools and the editor icons, and `10. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio and `02. Scenes` over EasyFade.
 - `03. World` holds the solid geometry the player stands on and the areas that act on the player: `01. Shapes`, `02. Platforms` and `03. Triggers`.
 - `04. Player` holds `01. Base`, the generic player split by responsibility into runtime, states, movement, collision, reactions, status and presentation, and `02. Sonic`, the first character.
 - `05. Camera` holds the camera object and its behaviour.
@@ -88,7 +88,7 @@ When a stage sets `allow_culling`, the stage manager runs a periodic alarm that 
 
 ### Input, audio and animation
 
-Input is reached through the functions in `02. Core/05. Input`. Audio uses EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. Animation is played through the functions in `02. Core/07. Animation`, over AESnips.
+Input is reached through the functions in `02. Core/05. Input`. Audio is played through the `mixer_*` functions, over EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. A room change with a fade goes through the `scene_*` functions, over EasyFade. Animation is played through the functions in `02. Core/07. Animation`, over AESnips.
 
 ## Glossary
 

@@ -16,9 +16,9 @@
 #macro ENCRYPT true
 
 // Packages
-#macro RAW ESAU_MODES.OVERLAP
-#macro SKIP ESAU_MODES.SINGLE
-#macro REPLACE ESAU_MODES.SWAP
+#macro RAW mixer_modes.overlap
+#macro SKIP mixer_modes.single
+#macro REPLACE mixer_modes.swap
 #macro SETTINGS "settings.dat"
 #macro USERDATA "userdata.dat"
 #macro SAVEDATA "savedata.dat"

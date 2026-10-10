@@ -3,7 +3,7 @@ function enemy_invoke_explosion() {
 	gml_pragma("forceinline");
 	
 	// FX
-	audio_play_sfx(sfx_explosion);
+	mixer_play_effect(sfx_explosion);
 	part_particles_create(Particles, x, y, vfx_explosion, 1);
 	
 	// Metal scraps

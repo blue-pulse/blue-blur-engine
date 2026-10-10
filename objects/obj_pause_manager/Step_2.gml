@@ -17,7 +17,7 @@ if (!in_process) {
 	
 	// SFX
 	audio_pause_all();
-	audio_play_sfx(snd_pause_start, REPLACE);
+	mixer_play_effect(snd_pause_start, REPLACE);
 		
 	// Save level
 	room_persistent = true;
@@ -36,7 +36,7 @@ else {
 	// Select option
 	var delta = input_pressed(vb_down) - input_pressed(vb_up);
 	if (delta != 0) {
-		audio_play_sfx(snd_menu_select, REPLACE);
+		mixer_play_effect(snd_menu_select, REPLACE);
 		option_active = (delta + option_active + options_count) % options_count;
 	}
 
@@ -44,7 +44,7 @@ else {
 	if (input_pressed(vb_accept)) {
 		if (options[option_active].state == 3) {
 			// Option is locked
-			audio_play_sfx(snd_menu_deny, REPLACE);
+			mixer_play_effect(snd_menu_deny, REPLACE);
 		} else {
 			pause_resume();
 		}

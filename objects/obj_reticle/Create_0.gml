@@ -14,4 +14,4 @@ circle_scale = 5;
 scale_limit = 0.8;
 
 // Sound
-audio_play_sfx(snd_player_reticle, REPLACE);
+mixer_play_effect(snd_player_reticle, REPLACE);

@@ -9,7 +9,7 @@ if (global.time > 35999) {
 }
 
 // Create debug overlay
-if (debug_mode and !is_fading and input_pressed(vb_select)) {
+if (debug_mode and !scene_is_changing() and input_pressed(vb_select)) {
 	if (!instance_exists(obj_debug_manager)) {
 		gui_create(obj_debug_manager);
 	} else {

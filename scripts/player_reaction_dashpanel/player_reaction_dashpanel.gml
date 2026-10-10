@@ -12,7 +12,7 @@ function player_reaction_dashpanel(object) {
 	
 	// FX
 	screen_shake(7);
-	audio_play_sfx(snd_dashpanel, REPLACE);
+	mixer_play_effect(snd_dashpanel, REPLACE);
 
 	// Launch player
 	dir = object.dir;

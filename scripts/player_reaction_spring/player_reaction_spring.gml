@@ -21,7 +21,7 @@ function player_reaction_spring(object) {
 	
 	// FX
 	screen_shake(7);
-	audio_play_sfx(snd_spring, REPLACE);
+	mixer_play_effect(snd_spring, REPLACE);
 	
 	// Fix position
 	air_lock = 16;

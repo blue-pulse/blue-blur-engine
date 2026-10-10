@@ -1,5 +1,5 @@
 // Early exit
-if (!usable or is_fading or !instance_exists(player)) {
+if (!usable or scene_is_changing() or !instance_exists(player)) {
 	exit;
 }
 
@@ -8,7 +8,7 @@ if (active) {
 	// Set checkpoint data
 	if (allow_transition) {
 		global.checkpoint.set_hub(x, y);
-		room_fadeto(stage, 60, c_black, true);
+		scene_change(stage, 60, c_black, true);
 	}
 	
 	// Lock player

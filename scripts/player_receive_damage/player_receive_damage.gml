@@ -17,12 +17,12 @@ function player_receive_damage(object, instant_kill=false) {
 		switch (object.object_index) {
 			// Spikes sound
 			case obj_spikes:
-				audio_play_sfx(snd_player_stabbed, REPLACE);
+				mixer_play_effect(snd_player_stabbed, REPLACE);
 				break;
 			
 			// Default hurt sound
 			default:
-				audio_play_sfx(snd_player_hurt, REPLACE);
+				mixer_play_effect(snd_player_hurt, REPLACE);
 				break;
 		}
 	}

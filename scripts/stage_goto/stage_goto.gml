@@ -7,5 +7,5 @@ function stage_goto(_room, _duration=30) {
 	global.score = 0;
 	
 	// Restart room
-	room_fadeto(_room, _duration, c_black, true);
+	scene_change(_room, _duration, c_black, true);
 }

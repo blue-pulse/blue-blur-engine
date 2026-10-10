@@ -3,5 +3,5 @@ function player_sound_land() {
 	gml_pragma("forceinline");
 	
 	// Return value
-	return audio_play_sfx(snd_player_skid);
+	return mixer_play_effect(snd_player_skid);
 }

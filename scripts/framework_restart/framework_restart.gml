@@ -3,7 +3,7 @@ function framework_restart() {
 	gml_pragma("forceinline");
 	
 	// Early exit
-	if (is_fading) {
+	if (scene_is_changing()) {
 		exit;
 	}
 	
@@ -13,5 +13,5 @@ function framework_restart() {
 
 	// Fade out
 	print("[INFO] Exiting current room...");
-	room_fadeto(rm_init_game, 30, c_white, true);
+	scene_change(rm_init_game, 30, c_white, true);
 }

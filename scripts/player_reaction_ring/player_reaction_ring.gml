@@ -14,7 +14,7 @@ function player_reaction_ring(object) {
 	}
 	
 	// FX
-	audio_play_sfx(sound_fx, REPLACE);
+	mixer_play_effect(sound_fx, REPLACE);
 	part_particles_create(Particles, object.x, object.y, object.vfx_sparkle, 1);
 	
 	// Collect ring

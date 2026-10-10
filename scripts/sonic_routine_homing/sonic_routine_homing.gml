@@ -31,7 +31,7 @@ function sonic_routine_homing() {
 	// Perform a homing action
 	if (allow_jump_action and input_pressed(vb_a)) {
 		// FX
-		audio_play_sfx(data_dash.sfx, REPLACE);
+		mixer_play_effect(data_dash.sfx, REPLACE);
 		part_particles_create(Particles, x, y, vfx_homing_burst, 1);
 		player_animation_jump();
 		player_set_trail_span(80);

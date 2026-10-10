@@ -4,5 +4,5 @@ function monitor_grant_stamina() {
 	
 	// Give reward
 	player_add_stamina(100);
-	audio_play_sfx(snd_player_stamina_orb);
+	mixer_play_effect(snd_player_stamina_orb);
 }

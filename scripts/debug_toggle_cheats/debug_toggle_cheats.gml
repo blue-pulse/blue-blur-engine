@@ -48,7 +48,7 @@ function debug_toggle_cheats() {
 	
 	// Restart stage
 	if (keyboard_check_pressed(vk_numpad2)) {
-		room_fadeto(room);
+		scene_change(room);
 	}
 	
 	// Focus random object

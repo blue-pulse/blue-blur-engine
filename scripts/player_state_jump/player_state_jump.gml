@@ -17,8 +17,8 @@ function player_state_jump(phase) {
 			
 			// FX
 			player_animation_jump();
-		    audio_play_sfx(snd_player_jump, REPLACE);
-		    audio_play_sfx(snd_player_wind, REPLACE);
+		    mixer_play_effect(snd_player_jump, REPLACE);
+		    mixer_play_effect(snd_player_wind, REPLACE);
 	        break;
 		
 		// Run state

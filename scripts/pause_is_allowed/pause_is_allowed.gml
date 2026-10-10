@@ -14,6 +14,6 @@ function pause_is_allowed() {
 		instance_exists(Protagonist) and Protagonist.state != player_state_death and
 		
 		// No fading in process
-		!is_fading and hud_is_visible()
+		!scene_is_changing() and hud_is_visible()
 	);
 }

@@ -9,4 +9,4 @@ owner ??= noone;
 impacted = false;
 
 // SFX
-audio_play_sfx(snd_bullet_shoot, REPLACE);
+mixer_play_effect(snd_bullet_shoot, REPLACE);

@@ -4,5 +4,5 @@ function monitor_grant_10_rings() {
 	
 	// Give reward
 	player_add_rings(10);
-	audio_play_sfx(snd_ring_super);
+	mixer_play_effect(snd_ring_super);
 }

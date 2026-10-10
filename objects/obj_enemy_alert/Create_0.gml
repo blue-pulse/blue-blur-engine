@@ -8,4 +8,4 @@ ver_offset ??= 0;
 depth = depths.gui;
 sprite_index = spr_enemy_alert;
 timer = 30;
-sfx_alert = audio_play_sfx(snd_enemy_alert, REPLACE);
+sfx_alert = mixer_play_effect(snd_enemy_alert, REPLACE);

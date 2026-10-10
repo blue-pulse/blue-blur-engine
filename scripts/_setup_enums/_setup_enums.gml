@@ -65,3 +65,10 @@ enum items {
 	life = 4,
 	stamina = 5,
 }
+
+// Mixer modes
+enum mixer_modes {
+	overlap,
+	single,
+	swap,
+}
