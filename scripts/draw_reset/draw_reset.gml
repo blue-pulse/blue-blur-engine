@@ -1,3 +1,4 @@
+/// Resets the opacity, colour, font, alignment and blend mode of drawing to their defaults.
 function draw_reset() {
 	draw_set_alpha(1);
 	draw_set_color(c_white);

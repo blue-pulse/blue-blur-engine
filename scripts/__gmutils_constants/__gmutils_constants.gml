@@ -1,0 +1,2 @@
+#macro GMUTILS_VERSION "2.1.0"
+#macro GMUTILS_DATE "2026-10-10"

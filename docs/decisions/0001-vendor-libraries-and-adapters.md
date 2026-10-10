@@ -42,7 +42,7 @@ There are two layers, each with its own convention.
 - It is named `domain_action` as `C003` asks, with the domain taken from what the game does, such as `mixer_` for audio and `scene_` for changing room.
 - It offers one function for each use the game really has, and not one for each function of the library.
 - No type, enum or macro of the library appears in its arguments or its results. Core defines its own and the adapter translates.
-- Its settings come from `02. Configuration`, and it passes them to the library when the game starts.
+- Its settings come from `02. Configuration`, and it passes them to the library when the game starts or in each call.
 
 **The exception.** GMUtils is a set of pure functions such as `print`, `fmod`, `map` and `angle_wrap`. Nothing in it can be replaced by a better service, so an adapter over it would be a wrapper with one implementation. Game code calls its functions directly and they keep their plain names, as if they were native. The risk accepted is that a future GameMaker version adds a function with one of those names.
 

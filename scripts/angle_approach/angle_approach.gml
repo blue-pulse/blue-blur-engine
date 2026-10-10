@@ -1,7 +1,12 @@
-function angle_approach(src, dest, increment) {  
-    var diff = fmod(dest - src + 540, 360) - 180;
-    if (diff > 0) {
-		return fmod(src + min(diff, increment), 360);
+/// Moves an angle towards another one along the shortest arc, by at most the given increment.
+/// Returns the new angle in degrees.
+/// @param {Real} source Angle to move from, in degrees
+/// @param {Real} target Angle to move towards, in degrees
+/// @param {Real} increment Largest step to take, in degrees
+function angle_approach(_source, _target, _increment) {
+	var _diff = fmod(_target - _source + 540, 360) - 180;
+	if (_diff > 0) {
+		return fmod(_source + min(_diff, _increment), 360);
 	}
-	return fmod(360 - fmod(360 - (src + max(-increment, diff)), 360), 360);
+	return fmod(360 - fmod(360 - (_source + max(-_increment, _diff)), 360), 360);
 }

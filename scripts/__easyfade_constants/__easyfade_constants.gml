@@ -1,0 +1,2 @@
+#macro EASYFADE_VERSION "2.0.0"
+#macro EASYFADE_DATE "2026-10-10"

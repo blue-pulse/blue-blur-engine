@@ -53,9 +53,9 @@ Third-party components live in the `01. Vendor` folder and are never edited. Eac
 | --- | --- | --- | --- | --- |
 | AESnips | 0.1.4 | Animation | MIT | William Jones |
 | DB | 2.2.0 | Structured data with JSON serialization | MIT | Julian Adams |
-| EasyAudio | 1.1.0 | Audio groups and playback | MIT | Blue Pulse |
-| EasyFade | 1.2.4 | Fades and room transitions | MIT | Blue Pulse |
-| GMUtils | 2.0.5 | General utilities, such as angles and rounding | MIT | Blue Pulse |
+| EasyAudio | 2.0.0 | Audio groups and playback | MIT | Blue Pulse |
+| EasyFade | 2.0.0 | Fades and room transitions | MIT | Blue Pulse |
+| GMUtils | 2.1.0 | General utilities, such as angles and rounding | MIT | Blue Pulse |
 | Input | 10.3.0 | Controls | MIT | Julian Adams |
 | SparkleStore | 1.4.2 | Save files | MIT | Julian Adams |
 | Sphinx | 1.0.0 | Encryption | MIT | Julian Adams |

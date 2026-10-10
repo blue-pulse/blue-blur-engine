@@ -3,5 +3,5 @@ function scene_is_changing() {
 	gml_pragma("forceinline");
 
 	// Return boolean
-	return is_fading != noone;
+	return easyfade_is_active();
 }

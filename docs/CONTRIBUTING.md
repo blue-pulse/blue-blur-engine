@@ -99,7 +99,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `C011` Never add features, abstractions or future-proofing nobody asked for, including a flag for an absent feature, which is the YAGNI principle of Extreme Programming.
 - `C012` Never refactor unrelated code while you fix a bug, and never optimise prematurely, as Knuth warns in "Structured Programming with go to Statements".
 - `C013` Never add error handling for a case that cannot happen.
-- `C014` Never write a decorative comment such as `// ===== Variables =====`, a comment over more than one line, two comments stacked together, a docstring or block comment, or a comment that explains a whole file, so a comment is always one idea on one line.
+- `C014` Never write a decorative comment such as `// ===== Variables =====`, a comment over more than one line, two comments stacked together, a docstring or block comment, or a comment that explains a whole file, so a comment is always one idea on one line, and the only exception is the JSDoc of the public functions of a library in `Vendor`, which [0001](./decisions/0001-vendor-libraries-and-adapters.md) requires.
 - `C015` Never use a semicolon in comment text, so one comment holds one idea.
 
 ### Structure
