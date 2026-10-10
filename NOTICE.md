@@ -13,7 +13,6 @@ Blue Blur Engine is licensed under the Apache License 2.0 in [LICENSE](./LICENSE
 | EasyFade | 2.0.0 | [MIT](https://opensource.org/license/mit) |
 | GMUtils | 2.1.0 | [MIT](https://opensource.org/license/mit) |
 | [Input](https://codeberg.org/offalynne/Input) | 10.3.0 | [MIT](https://opensource.org/license/mit) AND [BSD-3-Clause](https://opensource.org/license/bsd-3-clause) |
-| [SDL_GameControllerDB](https://github.com/mdqinc/SDL_GameControllerDB), data file | Not checked | [Zlib](https://opensource.org/license/zlib) |
 | [SparkleStore](https://github.com/JujuAdams/SparkleStore) | 1.4.2 | [MIT](https://opensource.org/license/mit) |
 | [Sphinx](https://github.com/JujuAdams/Sphinx) | 1.0.0 | [MIT](https://opensource.org/license/mit) |
 
