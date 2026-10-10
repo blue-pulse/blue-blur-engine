@@ -68,6 +68,10 @@ The engine's services live in `02. Core`. The other folders define one game: the
 
 The folders of the project's logical organisation are independent of the disk, where the resources are grouped by type.
 
+### The project and its tools
+
+The `tools/` folder holds the Python tools that check and run the project with Igor. It sits outside the logical organisation and is not part of the game. `gm.py` is its single entry point, and its commands are `doctor` and `run`. The `.sandbox/` folder is their temporary space, and git ignores it. [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states how the game is run, and the guides to the external tools and resources the project uses are in [reference/](./reference/).
+
 ## Cross-cutting concerns
 
 ### The frame and the player's state machine
@@ -105,3 +109,6 @@ Input is reached through the functions in `02. Core/05. Input`. Audio is played 
 - **Layer:** an ordered group inside a room, such as a layer of instances.
 - **VM:** the runtime that interprets compiled bytecode, used while testing.
 - **YYC:** the compiler that turns GML into native code through C++, used for the executables that are shared.
+- **Runtime:** the versioned package of GameMaker that holds the compiler, the runner and Igor.
+- **Igor:** the command line tool inside each runtime that compiles, runs and packages a project.
+- **Prefab:** a ready-made set of assets that GameMaker downloads and that a project refers to by package.

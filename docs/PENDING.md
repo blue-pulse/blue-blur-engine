@@ -47,3 +47,19 @@ Problem. The wrappers around Input and AESnips, such as `input_pressed` and `ani
 Shape. Give each library an adapter folder in `02. Core/10. Adapters`, as [0001](./decisions/0001-vendor-libraries-and-adapters.md) states. Define the verbs in Core and translate them inside the adapter. Offer one function for each use the game has. Then check that a search for `Input` and `snip_` outside the adapter and `Vendor` finds nothing.
 
 Done when no file outside the adapters and `Vendor` mentions a symbol of either library.
+
+## 5. Verify the tools on macOS and Linux
+
+Problem. The tools in `tools/` were only run on Windows. The folders they search on macOS and Linux, and the Igor program they start there, come from reading the source of another tool and not from a run. The manual runs Igor on macOS as `dotnet Igor.dll`, while that source starts a file named `Igor`, so one of the two is wrong.
+
+Shape. Run `python tools/gm.py doctor` and `run` on each system, fix the folders and the command that differ, and mark the result as observed in [reference/igor.md](./reference/igor.md). Then drop the warning the tools print outside Windows.
+
+Done when `doctor` and `run` pass on macOS and Linux and the Igor guide marks those rows as observed.
+
+## 6. Run the project in continuous integration
+
+Problem. Nothing checks that the project still compiles and starts after a change, and the check depends on somebody running it.
+
+Shape. A GitHub Actions workflow that installs the runtime, creates the licence file from an access key kept as a secret, makes the prefabs available on a clean runner, and runs the project. Three points are open, which are how the runner gets the prefabs, whether the game can start there without a screen, and whether Igor passes the exit code of the game on. The two community actions used by other studios, `bscotch/igor-setup` and `bscotch/igor-build`, are the first thing to read. This needs a decision record before it is built.
+
+Done when a workflow runs on every push and fails when the project does not compile.

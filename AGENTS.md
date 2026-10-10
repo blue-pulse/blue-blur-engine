@@ -17,8 +17,10 @@ This directory is your whole sandbox. Never leave it, not to look for a file you
 - The code is in `scripts/<name>/<name>.gml`, one function per script, and in `objects/<name>/<Event>_<n>.gml`, such as `Create_0`, `Step_1` and `Alarm_0`.
 - On disk, resources are grouped by type. The folder a resource belongs to in the project is `parent.path` in its `.yy` file. Read it before you edit, to tell third-party code (`folders/01. Vendor/...`) from the project's own.
 - A search over `scripts/` returns a lot of third-party code, so filter by that folder.
+- `tools/` holds the Python tools that check and run the project with Igor, and `.sandbox/` is their temporary folder.
+- The guides to the external tools and resources the project uses are in `docs/reference/`.
 
 ## Checks
 
-- The repository has no build or test commands. Behaviour is checked by running the game in GameMaker, which you usually cannot do. Report what you could not run (`A006`).
+- Run the game with `python tools/gm.py run`, and when it fails read what `python tools/gm.py doctor` prints before anything else (`A013`). This starts the game but cannot judge it, so report what you could not check (`A006`). The repository has no test commands.
 - After a change, run `git status` and `git diff`, and look at every `.yy` file that changed, because the IDE rewrites them (`G002`).

@@ -37,6 +37,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `C009` Mark a short script that runs often with `gml_pragma("forceinline")`, which makes a YYC build compile it inline as the GameMaker manual describes, and keep it to short scripts because inlining also grows the executable and the compile time.
 - `C016` Use the plain word in code, comments and documents, such as `use` over `utilize`, so a newcomer understands on first read, as the Google developer documentation style guide asks for clear and straightforward language.
 - `C017` Make a message that reports a failure say why it failed and what would change it, in the words of somebody who has not read the code, so a log line saves them opening a file.
+- `C018` Write the tools in `tools/` in Python with only the standard library and declare the minimum Python version in `tools/pyproject.toml`, so nobody installs anything to run the game and the version has one owner, as PEP 621 gives `requires-python` for that purpose.
 
 ### Structure
 
@@ -79,6 +80,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `D003` Give each fact one owner and link to it instead of restating it.
 - `D004` Write a decision record only when a reasonable newcomer would be tempted to change the choice and changing it would do harm, as [0000](./decisions/0000-record-architecture-decisions.md) states.
 - `D008` Name the industry standard or practice a rule rests on, with its author or issuer, and say when a rule departs from one, so somebody who disagrees can check the reasoning, as [PRINCIPLES.md](./PRINCIPLES.md) asks. Say plainly when you could not read the source.
+- `D009` Write each document in `reference/` about its subject alone, with no mention of this project, its tools or any machine, and with no link to another document, so it can be copied into another project unchanged.
 
 ### Agents
 
@@ -90,6 +92,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `A006` Report in the conversation what you did and what you verified, and say plainly what you could not verify, including anything that needs the game to run.
 - `A007` Keep to the scope of the request, and mention what you notice elsewhere without changing it.
 - `A012` When the user asks for a commit, give it a simple and clear title and a one line description of what changed and why, short enough to read on one line of a full screen window, and use no colon, semicolon, dash or complex word in either, so the history reads easily.
+- `A013` Run the game with `python tools/gm.py run`, and when it fails read what `python tools/gm.py doctor` prints before anything else, so nobody rebuilds the Igor command or reads the Igor guide again, as [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states.
 
 ## Never
 

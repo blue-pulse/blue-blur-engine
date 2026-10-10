@@ -19,6 +19,30 @@ It's important to note that *Sonic The Hedgehog* and all its content, including 
 
 - GameMaker LTS 2026
 - Minimum runtime: 2026.0.0.23
+- Python, only for the tools in `tools/`, and its minimum version is in `tools/pyproject.toml`
+
+## Run the project
+
+Sign in once in the GameMaker IDE, then run these commands from the root of the repository.
+
+```
+python tools/gm.py doctor
+python tools/gm.py run
+```
+
+`doctor` shows the runtime, the licence folder and the prefabs folder it found, and says what to do when one is missing. `run` compiles the project with Igor and starts the game, and it ends when you close the game window. Nothing needs configuring when GameMaker is installed in its usual place. When it is not, pass `--runtime-dir`, `--user-dir` or `--prefabs-dir`, or set `GM_RUNTIME_DIR`, `GM_USER_DIR` or `GM_PREFABS_DIR`. The tools keep their temporary files in `.sandbox/`, which git ignores. Only Windows has been verified.
+
+[Decision 0002](./docs/decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states why the game is run this way.
+
+### With an MCP server
+
+[GMS MCP](./docs/reference/gms-mcp.md) is an optional server that lets an AI assistant read and edit the project. It is never required.
+
+| Task | Command | MCP tool |
+| --- | --- | --- |
+| Check the setup | `python tools/gm.py doctor` | `gm_mcp_health` |
+| Run the game | `python tools/gm.py run` | `gm_run`, which did not start this project in its tests, so use the command |
+| Read assets and references | Read the files | `gm_list_assets`, `gm_read_asset`, `gm_find_references` |
 
 ## Project organisation
 
@@ -45,6 +69,7 @@ We recommend reading the following documents in the order listed.
 - [docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md): the rules every contributor follows.
 - [docs/decisions/](./docs/decisions/): the records of choices that look unusual but are deliberate.
 - [docs/PENDING.md](./docs/PENDING.md): the backlog of known work.
+- [docs/reference/](./docs/reference/): guides to the external tools and resources the project uses.
 
 ## Credits
 

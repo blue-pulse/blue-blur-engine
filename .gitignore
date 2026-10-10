@@ -50,6 +50,7 @@ Temporary Items
 .apdisk
  
 # GameMaker temporary files
+output/
 *.old
 
 # GameMaker packaged project exports
@@ -57,7 +58,17 @@ Temporary Items
 *.gmz
 
 # AI coding agents local files
+*.local.md
+.aider*
+.claude-plugin/
 .claude/
+.codex/
+.cursor/
+.gemini/
+.gms_mcp/
+.mcp.json
+.openai/
+.windsurf/
 
 # Editors
 .vscode/
@@ -65,6 +76,8 @@ Temporary Items
 .vs/
 
 # Logs and temporary files
+.sandbox/
+__pycache__/
 *.log
 *.tmp
 *.bak

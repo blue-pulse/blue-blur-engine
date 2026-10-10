@@ -1,0 +1,8 @@
+[project]
+name = "blue-blur-engine-tools"
+version = "0.1.0"
+description = "Command line tools to check and run Blue Blur Engine with Igor"
+requires-python = ">=3.11"
+
+[tool.ruff.format]
+indent-style = "tab"
