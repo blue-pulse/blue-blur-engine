@@ -15,7 +15,7 @@ This directory is your whole sandbox. Never leave it, not to look for a file you
 ## Navigating the repository
 
 - The code is in `scripts/<name>/<name>.gml`, one function per script, and in `objects/<name>/<Event>_<n>.gml`, such as `Create_0`, `Step_1` and `Alarm_0`.
-- On disk, resources are grouped by type. The folder a resource belongs to in the project is `parent.path` in its `.yy` file. Read it before you edit, to tell third-party code (`folders/1. Vendor/...`) from the project's own.
+- On disk, resources are grouped by type. The folder a resource belongs to in the project is `parent.path` in its `.yy` file. Read it before you edit, to tell third-party code (`folders/01. Vendor/...`) from the project's own.
 - A search over `scripts/` returns a lot of third-party code, so filter by that folder.
 
 ## Checks

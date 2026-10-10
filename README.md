@@ -26,10 +26,15 @@ The folders below are the project's logical organisation, the tree the GameMaker
 
 | Folder | What it holds |
 | --- | --- |
-| `1. Vendor` | Third-party components, which are never edited. |
-| `2. Core` | The engine's services. |
-
-The remaining top-level folders (`2. Framework`, `3. Visuals`, `3. World`, `4. Player` to `8. Usable`) are the earlier layout. They are being migrated one domain at a time, as [docs/PENDING.md](./docs/PENDING.md) describes.
+| `01. Vendor` | Third-party components, which are never edited. |
+| `02. Core` | The engine's services. |
+| `03. World` | Solid geometry and the areas that act on the player. |
+| `04. Player` | The generic player and its characters. |
+| `05. Camera` | The camera. |
+| `06. Interactables` | What the player touches, such as rings and springs. |
+| `07. Enemies` | The enemies and their shared parent. |
+| `08. Scenes` | The rooms and the flow between them. |
+| `09. UI` | The HUD, overlays, menus and fonts. |
 
 ## Where to go next
 
@@ -52,4 +57,4 @@ This project is a labor of love --built by fans, for fans-- and we're grateful t
 
 ## License
 
-This project is licensed under the Apache License 2.0 - please refer to the [LICENSE](LICENSE) file for more details. The third-party components in `1. Vendor` keep their own licences, which are in [`datafiles/licenses/`](./datafiles/licenses/).
+This project is licensed under the Apache License 2.0 - please refer to the [LICENSE](LICENSE) file for more details. The third-party components in `01. Vendor` keep their own licences, which are in [`datafiles/licenses/`](./datafiles/licenses/).

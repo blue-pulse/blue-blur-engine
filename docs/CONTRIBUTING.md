@@ -51,6 +51,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `S009` Name a resource for clarity over brevity, because the name is its only context in code and autocomplete makes length cheap.
 - `S010` Use a leading underscore only to mark something private or internal, as PEP 8 does.
 - `S011` Edit the GameMaker project files, `blue-blur-engine.yyp`, each `.yy` and `blue-blur-engine.resource_order`, as little as possible, keep the exact line format the IDE writes, and reopen the project to verify, because the IDE is fragile with them.
+- `S014` Split the folder of an element that has sprites or sounds into `Logic`, `Sprites` and `Audio`, in that order and only those that exist, where `Logic` holds objects, scripts and rooms, `Sprites` holds sprites, tilesets and fonts, and `Audio` holds sounds, so every element reads the same way and a new one copies a sibling. This is a local convention that applies `S007` and `S012`, and no external standard names it.
 
 ### External dependencies
 

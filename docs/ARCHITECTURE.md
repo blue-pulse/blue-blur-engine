@@ -20,24 +20,17 @@ A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creatio
 
 ## Codemap
 
-The folders below are the project's logical organisation.
+The folders below are the project's logical organisation. An element that has sprites or sounds splits its folder into `Logic`, `Sprites` and `Audio`, keeping only those that exist.
 
-### Third-party and core
-
-- `1. Vendor` holds the third-party components, listed under Boundaries.
-- `2. Core` holds the engine's services, in nine folders: `1. Bootstrap` starts and stops the game and holds its global state, `2. Configuration` holds enums, macros, globals, fonts and particles, `3. Persistence` saves and loads user data, save data and settings, `4. Tasks` is the task queue, `5. Input` wraps the input devices and their checks, `6. Display` handles the screen and the GPU, `7. Animation` plays animations and their events, `8. Physics` answers collision queries by ray and by box, and `9. Tooling` holds the debugging tools.
-
-### Earlier layout
-
-These folders are being migrated one domain at a time, as [PENDING.md](./PENDING.md) describes, so treat their layout as provisional.
-
-- `2. Framework` has the subfolders Assets, Managers, Scripts and Setup.
-- `3. Visuals` has Assets, Camera and GUI, and `3. World` has no subfolders.
-- `4. Player` has Player and Sonic.
-- `5. Enemies` has Effects, Objects, Parents, Scripts, Sounds and Sprites.
-- `6. Items` has Checkpoints, Dashpads, Monitors, Obstacles, Rings and Springs.
-- `7. Stages` has Assets, Managers, Parents, Rooms, Scripts and Setup.
-- `8. Usable` has Spawner, Terrain and Triggers.
+- `01. Vendor` holds the third-party components, listed under Boundaries. Their internal layout is their authors' and is exempt from the structure rules.
+- `02. Core` holds the engine's services, in nine folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` wraps the input devices and their checks, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Animation` plays animations and their events, `08. Physics` answers collision queries by ray and by box, and `09. Tooling` holds the debugging tools and the editor icons.
+- `03. World` holds the solid geometry the player stands on and the areas that act on the player: `01. Shapes`, `02. Platforms` and `03. Triggers`.
+- `04. Player` holds `01. Base`, the generic player split by responsibility into runtime, states, movement, collision, reactions, status and presentation, and `02. Sonic`, the first character.
+- `05. Camera` holds the camera object and its behaviour.
+- `06. Interactables` holds what the player touches, with one folder each for rings, springs, monitors, checkpoints, dash panels and spikes.
+- `07. Enemies` holds `01. Base`, the shared parent and helpers, and one folder per enemy.
+- `08. Scenes` holds `01. Common`, the flow and setup shared by rooms, and one folder per scene: title, home, pause, hub world and test zone.
+- `09. UI` holds the HUD, the overlays, the menus and the fonts.
 
 ### Main objects
 
@@ -54,7 +47,7 @@ These folders are being migrated one domain at a time, as [PENDING.md](./PENDING
 
 ### Our code and third-party code
 
-Third-party components live in the `1. Vendor` folder and are never edited. Each keeps its licence in `datafiles/licenses/`.
+Third-party components live in the `01. Vendor` folder and are never edited. Each keeps its licence in `datafiles/licenses/`.
 
 | Component | Version | Responsibility | Licence | Copyright |
 | --- | --- | --- | --- | --- |
@@ -69,7 +62,7 @@ Third-party components live in the `1. Vendor` folder and are never edited. Each
 
 ### The engine and a game
 
-The code is divided between the engine's services, such as input, persistence, display and the stage flow, and the parts that define one game: the movement and collision of the player, its character, and the content of the stages, such as rings, enemies and obstacles. The project is built for one genre today, so this boundary is where the code is divided and not an extension point.
+The engine's services live in `02. Core`. The other folders define one game: the movement and collision of the player, its character, the content of the stages, such as rings, enemies and obstacles, and the scenes and interface that put them together. The project is built for one genre today, so this boundary is where the code is divided and not an extension point.
 
 ### The logical organisation and the disk
 
@@ -83,7 +76,7 @@ Each frame, an instance of `obj_player` updates its timers with `player_update_p
 
 ### Collision
 
-The player resolves collisions with `player_collision_floor`, `player_collision_wall`, `player_collision_ceiling` and `player_collision_resource`. The floor, wall and ceiling checks use the queries in `2. Core/8. Physics`.
+The player resolves collisions with `player_collision_floor`, `player_collision_wall`, `player_collision_ceiling` and `player_collision_resource`. The floor, wall and ceiling checks use the queries in `02. Core/08. Physics`.
 
 ### Culling
 
@@ -95,13 +88,14 @@ When a stage sets `allow_culling`, the stage manager runs a periodic alarm that 
 
 ### Input, audio and animation
 
-Input is reached through the functions in `2. Core/5. Input`. Audio uses EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. Animation is played through the functions in `2. Core/7. Animation`, over AESnips.
+Input is reached through the functions in `02. Core/05. Input`. Audio uses EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. Animation is played through the functions in `02. Core/07. Animation`, over AESnips.
 
 ## Glossary
 
 - **Room:** a scene or level. The engine loads and runs one at a time.
 - **Object:** a class of things placed in a room, defined by its events.
 - **Instance:** one live copy of an object, with its own state.
+- **Entity:** an object placed in a room that the engine culls and the player interacts with, which here means any child of `obj_resource`.
 - **Event:** a handler that runs on a condition, such as `Create`, `Step`, `Alarm` or `Draw`.
 - **Step:** one tick of the main loop, which runs once per frame.
 - **Alarm:** a countdown timer in an instance that triggers an event when it reaches zero.

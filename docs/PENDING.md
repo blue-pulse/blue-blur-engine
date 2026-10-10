@@ -12,8 +12,4 @@ Update it when an item is found, changes shape, or closes.
 
 ## 1. Finish the folder reorganization
 
-Problem. The project follows the structure rules in [CONTRIBUTING.md](./CONTRIBUTING.md) only in part. The `Vendor` and `Core` folders follow them. The other domains still use the legacy numbered folders: the leftovers of `2. Framework`, `3. Visuals`, `4. Player`, `5. Enemies`, `6. Items`, `7. Stages` and `8. Usable`. Until they move, the layout of those domains is provisional.
-
-Shape. Migrate one domain at a time, so that each step leaves the project opening and running.
-
-Done when no legacy numbered folder remains and every folder satisfies the `S` rules.
+Closed. Every domain follows the structure rules in [CONTRIBUTING.md](./CONTRIBUTING.md), apart from `Vendor`, which keeps its authors' layout.
