@@ -95,6 +95,18 @@ else {
 		}
 	}
 	
+	// Select slot
+	if (option_active == 0) {
+		home_select_play();
+
+		if (input_pressed(vb_accept)) {
+			game_load_save(slot_active);
+			audio_play_sfx(snd_menu_confirm);
+			room_fadeto(next_room, 60, c_black, true);
+			exit;
+		}
+	}
+
 	// Show main menu
 	if (input_pressed(vb_back)) {
 		// Variables

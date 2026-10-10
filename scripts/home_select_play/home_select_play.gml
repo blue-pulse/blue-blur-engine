@@ -8,9 +8,4 @@ function home_select_play() {
 		audio_play_sfx(snd_menu_select, REPLACE);
 		slot_active = ((delta + slot_active + MAX_SLOTS - 1) % MAX_SLOTS) + 1
 	}
-	
-	// Load save
-	game_load_save(slot_active);
-	audio_play_sfx(snd_menu_confirm);
-	room_fadeto(next_room, 60, c_black, true);
 }
