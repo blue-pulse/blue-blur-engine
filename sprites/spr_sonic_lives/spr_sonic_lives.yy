@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"05. Status",
-    "path":"folders/04. Player/02. Sonic/02. Sprites/05. Status.yy",
+    "name":"06. Other",
+    "path":"folders/04. Player/02. Sonic/02. Sprites/06. Other.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

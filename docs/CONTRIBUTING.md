@@ -42,7 +42,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 
 - `S001` Group by domain and not by resource type, so everything about one element lives together. GameMaker already gives the by-type view on disk and in the IDE filters, so the virtual folders give the other view. This is the structure that shows a project's purpose in Martin's "Screaming Architecture", and Godot's project organization guide advises grouping files by feature.
 - `S002` Order top-level folders by dependency, so a layer depends only on those above it, and what stops the game from starting comes first, which is the Dependency Rule of Martin's "The Clean Architecture".
-- `S003` Prefix folders with `N. Name` to make the intended order explicit in the IDE, and keep to 9 per level so lexical order matches numeric order.
+- `S003` Prefix folders with `NN. Name`, a two-digit number, to make the intended order explicit in the IDE, so lexical order matches numeric order and a level can grow past 9 folders without renaming the rest.
 - `S004` Name folders with standard software vocabulary, such as Bootstrap, Persistence or Configuration, and keep a domain noun only where it is the product's own vocabulary.
 - `S005` Keep the depth to 4 levels at most, because past that a level becomes a label and not a grouping, and PEP 20 says flat is better than nested.
 - `S006` Keep 5 to 9 items per folder, subdivide over 9 by responsibility and consider merging under 5, following Miller's "The Magical Number Seven, Plus or Minus Two" as a heuristic and not a law.
