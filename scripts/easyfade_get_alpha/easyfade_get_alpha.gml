@@ -1,4 +1,4 @@
-/// Returns the opacity of the fade, or 0 when no fade is in progress.
+/// Returns the opacity of the fade, from 0 to 1, or 0 when no fade is in progress.
 function easyfade_get_alpha() {
 	var _controller = __easyfade_find_controller();
 	if (_controller != noone) {

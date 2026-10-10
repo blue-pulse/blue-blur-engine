@@ -1,6 +1,7 @@
 // Coming in
 if (__start_fade) {
-	if (__timer++ >= __duration) {
+	__timer++;
+	if (__timer >= __duration) {
 		// Change flag
 		__start_fade = false;
 
@@ -13,9 +14,7 @@ if (__start_fade) {
 
 // Coming out
 else {
-	if (!__timer--) {
-		instance_destroy();
-	}
+	__timer--;
 }
 
 // Set alpha
@@ -24,4 +23,9 @@ __alpha = __timer / __duration;
 // Set audio gain
 if (__fade_audio) {
 	audio_master_gain(__audio_gain * (1 - __alpha));
+}
+
+// Finish when it is clear again
+if (!__start_fade and __timer <= 0) {
+	instance_destroy();
 }

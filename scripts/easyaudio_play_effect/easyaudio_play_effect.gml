@@ -1,5 +1,6 @@
 /// Plays a sound effect, and unlike audio_play_sound it can skip the sound or restart it when it is already playing.
 /// Returns the sound instance, or noone when the mode skipped the sound.
+/// Registers a warning when the audio group of the sound has not finished loading.
 /// @param {Asset.GMSound} sound Sound to play
 /// @param {Enum.EASYAUDIO_MODE} [mode] OVERLAP always plays, SINGLE skips if already playing, SWAP stops the playing sound first
 /// @param {Bool} [loop] Whether the sound loops
@@ -27,5 +28,6 @@ function easyaudio_play_effect(_sound, _mode=EASYAUDIO_MODE.OVERLAP, _loop=false
 	}
 
 	// Play sound
+	__easyaudio_check_loaded(_sound);
 	return audio_play_sound(_sound, EASYAUDIO_PRIORITY_EFFECT, _loop, _volume);
 }
