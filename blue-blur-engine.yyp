@@ -236,12 +236,7 @@
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"gamecontrollerdb.txt","CopyToMask":-1,"filePath":"datafiles","name":"gamecontrollerdb.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"aesnips_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"aesnips_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"clusterframework_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"clusterframework_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"db_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"db_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"easyaudio_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"easyaudio_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"easyfade_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"easyfade_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"gmutils_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"gmutils_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"input_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"input_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"sparklestore_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"sparklestore_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"sphinx_license.txt","CopyToMask":-1,"filePath":"datafiles/licenses","name":"sphinx_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

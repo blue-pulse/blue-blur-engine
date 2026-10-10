@@ -82,4 +82,4 @@ This project is a labor of love --built by fans, for fans-- and we're grateful t
 
 ## License
 
-This project is licensed under the Apache License 2.0 - please refer to the [LICENSE](LICENSE) file for more details. The third-party components in `01. Vendor` keep their own licences, which are in [`datafiles/licenses/`](./datafiles/licenses/).
+This project is licensed under the Apache License 2.0 - please refer to the [LICENSE](LICENSE) file for more details. The Apache License covers the code only. The third-party components in `01. Vendor` keep their own licences, the code derived from another project keeps its licence, and the sprites, music and sound effects belong to other people. [NOTICE.md](./NOTICE.md) records each of them.

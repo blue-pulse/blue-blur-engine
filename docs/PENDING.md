@@ -29,13 +29,13 @@ Done when every domain has gone through all the passes and follows the rules in 
 
 ## 3. Review the physics against its three origins
 
-Problem. The physics and collision code descend from three external projects: one written for another version of GameMaker, an unfinished work in progress that is the origin of this project, and an updated version of that work in progress that has never been read. How far this project matches each of them is unknown, so it may hold bugs they avoid, miss improvements they have, or skip behaviour they implement. Which functions came from which project, and under what licence, is not recorded either (`E003`, `E004`).
+Problem. The physics and collision code descend from three external projects: one written for another version of GameMaker, an unfinished work in progress that is the origin of this project, and an updated version of that work in progress that has never been read. How far this project matches each of them is unknown, so it may hold bugs they avoid, miss improvements they have, or skip behaviour they implement. Which functions came from which project, and under what licence, is not recorded either (`E003`, `E004`, `E008`). Only ClusterFramework is recorded, by folder, in [NOTICE.md](../NOTICE.md).
 
 Shape. Do it after the rest of the engine works, over several sessions.
 
 - Read each origin to find bugs in this project's implementation, improvements the origin has, and behaviour this project skipped.
 - Compare the work in progress with its updated version to see what its author fixed.
-- Record the origin and licence of every borrowed function in [ARCHITECTURE.md](./ARCHITECTURE.md).
+- Record the origin and licence of every borrowed function in [NOTICE.md](../NOTICE.md).
 - Leave the player's movement, collision and state code out of the code cleanup until then, because this review is likely to rewrite it and renaming it first would make the comparison harder.
 
 Done when each origin has been reviewed, every finding is fixed or rejected with a reason, every borrowed function has its origin and licence recorded, and the player's movement, collision and state code has gone through the passes of item 2.

@@ -58,9 +58,10 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 
 - `E001` Keep third-party code in `Vendor` and never edit it. Only the package folder may be renamed, because its internal structure belongs to its author and would be lost on update.
 - `E002` Reach a third-party component through an adapter in `02. Core/10. Adapters`, named for the domain and not for the component, with none of the component's types crossing it, so replacing a component changes one place, as [0001](./decisions/0001-vendor-libraries-and-adapters.md) states.
-- `E003` Keep each component's licence file in `datafiles/licenses/` and list the component in the third-party table of [ARCHITECTURE.md](./ARCHITECTURE.md), so provenance is never in doubt.
+- `E003` Add each component as one row of [NOTICE.md](../NOTICE.md) with its name linked to its project, its version and its licence linked to the official page of that licence, writing `Not checked` for what you did not verify, and list it in the third-party table of [ARCHITECTURE.md](./ARCHITECTURE.md), so provenance is never in doubt, as JetBrains does in its list of the third-party software of IntelliJ IDEA.
 - `E004` Read a component's licence from its shipped file before adding it, and review licence and provenance across the whole set and not only the newest arrival.
 - `E007` Call GMUtils directly and by its plain names, such as `print` and `fmod`, because its functions are pure and have no service to replace, which is the one exception to `E002` in [0001](./decisions/0001-vendor-libraries-and-adapters.md).
+- `E008` Record code that you derive from another project as a row of [NOTICE.md](../NOTICE.md), with a short description after its name such as `derived code for collisions`, because a derived work keeps the licence of its source, as the BSD and MIT licences ask for the notice to stay with the code.
 
 ### Version control
 

@@ -78,6 +78,7 @@ output/
 # Logs and temporary files
 .sandbox/
 __pycache__/
+.ruff_cache/
 *.log
 *.tmp
 *.bak

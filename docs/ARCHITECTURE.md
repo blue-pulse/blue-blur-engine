@@ -47,18 +47,18 @@ The folders below are the project's logical organisation. An element that has sp
 
 ### Our code and third-party code
 
-Third-party components live in the `01. Vendor` folder and are never edited. Each keeps its licence in `datafiles/licenses/`.
+Third-party components live in the `01. Vendor` folder and are never edited. [NOTICE.md](../NOTICE.md) records each one with its origin and licence, and it also records the code derived from another project and the assets that belong to somebody else.
 
-| Component | Version | Responsibility | Licence | Copyright |
-| --- | --- | --- | --- | --- |
-| AESnips | 0.1.4 | Animation | MIT | William Jones |
-| DB | 2.2.0 | Structured data with JSON serialization | MIT | Julian Adams |
-| EasyAudio | 2.0.0 | Audio groups and playback | MIT | Blue Pulse |
-| EasyFade | 2.0.0 | Fades and room transitions | MIT | Blue Pulse |
-| GMUtils | 2.1.0 | General utilities, such as angles and rounding | MIT | Blue Pulse |
-| Input | 10.3.0 | Controls | MIT | Julian Adams |
-| SparkleStore | 1.4.2 | Save files | MIT | Julian Adams |
-| Sphinx | 1.0.0 | Encryption | MIT | Julian Adams |
+| Component | Version | Responsibility |
+| --- | --- | --- |
+| AESnips | 0.1.4 | Animation |
+| DB | 2.2.0 | Structured data with JSON serialization |
+| EasyAudio | 2.0.0 | Audio groups and playback |
+| EasyFade | 2.0.0 | Fades and room transitions |
+| GMUtils | 2.1.0 | General utilities, such as angles and rounding |
+| Input | 10.3.0 | Controls |
+| SparkleStore | 1.4.2 | Save files |
+| Sphinx | 1.0.0 | Encryption |
 
 ### The engine and a game
 
