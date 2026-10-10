@@ -19,11 +19,9 @@ function easyaudio_play_effect(_sound, _mode=EASYAUDIO_MODE.OVERLAP, _loop=false
 			}
 			break;
 
-		// Swap if is playing
+		// Stop it first, which does nothing if it is not playing
 		case EASYAUDIO_MODE.SWAP:
-			if (audio_is_playing(_sound)) {
-				audio_stop_sound(_sound);
-			}
+			audio_stop_sound(_sound);
 			break;
 	}
 
