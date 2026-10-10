@@ -2,7 +2,7 @@
 
 ## About this document
 
-This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule.
+This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. No tool checks these rules today, so each one holds by attention alone.
 
 It contains what you must always do and what you must never do. It does not explain how the project is built, which is [ARCHITECTURE.md](./ARCHITECTURE.md), and it does not argue unusual choices, which are the records in [decisions/](./decisions/). The principles behind every rule are in [PRINCIPLES.md](./PRINCIPLES.md), and the backlog is [PENDING.md](./PENDING.md).
 
@@ -56,9 +56,10 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 ### External dependencies
 
 - `E001` Keep third-party code in `Vendor` and never edit it. Only the package folder may be renamed, because its internal structure belongs to its author and would be lost on update.
-- `E002` Reach a third-party component through the project's own wrappers in `Core`, so replacing a component changes one place.
+- `E002` Reach a third-party component through an adapter in `02. Core/10. Adapters`, named for the domain and not for the component, with none of the component's types crossing it, so replacing a component changes one place, as [0001](./decisions/0001-vendor-libraries-and-adapters.md) states.
 - `E003` Keep each component's licence file in `datafiles/licenses/` and list the component in the third-party table of [ARCHITECTURE.md](./ARCHITECTURE.md), so provenance is never in doubt.
 - `E004` Read a component's licence from its shipped file before adding it, and review licence and provenance across the whole set and not only the newest arrival.
+- `E007` Call GMUtils directly and by its plain names, such as `print` and `fmod`, because its functions are pure and have no service to replace, which is the one exception to `E002` in [0001](./decisions/0001-vendor-libraries-and-adapters.md).
 
 ### Version control
 
@@ -82,13 +83,13 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 ### Agents
 
 - `A001` Read this whole document before you change anything, then [PRINCIPLES.md](./PRINCIPLES.md) and [ARCHITECTURE.md](./ARCHITECTURE.md), and read [decisions/](./decisions/) before you change anything that looks wrong.
-- `A002` Treat every rule as binding. Only the user may override one, and only in the conversation.
+- `A002` Treat every rule as binding. Only the maintainer may override one, and only in the conversation.
 - `A003` Stop and ask when a task seems to need breaking a rule, and do not choose silently.
 - `A004` Add a file under `docs/` only when the user asks.
 - `A005` Act on [PENDING.md](./PENDING.md) or reopen a decision record only when the user asks.
 - `A006` Report in the conversation what you did and what you verified, and say plainly what you could not verify, including anything that needs the game to run.
 - `A007` Keep to the scope of the request, and mention what you notice elsewhere without changing it.
-- `A012` When the user asks for a commit, give it a simple and clear title and a short description that explains itself, and use no colon, semicolon, dash or complex word in either, so the history reads easily.
+- `A012` When the user asks for a commit, give it a simple and clear title and a one line description of what changed and why, short enough to read on one line of a full screen window, and use no colon, semicolon, dash or complex word in either, so the history reads easily.
 
 ## Never
 
@@ -109,6 +110,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 ### External dependencies
 
 - `E005` Never add a component whose licence you have not read.
+- `E006` Never mention a symbol of a `Vendor` library, other than GMUtils, outside its adapter and its own folder, so a search for the library's prefix finds only those two places.
 
 ### Version control
 

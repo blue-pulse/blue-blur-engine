@@ -39,3 +39,11 @@ Shape. Do it after the rest of the engine works, over several sessions.
 - Leave the player's movement, collision and state code out of the code cleanup until then, because this review is likely to rewrite it and renaming it first would make the comparison harder.
 
 Done when each origin has been reviewed, every finding is fixed or rejected with a reason, every borrowed function has its origin and licence recorded, and the player's movement, collision and state code has gone through the passes of item 2.
+
+## 4. Move Input and AESnips behind adapters
+
+Problem. The wrappers around Input and AESnips, such as `input_pressed` and `animation_play`, were never designed. They copy the signature of the library, and the macros `vb_up` and `vb_a` pass the `INPUT_VERB` enum of the library on to the game. This breaks `E002` and `E006`.
+
+Shape. Give each library an adapter folder in `02. Core/10. Adapters`, as [0001](./decisions/0001-vendor-libraries-and-adapters.md) states. Define the verbs in Core and translate them inside the adapter. Offer one function for each use the game has. Then check that a search for `Input` and `snip_` outside the adapter and `Vendor` finds nothing.
+
+Done when no file outside the adapters and `Vendor` mentions a symbol of either library.
