@@ -1,5 +1,5 @@
 /// Rotates an angle towards another one along the shortest arc, snapping to the target when it is close.
-/// The result is not wrapped, so use angle_wrap on it if it must stay between 0 and 360.
+/// Returns the new angle in degrees, which is not wrapped, so it can go past 360 or below 0 until it reaches the target. Use angle_wrap on it if it must stay between 0 and 360.
 /// @param {Real} source Angle to rotate from, in degrees
 /// @param {Real} target Angle to rotate towards, in degrees
 /// @param {Real} speed Largest step to take, in degrees
