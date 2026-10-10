@@ -51,3 +51,20 @@ Temporary Items
  
 # GameMaker temporary files
 *.old
+
+# GameMaker packaged project exports
+*.yyz
+*.gmz
+
+# AI coding agents local files
+.claude/
+
+# Editors
+.vscode/
+.idea/
+.vs/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
