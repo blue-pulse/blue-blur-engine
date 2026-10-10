@@ -54,8 +54,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/6. Items/Dashpads/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/06. Interactables/05. Dash Panels/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

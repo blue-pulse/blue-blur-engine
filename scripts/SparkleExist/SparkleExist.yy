@@ -6,7 +6,7 @@
   "name":"SparkleExist",
   "parent":{
     "name":"Exist",
-    "path":"folders/1. Packages/SparkleStore v1.4.2/Exist.yy",
+    "path":"folders/01. Vendor/SparkleStore v1.4.2/Exist.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

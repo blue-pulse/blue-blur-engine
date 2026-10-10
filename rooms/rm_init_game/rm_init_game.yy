@@ -17,8 +17,8 @@
   ],
   "name":"rm_init_game",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/2. Framework/Assets/Rooms.yy",
+    "name":"01. Startup",
+    "path":"folders/02. Core/01. Bootstrap/01. Startup.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -9,8 +9,8 @@
   "name":"obj_metal_scraps",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/5. Enemies/Effects.yy",
+    "name":"01. Logic",
+    "path":"folders/07. Enemies/01. Base/01. Logic.yy",
   },
   "parentObjectId":null,
   "persistent":false,

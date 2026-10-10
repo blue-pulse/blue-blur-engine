@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_player_life",
   "parent":{
-    "name":"Common",
-    "path":"folders/4. Player/Player/Sounds/Common.yy",
+    "name":"02. Status",
+    "path":"folders/04. Player/01. Base/09. Audio/02. Status.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

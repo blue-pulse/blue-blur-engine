@@ -119,8 +119,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/3. Visuals/Assets/Sprites.yy",
+    "name":"04. Fonts",
+    "path":"folders/09. UI/04. Fonts.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"stage_setup_test_zone",
   "parent":{
-    "name":"Setup",
-    "path":"folders/7. Stages/Setup.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/06. Test Zone/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

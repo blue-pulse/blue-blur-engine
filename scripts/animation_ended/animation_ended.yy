@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"animation_ended",
   "parent":{
-    "name":"Animations",
-    "path":"folders/2. Framework/Scripts/Wrappers/Animations.yy",
+    "name":"01. Playback",
+    "path":"folders/02. Core/07. Animation/01. Playback.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

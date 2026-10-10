@@ -12,8 +12,8 @@
   "name":"obj_debug_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/7. Stages/Managers.yy",
+    "name":"01. Debug",
+    "path":"folders/02. Core/09. Tooling/01. Debug.yy",
   },
   "parentObjectId":null,
   "persistent":false,

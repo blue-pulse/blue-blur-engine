@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_monitor_explosion",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/6. Items/Monitors/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/06. Interactables/03. Monitors/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

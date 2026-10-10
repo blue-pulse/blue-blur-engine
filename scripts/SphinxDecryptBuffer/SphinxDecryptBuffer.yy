@@ -6,7 +6,7 @@
   "name":"SphinxDecryptBuffer",
   "parent":{
     "name":"Sphinx v1.0.0",
-    "path":"folders/1. Packages/Sphinx v1.0.0.yy",
+    "path":"folders/01. Vendor/Sphinx v1.0.0.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -8,8 +8,8 @@
   "name":"obj_plane_setter",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/8. Usable/Triggers/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/03. World/03. Triggers/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

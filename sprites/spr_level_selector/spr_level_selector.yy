@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/6. Items/Checkpoints/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/08. Scenes/05. Hub World/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

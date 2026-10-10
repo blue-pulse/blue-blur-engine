@@ -8,8 +8,8 @@
   "name":"obj_player_spawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spawner",
-    "path":"folders/8. Usable/Spawner.yy",
+    "name":"02. Setup",
+    "path":"folders/08. Scenes/01. Common/02. Setup.yy",
   },
   "parentObjectId":null,
   "persistent":false,

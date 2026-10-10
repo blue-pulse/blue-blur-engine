@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/3. Visuals/Assets/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/09. UI/02. Overlays/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -6,7 +6,7 @@
   "name":"AESnipsBase",
   "parent":{
     "name":"AESnips v0.1.4",
-    "path":"folders/1. Packages/AESnips v0.1.4.yy",
+    "path":"folders/01. Vendor/AESnips v0.1.4.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"SparkleLoadSprite",
   "parent":{
     "name":"Load",
-    "path":"folders/1. Packages/SparkleStore v1.4.2/Load.yy",
+    "path":"folders/01. Vendor/SparkleStore v1.4.2/Load.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -10,8 +10,8 @@
   "name":"obj_spring",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/6. Items/Springs/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/02. Springs/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

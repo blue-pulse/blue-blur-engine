@@ -9,8 +9,8 @@
   "name":"obj_spikes",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/6. Items/Obstacles/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/06. Spikes/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

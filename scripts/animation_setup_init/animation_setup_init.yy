@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"animation_setup_init",
   "parent":{
-    "name":"Animations",
-    "path":"folders/2. Framework/Scripts/Wrappers/Animations.yy",
+    "name":"02. Events",
+    "path":"folders/02. Core/07. Animation/02. Events.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

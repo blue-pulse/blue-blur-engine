@@ -11,8 +11,8 @@
   "name":"obj_pause_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/7. Stages/Managers.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/04. Pause/01. Logic.yy",
   },
   "parentObjectId":null,
   "persistent":true,

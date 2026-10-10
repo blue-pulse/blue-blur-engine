@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_start_game",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/2. Framework/Assets/Sounds.yy",
+    "name":"04. Audio",
+    "path":"folders/02. Core/01. Bootstrap/04. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

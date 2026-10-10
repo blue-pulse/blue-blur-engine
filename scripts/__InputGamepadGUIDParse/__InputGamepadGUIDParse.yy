@@ -6,7 +6,7 @@
   "name":"__InputGamepadGUIDParse",
   "parent":{
     "name":"Gamepads",
-    "path":"folders/1. Packages/Input v10.3.0/(System)/Gamepads.yy",
+    "path":"folders/01. Vendor/Input v10.3.0/(System)/Gamepads.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

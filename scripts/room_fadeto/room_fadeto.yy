@@ -6,7 +6,7 @@
   "name":"room_fadeto",
   "parent":{
     "name":"EasyFade v1.2.4",
-    "path":"folders/1. Packages/EasyFade v1.2.4.yy",
+    "path":"folders/01. Vendor/EasyFade v1.2.4.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

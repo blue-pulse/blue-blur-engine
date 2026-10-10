@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"pause_resume",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/7. Stages/Scripts.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/04. Pause/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

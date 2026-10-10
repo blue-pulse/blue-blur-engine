@@ -9,8 +9,8 @@
   "name":"obj_platform_hor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/8. Usable/Terrain/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/03. World/02. Platforms/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

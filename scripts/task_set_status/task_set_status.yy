@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"task_set_status",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Scripts/Utils.yy",
+    "name":"02. Tasks",
+    "path":"folders/02. Core/03. Persistence/02. Tasks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

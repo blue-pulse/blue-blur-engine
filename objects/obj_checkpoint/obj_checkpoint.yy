@@ -8,8 +8,8 @@
   "name":"obj_checkpoint",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/6. Items/Checkpoints/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/04. Checkpoints/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

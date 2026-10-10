@@ -4,7 +4,7 @@
   "name":"EasyAudio - README",
   "parent":{
     "name":"EasyAudio v1.1.0",
-    "path":"folders/1. Packages/EasyAudio v1.1.0.yy",
+    "path":"folders/01. Vendor/EasyAudio v1.1.0.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",

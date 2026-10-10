@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"gui_create",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Scripts/Utils.yy",
+    "name":"01. Logic",
+    "path":"folders/09. UI/02. Overlays/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

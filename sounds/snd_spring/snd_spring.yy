@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_spring",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/6. Items/Springs/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/06. Interactables/02. Springs/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

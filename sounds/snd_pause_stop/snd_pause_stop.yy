@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_pause_stop",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/7. Stages/Assets/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/08. Scenes/04. Pause/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

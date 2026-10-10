@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"hud_get_visibility",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/3. Visuals/GUI/Scripts.yy",
+    "name":"01. Logic",
+    "path":"folders/09. UI/01. HUD/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

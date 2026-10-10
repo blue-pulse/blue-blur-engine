@@ -34,8 +34,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/3. Visuals/Assets/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/02. Core/06. Display/02. Effects/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

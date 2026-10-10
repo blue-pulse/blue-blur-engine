@@ -33,8 +33,8 @@
   ],
   "name":"rm_home",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/7. Stages/Rooms.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/03. Home/01. Logic.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

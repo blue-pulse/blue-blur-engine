@@ -11,8 +11,8 @@
   "name":"obj_hud",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/3. Visuals/GUI/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/09. UI/01. HUD/01. Logic.yy",
   },
   "parentObjectId":null,
   "persistent":false,

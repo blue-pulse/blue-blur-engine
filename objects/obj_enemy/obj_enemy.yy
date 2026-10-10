@@ -11,8 +11,8 @@
   "name":"obj_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parents",
-    "path":"folders/5. Enemies/Parents.yy",
+    "name":"01. Logic",
+    "path":"folders/07. Enemies/01. Base/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

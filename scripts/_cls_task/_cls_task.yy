@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_cls_task",
   "parent":{
-    "name":"Internal",
-    "path":"folders/2. Framework/Scripts/Internal.yy",
+    "name":"02. Tasks",
+    "path":"folders/02. Core/03. Persistence/02. Tasks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

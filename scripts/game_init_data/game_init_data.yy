@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"game_init_data",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Scripts/Utils.yy",
+    "name":"01. Startup",
+    "path":"folders/02. Core/01. Bootstrap/01. Startup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

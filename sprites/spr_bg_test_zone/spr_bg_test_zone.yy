@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/7. Stages/Assets/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/08. Scenes/06. Test Zone/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

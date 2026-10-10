@@ -6,7 +6,7 @@
   "name":"InputDeviceIsConnected",
   "parent":{
     "name":"Device",
-    "path":"folders/1. Packages/Input v10.3.0/Device.yy",
+    "path":"folders/01. Vendor/Input v10.3.0/Device.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"collision_box_vertical",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Scripts/Utils.yy",
+    "name":"08. Physics",
+    "path":"folders/02. Core/08. Physics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

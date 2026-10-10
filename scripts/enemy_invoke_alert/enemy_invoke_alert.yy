@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"enemy_invoke_alert",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/5. Enemies/Scripts.yy",
+    "name":"01. Logic",
+    "path":"folders/07. Enemies/01. Base/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

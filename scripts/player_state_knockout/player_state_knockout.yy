@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_state_knockout",
   "parent":{
-    "name":"States",
-    "path":"folders/4. Player/Player/Scripts/States.yy",
+    "name":"03. Controlled",
+    "path":"folders/04. Player/01. Base/02. States/03. Controlled.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

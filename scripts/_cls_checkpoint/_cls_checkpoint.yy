@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_cls_checkpoint",
   "parent":{
-    "name":"Internal",
-    "path":"folders/2. Framework/Scripts/Internal.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/04. Checkpoints/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

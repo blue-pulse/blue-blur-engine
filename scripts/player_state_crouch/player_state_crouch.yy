@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_state_crouch",
   "parent":{
-    "name":"States",
-    "path":"folders/4. Player/Player/Scripts/States.yy",
+    "name":"01. Grounded",
+    "path":"folders/04. Player/01. Base/02. States/01. Grounded.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

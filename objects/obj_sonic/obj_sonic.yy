@@ -8,8 +8,8 @@
   "name":"obj_sonic",
   "overriddenProperties":[],
   "parent":{
-    "name":"Object",
-    "path":"folders/4. Player/Sonic/Object.yy",
+    "name":"01. Logic",
+    "path":"folders/04. Player/02. Sonic/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_player",

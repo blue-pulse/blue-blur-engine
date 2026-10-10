@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/7. Stages/Assets/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/08. Scenes/02. Title/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

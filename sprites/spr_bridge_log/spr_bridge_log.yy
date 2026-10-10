@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/8. Usable/Terrain/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/03. World/02. Platforms/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

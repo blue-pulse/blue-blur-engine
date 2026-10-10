@@ -6,7 +6,7 @@
   "name":"db_set_timestamp",
   "parent":{
     "name":"Properties",
-    "path":"folders/1. Packages/DB v2.2.0/Properties.yy",
+    "path":"folders/01. Vendor/DB v2.2.0/Properties.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

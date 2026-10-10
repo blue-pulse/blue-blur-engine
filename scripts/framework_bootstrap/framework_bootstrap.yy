@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"framework_bootstrap",
   "parent":{
-    "name":"Internal",
-    "path":"folders/2. Framework/Scripts/Internal.yy",
+    "name":"01. Startup",
+    "path":"folders/02. Core/01. Bootstrap/01. Startup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

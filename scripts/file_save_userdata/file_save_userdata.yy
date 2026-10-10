@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"file_save_userdata",
   "parent":{
-    "name":"Files",
-    "path":"folders/2. Framework/Scripts/Wrappers/Files.yy",
+    "name":"01. Files",
+    "path":"folders/02. Core/03. Persistence/01. Files.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"bgm_test_zone",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/7. Stages/Assets/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/08. Scenes/06. Test Zone/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

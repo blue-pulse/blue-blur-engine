@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_sonic_laugh_d",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/4. Player/Sonic/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/04. Player/02. Sonic/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

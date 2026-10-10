@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"game_reduce_power",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Scripts/Utils.yy",
+    "name":"01. Screen",
+    "path":"folders/02. Core/06. Display/01. Screen.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

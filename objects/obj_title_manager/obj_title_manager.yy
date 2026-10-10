@@ -11,8 +11,8 @@
   "name":"obj_title_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/7. Stages/Managers.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/02. Title/01. Logic.yy",
   },
   "parentObjectId":null,
   "persistent":false,

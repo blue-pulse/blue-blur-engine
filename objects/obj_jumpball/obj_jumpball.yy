@@ -10,8 +10,8 @@
   "name":"obj_jumpball",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/4. Player/Player/Effects.yy",
+    "name":"02. Effects",
+    "path":"folders/04. Player/01. Base/07. Presentation/02. Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

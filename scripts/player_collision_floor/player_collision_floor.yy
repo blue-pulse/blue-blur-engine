@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_collision_floor",
   "parent":{
-    "name":"Functions",
-    "path":"folders/4. Player/Player/Scripts/Functions.yy",
+    "name":"04. Collision",
+    "path":"folders/04. Player/01. Base/04. Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

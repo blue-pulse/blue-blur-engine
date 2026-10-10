@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"bgm_hub_world",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/7. Stages/Assets/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/08. Scenes/05. Hub World/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

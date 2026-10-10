@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"home_select_play",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/7. Stages/Scripts.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/03. Home/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

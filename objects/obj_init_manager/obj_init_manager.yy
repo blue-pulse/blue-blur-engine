@@ -11,8 +11,8 @@
   "name":"obj_init_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/2. Framework/Managers.yy",
+    "name":"01. Startup",
+    "path":"folders/02. Core/01. Bootstrap/01. Startup.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -6,7 +6,7 @@
   "name":"audio_play_sfx",
   "parent":{
     "name":"EasyAudio v1.1.0",
-    "path":"folders/1. Packages/EasyAudio v1.1.0.yy",
+    "path":"folders/01. Vendor/EasyAudio v1.1.0.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

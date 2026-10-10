@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_setup_enums",
   "parent":{
-    "name":"Setup",
-    "path":"folders/2. Framework/Setup.yy",
+    "name":"02. Configuration",
+    "path":"folders/02. Core/02. Configuration.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

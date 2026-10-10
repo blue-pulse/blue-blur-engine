@@ -15,8 +15,8 @@
   "name":"obj_stage_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/7. Stages/Managers.yy",
+    "name":"02. Setup",
+    "path":"folders/08. Scenes/01. Common/02. Setup.yy",
   },
   "parentObjectId":null,
   "persistent":false,

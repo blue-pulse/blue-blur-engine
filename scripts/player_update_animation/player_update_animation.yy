@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_update_animation",
   "parent":{
-    "name":"Methods",
-    "path":"folders/4. Player/Player/Scripts/Methods.yy",
+    "name":"01. Animation",
+    "path":"folders/04. Player/01. Base/07. Presentation/01. Animation.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

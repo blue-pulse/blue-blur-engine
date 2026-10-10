@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"camera_get_target",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/3. Visuals/Camera/Scripts.yy",
+    "name":"05. Camera",
+    "path":"folders/05. Camera.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

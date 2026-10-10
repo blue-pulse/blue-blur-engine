@@ -11,8 +11,8 @@
   "name":"obj_loading",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/3. Visuals/GUI/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/09. UI/02. Overlays/01. Logic.yy",
   },
   "parentObjectId":null,
   "persistent":true,

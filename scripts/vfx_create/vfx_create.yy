@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"vfx_create",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Scripts/Utils.yy",
+    "name":"01. Logic",
+    "path":"folders/02. Core/06. Display/02. Effects/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

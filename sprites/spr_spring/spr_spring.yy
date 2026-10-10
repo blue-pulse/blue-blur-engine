@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/6. Items/Springs/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/06. Interactables/02. Springs/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

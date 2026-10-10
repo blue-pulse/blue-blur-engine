@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sonic_routine_homing",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/4. Player/Sonic/Scripts.yy",
+    "name":"01. Logic",
+    "path":"folders/04. Player/02. Sonic/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

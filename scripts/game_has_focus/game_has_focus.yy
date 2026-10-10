@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"game_has_focus",
   "parent":{
-    "name":"Input",
-    "path":"folders/2. Framework/Scripts/Wrappers/Input.yy",
+    "name":"01. Screen",
+    "path":"folders/02. Core/06. Display/01. Screen.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

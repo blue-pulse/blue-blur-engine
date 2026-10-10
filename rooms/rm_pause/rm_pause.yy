@@ -13,8 +13,8 @@
   ],
   "name":"rm_pause",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/2. Framework/Assets/Rooms.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/04. Pause/01. Logic.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_enemy_alert",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/5. Enemies/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/07. Enemies/01. Base/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -42,8 +42,8 @@
   ],
   "name":"rm_hub_world",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/7. Stages/Rooms.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/05. Hub World/01. Logic.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

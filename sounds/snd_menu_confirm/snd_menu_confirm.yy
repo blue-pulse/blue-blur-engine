@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_menu_confirm",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/2. Framework/Assets/Sounds.yy",
+    "name":"02. Audio",
+    "path":"folders/09. UI/03. Menus/02. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

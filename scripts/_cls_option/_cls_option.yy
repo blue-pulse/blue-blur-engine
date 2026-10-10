@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_cls_option",
   "parent":{
-    "name":"Internal",
-    "path":"folders/2. Framework/Scripts/Internal.yy",
+    "name":"01. Logic",
+    "path":"folders/09. UI/03. Menus/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

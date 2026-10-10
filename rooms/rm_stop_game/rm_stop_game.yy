@@ -17,8 +17,8 @@
   ],
   "name":"rm_stop_game",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/2. Framework/Assets/Rooms.yy",
+    "name":"02. Shutdown",
+    "path":"folders/02. Core/01. Bootstrap/02. Shutdown.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

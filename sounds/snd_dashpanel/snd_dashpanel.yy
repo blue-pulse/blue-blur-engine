@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_dashpanel",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/6. Items/Dashpads/Sounds.yy",
+    "name":"03. Audio",
+    "path":"folders/06. Interactables/05. Dash Panels/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -9,8 +9,8 @@
   "name":"obj_level_selector",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/6. Items/Checkpoints/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/08. Scenes/05. Hub World/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_checkpoint",

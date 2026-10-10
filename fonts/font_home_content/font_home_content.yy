@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"font_home_content",
   "parent":{
-    "name":"Fonts",
-    "path":"folders/3. Visuals/Assets/Fonts.yy",
+    "name":"02. Sprites",
+    "path":"folders/08. Scenes/03. Home/02. Sprites.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/6. Items/Obstacles/Sprites.yy",
+    "name":"02. Sprites",
+    "path":"folders/06. Interactables/06. Spikes/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

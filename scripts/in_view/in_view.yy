@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"in_view",
   "parent":{
-    "name":"Utils",
-    "path":"folders/2. Framework/Scripts/Utils.yy",
+    "name":"05. Camera",
+    "path":"folders/05. Camera.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"framework_end",
   "parent":{
-    "name":"Internal",
-    "path":"folders/2. Framework/Scripts/Internal.yy",
+    "name":"02. Shutdown",
+    "path":"folders/02. Core/01. Bootstrap/02. Shutdown.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_reaction_checkpoint",
   "parent":{
-    "name":"Reactions",
-    "path":"folders/4. Player/Player/Scripts/Reactions.yy",
+    "name":"02. Interactables",
+    "path":"folders/04. Player/01. Base/05. Reactions/02. Interactables.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -9,8 +9,8 @@
   "name":"obj_dashpanel",
   "overriddenProperties":[],
   "parent":{
-    "name":"Object",
-    "path":"folders/6. Items/Dashpads/Object.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/05. Dash Panels/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

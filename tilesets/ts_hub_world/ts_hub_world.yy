@@ -12,8 +12,8 @@
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"Tiles",
-    "path":"folders/7. Stages/Assets/Tiles.yy",
+    "name":"02. Sprites",
+    "path":"folders/08. Scenes/05. Hub World/02. Sprites.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

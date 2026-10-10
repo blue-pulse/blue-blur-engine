@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Icons",
-    "path":"folders/2. Framework/Assets/Icons.yy",
+    "name":"02. Icons",
+    "path":"folders/02. Core/09. Tooling/02. Icons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

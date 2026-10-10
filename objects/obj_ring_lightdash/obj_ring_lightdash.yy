@@ -6,8 +6,8 @@
   "name":"obj_ring_lightdash",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/6. Items/Rings/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/01. Rings/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_ring",

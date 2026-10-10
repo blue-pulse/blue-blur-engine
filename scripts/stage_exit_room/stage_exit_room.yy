@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"stage_exit_room",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/7. Stages/Scripts.yy",
+    "name":"01. Flow",
+    "path":"folders/08. Scenes/01. Common/01. Flow.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

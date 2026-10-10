@@ -6,8 +6,8 @@
   "name":"obj_buzzer_bullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/5. Enemies/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/07. Enemies/03. Buzzer/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_bullet",

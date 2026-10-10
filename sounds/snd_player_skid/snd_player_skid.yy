@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_player_skid",
   "parent":{
-    "name":"Skid",
-    "path":"folders/4. Player/Player/Sounds/Skid.yy",
+    "name":"01. Actions",
+    "path":"folders/04. Player/01. Base/09. Audio/01. Actions.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

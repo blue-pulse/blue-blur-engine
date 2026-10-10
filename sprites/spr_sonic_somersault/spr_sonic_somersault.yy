@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/4. Player/Sonic/Sprites.yy",
+    "name":"03. Rolling",
+    "path":"folders/04. Player/02. Sonic/02. Sprites/03. Rolling.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

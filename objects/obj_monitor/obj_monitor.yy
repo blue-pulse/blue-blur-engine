@@ -10,8 +10,8 @@
   "name":"obj_monitor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/6. Items/Monitors/Objects.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/03. Monitors/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",

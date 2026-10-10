@@ -6,7 +6,7 @@
   "name":"__SparkleEmptyBuffer",
   "parent":{
     "name":"(System)",
-    "path":"folders/1. Packages/SparkleStore v1.4.2/(System).yy",
+    "path":"folders/01. Vendor/SparkleStore v1.4.2/(System).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

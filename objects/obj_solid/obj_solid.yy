@@ -8,8 +8,8 @@
   "name":"obj_solid",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parents",
-    "path":"folders/7. Stages/Parents.yy",
+    "name":"04. Entities",
+    "path":"folders/02. Core/04. Entities.yy",
   },
   "parentObjectId":{
     "name":"obj_resource",
