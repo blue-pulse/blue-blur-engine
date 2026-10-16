@@ -53,7 +53,7 @@ The practices behind this are Ports and Adapters by Alistair Cockburn, the Inter
 - Replacing EasyAudio or EasyFade rewrites the files in its adapter folder and the library folder, and no other file. A search for `easyfade_` or `easyaudio_` outside those two places must find nothing.
 - Without this decision, game code starts calling a library directly again, the library's types leak into the game, and a replacement becomes a rebuild.
 - The adapters add a layer to read. That cost is accepted for the two libraries that wrap a service and refused for GMUtils.
-- The wrappers of Input and AESnips do not follow this decision yet. They wait in [PENDING.md](../PENDING.md).
+- The wrappers of AESnips do not follow this decision yet. They wait in [PENDING.md](../PENDING.md).
 
 ## Considered options
 

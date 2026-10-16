@@ -23,7 +23,7 @@ A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creatio
 The folders below are the project's logical organisation. An element that has sprites or sounds splits its folder into `Logic`, `Sprites` and `Audio`, keeping only those that exist.
 
 - `01. Vendor` holds the third-party components, listed under Boundaries. Their internal layout is their authors' and is exempt from the structure rules.
-- `02. Core` holds the engine's services, in ten folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` wraps the input devices and their checks, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Animation` plays animations and their events, `08. Physics` answers collision queries by ray and by box, `09. Tooling` holds the debugging tools and the editor icons, and `10. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio and `02. Scenes` over EasyFade.
+- `02. Core` holds the engine's services, in ten folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` holds the checks built from the functions of the controls adapter, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Animation` plays animations and their events, `08. Physics` answers collision queries by ray and by box, `09. Tooling` holds the debugging tools and the editor icons, and `10. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio, `02. Scenes` over EasyFade and `03. Input` over Input.
 - `03. World` holds the solid geometry the player stands on and the areas that act on the player: `01. Shapes`, `02. Platforms` and `03. Triggers`.
 - `04. Player` holds `01. Base`, the generic player split by responsibility into runtime, states, movement, collision, reactions, status and presentation, and `02. Sonic`, the first character.
 - `05. Camera` holds the camera object and its behaviour.
@@ -47,7 +47,7 @@ The folders below are the project's logical organisation. An element that has sp
 
 ### Our code and third-party code
 
-Third-party components live in the `01. Vendor` folder and are never edited. [NOTICE.md](../NOTICE.md) records each one with its origin and licence, and it also records the code derived from another project and the assets that belong to somebody else.
+Third-party components live in the `01. Vendor` folder and are never edited. [NOTICE.md](../NOTICE.md) records each one with its origin and licence, and it also records the code derived from another project and the assets that belong to somebody else. The two configuration scripts of Input, `__InputConfig` and `__InputConfigVerbs`, stay in its folder and hold the project's settings and verbs.
 
 | Component | Version | Responsibility |
 | --- | --- | --- |
@@ -92,7 +92,26 @@ When a stage sets `allow_culling`, the stage manager runs a periodic alarm that 
 
 ### Input, audio and animation
 
-Input is reached through the functions in `02. Core/05. Input`. Audio is played through the `mixer_*` functions, over EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. A room change with a fade goes through the `scene_*` functions, over EasyFade. Animation is played through the functions in `02. Core/07. Animation`, over AESnips.
+Controls are reached through the `input_*` functions of the adapter `02. Core/10. Adapters/03. Input`, described in the next section. Audio is played through the `mixer_*` functions, over EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. A room change with a fade goes through the `scene_*` functions, over EasyFade. Animation is played through the functions in `02. Core/07. Animation`, over AESnips.
+
+### The controls contract
+
+Every function acts on player 0, because the project has one player. A verb is one of the `vb_*` macros, which the adapter defines over the verbs of the Input configuration. The face verbs `vb_a`, `vb_b`, `vb_x` and `vb_y` are positional, so `vb_a` is the bottom face button of a gamepad whatever its label, and `vb_accept` and `vb_back` are the menu verbs. While `INPUT_COLLECT_MODE` is 0, Input collects in the Begin Step event, so every later event of a frame reads the same state.
+
+| Function | Meaning |
+| --- | --- |
+| `input_held(verb)` | True on every frame the verb is active. |
+| `input_pressed(verb)` | True only on the first frame the verb is active. |
+| `input_released(verb)` | True only on the first frame the verb stops being active. |
+| `input_pressed_any(verbs)` | True when any verb of the array was pressed this frame. |
+| `input_axis(positive, negative)` | Held positive minus held negative, so -1, 0 or 1, and 0 when both are held. Right and down are positive, and [0003](./decisions/0003-read-directions-with-input-axis-in-gamemakers-sign-order.md) states why. |
+| `input_axis_pressed(positive, negative)` | The same with pressed in place of held. |
+| `input_clear(verb)`, `input_clear_all()` | Make the verb, or every verb, inactive until the player triggers it again. |
+| `input_disable()`, `input_enable()` | Block and unblock player 0. While blocked every verb reads as inactive. |
+| `input_disconnect()` | Remove the device from player 0. Input assigns a device again when it detects activity. |
+| `input_get_device()` | The `input_devices` member for the device of player 0, which is `other` when there is none. |
+| `input_vibrate(strength, frames)` | Vibrate the gamepad of player 0 with a strength from 0 to 1 for a number of frames, which the adapter converts to milliseconds at `MAX_FPS`. |
+| `game_has_focus()` | True when the game window has focus and the operating system has not paused the application. |
 
 ## Glossary
 

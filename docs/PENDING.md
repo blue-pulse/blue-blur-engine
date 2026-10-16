@@ -40,13 +40,13 @@ Shape. Do it after the rest of the engine works, over several sessions.
 
 Done when each origin has been reviewed, every finding is fixed or rejected with a reason, every borrowed function has its origin and licence recorded, and the player's movement, collision and state code has gone through the passes of item 2.
 
-## 4. Move Input and AESnips behind adapters
+## 4. Move AESnips behind an adapter
 
-Problem. The wrappers around Input and AESnips, such as `input_pressed` and `animation_play`, were never designed. They copy the signature of the library, and the macros `vb_up` and `vb_a` pass the `INPUT_VERB` enum of the library on to the game. This breaks `E002` and `E006`.
+Problem. The wrappers around AESnips, such as `animation_play`, were never designed. They copy the signature of the library. This breaks `E002` and `E006`.
 
-Shape. Give each library an adapter folder in `02. Core/10. Adapters`, as [0001](./decisions/0001-vendor-libraries-and-adapters.md) states. Define the verbs in Core and translate them inside the adapter. Offer one function for each use the game has. Then check that a search for `Input` and `snip_` outside the adapter and `Vendor` finds nothing.
+Shape. Give the library an adapter folder in `02. Core/10. Adapters`, as [0001](./decisions/0001-vendor-libraries-and-adapters.md) states. Offer one function for each use the game has. Then check that a search for `snip_` outside the adapter and `Vendor` finds nothing.
 
-Done when no file outside the adapters and `Vendor` mentions a symbol of either library.
+Done when no file outside the adapter and `Vendor` mentions a symbol of the library.
 
 ## 5. Verify the tools on macOS and Linux
 
@@ -63,3 +63,11 @@ Problem. Nothing checks that the project still compiles and starts after a chang
 Shape. A GitHub Actions workflow that installs the runtime, creates the licence file from an access key kept as a secret, makes the prefabs available on a clean runner, and runs the project. Three points are open, which are how the runner gets the prefabs, whether the game can start there without a screen, and whether Igor passes the exit code of the game on. The two community actions used by other studios, `bscotch/igor-setup` and `bscotch/igor-build`, are the first thing to read. This needs a decision record before it is built.
 
 Done when a workflow runs on every push and fails when the project does not compile.
+
+## 7. Use input_axis in the debug state
+
+Problem. `player_state_debug` subtracts two `input_held` checks for each axis, so the rule of [0003](./decisions/0003-read-directions-with-input-axis-in-gamemakers-sign-order.md) has a second copy there.
+
+Shape. Replace the two lines with `input_axis(vb_right, vb_left)` and `input_axis(vb_down, vb_up)`.
+
+Done when no state subtracts two `input_held` checks by hand.
