@@ -9,11 +9,35 @@
 // library, set this macro to `false`.
 #macro INPUT_SAFETY_CHECKS  true
 
-// Whether to only allow one PlayStation user to play the game when running on PlayStation 5. This
-// macro corresponds to the `InitialUserAlwaysLoggedIn` mode set in your `param.json`. Please note
-// that this macro (and the associated `param.json` mode) should only be used for single player
-// games.
+/////////////////////////
+//                     //
+//  Platform-specific  //
+//                     //
+/////////////////////////
+
+// Whether to set "known good" controller settings on Switch and Switch 2. The code that will be
+// executed can be found in `__InputSwitchXKnownGood()`. This configuration sets up Switch in a
+// stable working condition that allows for compatibility across multiple input methods. You are,
+// of course, welcome to adjust and amend these value after boot or to simply turn this macro off.
+// 
+// N.B. At this time, Input does not support "mouse mode" Joy-cons. Please get in touch if you
+//      need mouse mode support.
+// 
+#macro INPUT_SWITCH_X_KNOWN_GOOD  true
+
+// Whether to only allow one PlayStation user to play the game when running on PlayStation 5. When
+// enabled, only player 0 may have a device assigned to them. This macro corresponds to the
+// `InitialUserAlwaysLoggedIn` mode set in your `param.json`. Please note that this macro (and the
+// associated `param.json` mode) should only be used for single player games.
 #macro INPUT_PS5_SINGLE_USER  true
+
+// Whether the game has been set up for the Xbox "simplified user model". This will disconnect all
+// gamepads associated with users other than the activating user. Additionally, only player 0 may
+// have a device assigned to them. Hotswapping will still work but only gamepads associated with
+// the activating user will be accepted. You should only set this macro to `true` if the relevant
+// setting in Game Options has been enabled. Please note that this macro (and the associated Xbox
+// setting) should only be used for single player games.
+#macro INPUT_XBOX_SIMPLIFIED_USER_MODEL  false
 
 ////////////////
 //            //
@@ -102,8 +126,8 @@
 #macro INPUT_REBIND_TIMEOUT  5000
 
 // Whether gamepad axis inputs will report a device as active and trigger a hotswap.
-#macro INPUT_GAMEPAD_THUMBSTICK_REPORTS_ACTIVE  true
-#macro INPUT_GAMEPAD_TRIGGER_REPORTS_ACTIVE     true
+#macro INPUT_GAMEPAD_THUMBSTICK_REPORTS_ACTIVE  false
+#macro INPUT_GAMEPAD_TRIGGER_REPORTS_ACTIVE     false
 
 // Whether various noisy, error-prone inputs will report a device as active and trigger a hotswap.
 // Because these inputs are unreliable, it is recommended that they are set to `false`. However, if
@@ -140,3 +164,8 @@
 // want to evaluate a tick of a fixed timestep or lockstep loop then call `InputManualUpdate()`
 // once and then you may call library functions within your custom update loop as normal.
 #macro INPUT_UPDATE_AFTER_COLLECT  true
+
+// Whether to enforce that only the first player can be assigned the `INPUT_KBM` device.
+// This is set to `false` by default. If this macro is set to `true` then only the first player
+// can be assigned the `INPUT_KBM` device via `InputPlayerSetDevice()` or the Party plug-in.
+#macro INPUT_KBM_FIRST_PLAYER_ONLY  false

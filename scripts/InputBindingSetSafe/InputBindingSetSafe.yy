@@ -6,7 +6,7 @@
   "name":"InputBindingSetSafe",
   "parent":{
     "name":"Rebinding",
-    "path":"folders/01. Vendor/Input v10.3.0/Rebinding.yy",
+    "path":"folders/01. Vendor/Input v10.5.0/Rebinding.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

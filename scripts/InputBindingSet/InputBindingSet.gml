@@ -19,6 +19,8 @@ function InputBindingSet(_forGamepad, _verbIndex, _binding, _alternate = 0, _pla
     static _playerArray = __InputSystemPlayerArray();
     
     __INPUT_VALIDATE_PLAYER_INDEX
+
+    if (is_string(_binding)) _binding = ord(_binding);
     
     with(_playerArray[_playerIndex])
     {

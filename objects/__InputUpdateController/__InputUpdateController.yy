@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"(System)",
-    "path":"folders/01. Vendor/Input v10.3.0/(System).yy",
+    "path":"folders/01. Vendor/Input v10.5.0/(System).yy",
   },
   "parentObjectId":null,
   "persistent":true,

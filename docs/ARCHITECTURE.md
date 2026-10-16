@@ -56,7 +56,7 @@ Third-party components live in the `01. Vendor` folder and are never edited. [NO
 | EasyAudio | 2.0.0 | Audio groups and playback |
 | EasyFade | 2.0.0 | Fades and room transitions |
 | GMUtils | 2.1.0 | General utilities, such as angles and rounding |
-| Input | 10.3.0 | Controls |
+| Input | 10.5.0 | Controls |
 | SparkleStore | 1.4.2 | Save files |
 | Sphinx | 1.0.0 | Encryption |
 

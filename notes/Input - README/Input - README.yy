@@ -3,8 +3,8 @@
   "%Name":"Input - README",
   "name":"Input - README",
   "parent":{
-    "name":"Input v10.3.0",
-    "path":"folders/01. Vendor/Input v10.3.0.yy",
+    "name":"Input v10.5.0",
+    "path":"folders/01. Vendor/Input v10.5.0.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",
