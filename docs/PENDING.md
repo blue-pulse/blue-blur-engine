@@ -63,11 +63,3 @@ Problem. Nothing checks that the project still compiles and starts after a chang
 Shape. A GitHub Actions workflow that installs the runtime, creates the licence file from an access key kept as a secret, makes the prefabs available on a clean runner, and runs the project. Three points are open, which are how the runner gets the prefabs, whether the game can start there without a screen, and whether Igor passes the exit code of the game on. The two community actions used by other studios, `bscotch/igor-setup` and `bscotch/igor-build`, are the first thing to read. This needs a decision record before it is built.
 
 Done when a workflow runs on every push and fails when the project does not compile.
-
-## 7. Use input_axis in the debug state
-
-Problem. `player_state_debug` subtracts two `input_held` checks for each axis, so the rule of [0003](./decisions/0003-read-directions-with-input-axis-in-gamemakers-sign-order.md) has a second copy there.
-
-Shape. Replace the two lines with `input_axis(vb_right, vb_left)` and `input_axis(vb_down, vb_up)`.
-
-Done when no state subtracts two `input_held` checks by hand.

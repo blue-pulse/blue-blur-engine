@@ -50,5 +50,4 @@ The game reads a direction only through `input_axis(positive, negative)`, and a 
 - Making the last pressed direction win changes `input_axis` once and changes how skid and turn feel in every state.
 - The order is the opposite of Input's, and that is accepted. A reader who knows Input must read the parameter names.
 - No automated test holds the rule. It holds by a manual check: hold both directions and the player stays still, and turn around repeatedly from standing still.
-- `player_state_debug` still subtracts by hand, so the rule has a second copy there, which is item 7 of [PENDING.md](../PENDING.md).
 - The Godot documentation, the Unity documentation and the description of SOCD were read as search summaries and not in full. The GameMaker tutorial was read in full.
