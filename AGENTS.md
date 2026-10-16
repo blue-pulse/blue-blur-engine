@@ -23,4 +23,5 @@ This directory is your whole sandbox. Never leave it, not to look for a file you
 ## Checks
 
 - Run the game with `python tools/gm.py run`, and when it fails read what `python tools/gm.py doctor` prints before anything else (`A013`). This starts the game but cannot judge it, so report what you could not check (`A006`). The repository has no test commands.
+- After a change that touches a library or its adapter, run `python tools/gm.py check`, which finds the use of an adapted library outside its adapter (`E006`) and warns about libraries with no adapter (`E002`).
 - After a change, run `git status` and `git diff`, and look at every `.yy` file that changed, because the IDE rewrites them (`G002`).

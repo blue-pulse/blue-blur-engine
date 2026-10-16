@@ -28,9 +28,10 @@ Sign in once in the GameMaker IDE, then run these commands from the root of the 
 ```
 python tools/gm.py doctor
 python tools/gm.py run
+python tools/gm.py check
 ```
 
-`doctor` shows the runtime, the licence folder and the prefabs folder it found, and says what to do when one is missing. `run` compiles the project with Igor and starts the game, and it ends when you close the game window. Nothing needs configuring when GameMaker is installed in its usual place. When it is not, pass `--runtime-dir`, `--user-dir` or `--prefabs-dir`, or set `GM_RUNTIME_DIR`, `GM_USER_DIR` or `GM_PREFABS_DIR`. The tools keep their temporary files in `.sandbox/`, which git ignores. Only Windows has been verified.
+`check` needs no runtime and no licence. It reads the libraries from `Vendor`, treats a library as having an adapter once a file in `10. Adapters` uses it, and exits with 1 when any other file outside `Vendor` uses that library. It warns about the libraries that are still called without an adapter. `doctor` shows the runtime, the licence folder and the prefabs folder it found, and says what to do when one is missing. `run` compiles the project with Igor and starts the game, and it ends when you close the game window. Nothing needs configuring when GameMaker is installed in its usual place. When it is not, pass `--runtime-dir`, `--user-dir` or `--prefabs-dir`, or set `GM_RUNTIME_DIR`, `GM_USER_DIR` or `GM_PREFABS_DIR`. The tools keep their temporary files in `.sandbox/`, which git ignores. Only Windows has been verified.
 
 [Decision 0002](./docs/decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states why the game is run this way.
 
@@ -42,6 +43,7 @@ python tools/gm.py run
 | --- | --- | --- |
 | Check the setup | `python tools/gm.py doctor` | `gm_mcp_health` |
 | Run the game | `python tools/gm.py run` | `gm_run`, which did not start this project in its tests, so use the command |
+| Check the library boundaries | `python tools/gm.py check` | None |
 | Read assets and references | Read the files | `gm_list_assets`, `gm_read_asset`, `gm_find_references` |
 
 ## Project organisation

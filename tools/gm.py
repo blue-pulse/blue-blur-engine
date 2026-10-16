@@ -3,6 +3,7 @@ import argparse
 import sys
 
 # Import modules
+from commands.check import check_boundaries
 from commands.doctor import doctor_check
 from commands.run import run_game
 from errors import ToolError
@@ -10,8 +11,9 @@ from runtime import runtime_add_arguments
 
 # Constants
 COMMANDS = {
-    "doctor": (doctor_check, "Show what was found and what is missing"),
-    "run": (run_game, "Run the game with Igor"),
+    "doctor": (doctor_check, "Show what was found and what is missing", True),
+    "run": (run_game, "Run the game with Igor", True),
+    "check": (check_boundaries, "Find library symbols outside their adapter", False),
 }
 
 
@@ -21,9 +23,10 @@ def gm_dispatch():
         description="Check and run Blue Blur Engine with Igor"
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
-    for name, (function, description) in COMMANDS.items():
+    for name, (function, description, uses_runtime) in COMMANDS.items():
         subparser = subparsers.add_parser(name, help=description)
-        runtime_add_arguments(subparser)
+        if uses_runtime:
+            runtime_add_arguments(subparser)
         subparser.set_defaults(function=function)
 
     args = parser.parse_args()

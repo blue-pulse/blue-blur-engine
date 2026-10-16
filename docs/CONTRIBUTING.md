@@ -2,7 +2,7 @@
 
 ## About this document
 
-This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. No tool checks these rules today, so each one holds by attention alone.
+This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. Only `E006` is checked, for each library that already has an adapter, by `python tools/gm.py check`, so each other rule holds by attention alone.
 
 It contains what you must always do and what you must never do. It does not explain how the project is built, which is [ARCHITECTURE.md](./ARCHITECTURE.md), and it does not argue unusual choices, which are the records in [decisions/](./decisions/). The principles behind every rule are in [PRINCIPLES.md](./PRINCIPLES.md), and the backlog is [PENDING.md](./PENDING.md).
 

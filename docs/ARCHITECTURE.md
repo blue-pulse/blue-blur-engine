@@ -70,7 +70,7 @@ The folders of the project's logical organisation are independent of the disk, w
 
 ### The project and its tools
 
-The `tools/` folder holds the Python tools that check and run the project with Igor. It sits outside the logical organisation and is not part of the game. `gm.py` is its single entry point, and its commands are `doctor` and `run`. The `.sandbox/` folder is their temporary space, and git ignores it. [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states how the game is run, and the guides to the external tools and resources the project uses are in [reference/](./reference/).
+The `tools/` folder holds the Python tools that check and run the project with Igor. It sits outside the logical organisation and is not part of the game. `gm.py` is its single entry point, and its commands are `doctor`, `run` and `check`. The `.sandbox/` folder is their temporary space, and git ignores it. [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states how the game is run, and the guides to the external tools and resources the project uses are in [reference/](./reference/).
 
 ## Cross-cutting concerns
 
