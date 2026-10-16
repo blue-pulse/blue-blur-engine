@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_clear",
   "parent":{
-    "name":"01. Devices",
-    "path":"folders/02. Core/05. Input/01. Devices.yy",
+    "name":"03. Input",
+    "path":"folders/02. Core/10. Adapters/03. Input.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,4 +1,4 @@
-function input_enable_device() {
+function input_enable() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

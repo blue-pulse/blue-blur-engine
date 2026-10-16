@@ -78,7 +78,7 @@ function player_state_spindash(phase) {
 			}
 			
 	        // Release
-			if (!input_holded(vb_down)) {
+			if (!input_held(vb_down)) {
 				// Launch
 				var dash_speed = 10 + round(spindash_charge) / 2;
 				hor_speed = dash_speed * dir;

@@ -3,7 +3,7 @@ function stage_restart_room(_duration=10) {
 	gml_pragma("forceinline");
 	
 	// Lock player
-	input_disable_device();
+	input_disable();
 	camera_set_target(noone);
 		
 	// Checkpoint data

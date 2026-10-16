@@ -11,7 +11,7 @@ function player_state_roll(phase) {
 			// Deceleration
 			if (ground_lock <= 0) {
 				// Left
-				if (hor_speed > 0 and input_holded(vb_left)) {
+				if (hor_speed > 0 and input_held(vb_left)) {
 					hor_speed -= roll_decel;
 					if (hor_speed < 0) {
 						hor_speed = 0;
@@ -19,7 +19,7 @@ function player_state_roll(phase) {
 				}
 				
 				// Right
-				if (hor_speed < 0 and input_holded(vb_right)) {
+				if (hor_speed < 0 and input_held(vb_right)) {
 					hor_speed += roll_decel;
 					if (hor_speed > 0) {
 						hor_speed = 0;

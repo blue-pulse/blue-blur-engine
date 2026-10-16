@@ -5,14 +5,14 @@ gpu_set_texfilter(false);
 
 // Set message
 var message_text = "press any key";
-switch (input_get_source()) {
-	case vb_keyboard:
+switch (input_get_device()) {
+	case input_devices.keyboard:
 		message_text = "press enter key";
 		break;
-	case vb_gamepad:
+	case input_devices.gamepad:
 		message_text = "press start button";
 		break;
-	case vb_touch:
+	case input_devices.touch:
 		message_text = "touch to start";
 		break;
 }

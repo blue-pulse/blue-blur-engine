@@ -9,7 +9,7 @@ function framework_restart() {
 	
 	// Disable input
 	print("[INFO] Disabling input devices...");
-	input_disable_device();
+	input_disable();
 
 	// Fade out
 	print("[INFO] Exiting current room...");

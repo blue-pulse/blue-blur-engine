@@ -13,6 +13,6 @@ function stage_bootstrap() {
 	}
 	
 	// Allow player input
-	input_enable_device();
+	input_enable();
 	input_clear_all();
 }

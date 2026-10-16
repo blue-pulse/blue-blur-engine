@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"input_released",
   "parent":{
-    "name":"02. Checks",
-    "path":"folders/02. Core/05. Input/02. Checks.yy",
+    "name":"03. Input",
+    "path":"folders/02. Core/10. Adapters/03. Input.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

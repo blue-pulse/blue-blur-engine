@@ -11,7 +11,7 @@ function framework_bootstrap() {
 	randomize();
 
 	// Allow input
-	input_enable_device();
+	input_enable();
 	input_clear_all();
 
 	// Set timezone

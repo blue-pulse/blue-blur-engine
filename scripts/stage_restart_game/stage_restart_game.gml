@@ -3,7 +3,7 @@ function stage_restart_game(_duration=10) {
 	gml_pragma("forceinline");
 	
 	// Lock player
-	input_disable_device();
+	input_disable();
 	camera_set_target(noone);
 	
 	// Write data to database

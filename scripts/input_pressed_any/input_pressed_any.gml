@@ -1,7 +1,7 @@
-function input_disable_device() {
+function input_pressed_any(array) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Return value
-	return InputPlayerSetBlocked(true, 0);
+	return InputPressedMany(array, 0);
 }

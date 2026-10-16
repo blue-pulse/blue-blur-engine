@@ -1,24 +1,24 @@
-function input_get_source() {
+function input_get_device() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Keyboard
 	if (InputPlayerUsingKbm(0)) {
-		return vb_keyboard;
+		return input_devices.keyboard;
 	}
-	
+
 	// Gamepad
 	else if (InputPlayerUsingGamepad(0)) {
-		return vb_gamepad;
+		return input_devices.gamepad;
 	}
 
 	// Touch
 	else if (InputPlayerUsingTouch(0)) {
-		return vb_touch;
+		return input_devices.touch;
 	}
-	
-	// Generic
+
+	// Other
 	else {
-		return vb_generic;
+		return input_devices.other;
 	}
 }

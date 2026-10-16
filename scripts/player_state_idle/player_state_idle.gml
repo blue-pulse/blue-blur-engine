@@ -25,7 +25,7 @@ function player_state_idle(phase) {
 		// Run state
 		case STEP:
 			// Variables
-			var input_dir = input_opposing(vb_right, vb_left);
+			var input_dir = input_axis(vb_right, vb_left);
 			
 			// Update position
 			if (!player_movement_ground()) {
@@ -77,13 +77,13 @@ function player_state_idle(phase) {
 			// Idle actions
 			if (cliff_dir == 0) {
 				// Looking up
-				if (input_holded(vb_up)) {
+				if (input_held(vb_up)) {
 					player_set_state(player_state_lookup);
 					break;
 				}
 				
 				// Crouching
-				if (input_holded(vb_down)) {
+				if (input_held(vb_down)) {
 					player_set_state(player_state_crouch);
 					break;
 				}

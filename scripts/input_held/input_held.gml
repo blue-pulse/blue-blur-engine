@@ -1,4 +1,4 @@
-function input_holded(button) {
+function input_held(button) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

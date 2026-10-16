@@ -18,7 +18,7 @@ function player_state_airbone(phase) {
 		case STEP:
 			if (!air_lock) {
 				// Left acceleration
-				if (input_holded(vb_left)) {
+				if (input_held(vb_left)) {
 					dir = -1;
 					if (hor_speed > -max_speed) {
 		                hor_speed = max(hor_speed - air_accel, -max_speed);
@@ -26,7 +26,7 @@ function player_state_airbone(phase) {
 				}
 			
 				// Right acceleration
-				if (input_holded(vb_right)) {
+				if (input_held(vb_right)) {
 					dir = 1;
 		            if (hor_speed < max_speed) {
 		                hor_speed = min(hor_speed + air_accel, max_speed);

@@ -33,7 +33,7 @@ function player_state_lookup(phase) {
 			}
 			
 	        // Idle
-			if (!input_holded(vb_up)) {
+			if (!input_held(vb_up)) {
 				player_set_state(player_state_idle);
 				break;
 			}

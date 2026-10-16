@@ -13,7 +13,7 @@ function player_state_skid(phase) {
 		// Run state
 	    case STEP:
 			// Variables
-			var input_dir = input_opposing(vb_right, vb_left);
+			var input_dir = input_axis(vb_right, vb_left);
 			
 			// Early exit
 			if (input_dir == 0 or mask_direction != gravity_direction) {
@@ -88,7 +88,7 @@ function player_state_skid(phase) {
 			}
 			
 			// Rolling
-			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_holded(vb_down)) {
+			if (input_dir == 0 and abs(hor_speed) >= roll_threshold and input_held(vb_down)) {
 				player_set_state(player_state_roll);
 				break;
 			}

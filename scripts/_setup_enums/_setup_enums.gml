@@ -72,3 +72,11 @@ enum mixer_modes {
 	single,
 	swap,
 }
+
+// Input devices
+enum input_devices {
+	keyboard,
+	gamepad,
+	touch,
+	other,
+}

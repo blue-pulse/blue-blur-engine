@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"input_opposing_pressed",
+  "%Name":"input_axis",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"input_opposing_pressed",
+  "name":"input_axis",
   "parent":{
     "name":"02. Checks",
     "path":"folders/02. Core/05. Input/02. Checks.yy",

@@ -53,7 +53,7 @@ function player_state_turn(phase) {
 			}
 			
 			// Rolling
-			if (abs(hor_speed) >= roll_threshold and input_holded(vb_down) and input_opposing(vb_right, vb_left)) {
+			if (abs(hor_speed) >= roll_threshold and input_held(vb_down) and input_axis(vb_right, vb_left)) {
 				player_set_state(player_state_roll);
 				break;
 			}

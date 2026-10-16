@@ -24,12 +24,12 @@ function player_state_jump(phase) {
 		// Run state
 	    case STEP:
 			// Handle aerial acceleration
-			if (input_holded(vb_left)) {
+			if (input_held(vb_left)) {
 				dir = -1;
 				if (hor_speed > -max_speed) {
 	                hor_speed = max(hor_speed - air_accel, -max_speed);
 				}
-			} else if (input_holded(vb_right)) {
+			} else if (input_held(vb_right)) {
 				dir = 1;
 	            if (hor_speed < max_speed) {
 	                hor_speed = min(hor_speed + air_accel, max_speed);
@@ -52,7 +52,7 @@ function player_state_jump(phase) {
 	        }
 			
 			// Variable jump height
-	        if (is_jumping and ver_speed < -jump_min_height and !input_holded(vb_a)) {
+	        if (is_jumping and ver_speed < -jump_min_height and !input_held(vb_a)) {
 	            ver_speed = -jump_min_height;
 	        }
 			
