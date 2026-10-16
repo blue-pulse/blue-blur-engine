@@ -96,18 +96,18 @@ Controls are reached through the `input_*` functions of the adapter `02. Core/10
 
 ### The controls contract
 
-Every function acts on player 0, because the project has one player. A verb is one of the `vb_*` macros, which the adapter defines over the verbs of the Input configuration. The face verbs `vb_a`, `vb_b`, `vb_x` and `vb_y` are positional, so `vb_a` is the bottom face button of a gamepad whatever its label, and `vb_accept` and `vb_back` are the menu verbs. While `INPUT_COLLECT_MODE` is 0, Input collects in the Begin Step event, so every later event of a frame reads the same state.
+Every function acts on the player slot in the macro `PLAYER_SLOT`, which is 0 because the project has one player, and which is the player whose controls are read. A button is one of the `vb_*` macros, which the adapter defines over the verbs of the Input configuration. The face buttons `vb_a`, `vb_b`, `vb_x` and `vb_y` are positional, so `vb_a` is the bottom face button of a gamepad whatever its label, and `vb_accept` and `vb_back` are the menu buttons. Commands return nothing, and queries return a boolean, a number or an `input_devices` member. While `INPUT_COLLECT_MODE` is 0, Input collects in the Begin Step event, so every later event of a frame reads the same state.
 
 | Function | Meaning |
 | --- | --- |
-| `input_held(verb)` | True on every frame the verb is active. |
-| `input_pressed(verb)` | True only on the first frame the verb is active. |
-| `input_released(verb)` | True only on the first frame the verb stops being active. |
-| `input_pressed_any(verbs)` | True when any verb of the array was pressed this frame. |
+| `input_held(button)` | True on every frame the button is active. |
+| `input_pressed(button)` | True only on the first frame the button is active. |
+| `input_released(button)` | True only on the first frame the button stops being active. |
+| `input_pressed_any(buttons)` | True when any button of the array was pressed this frame. |
 | `input_axis(positive, negative)` | Held positive minus held negative, so -1, 0 or 1, and 0 when both are held. Right and down are positive, and [0003](./decisions/0003-read-directions-with-input-axis-in-gamemakers-sign-order.md) states why. |
 | `input_axis_pressed(positive, negative)` | The same with pressed in place of held. |
-| `input_clear(verb)`, `input_clear_all()` | Make the verb, or every verb, inactive until the player triggers it again. |
-| `input_disable()`, `input_enable()` | Block and unblock player 0. While blocked every verb reads as inactive. |
+| `input_clear(button)`, `input_clear_all()` | Make the button, or every button, inactive until the player triggers it again. |
+| `input_disable()`, `input_enable()` | Block and unblock the player. While blocked every button reads as inactive. |
 | `input_disconnect()` | Remove the device from player 0. Input assigns a device again when it detects activity. |
 | `input_get_device()` | The `input_devices` member for the device of player 0, which is `other` when there is none. |
 | `input_vibrate(strength, frames)` | Vibrate the gamepad of player 0 with a strength from 0 to 1 for a number of frames, which the adapter converts to milliseconds at `MAX_FPS`. |

@@ -2,6 +2,6 @@ function input_enable() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
-	// Return value
-	return InputPlayerSetBlocked(false, 0);
+	// Unblock the player
+	InputPlayerSetBlocked(false, PLAYER_SLOT);
 }

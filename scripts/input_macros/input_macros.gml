@@ -1,3 +1,6 @@
+// Player
+#macro PLAYER_SLOT 0
+
 // Verbs
 #macro vb_up INPUT_VERB.UP
 #macro vb_down INPUT_VERB.DOWN

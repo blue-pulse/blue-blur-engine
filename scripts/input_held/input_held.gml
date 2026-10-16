@@ -3,5 +3,5 @@ function input_held(button) {
 	gml_pragma("forceinline");
 	
 	// Return value
-	return InputCheck(button, 0);
+	return InputCheck(button, PLAYER_SLOT);
 }

@@ -2,7 +2,7 @@
 
 ## About this document
 
-This record decides how the game turns two opposing verbs, such as left and right, into one number. It is for anyone about to change `input_axis`, `input_axis_pressed`, the player states that call them or `INPUT_OPPOSING_DEFAULT_MOST_RECENT` in the Input configuration. It states the rule, the order of the arguments and what was refused. It does not state how Input is reached, which is [0001](./0001-vendor-libraries-and-adapters.md), or the list of controls functions, which is in [ARCHITECTURE.md](../ARCHITECTURE.md). Update it only when the maintainer rules a change.
+This record decides how the game turns two opposing buttons, such as left and right, into one number. It is for anyone about to change `input_axis`, `input_axis_pressed`, the player states that call them or `INPUT_OPPOSING_DEFAULT_MOST_RECENT` in the Input configuration. It states the rule, the order of the arguments and what was refused. It does not state how Input is reached, which is [0001](./0001-vendor-libraries-and-adapters.md), or the list of controls functions, which is in [ARCHITECTURE.md](../ARCHITECTURE.md). Update it only when the maintainer rules a change.
 
 - Status: accepted
 - Date: 2026-10-16
@@ -11,7 +11,7 @@ This record decides how the game turns two opposing verbs, such as left and righ
 ## Summary
 
 - `input_axis(positive, negative)` returns `input_held(positive) - input_held(negative)`, so it gives -1, 0 or 1, and 0 when both are held.
-- The positive verb goes first, as in GameMaker's `right - left`, so right and down are positive.
+- The positive button goes first, as in GameMaker's `right - left`, so right and down are positive.
 - Never call the library's `InputOpposing` from the game, never subtract two held checks by hand in a state, and never reverse the order of the arguments.
 
 ## Context and problem statement
@@ -26,13 +26,13 @@ The game reads a direction only through `input_axis(positive, negative)`, and a 
 
 ### The rule
 
-- Both verbs held gives 0. Fighting-game players call this the neutral resolution of simultaneous opposing directions (SOCD). Godot's `Input.get_axis` is strength of the positive action minus strength of the negative action, so it cancels the same way.
+- Both buttons held gives 0. Fighting-game players call this the neutral resolution of simultaneous opposing directions (SOCD). Godot's `Input.get_axis` is strength of the positive action minus strength of the negative action, so it cancels the same way.
 - The rule has one owner. No state decides it again.
 - The functions call only `input_held` and `input_pressed`, so they live in `02. Core/05. Input` and not in the adapter.
 
 ### The order
 
-- The positive verb goes first, because GameMaker writes it that way. The official platformer tutorial computes `move_x = keyboard_check(vk_right) - keyboard_check(vk_left);` and explains that right gets 1 and left gets -1. In a room x grows to the right and y grows downwards, so the vertical form is `input_axis(vb_down, vb_up)`.
+- The positive button goes first, because GameMaker writes it that way. The official platformer tutorial computes `move_x = keyboard_check(vk_right) - keyboard_check(vk_left);` and explains that right gets 1 and left gets -1. In a room x grows to the right and y grows downwards, so the vertical form is `input_axis(vb_down, vb_up)`.
 - The maintainer ruled that GameMaker is the base of everything: the negative-first order is a rule imposed by Godot and by Input, and if both ever disappear, GameMaker remains.
 - The names `positive` and `negative` in the signature state the order.
 

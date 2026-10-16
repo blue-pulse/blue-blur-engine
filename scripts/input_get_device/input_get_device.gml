@@ -3,17 +3,17 @@ function input_get_device() {
 	gml_pragma("forceinline");
 	
 	// Keyboard
-	if (InputPlayerUsingKbm(0)) {
+	if (InputPlayerUsingKbm(PLAYER_SLOT)) {
 		return input_devices.keyboard;
 	}
 
 	// Gamepad
-	else if (InputPlayerUsingGamepad(0)) {
+	else if (InputPlayerUsingGamepad(PLAYER_SLOT)) {
 		return input_devices.gamepad;
 	}
 
 	// Touch
-	else if (InputPlayerUsingTouch(0)) {
+	else if (InputPlayerUsingTouch(PLAYER_SLOT)) {
 		return input_devices.touch;
 	}
 

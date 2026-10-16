@@ -5,6 +5,6 @@ function input_vibrate(strength, frames) {
 	// Convert the duration to milliseconds
 	var duration = frames * MS_PER_SECOND / MAX_FPS;
 
-	// Return value
-	return InputVibrateConstant(strength, 0, duration, 0);
+	// Vibrate the gamepad
+	InputVibrateConstant(strength, 0, duration, PLAYER_SLOT);
 }
