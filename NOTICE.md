@@ -17,8 +17,6 @@ Blue Blur Engine is licensed under the Apache License 2.0 in [LICENSE](./LICENSE
 | [SparkleStore](https://github.com/JujuAdams/SparkleStore) | 1.4.2 | [MIT](https://opensource.org/license/mit) |
 | [Sphinx](https://github.com/JujuAdams/Sphinx) | 1.0.0 | [MIT](https://opensource.org/license/mit) |
 
-EasyAudio, EasyFade and GMUtils were written by Blue Pulse, and each has its own repository in the [Blue Pulse organization](https://github.com/blue-pulse).
-
 ## Material without a licence for this project
 
 The Apache License covers the code only. The following belongs to other people.
