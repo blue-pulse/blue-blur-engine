@@ -52,7 +52,7 @@ function sonic_init_animations() {
 
 	// Rise
 	anim_rise_loop = animation_create(spr_sonic_rise, { first_image: 1 });
-	anim_rise = animation_create(spr_sonic_rise, { speed: 0.65, last_image: 0, next: anim_rise_loop });
+	anim_rise = animation_create(spr_sonic_rise, { speed: 0.4, last_image: 0, next: anim_rise_loop });
 
 	// Run
 	anim_stroll = animation_create(spr_sonic_stroll);
