@@ -10,8 +10,8 @@
   "name":"__easyfade_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"(System)",
-    "path":"folders/01. Vendor/EasyFade v2.0.0/(System).yy",
+    "name":"_Internal",
+    "path":"folders/01. Vendor/EasyFade v2.0.0/_Internal.yy",
   },
   "parentObjectId":null,
   "persistent":true,

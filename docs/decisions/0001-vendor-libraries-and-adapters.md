@@ -32,7 +32,7 @@ There are two layers, each with its own convention.
 - Everything internal starts with `__`, and internal macros are `__BRAND_*`.
 - Public constants and enums are uppercase and carry the brand.
 - Arguments and local variables are `_snake`, and private members of an instance or struct are `__snake`.
-- Internal scripts live in a `(System)` folder. A library has `__brand_constants` for its version and date, `__brand_config` for its own defaults, and `__brand_system` for its state and its welcome message.
+- Internal scripts live in an `_Internal` folder. A library has `__brand_constants` for its version and date, `__brand_config` for its own defaults, and `__brand_system` for its state and its welcome message.
 - A library never reads a global, an asset or a setting of the game. The game hands such values in through a function.
 - Every public function has JSDoc with `@param`, and says how it differs from the native function it resembles, if there is one.
 - One function per script.

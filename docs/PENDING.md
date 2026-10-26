@@ -10,6 +10,20 @@ It does not record what was done, because the code and git record that. It holds
 
 Update it when an item is found, changes shape, or closes.
 
+## 1. Replace AESnips with Resnip
+
+Problem. Resnip is a fork of AESnips made by this project, and it replaces AESnips. The game still calls AESnips, and the documents still describe it as the animation library: [NOTICE.md](../NOTICE.md) has no row for Resnip, the third-party table of [ARCHITECTURE.md](./ARCHITECTURE.md) lists AESnips for animation, and [reference/aesnips.md](./reference/aesnips.md) is the only guide.
+
+Shape. Do it in this order.
+
+- Record Resnip in [NOTICE.md](../NOTICE.md) as derived from AESnips, keeping the MIT licence of its source (`E003`, `E008`), and update the animation rows and sentence of [ARCHITECTURE.md](./ARCHITECTURE.md).
+- Decide whether Resnip stays in `Vendor` as a library the project owns, and whether `E001` and `A008` still bind it, since this project writes it.
+- Move the game from AESnips to Resnip behind the adapter of item 4, so the switch changes one place.
+- Decide what happens to the AESnips code and to its guide, and write a guide for Resnip if the maintainer asks.
+- Update `python tools/gm.py check` so it watches the symbols of Resnip (`E006`).
+
+Done when no file mentions a symbol of AESnips, the game animates through Resnip, and the documents describe Resnip alone.
+
 ## 2. Improve the code line by line
 
 Problem. Much of the code works but was not designed on purpose. Some of it was copied without much thought, many values are bare literals, and many names were chosen for being short or good looking at the time. It does not yet follow the rules in [CONTRIBUTING.md](./CONTRIBUTING.md), and there are no automated tests to protect a change.

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__easyfade_trace",
   "parent":{
-    "name":"(System)",
-    "path":"folders/01. Vendor/EasyFade v2.0.0/(System).yy",
+    "name":"_Internal",
+    "path":"folders/01. Vendor/EasyFade v2.0.0/_Internal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
