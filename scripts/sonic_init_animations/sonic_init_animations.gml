@@ -52,7 +52,7 @@ function sonic_init_animations() {
 
 	// Rise
 	anim_rise_loop = animation_create(spr_sonic_rise, { first_image: 1 });
-	anim_rise = animation_create(spr_sonic_rise, { last_image: 0, next: anim_rise_loop });
+	anim_rise = animation_create(spr_sonic_rise, { speed: 0.65, last_image: 0, next: anim_rise_loop });
 
 	// Run
 	anim_stroll = animation_create(spr_sonic_stroll);
@@ -75,7 +75,7 @@ function sonic_init_animations() {
 	anim_skid_fast_loop = animation_create(spr_sonic_skid_fast, { first_image: 2, last_image: 3 });
 	anim_skid_fast = animation_create(spr_sonic_skid_fast, { last_image: 1, next: anim_skid_fast_loop });
 	anim_skid_slow_loop = animation_create(spr_sonic_skid_slow, { first_image: 1, last_image: 2 });
-	anim_skid_slow = animation_create(spr_sonic_skid_slow, { last_image: 0, next: anim_skid_slow_loop });
+	anim_skid_slow = animation_create(spr_sonic_skid_slow, { speed: 0.65, last_image: 0, next: anim_skid_slow_loop });
 	anim_skid_turn = animation_create(spr_sonic_skid_turn);
 
 	// Somersault
