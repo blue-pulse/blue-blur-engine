@@ -71,3 +71,23 @@ Problem. States and enemies read the animation to decide what to do, when the st
 Shape. Study how the state machine works today before changing anything, then decide with the maintainer where each duration and event should live. Resnip offers frame scripts and completion scripts if an animation has to tell the logic something. Keep it apart from the passes of item 2, because it changes behaviour.
 
 Done when no state, physics routine or enemy reads the animation, and the animation functions have no caller outside the code that presents.
+
+## 9. Make the debug tools professional
+
+Problem. The debug overlay works but was not designed on purpose. Its shortcuts are one chain of `if` statements that run with the player as `self`, with the keys written in the code. Specific faults were found by reading, none by running.
+
+- `obj_debug_manager` `Step_0` uses `exit` inside `with (Protagonist)`, which ends the whole event, so while the player is dying the text freezes and no shortcut works, Esc and R included.
+- Two functions change the game speed, the FPS shortcut and `game_reduce_power`, and the focus change overwrites the shortcut. Closing the overlay does not restore the speed.
+- Esc is also the `BACK` verb of Input, and R and Esc act with no modifier.
+- Lowering the FPS does not slow the animations, because Resnip reads the game speed at every step and a sprite in frames per second keeps its pace in real time.
+- The restart-stage shortcut has no `scene_is_changing` guard, the HUD shortcut fails without `obj_hud`, and the camera shortcut says random but takes the first instance and may compare an instance with an object.
+- Every enemy draws the full strip of its animation each frame, and the data text is rebuilt each step.
+- The shortcuts need a numeric keypad, and the manager reads both `Protagonist` and `Player`.
+
+Shape. Audit once more before editing, then work in this order, with the user approving each change in behaviour.
+
+- Fix the `exit` fault, give the game speed one owner that the focus and the debug tools both use, restore it when the overlay closes, and add the missing guards.
+- Move the shortcuts to a table in `02. Configuration` with key, name, function and context, split into game commands and player commands that receive their target, and add alternative keys and an on-screen list of them.
+- Add pause with step by step advance for inspecting animations, and switches to draw the collision masks and the animation panels, with the panels limited to enemies in view.
+
+Done when each shortcut is a row of the table, no debug command depends on `self`, the fault list above is closed, and the overlay leaves the game as it found it.
