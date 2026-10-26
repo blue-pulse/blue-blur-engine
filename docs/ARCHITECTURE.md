@@ -23,7 +23,7 @@ A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creatio
 The folders below are the project's logical organisation. An element that has sprites or sounds splits its folder into `Logic`, `Sprites` and `Audio`, keeping only those that exist.
 
 - `01. Vendor` holds the third-party components, listed under Boundaries. Their internal layout is their authors' and is exempt from the structure rules.
-- `02. Core` holds the engine's services, in ten folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` holds the checks built from the functions of the controls adapter, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Animation` plays animations and their events, `08. Physics` answers collision queries by ray and by box, `09. Tooling` holds the debugging tools and the editor icons, and `10. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio, `02. Scenes` over EasyFade and `03. Input` over Input.
+- `02. Core` holds the engine's services, in nine folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` holds the checks built from the functions of the controls adapter, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Physics` answers collision queries by ray and by box, `08. Tooling` holds the debugging tools and the editor icons, and `09. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio, `02. Scenes` over EasyFade, `03. Input` over Input and `04. Animation` over Resnip.
 - `03. World` holds the solid geometry the player stands on and the areas that act on the player: `01. Shapes`, `02. Platforms` and `03. Triggers`.
 - `04. Player` holds `01. Base`, the generic player split by responsibility into runtime, states, movement, collision, reactions, status and presentation, and `02. Sonic`, the first character.
 - `05. Camera` holds the camera object and its behaviour.
@@ -51,7 +51,7 @@ Third-party components live in the `01. Vendor` folder and are never edited. [NO
 
 | Component | Version | Responsibility |
 | --- | --- | --- |
-| AESnips | 0.1.4 | Animation |
+| Resnip | 0.2.0 | Animation |
 | DB | 2.2.0 | Structured data with JSON serialization |
 | EasyAudio | 2.0.0 | Audio groups and playback |
 | EasyFade | 2.0.0 | Fades and room transitions |
@@ -80,7 +80,7 @@ Each frame, an instance of `obj_player` updates its timers with `player_update_p
 
 ### Collision
 
-The player resolves collisions with `player_collision_floor`, `player_collision_wall`, `player_collision_ceiling` and `player_collision_resource`. The floor, wall and ceiling checks use the queries in `02. Core/08. Physics`.
+The player resolves collisions with `player_collision_floor`, `player_collision_wall`, `player_collision_ceiling` and `player_collision_resource`. The floor, wall and ceiling checks use the queries in `02. Core/07. Physics`.
 
 ### Culling
 
@@ -92,7 +92,7 @@ When a stage sets `allow_culling`, the stage manager runs a periodic alarm that 
 
 ### Input, audio and animation
 
-Controls are reached through the `input_*` functions of the adapter `02. Core/10. Adapters/03. Input`, described in the next section. Audio is played through the `mixer_*` functions, over EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. A room change with a fade goes through the `scene_*` functions, over EasyFade. Animation is played through the functions in `02. Core/07. Animation`, over AESnips.
+Controls are reached through the `input_*` functions of the adapter `02. Core/09. Adapters/03. Input`, described in the next section. Audio is played through the `mixer_*` functions, over EasyAudio, with the groups `grp_bgm`, `grp_sfx` and `grp_voices`. A room change with a fade goes through the `scene_*` functions, over EasyFade. Animation is played through the `animation_*` functions of the adapter `02. Core/09. Adapters/04. Animation`, over Resnip, as described after the controls contract.
 
 ### The controls contract
 
@@ -113,6 +113,22 @@ Every function acts on the player slot in the macro `PLAYER_SLOT`, which is 0 be
 | `input_vibrate(strength, frames)` | Vibrate the gamepad of player 0 with a strength from 0 to 1 for a number of frames, which the adapter converts to milliseconds at `MAX_FPS`. |
 | `game_has_focus()` | True when the game window has focus and the operating system has not paused the application. |
 
+### The animation contract
+
+An animation is a sprite, or a run of its sub-images, with a speed. `animation_create` returns one, and the game keeps it and hands it back to the other functions without reading it. An instance that plays animations calls `animation_init` in its Create event and `animation_update` in its Step event, and it shows the current frame through its own `sprite_index` and `image_index`. After `animation_init` the instance holds `animation`, the animation last requested, which is `noone` until the first request. The speed belongs to the instance and not to the animation, so each `animation_play` sets it, and a transition that plays first uses that speed too. A reversed animation plays from its last frame down.
+
+| Function | Meaning |
+| --- | --- |
+| `animation_create(sprite, [options])` | Make an animation. The options are `speed`, `first_image` and `last_image` (sub-images, the whole sprite by default), `reversed`, and `next`, the animation that plays when this one ends. Create `next` first. |
+| `animation_init()`, `animation_update()` | Prepare the instance in Create, and advance and show its animation once per Step. |
+| `animation_play(animation, [speed])` | Request an animation at a speed. It does nothing else when the animation already plays or a transition leads to it. |
+| `animation_add_transition(from, to, via)` | When `to` is requested while `from` plays, `via` plays first. |
+| `animation_is_playing(animation)` | True when it is the animation last requested, or the one now playing. |
+| `animation_is_last_frame()` | True on the last frame of the animation now playing, in its direction. |
+| `animation_get_frame()` | The frame now playing, counted from 0 at the first image of the animation. |
+| `animation_debug_draw(x, y)` | Draw the sub-images of the sprite with the frame now playing marked. |
+| `animation_free()` | Remove the transitions the instance added, in its Clean Up event. |
+
 ## Glossary
 
 - **Room:** a scene or level. The engine loads and runs one at a time.
@@ -126,6 +142,9 @@ Every function acts on the player slot in the macro `PLAYER_SLOT`, which is 0 be
 - **Macro:** a constant replaced by its value when the project is compiled.
 - **Enum:** a named set of constants.
 - **Layer:** an ordered group inside a room, such as a layer of instances.
+- **Sub-image:** one image of a sprite, counted from 0.
+- **Frame:** one image of an animation, counted from 0 at its first sub-image.
+- **Transition:** an animation that plays between two others when the second is requested while the first plays.
 - **VM:** the runtime that interprets compiled bytecode, used while testing.
 - **YYC:** the compiler that turns GML into native code through C++, used for the executables that are shared.
 - **Runtime:** the versioned package of GameMaker that holds the compiler, the runner and Igor.

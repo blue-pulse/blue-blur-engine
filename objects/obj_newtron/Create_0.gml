@@ -13,4 +13,4 @@ attack_delay = 0;
 // Animations
 anim_attack = animation_create(spr_newtron_attack);
 anim_fadein = animation_create(spr_newtron_idle);
-anim_fadeout = animation_create(spr_newtron_idle, -1);
+anim_fadeout = animation_create(spr_newtron_idle, { reversed: true });

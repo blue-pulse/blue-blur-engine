@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"01. Debug",
-    "path":"folders/02. Core/09. Tooling/01. Debug.yy",
+    "path":"folders/02. Core/08. Tooling/01. Debug.yy",
   },
   "parentObjectId":null,
   "persistent":false,

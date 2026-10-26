@@ -1,7 +1,7 @@
-function animation_is_playing(_animation, allow_transition=true) {
+function animation_is_playing(_animation) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
-	
-	// Set value
-	return snip_is_playing(_animation, allow_transition);
+
+	// Return boolean
+	return animation == _animation or __animation_playback.snip == _animation.__snip;
 }

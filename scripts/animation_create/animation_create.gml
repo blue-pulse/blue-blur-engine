@@ -1,27 +1,23 @@
-function animation_create(_sprite, _speed=1, _start=0, _end=-1) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
+function animation_create(_sprite, _options={}) {
 	// Variables
-	var animation;
-	
-	// Set last frame
-	if (!_end) {
-		_end = sprite_get_number(_sprite) - 1;
+	var reversed = _options[$ "reversed"] ?? false;
+	var next = _options[$ "next"];
+	var snip_options = {
+		speed: _options[$ "speed"] ?? ANIMATION_DEFAULT_SPEED,
+		first_image: _options[$ "first_image"] ?? 0,
+		last_image: _options[$ "last_image"],
+	};
+
+	// Continue into the next animation
+	if (next != undefined) {
+		snip_options.next = next.__snip;
+		snip_options.next_options = { transition: ANIMATION_USE_TRANSITIONS, backward: next.__reversed };
 	}
-	
-	// Set animation backwards
-	if (!_speed) {
-		animation = new Snip(_sprite, abs(_speed), _start, _end);
-		snip_set_backward(animation);
-	} 
-	
-	// Set animation
-	else {
-		animation = new Snip(_sprite, _speed, _start, _end);
-	}
-	
-	
+
 	// Return value
-	return animation;
+	return {
+		__snip: resnip_snip_create(_sprite, snip_options),
+		__reversed: reversed,
+		__play_options: { transition: ANIMATION_USE_TRANSITIONS, restart: false, backward: reversed },
+	};
 }

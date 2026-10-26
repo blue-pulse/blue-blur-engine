@@ -6,7 +6,7 @@
   "name":"scene_is_changing",
   "parent":{
     "name":"02. Scenes",
-    "path":"folders/02. Core/10. Adapters/02. Scenes.yy",
+    "path":"folders/02. Core/09. Adapters/02. Scenes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

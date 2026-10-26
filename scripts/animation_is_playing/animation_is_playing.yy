@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"animation_is_playing",
   "parent":{
-    "name":"01. Playback",
-    "path":"folders/02. Core/07. Animation/01. Playback.yy",
+    "name":"04. Animation",
+    "path":"folders/02. Core/09. Adapters/04. Animation.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

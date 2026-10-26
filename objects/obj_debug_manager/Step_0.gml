@@ -20,7 +20,7 @@ with (Protagonist) {
 	player_info += "PLANE:	" + string(plane) + "\n\n";
 	player_info += "OLD STATE:	" + script_get_name(state_prev) + "\n\n";
 	player_info += "NEW STATE:	" + script_get_name(state) + "\n\n";
-	player_info += "ANIMATION:	" + string(snip_get_sprite(animation)) + "\n\n";
+	player_info += "ANIMATION:	" + sprite_get_name(sprite_index) + "\n\n";
 	
 	// Handle cheats
 	debug_toggle_cheats();

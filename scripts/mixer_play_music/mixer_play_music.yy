@@ -6,7 +6,7 @@
   "name":"mixer_play_music",
   "parent":{
     "name":"01. Audio",
-    "path":"folders/02. Core/10. Adapters/01. Audio.yy",
+    "path":"folders/02. Core/09. Adapters/01. Audio.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

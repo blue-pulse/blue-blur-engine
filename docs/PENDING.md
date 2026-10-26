@@ -10,20 +10,6 @@ It does not record what was done, because the code and git record that. It holds
 
 Update it when an item is found, changes shape, or closes.
 
-## 1. Replace AESnips with Resnip
-
-Problem. Resnip is a fork of AESnips made by this project, and it replaces AESnips. The game still calls AESnips, and the documents still describe it as the animation library: [NOTICE.md](../NOTICE.md) has no row for Resnip, the third-party table of [ARCHITECTURE.md](./ARCHITECTURE.md) lists AESnips for animation, and [reference/aesnips.md](./reference/aesnips.md) is the only guide.
-
-Shape. Do it in this order.
-
-- Record Resnip in [NOTICE.md](../NOTICE.md) as derived from AESnips, keeping the MIT licence of its source (`E003`, `E008`), and update the animation rows and sentence of [ARCHITECTURE.md](./ARCHITECTURE.md).
-- Decide whether Resnip stays in `Vendor` as a library the project owns, and whether `E001` and `A008` still bind it, since this project writes it.
-- Move the game from AESnips to Resnip behind the adapter of item 4, so the switch changes one place.
-- Decide what happens to the AESnips code and to its guide, and write a guide for Resnip if the maintainer asks.
-- Update `python tools/gm.py check` so it watches the symbols of Resnip (`E006`).
-
-Done when no file mentions a symbol of AESnips, the game animates through Resnip, and the documents describe Resnip alone.
-
 ## 2. Improve the code line by line
 
 Problem. Much of the code works but was not designed on purpose. Some of it was copied without much thought, many values are bare literals, and many names were chosen for being short or good looking at the time. It does not yet follow the rules in [CONTRIBUTING.md](./CONTRIBUTING.md), and there are no automated tests to protect a change.
@@ -54,14 +40,6 @@ Shape. Do it after the rest of the engine works, over several sessions.
 
 Done when each origin has been reviewed, every finding is fixed or rejected with a reason, every borrowed function has its origin and licence recorded, and the player's movement, collision and state code has gone through the passes of item 2.
 
-## 4. Move AESnips behind an adapter
-
-Problem. The wrappers around AESnips, such as `animation_play`, were never designed. They copy the signature of the library. This breaks `E002` and `E006`.
-
-Shape. Give the library an adapter folder in `02. Core/10. Adapters`, as [0001](./decisions/0001-vendor-libraries-and-adapters.md) states. Offer one function for each use the game has. Then check that a search for `snip_` outside the adapter and `Vendor` finds nothing.
-
-Done when no file outside the adapter and `Vendor` mentions a symbol of the library.
-
 ## 5. Verify the tools on macOS and Linux
 
 Problem. The tools in `tools/` were only run on Windows. The folders they search on macOS and Linux, and the Igor program they start there, come from reading the source of another tool and not from a run. The manual runs Igor on macOS as `dotnet Igor.dll`, while that source starts a file named `Igor`, so one of the two is wrong.
@@ -77,3 +55,19 @@ Problem. Nothing checks that the project still compiles and starts after a chang
 Shape. A GitHub Actions workflow that installs the runtime, creates the licence file from an access key kept as a secret, makes the prefabs available on a clean runner, and runs the project. Three points are open, which are how the runner gets the prefabs, whether the game can start there without a screen, and whether Igor passes the exit code of the game on. The two community actions used by other studios, `bscotch/igor-setup` and `bscotch/igor-build`, are the first thing to read. This needs a decision record before it is built.
 
 Done when a workflow runs on every push and fails when the project does not compile.
+
+## 7. Share the animations of Sonic between instances
+
+Problem. Each Sonic builds its own animations and 26 transitions when it is created, and removes the transitions in its Clean Up event, because the transition registry of Resnip holds its animations until they are removed. Every load of a stage rebuilds about 45 animations. One set per character, shared by every instance, would remove both the rebuild and the cleanup, and it is the design the Resnip repository recommends. It changes the roughly 200 references to `anim_*`, which today live in instance variables.
+
+Shape. Build the set once per character, keep it where every instance of the character can read it (`S008`), point the references at it, and remove `animation_free` and the Clean Up event of `obj_player`. The enemies build no transitions, so they can stay as they are.
+
+Done when no instance builds the animations of its character and `animation_free` is gone.
+
+## 8. Stop the logic from depending on animation
+
+Problem. States and enemies read the animation to decide what to do, when the state machine should own the logic and the animation should only present it. Five places do it today. `player_state_turn` leaves its state when `animation_is_last_frame()`. `player_state_airbone` reads `animation == anim_rise` to switch to the fall. `player_state_run` reads `animation_is_playing(anim_push)` to avoid asking for the run animation again. `obj_jumpball` destroys itself when `owner.animation` stops being its hook. The enemies `obj_balloon`, `obj_buzzer`, `obj_newtron` and `obj_motobug` fire their bullets on a frame number, return to idle on the last frame, and `obj_newtron` removes itself when its frame falls below 1.
+
+Shape. Study how the state machine works today before changing anything, then decide with the maintainer where each duration and event should live. Resnip offers frame scripts and completion scripts if an animation has to tell the logic something. Keep it apart from the passes of item 2, because it changes behaviour.
+
+Done when no state, physics routine or enemy reads the animation, and the animation functions have no caller outside the code that presents.

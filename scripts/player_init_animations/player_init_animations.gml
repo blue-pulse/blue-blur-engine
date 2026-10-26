@@ -3,7 +3,7 @@ function player_init_animations() {
 	gml_pragma("forceinline");
 	
 	// Initialize variables
-	animation_setup_init();
+	animation_init();
 
 	// Balance
 	anim_balance_back = animation_create(sprite_index);

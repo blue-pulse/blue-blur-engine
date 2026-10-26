@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"02. Icons",
-    "path":"folders/02. Core/09. Tooling/02. Icons.yy",
+    "path":"folders/02. Core/08. Tooling/02. Icons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

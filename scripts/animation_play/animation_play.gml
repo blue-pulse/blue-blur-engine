@@ -1,9 +1,9 @@
-function animation_play(_animation, _speed=1, allow_transition=true) {
+function animation_play(_animation, _speed=ANIMATION_DEFAULT_SPEED) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
-	
-	// Set value
+
+	// Request the animation
 	animation = _animation;
-	snip_set_speed(_animation, _speed);
-	return snip_play_request(_animation, allow_transition);
+	resnip_set_speed(__animation_playback, _speed);
+	resnip_play(__animation_playback, _animation.__snip, _animation.__play_options);
 }

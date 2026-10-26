@@ -3,7 +3,7 @@ function player_update_animation() {
 	gml_pragma("forceinline");
 	
 	// Enable animations
-	animation_setup_run();
+	animation_update();
 
 	// Update trail alpha
 	var trail_factor = safe_div(trail_span, trail_reference);

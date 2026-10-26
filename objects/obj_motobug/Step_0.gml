@@ -49,7 +49,7 @@ switch (state) {
 		
 	// Turn
 	case 1:
-		if (animation_ended()) {
+		if (animation_is_last_frame()) {
 			state = 0;
 			dir *= -1;
 			hspeed = movement_speed * dir;

@@ -36,7 +36,7 @@ switch (state) {
 		}
 		
 		// Return to idle
-		else if (animation_ended()) {
+		else if (animation_is_last_frame()) {
 			state = 0;
 			animation_play(anim_idle);
 		}

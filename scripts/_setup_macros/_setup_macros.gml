@@ -23,6 +23,10 @@
 #macro USERDATA "userdata.dat"
 #macro SAVEDATA "savedata.dat"
 
+// Animation
+#macro ANIMATION_DEFAULT_SPEED 1
+#macro ANIMATION_USE_TRANSITIONS true
+
 // States phases
 #macro INIT -1
 #macro STEP 0

@@ -41,7 +41,7 @@ function player_state_turn(phase) {
 			}
 
 			// Return to idle
-			if (!animation_get_callback(animation) and animation_ended()) {
+			if (animation_is_last_frame()) {
 				player_set_state(player_state_idle)
 				break;
 			}

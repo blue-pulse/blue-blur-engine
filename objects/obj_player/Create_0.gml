@@ -1,6 +1,5 @@
 // Basic variables
 depth = depths.player;
-animation = noone;
 rings = 0;
 score_combo = 0;
 scoring = global.score;

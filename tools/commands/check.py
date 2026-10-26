@@ -6,7 +6,7 @@ from project import project_find_file, project_get_root
 
 # Constants
 VENDOR_FOLDER = "folders/01. Vendor"
-ADAPTERS_FOLDER = "folders/02. Core/10. Adapters"
+ADAPTERS_FOLDER = "folders/02. Core/09. Adapters"
 EXEMPT_LIBRARIES = {"GMUtils"}
 RESOURCE_FOLDERS = ("scripts", "objects", "rooms")
 PARENT_PATTERN = re.compile(r'"parent"\s*:\s*\{[^}]*?"path"\s*:\s*"([^"]+)"')

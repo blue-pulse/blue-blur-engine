@@ -11,7 +11,7 @@ This record is the decision about how the project reaches the libraries in `Vend
 ## Summary
 
 - A library lives in `Vendor` and is written in the style of Julian Adams, in snake_case, with its brand as the prefix of every public name.
-- Game code never calls EasyFade, EasyAudio, or any library other than GMUtils. It calls an adapter in `02. Core/10. Adapters`, named for the domain and not for the library.
+- Game code never calls EasyFade, EasyAudio, or any library other than GMUtils. It calls an adapter in `02. Core/09. Adapters`, named for the domain and not for the library.
 - No symbol of a library crosses the adapter, so replacing the library changes the adapter files and nothing else.
 - GMUtils is the exception. Its functions keep their plain names and game code calls them directly.
 - Never copy the shape of a library into its adapter, and never call a library from outside its adapter.
@@ -37,7 +37,7 @@ There are two layers, each with its own convention.
 - Every public function has JSDoc with `@param`, and says how it differs from the native function it resembles, if there is one.
 - One function per script.
 
-**The adapter layer.** An adapter is the only code that mentions a library. It lives in `02. Core/10. Adapters`, one folder per domain, and follows the project's own rules.
+**The adapter layer.** An adapter is the only code that mentions a library. It lives in `02. Core/09. Adapters`, one folder per domain, and follows the project's own rules.
 
 - It is named `domain_action` as `C003` asks, with the domain taken from what the game does, such as `mixer_` for audio and `scene_` for changing room.
 - It offers one function for each use the game really has, and not one for each function of the library.
@@ -53,7 +53,6 @@ The practices behind this are Ports and Adapters by Alistair Cockburn, the Inter
 - Replacing EasyAudio or EasyFade rewrites the files in its adapter folder and the library folder, and no other file. A search for `easyfade_` or `easyaudio_` outside those two places must find nothing.
 - Without this decision, game code starts calling a library directly again, the library's types leak into the game, and a replacement becomes a rebuild.
 - The adapters add a layer to read. That cost is accepted for the two libraries that wrap a service and refused for GMUtils.
-- The wrappers of AESnips do not follow this decision yet. They wait in [PENDING.md](../PENDING.md).
 
 ## Considered options
 

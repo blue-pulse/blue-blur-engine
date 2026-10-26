@@ -20,7 +20,7 @@ switch (state) {
 	
 	// Fading in
 	case 1:
-		if (animation_ended()) {
+		if (animation_is_last_frame()) {
 			state = 2;
 			attack_delay = 60;
 			animation_play(anim_attack);
