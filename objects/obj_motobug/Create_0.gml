@@ -9,16 +9,17 @@ part_type_life(vfx_smoke, 16, 16);
 // Parameters
 movement_speed = 1;
 movement_dist = 60;
+turn_steps = 4;
 
 // Variables
+mask_index = sprite_index;
 hspeed = movement_speed * dir;
 vspeed = 0;
-state = 0;
+state = motobug_states.move;
+state_timer = 0;
 smoke_timer = 0;
 left_goal = xstart - movement_dist;
 right_goal = xstart + movement_dist;
 
 // Animations
-anim_attack = animation_create(spr_motobug_attack);
-anim_turn = animation_create(spr_motobug_turn);
-animation_play(anim_attack);
+motobug_init_animations();

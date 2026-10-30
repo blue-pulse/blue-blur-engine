@@ -4,44 +4,44 @@ event_inherited();
 // State machine
 switch (state) {
 	// Waiting
-	case 0:
+	case newtron_states.wait:
 		var player = instance_nearest(x, y, obj_player);
 		if (player != noone) {
 			var x_diff = player.x - x;
 			var y_diff = player.y - y;
 			if (abs(x_diff) < attack_range and abs(y_diff) < 40) {
 				dir = sign(x_diff);
-				state = 1;
+				state = newtron_states.fade_in;
+				state_timer = 0;
 				visible = true;
-				animation_play(anim_fadein);
 			}
 		}
 		break;
-	
+
 	// Fading in
-	case 1:
-		if (animation_is_last_frame()) {
-			state = 2;
-			attack_delay = 60;
-			animation_play(anim_attack);
+	case newtron_states.fade_in:
+		if (++state_timer >= fade_in_steps) {
+			state = newtron_states.attack;
+			state_timer = 0;
 		}
 		break;
-	
+
 	// Shooting
-	case 2:
-		if (--attack_delay == 30) {
-			vfx_create(x + 14 * dir, y - 3, obj_newtron_bullet, { 
+	case newtron_states.attack:
+		state_timer++;
+		if (state_timer == fire_at_step) {
+			vfx_create(x + 14 * dir, y - 3, obj_newtron_bullet, {
 				hspeed: bullet_speed * dir,
 			});
-		} else if (!attack_delay) {
-			state = 3;
-			animation_play(anim_fadeout);
+		} else if (state_timer >= attack_steps) {
+			state = newtron_states.fade_out;
+			state_timer = 0;
 		}
 		break;
-	
+
 	// Fading out
-	case 3:
-		if (animation_get_frame() < 1) {
+	case newtron_states.fade_out:
+		if (++state_timer >= fade_out_steps) {
 			instance_terminate();
 		}
 		break;

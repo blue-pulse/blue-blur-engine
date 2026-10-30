@@ -4,12 +4,12 @@ event_inherited();
 // State machine
 switch (state) {
 	// Fly
-	case 0:
+	case buzzer_states.fly:
 		// Turn around
 		var out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
 		if (out_of_bounds) {
 			can_attack = true;
-			enemy_invoke_turn();
+			enemy_invoke_turn(buzzer_states.turn);
 		}
 
 		// Shoot
@@ -18,41 +18,40 @@ switch (state) {
 			if (player != noone and y < player.y) {
 				var target_dist = x - player.x;
 				if (abs(target_dist) < attack_range and sign(target_dist) != dir) {
-					state = 2;
+					state = buzzer_states.attack;
+					state_timer = 0;
 					hspeed = 0;
 					can_attack = false;
 					enemy_invoke_alert(-15, 23);
-					animation_play(anim_attack);
 				}
 			}
 		}
 		break;
-		
+
 	// Turn
-	case 1:
-		if (animation_is_last_frame()) {
-			state = 0;
+	case buzzer_states.turn:
+		if (++state_timer >= turn_steps) {
+			state = buzzer_states.fly;
 			dir *= -1;
 			hspeed = movement_speed * dir;
-			animation_play(anim_fly);
 		}
 		break;
-		
+
 	// Attack
-	case 2:
+	case buzzer_states.attack:
 		// Shoot
-		if (animation_get_frame() == 8) {
+		state_timer++;
+		if (state_timer == fire_at_step) {
 			vfx_create(x + 16 * dir, y + 13, obj_buzzer_bullet, {
 				hspeed: bullet_speed * dir,
 				vspeed: bullet_speed,
 			}, true);
 		}
-		
+
 		// Return to patrol
-		else if (animation_is_last_frame()) {
-			state = 0;
+		if (state_timer >= attack_steps) {
+			state = buzzer_states.fly;
 			hspeed = movement_speed * dir;
-			animation_play(anim_fly);
 		}
 		break;
 }

@@ -14,7 +14,3 @@ depth = depths.enemies;
 dir = sign(image_xscale);
 sfx_explosion = snd_enemy_explosion;
 
-// Animation
-animation_init();
-anim_idle = animation_create(sprite_index);
-animation_play(anim_idle);

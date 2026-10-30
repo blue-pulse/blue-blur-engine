@@ -4,7 +4,7 @@ event_inherited();
 // State machine
 switch (state) {
 	// Move
-	case 0:
+	case motobug_states.move:
 		// Meeting with floor
 		if (place_meeting(x, y + 1, obj_solid)) {
 			// Stop falling
@@ -24,7 +24,7 @@ switch (state) {
 			// Turn around
 			var out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
 			if (out_of_bounds or !collision_point(x + 8 * dir, y + 20, obj_solid, false, false)) {
-			    enemy_invoke_turn();
+			    enemy_invoke_turn(motobug_states.turn);
 				break;
 			}
 		}
@@ -42,18 +42,17 @@ switch (state) {
 			}
 			
 			// Turn around
-			enemy_invoke_turn();
+			enemy_invoke_turn(motobug_states.turn);
 			break;
 		}
 		break;
 		
 	// Turn
-	case 1:
-		if (animation_is_last_frame()) {
-			state = 0;
+	case motobug_states.turn:
+		if (++state_timer >= turn_steps) {
+			state = motobug_states.move;
 			dir *= -1;
 			hspeed = movement_speed * dir;
-			animation_play(anim_attack);
 		}
 		break;
 }

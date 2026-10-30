@@ -5,9 +5,10 @@ event_inherited();
 movement_speed = 5;
 
 // Variables
+mask_index = sprite_index;
 gravity = 0.09375;
 vspeed = 0;
+state = chopper_states.fly;
 
 // Animations
-anim_attack = animation_create(spr_chopper_attack);
-animation_play(anim_attack);
+chopper_init_animations();

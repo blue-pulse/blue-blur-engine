@@ -6,16 +6,18 @@ bullet_speed = 1.8;
 movement_dist = 80;
 movement_speed = 1.5;
 attack_range = movement_dist - 16;
+turn_steps = 4;
+attack_steps = 56;
+fire_at_step = 32;
 
 // Variables
 mask_index = sprite_index;
 hspeed = movement_speed;
-state = 0;
+state = buzzer_states.fly;
+state_timer = 0;
 can_attack = true;
 left_goal = xstart - movement_dist;
 right_goal = xstart + movement_dist;
 
 // Animations
-anim_attack = animation_create(spr_buzzer_attack);
-anim_fly = animation_create(spr_buzzer_fly);
-anim_turn = animation_create(spr_buzzer_turn);
+buzzer_init_animations();

@@ -1,9 +1,9 @@
-function enemy_invoke_turn() {
+function enemy_invoke_turn(_state) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Logic
-	state = 1;
+	state = _state;
+	state_timer = 0;
 	hspeed = 0;
-	animation_play(anim_turn);
 }
