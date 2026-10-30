@@ -4,7 +4,6 @@ function player_state_launch(phase) {
 		case INIT:
 			// Update variables
 			player_set_ground(noone);
-			animation_play(anim_launch);
 			break;
 
 		// Run state
@@ -38,11 +37,6 @@ function player_state_launch(phase) {
 			if (!air_lock) {
 				// Set state
 				player_set_state(player_state_airbone, STEP);
-				
-				// Animate
-				if (!is_rolling) {
-					animation_play(anim_fall_fast);
-				}
 				break;
 			}
 			break;

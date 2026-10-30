@@ -6,9 +6,6 @@ function player_state_hurt(phase) {
 	        is_rolling = false;
 			force_roll = false;
 			player_set_ground(noone);
-			
-			// Animate
-			animation_play(anim_hurt);
 			break;
 		
 		// Run state

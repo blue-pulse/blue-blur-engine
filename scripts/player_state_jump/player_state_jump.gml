@@ -14,9 +14,9 @@ function player_state_jump(phase) {
 			ver_speed = (-sine * hor_speed) - (cosine * jump_height);
 	        hor_speed = (cosine * hor_speed) - (sine * jump_height);
 			player_set_ground(noone);
+			rotation = gravity_direction;
 			
 			// FX
-			player_animation_jump();
 		    mixer_play_effect(snd_player_jump, REPLACE);
 		    mixer_play_effect(snd_player_wind, REPLACE);
 	        break;

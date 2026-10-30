@@ -73,14 +73,6 @@ function player_state_roll(phase) {
 				break;
 			}
 			
-			// Animate
-			if (abs_speed > 5) {
-				var anim_speed = map(abs_speed, 5, 12, 1.25, 2.25);
-				animation_play(anim_roll_fast, anim_speed);
-			} else {
-				var anim_speed = clamp(abs_speed, 1, 1.5);
-				animation_play(anim_roll_slow, anim_speed);
-			}
 			break;
 		
 		// Stop state

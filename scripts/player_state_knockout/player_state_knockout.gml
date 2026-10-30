@@ -2,7 +2,6 @@ function player_state_knockout(phase) {
 	switch (phase) {
 		// Start state
 		case INIT:
-			animation_play(anim_knockout);
 			break;
 		
 		// Run state

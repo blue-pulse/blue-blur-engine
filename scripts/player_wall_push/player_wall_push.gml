@@ -4,8 +4,8 @@ function player_wall_push(object, wall_dir) {
 		exit;
 	}
 	
-	// Animate
-	animation_play(anim_push);
+	// Keep pushing until the direction is released
+	is_pushing = true;
 	
 	// Variables
 	var pos_x = dcos(angle) * wall_dir;

@@ -16,14 +16,21 @@ allow_movement = true;
 force_roll = false;
 ground_lock = 0;
 is_jumping = false;
+is_pushing = false;
+is_braking_turn = false;
+is_rising = false;
 is_rolling = false;
 is_underwater = false;
 recovery_timer = 0;
 spindash_charge = 0;
+spindash_revs = 0;
+curl_ups = 0;
+monitor_bounces = 0;
 spindash_pitch = 1;
 state = player_state_init;
 state_prev = state;
 stumble_timer = 30;
+turn_timer = 0;
 	
 // State arrays
 direction_denied_states = [
@@ -103,14 +110,14 @@ slope_frict_up = 0.078125;
 stumble_threshold = 2.5;
 unroll_threshold = 0.5;
 
+// Presentation
+presentation_init({ rows: [] }, { state: state, ledge: 0, speed: 0, spindash_revs: 0, pushing: false, rotation: 0, rolling: false, rising: false, braking_turn: false, curl_ups: 0, monitor_bounces: 0 });
+
 // Initialize values
 player_init_config();
 player_init_effects();
-player_init_animations();
 player_set_ground(noone);
 player_update_physics();
 
 // Specific character functions
-player_animation_jump = player_animation_placeholder;
-player_animation_run = player_animation_placeholder;
 player_routine_midair = player_routine_placeholder;

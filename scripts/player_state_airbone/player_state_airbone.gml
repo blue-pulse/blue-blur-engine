@@ -7,11 +7,6 @@ function player_state_airbone(phase) {
 			ver_speed = -dsin(relative_angle) * hor_speed;
 			hor_speed = dcos(relative_angle) * hor_speed;
 			player_set_ground(noone);
-			
-			// Animate
-			if (!is_rolling) {
-				animation_play(anim_fall_fast);
-			}
 			break;
 
 		// Run state
@@ -77,19 +72,22 @@ function player_state_airbone(phase) {
 				allow_jump_action = true;
 				
 				// FX
-				player_animation_jump();
+				rotation = gravity_direction;
+				is_rising = false;
+				curl_ups++;
 			    mixer_play_effect(snd_player_wind, REPLACE);
 				break;
 			}
 			
-			// Animate
-			if (animation == anim_rise and ver_speed >= 0) {
-				animation_play(anim_fall);
+			// Stop rising
+			if (is_rising and ver_speed >= 0) {
+				is_rising = false;
 			}
 			break;
 		
 		// Stop state
 		case STOP:
+			is_rising = false;
 			break;
 	}
 }

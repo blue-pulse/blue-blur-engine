@@ -7,19 +7,6 @@ function player_state_idle(phase) {
 			force_roll = false;
 			player_reset_combo();
 			player_update_cliff();
-			
-			// Animate
-			switch (cliff_dir) {
-			    case 0:
-					animation_play(anim_idle);
-					break;
-			    case dir:
-					animation_play(anim_balance_front);
-					break;
-			    default:
-					animation_play(anim_balance_back);
-					break;
-			}
 			break;
 		
 		// Run state

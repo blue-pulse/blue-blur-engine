@@ -2,6 +2,9 @@ function player_update_animation() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
+	// Choose the animation
+	presentation_update();
+
 	// Enable animations
 	animation_update();
 

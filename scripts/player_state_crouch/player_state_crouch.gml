@@ -2,8 +2,6 @@ function player_state_crouch(phase) {
 	switch (phase) {
 		// Start state
 		case INIT:
-			// Set animation
-			animation_play(anim_crouch);
 			break;
 			
 		// Run state

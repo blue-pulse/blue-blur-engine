@@ -12,7 +12,6 @@ function player_state_spindash(phase) {
 			// FX
 			screen_shake(7);
 			camera_zoom_in(0.125, 120);
-			animation_play(anim_spindash);
 			mixer_play_effect(snd_player_spindash_charge, REPLACE);
 			
 			// Dust
@@ -58,6 +57,7 @@ function player_state_spindash(phase) {
 			if (input_pressed(vb_a)) {
 				// Increase revolutions
 				spindash_charge = min(spindash_charge + 2, 8);
+				spindash_revs++;
 				
 				// SFX
 				if (spindash_charge and audio_is_playing(snd_player_spindash_charge)) {
@@ -69,7 +69,6 @@ function player_state_spindash(phase) {
 				audio_sound_pitch(sound, spindash_pitch);
 				
 				// VFX
-				animation_play(anim_spindash_charge);
 				camera_zoom_in(spindash_charge * 0.08, 30);
 				screen_shake(7);
 				

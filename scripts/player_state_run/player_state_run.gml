@@ -4,6 +4,7 @@ function player_state_run(phase) {
 		case INIT:
 			// Update variables
 	        is_rolling = false;
+			is_pushing = false;
 			force_roll = false;
 			player_reset_combo();
 	        break;
@@ -102,13 +103,10 @@ function player_state_run(phase) {
 				break;
 			}
 			
-			// Skip to next frame if pushing
-			if (dir == input_dir and animation_is_playing(anim_push)) {
-				break;
+			// Stop pushing
+			if (dir != input_dir) {
+				is_pushing = false;
 			}
-			
-			// Animate
-			player_animation_run();
 			break;
 		
 		// Stop state

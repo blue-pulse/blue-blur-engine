@@ -33,7 +33,8 @@ function sonic_routine_homing() {
 		// FX
 		mixer_play_effect(data_dash.sfx, REPLACE);
 		part_particles_create(Particles, x, y, vfx_homing_burst, 1);
-		player_animation_jump();
+		rotation = gravity_direction;
+		curl_ups++;
 		player_set_trail_span(80);
 
 		// Homing attack

@@ -21,7 +21,8 @@ function player_reaction_monitor(object) {
 		else if (ver_speed >= 0 and collision_box_vertical(hor_radius, ver_radius, mask_direction, object)) {
 			ver_speed *= -1;
 			if (!is_rolling) {
-				animation_play(anim_fall_slow);
+				is_rising = false;
+				monitor_bounces++;
 			}
 		}
 	}

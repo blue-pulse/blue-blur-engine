@@ -2,12 +2,9 @@ function player_state_turn(phase) {
 	switch (phase) {
 		// Start state
 	    case INIT:
-			// Set animation
-			if (abs(hor_speed) == decel) {
-				animation_play(anim_skid_turn);
-			} else {
-				animation_play(anim_turn);
-			}
+			// Pick the kind of turn and how long it lasts
+			is_braking_turn = (state_prev == player_state_skid);
+			turn_timer = is_braking_turn ? skid_turn_steps : turn_steps;
 			
 			// Update variables
 			dir *= -1;
@@ -16,6 +13,9 @@ function player_state_turn(phase) {
 		
 		// Run state
 	    case STEP:
+			// Count down the turn
+			turn_timer--;
+			
 			// Update position
 			if (!player_movement_ground()) {
 				break;
@@ -41,7 +41,7 @@ function player_state_turn(phase) {
 			}
 
 			// Return to idle
-			if (animation_is_last_frame()) {
+			if (turn_timer <= 0) {
 				player_set_state(player_state_idle)
 				break;
 			}

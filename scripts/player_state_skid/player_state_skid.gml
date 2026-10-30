@@ -2,12 +2,6 @@ function player_state_skid(phase) {
 	switch (phase) {
 		// Start state
 	    case INIT:
-			// Set animation
-			if (abs(hor_speed) >= 6) {
-				animation_play(anim_skid_fast);
-			} else {
-				animation_play(anim_skid_slow);
-			}
 	        break;
 		
 		// Run state

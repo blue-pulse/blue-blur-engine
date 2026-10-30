@@ -62,7 +62,7 @@ function player_reaction_spring(object) {
 		
 		// Set flags if rising
 		if (spring_rotation == 90) {
-			animation_play(anim_rise);
+			is_rising = true;
 			rotation = gravity_direction;
 			is_rolling = false;
 			is_jumping = false;

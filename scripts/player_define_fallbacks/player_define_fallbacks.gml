@@ -1,0 +1,32 @@
+function player_define_fallbacks() {
+	// Return value
+	return {
+		balance_front: "idle",
+		balance_back: "idle",
+		crouch: "idle",
+		lookup: "idle",
+		spindash: "idle",
+		spindash_charge: "spindash",
+		dashpanel: "spindash",
+		hurt: "idle",
+		knockout: "hurt",
+		fall: "idle",
+		fall_fast: "fall",
+		fall_slow: "fall",
+		rise: "fall",
+		launch: "fall",
+		turn: "idle",
+		skid_turn: "turn",
+		skid_slow: "idle",
+		skid_fast: "skid_slow",
+		stroll: "idle",
+		walk: "stroll",
+		jog: "walk",
+		run: "jog",
+		sprint: "run",
+		push: "idle",
+		roll_jump: "idle",
+		roll_slow: "roll_jump",
+		roll_fast: "roll_slow",
+	};
+}

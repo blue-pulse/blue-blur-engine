@@ -9,7 +9,6 @@ function player_state_death(phase) {
 			// FX
 			alpha = 1;
 			depth = depths.effects;
-			animation_play(anim_hurt);
 			camera_set_target(noone);
 			break;
 
