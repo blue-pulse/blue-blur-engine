@@ -20,10 +20,10 @@ A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creatio
 
 ## Codemap
 
-The folders below are the project's logical organisation. An element that has sprites or sounds splits its folder into `Logic`, `Sprites` and `Audio`, keeping only those that exist.
+The folders below are the project's logical organisation. An element that has sprites, sounds or animations splits its folder into `Logic`, `Sprites`, `Audio` and `Presentation`, keeping only those that exist.
 
 - `01. Vendor` holds the third-party components, listed under Boundaries. Their internal layout is their authors' and is exempt from the structure rules.
-- `02. Core` holds the engine's services, in nine folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` holds the checks built from the functions of the controls adapter, `06. Display` handles the screen, the GPU and the shared visual effects, `07. Physics` answers collision queries by ray and by box, `08. Tooling` holds the debugging tools and the editor icons, and `09. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio, `02. Scenes` over EasyFade, `03. Input` over Input and `04. Animation` over Resnip.
+- `02. Core` holds the engine's services, in nine folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` holds the checks built from the functions of the controls adapter, `06. Display` handles the screen, the GPU, the shared visual effects and the controller of the presentation that chooses the animations, `07. Physics` answers collision queries by ray and by box, `08. Tooling` holds the debugging tools and the editor icons, and `09. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio, `02. Scenes` over EasyFade, `03. Input` over Input and `04. Animation` over Resnip.
 - `03. World` holds the solid geometry the player stands on and the areas that act on the player: `01. Shapes`, `02. Platforms` and `03. Triggers`.
 - `04. Player` holds `01. Base`, the generic player split by responsibility into runtime, states, movement, collision, reactions, status and presentation, and `02. Sonic`, the first character.
 - `05. Camera` holds the camera object and its behaviour.
@@ -70,7 +70,7 @@ The folders of the project's logical organisation are independent of the disk, w
 
 ### The project and its tools
 
-The `tools/` folder holds the Python tools that check and run the project with Igor. It sits outside the logical organisation and is not part of the game. `gm.py` is its single entry point, and its commands are `doctor`, `run` and `check`. The `.sandbox/` folder is their temporary space, and git ignores it. [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states how the game is run, and the guides to the external tools and resources the project uses are in [reference/](./reference/).
+The `tools/` folder holds the Python tools that check and run the project with Igor. It sits outside the logical organisation and is not part of the game. `gm.py` is its single entry point, and its commands are `doctor`, `run` and `check`, and `check` tests the rules that [0009](./decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) lists. The `.sandbox/` folder is their temporary space, and git ignores it. [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states how the game is run, and the guides to the external tools and resources the project uses are in [reference/](./reference/).
 
 ## Cross-cutting concerns
 
@@ -115,19 +115,57 @@ Every function acts on the player slot in the macro `PLAYER_SLOT`, which is 0 be
 
 ### The animation contract
 
-An animation is a sprite, or a run of its sub-images, with a speed. `animation_create` returns one, and the game keeps it and hands it back to the other functions without reading it. An instance that plays animations calls `animation_init` in its Create event and `animation_update` in its Step event, and it shows the current frame through its own `sprite_index` and `image_index`. After `animation_init` the instance holds `animation`, the animation last requested, which is `noone` until the first request. The speed belongs to the instance and not to the animation, so each `animation_play` sets it, and a transition that plays first uses that speed too. A reversed animation plays from its last frame down.
+An animation, called a clip, is a sprite, or a run of its sub-images, with a speed. The logic never names a clip and never reads one. It publishes facts, and the presentation chooses which clip plays, as [0004](./decisions/0004-publish-the-facts-of-the-logic-and-let-the-animation-follow-the-state.md) states.
+
+| Part | Where | Responsibility |
+| --- | --- | --- |
+| The logic | `04. Player` and `07. Enemies` | Decides, counts its durations in steps and writes the facts once per step. |
+| `presentation_facts` | One struct in each instance | The record the logic writes and the presentation reads. |
+| `presentation_update` and `presentation_init` | `02. Core/06. Display/03. Presentation/01. Controller` | Find the row of the state when it changes, run its `entry` list, and run its `follow` list every step. They hold no name of a state, a pose or a clip. |
+| The selectors | `.../02. Selectors` | One script each. Each one picks a clip from the facts and asks the adapter to play it. |
+| The rows and the clips | The shared rows of the player in `04. Player/01. Base/07. Presentation`, and the clips of a character or an enemy and the rows of an enemy in its own folder | Pure data. A row is `{ state, entry, follow }`, and each type builds its clips once. |
+| The adapter | `02. Core/09. Adapters/04. Animation` | The only code that calls Resnip. |
+| `game_set_step_rate` | `02. Core/06. Display/01. Screen` | The one owner of the game speed. It scales the clock of the animation to the rate over `MAX_FPS`. |
+
+An instance that plays clips calls `animation_init` and `presentation_init` in its `Create` event, and runs `presentation_update` and `animation_update` once per step. It shows the frame through its own `sprite_index` and `image_index`. The player runs them after the state, in `player_update_animation`, and an enemy in its End Step event, in `enemy_update_animation`.
+
+The facts of the player are these. An enemy publishes only `state`.
+
+| Fact | Meaning |
+| --- | --- |
+| `state` | The mode of the body, by the identity of the state function. |
+| `ledge` | 0 for none, 1 for a ledge in front and -1 for one behind. |
+| `speed` | The absolute horizontal speed at the end of the step. |
+| `rotation` | The angle of the body. |
+| `rolling`, `rising`, `pushing`, `braking_turn` | Flags the logic owns and clears. They replaced reads of the animation, as [0006](./decisions/0006-replace-a-read-of-the-animation-by-explicit-state.md) states. |
+| `spindash_revs`, `curl_ups`, `monitor_bounces` | Counters that only grow. A selector compares each with the last value it saw. |
+
+A new fact comes with the selector that reads it and never before.
+
+| Selector | What it does |
+| --- | --- |
+| `selector_direct` | Plays one clip. |
+| `selector_by_fact` | Plays the clip of the first case whose value equals a fact. |
+| `selector_by_band` | Plays the clip of the first case whose lower limit a fact reaches. |
+| `selector_ladder` | Every step, picks a clip by speed and sets its pace. It skips the entering step and gives way when a named fact is true. |
+| `selector_start` | Plays a clip at a pace taken from a fact and attaches an effect that lives while it plays. |
+| `selector_while_fact` | Plays a clip on every step a fact holds. |
+| `selector_on_count` | When a counter grew, runs another selector. |
+| `selector_on_change` | When a fact changes to a value, runs the selector of that case. |
+
+The durations that matter to the game are parameters of the logic in steps, listed in [0007](./decisions/0007-let-the-logic-own-the-durations-that-matter-to-the-game.md). The clips of a character come from `<character>_create_animations`, the shared rows from `player_create_presentation` and the fallback for a missing clip from `player_define_fallbacks`, as [0008](./decisions/0008-build-the-animations-once-and-share-them.md) states. A new state machine only has to write the same facts and keep the flags above.
 
 | Function | Meaning |
 | --- | --- |
-| `animation_create(sprite, [options])` | Make an animation. The options are `speed`, `first_image` and `last_image` (sub-images, the whole sprite by default), `reversed`, and `next`, the animation that plays when this one ends. Create `next` first. |
-| `animation_init()`, `animation_update()` | Prepare the instance in Create, and advance and show its animation once per Step. |
-| `animation_play(animation, [speed])` | Request an animation at a speed. It does nothing else when the animation already plays or a transition leads to it. |
+| `animation_create(sprite, [options])` | Make a clip. The options are `speed`, `first_image` and `last_image` (sub-images, the whole sprite by default), `reversed`, and `next`, the clip that plays when this one ends. Create `next` first. |
+| `animation_init()`, `animation_update()` | Prepare the instance in Create, and advance and show its clip once per step. |
+| `animation_play(animation, [speed])` | Request a clip at a speed. It does nothing else when the clip already plays or a transition leads to it. |
 | `animation_add_transition(from, to, via)` | When `to` is requested while `from` plays, `via` plays first. |
-| `animation_is_playing(animation)` | True when it is the animation last requested, or the one now playing. |
-| `animation_is_last_frame()` | True on the last frame of the animation now playing, in its direction. |
-| `animation_get_frame()` | The frame now playing, counted from 0 at the first image of the animation. |
+| `animation_is_playing(animation)` | True when it is the clip last requested, or the one now playing. Only the presentation uses it. |
+| `animation_set_time_scale(scale)` | Scale the pace of every clip. Only `game_set_step_rate` calls it. |
 | `animation_debug_draw(x, y)` | Draw the sub-images of the sprite with the frame now playing marked. |
-| `animation_free()` | Remove the transitions the instance added, in its Clean Up event. |
+
+After `animation_init` the instance holds `animation`, the clip last requested, which is `noone` until the first request. Only the presentation reads it. The speed belongs to the instance and not to the clip, so each `animation_play` sets it. A reversed clip plays from its last frame down.
 
 ## Glossary
 
@@ -144,7 +182,12 @@ An animation is a sprite, or a run of its sub-images, with a speed. `animation_c
 - **Layer:** an ordered group inside a room, such as a layer of instances.
 - **Sub-image:** one image of a sprite, counted from 0.
 - **Frame:** one image of an animation, counted from 0 at its first sub-image.
-- **Transition:** an animation that plays between two others when the second is requested while the first plays.
+- **Clip:** an animation, which is a sprite or a run of its sub-images with a speed.
+- **Transition:** a clip that plays between two others when the second is requested while the first plays.
+- **Facts:** the record that the logic writes once per step and the presentation reads to choose a clip.
+- **Row:** the data that says which selectors run when a state starts and while it lasts.
+- **Selector:** a script that picks a clip from the facts and asks the adapter to play it.
+- **Fallback:** the clip that plays in place of one a character does not have.
 - **VM:** the runtime that interprets compiled bytecode, used while testing.
 - **YYC:** the compiler that turns GML into native code through C++, used for the executables that are shared.
 - **Runtime:** the versioned package of GameMaker that holds the compiler, the runner and Igor.

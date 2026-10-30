@@ -2,7 +2,7 @@
 
 ## About this document
 
-This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. Only `E006` is checked, for each library that already has an adapter, by `python tools/gm.py check`, so each other rule holds by attention alone.
+This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. `python tools/gm.py check` checks `E006` and the rules about animation, time, presentation and folders that [0009](./decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) lists, so each other rule holds by attention alone.
 
 It contains what you must always do and what you must never do. It does not explain how the project is built, which is [ARCHITECTURE.md](./ARCHITECTURE.md), and it does not argue unusual choices, which are the records in [decisions/](./decisions/). The principles behind every rule are in [PRINCIPLES.md](./PRINCIPLES.md), and the backlog is [PENDING.md](./PENDING.md).
 
@@ -52,7 +52,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `S009` Name a resource for clarity over brevity, because the name is its only context in code and autocomplete makes length cheap.
 - `S010` Use a leading underscore only to mark something private or internal, as PEP 8 does.
 - `S011` Edit the GameMaker project files, `blue-blur-engine.yyp`, each `.yy` and `blue-blur-engine.resource_order`, as little as possible, keep the exact line format the IDE writes, and reopen the project to verify, because the IDE is fragile with them.
-- `S014` Split the folder of an element that has sprites or sounds into `Logic`, `Sprites` and `Audio`, in that order and only those that exist, where `Logic` holds objects, scripts and rooms, `Sprites` holds sprites, tilesets and fonts, and `Audio` holds sounds, so every element reads the same way and a new one copies a sibling. This is a local convention that applies `S007` and `S012`, and no external standard names it.
+- `S014` Split the folder of an element that has sprites, sounds or animations into `Logic`, `Sprites`, `Audio` and `Presentation`, in that order and only those that exist, where `Logic` holds objects, scripts and rooms, `Sprites` holds sprites, tilesets and fonts, `Audio` holds sounds, and `Presentation` holds the scripts that build and choose the animations of the element, so every element reads the same way and a new one copies a sibling. `Presentation` comes last because it depends on the others, as `S002` asks. This is a local convention that applies `S007` and `S012`, and no external standard names it.
 
 ### External dependencies
 

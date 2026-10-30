@@ -56,22 +56,6 @@ Shape. A GitHub Actions workflow that installs the runtime, creates the licence 
 
 Done when a workflow runs on every push and fails when the project does not compile.
 
-## 7. Share the animations of Sonic between instances
-
-Problem. Each Sonic builds its own animations and 26 transitions when it is created, and removes the transitions in its Clean Up event, because the transition registry of Resnip holds its animations until they are removed. Every load of a stage rebuilds about 45 animations. One set per character, shared by every instance, would remove both the rebuild and the cleanup, and it is the design the Resnip repository recommends. It changes the roughly 200 references to `anim_*`, which today live in instance variables.
-
-Shape. Build the set once per character, keep it where every instance of the character can read it (`S008`), point the references at it, and remove `animation_free` and the Clean Up event of `obj_player`. The enemies build no transitions, so they can stay as they are.
-
-Done when no instance builds the animations of its character and `animation_free` is gone.
-
-## 8. Stop the logic from depending on animation
-
-Problem. States and enemies read the animation to decide what to do, when the state machine should own the logic and the animation should only present it. Five places do it today. `player_state_turn` leaves its state when `animation_is_last_frame()`. `player_state_airbone` reads `animation == anim_rise` to switch to the fall. `player_state_run` reads `animation_is_playing(anim_push)` to avoid asking for the run animation again. `obj_jumpball` destroys itself when `owner.animation` stops being its hook. The enemies `obj_balloon`, `obj_buzzer`, `obj_newtron` and `obj_motobug` fire their bullets on a frame number, return to idle on the last frame, and `obj_newtron` removes itself when its frame falls below 1.
-
-Shape. Study how the state machine works today before changing anything, then decide with the maintainer where each duration and event should live. Resnip offers frame scripts and completion scripts if an animation has to tell the logic something. Keep it apart from the passes of item 2, because it changes behaviour.
-
-Done when no state, physics routine or enemy reads the animation, and the animation functions have no caller outside the code that presents.
-
 ## 9. Make the debug tools professional
 
 Problem. The debug overlay works but was not designed on purpose. Its shortcuts are one chain of `if` statements that run with the player as `self`, with the keys written in the code. Specific faults were found by reading, none by running.
@@ -79,7 +63,6 @@ Problem. The debug overlay works but was not designed on purpose. Its shortcuts 
 - `obj_debug_manager` `Step_0` uses `exit` inside `with (Protagonist)`, which ends the whole event, so while the player is dying the text freezes and no shortcut works, Esc and R included.
 - Two functions change the game speed, the FPS shortcut and `game_reduce_power`, and the focus change overwrites the shortcut. Closing the overlay does not restore the speed.
 - Esc is also the `BACK` verb of Input, and R and Esc act with no modifier.
-- Lowering the FPS does not slow the animations, because Resnip reads the game speed at every step and a sprite in frames per second keeps its pace in real time.
 - The restart-stage shortcut has no `scene_is_changing` guard, the HUD shortcut fails without `obj_hud`, and the camera shortcut says random but takes the first instance and may compare an instance with an object.
 - Every enemy draws the full strip of its animation each frame, and the data text is rebuilt each step.
 - The shortcuts need a numeric keypad, and the manager reads both `Protagonist` and `Player`.
