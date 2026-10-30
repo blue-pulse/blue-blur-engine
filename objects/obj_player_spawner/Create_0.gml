@@ -53,6 +53,9 @@ camera_set_target(player);
 
 // Create controllers
 manager_create(Stage);
+if (REPLAY_SCENARIO != "") {
+	manager_create(obj_replay_manager);
+}
 gui_create(obj_hud, gui_config);
 Protagonist = player;
 

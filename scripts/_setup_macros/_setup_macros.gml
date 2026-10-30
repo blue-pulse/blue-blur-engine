@@ -56,6 +56,9 @@
 #macro sys_active global.game_state == states.active
 #macro ticks global.framecount
 
+// Replay
+#macro REPLAY_SCENARIO ""
+
 // Aliases
 #macro Camera obj_camera
 #macro Particles global.particles

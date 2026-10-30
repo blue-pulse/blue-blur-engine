@@ -3,6 +3,9 @@ is_active = game_get_initflag();
 is_loading = false;
 skip_loading = false;
 next_room = (is_active) ? (rm_home) : (rm_title);
+if (REPLAY_SCENARIO != "") {
+	next_room = replay_define_scenarios()[$ REPLAY_SCENARIO].room;
+}
 
 // Logic
 switch (room) {
