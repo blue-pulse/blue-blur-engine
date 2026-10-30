@@ -1,0 +1,9 @@
+# Frozen violations of the animation, time and character rules, see tools/commands/zones.py
+# Each line is a file, a rule and the number of uses allowed, and the count may only go down
+objects/obj_debug_manager/Draw_0.gml request 2
+objects/obj_ring/Create_0.gml name 1
+objects/obj_ring/Create_0.gml time 1
+objects/obj_ring/Draw_0.gml name 1
+objects/obj_ring_scattered/Create_0.gml name 1
+scripts/_setup_globals/_setup_globals.gml character 3
+scripts/game_reset_player/game_reset_player.gml character 1
