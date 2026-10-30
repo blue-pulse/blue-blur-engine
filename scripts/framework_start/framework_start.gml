@@ -13,7 +13,7 @@ function framework_start() {
 		game_load_config();
 		audio_channel_num(MAX_SOUNDS);
 		mixer_initialize();
-		game_set_speed(MAX_FPS, gamespeed_fps);
+		game_set_step_rate(MAX_FPS);
 		print("[INFO] Setting game parameters...");
 	
 		// Set screen parameters

@@ -13,7 +13,7 @@ function game_reduce_power() {
 		// Only in frame in which we became focused
 		if (game_has_focus()) {
 			low_power_mode = false;
-			game_set_speed(MAX_FPS, gamespeed_fps);
+			game_set_step_rate(MAX_FPS);
 			audio_master_gain(global.master_volume);
 		}
 	}
@@ -23,7 +23,7 @@ function game_reduce_power() {
 		if (!game_has_focus()) {
 			low_power_mode = true;
 			window_minimise();
-			game_set_speed(20, gamespeed_fps);
+			game_set_step_rate(20);
 		}
 	}
 }
