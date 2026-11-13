@@ -3,6 +3,7 @@ function presentation_init(_set, _facts) {
 	presentation_facts = _facts;
 	presentation_marks = {};
 	presentation_row = undefined;
+	presentation_follow = undefined;
 	presentation_seen = undefined;
 	presentation_set = _set;
 }
