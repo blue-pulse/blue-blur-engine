@@ -116,6 +116,7 @@ A Windows executable accepts parameters (**Manual**, [Command-Line Parameters](h
 | The build does not start and the user folder holds no `licence.plist` | Nobody signed in to the IDE on the machine (**Manual**) | Sign in once, or create a licence file with an access key |
 | Errors about long paths | Some platforms limit the path length (**Manual**) | Use short folders, or map a drive with `subst` |
 | `Igor: unknown command` | The command or the platform token is wrong (**Unverified**) | Check the token, for example `Mac` and not `macOS` |
+| `LNK2001: unresolved external symbol` on names such as `gs_constArg0_...`, then `ERROR al compilar` or its English form, on a YYC build | A macro changed and the build reused the cache of the previous one, which keeps generated code that no longer matches (**Observed**, runtime 2026.0.0.23) | Delete the cache folder given to `/cache` before each YYC build that follows a change of a macro |
 
 ## The manual and its branches
 

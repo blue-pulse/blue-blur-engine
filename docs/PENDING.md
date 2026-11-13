@@ -74,3 +74,11 @@ Shape. Audit once more before editing, then work in this order, with the user ap
 - Add pause with step by step advance for inspecting animations, and switches to draw the collision masks and the animation panels, with the panels limited to enemies in view.
 
 Done when each shortcut is a row of the table, no debug command depends on `self`, the fault list above is closed, and the overlay leaves the game as it found it.
+
+## 10. Report the cost of a repeated request to Resnip
+
+Problem. Asking again for the snip that already plays, with `resnip_set_speed` and `resnip_play` with options, costs about 500 ns on YYC per call in a hot loop, as [reference/resnip.md](./reference/resnip.md) records. The presentation pays it on every step of the ladder. Resnip is an independent library, so the fix belongs upstream and `Vendor` is not edited (`E001`).
+
+Shape. Reproduce the cost with the benchmark of the Resnip repository, then open an issue at [blue-pulse/resnip](https://github.com/blue-pulse/resnip) with the case and the number. A likely shape is to check `restart: false` against the current snip before reading the other options.
+
+Done when the issue is open with a reproducible number, and the release that fixes it, if any, is taken in through `Vendor` as usual.

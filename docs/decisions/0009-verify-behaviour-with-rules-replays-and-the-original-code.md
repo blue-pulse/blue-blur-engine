@@ -46,7 +46,9 @@ This is the method of the characterization tests of Feathers, where the current 
 - A recorded session covers what the maintainer did. A turn after a roll was not in the first two sessions and was found in the third, so a clean result is not a proof.
 - The trace of the enemies used for their migration was a temporary addition to the harness. It covered the position, the state, the frame and the bullets of each enemy, and not the hitbox of an enemy, the damage of a bullet or the sound.
 - When the maintainer approves a change, the original code is patched with the same rule so that the comparison can go on. So far the only patch is the turn, which lasts 4 or 12 steps by a counter.
-- The comparison against the original code ran on the VM. The benchmark ran on YYC, and the game was not played on YYC.
+- The migration was compared against the original code on the VM only. The changes of [0010](./0010-accept-the-cost-of-the-generic-presentation.md) were also compared on YYC, against a YYC run of the code before them, in every scenario and the trace.
+- On YYC the cache of Igor is deleted before each scenario, because a changed scenario macro with a kept cache fails to link.
+- The VM and YYC walk the instances of a `with` in a different order, so the trace of the enemies is compared per step without its order when the two runtimes are compared.
 - The replay needs the window to stay still. The real keyboard is live until the script starts, and the window losing focus lowers the game speed.
 - The warning for a missing clip and the fallback it names were run only through a temporary block of the harness, which was removed.
 

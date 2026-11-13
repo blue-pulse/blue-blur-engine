@@ -246,6 +246,7 @@ Other costs, by the same method:
 - Creating a snip that asks for durations, on a sprite of 20 frames: 25.4 µs on YYC and 44.7 µs on the VM, almost all in `sprite_get_info`, which grows with the number of sub-images of the sprite.
 - The gamespeed read at every step costs about 4.5 percent of the step on YYC and nothing measurable on the VM.
 - Creation is slower than in AESnips because a struct costs about 45 ns per field to create, and a playback has 17 fields.
+- Asking again for the snip that already plays, as `resnip_set_speed` followed by `resnip_play` with an options struct and `restart: false`, cost about 500 ns on YYC and 1,150 ns on the VM per pair in a hot loop, on one machine on 2026-10-29. Before it finds that nothing has to change, `resnip_play` reads the four options into locals (`(impl)`, read, `resnip_play.gml:15`). How the cost splits between the two calls was not measured, and the harness is gone, so the figure cannot be repeated.
 
 The saving over AESnips is small in absolute terms. A game with a few hundred animations will hardly notice it.
 

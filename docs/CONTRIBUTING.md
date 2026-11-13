@@ -73,6 +73,8 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `V001` Verify a change on the path a player actually takes, because a shortcut can pass while the real path is broken.
 - `V002` State how a change was verified and what was not, so nobody assumes a check that never ran.
 - `V004` Test with the VM runtime and build every executable you share with YYC, because YYC compiles the code to native code for performance while the VM only needs to run quickly while you test.
+- `V005` Measure a claim about speed inside the real step, by segments and against a build of the unchanged code, and never from a hot loop alone, because a hot loop underestimated a cost by 5 to 7 times, as [0011](./decisions/0011-measure-a-cost-in-the-real-step-against-a-rebuild.md) states.
+- `V006` Check the behaviour of a change on YYC against a YYC run of the unchanged code, because `V004` ships YYC and a reference taken on the VM cannot show what only YYC changes.
 
 ### Documentation
 
@@ -94,6 +96,8 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `A007` Keep to the scope of the request, and mention what you notice elsewhere without changing it.
 - `A012` When the user asks for a commit, give it a simple and clear title and a one line description of what changed and why, short enough to read on one line of a full screen window, and use no colon, semicolon, dash or complex word in either, so the history reads easily.
 - `A013` Run the game with `python tools/gm.py run`, and when it fails read what `python tools/gm.py doctor` prints before anything else, so nobody rebuilds the Igor command or reads the Igor guide again, as [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states.
+- `A014` Ask the user before each batch of runs of the game, and say when it starts and when it ends, because a run uses the user's machine and needs the keyboard and the mouse left alone.
+- `A015` Wait for the file a batch writes when it ends, never for the notice that its launcher finished, and compare outputs only after checking they are not empty, because a finished launcher and two empty files both look like success.
 
 ## Never
 
