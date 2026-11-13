@@ -26,7 +26,7 @@ These are fitness functions, in the sense of Ford, Parsons and Kua, checks that 
 | Zones of animation and time | The logic makes no request to the animation, reads none and uses no source of time, outside the presentation and the adapter |
 | Names of the shared presentation | The controller and the selectors name nothing that is not in Core or Vendor |
 | One function for each selector | Each selector is one script with a limit of 6 branches |
-| Character dependency | No file outside a character names what is in it, except four uses in two files of the roster, which are frozen |
+| Character dependency | No file outside a character names what is in it, except the uses in the roster, which are frozen |
 | Rows, clips, fallbacks and sprites | Every state has a row, every clip has a fallback, no chain of fallbacks loops, every character has an `idle` and every sprite exists |
 | Folders of resources | The folder of a resource is declared in the project file, so the game loads |
 
@@ -34,9 +34,9 @@ The uses that existed when a check was added are frozen in `tools/zones_baseline
 
 ### The replay harness and the original code
 
-- The harness runs a scenario of buttons by step, with the random numbers fixed, and prints one line for each step and a hash of the logic and of the picture. It is off while `REPLAY_SCENARIO` is empty, and the plug-in that sets the buttons is not even defined then.
-- The original code is checked out as a `git worktree` of `HEAD` with only the harness copied on top, and the worktree is removed when the work ends. The same scenario runs in both trees and the lines are compared. A difference is explained, fixed or approved by the maintainer.
-- A scenario is a recorded session of the maintainer or a short set of buttons. The recording mode writes the buttons held at each step.
+- The harness runs a scenario of buttons by step and prints one line for each step and a hash of the logic and of the picture. [replay](../components/replay.md) describes it.
+- The original code is checked out as a `git worktree` of `HEAD` with the harness copied on top. The same scenario runs in both trees and the lines are compared. A difference is explained, fixed or approved by the maintainer.
+- A scenario is a recorded session of the maintainer or a short set of buttons.
 - A comparison counts only for what it goes through. A scenario that never reaches a state proves nothing about it, so the lines are checked for the states they claim to test.
 
 This is the method of the characterization tests of Feathers, where the current behaviour is pinned before it is changed. The book was not read.

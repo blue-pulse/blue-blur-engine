@@ -2,7 +2,7 @@
 
 ## About this document
 
-This record decides how the game logic and the animation talk to each other. It is for anyone about to let a state ask for an animation by name, read the animation from a state or a physics routine, add a shared list of activities, or change what the player publishes each step. It states the boundary, the one speed the controller reads, and what was refused. It does not list the facts or describe the controller, which are in [ARCHITECTURE.md](../ARCHITECTURE.md), and it does not cover the transitions, which are [0005](./0005-use-one-mechanism-for-transitions.md). Update it only when the maintainer rules a change.
+This record decides how the game logic and the animation talk to each other. It is for anyone about to let a state ask for an animation by name, read the animation from a state or a physics routine, add a shared list of activities, or change what the player publishes each step. It states the boundary, the one speed the controller reads, and what was refused. It does not list the facts or describe the controller, which are in [animation](../components/animation.md), and it does not cover the transitions, which are [0005](./0005-use-one-mechanism-for-transitions.md). Update it only when the maintainer rules a change.
 
 - Status: accepted
 - Date: 2026-10-29
@@ -23,10 +23,10 @@ The states, the physics routines and the enemies called the animation functions 
 
 The logic publishes, the presentation consumes.
 
-- `player_publish_facts` copies the facts the animation needs from the variables of the logic into `presentation_facts` once per step, after the state, the speed limits, the grid and the rotation. An enemy publishes only `state`.
-- `presentation_update` reads the record and holds no name of a state, a pose or a clip. The data it follows comes from the character or the enemy.
-- A fact comes with the selector that reads it and never before. A counter only grows, and the selector compares it with the last value it saw.
-- The mode of the body is the identity of the `state` function. A row of the data is `{ state, entry, follow }`, so the logic and the animation use the same word.
+- The logic copies the facts the animation needs into a record once per step, after the state, the speed limits, the grid and the rotation, and the controller reads the record. [animation](../components/animation.md) describes the record and the controller.
+- The controller holds no name of a state, a pose or a clip. The data it follows comes from the character or the enemy.
+- A fact comes with the selector that reads it and never before.
+- The mode of the body is the identity of the `state` function, so the logic and the animation use the same word and the data of the animation is found by it.
 - A behaviour that used to live in the animation is a variable of the logic with the same rule for clearing it. [0006](./0006-replace-a-read-of-the-animation-by-explicit-state.md) states why.
 
 ### The speed of the step

@@ -14,7 +14,7 @@ This record decides where the animations of a character or an enemy are built an
 
 The clips, the transitions and the rows of a type are built once and read by every instance. This is the Type Object of Nystrom, where the data shared by all objects of a kind lives in one object and not in each instance.
 
-- A character builds its clips in `<character>_create_animations` and keeps them in a `static`, so the first instance builds them and the others read them. An enemy has one function, `<enemy>_init_animations`, that does the same for its clips and rows.
+- A character builds its clips once and keeps them in a `static`, so the first instance builds them and the others read them. An enemy does the same for its clips and rows. [animation](../components/animation.md) names the functions.
 - A `static` runs its initialiser once with the `self` of the first caller, so the function that holds it belongs to one character. A shared function could not hold it, because it would be shared by all characters.
 - An instance keeps only its playback, the last state it saw and the last value of each counter.
 - The transitions are registered once, and there is no `animation_free` and no `Clean Up` event for them.
@@ -23,12 +23,12 @@ The clips, the transitions and the rows of a type are built once and read by eve
 
 This is the Animator Override Controller of Unity, where the structure is shared and each character replaces the clips.
 
-- `player_create_presentation` holds the rows of the states every character shares, as data that names a clip by key. A character gives it its clips and the effects it owns, such as the jump ball of Sonic.
-- Sonic uses the shared rows as they are. A character with a state of its own would add its rows to the array that `player_create_presentation` returns, in its own folder, and no character does this yet.
-- `player_define_fallbacks` lists, for each key, the key that plays when a character has no clip for it, and every chain ends at `idle`. `player_resolve_clips` fills what is missing and prints a warning for each one that says which clip plays in its place. A character without `idle` prints an error.
+- The rows of the states every character shares are data that names a clip by key. A character gives its clips and the effects it owns, such as the jump ball of Sonic.
+- Sonic uses the shared rows as they are. A character with a state of its own would add its rows to the shared ones, in its own folder, and no character does this yet.
+- A table lists, for each key, the key that plays when a character has no clip for it, and every chain ends at `idle`. A missing clip prints a warning that says which clip plays in its place, and a character without `idle` prints an error when a chain reaches it.
 - A character with no transitions registers none, and its clips play with nothing between them.
 
-A new character adds files to its own folder. It edits no file of the base. The character roster is outside the animation: `_setup_globals` and `game_reset_player` name `obj_sonic`, and a new character must be added there. The rule for the dependency of characters freezes them as four uses in two files.
+A new character adds files to its own folder. It edits no file of the base. The character roster is outside the animation: `_setup_globals` and `game_reset_player` name `obj_sonic`, and a new character must be added there. The rule for the dependency of characters freezes those uses.
 
 ## Considered options
 

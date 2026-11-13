@@ -12,6 +12,16 @@ This directory is your whole sandbox. Never leave it, not to look for a file you
 2. `docs/PRINCIPLES.md` and `docs/ARCHITECTURE.md`.
 3. `docs/decisions/`, before you change anything that looks wrong.
 
+## When to read what
+
+| Before you | Read again |
+| --- | --- |
+| Edit an area | Its row in "Before you touch, read" of `docs/CONTRIBUTING.md`, and its document in `docs/components/` |
+| Run the game | `A013`, `A014`, `A015`, `V004`, `V006`, and [the replay harness](docs/components/replay.md) |
+| Report what you did | `A006`, `V002`, `V003` |
+| Add or update a dependency | `E001` to `E008` and `A008` |
+| Commit or open a pull request | `A009`, `A010`, `A012`, `G001`, `G002`, `G003` |
+
 ## Navigating the repository
 
 - The code is in `scripts/<name>/<name>.gml`, one function per script, and in `objects/<name>/<Event>_<n>.gml`, such as `Create_0`, `Step_1` and `Alarm_0`.
@@ -23,5 +33,5 @@ This directory is your whole sandbox. Never leave it, not to look for a file you
 ## Checks
 
 - Run the game with `python tools/gm.py run`, and when it fails read what `python tools/gm.py doctor` prints before anything else (`A013`). This starts the game but cannot judge it, so report what you could not check (`A006`). The repository has no test commands.
-- After a change that touches a library or its adapter, run `python tools/gm.py check`, which finds the use of an adapted library outside its adapter (`E006`) and warns about libraries with no adapter (`E002`).
+- After a change that touches a library, its adapter, the animation or the folders of resources, run `python tools/gm.py check`, which finds the use of an adapted library outside its adapter (`E006`), warns about libraries with no adapter (`E002`) and checks the rules of [0009](docs/decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md).
 - After a change, run `git status` and `git diff`, and look at every `.yy` file that changed, because the IDE rewrites them (`G002`).

@@ -31,7 +31,7 @@ python tools/gm.py run
 python tools/gm.py check
 ```
 
-`check` needs no runtime and no licence. It reads the libraries from `Vendor`, treats a library as having an adapter once a file in `09. Adapters` uses it, and exits with 1 when any other file outside `Vendor` uses that library. It warns about the libraries that are still called without an adapter. `doctor` shows the runtime, the licence folder and the prefabs folder it found, and says what to do when one is missing. `run` compiles the project with Igor and starts the game, and it ends when you close the game window. Nothing needs configuring when GameMaker is installed in its usual place. When it is not, pass `--runtime-dir`, `--user-dir` or `--prefabs-dir`, or set `GM_RUNTIME_DIR`, `GM_USER_DIR` or `GM_PREFABS_DIR`. The tools keep their temporary files in `.sandbox/`, which git ignores. Only Windows has been verified.
+`check` needs no runtime and no licence. It reads the libraries from `Vendor`, treats a library as having an adapter once a file in `09. Adapters` uses it, and exits with 1 when any other file outside `Vendor` uses that library. It warns about the libraries that are still called without an adapter. It also checks the animation, time, character and folder rules that [decision 0009](./docs/decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) lists, and exits with 1 when one is broken. `doctor` shows the runtime, the licence folder and the prefabs folder it found, and says what to do when one is missing. `run` compiles the project with Igor and starts the game, and it ends when you close the game window. Nothing needs configuring when GameMaker is installed in its usual place. When it is not, pass `--runtime-dir`, `--user-dir` or `--prefabs-dir`, or set `GM_RUNTIME_DIR`, `GM_USER_DIR` or `GM_PREFABS_DIR`. The tools keep their temporary files in `.sandbox/`, which git ignores. Only Windows has been verified.
 
 [Decision 0002](./docs/decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states why the game is run this way.
 
@@ -43,7 +43,7 @@ python tools/gm.py check
 | --- | --- | --- |
 | Check the setup | `python tools/gm.py doctor` | `gm_mcp_health` |
 | Run the game | `python tools/gm.py run` | `gm_run`, which did not start this project in its tests, so use the command |
-| Check the library boundaries | `python tools/gm.py check` | None |
+| Check the library boundaries and the rules of 0009 | `python tools/gm.py check` | None |
 | Read assets and references | Read the files | `gm_list_assets`, `gm_read_asset`, `gm_find_references` |
 
 ## Project organisation
@@ -69,6 +69,8 @@ We recommend reading the following documents in the order listed.
 - [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md): how the project is organised and the invariants it keeps.
 - [docs/PRINCIPLES.md](./docs/PRINCIPLES.md): the design principles every change is judged against.
 - [docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md): the rules every contributor follows.
+- [docs/components/animation.md](./docs/components/animation.md): how the animation of the player and the enemies works, and what to edit to change it.
+- [docs/components/replay.md](./docs/components/replay.md): the replay harness that compares a change with the code before it.
 - [docs/decisions/](./docs/decisions/): the records of choices that look unusual but are deliberate.
 - [docs/PENDING.md](./docs/PENDING.md): the backlog of known work.
 - [docs/reference/](./docs/reference/): guides to the external tools and resources the project uses.

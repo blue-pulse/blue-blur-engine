@@ -47,7 +47,7 @@ If the art is moved, the picture and the bullet can disagree, and the game still
 
 ### One owner of the speed
 
-`game_set_step_rate` sets the game speed and the scale of the default clock of Resnip to the rate over `MAX_FPS`. `framework_start` and `game_reduce_power` call it, and nothing else changes the speed. At 60 steps per second the scale is 1.
+`game_set_step_rate` sets the game speed and the scale of the default clock of Resnip to the rate over `MAX_FPS`, and nothing else changes the speed. [animation](../components/animation.md) lists its callers.
 
 ## Considered options
 

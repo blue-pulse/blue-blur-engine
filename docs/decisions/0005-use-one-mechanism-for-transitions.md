@@ -13,7 +13,7 @@ This record decides how one animation leads into another. It is for anyone about
 Resnip has one place that answers what plays next, and the game uses only that.
 
 - An entrance is the `next` of a clip, set with the option `next` of `animation_create`. The clip it leads to is created first.
-- An exit is a pair of the registry of Resnip, `animation_add_transition(from, to, via)`, registered once per character when the first one is created. The registration is a `static` guard in `sonic_init_transitions`.
+- An exit is a pair of the registry of Resnip, `animation_add_transition(from, to, via)`, registered once per character when the first one is created. [animation](../components/animation.md) describes where.
 - A character without transitions registers none. Its clips play one after the other with no clip between them.
 
 ## Considered options

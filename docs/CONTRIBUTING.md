@@ -2,7 +2,7 @@
 
 ## About this document
 
-This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. `python tools/gm.py check` checks `E006` and the rules about animation, time, presentation and folders that [0009](./decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) lists, so each other rule holds by attention alone.
+This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. `python tools/gm.py check` checks `E006` and the rules about animation, time, presentation and folders that [0009](./decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) lists, so each other rule holds by attention alone. `CLAUDE.md` makes Claude Code load this document at launch, and no rule is enforced by permissions or by a hook.
 
 It contains what you must always do and what you must never do. It does not explain how the project is built, which is [ARCHITECTURE.md](./ARCHITECTURE.md), and it does not argue unusual choices, which are the records in [decisions/](./decisions/). The principles behind every rule are in [PRINCIPLES.md](./PRINCIPLES.md), and the backlog is [PENDING.md](./PENDING.md).
 
@@ -21,6 +21,17 @@ Each rule carries a stable code, the way Ruff codes its lint rules: a letter for
 A new rule takes the next free number of its letter and goes at the end of its section. A code is never reused or renumbered, and a retired rule keeps its line as `Retired` with one sentence saying why.
 
 Update this document when a rule is added, changed or retired. Each rule is one line with its reason. A choice that looks wrong but is deliberate also gets a record under `decisions/`, as [0000](./decisions/0000-record-architecture-decisions.md) states. Anything smaller stays a line here.
+
+## Before you touch, read
+
+| Before you touch | Read |
+| --- | --- |
+| The animation, the presentation, a state, a clip, an enemy or a character | [animation](./components/animation.md) |
+| The replay harness, or how to check a change of behaviour | [replay](./components/replay.md) |
+| A third-party library or an adapter | [0001](./decisions/0001-vendor-libraries-and-adapters.md) |
+| How the game is run, or `tools/` | [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) |
+| Directions and the controls | [0003](./decisions/0003-read-directions-with-input-axis-in-gamemakers-sign-order.md) |
+| A claim about speed | [0011](./decisions/0011-measure-a-cost-in-the-real-step-against-a-rebuild.md) |
 
 ## Always
 
@@ -98,6 +109,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `A013` Run the game with `python tools/gm.py run`, and when it fails read what `python tools/gm.py doctor` prints before anything else, so nobody rebuilds the Igor command or reads the Igor guide again, as [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) states.
 - `A014` Ask the user before each batch of runs of the game, and say when it starts and when it ends, because a run uses the user's machine and needs the keyboard and the mouse left alone.
 - `A015` Wait for the file a batch writes when it ends, never for the notice that its launcher finished, and compare outputs only after checking they are not empty, because a finished launcher and two empty files both look like success.
+- `A016` Read again the rules and documents that [AGENTS.md](../AGENTS.md) lists for a moment, such as editing an area, running the game, reporting, adding a dependency or committing, right before acting at that moment, because a rule read at the start of a long session is not recalled when it applies.
 
 ## Never
 
