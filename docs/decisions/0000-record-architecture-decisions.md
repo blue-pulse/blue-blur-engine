@@ -39,7 +39,7 @@ Every record carries these fields:
 
 Each record also opens with a short "About this document" section, like every document under `docs/`. A long record adds a "Summary" section after its metadata: a few bullets with the decision and what must never be done, before the detail.
 
-At the repository root, `README.md` introduces the project, and `AGENTS.md` is a convenience that points AI coding agents at the rules, and `CLAUDE.md` imports it with the rules for Claude Code. The project must stay complete without it. The documents under `docs/` keep to one layout: `CONTRIBUTING.md`, `ARCHITECTURE.md`, `PRINCIPLES.md`, `PENDING.md`, the records here, `components/` for the parts that need more than a paragraph of the architecture, and `reference/` for the external libraries the project relies on, once there are any. A reference describes one library alone and cites no other document, so it stays correct whatever happens to the rest. Our documents may cite a reference, and a reference never cites them.
+At the repository root, `README.md` introduces the project, and `AGENTS.md` is a convenience that points AI coding agents at the rules. The project must stay complete without it. The documents under `docs/` keep to one layout: `CONTRIBUTING.md`, `ARCHITECTURE.md`, `PRINCIPLES.md`, `PENDING.md`, the records here, `components/` for the parts that need more than a paragraph of the architecture, and `reference/` for the external libraries the project relies on, once there are any. A reference describes one library alone and cites no other document, so it stays correct whatever happens to the rest. Our documents may cite a reference, and a reference never cites them.
 
 ## Consequences
 
