@@ -11,6 +11,7 @@ This record decides how much the presentation may cost and which ways of making 
 ## Summary
 
 - The presentation costs about 6.8 µs more per player step on YYC than the code it replaced, mostly because it runs cold, and that cost is accepted.
+- It is still cheap. The animation of the player and 30 enemies takes under 0.08 ms of a 16.66 ms frame, 8 percent of the default budget Unreal Engine gives to animation.
 - A change for speed is kept only if it gains at least 0.5 µs per step in the real step and keeps clear names. Clarity comes first.
 - Never skip `animation_play` because the clip looks unchanged, never skip the update of the trail, and never move the animation of an enemy to the Step event. Each one changes what is seen.
 
@@ -21,6 +22,19 @@ Moving the clip requests out of the states into a controller that reads rows of 
 The cost is not in a slow line. Called twice in a row inside the real step, the second call cost 44 percent of the first for `player_publish_facts` and 37 percent for `presentation_update`, so about 61 percent of the 10 µs those two cost is the penalty of running cold after about 50 µs of other logic. Inside the controller, on a running step, the dispatch and guard cost 2.6 µs, walking the bands of the ladder 3.3 µs, and `resnip_set_speed` with `resnip_play` 3.6 µs, which the old code already paid inside the state.
 
 An enemy at rest costs about 1.9 µs per step on YYC, 0.25 µs more than before, measured with 200 Buzzers stepped by `event_perform` in a `with`. With 30 enemies in view that is about 7 µs per frame. Whether only the first enemy of a step pays the cold start was not measured.
+
+### Costlier, and still cheap
+
+The whole animation of the player, publishing the facts, the controller, Resnip and the trail, costs about 16 µs per step on YYC. Thirty enemies cost at most about 57 µs, counting their whole step and not only their animation. Together that is under 0.08 ms per frame, measured on one desktop machine. Against the figures in [reference/frame-budget.md](../reference/frame-budget.md):
+
+| Reference | Its figure | This project | Share |
+| --- | --- | --- | --- |
+| A frame at 60 frames per second | 16.66 ms | 0.08 ms | 0.5 percent |
+| The part Unity advises using on mobile | about 11 ms | 0.08 ms | 0.7 percent |
+| Unreal's default budget for all animated characters | 1.0 ms | 0.08 ms | 8 percent |
+| One character with a state machine in an Unreal project | 0.07 ms on the game thread and 0.43 ms on workers | 0.016 ms for the player | about a quarter of the game thread, and a thirtieth of the total |
+
+The comparison with Unreal sets a scale and not a race: its figures are for three-dimensional skeletons on other machines, and a sprite does less work. What it shows is that the 6.8 µs this design added is small next to what established engines plan for animation, and that the frame has room for many more animated instances before animation matters.
 
 ## Decision outcome
 

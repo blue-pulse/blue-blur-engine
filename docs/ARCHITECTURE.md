@@ -129,6 +129,8 @@ An animation, called a clip, is a sprite, or a run of its sub-images, with a spe
 
 An instance that plays clips calls `animation_init` and `presentation_init` in its `Create` event, and runs `presentation_update` and `animation_update` once per step. It shows the frame through its own `sprite_index` and `image_index`. The player runs them after the state, in `player_update_animation`, and an enemy in its End Step event, in `enemy_update_animation`.
 
+The presentation costs more than requesting clips from the states did, and it is still cheap: the animation of the player and of 30 enemies takes under 0.08 ms of a 16.66 ms frame on YYC, as [0010](./decisions/0010-accept-the-cost-of-the-generic-presentation.md) measures against the budgets in [reference/frame-budget.md](./reference/frame-budget.md).
+
 The facts of the player are these. An enemy publishes only `state`.
 
 | Fact | Meaning |
