@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_state_debug",
+  "%Name":"player_state_noclip",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_state_debug",
+  "name":"player_state_noclip",
   "parent":{
     "name":"03. Controlled",
     "path":"folders/04. Player/01. Base/02. States/03. Controlled.yy",

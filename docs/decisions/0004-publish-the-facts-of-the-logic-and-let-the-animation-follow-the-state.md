@@ -17,7 +17,7 @@ This record decides how the game logic and the animation talk to each other. It 
 
 ## Context and problem statement
 
-The states, the physics routines and the enemies called the animation functions and read the animation, 13 lines in 9 files for the reads alone, and the names of the clips were spread through the state files. When the part of the player was finished, the zone rule still counted 29 requests, 28 names, 8 queries and 1 use of time in 16 files, all in the enemies, the debug manager, the rings and one helper. A new character would have copied the state files, and a new state machine would have had to rewrite every call. The maintainer decided that the names of the states stay and that the state machine will be redesigned in another piece of work, so the animation must not depend on how the states are organised inside.
+The states, the physics routines and the enemies called the animation functions and read the animation, 13 lines in 9 files for the reads alone, and the names of the clips were spread through the state files. When the part of the player was finished, the zone rule still counted 29 requests, 28 names, 8 queries and 1 use of time in 16 files, all in the enemies, the dev overlay, the rings and one helper. A new character would have copied the state files, and a new state machine would have had to rewrite every call. The maintainer decided that the names of the states stay and that the state machine will be redesigned in another piece of work, so the animation must not depend on how the states are organised inside.
 
 ## Decision outcome
 

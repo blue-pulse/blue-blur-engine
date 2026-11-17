@@ -8,11 +8,7 @@ if (global.time > 35999) {
 	}
 }
 
-// Create debug overlay
+// Toggle the dev tools
 if (debug_mode and !scene_is_changing() and input_pressed(vb_select)) {
-	if (!instance_exists(obj_debug_manager)) {
-		gui_create(obj_debug_manager);
-	} else {
-		instance_destroy(obj_debug_manager);
-	}
+	dev_toggle();
 }

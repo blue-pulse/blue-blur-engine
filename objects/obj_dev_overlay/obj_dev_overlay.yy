@@ -1,19 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_debug_manager",
+  "%Name":"obj_dev_overlay",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_debug_manager",
+  "name":"obj_dev_overlay",
   "overriddenProperties":[],
   "parent":{
-    "name":"01. Debug",
-    "path":"folders/02. Core/08. Tooling/01. Debug.yy",
+    "name":"01. Logic",
+    "path":"folders/10. Debug/01. Logic.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -106,7 +106,7 @@ The initial record is in `Create_0` of `obj_player`, and `player_publish_facts` 
 | `ledge` | `cliff_dir * dir` | `player_update_cliff` sets `cliff_dir` | Recomputed |
 | `speed` | `abs(hor_speed)` | The movement, after the clamp | Recomputed |
 | `rotation` | `rotation` | `player_update_rotation` | Recomputed |
-| `rolling` | `is_rolling` | The start of `jump`, `roll`, `spindash`, `dashpanel` and the curl up in `airbone` | The start of `idle`, `run`, `hurt`, `death`, `lock`, `debug`, and the spring reaction |
+| `rolling` | `is_rolling` | The start of `jump`, `roll`, `spindash`, `dashpanel` and the curl up in `airbone` | The start of `idle`, `run`, `hurt`, `death`, `lock`, `noclip`, and the spring reaction |
 | `rising` | `is_rising` | An upward spring in `player_reaction_spring` | The apex, the curl up and `STOP` in `airbone`, and the monitor reaction |
 | `pushing` | `is_pushing` | `player_wall_push` | The start of `run`, and `run` when the direction pressed differs from the facing |
 | `braking_turn` | `is_braking_turn` | The start of `turn`, true when the previous state was `skid` | Set again at each `turn` |
@@ -137,7 +137,7 @@ The order of `follow` is the order the selectors run, and a later one that calls
 
 ## The rows of the player
 
-`player_create_presentation(clips, effects)` returns `{ rows }`. It has 16 rows, one for each state of `01. Base/02. States` except `player_state_debug`, `player_state_init` and `player_state_lock`. In this table a selector is written without its `selector_` prefix. The shared parts are `jump_pose`, a `selector_start` of `roll_jump`, `curl_up`, an `on_count` of `curl_ups` that runs `jump_pose`, and `fall_slow`, an `on_count` of `monitor_bounces` that plays `fall_slow`.
+`player_create_presentation(clips, effects)` returns `{ rows }`. It has 16 rows, one for each state of `01. Base/02. States` except `player_state_noclip`, `player_state_init` and `player_state_lock`. In this table a selector is written without its `selector_` prefix. The shared parts are `jump_pose`, a `selector_start` of `roll_jump`, `curl_up`, an `on_count` of `curl_ups` that runs `jump_pose`, and `fall_slow`, an `on_count` of `monitor_bounces` that plays `fall_slow`.
 
 | State | `entry` | `follow` |
 | --- | --- | --- |
@@ -188,10 +188,10 @@ All the clips of the project come from sprites of one playback speed type, so `a
 
 ## Invariants
 
-- Outside a `Presentation` folder and the adapter, no code calls `animation_*`, reads `animation`, names an `anim_*` identifier or reads a source of time (`current_time`, `delta_time`, `fps`, `fps_real`, `game_get_speed`, `get_timer`, `room_speed`) outside `Bootstrap`, `Display`, `Tooling` and `Vendor`. The check `zones` detects it, with the uses of the debug manager and the rings frozen in `tools/zones_baseline.txt`.
+- Outside a `Presentation` folder and the adapter, no code calls `animation_*`, reads `animation`, names an `anim_*` identifier or reads a source of time (`current_time`, `delta_time`, `fps`, `fps_real`, `game_get_speed`, `get_timer`, `room_speed`) outside `Bootstrap`, `Display`, `Tooling` and `Vendor`. The check `zones` detects it, with the uses of the dev overlay and the rings frozen in `tools/zones_baseline.txt`.
 - The scripts of `03. Presentation` name nothing that belongs to a character, an enemy or the art. The check `names` detects it.
 - Each selector script holds one function named like the script, starting with `selector_`, with at most 6 branches. `selector_ladder` has exactly 6. The check `selectors` detects it.
-- Every player state except `debug`, `init` and `lock` has a row, every row names a state, every clip a shared row uses has a fallback, no fallback chain loops or misses `idle`, every character that builds clips defines `idle`, and every sprite of an `animation_create` exists. The check `clips` detects it.
+- Every player state except `noclip`, `init` and `lock` has a row, every row names a state, every clip a shared row uses has a fallback, no fallback chain loops or misses `idle`, every character that builds clips defines `idle`, and every sprite of an `animation_create` exists. The check `clips` detects it.
 - No file outside a character names what is inside one, except four uses in two files of the roster. The check `characters` detects it.
 - Every resource declares a folder that the project file declares. The check `folders` detects it.
 - The facts are written after the state, the clamp, the grid and the rotation, and the enemy advances before it chooses. Held by attention alone, and by [0012](../decisions/0012-keep-the-enemy-animation-one-step-behind-its-state.md).

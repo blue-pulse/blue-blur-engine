@@ -41,7 +41,7 @@ The game reads a direction only through `input_axis(positive, negative)`, and a 
 - **The library's `InputOpposing` with its default.** Refused because the last pressed direction wins, which is the answer the states disagreed on.
 - **`InputOpposing` with the most recent setting turned off.** Refused because it reverses the order of the arguments, which is the confusion this record removes.
 - **The subtraction written in each state.** Refused because the rule would have many copies, which is how the states came to disagree.
-- **`input_axis_x()` with no arguments.** Refused because the debug state moves vertically too and needs the same rule for up and down.
+- **`input_axis_x()` with no arguments.** Refused because the noclip state moves vertically too and needs the same rule for up and down.
 - **Negative first, as Godot and Input write it.** Refused by the maintainer for the reason above.
 
 ## Consequences

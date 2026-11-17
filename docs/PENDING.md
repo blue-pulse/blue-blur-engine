@@ -56,24 +56,13 @@ Shape. A GitHub Actions workflow that installs the runtime, creates the licence 
 
 Done when a workflow runs on every push and fails when the project does not compile.
 
-## 9. Make the debug tools professional
+## 9. Pause the game and step it for the dev tools
 
-Problem. The debug overlay works but was not designed on purpose. Its shortcuts are one chain of `if` statements that run with the player as `self`, with the keys written in the code. Specific faults were found by reading, none by running.
+Problem. The dev overlay cannot pause the game or advance it one step at a time, which inspecting an animation needs. Nothing owns whether the world advances, so a pause would make every Step event ask a flag, and that is a rebuild and not a small change. The debugger of GameMaker pauses and steps already, and it is the tool to use meanwhile.
 
-- `obj_debug_manager` `Step_0` uses `exit` inside `with (Protagonist)`, which ends the whole event, so while the player is dying the text freezes and no shortcut works, Esc and R included.
-- Two functions change the game speed, the FPS shortcut and `game_reduce_power`, and the focus change overwrites the shortcut. Closing the overlay does not restore the speed.
-- Esc is also the `BACK` verb of Input, and R and Esc act with no modifier.
-- The restart-stage shortcut has no `scene_is_changing` guard, the HUD shortcut fails without `obj_hud`, and the camera shortcut says random but takes the first instance and may compare an instance with an object.
-- Every enemy draws the full strip of its animation each frame, and the data text is rebuilt each step.
-- The shortcuts need a numeric keypad, and the manager reads both `Protagonist` and `Player`.
+Shape. Decide first who owns "the world advances", the way `game_set_step_rate` owns the speed, and only then add the pause and the step to the table of commands of `10. Debug`.
 
-Shape. Audit once more before editing, then work in this order, with the user approving each change in behaviour.
-
-- Fix the `exit` fault, give the game speed one owner that the focus and the debug tools both use, restore it when the overlay closes, and add the missing guards.
-- Move the shortcuts to a table in `02. Configuration` with key, name, function and context, split into game commands and player commands that receive their target, and add alternative keys and an on-screen list of them.
-- Add pause with step by step advance for inspecting animations, and switches to draw the collision masks and the animation panels, with the panels limited to enemies in view.
-
-Done when each shortcut is a row of the table, no debug command depends on `self`, the fault list above is closed, and the overlay leaves the game as it found it.
+Done when the overlay has a pause command and a step command that each act through that one owner.
 
 ## 10. Report the cost of a repeated request to Resnip
 

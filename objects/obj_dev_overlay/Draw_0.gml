@@ -1,0 +1,50 @@
+// Draw the layer objects
+with (obj_plane_toggler) {
+	draw_self();
+}
+
+with (obj_plane_setter) {
+	draw_self();
+}
+
+// Draw player collision mask and animation
+with (Protagonist) {
+	var x_int = floor(x);
+	var y_int = floor(y);
+	
+	if (other.show_masks) {
+		if (mask_direction mod 180 != 0) {
+			draw_rectangle_color(x_int - ver_radius, y_int - hor_radius, x_int + ver_radius, y_int + hor_radius, c_lime, c_lime, c_lime, c_lime, true);
+			draw_line_color(x_int, y_int - wall_radius, x_int, y_int + wall_radius, c_white, c_white);
+		} else {
+			draw_rectangle_color(x_int - hor_radius, y_int - ver_radius, x_int + hor_radius, y_int + ver_radius, c_lime, c_lime, c_lime, c_lime, true);
+			draw_line_color(x_int - wall_radius, y_int, x_int + wall_radius, y_int, c_white, c_white);
+		}
+		draw_line_color(x_int, y_int, x_int + dsin(mask_direction) * ver_radius, y_int + dcos(mask_direction) * ver_radius, c_white, c_white);
+	}
+	
+	if (other.show_player_strip) {
+		animation_debug_draw(x + DEV_STRIP_OFFSET_X, y + DEV_STRIP_OFFSET_Y);
+	}
+}
+
+// Early exit
+if (!show_masks and !show_enemy_strips) {
+	exit;
+}
+
+// Draw enemy collision masks and the animation of those in view
+var _view_left = camera_get_view_x(View);
+var _view_top = camera_get_view_y(View);
+var _view_right = _view_left + camera_get_view_width(View);
+var _view_bottom = _view_top + camera_get_view_height(View);
+
+with (obj_enemy) {
+	if (other.show_masks) {
+		draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+	}
+	
+	if (other.show_enemy_strips and point_in_rectangle(x, y, _view_left, _view_top, _view_right, _view_bottom)) {
+		animation_debug_draw(x + DEV_STRIP_OFFSET_X, y + DEV_STRIP_OFFSET_Y);
+	}
+}

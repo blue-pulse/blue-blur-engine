@@ -1,4 +1,4 @@
-function player_state_debug(phase) {
+function player_state_noclip(phase) {
 	switch (phase) {
 		// Start state
 		case INIT:

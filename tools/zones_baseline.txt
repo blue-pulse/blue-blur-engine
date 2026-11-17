@@ -1,6 +1,6 @@
 # Frozen violations of the animation, time and character rules, see tools/commands/zones.py
 # Each line is a file, a rule and the number of uses allowed, and the count may only go down
-objects/obj_debug_manager/Draw_0.gml request 2
+objects/obj_dev_overlay/Draw_0.gml request 2
 objects/obj_ring/Create_0.gml name 1
 objects/obj_ring/Create_0.gml time 1
 objects/obj_ring/Draw_0.gml name 1

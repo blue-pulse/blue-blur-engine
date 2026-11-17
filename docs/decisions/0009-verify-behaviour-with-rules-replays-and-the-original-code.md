@@ -30,7 +30,7 @@ These are fitness functions, in the sense of Ford, Parsons and Kua, checks that 
 | Rows, clips, fallbacks and sprites | Every state has a row, every clip has a fallback, no chain of fallbacks loops, every character has an `idle` and every sprite exists |
 | Folders of resources | The folder of a resource is declared in the project file, so the game loads |
 
-The uses that existed when a check was added are frozen in `tools/zones_baseline.txt`, as `FreezingArchRule` of ArchUnit records existing violations and reports only new ones. A line may only go down, and a count that dropped must be lowered, so it cannot grow back. The zone rule has only the debug manager and the rings left in it. The ArchUnit user guide was read on 2026-10-29 through the summary of a fetch tool. The book of Ford, Parsons and Kua was not read.
+The uses that existed when a check was added are frozen in `tools/zones_baseline.txt`, as `FreezingArchRule` of ArchUnit records existing violations and reports only new ones. A line may only go down, and a count that dropped must be lowered, so it cannot grow back. The zone rule has only the dev overlay and the rings left in it. The ArchUnit user guide was read on 2026-10-29 through the summary of a fetch tool. The book of Ford, Parsons and Kua was not read.
 
 ### The replay harness and the original code
 
