@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"_setup_enums",
+  "%Name":"config_macros",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_setup_enums",
+  "name":"config_macros",
   "parent":{
     "name":"02. Configuration",
     "path":"folders/02. Core/02. Configuration.yy",

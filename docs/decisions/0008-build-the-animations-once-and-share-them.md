@@ -28,7 +28,7 @@ This is the Animator Override Controller of Unity, where the structure is shared
 - A table lists, for each key, the key that plays when a character has no clip for it, and every chain ends at `idle`. A missing clip prints a warning that says which clip plays in its place, and a character without `idle` prints an error when a chain reaches it.
 - A character with no transitions registers none, and its clips play with nothing between them.
 
-A new character adds files to its own folder. It edits no file of the base. The character roster is outside the animation: `_setup_globals` and `game_reset_player` name `obj_sonic`, and a new character must be added there. The rule for the dependency of characters freezes those uses.
+A new character adds files to its own folder. It edits no file of the base. The character roster is outside the animation: `config_globals` and `game_reset_player` name `obj_sonic`, and a new character must be added there. The rule for the dependency of characters freezes those uses.
 
 ## Considered options
 

@@ -5,5 +5,5 @@ objects/obj_ring/Create_0.gml name 1
 objects/obj_ring/Create_0.gml time 1
 objects/obj_ring/Draw_0.gml name 1
 objects/obj_ring_scattered/Create_0.gml name 1
-scripts/_setup_globals/_setup_globals.gml character 3
+scripts/config_globals/config_globals.gml character 3
 scripts/game_reset_player/game_reset_player.gml character 1

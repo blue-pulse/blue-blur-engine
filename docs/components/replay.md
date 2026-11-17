@@ -18,14 +18,14 @@ Update it in the same change as the code it describes. Every name and value here
 
 | Question | Answer |
 | --- | --- |
-| Receives | The macro `REPLAY_SCENARIO` in `_setup_macros`, and the scenario of that name from `replay_define_scenarios` |
+| Receives | The macro `REPLAY_SCENARIO` in `config_macros`, and the scenario of that name from `replay_define_scenarios` |
 | Gives | Lines on the log of the game, one hash of the logic and one hash of the picture at the end |
 | Code | `02. Core/08. Tooling/03. Replay` holds `replay_*` and `obj_replay_manager`, and `02. Core/09. Adapters/03. Input` holds `input_script_*` |
 | Depends on | Input, for its plug-in interface, through the adapter, and on the player, the stage manager and `Protagonist` |
 
 ## How it works
 
-1. The macro is set to a scenario name by editing `_setup_macros`, and the game is run as usual, with `python tools/gm.py run`.
+1. The macro is set to a scenario name by editing `config_macros`, and the game is run as usual, with `python tools/gm.py run`.
 2. At the start, `input_script_define` runs because the macro is not empty, and defines the plug-in `BlueBlur.ScriptedInput` of Input. It registers a callback for `COLLECT_PLAYER`. It runs after Input has collected the device, and it only acts for `PLAYER_SLOT`.
 3. `obj_init_manager` sets its `next_room` to the room of the scenario instead of the title or the home room.
 4. When that room's `obj_player_spawner` builds the scene, it creates `obj_replay_manager` with `manager_create`, once. The manager reads the scenario and keeps it in `global.replay`, so a restarted room goes on with the same script.
@@ -40,7 +40,7 @@ In recording mode, each step prints `[RECORD] <mask>`, where bit `b` of the mask
 
 | Part | Where | Responsibility |
 | --- | --- | --- |
-| `REPLAY_SCENARIO` | `_setup_macros` | The switch, empty by default |
+| `REPLAY_SCENARIO` | `config_macros` | The switch, empty by default |
 | `replay_define_scenarios()` | `03. Replay` | Returns the struct of scenarios, 11 of them |
 | `replay_create_source(segments)` | `03. Replay` | Makes the plan, and a `source(step, button)` function |
 | `replay_format_step(step)` | `03. Replay` | The logic line of the player, called with the player as `self` |
