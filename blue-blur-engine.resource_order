@@ -741,7 +741,6 @@
     {"name":"spr_enemy_explosion","order":15,"path":"sprites/spr_enemy_explosion/spr_enemy_explosion.yy",},
     {"name":"spr_font_black","order":2,"path":"sprites/spr_font_black/spr_font_black.yy",},
     {"name":"spr_font_blue","order":3,"path":"sprites/spr_font_blue/spr_font_blue.yy",},
-    {"name":"spr_font_debug","order":4,"path":"sprites/spr_font_debug/spr_font_debug.yy",},
     {"name":"spr_font_golden","order":5,"path":"sprites/spr_font_golden/spr_font_golden.yy",},
     {"name":"spr_font_gray","order":6,"path":"sprites/spr_font_gray/spr_font_gray.yy",},
     {"name":"spr_font_silver","order":7,"path":"sprites/spr_font_silver/spr_font_silver.yy",},

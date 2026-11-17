@@ -1059,7 +1059,6 @@
     {"id":{"name":"spr_enemy_explosion","path":"sprites/spr_enemy_explosion/spr_enemy_explosion.yy",},},
     {"id":{"name":"spr_font_black","path":"sprites/spr_font_black/spr_font_black.yy",},},
     {"id":{"name":"spr_font_blue","path":"sprites/spr_font_blue/spr_font_blue.yy",},},
-    {"id":{"name":"spr_font_debug","path":"sprites/spr_font_debug/spr_font_debug.yy",},},
     {"id":{"name":"spr_font_golden","path":"sprites/spr_font_golden/spr_font_golden.yy",},},
     {"id":{"name":"spr_font_gray","path":"sprites/spr_font_gray/spr_font_gray.yy",},},
     {"id":{"name":"spr_font_silver","path":"sprites/spr_font_silver/spr_font_silver.yy",},},
