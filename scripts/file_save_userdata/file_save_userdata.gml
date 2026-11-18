@@ -1,6 +1,6 @@
 function file_save_userdata() {
 	// Callback
-	var callback = function(_status, _buffer) {
+	var _callback = function(_status, _buffer) {
 	    // Clean-up
 	    buffer_delete(_buffer);
 		task_delete_item(USERDATA);
@@ -17,11 +17,11 @@ function file_save_userdata() {
 	};
 	
 	// Get buffer
-	var buffer = db_buffer_create(global.userdata);
+	var _buffer = db_buffer_create(global.userdata);
 	
 	// Encrypt
 	if (ENCRYPT) {
-		buffer = file_encrypt_buffer(buffer);
+		_buffer = file_encrypt_buffer(_buffer);
 	}
 
 	// Add task to queue
@@ -29,5 +29,5 @@ function file_save_userdata() {
 	
 	// Save file
 	SparkleSetGroupName("config");
-	return SparkleSave(USERDATA, buffer, callback);
+	return SparkleSave(USERDATA, _buffer, _callback);
 }

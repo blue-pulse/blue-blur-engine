@@ -1,20 +1,20 @@
-function replay_create_source(segments) {
+function replay_create_source(_segments) {
 	// Variables
-	var plan = { segments: segments, ends: [], steps: 0 };
+	var _plan = { segments: _segments, ends: [], steps: 0 };
 
 	// Find the last step of each segment
-	for (var i = 0; i < array_length(segments); i++) {
-		plan.steps += segments[i].steps;
-		array_push(plan.ends, plan.steps);
+	for (var _i = 0; _i < array_length(_segments); _i++) {
+		_plan.steps += _segments[_i].steps;
+		array_push(_plan.ends, _plan.steps);
 	}
 
 	// Return value
-	plan.source = method(plan, function(_step, _button) {
-		var i = 0;
-		while (i < array_length(ends) and _step >= ends[i]) {
-			i++;
+	_plan.source = method(_plan, function(_step, _button) {
+		var _i = 0;
+		while (_i < array_length(ends) and _step >= ends[_i]) {
+			_i++;
 		}
-		return i < array_length(ends) and array_contains(segments[i].hold, _button);
+		return _i < array_length(ends) and array_contains(segments[_i].hold, _button);
 	});
-	return plan;
+	return _plan;
 }

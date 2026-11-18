@@ -1,15 +1,15 @@
-function file_load_savedata(index) {
+function file_load_savedata(_index) {
 	// Callback
-	var callback = function(_status, _buffer) {
+	var _callback = function(_status, _buffer) {
 		// Variables
-		var data = undefined;
+		var _data = undefined;
 		
 		// Read file
 		if (_status) {
 			if (ENCRYPT) {
 				_buffer = file_decrypt_buffer(_buffer);
 			}
-			data = db_buffer_read(_buffer);
+			_data = db_buffer_read(_buffer);
 		}
 
 	    // Clean up
@@ -17,15 +17,15 @@ function file_load_savedata(index) {
 		task_delete_item(SAVEDATA);
 
 	    // File loaded successfully
-	    if (data != undefined) {
+	    if (_data != undefined) {
 			// Set data
-	    	global.savedata = data;
+	    	global.savedata = _data;
 			
 			// Set parameters
-			var params = db_read(global.savedata, {});
-			global.character = params.character;
-			global.lives = params.life;
-			global.checkpoint.hub_pos = params.position;
+			var _params = db_read(global.savedata, {});
+			global.character = _params.character;
+			global.lives = _params.life;
+			global.checkpoint.hub_pos = _params.position;
 			print("[INFO] Savedata loaded successfully!");
 	    }
 		
@@ -40,5 +40,5 @@ function file_load_savedata(index) {
 	
 	// Load file
 	SparkleSetGroupName("saves");
-	return SparkleLoad($"slot_{index}" + FILE_EXT, callback);
+	return SparkleLoad($"slot_{_index}" + FILE_EXT, _callback);
 }

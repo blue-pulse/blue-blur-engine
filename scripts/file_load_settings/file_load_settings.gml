@@ -1,15 +1,15 @@
 function file_load_settings() {
 	// Callback
-	var callback = function(_status, _buffer) {
+	var _callback = function(_status, _buffer) {
 		// Variables
-		var data = undefined;
+		var _data = undefined;
 		
 		// Read file
 		if (_status) {
 			if (ENCRYPT) {
 				_buffer = file_decrypt_buffer(_buffer);
 			}
-			data = db_buffer_read(_buffer);
+			_data = db_buffer_read(_buffer);
 		}
 
 	    // Clean up
@@ -17,8 +17,8 @@ function file_load_settings() {
 		task_delete_item(SETTINGS);
 
 	    // File loaded successfully
-	    if (data != undefined) {
-	    	global.settings = data;
+	    if (_data != undefined) {
+	    	global.settings = _data;
 			print("[INFO] Settings loaded successfully!");
 	    }
 		
@@ -33,5 +33,5 @@ function file_load_settings() {
 	
 	// Load file
 	SparkleSetGroupName("config");
-	return SparkleLoad(SETTINGS, callback);
+	return SparkleLoad(SETTINGS, _callback);
 }

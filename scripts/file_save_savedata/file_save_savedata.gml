@@ -1,13 +1,13 @@
-function file_save_savedata(index) {
+function file_save_savedata(_index) {
 	// Early exit
-	if (!index or index > MAX_SLOTS) {
+	if (!_index or _index > MAX_SLOTS) {
 		print("[ERROR] An invalid slot was received!");
 		print("[WARN] No data was loaded. Previous values will be used.");
 		exit;
 	}
 	
 	// Callback
-	var callback = function(_status, _buffer) {
+	var _callback = function(_status, _buffer) {
 	    // Clean-up
 	    buffer_delete(_buffer);
 		task_delete_item(SAVEDATA);
@@ -24,11 +24,11 @@ function file_save_savedata(index) {
 	};
 	
 	// Get buffer
-	var buffer = db_buffer_create(global.savedata);
+	var _buffer = db_buffer_create(global.savedata);
 	
 	// Encrypt
 	if (ENCRYPT) {
-		buffer = file_encrypt_buffer(buffer);
+		_buffer = file_encrypt_buffer(_buffer);
 	}
 
 	// Add task to queue
@@ -36,5 +36,5 @@ function file_save_savedata(index) {
 	
 	// Save file
 	SparkleSetGroupName("saves");
-	return SparkleSave($"slot_{index}" + FILE_EXT, buffer, callback);
+	return SparkleSave($"slot_{_index}" + FILE_EXT, _buffer, _callback);
 }
