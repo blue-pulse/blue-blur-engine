@@ -6,5 +6,5 @@ function task_add_item(_resource, _status) {
 	gui_create(obj_loading);
 	
 	// Push item
-	array_push(async_queue, new Task(_resource, _status));
+	array_push(global.async_operations, new Task(_resource, _status));
 }

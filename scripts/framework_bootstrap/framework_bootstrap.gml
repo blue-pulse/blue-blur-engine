@@ -3,8 +3,8 @@ function framework_bootstrap() {
 	gml_pragma("forceinline");
 	
 	// Reset values
-	ticks = 0;
-	is_paused = false;
+	global.framecount = 0;
+	global.game_is_paused = false;
 	game_set_state(states.init);
 	
 	// Use a new seed

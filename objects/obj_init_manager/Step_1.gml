@@ -14,6 +14,6 @@ if (skip_loading) {
 else {
 	skip_loading = (
 		mixer_is_loaded() and
-		!array_length(async_queue)
+		!array_length(global.async_operations)
 	);
 }

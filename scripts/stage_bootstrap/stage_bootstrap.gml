@@ -1,7 +1,7 @@
 function stage_bootstrap() {
 	// Global parameters
-	ticks = 0;
-	is_paused = false;
+	global.framecount = 0;
+	global.game_is_paused = false;
 	
 	// Player parameters
 	global.time = 0

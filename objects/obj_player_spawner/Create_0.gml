@@ -48,11 +48,11 @@ player.stamina = stamina;
 gui_config.target = player;
 
 // Enable camera
-instance_create_depth(pos_x, pos_y, depths.gui, Camera);
+instance_create_depth(pos_x, pos_y, depths.gui, obj_camera);
 camera_set_target(player);
 
 // Create controllers
-manager_create(Stage);
+manager_create(obj_stage_manager);
 if (REPLAY_SCENARIO != "") {
 	manager_create(obj_replay_manager);
 }

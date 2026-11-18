@@ -3,7 +3,7 @@ var mean_node = -1;
 var base_tension = 0;
 
 // Get player position
-with (Player) {
+with (obj_player) {
 	if (ground_id == other.id) {
 		var left_offset = other.bbox_left;
 		var width = other.sprite_width;

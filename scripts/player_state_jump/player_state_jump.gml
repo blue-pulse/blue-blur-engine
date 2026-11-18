@@ -17,8 +17,8 @@ function player_state_jump(phase) {
 			rotation = gravity_direction;
 			
 			// FX
-		    mixer_play_effect(snd_player_jump, REPLACE);
-		    mixer_play_effect(snd_player_wind, REPLACE);
+		    mixer_play_effect(snd_player_jump, mixer_modes.swap);
+		    mixer_play_effect(snd_player_wind, mixer_modes.swap);
 	        break;
 		
 		// Run state

@@ -2,7 +2,7 @@
 event_inherited();
 
 // Air movement
-y = ystart + dcos(ticks * 3) * 6;
+y = ystart + dcos(global.framecount * 3) * 6;
 
 // State machine
 switch (state) {
@@ -14,7 +14,7 @@ switch (state) {
 
 		// Attack
 		else {
-			var player = instance_nearest(x, y, Player);
+			var player = instance_nearest(x, y, obj_player);
 			if (player != noone) {
 				var diff_y = player.y - y;
 				if (diff_y > 0 and diff_y <= attack_range) {

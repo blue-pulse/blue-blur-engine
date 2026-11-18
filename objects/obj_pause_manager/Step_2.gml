@@ -6,7 +6,7 @@ if (!in_process) {
 	}
 	
 	// Variables
-	is_paused = true;
+	global.game_is_paused = true;
 	in_process = true;
 	paused_room = room;
 	option_active = 0;
@@ -17,7 +17,7 @@ if (!in_process) {
 	
 	// SFX
 	audio_pause_all();
-	mixer_play_effect(snd_pause_start, REPLACE);
+	mixer_play_effect(snd_pause_start, mixer_modes.swap);
 		
 	// Save level
 	room_persistent = true;
@@ -36,7 +36,7 @@ else {
 	// Select option
 	var delta = input_pressed(vb_down) - input_pressed(vb_up);
 	if (delta != 0) {
-		mixer_play_effect(snd_menu_select, REPLACE);
+		mixer_play_effect(snd_menu_select, mixer_modes.swap);
 		option_active = (delta + option_active + options_count) % options_count;
 	}
 
@@ -44,7 +44,7 @@ else {
 	if (input_pressed(vb_accept)) {
 		if (options[option_active].state == 3) {
 			// Option is locked
-			mixer_play_effect(snd_menu_deny, REPLACE);
+			mixer_play_effect(snd_menu_deny, mixer_modes.swap);
 		} else {
 			pause_resume();
 		}

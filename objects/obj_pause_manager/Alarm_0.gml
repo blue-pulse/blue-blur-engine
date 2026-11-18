@@ -1,5 +1,5 @@
 // Stop room persistance
-is_paused = false;
+global.game_is_paused = false;
 paused_room = noone;
 room_persistent = false;
 

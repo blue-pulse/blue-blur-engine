@@ -3,8 +3,8 @@ function pause_resume() {
 	gml_pragma("forceinline");
 	
 	// SFX
-	mixer_play_effect(snd_menu_confirm, REPLACE);
-	mixer_play_effect(snd_pause_stop, REPLACE);
+	mixer_play_effect(snd_menu_confirm, mixer_modes.swap);
+	mixer_play_effect(snd_pause_stop, mixer_modes.swap);
 			
 	// Go back to the level
 	room_goto(paused_room);

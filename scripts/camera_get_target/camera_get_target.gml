@@ -3,5 +3,5 @@ function camera_get_target() {
 	gml_pragma("forceinline");
 	
 	// Return value
-	return Camera.target;
+	return obj_camera.target;
 }

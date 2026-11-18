@@ -3,5 +3,5 @@ function camera_set_target(_target) {
 	gml_pragma("forceinline");
 	
 	// Logic
-	Camera.target = _target;
+	obj_camera.target = _target;
 }

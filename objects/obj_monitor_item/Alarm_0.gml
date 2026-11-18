@@ -32,7 +32,7 @@ with (owner) {
 			break;
 			
 		default:
-			mixer_play_effect(snd_monitor_error, REPLACE);
+			mixer_play_effect(snd_monitor_error, mixer_modes.swap);
 			break;
 	}
 }

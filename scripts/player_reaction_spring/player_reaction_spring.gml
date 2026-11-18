@@ -21,7 +21,7 @@ function player_reaction_spring(object) {
 	
 	// FX
 	screen_shake(7);
-	mixer_play_effect(snd_spring, REPLACE);
+	mixer_play_effect(snd_spring, mixer_modes.swap);
 	
 	// Fix position
 	air_lock = 16;

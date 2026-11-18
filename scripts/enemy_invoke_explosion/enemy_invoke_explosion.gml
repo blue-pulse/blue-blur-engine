@@ -4,7 +4,7 @@ function enemy_invoke_explosion() {
 	
 	// FX
 	mixer_play_effect(sfx_explosion);
-	part_particles_create(Particles, x, y, vfx_explosion, 1);
+	part_particles_create(global.particles, x, y, vfx_explosion, 1);
 	
 	// Metal scraps
 	repeat (random_range(4, 6)) {

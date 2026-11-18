@@ -1,6 +1,6 @@
 function dev_command_toggle_camera(_player) {
 	// Early exit
-	if (!instance_exists(Camera)) {
+	if (!instance_exists(obj_camera)) {
 		exit;
 	}
 	

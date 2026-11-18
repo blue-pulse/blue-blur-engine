@@ -16,9 +16,6 @@
 #macro ENCRYPT true
 
 // Packages
-#macro RAW mixer_modes.overlap
-#macro SKIP mixer_modes.single
-#macro REPLACE mixer_modes.swap
 #macro SETTINGS "settings.dat"
 #macro USERDATA "userdata.dat"
 #macro SAVEDATA "savedata.dat"
@@ -43,25 +40,5 @@
 #macro ROOM_RIGHT room_width
 #macro ROOM_TOP 0
 
-// Shortcuts
-#macro async_queue global.async_operations
-#macro font_black global.font_hud_black
-#macro font_blue global.font_hud_blue
-#macro font_golden global.font_hud_golden
-#macro font_gray global.font_hud_gray
-#macro font_silver global.font_hud_silver
-#macro is_paused global.game_is_paused
-#macro is_fullscreen window_get_fullscreen()
-#macro sys_active global.game_state == states.active
-#macro ticks global.framecount
-
 // Replay
 #macro REPLAY_SCENARIO ""
-
-// Aliases
-#macro Camera obj_camera
-#macro Particles global.particles
-#macro Player obj_player
-#macro Reticle obj_reticle
-#macro Stage obj_stage_manager
-#macro View view_get_camera(0)

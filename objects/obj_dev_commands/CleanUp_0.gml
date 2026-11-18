@@ -6,7 +6,7 @@ if (instance_exists(game_get_player()) and game_get_player().state == player_sta
 }
 
 // Give the camera back, unless the game has unset it on purpose
-if (instance_exists(Camera) and camera_get_target() != noone and instance_exists(camera_target_before)) {
+if (instance_exists(obj_camera) and camera_get_target() != noone and instance_exists(camera_target_before)) {
 	camera_set_target(camera_target_before);
 }
 

@@ -8,7 +8,7 @@ if (show_menu) {
 	// Early exit
 	if (input_pressed(vb_back)) {
 		layer_hspeed(flag_layer, 10);
-		mixer_play_effect(snd_menu_back, REPLACE);
+		mixer_play_effect(snd_menu_back, mixer_modes.swap);
 		scene_change(rm_title, 40, c_black, true);
 		exit;
 	}
@@ -36,7 +36,7 @@ if (show_menu) {
 	// Select option
 	var delta = input_pressed(vb_down) - input_pressed(vb_up);
 	if (delta != 0) {
-		mixer_play_effect(snd_menu_select, REPLACE);
+		mixer_play_effect(snd_menu_select, mixer_modes.swap);
 		option_active = (delta + option_active + options_count) % options_count;
 	}
 	
@@ -54,7 +54,7 @@ if (show_menu) {
 				options[1].hspeed = 16;
 				options[2].hspeed = 12;
 				layer_hspeed(flag_layer, -20);
-				mixer_play_effect(snd_menu_confirm, REPLACE);
+				mixer_play_effect(snd_menu_confirm, mixer_modes.swap);
 				break;
 			
 			// Settings
@@ -63,7 +63,7 @@ if (show_menu) {
 				options[1].hspeed = 16;
 				options[2].hspeed = 20;
 				layer_hspeed(flag_layer, -20);
-				mixer_play_effect(snd_menu_confirm, REPLACE);
+				mixer_play_effect(snd_menu_confirm, mixer_modes.swap);
 				break;
 				
 			// Quit

@@ -12,7 +12,7 @@ function player_state_spindash(phase) {
 			// FX
 			screen_shake(7);
 			camera_zoom_in(0.125, 120);
-			mixer_play_effect(snd_player_spindash_charge, REPLACE);
+			mixer_play_effect(snd_player_spindash_charge, mixer_modes.swap);
 			
 			// Dust
 			vfx_create(x, y, obj_spindash_dust, {
@@ -65,7 +65,7 @@ function player_state_spindash(phase) {
 				} else {
 					spindash_pitch = 1;
 				}
-				var sound = mixer_play_effect(snd_player_spindash_charge, REPLACE);
+				var sound = mixer_play_effect(snd_player_spindash_charge, mixer_modes.swap);
 				audio_sound_pitch(sound, spindash_pitch);
 				
 				// VFX
@@ -85,7 +85,7 @@ function player_state_spindash(phase) {
 				
 				// FX
 				audio_stop_sound(snd_player_spindash_charge);
-				mixer_play_effect(snd_player_spindash_release, REPLACE);
+				mixer_play_effect(snd_player_spindash_release, mixer_modes.swap);
 				screen_shake(15);
 			}
 			break;

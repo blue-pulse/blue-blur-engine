@@ -4,5 +4,5 @@ function player_add_lives(amount) {
 	
 	// Logic
 	global.lives = min(global.lives + amount, 99);
-	mixer_play_effect(snd_player_life, REPLACE);
+	mixer_play_effect(snd_player_life, mixer_modes.swap);
 }

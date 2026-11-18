@@ -5,7 +5,7 @@ var replay = global.replay;
 if (!replay.started) {
 	if (instance_exists(game_get_player()) and !scene_is_changing()) {
 		random_set_seed(1);
-		print("[REPLAY] start ticks " + string(ticks) + " room " + room_get_name(room) + " x " + string(game_get_player().x) + " y " + string(game_get_player().y));
+		print("[REPLAY] start ticks " + string(global.framecount) + " room " + room_get_name(room) + " x " + string(game_get_player().x) + " y " + string(game_get_player().y));
 		if (!replay.recording) {
 			input_script_start(replay.plan.source);
 		}

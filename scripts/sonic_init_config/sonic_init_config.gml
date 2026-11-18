@@ -39,7 +39,7 @@ function sonic_init_config() {
 	};
 
 	data_hud = {
-		font: font_blue,
+		font: global.font_hud_blue,
 		icon: spr_sonic_lives,
 		colors: [
 			make_color_rgb(33, 74, 223),

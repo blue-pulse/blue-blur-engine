@@ -10,7 +10,7 @@ function stage_exit_room(_duration=15) {
 	global.checkpoint.reset();
 	
 	// Schedule exit
-	with (Stage) {
+	with (obj_stage_manager) {
 		alarm_set(1, _duration);
 	}
 }

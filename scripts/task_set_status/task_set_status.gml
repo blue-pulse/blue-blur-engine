@@ -3,7 +3,7 @@ function task_set_status(_resource, _status) {
 	gml_pragma("forceinline");
 
 	// Variables
-	var ops = async_queue;
+	var ops = global.async_operations;
 	var amount_ops = array_length(ops);
 	
 	// Search task

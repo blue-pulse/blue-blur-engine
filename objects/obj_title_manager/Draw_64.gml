@@ -18,7 +18,7 @@ switch (input_get_device()) {
 }
 
 // Draw message
-draw_text_font_ext(message_x, message_y, message_text, font_black, fa_center, fa_middle, 1, c_white, message_alpha);
+draw_text_font_ext(message_x, message_y, message_text, global.font_hud_black, fa_center, fa_middle, 1, c_white, message_alpha);
 
 // Transition
 if (allow_transition) {

@@ -10,7 +10,7 @@ function stage_restart_game(_duration=10) {
 	db_write(global.userdata, global.slot, "slot");
 	db_write(global.savedata, {
 		slot: global.slot,
-		playtime: ticks,
+		playtime: global.framecount,
 		character: global.character,
 		life: global.lives,
 		position: global.checkpoint.get_hub(),
@@ -22,7 +22,7 @@ function stage_restart_game(_duration=10) {
 	file_save_savedata(global.slot);
 	
 	// Schedule exit
-	with (Stage) {
+	with (obj_stage_manager) {
 		alarm_set(3, _duration);	
 	}
 }

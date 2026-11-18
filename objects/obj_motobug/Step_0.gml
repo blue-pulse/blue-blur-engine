@@ -18,7 +18,7 @@ switch (state) {
 			// Create smoke every 16 frames
 			if (!smoke_timer--) {
 				smoke_timer = 16;
-				part_particles_create(Particles, x - 16 * dir, y + 3, vfx_smoke, 1);
+				part_particles_create(global.particles, x - 16 * dir, y + 3, vfx_smoke, 1);
 			}
 			
 			// Turn around

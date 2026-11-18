@@ -14,7 +14,7 @@ switch (state) {
 
 		// Shoot
 		else if (can_attack) {
-			var player = instance_nearest(x, y, Player);
+			var player = instance_nearest(x, y, obj_player);
 			if (player != noone and y < player.y) {
 				var target_dist = x - player.x;
 				if (abs(target_dist) < attack_range and sign(target_dist) != dir) {

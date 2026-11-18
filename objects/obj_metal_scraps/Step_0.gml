@@ -1,6 +1,6 @@
 // Create flame
 if (explosion_timer and --explosion_timer == 0) {
-	part_particles_create(Particles, x, y, global.vfx_big_explosion, 1);
+	part_particles_create(global.particles, x, y, global.vfx_big_explosion, 1);
 }
 
 // Destroy metal scrap

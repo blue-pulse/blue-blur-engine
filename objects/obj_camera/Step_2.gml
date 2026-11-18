@@ -4,7 +4,7 @@ if (!enabled or !instance_exists(target)) {
 }
 
 // Follow player
-if (instance_is_ancestor(target, Player)) {
+if (instance_is_ancestor(target, obj_player)) {
 	camera_follow_player();
 }
 
@@ -45,6 +45,6 @@ if (zoom_timer) {
 }
 
 // Apply camera properties
-camera_set_view_angle(View, angle);
-camera_set_view_pos(View, view_x, view_y);
-camera_set_view_size(View, view_width, view_height);
+camera_set_view_angle(view_camera[0], angle);
+camera_set_view_pos(view_camera[0], view_x, view_y);
+camera_set_view_size(view_camera[0], view_width, view_height);

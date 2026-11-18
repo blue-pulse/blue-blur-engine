@@ -14,7 +14,7 @@ function player_state_homing(phase) {
 			}
 			
 			// Fall if the reticle can no longer be locked on to
-			if (!player_can_lockon(Reticle.target)) {
+			if (!player_can_lockon(obj_reticle.target)) {
 				// Variables
 				is_jumping = true;
 				allow_jump_action = false;
@@ -22,7 +22,7 @@ function player_state_homing(phase) {
 				hor_speed = dcos(relative_angle) * hor_speed;
 			
 				// Destroy reticle
-				instance_destroy(Reticle);
+				instance_destroy(obj_reticle);
 				
 				// Set state
 				player_set_ground(noone);
@@ -32,7 +32,7 @@ function player_state_homing(phase) {
 			
 			// Move towards the reticle
 			var homing_speed = 12;
-			var homing_dir = point_direction(x, y, Reticle.x, Reticle.y) - mask_direction;
+			var homing_dir = point_direction(x, y, obj_reticle.x, obj_reticle.y) - mask_direction;
 			hor_speed = lengthdir_x(homing_speed, homing_dir);
 			ver_speed = lengthdir_y(homing_speed, homing_dir);
 			break;

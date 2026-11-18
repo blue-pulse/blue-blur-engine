@@ -21,7 +21,7 @@ Update it in the same change as the code it describes. Every name and value here
 | Receives | The macro `REPLAY_SCENARIO` in `config_macros`, and the scenario of that name from `replay_define_scenarios` |
 | Gives | Lines on the log of the game, one hash of the logic and one hash of the picture at the end |
 | Code | `02. Core/08. Tooling/03. Replay` holds `replay_*` and `obj_replay_manager`, and `02. Core/09. Adapters/03. Input` holds `input_script_*` |
-| Depends on | Input, for its plug-in interface, through the adapter, and on the player, the stage manager and `Protagonist` |
+| Depends on | Input, for its plug-in interface, through the adapter, and on the player, the stage manager and `game_get_player` |
 
 ## How it works
 
@@ -29,7 +29,7 @@ Update it in the same change as the code it describes. Every name and value here
 2. At the start, `input_script_define` runs because the macro is not empty, and defines the plug-in `BlueBlur.ScriptedInput` of Input. It registers a callback for `COLLECT_PLAYER`. It runs after Input has collected the device, and it only acts for `PLAYER_SLOT`.
 3. `obj_init_manager` sets its `next_room` to the room of the scenario instead of the title or the home room.
 4. When that room's `obj_player_spawner` builds the scene, it creates `obj_replay_manager` with `manager_create`, once. The manager reads the scenario and keeps it in `global.replay`, so a restarted room goes on with the same script.
-5. In its End Step event, the manager waits until `Protagonist` exists and no scene change is running. Then it calls `random_set_seed(1)`, prints a `[REPLAY] start` line with the ticks, the room and the position, and starts the script with `input_script_start`. In recording mode it does not start a script.
+5. In its End Step event, the manager waits until `game_get_player()` returns an instance and no scene change is running. Then it calls `random_set_seed(1)`, prints a `[REPLAY] start` line with the ticks, the room and the position, and starts the script with `input_script_start`. In recording mode it does not start a script.
 6. From then on the callback of the plug-in sets, for each step and each button from 0 to `vb_y`, the value that the plan gives. It does so unless the player is blocked, and it counts the step.
 7. At the end of every step the manager adds two lines to `global.replay` and prints them together after `[REPLAY]`. The logic line is `replay_format_step`: the step, the name of the state script, `x` and `y` with 4 decimals, and `hor_speed` and `ver_speed` with 6. The picture line is the step, the sprite name, `#`, the `image_index`, and ` ball<n>` when `obj_jumpball` instances exist.
 8. When the step reaches the length of the plan, the manager stops the script, prints `[REPLAY] logic <md5>` and `[REPLAY] picture <md5>` of all the lines joined, and calls `game_end`.

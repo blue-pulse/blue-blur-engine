@@ -75,7 +75,7 @@ function player_state_airbone(phase) {
 				rotation = gravity_direction;
 				is_rising = false;
 				curl_ups++;
-			    mixer_play_effect(snd_player_wind, REPLACE);
+			    mixer_play_effect(snd_player_wind, mixer_modes.swap);
 				break;
 			}
 			

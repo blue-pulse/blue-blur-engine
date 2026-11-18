@@ -34,10 +34,10 @@ if (!show_masks and !show_enemy_strips) {
 }
 
 // Draw enemy collision masks and the animation of those in view
-var _view_left = camera_get_view_x(View);
-var _view_top = camera_get_view_y(View);
-var _view_right = _view_left + camera_get_view_width(View);
-var _view_bottom = _view_top + camera_get_view_height(View);
+var _view_left = camera_get_view_x(view_camera[0]);
+var _view_top = camera_get_view_y(view_camera[0]);
+var _view_right = _view_left + camera_get_view_width(view_camera[0]);
+var _view_bottom = _view_top + camera_get_view_height(view_camera[0]);
 
 with (obj_enemy) {
 	if (other.show_masks) {

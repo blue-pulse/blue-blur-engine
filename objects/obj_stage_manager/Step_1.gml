@@ -1,2 +1,2 @@
 // Increase ticks
-ticks++;
+global.framecount++;
