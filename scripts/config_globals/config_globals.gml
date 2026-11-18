@@ -35,7 +35,7 @@ global.lives = 3;
 global.score = 0;
 
 // Checkpoint data
-global.checkpoint = new _cls_checkpoint();
+global.checkpoint = new Checkpoint();
 
 // Databases
 global.userdata = {

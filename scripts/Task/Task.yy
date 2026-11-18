@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"_cls_option",
+  "%Name":"Task",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_cls_option",
+  "name":"Task",
   "parent":{
-    "name":"01. Logic",
-    "path":"folders/09. UI/03. Menus/01. Logic.yy",
+    "name":"02. Tasks",
+    "path":"folders/02. Core/03. Persistence/02. Tasks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

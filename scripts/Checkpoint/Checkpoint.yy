@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"_cls_task",
+  "%Name":"Checkpoint",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_cls_task",
+  "name":"Checkpoint",
   "parent":{
-    "name":"02. Tasks",
-    "path":"folders/02. Core/03. Persistence/02. Tasks.yy",
+    "name":"01. Logic",
+    "path":"folders/06. Interactables/04. Checkpoints/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

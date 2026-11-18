@@ -12,8 +12,8 @@ scale_y = HEIGHT / surface_get_height(application_surface);
 
 // Menu options
 options = [
-    new cls_option(spr_pause_resume, pos_x, pos_y, 1),
-    new cls_option(spr_pause_restart, pos_x, pos_y, 0),
-    new cls_option(spr_pause_exit, pos_x, pos_y, 0),
+    new MenuOption(spr_pause_resume, pos_x, pos_y, 1),
+    new MenuOption(spr_pause_restart, pos_x, pos_y, 0),
+    new MenuOption(spr_pause_exit, pos_x, pos_y, 0),
 ];
 options_count = array_length(options);

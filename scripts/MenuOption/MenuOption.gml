@@ -1,4 +1,4 @@
-function cls_option(_sprite, _x, _y, _state, _text="") constructor {
+function MenuOption(_sprite, _x, _y, _state, _text="") constructor {
 	// Variables
     sprite = _sprite;
     state = _state;

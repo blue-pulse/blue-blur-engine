@@ -1,4 +1,4 @@
-function _cls_checkpoint() constructor {
+function Checkpoint() constructor {
 	// Variables
 	time = 0;
 	scoring = 0;
