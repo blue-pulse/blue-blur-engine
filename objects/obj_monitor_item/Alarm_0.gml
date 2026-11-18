@@ -1,5 +1,5 @@
 // Variables
-var item = index;
+var _item = index;
 vspeed = 0;
 
 // Give reward to player
@@ -10,7 +10,7 @@ with (owner) {
 	}
 	
 	// Get reward type
-	switch (item) {
+	switch (_item) {
 		case items.rings_5:
 			monitor_grant_5_rings();
 			break;

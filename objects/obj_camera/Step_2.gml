@@ -11,12 +11,12 @@ if (instance_is_ancestor(target, obj_player)) {
 // Follow target
 else {
 	// Set target camera position
-	var target_x = target.x - view_width / 2;
-	var target_y = target.y - view_height / 2;
+	var _target_x = target.x - view_width / 2;
+	var _target_y = target.y - view_height / 2;
 	
 	// Smoothly move the camera to the target position
-	x = lerp(x, target_x, smooth_lerp);
-	y = lerp(y, target_y, smooth_lerp);
+	x = lerp(x, _target_x, smooth_lerp);
+	y = lerp(y, _target_y, smooth_lerp);
 	
 	// Clamp the camera to room bounds
 	view_x = clamp(x, 0, room_width - view_width);

@@ -21,23 +21,23 @@ if (show_menu) {
 	}
 	
 	// Stop moving options 
-	for (var i = 0; i < options_count; ++i) {
-		var option = options[i];
-		var pos_x = option.x;
+	for (var _i = 0; _i < options_count; ++_i) {
+		var _option = options[_i];
+		var _pos_x = _option.x;
 		
-		if (pos_x == WIDTH) {
-			option.state = (option_active == i ? 1 : 0);
-		} else if (pos_x < WIDTH) {
-			option.x = WIDTH;
-			option.hspeed = 0;
+		if (_pos_x == WIDTH) {
+			_option.state = (option_active == _i ? 1 : 0);
+		} else if (_pos_x < WIDTH) {
+			_option.x = WIDTH;
+			_option.hspeed = 0;
 		}
 	}
 	
 	// Select option
-	var delta = input_pressed(vb_down) - input_pressed(vb_up);
-	if (delta != 0) {
+	var _delta = input_pressed(vb_down) - input_pressed(vb_up);
+	if (_delta != 0) {
 		mixer_play_effect(snd_menu_select, mixer_modes.swap);
-		option_active = (delta + option_active + options_count) % options_count;
+		option_active = (_delta + option_active + options_count) % options_count;
 	}
 	
 	if (input_pressed(vb_accept)) {
@@ -88,10 +88,10 @@ else {
 	}
 	
 	// Stop moving options 
-	for (var i = 0; i < options_count; ++i) {
-		var option = options[i];
-		if (option.x >= WIDTH + options_offscreen) {
-			option.hspeed = 0;
+	for (var _i = 0; _i < options_count; ++_i) {
+		var _option = options[_i];
+		if (_option.x >= WIDTH + options_offscreen) {
+			_option.hspeed = 0;
 		}
 	}
 	

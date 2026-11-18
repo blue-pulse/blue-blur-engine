@@ -3,13 +3,13 @@ function task_delete_item(_resource) {
 	gml_pragma("forceinline");
 	
 	// Variables
-	var ops = global.async_operations;
-	var amount_ops = array_length(ops);
+	var _ops = global.async_operations;
+	var _amount_ops = array_length(_ops);
 	
 	// Search task
-	for (var i = 0; i < amount_ops; ++i) {
-		if (ops[i].resource == _resource) {
-			array_delete(global.async_operations, i, 1);
+	for (var _i = 0; _i < _amount_ops; ++_i) {
+		if (_ops[_i].resource == _resource) {
+			array_delete(global.async_operations, _i, 1);
 			break;
 		}
 	}

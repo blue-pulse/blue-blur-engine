@@ -1,19 +1,19 @@
-function collision_ray(hor_offset, ver_offset, angle, object) {
+function collision_ray(_hor_offset, _ver_offset, _angle, _object) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Variables
-	var pos_x = floor(x);
-	var pos_y = floor(y);
-	var sine = dsin(angle);
-	var cosine = dcos(angle);
+	var _pos_x = floor(x);
+	var _pos_y = floor(y);
+	var _sine = dsin(_angle);
+	var _cosine = dcos(_angle);
 	
 	// Setup positions
-	var pos_x_1 = pos_x - (cosine * hor_offset) + (sine * ver_offset);
-	var pos_y_1 = pos_y + (sine * hor_offset) + (cosine * ver_offset);
-	var pos_x_2 = pos_x + (cosine * hor_offset) + (sine * ver_offset);
-	var pos_y_2 = pos_y - (sine * hor_offset) + (cosine * ver_offset);
+	var _pos_x_1 = _pos_x - (_cosine * _hor_offset) + (_sine * _ver_offset);
+	var _pos_y_1 = _pos_y + (_sine * _hor_offset) + (_cosine * _ver_offset);
+	var _pos_x_2 = _pos_x + (_cosine * _hor_offset) + (_sine * _ver_offset);
+	var _pos_y_2 = _pos_y - (_sine * _hor_offset) + (_cosine * _ver_offset);
 	
 	// Return collision
-	return collision_line(pos_x_1, pos_y_1, pos_x_2, pos_y_2, object, true, false);
+	return collision_line(_pos_x_1, _pos_y_1, _pos_x_2, _pos_y_2, _object, true, false);
 }

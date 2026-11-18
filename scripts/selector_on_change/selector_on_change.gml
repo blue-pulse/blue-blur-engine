@@ -1,14 +1,14 @@
-function selector_on_change(facts, params, entering) {
+function selector_on_change(_facts, _params, _entering) {
 	// Run the reaction of the case that matches the new value of the fact
-	var value = facts[$ params.fact];
-	if (!entering and value != presentation_marks[$ params.fact]) {
-		for (var i = 0; i < array_length(params.cases); i++) {
-			if (params.cases[i].to == value) {
-				var react = params.cases[i].then.run;
-				react(facts, params.cases[i].then);
+	var _value = _facts[$ _params.fact];
+	if (!_entering and _value != presentation_marks[$ _params.fact]) {
+		for (var _i = 0; _i < array_length(_params.cases); _i++) {
+			if (_params.cases[_i].to == _value) {
+				var _react = _params.cases[_i].then.run;
+				_react(_facts, _params.cases[_i].then);
 				break;
 			}
 		}
 	}
-	presentation_marks[$ params.fact] = value;
+	presentation_marks[$ _params.fact] = _value;
 }

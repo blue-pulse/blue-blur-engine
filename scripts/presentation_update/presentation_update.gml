@@ -1,47 +1,47 @@
 function presentation_update() {
 	// Variables
-	var facts = presentation_facts;
-	var entering = facts.state != presentation_seen;
+	var _facts = presentation_facts;
+	var _entering = _facts.state != presentation_seen;
 
 	// Early exit, the mode did not change and its row has no list to follow
-	if (!entering and presentation_follow == undefined) {
+	if (!_entering and presentation_follow == undefined) {
 		exit;
 	}
 
 	// Find the row of a new mode and read its follow list once
-	if (entering) {
-		presentation_seen = facts.state;
+	if (_entering) {
+		presentation_seen = _facts.state;
 		presentation_row = undefined;
 		presentation_follow = undefined;
-		var rows = presentation_set.rows;
-		for (var i = 0; i < array_length(rows); i++) {
-			if (rows[i].state == facts.state) {
-				presentation_row = rows[i];
-				presentation_follow = rows[i][$ "follow"];
+		var _rows = presentation_set.rows;
+		for (var _i = 0; _i < array_length(_rows); _i++) {
+			if (_rows[_i].state == _facts.state) {
+				presentation_row = _rows[_i];
+				presentation_follow = _rows[_i][$ "follow"];
 				break;
 			}
 		}
 	}
 
 	// Early exit
-	var row = presentation_row;
-	if (row == undefined) {
+	var _row = presentation_row;
+	if (_row == undefined) {
 		exit;
 	}
 
 	// Choose when the mode starts, calling through a variable keeps this instance as self
-	if (entering) {
-		var entry = row[$ "entry"];
-		for (var i = 0; entry != undefined and i < array_length(entry); i++) {
-			var select = entry[i].run;
-			select(facts, entry[i]);
+	if (_entering) {
+		var _entry = _row[$ "entry"];
+		for (var _i = 0; _entry != undefined and _i < array_length(_entry); _i++) {
+			var _select = _entry[_i].run;
+			_select(_facts, _entry[_i]);
 		}
 	}
 
 	// React while the mode lasts, in the order of the row
-	var follow = presentation_follow;
-	for (var i = 0; follow != undefined and i < array_length(follow); i++) {
-		var react = follow[i].run;
-		react(facts, follow[i], entering);
+	var _follow = presentation_follow;
+	for (var _i = 0; _follow != undefined and _i < array_length(_follow); _i++) {
+		var _react = _follow[_i].run;
+		_react(_facts, _follow[_i], _entering);
 	}
 }

@@ -22,8 +22,8 @@ switch (state) {
 			}
 			
 			// Turn around
-			var out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
-			if (out_of_bounds or !collision_point(x + 8 * dir, y + 20, obj_solid, false, false)) {
+			var _out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
+			if (_out_of_bounds or !collision_point(x + 8 * dir, y + 20, obj_solid, false, false)) {
 			    enemy_invoke_turn(motobug_states.turn);
 				break;
 			}

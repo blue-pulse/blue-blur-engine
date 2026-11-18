@@ -3,13 +3,13 @@ function screen_adjust_properties() {
 	gml_pragma("forceinline");
 	
 	// Variables
-	var settings = db_read(global.settings, {}, "graphics");
-	var allow_fullscreen = settings.fullscreen;
-	var allow_upscaling = settings.upscaling;
-	var aa_level = settings.antialiasing;
+	var _settings = db_read(global.settings, {}, "graphics");
+	var _allow_fullscreen = _settings.fullscreen;
+	var _allow_upscaling = _settings.upscaling;
+	var _aa_level = _settings.antialiasing;
 	
 	// Adjust window size
-	if (allow_fullscreen) {
+	if (_allow_fullscreen) {
 		window_enable_borderless_fullscreen(os_type == os_windows);
 		window_set_fullscreen(true);
 		window_set_cursor(cr_none);
@@ -20,8 +20,8 @@ function screen_adjust_properties() {
 	}
 	
 	// Apply AA
-	if (aa_level) {
-		display_reset(aa_level, true);
+	if (_aa_level) {
+		display_reset(_aa_level, true);
 	} else {
 		display_reset(0, false);
 	}
@@ -30,8 +30,8 @@ function screen_adjust_properties() {
 	display_set_gui_size(WIDTH, HEIGHT);
 	
 	// Resize surface
-	var scale_factor = (allow_upscaling) ? (SCALE) : (1); 
-	surface_resize(application_surface, WIDTH * scale_factor, HEIGHT * scale_factor);
+	var _scale_factor = (_allow_upscaling) ? (SCALE) : (1); 
+	surface_resize(application_surface, WIDTH * _scale_factor, HEIGHT * _scale_factor);
 	screen_verify_size();
 	
 	// Finally, put the window in the center

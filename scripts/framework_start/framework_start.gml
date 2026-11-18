@@ -6,8 +6,8 @@ function framework_start() {
 	framework_bootstrap();
 	
 	// Load values for the first time
-	var game_is_ready = game_get_initflag();
-	if (!game_is_ready) {
+	var _game_is_ready = game_get_initflag();
+	if (!_game_is_ready) {
 		// Set game parameters
 		game_init_data();
 		game_load_config();

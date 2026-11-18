@@ -1,4 +1,4 @@
-function selector_direct(facts, params) {
+function selector_direct(_facts, _params) {
 	// Play the one animation
-	animation_play(params.clip);
+	animation_play(_params.clip);
 }

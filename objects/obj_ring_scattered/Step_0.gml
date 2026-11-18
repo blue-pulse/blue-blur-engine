@@ -5,36 +5,36 @@ if (!in_view(id, 24)) {
 }
 
 // Variables
-var sine = dsin(gravity_direction);
-var cosine = dcos(gravity_direction);
+var _sine = dsin(gravity_direction);
+var _cosine = dcos(gravity_direction);
 
 // Move horizontally
-var pos_x = cosine * hor_speed;
-var pos_y = sine * hor_speed;
-x += pos_x;
-y -= pos_y;
+var _pos_x = _cosine * hor_speed;
+var _pos_y = _sine * hor_speed;
+x += _pos_x;
+y -= _pos_y;
 
 // Bounce
-if (place_meeting(x + pos_x, y - pos_y, obj_solid) and !place_meeting(xprevious, yprevious, obj_solid)) {
+if (place_meeting(x + _pos_x, y - _pos_y, obj_solid) and !place_meeting(xprevious, yprevious, obj_solid)) {
 	hor_speed *= -0.75;
 	while (place_meeting(x, y, obj_solid)) {
-		x -= sign(pos_x);
-		y += sign(pos_y);
+		x -= sign(_pos_x);
+		y += sign(_pos_y);
 	}
 }
 
 // Move vertically
-pos_x = sine * ver_speed;
-pos_y = cosine * ver_speed;
-x += pos_x;
-y += pos_y;
+_pos_x = _sine * ver_speed;
+_pos_y = _cosine * ver_speed;
+x += _pos_x;
+y += _pos_y;
 
 // Bounce
-if (place_meeting(x + pos_x, y + pos_y, obj_solid) and !place_meeting(xprevious, yprevious, obj_solid)) {
+if (place_meeting(x + _pos_x, y + _pos_y, obj_solid) and !place_meeting(xprevious, yprevious, obj_solid)) {
 	ver_speed *= -0.75;
 	while (place_meeting(x, y, obj_solid)) {
-		x -= sign(pos_x);
-		y -= sign(pos_y);
+		x -= sign(_pos_x);
+		y -= sign(_pos_y);
 	}
 }
 ver_speed += grav_force;

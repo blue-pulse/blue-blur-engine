@@ -1,7 +1,7 @@
-function input_pressed_any(buttons) {
+function input_pressed_any(_buttons) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Return value
-	return InputPressedMany(buttons, PLAYER_SLOT);
+	return InputPressedMany(_buttons, PLAYER_SLOT);
 }

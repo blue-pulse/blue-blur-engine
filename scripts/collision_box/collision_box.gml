@@ -1,25 +1,25 @@
-function collision_box(hor_offset, ver_offset, swap_axis, object) {
+function collision_box(_hor_offset, _ver_offset, _swap_axis, _object) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Variables
-	var pos_x = floor(x);
-	var pos_y = floor(y);
+	var _pos_x = floor(x);
+	var _pos_y = floor(y);
 	
 	// Setup positions
-	var pos_x_1 = pos_x - hor_offset;
-	var pos_y_1 = pos_y - ver_offset;
-	var pos_x_2 = pos_x + hor_offset;
-	var pos_y_2 = pos_y + ver_offset;
+	var _pos_x_1 = _pos_x - _hor_offset;
+	var _pos_y_1 = _pos_y - _ver_offset;
+	var _pos_x_2 = _pos_x + _hor_offset;
+	var _pos_y_2 = _pos_y + _ver_offset;
 	
 	// Setup positions in case the object is inverted
-	if (swap_axis) {
-		pos_x_1 = pos_x - ver_offset;
-		pos_y_1 = pos_y - hor_offset;
-		pos_x_2 = pos_x + ver_offset;
-		pos_y_2 = pos_y + hor_offset;
+	if (_swap_axis) {
+		_pos_x_1 = _pos_x - _ver_offset;
+		_pos_y_1 = _pos_y - _hor_offset;
+		_pos_x_2 = _pos_x + _ver_offset;
+		_pos_y_2 = _pos_y + _hor_offset;
 	}
 	
 	// Return collision
-	return collision_rectangle(pos_x_1, pos_y_1, pos_x_2, pos_y_2, object, true, false);
+	return collision_rectangle(_pos_x_1, _pos_y_1, _pos_x_2, _pos_y_2, _object, true, false);
 }

@@ -32,5 +32,5 @@ zoom_lerp = 0.15;
 // Enable view
 view_enabled = true;
 view_visible[0] = true;
-var view = camera_create_view(view_x, view_y, view_width, view_height);
-view_set_camera(0, view);
+var _view = camera_create_view(view_x, view_y, view_width, view_height);
+view_set_camera(0, _view);

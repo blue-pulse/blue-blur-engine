@@ -1,10 +1,10 @@
-function input_vibrate(strength, frames) {
+function input_vibrate(_strength, _frames) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 
 	// Convert the duration to milliseconds
-	var duration = frames * MS_PER_SECOND / MAX_FPS;
+	var _duration = _frames * MS_PER_SECOND / MAX_FPS;
 
 	// Vibrate the gamepad
-	InputVibrateConstant(strength, 0, duration, PLAYER_SLOT);
+	InputVibrateConstant(_strength, 0, _duration, PLAYER_SLOT);
 }

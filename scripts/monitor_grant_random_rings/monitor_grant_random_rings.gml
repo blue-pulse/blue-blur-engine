@@ -3,11 +3,11 @@ function monitor_grant_random_rings() {
 	gml_pragma("forceinline");
 	
 	// Give reward
-	var amount = choose(1, 5, 10, 30, 50);
-	player_add_rings(amount);
+	var _amount = choose(1, 5, 10, 30, 50);
+	player_add_rings(_amount);
 
 	// SFX
-	switch (amount) {
+	switch (_amount) {
 		// 1 ring
 		case 1:
 			mixer_play_effect(choose(snd_ring_left, snd_ring_right));

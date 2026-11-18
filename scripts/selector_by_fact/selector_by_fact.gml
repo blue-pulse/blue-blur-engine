@@ -1,9 +1,9 @@
-function selector_by_fact(facts, params) {
+function selector_by_fact(_facts, _params) {
 	// Play the animation of the first case that matches the fact
-	var value = facts[$ params.fact];
-	for (var i = 0; i < array_length(params.cases); i++) {
-		if (params.cases[i].value == value) {
-			animation_play(params.cases[i].clip);
+	var _value = _facts[$ _params.fact];
+	for (var _i = 0; _i < array_length(_params.cases); _i++) {
+		if (_params.cases[_i].value == _value) {
+			animation_play(_params.cases[_i].clip);
 			break;
 		}
 	}

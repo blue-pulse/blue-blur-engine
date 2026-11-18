@@ -5,12 +5,12 @@ event_inherited();
 switch (state) {
 	// Waiting
 	case newtron_states.wait:
-		var player = instance_nearest(x, y, obj_player);
-		if (player != noone) {
-			var x_diff = player.x - x;
-			var y_diff = player.y - y;
-			if (abs(x_diff) < attack_range and abs(y_diff) < 40) {
-				dir = sign(x_diff);
+		var _player = instance_nearest(x, y, obj_player);
+		if (_player != noone) {
+			var _x_diff = _player.x - x;
+			var _y_diff = _player.y - y;
+			if (abs(_x_diff) < attack_range and abs(_y_diff) < 40) {
+				dir = sign(_x_diff);
 				state = newtron_states.fade_in;
 				state_timer = 0;
 				visible = true;

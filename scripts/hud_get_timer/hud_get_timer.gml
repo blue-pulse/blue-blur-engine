@@ -3,18 +3,18 @@ function hud_get_timer() {
 	gml_pragma("forceinline");
 	
 	// Variables
-	var time = global.time;
-	var minutes = 9;
-	var seconds = 59;
-	var microseconds = 59;
+	var _time = global.time;
+	var _minutes = 9;
+	var _seconds = 59;
+	var _microseconds = 59;
 
 	// Calculate timer values
-	if (time < 35999) {
-		minutes = floor(time / 3600);
-		seconds = floor((time - minutes * 3600) / 60);
-		microseconds = floor(time % 60 / 3 * 5);
+	if (_time < 35999) {
+		_minutes = floor(_time / 3600);
+		_seconds = floor((_time - _minutes * 3600) / 60);
+		_microseconds = floor(_time % 60 / 3 * 5);
 	}
 
 	// Return string
-	return int_to_text(minutes, 2) + ":" + int_to_text(seconds, 2) + "." + int_to_text(microseconds, 2);
+	return int_to_text(_minutes, 2) + ":" + int_to_text(_seconds, 2) + "." + int_to_text(_microseconds, 2);
 }

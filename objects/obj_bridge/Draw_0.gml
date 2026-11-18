@@ -1,16 +1,16 @@
 // Draw bridge
-var offset = ratio * sprite_width;
-for (var i = 0; i < sprite_width; i += node_width) {
+var _offset = ratio * sprite_width;
+for (var _i = 0; _i < sprite_width; _i += node_width) {
 	// Get relative tension
-	var height = tension;
-	if (i < offset) {
-		height *= dsin((i / offset) * 90);
-	} else if (i > offset) {
-		height *= dsin(((sprite_width - i) / (sprite_width - offset)) * 90);
+	var _height = tension;
+	if (_i < _offset) {
+		_height *= dsin((_i / _offset) * 90);
+	} else if (_i > _offset) {
+		_height *= dsin(((sprite_width - _i) / (sprite_width - _offset)) * 90);
 	}
 	
 	// Draw nodes
-	draw_sprite(sprite_index, 0, bbox_left + i, ystart + height);
+	draw_sprite(sprite_index, 0, bbox_left + _i, ystart + _height);
 }
 
 // Draw posts

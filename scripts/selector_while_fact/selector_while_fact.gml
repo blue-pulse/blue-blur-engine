@@ -1,6 +1,6 @@
-function selector_while_fact(facts, params) {
+function selector_while_fact(_facts, _params) {
 	// Play the animation on every step the fact holds
-	if (facts[$ params.fact]) {
-		animation_play(params.clip);
+	if (_facts[$ _params.fact]) {
+		animation_play(_params.clip);
 	}
 }

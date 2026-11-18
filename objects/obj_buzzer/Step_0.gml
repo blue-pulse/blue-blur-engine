@@ -6,18 +6,18 @@ switch (state) {
 	// Fly
 	case buzzer_states.fly:
 		// Turn around
-		var out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
-		if (out_of_bounds) {
+		var _out_of_bounds = (!dir and x <= left_goal) or (dir and x >= right_goal);
+		if (_out_of_bounds) {
 			can_attack = true;
 			enemy_invoke_turn(buzzer_states.turn);
 		}
 
 		// Shoot
 		else if (can_attack) {
-			var player = instance_nearest(x, y, obj_player);
-			if (player != noone and y < player.y) {
-				var target_dist = x - player.x;
-				if (abs(target_dist) < attack_range and sign(target_dist) != dir) {
+			var _player = instance_nearest(x, y, obj_player);
+			if (_player != noone and y < _player.y) {
+				var _target_dist = x - _player.x;
+				if (abs(_target_dist) < attack_range and sign(_target_dist) != dir) {
 					state = buzzer_states.attack;
 					state_timer = 0;
 					hspeed = 0;

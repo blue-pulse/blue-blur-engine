@@ -1,10 +1,10 @@
-function menu_select_option(def_state, sel_state) {
+function menu_select_option(_def_state, _sel_state) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Logic
-	for (var i = 0; i < options_count; ++i) {
-		options[i].state = def_state;
+	for (var _i = 0; _i < options_count; ++_i) {
+		options[_i].state = _def_state;
 	}
-	options[option_active].state = sel_state;
+	options[option_active].state = _sel_state;
 }

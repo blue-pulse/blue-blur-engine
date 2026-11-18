@@ -14,11 +14,11 @@ switch (state) {
 
 		// Attack
 		else {
-			var player = instance_nearest(x, y, obj_player);
-			if (player != noone) {
-				var diff_y = player.y - y;
-				if (diff_y > 0 and diff_y <= attack_range) {
-					if (abs(player.x - x) <= 64) {
+			var _player = instance_nearest(x, y, obj_player);
+			if (_player != noone) {
+				var _diff_y = _player.y - y;
+				if (_diff_y > 0 and _diff_y <= attack_range) {
+					if (abs(_player.x - x) <= 64) {
 						state = balloon_states.attack;
 						state_timer = 0;
 						enemy_invoke_alert(18, 20);

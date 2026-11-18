@@ -3,14 +3,14 @@ function task_set_status(_resource, _status) {
 	gml_pragma("forceinline");
 
 	// Variables
-	var ops = global.async_operations;
-	var amount_ops = array_length(ops);
+	var _ops = global.async_operations;
+	var _amount_ops = array_length(_ops);
 	
 	// Search task
-	for (var i = 0; i < amount_ops; ++i) {
-		var item = ops[i];
-		if (item.resource == _resource) {
-			item.status = _status;
+	for (var _i = 0; _i < _amount_ops; ++_i) {
+		var _item = _ops[_i];
+		if (_item.resource == _resource) {
+			_item.status = _status;
 			break;
 		}
 	}

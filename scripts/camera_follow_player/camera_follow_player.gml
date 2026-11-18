@@ -3,36 +3,36 @@ function camera_follow_player() {
 	gml_pragma("forceinline");
 
 	// Variables
-	var target_x = floor(target.x) - (view_width / 2);
-	var target_y = floor(target.y) - (view_height / 2);
-	var target_dir = sign(target.image_xscale);
-	var target_speed = target.hor_speed;
-	var target_state = target.state;
-	var shift_direction = (target_speed != 0) ? sign(target_speed) : target_dir;
-	var shift_up = (target_state == player_state_lookup);
-	var shift_down = (target_state == player_state_crouch);
-	var hor_offset = 0;
-	var ver_offset = 0;
+	var _target_x = floor(target.x) - (view_width / 2);
+	var _target_y = floor(target.y) - (view_height / 2);
+	var _target_dir = sign(target.image_xscale);
+	var _target_speed = target.hor_speed;
+	var _target_state = target.state;
+	var _shift_direction = (_target_speed != 0) ? sign(_target_speed) : _target_dir;
+	var _shift_up = (_target_state == player_state_lookup);
+	var _shift_down = (_target_state == player_state_crouch);
+	var _hor_offset = 0;
+	var _ver_offset = 0;
 	
 	// Smoothly move the camera to the target position
 	if (scroll_delay) {
 		scroll_delay--;
 	} else {
-		x = lerp(x, target_x, smooth_lerp);
+		x = lerp(x, _target_x, smooth_lerp);
 	}
-	y = lerp(y, target_y, smooth_lerp);
+	y = lerp(y, _target_y, smooth_lerp);
 	
 	// Offset camera horizontally depending on the speed
-	if (abs(target_speed) >= 6 or target_state == player_state_spindash) {
-		if (!scroll_delay and extended_offset != shift_value * shift_direction) {
-			extended_offset += shift_speed * shift_direction;
+	if (abs(_target_speed) >= 6 or _target_state == player_state_spindash) {
+		if (!scroll_delay and extended_offset != shift_value * _shift_direction) {
+			extended_offset += shift_speed * _shift_direction;
 		}
 	} else {
 		extended_offset -= shift_speed * sign(extended_offset);
 	}
 	
 	// Check for overview delay
-	if (shift_up or shift_down) {
+	if (_shift_up or _shift_down) {
 		if (overview_delay) {
 			overview_delay--;
 		}
@@ -41,10 +41,10 @@ function camera_follow_player() {
 	}
 	
 	// Offset vertically
-	if (!overview_delay and (shift_up or shift_down)) {
-		if (shift_up and overview_offset > -88) {
+	if (!overview_delay and (_shift_up or _shift_down)) {
+		if (_shift_up and overview_offset > -88) {
 			overview_offset -= shift_speed;
-		} else if (shift_down and overview_offset < 88) {
+		} else if (_shift_down and overview_offset < 88) {
 			overview_offset += shift_speed;
 		}
 	} else if (overview_offset != 0) {
@@ -54,24 +54,24 @@ function camera_follow_player() {
 	// Set offsets
 	switch (gravity_direction) {
 		case 0:
-			hor_offset = extended_offset;
-			ver_offset = overview_offset;
+			_hor_offset = extended_offset;
+			_ver_offset = overview_offset;
 			break;
 		case 90:
-			hor_offset = -overview_offset;
-			ver_offset = extended_offset;
+			_hor_offset = -overview_offset;
+			_ver_offset = extended_offset;
 			break;
 		case 180:
-			hor_offset = -extended_offset;
-			ver_offset = -overview_offset;
+			_hor_offset = -extended_offset;
+			_ver_offset = -overview_offset;
 			break;
 		case 270:
-			hor_offset = overview_offset;
-			ver_offset = -extended_offset;
+			_hor_offset = overview_offset;
+			_ver_offset = -extended_offset;
 			break;
 	}
 	
 	// Clamp the camera to room bounds
-	view_x = clamp(x + hor_offset, 0, room_width - view_width);
-	view_y = clamp(y + ver_offset, 0, room_height - view_height);
+	view_x = clamp(x + _hor_offset, 0, room_width - view_width);
+	view_y = clamp(y + _ver_offset, 0, room_height - view_height);
 }

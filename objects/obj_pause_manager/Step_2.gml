@@ -34,10 +34,10 @@ else {
 	}
 	
 	// Select option
-	var delta = input_pressed(vb_down) - input_pressed(vb_up);
-	if (delta != 0) {
+	var _delta = input_pressed(vb_down) - input_pressed(vb_up);
+	if (_delta != 0) {
 		mixer_play_effect(snd_menu_select, mixer_modes.swap);
-		option_active = (delta + option_active + options_count) % options_count;
+		option_active = (_delta + option_active + options_count) % options_count;
 	}
 
 	// Continue

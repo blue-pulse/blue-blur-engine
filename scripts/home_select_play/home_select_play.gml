@@ -3,9 +3,9 @@ function home_select_play() {
 	gml_pragma("forceinline");
 	
 	// Select slot
-	var delta = input_pressed(vb_right) - input_pressed(vb_left);
-	if (delta != 0) {
+	var _delta = input_pressed(vb_right) - input_pressed(vb_left);
+	if (_delta != 0) {
 		mixer_play_effect(snd_menu_select, mixer_modes.swap);
-		slot_active = ((delta + slot_active + MAX_SLOTS - 1) % MAX_SLOTS) + 1
+		slot_active = ((_delta + slot_active + MAX_SLOTS - 1) % MAX_SLOTS) + 1
 	}
 }

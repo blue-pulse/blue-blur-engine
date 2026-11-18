@@ -1,9 +1,9 @@
-function selector_on_count(facts, params, entering) {
+function selector_on_count(_facts, _params, _entering) {
 	// Run the reaction when the counter grew since the last look
-	var count = facts[$ params.fact];
-	if (!entering and count != presentation_marks[$ params.fact]) {
-		var react = params.then.run;
-		react(facts, params.then);
+	var _count = _facts[$ _params.fact];
+	if (!_entering and _count != presentation_marks[$ _params.fact]) {
+		var _react = _params.then.run;
+		_react(_facts, _params.then);
 	}
-	presentation_marks[$ params.fact] = count;
+	presentation_marks[$ _params.fact] = _count;
 }

@@ -9,18 +9,18 @@ with (obj_plane_setter) {
 
 // Draw player collision mask and animation
 with (game_get_player()) {
-	var x_int = floor(x);
-	var y_int = floor(y);
+	var _x_int = floor(x);
+	var _y_int = floor(y);
 	
 	if (other.show_masks) {
 		if (mask_direction mod 180 != 0) {
-			draw_rectangle_color(x_int - ver_radius, y_int - hor_radius, x_int + ver_radius, y_int + hor_radius, c_lime, c_lime, c_lime, c_lime, true);
-			draw_line_color(x_int, y_int - wall_radius, x_int, y_int + wall_radius, c_white, c_white);
+			draw_rectangle_color(_x_int - ver_radius, _y_int - hor_radius, _x_int + ver_radius, _y_int + hor_radius, c_lime, c_lime, c_lime, c_lime, true);
+			draw_line_color(_x_int, _y_int - wall_radius, _x_int, _y_int + wall_radius, c_white, c_white);
 		} else {
-			draw_rectangle_color(x_int - hor_radius, y_int - ver_radius, x_int + hor_radius, y_int + ver_radius, c_lime, c_lime, c_lime, c_lime, true);
-			draw_line_color(x_int - wall_radius, y_int, x_int + wall_radius, y_int, c_white, c_white);
+			draw_rectangle_color(_x_int - hor_radius, _y_int - ver_radius, _x_int + hor_radius, _y_int + ver_radius, c_lime, c_lime, c_lime, c_lime, true);
+			draw_line_color(_x_int - wall_radius, _y_int, _x_int + wall_radius, _y_int, c_white, c_white);
 		}
-		draw_line_color(x_int, y_int, x_int + dsin(mask_direction) * ver_radius, y_int + dcos(mask_direction) * ver_radius, c_white, c_white);
+		draw_line_color(_x_int, _y_int, _x_int + dsin(mask_direction) * ver_radius, _y_int + dcos(mask_direction) * ver_radius, c_white, c_white);
 	}
 	
 	if (other.show_player_strip) {
