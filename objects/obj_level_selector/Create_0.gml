@@ -7,5 +7,5 @@ active = false;
 usable = true;
 name = "";
 stage = noone;
-player = global.protagonist;
+player = game_get_player();
 allow_transition = false;

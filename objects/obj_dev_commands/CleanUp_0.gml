@@ -1,6 +1,6 @@
 // Release player
-if (instance_exists(Protagonist) and Protagonist.state == player_state_noclip) {
-	with (Protagonist) {
+if (instance_exists(game_get_player()) and game_get_player().state == player_state_noclip) {
+	with (game_get_player()) {
 		player_set_state(player_state_airbone);
 	}
 }

@@ -8,7 +8,7 @@ with (obj_plane_setter) {
 }
 
 // Draw player collision mask and animation
-with (Protagonist) {
+with (game_get_player()) {
 	var x_int = floor(x);
 	var y_int = floor(y);
 	

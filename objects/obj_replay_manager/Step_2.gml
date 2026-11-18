@@ -3,9 +3,9 @@ var replay = global.replay;
 
 // Wait for the player
 if (!replay.started) {
-	if (instance_exists(Protagonist) and !scene_is_changing()) {
+	if (instance_exists(game_get_player()) and !scene_is_changing()) {
 		random_set_seed(1);
-		print("[REPLAY] start ticks " + string(ticks) + " room " + room_get_name(room) + " x " + string(Protagonist.x) + " y " + string(Protagonist.y));
+		print("[REPLAY] start ticks " + string(ticks) + " room " + room_get_name(room) + " x " + string(game_get_player().x) + " y " + string(game_get_player().y));
 		if (!replay.recording) {
 			input_script_start(replay.plan.source);
 		}
@@ -28,7 +28,7 @@ if (replay.recording) {
 
 // Record the step
 var step = input_script_get_step();
-with (Protagonist) {
+with (game_get_player()) {
 	array_push(replay.logic_lines, replay_format_step(step));
 	var balls = instance_number(obj_jumpball);
 	array_push(replay.picture_lines, string(step) + " " + sprite_get_name(sprite_index) + "#" + string(image_index) + ((balls > 0) ? (" ball" + string(balls)) : ""));

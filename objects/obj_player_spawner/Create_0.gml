@@ -57,7 +57,7 @@ if (REPLAY_SCENARIO != "") {
 	manager_create(obj_replay_manager);
 }
 gui_create(obj_hud, gui_config);
-Protagonist = player;
+game_set_player(player);
 
 // Destroy spawner
 instance_destroy();

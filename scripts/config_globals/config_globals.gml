@@ -30,7 +30,7 @@ global.characters = [
 	obj_player,	// Tails
 	obj_player,	// Test
 ];
-global.protagonist = noone;
+global.current_player = noone;
 global.lives = 3;
 global.score = 0;
 

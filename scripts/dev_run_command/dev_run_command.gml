@@ -6,7 +6,7 @@ function dev_run_command(_command) {
 	}
 	
 	// Early exit
-	var _player = Protagonist;
+	var _player = game_get_player();
 	if (!instance_exists(_player) or _player.state == player_state_death) {
 		exit;
 	}

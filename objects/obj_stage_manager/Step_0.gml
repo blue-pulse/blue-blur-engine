@@ -3,7 +3,7 @@ game_reduce_power();
 
 // Kill player if they reached time limit
 if (global.time > 35999) {
-	with (Protagonist) {
+	with (game_get_player()) {
 		player_receive_damage(self, true);
 	}
 }

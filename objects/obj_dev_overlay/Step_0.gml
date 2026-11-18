@@ -1,5 +1,5 @@
 // Copy the player data that the panel watches
-var _player = Protagonist;
+var _player = game_get_player();
 if (instance_exists(_player)) {
 	readout.hor_speed = _player.hor_speed;
 	readout.ver_speed = _player.ver_speed;

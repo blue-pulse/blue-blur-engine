@@ -11,7 +11,7 @@ function pause_is_allowed() {
 		input_pressed(vb_start) and 
 		
 		// Player is alive
-		instance_exists(Protagonist) and Protagonist.state != player_state_death and
+		instance_exists(game_get_player()) and game_get_player().state != player_state_death and
 		
 		// No fading in process
 		!scene_is_changing() and hud_is_visible()

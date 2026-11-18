@@ -221,6 +221,8 @@
     {"name":"__SparkleSystem","order":9,"path":"scripts/__SparkleSystem/__SparkleSystem.yy",},
     {"name":"__SparkleTrace","order":10,"path":"scripts/__SparkleTrace/__SparkleTrace.yy",},
     {"name":"Checkpoint","order":16,"path":"scripts/Checkpoint/Checkpoint.yy",},
+    {"name":"game_get_player","order":25,"path":"scripts/game_get_player/game_get_player.yy",},
+    {"name":"game_set_player","order":26,"path":"scripts/game_set_player/game_set_player.yy",},
     {"name":"MenuOption","order":15,"path":"scripts/MenuOption/MenuOption.yy",},
     {"name":"Task","order":14,"path":"scripts/Task/Task.yy",},
     {"name":"config_fonts","order":4,"path":"scripts/config_fonts/config_fonts.yy",},
