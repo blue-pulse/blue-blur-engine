@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"chopper_setup_enums",
+  "%Name":"motobug_constants",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"chopper_setup_enums",
+  "name":"motobug_constants",
   "parent":{
     "name":"01. Logic",
-    "path":"folders/07. Enemies/04. Chopper/01. Logic.yy",
+    "path":"folders/07. Enemies/02. Motobug/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
