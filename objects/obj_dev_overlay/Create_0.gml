@@ -1,5 +1,5 @@
 // Variables
-commands = dev_setup_commands();
+commands = dev_define_commands();
 show_masks = true;
 show_player_strip = true;
 show_enemy_strips = false;

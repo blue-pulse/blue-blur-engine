@@ -40,7 +40,7 @@ function player_movement_ground() {
 			var wall_sign = player_wall_eject(hit_wall);
 			
 			// Trigger reaction
-			if (player_get_reaction(hit_wall, wall_sign)) {
+			if (player_react(hit_wall, wall_sign)) {
 				return false;
 			}
 			
@@ -61,7 +61,7 @@ function player_movement_ground() {
 		var hit_floor = player_collision_floor(ver_radius * 2);
 		if (hit_floor) {
 			// Trigger reaction
-			if (player_get_reaction(hit_floor, DIR_BOTTOM)) {
+			if (player_react(hit_floor, DIR_BOTTOM)) {
 				return false;
 			}
 			

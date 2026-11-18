@@ -1,4 +1,4 @@
-function stage_setup_title() {
+function stage_init_title() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

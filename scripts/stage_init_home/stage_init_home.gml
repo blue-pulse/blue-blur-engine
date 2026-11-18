@@ -1,4 +1,4 @@
-function stage_setup_home() {
+function stage_init_home() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

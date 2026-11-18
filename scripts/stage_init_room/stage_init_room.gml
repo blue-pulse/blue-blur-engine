@@ -1,24 +1,24 @@
-function stage_init_data() {
+function stage_init_room() {
 	// Setup level
 	switch (room) {
 		// Main title
 		case rm_title:
-			stage_setup_title();
+			stage_init_title();
 			break
 			
 		// Main title
 		case rm_home:
-			stage_setup_home();
+			stage_init_home();
 			break;
 		
 		// Hub world
 		case rm_hub_world:
-			stage_setup_hub_world();
+			stage_init_hub_world();
 			break;
 		
 		// Test Zone
 		case rm_test_zone:
-			stage_setup_test_zone();
+			stage_init_test_zone();
 			break;
 	}
 	

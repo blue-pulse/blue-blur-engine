@@ -73,7 +73,7 @@ if (show_menu) {
 				options[2].hspeed = 20;
 				layer_hspeed(flag_layer, 9.5);
 				mixer_play_effect(snd_quit_game);
-				framework_stop();
+				framework_quit();
 				break;
 		}
 	}

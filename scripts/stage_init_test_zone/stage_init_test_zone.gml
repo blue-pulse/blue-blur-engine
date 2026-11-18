@@ -1,4 +1,4 @@
-function stage_setup_test_zone() {
+function stage_init_test_zone() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

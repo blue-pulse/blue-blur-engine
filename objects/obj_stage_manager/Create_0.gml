@@ -10,7 +10,7 @@ name = "None";
 
 // Set stage data
 stage_bootstrap();
-stage_init_data();
+stage_init_room();
 
 // Set culling interval
 if (allow_culling) {

@@ -1,4 +1,4 @@
-function dev_setup_commands() {
+function dev_define_commands() {
 	// Commands
 	return [
 		{ key: vk_f1, shift: false, label: "Noclip", needs_player: true, run: dev_command_toggle_noclip },
@@ -9,7 +9,7 @@ function dev_setup_commands() {
 		{ key: vk_f6, shift: false, label: "Focus camera", needs_player: true, run: dev_command_toggle_camera },
 		{ key: vk_f7, shift: false, label: "Toggle HUD", needs_player: false, run: dev_command_toggle_hud },
 		{ key: vk_f8, shift: false, label: "Restart game", needs_player: false, run: framework_restart },
-		{ key: vk_f9, shift: true, label: "Quit game", needs_player: false, run: framework_stop },
+		{ key: vk_f9, shift: true, label: "Quit game", needs_player: false, run: framework_quit },
 		{ key: vk_f11, shift: false, label: "Toggle fullscreen", needs_player: false, run: dev_command_toggle_fullscreen },
 	];
 }

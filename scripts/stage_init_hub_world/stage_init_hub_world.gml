@@ -1,4 +1,4 @@
-function stage_setup_hub_world() {
+function stage_init_hub_world() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

@@ -1,5 +1,5 @@
 // Variables
-commands = dev_setup_commands();
+commands = dev_define_commands();
 
 // Remember what the commands can change in the view
 camera_target_before = instance_exists(obj_camera) ? camera_get_target() : noone;

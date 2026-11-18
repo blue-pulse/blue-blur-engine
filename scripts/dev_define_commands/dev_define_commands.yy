@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"stage_setup_title",
+  "%Name":"dev_define_commands",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"stage_setup_title",
+  "name":"dev_define_commands",
   "parent":{
     "name":"01. Logic",
-    "path":"folders/08. Scenes/02. Title/01. Logic.yy",
+    "path":"folders/10. Debug/01. Logic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

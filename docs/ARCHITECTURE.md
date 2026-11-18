@@ -16,7 +16,7 @@ Blue Blur Engine is a 2D game engine that runs on GameMaker. A game is a set of 
 
 The game starts in the room `rm_init_game`. Its object `obj_init_manager` calls `framework_start()`, which resets the base state and, on the first run, creates the global data structures for user data, save data and settings, schedules the loading of the configuration, and prepares the screen and the audio. When the audio groups are loaded and the asynchronous queue is empty, the object fades to `rm_title`, or to `rm_home` if the game was already initialised. The room `rm_stop_game` ends the process.
 
-A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creation runs `stage_bootstrap()`, which resets the counters and the player's score and time, and `stage_init_data()`, which selects the setup function for the current room and starts its music. A room change goes through `stage_goto()` or `scene_change()`.
+A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creation runs `stage_bootstrap()`, which resets the counters and the player's score and time, and `stage_init_room()`, which selects the setup function for the current room and starts its music. A room change goes through `stage_goto()` or `scene_change()`.
 
 ## Codemap
 

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"framework_stop",
+  "%Name":"framework_quit",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"framework_stop",
+  "name":"framework_quit",
   "parent":{
     "name":"02. Shutdown",
     "path":"folders/02. Core/01. Bootstrap/02. Shutdown.yy",

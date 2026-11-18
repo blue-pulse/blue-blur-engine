@@ -1,4 +1,4 @@
-function framework_stop() {
+function framework_quit() {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	

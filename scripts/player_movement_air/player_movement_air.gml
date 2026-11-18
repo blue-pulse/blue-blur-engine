@@ -25,7 +25,7 @@ function player_movement_air() {
 			var wall_sign = player_wall_eject(hit_wall);
 			
 			// Trigger reaction
-			if (player_get_reaction(hit_wall, wall_sign)) {
+			if (player_react(hit_wall, wall_sign)) {
 				return false;
 			}
 			
@@ -65,7 +65,7 @@ function player_movement_air() {
 			var hit_floor = player_collision_floor(ver_radius);
 			if (hit_floor) {
 				// Trigger reaction
-				if (player_get_reaction(hit_floor, DIR_BOTTOM)) {
+				if (player_react(hit_floor, DIR_BOTTOM)) {
 					return false;
 				}
 				
@@ -82,7 +82,7 @@ function player_movement_air() {
 			var hit_floor = player_collision_ceiling(ver_radius);
 			if (hit_floor) {
 				// Trigger reaction
-				if (player_get_reaction(hit_floor, DIR_TOP)) {
+				if (player_react(hit_floor, DIR_TOP)) {
 					return false;
 				}
 				

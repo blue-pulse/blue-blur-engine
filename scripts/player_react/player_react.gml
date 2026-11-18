@@ -1,4 +1,4 @@
-function player_get_reaction(object, _dir=undefined) {
+function player_react(object, _dir=undefined) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
