@@ -1,13 +1,13 @@
 function dev_command_toggle_camera(_player) {
 	// Early exit
 	if (!instance_exists(Camera)) {
-		return;
+		exit;
 	}
 	
 	// Go back to the player
 	if (camera_get_target() != _player) {
 		camera_set_target(_player);
-		return;
+		exit;
 	}
 	
 	// Focus a random entity

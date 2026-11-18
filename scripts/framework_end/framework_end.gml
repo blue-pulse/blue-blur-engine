@@ -3,7 +3,7 @@ function framework_end() {
 	gml_pragma("forceinline");
 	
 	// Stop audio
-	print("[INFO] Stoping audio...");
+	print("[INFO] Stopping audio...");
 	audio_stop_all();
 	
 	// Wait before ending process

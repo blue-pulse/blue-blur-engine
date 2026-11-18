@@ -3,7 +3,7 @@ function dev_toggle() {
 	if (instance_exists(obj_dev_overlay)) {
 		instance_destroy(obj_dev_overlay);
 		instance_destroy(obj_dev_commands);
-		return;
+		exit;
 	}
 
 	// Open the tools
