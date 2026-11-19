@@ -1,5 +1,5 @@
 function player_drop_rings() {
-	// Set default values we will use to spread rings
+	// Set default values to spread rings
 	var scatter_dir = -1;
 	var angle = 101.25;
 	var abs_speed = 4;

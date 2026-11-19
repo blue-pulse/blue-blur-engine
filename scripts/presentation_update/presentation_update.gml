@@ -3,7 +3,7 @@ function presentation_update() {
 	var _facts = presentation_facts;
 	var _entering = _facts.state != presentation_seen;
 
-	// Early exit, the mode did not change and its row has no list to follow
+	// Early exit
 	if (!_entering and presentation_follow == undefined) {
 		exit;
 	}
@@ -29,7 +29,7 @@ function presentation_update() {
 		exit;
 	}
 
-	// Choose when the mode starts, calling through a variable keeps this instance as self
+	// Run the entry list through variables to keep this instance as self
 	if (_entering) {
 		var _entry = _row[$ "entry"];
 		for (var _i = 0; _entry != undefined and _i < array_length(_entry); _i++) {
@@ -38,7 +38,7 @@ function presentation_update() {
 		}
 	}
 
-	// React while the mode lasts, in the order of the row
+	// React while the mode lasts
 	var _follow = presentation_follow;
 	for (var _i = 0; _follow != undefined and _i < array_length(_follow); _i++) {
 		var _react = _follow[_i].run;

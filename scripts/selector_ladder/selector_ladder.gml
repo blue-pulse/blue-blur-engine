@@ -1,5 +1,5 @@
 function selector_ladder(_facts, _params, _entering) {
-	// Early exit, the ladder follows from the step after the mode starts and gives way to a fact
+	// Wait one step after the mode starts and give way to a fact
 	if (_entering or (_params[$ "unless"] != undefined and _facts[$ _params.unless])) {
 		exit;
 	}
@@ -13,7 +13,7 @@ function selector_ladder(_facts, _params, _entering) {
 		var _lower = _band[$ "from"];
 		var _reached = (_lower != undefined) ? (_value >= _lower) : (_value > _band.above);
 		if (_reached) {
-			// Set the pace of the band, which follows the fact
+			// Set the pace of the band
 			var _pace = _band.pace;
 			var _rate = _value;
 			var _pace_map = _pace[$ "map"];

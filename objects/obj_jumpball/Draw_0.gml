@@ -1,4 +1,4 @@
-// Sprite is offset one pixel when mirrored. Let's fix that
+// Fix the one pixel offset of a mirrored sprite
 if (image_xscale == -1) {
 	x--;
 }

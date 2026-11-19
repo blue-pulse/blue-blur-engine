@@ -31,6 +31,6 @@ function screen_adjust_properties() {
 	surface_resize(application_surface, WIDTH * _scale_factor, HEIGHT * _scale_factor);
 	screen_verify_size();
 	
-	// Finally, put the window in the center
+	// Center the window
 	window_center();
 }

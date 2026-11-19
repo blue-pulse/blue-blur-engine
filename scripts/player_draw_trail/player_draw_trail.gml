@@ -20,7 +20,7 @@ function player_draw_trail() {
 		var dir_x = lengthdir_x(trail_width, angle);
 		var dir_y = lengthdir_y(trail_width, angle);
 	
-		// Calculate alpha, and render
+		// Calculate alpha and render
 		var alpha = trail_alpha * tex_size;
 		draw_vertex_texture_color(floor(pos_x_2 + dir_x), floor(pos_y_2 + dir_y), tex_size, 0, color_blend, alpha);
 		draw_vertex_texture_color(floor(pos_x_2 - dir_x), floor(pos_y_2 - dir_y), tex_size, 1, color_blend, alpha);

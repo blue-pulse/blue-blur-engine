@@ -4,7 +4,7 @@ function game_reduce_power() {
 	
 	// Logic
 	if (is_saving_power) {
-		// Lock audio gain as long as we are on low power
+		// Lock audio gain while on low power
 		audio_master_gain(0.15);
 		
 		// Only in frame in which we became focused
