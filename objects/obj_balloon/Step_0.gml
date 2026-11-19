@@ -8,7 +8,7 @@ y = ystart + dcos(global.framecount * 3) * 6;
 switch (state) {
 	case balloon_states.idle:
 		// Idle
-		if (attack_delay) {
+		if (attack_delay > 0) {
 			attack_delay--;
 		}
 

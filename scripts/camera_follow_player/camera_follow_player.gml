@@ -15,7 +15,7 @@ function camera_follow_player() {
 	var _ver_offset = 0;
 	
 	// Smoothly move the camera to the target position
-	if (scroll_delay) {
+	if (scroll_delay > 0) {
 		scroll_delay--;
 	} else {
 		x = lerp(x, _target_x, smooth_lerp);
@@ -24,7 +24,7 @@ function camera_follow_player() {
 	
 	// Offset camera horizontally depending on the speed
 	if (abs(_target_speed) >= 6 or _target_state == player_state_spindash) {
-		if (!scroll_delay and extended_offset != shift_value * _shift_direction) {
+		if (scroll_delay <= 0 and extended_offset != shift_value * _shift_direction) {
 			extended_offset += shift_speed * _shift_direction;
 		}
 	} else {
@@ -33,7 +33,7 @@ function camera_follow_player() {
 	
 	// Check for overview delay
 	if (_shift_up or _shift_down) {
-		if (overview_delay) {
+		if (overview_delay > 0) {
 			overview_delay--;
 		}
 	} else {
@@ -41,7 +41,7 @@ function camera_follow_player() {
 	}
 	
 	// Offset vertically
-	if (!overview_delay and (_shift_up or _shift_down)) {
+	if (overview_delay <= 0 and (_shift_up or _shift_down)) {
 		if (_shift_up and overview_offset > -88) {
 			overview_offset -= shift_speed;
 		} else if (_shift_down and overview_offset < 88) {

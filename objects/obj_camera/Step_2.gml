@@ -29,14 +29,14 @@ if (angle != gravity_direction) {
 }
 
 // Screen shake
-if (shake_timer) {
+if (shake_timer > 0) {
 	view_x += random_range(-shake_power, shake_power);
 	view_y += random_range(-shake_power, shake_power);
 	if (shake_timer != infinity) then shake_timer--;
 }
 
 // Zoom
-if (zoom_timer) {
+if (zoom_timer > 0) {
 	view_width = lerp(view_width, WIDTH * zoom_amount, zoom_lerp);
 	view_height = lerp(view_height, HEIGHT * zoom_amount, zoom_lerp);
 	if (zoom_timer != infinity) then zoom_timer--;
