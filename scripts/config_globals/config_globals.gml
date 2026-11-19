@@ -4,7 +4,7 @@ global.time = 0;
 
 // Internal
 global.async_operations = [];
-global.initflag = false;
+global.is_initialized = false;
 global.game_is_paused = false;
 global.game_state = false;
 global.hud_is_visible = false;

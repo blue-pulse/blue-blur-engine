@@ -3,7 +3,7 @@ function framework_start() {
 	framework_bootstrap();
 	
 	// Load values for the first time
-	var _game_is_ready = game_get_initflag();
+	var _game_is_ready = game_is_initialized();
 	if (!_game_is_ready) {
 		// Set game parameters
 		game_init_data();

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"game_get_initflag",
+  "%Name":"game_is_initialized",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"game_get_initflag",
+  "name":"game_is_initialized",
   "parent":{
     "name":"03. State",
     "path":"folders/02. Core/01. Bootstrap/03. State.yy",
