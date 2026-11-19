@@ -16,7 +16,7 @@ function player_state_noclip(phase) {
 			// Fly around
 			x += input_axis(vb_right, vb_left) * 8;
 			y += input_axis(vb_down, vb_up) * 8;
-			player_in_room();
+			player_enforce_bounds();
 			break;
 
 		// Stop state

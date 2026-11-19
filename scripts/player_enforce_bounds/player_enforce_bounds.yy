@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"player_in_room",
+  "%Name":"player_enforce_bounds",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"player_in_room",
+  "name":"player_enforce_bounds",
   "parent":{
     "name":"01. Runtime",
     "path":"folders/04. Player/01. Base/01. Runtime.yy",

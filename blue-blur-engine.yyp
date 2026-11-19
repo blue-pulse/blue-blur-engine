@@ -819,7 +819,7 @@
     {"id":{"name":"player_draw_trail","path":"scripts/player_draw_trail/player_draw_trail.yy",},},
     {"id":{"name":"player_drop_rings","path":"scripts/player_drop_rings/player_drop_rings.yy",},},
     {"id":{"name":"player_get_angle","path":"scripts/player_get_angle/player_get_angle.yy",},},
-    {"id":{"name":"player_in_room","path":"scripts/player_in_room/player_in_room.yy",},},
+    {"id":{"name":"player_enforce_bounds","path":"scripts/player_enforce_bounds/player_enforce_bounds.yy",},},
     {"id":{"name":"player_init_config","path":"scripts/player_init_config/player_init_config.yy",},},
     {"id":{"name":"player_init_effects","path":"scripts/player_init_effects/player_init_effects.yy",},},
     {"id":{"name":"player_movement_air","path":"scripts/player_movement_air/player_movement_air.yy",},},

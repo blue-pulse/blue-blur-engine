@@ -534,7 +534,7 @@
     {"name":"player_drop_rings","order":5,"path":"scripts/player_drop_rings/player_drop_rings.yy",},
     {"name":"player_get_angle","order":9,"path":"scripts/player_get_angle/player_get_angle.yy",},
     {"name":"player_react","order":11,"path":"scripts/player_react/player_react.yy",},
-    {"name":"player_in_room","order":14,"path":"scripts/player_in_room/player_in_room.yy",},
+    {"name":"player_enforce_bounds","order":14,"path":"scripts/player_enforce_bounds/player_enforce_bounds.yy",},
     {"name":"player_init_config","order":16,"path":"scripts/player_init_config/player_init_config.yy",},
     {"name":"player_init_effects","order":7,"path":"scripts/player_init_effects/player_init_effects.yy",},
     {"name":"player_movement_air","order":8,"path":"scripts/player_movement_air/player_movement_air.yy",},
