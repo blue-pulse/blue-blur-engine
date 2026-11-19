@@ -12,7 +12,8 @@ switch (room) {
 	// Start game
 	case rm_init_game:
 		is_loading = true;
-		is_ready = framework_start();
+		framework_start();
+		is_ready = is_started;
 		break;
 		
 	// Stop game

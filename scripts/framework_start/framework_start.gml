@@ -18,7 +18,6 @@ function framework_start() {
 		screen_prepare_gpu();
 		screen_adjust_properties();
 		print("[INFO] Screen setup was completed!");
-		return false;
 	}
 	
 	// Skip since values have already been loaded
@@ -31,6 +30,5 @@ function framework_start() {
 		print("[INFO] Setting default game parameters...");
 		game_reset_player();
 		global.checkpoint.reset_all();
-		return true;
 	}
 }
