@@ -8,12 +8,12 @@
   "name":"obj_solid",
   "overriddenProperties":[],
   "parent":{
-    "name":"04. Entities",
-    "path":"folders/02. Core/04. Entities.yy",
+    "name":"04. Actors",
+    "path":"folders/02. Core/04. Actors.yy",
   },
   "parentObjectId":{
-    "name":"obj_resource",
-    "path":"objects/obj_resource/obj_resource.yy",
+    "name":"obj_actor",
+    "path":"objects/obj_actor/obj_actor.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

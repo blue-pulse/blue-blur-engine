@@ -13,8 +13,8 @@
     "path":"folders/06. Interactables/05. Dash Panels/01. Logic.yy",
   },
   "parentObjectId":{
-    "name":"obj_resource",
-    "path":"objects/obj_resource/obj_resource.yy",
+    "name":"obj_actor",
+    "path":"objects/obj_actor/obj_actor.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -11,8 +11,8 @@ function dev_command_toggle_camera(_player) {
 	}
 	
 	// Focus a random entity
-	var _count = instance_number(obj_resource);
+	var _count = instance_number(obj_actor);
 	if (_count > 0) {
-		camera_set_target(instance_find(obj_resource, irandom(_count - 1)));
+		camera_set_target(instance_find(obj_actor, irandom(_count - 1)));
 	}
 }

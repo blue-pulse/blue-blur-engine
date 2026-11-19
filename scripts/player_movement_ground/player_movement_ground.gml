@@ -80,7 +80,7 @@ function player_movement_ground() {
 		}
 		
 		// Handle non-solid object collision
-		if (player_collision_resource()) {
+		if (player_collision_actor()) {
 			return false;
 		}
 	}

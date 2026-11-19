@@ -67,7 +67,7 @@ plane = 0;
 hor_radius = 8;
 ver_radius = 15;
 wall_radius = 10;
-resource_list = [];
+actor_list = [];
 terrain_list = [];
 
 // Position grid

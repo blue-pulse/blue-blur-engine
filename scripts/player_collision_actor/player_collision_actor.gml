@@ -1,8 +1,8 @@
-function player_collision_resource() {
+function player_collision_actor() {
 	// Evaluate all non-terrain objects
-	for (var i = array_length(resource_list) - 1; i > -1; --i) {
+	for (var i = array_length(actor_list) - 1; i > -1; --i) {
 		// Get the current object
-		var object = resource_list[i];
+		var object = actor_list[i];
 		
 		// Continue if not intersecting it
 		var facing_dir = (mask_direction mod 180) != 0;

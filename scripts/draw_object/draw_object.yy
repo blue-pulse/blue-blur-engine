@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_object",
   "parent":{
-    "name":"04. Entities",
-    "path":"folders/02. Core/04. Entities.yy",
+    "name":"04. Actors",
+    "path":"folders/02. Core/04. Actors.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

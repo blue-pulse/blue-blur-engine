@@ -36,7 +36,7 @@ function player_movement_air() {
 		}
 		
 		// Handle non-solid object collision
-		if (player_collision_resource()) {
+		if (player_collision_actor()) {
 			return false;
 		}
 	}
@@ -130,7 +130,7 @@ function player_movement_air() {
 		}
 		
 		// Handle non-solid object collision
-		if (player_collision_resource()) {
+		if (player_collision_actor()) {
 			return false;
 		}
 	}

@@ -23,7 +23,7 @@ A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creatio
 The folders below are the project's logical organisation. An element that has sprites, sounds or animations splits its folder into `Logic`, `Sprites`, `Audio` and `Presentation`, keeping only those that exist.
 
 - `01. Vendor` holds the third-party components, listed under Boundaries. Their internal layout is their authors' and is exempt from the structure rules.
-- `02. Core` holds the engine's services, in nine folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Entities` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` holds the checks built from the functions of the controls adapter, `06. Display` handles the screen, the GPU, the shared visual effects the controller and the selectors of the presentation that choose the animations, `07. Physics` answers collision queries by ray and by box, `08. Tooling` holds the editor icons and the replay harness, and `09. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio, `02. Scenes` over EasyFade, `03. Input` over Input and `04. Animation` over Resnip.
+- `02. Core` holds the engine's services, in nine folders: `01. Bootstrap` starts, restarts and stops the game and holds its global state, `02. Configuration` holds enums, macros, globals, fonts and particles, `03. Persistence` saves and loads user data, save data and settings and tracks those operations in a task queue, `04. Actors` holds the base objects of everything placed in a room and their shared draw routine, `05. Input` holds the checks built from the functions of the controls adapter, `06. Display` handles the screen, the GPU, the shared visual effects the controller and the selectors of the presentation that choose the animations, `07. Physics` answers collision queries by ray and by box, `08. Tooling` holds the editor icons and the replay harness, and `09. Adapters` holds the only code that calls a library of `Vendor`, with `01. Audio` over EasyAudio, `02. Scenes` over EasyFade, `03. Input` over Input and `04. Animation` over Resnip.
 - `03. World` holds the solid geometry the player stands on and the areas that act on the player: `01. Shapes`, `02. Platforms` and `03. Triggers`.
 - `04. Player` holds `01. Base`, the generic player split by responsibility into runtime, states, movement, collision, reactions, status, presentation, sprites and audio, and `02. Sonic`, the first character.
 - `05. Camera` holds the camera object and its behaviour.
@@ -82,11 +82,11 @@ Each frame, an instance of `obj_player` updates its timers with `player_update_p
 
 ### Collision
 
-The player resolves collisions with `player_collision_floor`, `player_collision_wall`, `player_collision_ceiling` and `player_collision_resource`. The floor, wall and ceiling checks use the queries in `02. Core/07. Physics`.
+The player resolves collisions with `player_collision_floor`, `player_collision_wall`, `player_collision_ceiling` and `player_collision_actor`. The floor, wall and ceiling checks use the queries in `02. Core/07. Physics`.
 
 ### Culling
 
-When a stage sets `allow_culling`, the stage manager runs a periodic alarm that deactivates every instance of `obj_resource`, and then reactivates those inside the camera view and around the player.
+When a stage sets `allow_culling`, the stage manager runs a periodic alarm that deactivates every instance of `obj_actor`, and then reactivates those inside the camera view and around the player.
 
 ### Persistence
 
@@ -124,7 +124,7 @@ An animation, called a clip, is a sprite, or a run of its sub-images, with a spe
 - **Room:** a scene or level. The engine loads and runs one at a time.
 - **Object:** a class of things placed in a room, defined by its events.
 - **Instance:** one live copy of an object, with its own state.
-- **Entity:** an object placed in a room that the engine culls and the player interacts with, which here means any child of `obj_resource`.
+- **Actor:** an object placed in a room that the player collides with and that reacts, which here means any child of `obj_actor`.
 - **Event:** a handler that runs on a condition, such as `Create`, `Step`, `Alarm` or `Draw`.
 - **Step:** one tick of the main loop, which runs once per frame.
 - **Alarm:** a countdown timer in an instance that triggers an event when it reaches zero.

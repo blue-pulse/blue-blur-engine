@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_resource",
+  "%Name":"obj_actor",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_resource",
+  "name":"obj_actor",
   "overriddenProperties":[],
   "parent":{
-    "name":"04. Entities",
-    "path":"folders/02. Core/04. Entities.yy",
+    "name":"04. Actors",
+    "path":"folders/02. Core/04. Actors.yy",
   },
   "parentObjectId":null,
   "persistent":false,

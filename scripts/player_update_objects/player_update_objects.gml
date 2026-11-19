@@ -1,7 +1,7 @@
 function player_update_objects() {
 	// Erase recorded objects
 	terrain_list = [];
-	resource_list = [];
+	actor_list = [];
 	
 	// Initialize bounding rectangle
 	var pos_x = floor(x);
@@ -16,7 +16,7 @@ function player_update_objects() {
 	var pos_y_2 = pos_y - (sine * wall_radius * 2) + (cosine * ver_radius * 2);
 	
 	// Evaluate all stage objects
-	with (obj_resource) {
+	with (obj_actor) {
 		// Continue if not intersecting the bounding rectangle
 		if (!collision_rectangle(pos_x_1, pos_y_1, pos_x_2, pos_y_2, id, true, false)) {
 			continue;
@@ -28,10 +28,10 @@ function player_update_objects() {
 			if (!reaction_index) {
 				continue;
 			}
-			array_push(other.resource_list, id);
+			array_push(other.actor_list, id);
 		}
 		
-		// Get all resources
+		// Get all actors
 		else {
 			// Continue on collision layer mismatch
 			if (plane != -1 and plane != other.plane) {
