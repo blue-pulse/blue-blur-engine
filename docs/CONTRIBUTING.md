@@ -2,7 +2,7 @@
 
 ## About this document
 
-This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. `python tools/gm.py check` checks `E006` and the rules about animation, time, presentation and folders that [0009](./decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) lists, so each other rule holds by attention alone.
+This document holds the rules for working on Blue Blur Engine. It is for anyone who works on the project, and it binds everyone the same way. Follow each rule exactly as written. Only the maintainer may override a rule. In these documents the maintainer is the owner of the project, and the user is whoever is working in it at the moment. `python tools/gm.py check` checks `E006`, the rules about animation, time, presentation and folders that [0009](./decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) lists, and `C003`, `C014`, `C019` to `C021`, `C025`, `C026`, `S003`, `S005`, `S006`, `S012`, `S015` and `S017`, so each other rule holds by attention alone.
 
 It contains what you must always do and what you must never do. It does not explain how the project is built, which is [ARCHITECTURE.md](./ARCHITECTURE.md), and it does not argue unusual choices, which are the records in [decisions/](./decisions/). The principles behind every rule are in [PRINCIPLES.md](./PRINCIPLES.md), and the backlog is [PENDING.md](./PENDING.md).
 
@@ -42,13 +42,21 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `C003` Name functions `prefix_action` in snake_case, with the prefix naming the area, such as `player_` or `stage_`, because GML has one global namespace and the name is its only context.
 - `C004` Use the standard industry term for a concept, and define a term that belongs to the domain or to GameMaker once in the glossary of [ARCHITECTURE.md](./ARCHITECTURE.md), so a professional who has never made a game can read the code.
 - `C005` Put constants in enums and macros and never repeat a literal, so each fact has one owner, as Fowler's *Refactoring* catalogues it under Replace Magic Literal.
-- `C006` Keep configuration data in dedicated init or setup functions, apart from behaviour, so changing a value never means editing logic, which is the separation of concerns Dijkstra describes in "On the role of scientific thought".
+- `C006` Keep configuration data in dedicated `init` or `define` functions, apart from behaviour, so changing a value never means editing logic, which is the separation of concerns Dijkstra describes in "On the role of scientific thought".
 - `C007` Log with `print("[INFO] ...")`, naming the level in brackets and taking the level names from the syslog severities of RFC 5424, such as informational, warning, error and debug, so every line reads the same.
 - `C008` Use a comment as a one-line label that organizes and segments code, such as `// Variables`, `// Speed variables` or `// Create user without email`, and use one to explain code only where it is hard to follow, saying why and not what.
 - `C009` Mark a short script that runs often with `gml_pragma("forceinline")`, which makes a YYC build compile it inline as the GameMaker manual describes, and keep it to short scripts because inlining also grows the executable and the compile time.
 - `C016` Use the plain word in code, comments and documents, such as `use` over `utilize`, so a newcomer understands on first read, as the Google developer documentation style guide asks for clear and straightforward language.
 - `C017` Make a message that reports a failure say why it failed and what would change it, in the words of somebody who has not read the code, so a log line saves them opening a file.
 - `C018` Write the tools in `tools/` in Python with only the standard library and declare the minimum Python version in `tools/pyproject.toml`, so nobody installs anything to run the game and the version has one owner, as PEP 621 gives `requires-python` for that purpose.
+- `C019` Name a constructor in PascalCase as a noun, such as `Task` or `Checkpoint`, so a type never reads as a function, as the page of the GameMaker manual on structs names `Vector2`.
+- `C020` End a function or an event that gives nothing back with `exit` and never with `return;`, and give a value back only with `return value`, so the keyword says whether something comes back, remembering that in an event `exit` ends the whole event, as the page of the manual on `exit` states.
+- `C021` Name a macro in `UPPER_SNAKE_CASE`, as the page of the manual on constants recommends, and use a macro only for a constant and never for a global variable, a resource or a call, because the compiler pastes its text everywhere it matches. The `vb_*` macros of the controls adapter are the one exception, as the controls contract in [ARCHITECTURE.md](./ARCHITECTURE.md) states.
+- `C022` Use `init` for a function that sets variables, `define` for one that returns a table of data and `create` for one that returns a new struct or instance, so each verb has one meaning. This is a local convention, and no external standard names it.
+- `C023` Name a function `get` or `is` only when it changes nothing, so calling it twice is safe, as command–query separation in Meyer's *Object-Oriented Software Construction* states.
+- `C024` Start a boolean with `is_`, `has_`, `can_`, `allow_`, `show_` or `force_`, so a yes or no variable reads as a question. This is a local convention, and no external standard names it.
+- `C025` Name a script that holds no function after what it declares, as `config_<what>` or `<domain>_constants`, with no verb and no leading underscore, because GameMaker runs its code when the game starts, as the page of the manual on script functions states, and nobody calls it by name.
+- `C026` Expose a value that other code may read and not write through a query function with one setter, such as `game_get_player` and `game_set_player`, and never through a macro, because a macro can be written through and replaces every name that matches it, as the manual describes macros replaced at compile time.
 
 ### Structure
 
@@ -57,13 +65,16 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `S003` Prefix folders with `NN. Name`, a two-digit number, to make the intended order explicit in the IDE, so lexical order matches numeric order and a level can grow past 9 folders without renaming the rest.
 - `S004` Name folders with standard software vocabulary, such as Bootstrap, Persistence or Configuration, and keep a domain noun only where it is the product's own vocabulary.
 - `S005` Keep the depth to 4 levels at most, because past that a level becomes a label and not a grouping, and PEP 20 says flat is better than nested.
-- `S006` Keep 5 to 9 items per folder, subdivide over 9 by responsibility and consider merging under 5, following Miller's "The Magical Number Seven, Plus or Minus Two" as a heuristic and not a law.
+- `S006` Keep at most 9 items per folder and subdivide over 9 by responsibility, following Miller's "The Magical Number Seven, Plus or Minus Two" as a heuristic and not a law.
 - `S007` Give sprites and sounds their own subfolder, because they are bulky and would bury the code.
 - `S008` Put a shared resource in the nearest common ancestor of its users, so no asset is duplicated or arbitrarily owned.
 - `S009` Name a resource for clarity over brevity, because the name is its only context in code and autocomplete makes length cheap.
-- `S010` Use a leading underscore only to mark something private or internal, as PEP 8 does.
+- `S010` Retired. `S015` replaces it, because the underscore marks the scope of a name and not whether it is private.
 - `S011` Edit the GameMaker project files, `blue-blur-engine.yyp`, each `.yy` and `blue-blur-engine.resource_order`, as little as possible, keep the exact line format the IDE writes, and reopen the project to verify, because the IDE is fragile with them.
 - `S014` Split the folder of an element that has sprites, sounds or animations into `Logic`, `Sprites`, `Audio` and `Presentation`, in that order and only those that exist, where `Logic` holds objects, scripts and rooms, `Sprites` holds sprites, tilesets and fonts, `Audio` holds sounds, and `Presentation` holds the scripts that build and choose the animations of the element, so every element reads the same way and a new one copies a sibling. `Presentation` comes last because it depends on the others, as `S002` asks. This is a local convention that applies `S007` and `S012`, and no external standard names it.
+- `S015` Start a local variable and a parameter with one underscore and a name internal to a module with two, and use a leading underscore nowhere else, so the prefix tells the scope of a name, as the examples of the GameMaker manual and the eight libraries of `Vendor` do.
+- `S016` Keep the enums and macros of an adapter's contract in a `<domain>_constants` script in the folder of that adapter, so the contract has one owner, as `E002` asks of what crosses an adapter.
+- `S017` Start a resource name with the prefix of its type, which is `obj_`, `rm_`, `spr_`, `snd_` for a sound and `bgm_` for music, `font_` and `ts_`, so a name says what it is, as the naming rules of Feather in the GameMaker manual give `obj_` as their example.
 
 ### External dependencies
 

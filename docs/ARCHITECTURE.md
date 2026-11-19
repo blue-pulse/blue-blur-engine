@@ -16,7 +16,7 @@ Blue Blur Engine is a 2D game engine that runs on GameMaker. A game is a set of 
 
 The game starts in the room `rm_init_game`. Its object `obj_init_manager` calls `framework_start()`, which resets the base state and, on the first run, creates the global data structures for user data, save data and settings, schedules the loading of the configuration, and prepares the screen and the audio. When the audio groups are loaded and the asynchronous queue is empty, the object fades to `rm_title`, or to `rm_home` if the game was already initialised. The room `rm_stop_game` ends the process.
 
-A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creation runs `stage_bootstrap()`, which resets the counters and the player's score and time, and `stage_init_room()`, which selects the setup function for the current room and starts its music. A room change goes through `stage_goto()` or `scene_change()`.
+A gameplay room is prepared by a stage manager, `obj_stage_manager`. Its creation runs `stage_bootstrap()`, which resets the counters and the player's score and time, and `stage_init_room()`, which selects the init function for the current room and starts its music. A room change goes through `stage_goto()` or `scene_change()`.
 
 ## Codemap
 
@@ -43,6 +43,7 @@ The folders below are the project's logical organisation. An element that has sp
 
 - At most one manager of each kind exists at a time, because `manager_create` creates one only if none exists.
 - Apart from the initial state a player is created with, its state changes only through `player_set_state`, which stops the previous state before it starts the next.
+- The current player is read through `game_get_player` and written only through `game_set_player`, so a change of character updates one place.
 
 ## Boundaries
 
@@ -144,3 +145,19 @@ An animation, called a clip, is a sprite, or a run of its sub-images, with a spe
 - **Runtime:** the versioned package of GameMaker that holds the compiler, the runner and Igor.
 - **Igor:** the command line tool inside each runtime that compiles, runs and packages a project.
 - **Prefab:** a ready-made set of assets that GameMaker downloads and that a project refers to by package.
+- **Noclip:** a state of the player that moves it freely and ignores collisions, which the developer tools use.
+- **Ring:** a collectible the player holds, and the player loses and scatters its rings when hurt.
+- **Monitor:** a breakable box that gives the player a reward, an item of the `items` enum, when it is destroyed.
+- **Spindash:** a state in which the player charges a roll while standing still and then releases it as a burst of speed.
+- **Homing attack:** a jump toward a locked target, which the reticle marks.
+- **Reticle:** the marker drawn over the target of a homing attack.
+- **Stamina:** a number from 0 to 100 that the player gains from items.
+- **Combo:** the count of enemies the player has defeated in a row, which raises the score.
+- **Checkpoint:** an object that stores the time, the score and the position, so the player restarts there.
+- **Hub world:** the scene that connects the stages.
+- **Plane:** one of the two layers of collision the player can be on, which plane setters and togglers change.
+- **Sensor:** a point that the player checks for collision to learn what is under or beside it.
+- **Trail:** a streak drawn behind a fast player.
+- **Culling:** deactivating the instances outside the view, so they cost nothing until they are needed.
+- **VFX:** a visual effect, such as an explosion, made with particles or an object.
+- **BGM and SFX:** background music and sound effects, which are the audio groups `grp_bgm` and `grp_sfx`.

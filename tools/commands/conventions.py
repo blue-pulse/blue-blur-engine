@@ -164,7 +164,7 @@ def conventions_read_functions(code):
 
 
 def conventions_check_script(root, directory, code):
-	# C003, C019 and C026, a script holds one function named like it or only constants
+	# C003, C019 and C025, a script holds one function named like it or only constants
 	name = directory.name
 	path = (directory / (name + ".gml")).relative_to(root).as_posix()
 	problems, warnings = [], []
@@ -179,12 +179,12 @@ def conventions_check_script(root, directory, code):
 			problems.append(f"[ERROR] {path} declares a function that is not at the start of a line. Put it at the start so the script holds it.")
 		elif not CONSTANT_SCRIPT_PATTERN.match(name):
 			problems.append(
-				f"[ERROR] {path} holds no function, so C026 asks for a name that says what it declares, "
+				f"[ERROR] {path} holds no function, so C025 asks for a name that says what it declares, "
 				f"config_<what> or <domain>_constants. Rename it."
 			)
 		return problems, warnings
 	if CONSTANT_SCRIPT_PATTERN.match(name):
-		problems.append(f"[ERROR] {path} holds a function, and C026 keeps the names config_<what> and <domain>_constants for scripts with none. Rename it.")
+		problems.append(f"[ERROR] {path} holds a function, and C025 keeps the names config_<what> and <domain>_constants for scripts with none. Rename it.")
 	if len(functions) != 1 or functions[0][0] != name:
 		declared = ", ".join(function[0] for function in functions)
 		problems.append(f"[ERROR] {path} declares {declared} and a script holds one function named like it (C003). Split it or rename it.")
@@ -227,7 +227,7 @@ def conventions_check_code(root, resources):
 					problems.append(f"[ERROR] {path}:{number} names the macro {name} in lower case, and C021 asks for UPPER_SNAKE_CASE. Rename it.")
 				if "global." in value or "(" in value or RESOURCE_VALUE_PATTERN.match(value):
 					problems.append(
-						f"[ERROR] {path}:{number} makes {name} stand for {value}, and C021 and C027 keep a macro for a "
+						f"[ERROR] {path}:{number} makes {name} stand for {value}, and C021 and C026 keep a macro for a "
 						f"constant, never for a global, a resource or a call. Write the real name, or add a function."
 					)
 			for number, name in conventions_read_declarations(code):
