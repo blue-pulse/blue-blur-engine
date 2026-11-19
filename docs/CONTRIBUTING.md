@@ -44,7 +44,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `C005` Put constants in enums and macros and never repeat a literal, so each fact has one owner, as Fowler's *Refactoring* catalogues it under Replace Magic Literal.
 - `C006` Keep configuration data in dedicated `init` or `define` functions, apart from behaviour, so changing a value never means editing logic, which is the separation of concerns Dijkstra describes in "On the role of scientific thought".
 - `C007` Log with `print("[INFO] ...")`, naming the level in brackets and taking the level names from the syslog severities of RFC 5424, such as informational, warning, error and debug, so every line reads the same.
-- `C008` Use a comment as a one-line label that organizes and segments code, such as `// Variables`, `// Speed variables` or `// Create user without email`, and use one to explain code only where it is hard to follow, saying why and not what.
+- `C008` Use a comment as a one-line label that organizes and segments code, such as `// Variables`, `// Speed variables` or `// Create user without email`, and use one to explain code only where it is hard to follow, saying why and not what. Write it as one short phrase, with a verb when it describes an action, and with as little punctuation as possible, so a comma, a full stop or a contraction marks a second idea or a filler to cut, and put a reason the code cannot show in a `because` or `so` clause with no comma before it.
 - `C009` Mark a script with `gml_pragma("forceinline")` only when its body is 3 lines or fewer or it is a getter, a setter or an `is` query, and mark a longer one only when a measurement in the real step on YYC shows a gain of at least 0.5 µs per step, because the pragma makes a YYC build compile the function inline as the GameMaker manual describes but also grows the executable and the compile time, and 51 longer functions measured no such gain, as [gml-performance](./reference/gml-performance.md) records.
 - `C016` Use the plain word in code, comments and documents, such as `use` over `utilize`, so a newcomer understands on first read, as the Google developer documentation style guide asks for clear and straightforward language.
 - `C017` Make a message that reports a failure say why it failed and what would change it, in the words of somebody who has not read the code, so a log line saves them opening a file.
@@ -135,7 +135,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `C012` Never refactor unrelated code while you fix a bug, and never optimise prematurely, as Knuth warns in "Structured Programming with go to Statements".
 - `C013` Never add error handling for a case that cannot happen.
 - `C014` Never write a decorative comment such as `// ===== Variables =====`, a comment over more than one line, two comments stacked together, a docstring or block comment, or a comment that explains a whole file, so a comment is always one idea on one line, and the only exception is the JSDoc of the public functions of a library in `Vendor`, which [0001](./decisions/0001-vendor-libraries-and-adapters.md) requires.
-- `C015` Never use a semicolon in comment text, so one comment holds one idea.
+- `C015` Never use a semicolon, a colon or a dash that a word does not need in comment text, so one comment holds one idea and a hyphen stays only inside a word such as `plug-in`.
 
 ### Structure
 

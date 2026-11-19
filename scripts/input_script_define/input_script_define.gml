@@ -25,7 +25,7 @@ function input_script_define() {
 	});
 }
 
-// Define the plug-in at start, only for a replay
+// Define the plug-in at start only for a replay
 if (REPLAY_SCENARIO != "") {
 	input_script_define();
 }

@@ -5,7 +5,7 @@ function player_wall_eject(object) {
 	var sine = dsin(mask_direction);
 	var cosine = dcos(mask_direction);
 	
-	// Check if we're inside the wall
+	// Check if the player is inside the wall
 	if (collision_point(pos_x, pos_y, object, true, false)) {
 		// Move to the closest side without collision
 		for (var i = wall_radius; i < wall_radius * 2; ++i) {
