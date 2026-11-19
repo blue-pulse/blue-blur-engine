@@ -67,7 +67,6 @@
   "ResourceOrderSettings":[
     {"name":"font_home_content","order":2,"path":"fonts/font_home_content/font_home_content.yy",},
     {"name":"font_home_title","order":1,"path":"fonts/font_home_title/font_home_title.yy",},
-    {"name":"Input - README","order":15,"path":"notes/Input - README/Input - README.yy",},
     {"name":"__InputUpdateController","order":21,"path":"objects/__InputUpdateController/__InputUpdateController.yy",},
     {"name":"obj_balloon_bullet","order":7,"path":"objects/obj_balloon_bullet/obj_balloon_bullet.yy",},
     {"name":"obj_bridge","order":9,"path":"objects/obj_bridge/obj_bridge.yy",},

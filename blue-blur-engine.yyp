@@ -271,8 +271,6 @@
   "resources":[
     {"id":{"name":"font_home_content","path":"fonts/font_home_content/font_home_content.yy",},},
     {"id":{"name":"font_home_title","path":"fonts/font_home_title/font_home_title.yy",},},
-    {"id":{"name":"EasyAudio - README","path":"notes/EasyAudio - README/EasyAudio - README.yy",},},
-    {"id":{"name":"Input - README","path":"notes/Input - README/Input - README.yy",},},
     {"id":{"name":"__easyfade_controller","path":"objects/__easyfade_controller/__easyfade_controller.yy",},},
     {"id":{"name":"__InputUpdateController","path":"objects/__InputUpdateController/__InputUpdateController.yy",},},
     {"id":{"name":"__oSparkleStore","path":"objects/__oSparkleStore/__oSparkleStore.yy",},},
