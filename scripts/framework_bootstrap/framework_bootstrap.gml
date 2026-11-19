@@ -1,7 +1,4 @@
 function framework_bootstrap() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Reset values
 	global.framecount = 0;
 	global.game_is_paused = false;

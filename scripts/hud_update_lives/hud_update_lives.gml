@@ -1,7 +1,4 @@
 function hud_update_lives() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Move items
 	var _life_target = (is_visible) ? (life_icon_xend) : (life_icon_xstart);
 	if (life_icon_x != _life_target) {

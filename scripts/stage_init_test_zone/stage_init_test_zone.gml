@@ -1,7 +1,4 @@
 function stage_init_test_zone() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Setup
 	allow_culling = true;
 	allow_gameplay = true;

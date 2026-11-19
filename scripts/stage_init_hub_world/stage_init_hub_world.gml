@@ -1,7 +1,4 @@
 function stage_init_hub_world() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Setup
 	allow_culling = true;
 	allow_gameplay = true;

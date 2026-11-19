@@ -1,7 +1,4 @@
 function hud_update_rings() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Move items
 	var _rings_target = (is_visible) ? (rings_icon_xend) : (rings_icon_xstart);
 	if (rings_icon_x != _rings_target) {

@@ -1,7 +1,4 @@
 function camera_restore_zoom() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Logic
 	with (obj_camera) {
 		view_width = lerp(view_width, WIDTH, zoom_lerp);

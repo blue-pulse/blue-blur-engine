@@ -1,7 +1,4 @@
 function hud_update_stamina() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Move items
 	var _stamina_target = (is_visible) ? (stamina_icon_xend) : (stamina_icon_xstart);
 	if (stamina_icon_x != _stamina_target) {

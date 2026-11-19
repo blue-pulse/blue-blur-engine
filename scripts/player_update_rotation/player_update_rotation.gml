@@ -1,7 +1,4 @@
 function player_update_rotation() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-
 	// Grounded
 	if (is_grounded) {
 		var target_angle = (angle > 22.5 and angle < 337.5) ? (angle) : (0);

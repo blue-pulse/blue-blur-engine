@@ -1,7 +1,4 @@
 function stage_exit_room(_duration=15) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Lock player
 	input_disable();
 	camera_set_target(noone);

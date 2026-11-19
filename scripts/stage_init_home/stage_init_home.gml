@@ -1,7 +1,4 @@
 function stage_init_home() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Setup
 	allow_culling = false;
 	allow_gameplay = false;

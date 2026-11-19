@@ -1,7 +1,4 @@
 function player_add_rings(amount) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Variables
 	var total = rings + amount;
 	

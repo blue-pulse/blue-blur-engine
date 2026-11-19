@@ -1,7 +1,4 @@
 function stage_restart_game(_duration=10) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Lock player
 	input_disable();
 	camera_set_target(noone);

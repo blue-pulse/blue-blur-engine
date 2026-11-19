@@ -1,7 +1,4 @@
 function hud_update_timer() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Move items
 	var _time_target = (is_visible) ? (time_icon_xend) : (time_icon_xstart);
 	if (time_icon_x != _time_target) {

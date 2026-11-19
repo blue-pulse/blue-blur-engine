@@ -1,7 +1,4 @@
 function game_reduce_power() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Variables
 	static is_saving_power = !game_has_focus();
 	

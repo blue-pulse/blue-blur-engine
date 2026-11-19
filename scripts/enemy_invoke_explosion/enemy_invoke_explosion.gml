@@ -1,7 +1,4 @@
 function enemy_invoke_explosion() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// FX
 	mixer_play_effect(sfx_explosion);
 	part_particles_create(global.particles, x, y, vfx_explosion, 1);

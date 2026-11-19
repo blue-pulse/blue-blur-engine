@@ -1,7 +1,4 @@
 function framework_start() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Load basic parameters
 	framework_bootstrap();
 	

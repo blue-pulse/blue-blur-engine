@@ -1,7 +1,4 @@
 function screen_adjust_properties() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Variables
 	var _settings = db_read(global.settings, {}, "graphics");
 	var _allow_fullscreen = _settings.fullscreen;

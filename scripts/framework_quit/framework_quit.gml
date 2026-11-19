@@ -1,7 +1,4 @@
 function framework_quit() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Early exit
 	if (scene_is_changing()) {
 		exit;

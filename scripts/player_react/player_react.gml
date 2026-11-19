@@ -1,7 +1,4 @@
 function player_react(object, _dir=undefined) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Early exit
 	var reaction = object.reaction_index;
 	if (reaction == noone) {

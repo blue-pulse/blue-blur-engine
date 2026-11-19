@@ -1,7 +1,4 @@
 function player_publish_facts() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-
 	// Variables
 	var facts = presentation_facts;
 

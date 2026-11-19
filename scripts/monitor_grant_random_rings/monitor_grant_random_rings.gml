@@ -1,7 +1,4 @@
 function monitor_grant_random_rings() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Give reward
 	var _amount = choose(1, 5, 10, 30, 50);
 	player_add_rings(_amount);

@@ -1,7 +1,4 @@
 function collision_box(_hor_offset, _ver_offset, _swap_axis, _object) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Variables
 	var _pos_x = floor(x);
 	var _pos_y = floor(y);

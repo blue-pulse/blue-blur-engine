@@ -1,7 +1,4 @@
 function in_view(_object, _offset) {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Get view dimensions
 	var _view_margin = _offset * 2;
 	var _view_left = camera_get_view_x(view_camera[0]) - _offset;

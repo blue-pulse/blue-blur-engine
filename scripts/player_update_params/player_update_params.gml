@@ -1,7 +1,4 @@
 function player_update_params() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-
 	// Recovery frames handling
 	if (recovery_timer > 0) {
 		alpha = (recovery_timer & 4 > 0) * 1;

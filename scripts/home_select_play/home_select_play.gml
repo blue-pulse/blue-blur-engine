@@ -1,7 +1,4 @@
 function home_select_play() {
-	// Compile with the function inlined
-	gml_pragma("forceinline");
-	
 	// Select slot
 	var _delta = input_pressed(vb_right) - input_pressed(vb_left);
 	if (_delta != 0) {
