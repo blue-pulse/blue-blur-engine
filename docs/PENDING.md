@@ -37,6 +37,7 @@ Shape. Do it after the rest of the engine works, over several sessions.
 - Compare the work in progress with its updated version to see what its author fixed.
 - Record the origin and licence of every borrowed function in [NOTICE.md](../NOTICE.md).
 - Leave the player's movement, collision and state code out of the code cleanup until then, because this review is likely to rewrite it and renaming it first would make the comparison harder.
+- Test its counters with an explicit comparison (`C027`), because `ground_lock` is tested as `if (ground_lock)`, as `<= 0` and as `== 0` in different places, so a negative value counts as locked in some and as free in others. `air_lock` and `recovery_timer` are tested as bare numbers too.
 
 Done when each origin has been reviewed, every finding is fixed or rejected with a reason, every borrowed function has its origin and licence recorded, and the player's movement, collision and state code has gone through the passes of item 2, which includes the leading underscore of `S015` on its locals and parameters that `check` warns about.
 
