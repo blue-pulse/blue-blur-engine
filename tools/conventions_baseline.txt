@@ -1,0 +1,5 @@
+# Frozen exceptions of the folder size rule S006, see tools/commands/conventions.py
+# Each line is a folder, the word items and the number of items allowed, and the count may only go down
+folders/02. Core/09. Adapters/03. Input items 17
+folders/04. Player/01. Base/01. Runtime items 10
+folders/05. Camera items 10

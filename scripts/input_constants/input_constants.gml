@@ -14,3 +14,11 @@
 #macro vb_b INPUT_VERB.B
 #macro vb_x INPUT_VERB.X
 #macro vb_y INPUT_VERB.Y
+
+// Input devices
+enum input_devices {
+	keyboard,
+	gamepad,
+	touch,
+	other,
+}

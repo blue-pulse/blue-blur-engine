@@ -13,7 +13,7 @@ from runtime import runtime_add_arguments
 COMMANDS = {
     "doctor": (doctor_check, "Show what was found and what is missing", True),
     "run": (run_game, "Run the game with Igor", True),
-    "check": (check_boundaries, "Find library symbols outside their adapter", False),
+    "check": (check_boundaries, "Check the library boundary, the animation rules and the conventions", False),
 }
 
 

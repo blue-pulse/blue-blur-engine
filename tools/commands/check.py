@@ -4,6 +4,7 @@ import re
 # Import modules
 from project import project_find_file, project_get_root
 from resources import resources_is_inside, resources_list, resources_read_text
+from commands.conventions import conventions_check
 from commands.fitness import fitness_check
 from commands.zones import zones_check
 
@@ -84,7 +85,8 @@ def check_boundaries(args):
 			direct.setdefault(library, set()).add(path)
 
 	zone_problems = zones_check(resources) + fitness_check(resources)
-	for violation in violations + zone_problems:
+	convention_problems, convention_warnings = conventions_check(resources)
+	for violation in violations + zone_problems + convention_problems + convention_warnings:
 		print(violation)
 	for library, paths in sorted(direct.items()):
 		print(
@@ -95,7 +97,9 @@ def check_boundaries(args):
 		print(f"[ERROR] {len(violations)} library symbols found outside their adapter")
 	if zone_problems:
 		print(f"[ERROR] {len(zone_problems)} presentation, animation or time rules broken")
-	if violations or zone_problems:
+	if convention_problems:
+		print(f"[ERROR] {len(convention_problems)} naming, structure or style rules broken")
+	if violations or zone_problems or convention_problems:
 		return 1
 	print(
 		f"[INFO] Checked {len(resources)} resources against {len(symbols)} library "

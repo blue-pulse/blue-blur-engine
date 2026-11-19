@@ -58,18 +58,3 @@ enum items {
 	life = 4,
 	stamina = 5,
 }
-
-// Mixer modes
-enum mixer_modes {
-	overlap,
-	single,
-	swap,
-}
-
-// Input devices
-enum input_devices {
-	keyboard,
-	gamepad,
-	touch,
-	other,
-}

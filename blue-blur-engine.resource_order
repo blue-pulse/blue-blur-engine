@@ -290,7 +290,7 @@
     {"name":"dev_command_toggle_fullscreen","order":7,"path":"scripts/dev_command_toggle_fullscreen/dev_command_toggle_fullscreen.yy",},
     {"name":"dev_command_toggle_hud","order":8,"path":"scripts/dev_command_toggle_hud/dev_command_toggle_hud.yy",},
     {"name":"dev_command_toggle_noclip","order":6,"path":"scripts/dev_command_toggle_noclip/dev_command_toggle_noclip.yy",},
-    {"name":"dev_macros","order":5,"path":"scripts/dev_macros/dev_macros.yy",},
+    {"name":"dev_constants","order":5,"path":"scripts/dev_constants/dev_constants.yy",},
     {"name":"dev_run_command","order":3,"path":"scripts/dev_run_command/dev_run_command.yy",},
     {"name":"dev_define_commands","order":2,"path":"scripts/dev_define_commands/dev_define_commands.yy",},
     {"name":"dev_toggle","order":4,"path":"scripts/dev_toggle/dev_toggle.yy",},

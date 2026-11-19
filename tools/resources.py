@@ -24,5 +24,7 @@ def resources_list(root):
 	resources = []
 	for folder in RESOURCE_FOLDERS:
 		for resource in sorted((root / folder).glob("*/*.yy")):
+			if resource.stem != resource.parent.name:
+				continue
 			resources.append((resource.parent, resources_read_parent(resource)))
 	return resources

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"dev_macros",
+  "%Name":"mixer_constants",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"dev_macros",
+  "name":"mixer_constants",
   "parent":{
-    "name":"01. Logic",
-    "path":"folders/10. Debug/01. Logic.yy",
+    "name":"01. Audio",
+    "path":"folders/02. Core/09. Adapters/01. Audio.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

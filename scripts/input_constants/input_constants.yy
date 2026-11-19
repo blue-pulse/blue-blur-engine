@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"input_macros",
+  "%Name":"input_constants",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"input_macros",
+  "name":"input_constants",
   "parent":{
     "name":"03. Input",
     "path":"folders/02. Core/09. Adapters/03. Input.yy",
