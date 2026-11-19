@@ -42,7 +42,7 @@ function player_enforce_bounds() {
 				y = ROOM_TOP - ver_radius * 2;
 			}
 			
-			// Fall out past the floor side, which returns false
+			// Fall past the floor side
 			if (pos_y_1 > ROOM_BOTTOM) {
 				y = ROOM_BOTTOM + ver_radius;
 				return false;
@@ -65,7 +65,7 @@ function player_enforce_bounds() {
 				x = ROOM_LEFT - ver_radius * 2;
 			}
 			
-			// Fall out past the floor side, which returns false
+			// Fall past the floor side
 			if (pos_x_1 > ROOM_RIGHT) {
 				x = ROOM_RIGHT + ver_radius;
 				return false;
@@ -88,7 +88,7 @@ function player_enforce_bounds() {
 				y = ROOM_BOTTOM + ver_radius * 2;
 			}
 			
-			// Fall out past the floor side, which returns false
+			// Fall past the floor side
 			if (pos_y_2 < ROOM_TOP) {
 				y = ROOM_TOP - ver_radius;
 				return false;
@@ -111,7 +111,7 @@ function player_enforce_bounds() {
 				x = ROOM_RIGHT + ver_radius * 2;
 			}
 			
-			// Fall out past the floor side, which returns false
+			// Fall past the floor side
 			if (pos_x_2 < ROOM_LEFT) {
 				x = ROOM_LEFT - ver_radius;
 				return false;
