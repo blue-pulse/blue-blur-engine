@@ -29,6 +29,11 @@
 #macro STEP 0
 #macro STOP 1
 
+// Culling
+#macro CULL_INTERVAL 10
+#macro CULL_MARGIN 192
+#macro CULL_OFFSET 96
+
 // Misc
 #macro DIR_BOTTOM 2
 #macro DIR_LEFT -1

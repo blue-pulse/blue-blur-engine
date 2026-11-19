@@ -23,13 +23,13 @@ with (game_get_player()) {
 		draw_line_color(_x_int, _y_int, _x_int + dsin(mask_direction) * ver_radius, _y_int + dcos(mask_direction) * ver_radius, c_white, c_white);
 	}
 	
-	if (other.show_player_strip) {
-		animation_debug_draw(x + DEV_STRIP_OFFSET_X, y + DEV_STRIP_OFFSET_Y);
+	if (other.show_player_frames) {
+		animation_debug_draw(x + DEV_FRAMES_OFFSET_X, y + DEV_FRAMES_OFFSET_Y);
 	}
 }
 
 // Early exit
-if (!show_masks and !show_enemy_strips) {
+if (!show_masks and !show_enemy_frames) {
 	exit;
 }
 
@@ -44,7 +44,7 @@ with (obj_enemy) {
 		draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
 	}
 	
-	if (other.show_enemy_strips and point_in_rectangle(x, y, _view_left, _view_top, _view_right, _view_bottom)) {
-		animation_debug_draw(x + DEV_STRIP_OFFSET_X, y + DEV_STRIP_OFFSET_Y);
+	if (other.show_enemy_frames and point_in_rectangle(x, y, _view_left, _view_top, _view_right, _view_bottom)) {
+		animation_debug_draw(x + DEV_FRAMES_OFFSET_X, y + DEV_FRAMES_OFFSET_Y);
 	}
 }

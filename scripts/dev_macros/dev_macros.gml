@@ -3,5 +3,5 @@
 #macro DEV_GRAVITY_STEP 90
 
 // Frames of the animation
-#macro DEV_STRIP_OFFSET_X -80
-#macro DEV_STRIP_OFFSET_Y 30
+#macro DEV_FRAMES_OFFSET_X -80
+#macro DEV_FRAMES_OFFSET_Y 30

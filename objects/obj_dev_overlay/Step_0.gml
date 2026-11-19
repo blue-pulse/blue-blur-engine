@@ -9,7 +9,7 @@ if (instance_exists(_player)) {
 	readout.ground_lock = _player.ground_lock;
 	readout.air_lock = _player.air_lock;
 	readout.plane = _player.plane;
-	readout.state_previous = script_get_name(_player.state_prev);
+	readout.state_prev = script_get_name(_player.state_prev);
 	readout.state = script_get_name(_player.state);
 	readout.sprite = sprite_get_name(_player.sprite_index);
 }

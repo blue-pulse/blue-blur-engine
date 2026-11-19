@@ -1,8 +1,8 @@
 // Variables
 commands = dev_define_commands();
 show_masks = true;
-show_player_strip = true;
-show_enemy_strips = false;
+show_player_frames = true;
+show_enemy_frames = false;
 readout = {
 	hor_speed: 0,
 	ver_speed: 0,
@@ -12,7 +12,7 @@ readout = {
 	ground_lock: 0,
 	air_lock: 0,
 	plane: 0,
-	state_previous: "",
+	state_prev: "",
 	state: "",
 	sprite: "",
 };
@@ -33,7 +33,7 @@ var _fields = [
 	["ground_lock", "GROUND LOCK"],
 	["air_lock", "AIR LOCK"],
 	["plane", "PLANE"],
-	["state_previous", "OLD STATE"],
+	["state_prev", "OLD STATE"],
 	["state", "NEW STATE"],
 	["sprite", "ANIMATION"],
 ];
@@ -43,8 +43,8 @@ for (var _i = 0; _i < array_length(_fields); _i++) {
 
 dbg_section("Draw");
 dbg_checkbox(ref_create(self, "show_masks"), "Collision masks");
-dbg_checkbox(ref_create(self, "show_player_strip"), "Player frames");
-dbg_checkbox(ref_create(self, "show_enemy_strips"), "Enemy frames");
+dbg_checkbox(ref_create(self, "show_player_frames"), "Player frames");
+dbg_checkbox(ref_create(self, "show_enemy_frames"), "Enemy frames");
 
 dbg_section("Commands");
 for (var _i = 0; _i < array_length(commands); _i++) {

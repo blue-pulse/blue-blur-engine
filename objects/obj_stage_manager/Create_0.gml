@@ -14,5 +14,5 @@ stage_init_room();
 
 // Set culling interval
 if (allow_culling) {
-	alarm_set(0, cull.freq);
+	alarm_set(0, CULL_INTERVAL);
 }
