@@ -1,9 +1,9 @@
-function vfx_create(_pos_x, _pos_y, _object, _var_struct={}, _overlap=false) {
+function vfx_create(_pos_x, _pos_y, _object, _var_struct={}, _allow_overlap=false) {
 	// Compile with the function inlined
 	gml_pragma("forceinline");
 	
 	// Return value
-	if (_overlap or !instance_exists(_object)) {
+	if (_allow_overlap or !instance_exists(_object)) {
 		// Set owner
 		if (!variable_struct_exists(_var_struct, "owner")) {
 			_var_struct.owner = id;

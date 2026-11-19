@@ -1,4 +1,4 @@
-function mixer_play_effect(_sound, _mode=mixer_modes.overlap, _loop=false) {
+function mixer_play_effect(_sound, _mode=mixer_modes.overlap, _is_looping=false) {
 	// Translate the mode
 	var _library_mode;
 	switch (_mode) {
@@ -14,5 +14,5 @@ function mixer_play_effect(_sound, _mode=mixer_modes.overlap, _loop=false) {
 	}
 
 	// Play sound
-	return easyaudio_play_effect(_sound, _library_mode, _loop, global.sfx_volume);
+	return easyaudio_play_effect(_sound, _library_mode, _is_looping, global.sfx_volume);
 }

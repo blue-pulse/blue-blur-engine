@@ -9,8 +9,8 @@ function camera_follow_player() {
 	var _target_speed = target.hor_speed;
 	var _target_state = target.state;
 	var _shift_direction = (_target_speed != 0) ? sign(_target_speed) : _target_dir;
-	var _shift_up = (_target_state == player_state_lookup);
-	var _shift_down = (_target_state == player_state_crouch);
+	var _is_shifting_up = (_target_state == player_state_lookup);
+	var _is_shifting_down = (_target_state == player_state_crouch);
 	var _hor_offset = 0;
 	var _ver_offset = 0;
 	
@@ -32,7 +32,7 @@ function camera_follow_player() {
 	}
 	
 	// Check for overview delay
-	if (_shift_up or _shift_down) {
+	if (_is_shifting_up or _is_shifting_down) {
 		if (overview_delay > 0) {
 			overview_delay--;
 		}
@@ -41,10 +41,10 @@ function camera_follow_player() {
 	}
 	
 	// Offset vertically
-	if (overview_delay <= 0 and (_shift_up or _shift_down)) {
-		if (_shift_up and overview_offset > -88) {
+	if (overview_delay <= 0 and (_is_shifting_up or _is_shifting_down)) {
+		if (_is_shifting_up and overview_offset > -88) {
 			overview_offset -= shift_speed;
-		} else if (_shift_down and overview_offset < 88) {
+		} else if (_is_shifting_down and overview_offset < 88) {
 			overview_offset += shift_speed;
 		}
 	} else if (overview_offset != 0) {

@@ -13,7 +13,7 @@
 #macro MAX_SLOTS 10
 #macro XOR_KEY 3179411283192014336
 #macro FILE_EXT ".dat"
-#macro ENCRYPT true
+#macro USE_ENCRYPTION true
 
 // Packages
 #macro SETTINGS "settings.dat"

@@ -1,6 +1,6 @@
 function file_save_savedata(_index) {
 	// Early exit
-	if (!_index or _index > MAX_SLOTS) {
+	if (_index < 1 or _index > MAX_SLOTS) {
 		print("[ERROR] An invalid slot was received!");
 		print("[WARN] No data was loaded. Previous values will be used.");
 		exit;
@@ -27,7 +27,7 @@ function file_save_savedata(_index) {
 	var _buffer = db_buffer_create(global.savedata);
 	
 	// Encrypt
-	if (ENCRYPT) {
+	if (USE_ENCRYPTION) {
 		_buffer = file_encrypt_buffer(_buffer);
 	}
 

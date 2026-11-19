@@ -90,7 +90,7 @@ When a stage sets `allow_culling`, the stage manager runs a periodic alarm that 
 
 ### Persistence
 
-`game_init_data` creates `userdata`, `savedata` and `settings` with `db_create`. The `file_*` functions write them through SparkleStore, encrypting the buffer first with Sphinx when the macro `ENCRYPT` is true, and track each operation in the task queue.
+`game_init_data` creates `userdata`, `savedata` and `settings` with `db_create`. The `file_*` functions write them through SparkleStore, encrypting the buffer first with Sphinx when the macro `USE_ENCRYPTION` is true, and track each operation in the task queue.
 
 ### Input, audio and animation
 

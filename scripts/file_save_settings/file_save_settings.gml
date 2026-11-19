@@ -20,7 +20,7 @@ function file_save_settings() {
 	var _buffer = db_buffer_create(global.settings);
 	
 	// Encrypt
-	if (ENCRYPT) {
+	if (USE_ENCRYPTION) {
 		_buffer = file_encrypt_buffer(_buffer);
 	}
 	

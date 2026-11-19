@@ -5,8 +5,8 @@ function file_load_userdata() {
 		var _data = undefined;
 		
 		// Read file
-		if (_status) {
-			if (ENCRYPT) {
+		if (_status == SPARKLE_STATUS_SUCCESS) {
+			if (USE_ENCRYPTION) {
 				_buffer = file_decrypt_buffer(_buffer);
 			}
 			_data = db_buffer_read(_buffer);

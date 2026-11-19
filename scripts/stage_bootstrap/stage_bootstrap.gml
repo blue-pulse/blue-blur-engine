@@ -8,7 +8,7 @@ function stage_bootstrap() {
 	global.score = 0;
 	
 	// Reset life counter
-	if (!global.lives) {
+	if (global.lives <= 0) {
 		global.lives = 3;
 	}
 	

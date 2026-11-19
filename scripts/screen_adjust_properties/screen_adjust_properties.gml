@@ -20,7 +20,7 @@ function screen_adjust_properties() {
 	}
 	
 	// Apply AA
-	if (_aa_level) {
+	if (_aa_level > 0) {
 		display_reset(_aa_level, true);
 	} else {
 		display_reset(0, false);

@@ -12,7 +12,7 @@ var _gui_config = {
 }; 
 
 // Get checkpoint data
-if (_checkpoint.get_status()) {
+if (_checkpoint.has_data()) {
 	var _data = _checkpoint.get_data();
     global.time = _data[0];
     global.score = _data[1];

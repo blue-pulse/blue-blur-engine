@@ -5,8 +5,8 @@ function Checkpoint() constructor {
 	room_pos = [0, 0];
 	hub_pos = [0, 0];
 	
-	// Get status
-	function get_status() {
+	// Check data
+	function has_data() {
 		return (time > 0);
 	}
 	
