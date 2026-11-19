@@ -4,7 +4,7 @@
 
 This document describes how GML code costs time on the two GameMaker runtimes, the VM and YYC, and how far a measurement of that cost can be trusted. It is for a programmer who has to predict the cost of a piece of GML, choose between two ways of writing it, or judge a benchmark. It covers the cost of common operations, where locals are built, inlining, struct access, the cost of code that runs cold, the limits of the timer and of repeated runs, and what differs between the VM and YYC beyond speed. It leaves out how to make a game fast in general and any advice on a particular design. Update it when the runtime version changes, by measuring again, or when the manual changes one of the pages it cites.
 
-Each claim carries a mark. **Manual** means the GameMaker manual states it, read from the `develop` branch of [YoYoGames/GameMaker-Manual](https://github.com/YoYoGames/GameMaker-Manual) at commit `b4459e2` (2026-10-01). **Measured** means it was observed on runtime 2026.0.0.23, Windows 11, one machine, on the date given, and it was not repeated on another machine. **Unverified** means it is an explanation that no measurement separated.
+Each claim carries a mark. **Manual** means the GameMaker manual states it, read from the `develop` branch of [YoYoGames/GameMaker-Manual](https://github.com/YoYoGames/GameMaker-Manual) at commit `b4459e2` (2026-10-01). **Measured** means it was observed on runtime 2026.0.0.23, or on 2026.1.0.28 where a section says so, on Windows 11, one machine, on the date given, and it was not repeated on another machine. **Unverified** means it is an explanation that no measurement separated.
 
 ## Cost of common operations
 
@@ -30,6 +30,28 @@ A local that replaces a repeated read pays for itself on YYC. Reading a struct h
 `gml_pragma("forceinline")` asks the C++ compiler of YYC to inline the function. The request is not guaranteed, it grows the executable and the compile time, and it is valid only on YYC (**Manual**, `gml_pragma`). The VM never inlines.
 
 Marking a function of about 40 lines that runs once per step gave no gain that could be told from noise on YYC: +0.05 µs, 95 % interval [−0.15, +0.24] (**Measured**, 2026-11-12). Resnip reached the same result for its own functions, and marked none (record 0017 above).
+
+### Removing the request from 51 functions
+
+Measured on runtime 2026.1.0.28, Windows 11, one machine, on 2026-11-19, in a program of 3,121 files where 115 own functions carried the pragma. Build A kept all 115, build A2 was a second build of the same code, and build B removed the pragma from the 51 functions whose body is longer than 3 lines, except the getters, setters and `is` queries. All three builds were YYC builds from an empty cache, with the same temporary timers.
+
+Method:
+
+- `get_timer()` at the borders of contiguous segments of the per-frame events: the player step in 6 segments and its draw in 2, the camera in 2, the interface, and one call of a manager, 13 segments in all. A segment that holds no marked function served as the control. For the scenario with enemies, the call of each marked function that runs once per instance was timed alone.
+- Two recorded sessions drove the game. The first has 7,779 steps and no enemies. It ran in 8 rounds of the 3 builds, with the order rotated, and the first round was dropped as a warm-up. Three runs were dropped because the control segment rose from 1.7–1.9 µs to 2.2–2.7 µs, so the machine had moved and not the code. 5 runs of A, 7 of A2 and 6 of B were kept. The second session has 5,766 steps with enemies, 1 warm-up round and 4 kept rounds, with no run dropped.
+- Welch's 95 % interval of B minus A, and A2 minus A as the noise of an identical build, as a difference counts only above it.
+
+Results, in µs per step unless said otherwise (**Measured**):
+
+- Player step without enemies: A 70.7, A2 70.4, B 69.6. B minus A is −1.13 [−2.40, +0.15] and A2 minus A is −0.29 [−0.91, +0.34]. Of the 13 segments, 3 ran slower without the pragma by 0.03 to 0.15, with the largest on a function of 0.65 µs that runs once per step (+0.15 [+0.06, +0.25]), 3 ran faster by 0.16 to 1.07 and 7 could not be told from the noise.
+- Session with enemies, per call: +0.10 [+0.00, +0.20] for a 4-line function called 11,103 times, +0.17 [+0.01, +0.33] for the same function in another event called 2,398 times, +0.13 [+0.08, +0.18] for a 6-line function called 1,645 times, and +0.03 [−0.00, +0.06] for the same one called 10,040 times. Averaged over the steps that is 0.19, 0.07, 0.04 and 0.05 µs. The whole step differed by +0.86 [−1.02, +2.73] and A2 minus A by +1.53 [−0.35, +3.41].
+- Build: from the start of the build command to the first line the game prints, the median was 108.9 s for A and A2 over 22 builds and 88.5 s for B over 11, which is −20.4 s or −18.7 %. The executable went from 13,098,496 to 12,810,752 bytes, −287,744 bytes or −2.2 %, and the data file did not change. That is about 0.4 s of build time and 5.6 kB of executable for each function.
+
+What follows from it:
+
+- Inlining a function that runs once per step, or a few thousand times in a session, gained under 0.2 µs per call on YYC, and no function reached 0.5 µs per step in the real step.
+- The cost of the request is certain and the gain is not, so a longer function is better left without it unless a measurement of the real step shows a gain.
+- Not measured: functions of 3 lines or fewer, and the getters, setters and `is` queries, which kept the pragma in both builds.
 
 ## Struct access
 
