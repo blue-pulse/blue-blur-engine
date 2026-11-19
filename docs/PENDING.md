@@ -71,3 +71,11 @@ Problem. Asking again for the snip that already plays, with `resnip_set_speed` a
 Shape. Reproduce the cost with the benchmark of the Resnip repository, then open an issue at [blue-pulse/resnip](https://github.com/blue-pulse/resnip) with the case and the number. A likely shape is to check `restart: false` against the current snip before reading the other options.
 
 Done when the issue is open with a reproducible number, and the release that fixes it, if any, is taken in through `Vendor` as usual.
+
+## 11. Run every replay scenario from one build
+
+Problem. The replay scenario is chosen by the macro `REPLAY_SCENARIO`, so each scenario needs its own YYC build, and the builds are most of the time of a batch, as [0013](./decisions/0013-choose-the-verification-by-what-a-change-can-alter.md) measures.
+
+Shape. Keep a compile-time switch that turns the harness on, so a shared build stays unchanged, and read the name of the scenario at run time from a source that needs no build, such as a parameter of the executable or a file beside it. Check first that the executable Igor builds can be started again with such a parameter, which has not been tried. Then update [replay](./components/replay.md) to describe it.
+
+Done when one build runs every scenario with lines identical to those of a build per scenario, and the time of a batch is measured again in 0013.

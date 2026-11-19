@@ -17,8 +17,8 @@ This directory is your whole sandbox. Never leave it, not to look for a file you
 | Before you | Read again |
 | --- | --- |
 | Edit an area | Its row in "Before you touch, read" of `docs/CONTRIBUTING.md`, and its document in `docs/components/` |
-| Run the game | `A013`, `A014`, `A015`, `V004`, `V006`, and [the replay harness](docs/components/replay.md) |
-| Report what you did | `A006`, `V002`, `V003` |
+| Run the game | `A013`, `A014`, `A015`, `V004`, `V006`, `V007`, `V008`, and [the replay harness](docs/components/replay.md) |
+| Report what you did | `A006`, `V002`, `V003`, `V007` |
 | Add or update a dependency | `E001` to `E008` and `A008` |
 | Commit or open a pull request | `A009`, `A010`, `A012`, `G001`, `G002`, `G003` |
 

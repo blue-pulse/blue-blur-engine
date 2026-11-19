@@ -95,7 +95,7 @@ A scenario is `{ room, segments, recording? }`. `segments` is an array of `{ ste
 
 ## Comparing against the original code
 
-[0009](../decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) decides that a change of behaviour is compared with the code before it. The method is:
+[0009](../decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) decides that a change of behaviour is compared with the code before it, and [0013](../decisions/0013-choose-the-verification-by-what-a-change-can-alter.md) decides which changes need a comparison, which scenarios it runs and on which runtime. The method is:
 
 1. Make a `git worktree` of `HEAD`, copy only the harness on top, and run the same scenario in both trees.
 2. Wait for the file that the batch writes when it ends ([CONTRIBUTING.md](../CONTRIBUTING.md), `A015`) and check that both outputs are not empty.
@@ -111,3 +111,5 @@ Ask the maintainer before each batch, as `A014` asks, because a run needs the ke
 - The harness prints the player only. A trace of the enemies has to be added to the manager for a work that needs it, and was removed after use.
 - The repository holds no driver for a batch of scenarios, and no stored result to compare with.
 - The picture line names the sprite and the frame, not the pixels drawn, so a change in a draw event is invisible to it.
+- Each scenario needs its own build, because the scenario is a macro, so builds are most of the time of a batch, as [0013](../decisions/0013-choose-the-verification-by-what-a-change-can-alter.md) measures. Item 11 of [PENDING.md](../PENDING.md) tracks building once.
+- A scenario starts in its own room, so the title, the home screen, the pause menu and the menus are reached by none of them.

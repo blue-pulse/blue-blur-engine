@@ -27,7 +27,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 | Before you touch | Read |
 | --- | --- |
 | The animation, the presentation, a state, a clip, an enemy or a character | [animation](./components/animation.md) |
-| The replay harness, or how to check a change of behaviour | [replay](./components/replay.md) |
+| The replay harness, or how to check a change of behaviour | [replay](./components/replay.md), [0013](./decisions/0013-choose-the-verification-by-what-a-change-can-alter.md) |
 | A third-party library or an adapter | [0001](./decisions/0001-vendor-libraries-and-adapters.md) |
 | How the game is run, or `tools/` | [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) |
 | Directions and the controls | [0003](./decisions/0003-read-directions-with-input-axis-in-gamemakers-sign-order.md) |
@@ -99,7 +99,8 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 - `V002` State how a change was verified and what was not, so nobody assumes a check that never ran.
 - `V004` Test with the VM runtime and build every executable you share with YYC, because YYC compiles the code to native code for performance while the VM only needs to run quickly while you test.
 - `V005` Measure a claim about speed inside the real step, by segments and against a build of the unchanged code, and never from a hot loop alone, because a hot loop underestimated a cost by 5 to 7 times, as [0011](./decisions/0011-measure-a-cost-in-the-real-step-against-a-rebuild.md) states.
-- `V006` Check the behaviour of a change on YYC against a YYC run of the unchanged code, because `V004` ships YYC and a reference taken on the VM cannot show what only YYC changes.
+- `V006` Before a build goes to a player, check its behaviour on YYC against a YYC run of the last build that was shared, on every scenario that reaches the code changed since, because `V004` ships YYC, the player feels what YYC runs, and a VM run cannot show what only YYC changes, as [0013](./decisions/0013-choose-the-verification-by-what-a-change-can-alter.md) states.
+- `V007` Verify a change with the evidence that the class of what it can alter asks for in [0013](./decisions/0013-choose-the-verification-by-what-a-change-can-alter.md), from a search of every form of an old name for a rename to a comparison on the VM, as [0009](./decisions/0009-verify-behaviour-with-rules-replays-and-the-original-code.md) describes it, for a change that can alter behaviour, so the cost of a check matches its risk, as risk-based testing and regression test selection ask.
 
 ### Documentation
 
@@ -153,6 +154,7 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 ### Verification
 
 - `V003` Never report a result you did not observe.
+- `V008` Never run a batch of replays that the class of a change does not ask for, and never report as verified by replay code that no scenario reaches, because a batch takes the user's machine for 20 minutes or more and proves nothing about code it does not run.
 
 ### Documentation
 
