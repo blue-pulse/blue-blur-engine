@@ -1,5 +1,5 @@
 // Pause game
-if (!in_process) {
+if (!is_pausing) {
 	// Early exit
 	if (!pause_is_allowed()) {
 		exit;
@@ -7,7 +7,7 @@ if (!in_process) {
 	
 	// Variables
 	global.game_is_paused = true;
-	in_process = true;
+	is_pausing = true;
 	paused_room = room;
 	option_active = 0;
 	

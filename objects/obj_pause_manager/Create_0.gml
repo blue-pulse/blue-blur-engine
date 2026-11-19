@@ -1,7 +1,7 @@
 // Variables
 depth = depths.gui;
 sprite_index = noone;
-in_process = false;
+is_pausing = false;
 option_active = 0;
 pause_surface = noone;
 paused_room = noone;

@@ -51,7 +51,7 @@ for (var _i = 0; _i < array_length(commands); _i++) {
 	var _command = commands[_i];
 	// The keys are function keys, which are numbered in order
 	var _key_name = "F" + string(_command.key - vk_f1 + 1);
-	var _hint = _command.shift ? "Shift+" + _key_name : _key_name;
+	var _hint = _command.has_shift ? "Shift+" + _key_name : _key_name;
 	dbg_button(_command.label + " (" + _hint + ")", method({ command: _command }, function() {
 		dev_run_command(command);
 	}));

@@ -1,10 +1,10 @@
 // Increase stage timer
-if (update_time) {
+if (allow_time_update) {
 	global.time++;
 }
 
 // Force visibility
 else if (force_visibility and !scene_is_changing()) {
-	viewable = true;
+	is_viewable = true;
 	force_visibility = false;
 }

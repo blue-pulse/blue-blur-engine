@@ -10,7 +10,7 @@ depth = depths.gui;
 sprite_index = noone;
 font = target.data_hud.font;
 margin = 15;
-viewable = true;
+is_viewable = true;
 force_visibility = true;
 
 // Time
@@ -28,7 +28,7 @@ time_text_y = 20;
 
 time_speed = 8;
 time_tint = c_gray;
-update_time = false;
+allow_time_update = false;
 
 // Rings
 rings_icon = spr_hud_rings;

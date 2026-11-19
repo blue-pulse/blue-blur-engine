@@ -1,4 +1,4 @@
-if (in_process) {
+if (is_pausing) {
 	// Background
 	draw_surface_ext(pause_surface, 0, 0, scale_x, scale_y, 0, c_white, 0.10);
 	

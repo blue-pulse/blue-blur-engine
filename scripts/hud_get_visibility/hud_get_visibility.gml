@@ -3,5 +3,5 @@ function hud_get_visibility() {
 	gml_pragma("forceinline");
 
 	// Return value
-	return obj_hud.viewable;
+	return obj_hud.is_viewable;
 }

@@ -1,15 +1,15 @@
 function dev_define_commands() {
 	// Commands
 	return [
-		{ key: vk_f1, shift: false, label: "Noclip", needs_player: true, run: dev_command_toggle_noclip },
-		{ key: vk_f2, shift: false, label: "Gain rings", needs_player: true, run: dev_command_add_rings },
-		{ key: vk_f3, shift: false, label: "Rotate gravity clockwise", needs_player: true, run: dev_command_rotate_gravity_cw },
-		{ key: vk_f4, shift: false, label: "Rotate gravity anticlockwise", needs_player: true, run: dev_command_rotate_gravity_ccw },
-		{ key: vk_f5, shift: false, label: "Restart room", needs_player: false, run: dev_command_restart_room },
-		{ key: vk_f6, shift: false, label: "Focus camera", needs_player: true, run: dev_command_toggle_camera },
-		{ key: vk_f7, shift: false, label: "Toggle HUD", needs_player: false, run: dev_command_toggle_hud },
-		{ key: vk_f8, shift: false, label: "Restart game", needs_player: false, run: framework_restart },
-		{ key: vk_f9, shift: true, label: "Quit game", needs_player: false, run: framework_quit },
-		{ key: vk_f11, shift: false, label: "Toggle fullscreen", needs_player: false, run: dev_command_toggle_fullscreen },
+		{ key: vk_f1, has_shift: false, label: "Noclip", is_player_required: true, run: dev_command_toggle_noclip },
+		{ key: vk_f2, has_shift: false, label: "Gain rings", is_player_required: true, run: dev_command_add_rings },
+		{ key: vk_f3, has_shift: false, label: "Rotate gravity clockwise", is_player_required: true, run: dev_command_rotate_gravity_cw },
+		{ key: vk_f4, has_shift: false, label: "Rotate gravity anticlockwise", is_player_required: true, run: dev_command_rotate_gravity_ccw },
+		{ key: vk_f5, has_shift: false, label: "Restart room", is_player_required: false, run: dev_command_restart_room },
+		{ key: vk_f6, has_shift: false, label: "Focus camera", is_player_required: true, run: dev_command_toggle_camera },
+		{ key: vk_f7, has_shift: false, label: "Toggle HUD", is_player_required: false, run: dev_command_toggle_hud },
+		{ key: vk_f8, has_shift: false, label: "Restart game", is_player_required: false, run: framework_restart },
+		{ key: vk_f9, has_shift: true, label: "Quit game", is_player_required: false, run: framework_quit },
+		{ key: vk_f11, has_shift: false, label: "Toggle fullscreen", is_player_required: false, run: dev_command_toggle_fullscreen },
 	];
 }

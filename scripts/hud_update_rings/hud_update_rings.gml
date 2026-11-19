@@ -3,7 +3,7 @@ function hud_update_rings() {
 	gml_pragma("forceinline");
 	
 	// Move items
-	var _rings_target = (viewable) ? (rings_icon_xend) : (rings_icon_xstart);
+	var _rings_target = (is_viewable) ? (rings_icon_xend) : (rings_icon_xstart);
 	if (rings_icon_x != _rings_target) {
 		// Variables
 	    var _item_speed = rings_speed * sign(_rings_target - rings_icon_x);

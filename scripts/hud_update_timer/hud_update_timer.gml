@@ -3,12 +3,12 @@ function hud_update_timer() {
 	gml_pragma("forceinline");
 	
 	// Move items
-	var _time_target = (viewable) ? (time_icon_xend) : (time_icon_xstart);
+	var _time_target = (is_viewable) ? (time_icon_xend) : (time_icon_xstart);
 	if (time_icon_x != _time_target) {
 		// Variables
 	    var _item_speed = time_speed * sign(_time_target - time_icon_x);
 		time_tint = c_gray;
-		update_time = false;
+		allow_time_update = false;
 		
 		// Move icon
 	    time_icon_x = clamp(
@@ -28,7 +28,7 @@ function hud_update_timer() {
 	// When visible 
 	else if (time_icon_x == time_icon_xend) {
 		time_tint = c_white;
-		update_time = true
+		allow_time_update = true
 		time_text = hud_get_timer();
 	}
 }

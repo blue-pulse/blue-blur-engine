@@ -1,6 +1,6 @@
 function dev_run_command(_command) {
 	// Game commands
-	if (!_command.needs_player) {
+	if (!_command.is_player_required) {
 		_command.run();
 		exit;
 	}

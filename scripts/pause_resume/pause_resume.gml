@@ -13,6 +13,6 @@ function pause_resume() {
 	// Variables
 	surface_free(pause_surface);
 	pause_surface = noone;
-	in_process = false;
+	is_pausing = false;
 	alarm_set(0, 15);
 }

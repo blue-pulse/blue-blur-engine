@@ -3,16 +3,16 @@ function game_reduce_power() {
 	gml_pragma("forceinline");
 	
 	// Variables
-	static low_power_mode = !game_has_focus();
+	static is_low_power = !game_has_focus();
 	
 	// Logic
-	if (low_power_mode) {
+	if (is_low_power) {
 		// Lock audio gain as long as we are on low power
 		audio_master_gain(0.15);
 		
 		// Only in frame in which we became focused
 		if (game_has_focus()) {
-			low_power_mode = false;
+			is_low_power = false;
 			game_set_step_rate(MAX_FPS);
 			audio_master_gain(global.master_volume);
 		}
@@ -21,7 +21,7 @@ function game_reduce_power() {
 	// Only in frame in which we got unfocus
 	else {
 		if (!game_has_focus()) {
-			low_power_mode = true;
+			is_low_power = true;
 			window_minimise();
 			game_set_step_rate(20);
 		}
