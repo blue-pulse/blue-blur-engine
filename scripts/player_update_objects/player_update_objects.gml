@@ -25,7 +25,7 @@ function player_update_objects() {
 		// Get all solid objects
 		if (!object_is_ancestor(object_index, obj_solid)) {
 			// Continue if no reaction exists
-			if (!reaction_index) {
+			if (reaction_index == noone) {
 				continue;
 			}
 			array_push(other.actor_list, id);

@@ -11,7 +11,7 @@ function player_state_airbone(phase) {
 
 		// Run state
 		case STEP:
-			if (!air_lock) {
+			if (air_lock <= 0) {
 				// Left acceleration
 				if (input_held(vb_left)) {
 					dir = -1;
@@ -55,7 +55,7 @@ function player_state_airbone(phase) {
 			}
 			
 			// Wait for next frame
-			if (air_lock) {
+			if (air_lock > 0) {
 				break;
 			}
 			

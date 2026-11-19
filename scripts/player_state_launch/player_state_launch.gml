@@ -34,7 +34,7 @@ function player_state_launch(phase) {
 			}
 			
 			// Airbone
-			if (!air_lock) {
+			if (air_lock <= 0) {
 				// Set state
 				player_set_state(player_state_airbone, STEP);
 				break;

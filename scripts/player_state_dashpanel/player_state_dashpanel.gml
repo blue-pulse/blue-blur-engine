@@ -34,7 +34,7 @@ function player_state_dashpanel(phase) {
 			}
 			
 			// Set new state
-			if (!ground_lock) {
+			if (ground_lock <= 0) {
 				var new_state = (force_roll) ? (player_state_roll) : (player_state_run);
 				player_set_state(new_state);
 			}

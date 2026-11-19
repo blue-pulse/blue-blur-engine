@@ -60,7 +60,7 @@ function player_state_spindash(phase) {
 				spindash_revs++;
 				
 				// SFX
-				if (spindash_charge and audio_is_playing(snd_player_spindash_charge)) {
+				if (spindash_charge > 0 and audio_is_playing(snd_player_spindash_charge)) {
 					spindash_pitch = min(spindash_charge + 0.1, 1.15);
 				} else {
 					spindash_pitch = 1;

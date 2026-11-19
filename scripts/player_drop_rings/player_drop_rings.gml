@@ -24,7 +24,7 @@ function player_drop_rings() {
 		}
 		
 		// Change direction
-		if (scatter_dir) then angle += 22.5;
+		if (scatter_dir > 0) then angle += 22.5;
 		scatter_dir *= -1;
 	}
 	
@@ -40,7 +40,7 @@ function player_drop_rings() {
 				hor_speed: abs_speed * dcos(angle) * -scatter_dir,
 				ver_speed: abs_speed * -dsin(angle),
 			}, true);
-			if (scatter_dir) then angle -= 30;
+			if (scatter_dir > 0) then angle -= 30;
 			scatter_dir *= -1;
 	    }
 	}

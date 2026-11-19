@@ -77,21 +77,21 @@ function player_get_angle(object, fallback) {
 	// Hard-coded shapes
 	else if (not (obj_shape == shapes.wall and obj_angle == -1)) {
 		// Default if on a flat side of the solid
-		if ((fallback == 0 and !obj_yscale)
-			or (fallback == 90 and !obj_xscale)
-			or (fallback == 180 and obj_yscale)
-			or (fallback == 270 and obj_xscale)
+		if ((fallback == 0 and obj_yscale <= 0)
+			or (fallback == 90 and obj_xscale <= 0)
+			or (fallback == 180 and obj_yscale > 0)
+			or (fallback == 270 and obj_xscale > 0)
 			) {
 			return fallback;
 		}
 		
 		// Default if out of the solid's bounds
 		if (fallback mod 180 != 0) {
-			if ((!obj_yscale and y - hor_radius < obj_bbox_top) or (obj_yscale and y + hor_radius > obj_bbox_bottom)) {
+			if ((obj_yscale <= 0 and y - hor_radius < obj_bbox_top) or (obj_yscale > 0 and y + hor_radius > obj_bbox_bottom)) {
 				return fallback;
 			}
 		} else {
-			if ((!obj_xscale and x - hor_radius < obj_bbox_left) or (obj_xscale and x + hor_radius > obj_bbox_right)) {
+			if ((obj_xscale <= 0 and x - hor_radius < obj_bbox_left) or (obj_xscale > 0 and x + hor_radius > obj_bbox_right)) {
 				return fallback;
 			}
 		}
@@ -109,12 +109,12 @@ function player_get_angle(object, fallback) {
 			var pos_x_2 = obj_bbox_right;
 			var pos_y_2 = obj_bbox_top;
 			
-			if (!obj_yscale) {
+			if (obj_yscale <= 0) {
 				pos_x_1 = obj_bbox_right;
 				pos_x_2 = obj_bbox_left;
 			}
 			
-			if (!obj_xscale) {
+			if (obj_xscale <= 0) {
 				pos_y_1 = obj_bbox_top;
 				pos_y_2 = obj_bbox_bottom;
 			}
@@ -123,8 +123,8 @@ function player_get_angle(object, fallback) {
 			return floor(point_direction(pos_x_1, pos_y_1, pos_x_2, pos_y_2));
 		} else {
 			// Get ellipse center and player position
-			var ellipse_x = (obj_shape == shapes.ellipse xor obj_xscale) ? (obj_bbox_left) : (obj_bbox_right);
-			var ellipse_y = (obj_shape == shapes.ellipse xor obj_yscale) ? (obj_bbox_top) : (obj_bbox_bottom);
+			var ellipse_x = (obj_shape == shapes.ellipse xor (obj_xscale > 0)) ? (obj_bbox_left) : (obj_bbox_right);
+			var ellipse_y = (obj_shape == shapes.ellipse xor (obj_yscale > 0)) ? (obj_bbox_top) : (obj_bbox_bottom);
 			var player_x = clamp(x, obj_bbox_left, obj_bbox_right);
 			var player_y = clamp(y, obj_bbox_top, obj_bbox_bottom);
 			

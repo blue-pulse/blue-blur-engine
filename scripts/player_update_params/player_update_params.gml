@@ -3,7 +3,7 @@ function player_update_params() {
 	gml_pragma("forceinline");
 
 	// Recovery frames handling
-	if (recovery_timer) {
+	if (recovery_timer > 0) {
 		alpha = (recovery_timer & 4 > 0) * 1;
 		if (--recovery_timer == 0) {
 			alpha = 1;
@@ -11,7 +11,7 @@ function player_update_params() {
 	}
 	
 	// Reduce trail duration
-	if (trail_span) {
+	if (trail_span > 0) {
 		--trail_span;
 	}
 	
@@ -22,7 +22,7 @@ function player_update_params() {
 		allow_jump_action = false;
 		
 		// Reduce ground lock
-		if (ground_lock) {	
+		if (ground_lock > 0) {	
 			--ground_lock;
 		}
 	}
@@ -30,7 +30,7 @@ function player_update_params() {
 	// Airbone flags
 	else {
 		// Reduce air lock
-		if (air_lock) {	
+		if (air_lock > 0) {	
 			--air_lock;
 		}
 	}

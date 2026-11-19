@@ -4,7 +4,7 @@ function player_react(object, _dir=undefined) {
 	
 	// Early exit
 	var reaction = object.reaction_index;
-	if (!reaction) {
+	if (reaction == noone) {
 		return false;
 	}
 	

@@ -17,7 +17,7 @@ function player_state_skid(phase) {
 			
 			// Handle ground movement
 			if (sign(hor_speed) != input_dir) {
-				if (ground_lock == 0) {
+				if (ground_lock <= 0) {
 					// Apply deceleration
 					hor_speed += decel * input_dir;
 						

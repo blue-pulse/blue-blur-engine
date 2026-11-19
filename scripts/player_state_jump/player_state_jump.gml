@@ -67,7 +67,7 @@ function player_state_jump(phase) {
 			}
 			
 			// Wait for next frame
-			if (air_lock) {
+			if (air_lock > 0) {
 				break;
 			}
 			

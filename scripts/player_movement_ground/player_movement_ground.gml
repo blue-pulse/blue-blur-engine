@@ -35,7 +35,7 @@ function player_movement_ground() {
 		
 		// Handle wall collision
 		var hit_wall = player_collision_wall(0);
-		if (hit_wall) {
+		if (hit_wall != noone) {
 			// Try to eject from wall
 			var wall_sign = player_wall_eject(hit_wall);
 			
@@ -59,7 +59,7 @@ function player_movement_ground() {
 		
 		// Handle floor collision
 		var hit_floor = player_collision_floor(ver_radius * 2);
-		if (hit_floor) {
+		if (hit_floor != noone) {
 			// Trigger reaction
 			if (player_react(hit_floor, DIR_BOTTOM)) {
 				return false;

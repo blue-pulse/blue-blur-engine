@@ -20,7 +20,7 @@ function player_movement_air() {
 		
 		// Handle wall collision
 		var hit_wall = player_collision_wall(0);
-		if (hit_wall) {
+		if (hit_wall != noone) {
 			// Eject from wall
 			var wall_sign = player_wall_eject(hit_wall);
 			
@@ -63,7 +63,7 @@ function player_movement_air() {
 		// Floor collision
 		if (ver_speed >= 0) {
 			var hit_floor = player_collision_floor(ver_radius);
-			if (hit_floor) {
+			if (hit_floor != noone) {
 				// Trigger reaction
 				if (player_react(hit_floor, DIR_BOTTOM)) {
 					return false;
@@ -80,7 +80,7 @@ function player_movement_air() {
 		// Ceiling collision
 		else {
 			var hit_floor = player_collision_ceiling(ver_radius);
-			if (hit_floor) {
+			if (hit_floor != noone) {
 				// Trigger reaction
 				if (player_react(hit_floor, DIR_TOP)) {
 					return false;
@@ -109,7 +109,7 @@ function player_movement_air() {
 		}
 		
 		// Landing
-		if (ground_id) {
+		if (ground_id != noone) {
 			// Calculate landing speed
 			if (abs(hor_speed) <= abs(ver_speed) and relative_angle >= 22.5 and relative_angle <= 337.5) {
 				// Scale speed to incline
@@ -125,7 +125,7 @@ function player_movement_air() {
 		
 		// Handle wall collision (again)
 		hit_wall = player_collision_wall(0);
-		if (hit_wall) {
+		if (hit_wall != noone) {
 			player_wall_eject(hit_wall);
 		}
 		

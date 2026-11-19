@@ -39,7 +39,7 @@ function player_state_idle(phase) {
 			}
 			
 			// Wait for next frame
-			if (ground_lock) {
+			if (ground_lock > 0) {
 				break;
 			}
 			
