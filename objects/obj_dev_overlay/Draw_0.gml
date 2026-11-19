@@ -33,7 +33,7 @@ if (!show_masks and !show_enemy_frames) {
 	exit;
 }
 
-// Draw enemy collision masks and the animation of those in view
+// Draw the masks and animation of enemies in view
 var _view_left = camera_get_view_x(view_camera[0]);
 var _view_top = camera_get_view_y(view_camera[0]);
 var _view_right = _view_left + camera_get_view_width(view_camera[0]);

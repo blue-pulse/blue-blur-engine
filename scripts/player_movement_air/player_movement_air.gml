@@ -92,7 +92,7 @@ function player_movement_air() {
 				// Get ceiling data
 				player_set_ground(hit_floor);
 				
-				// Abort if rising too slow or ceiling is too shallow
+				// Abort if rising too slowly or the ceiling is too shallow
 				if (ver_speed > ceiling_threshold or (relative_angle > 135 and relative_angle < 225)) {
 					// Slide against ceiling
 					var sine = dsin(relative_angle);

@@ -8,7 +8,7 @@ function presentation_update() {
 		exit;
 	}
 
-	// Find the row of a new mode and read its follow list once
+	// Find the row of a new mode and its follow list
 	if (_entering) {
 		presentation_seen = _facts.state;
 		presentation_row = undefined;

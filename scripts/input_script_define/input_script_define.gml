@@ -2,7 +2,7 @@ function input_script_define() {
 	// Script state
 	global.input_script = { source: undefined, step: 0 };
 
-	// Take the buttons from the script after Input collected the device
+	// Take the buttons from the script after Input reads the device
 	InputPlugInDefine("BlueBlur.ScriptedInput", "Blue Blur Engine", "1.0.0", "10.5", function() {
 		InputPlugInRegisterCallback(INPUT_PLUG_IN_CALLBACK.COLLECT_PLAYER, -1, function(_player) {
 			// Variables
@@ -25,7 +25,7 @@ function input_script_define() {
 	});
 }
 
-// Define the plug-in when the game starts, and only for a replay
+// Define the plug-in at start, only for a replay
 if (REPLAY_SCENARIO != "") {
 	input_script_define();
 }

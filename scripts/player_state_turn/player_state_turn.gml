@@ -2,7 +2,7 @@ function player_state_turn(phase) {
 	switch (phase) {
 		// Start state
 	    case INIT:
-			// Pick the kind of turn and how long it lasts
+			// Pick the kind and length of the turn
 			is_braking_turn = (state_prev == player_state_skid);
 			turn_timer = is_braking_turn ? skid_turn_steps : turn_steps;
 			

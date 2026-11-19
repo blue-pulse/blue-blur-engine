@@ -24,7 +24,7 @@ function player_enforce_bounds() {
 		return true;
 	}
 
-	// Move the player back within bounds according to their rotation
+	// Move the player back by its rotation
 	switch (mask_direction) {
 		// Down
 		case 0:

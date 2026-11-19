@@ -13,7 +13,7 @@ function player_state_homing(phase) {
 				break;
 			}
 			
-			// Fall if the reticle can no longer be locked on to
+			// Fall if the reticle cannot be locked on
 			if (!player_can_lockon(obj_reticle.target)) {
 				// Variables
 				is_jumping = true;

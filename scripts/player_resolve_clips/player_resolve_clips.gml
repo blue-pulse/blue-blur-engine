@@ -5,7 +5,7 @@ function player_resolve_clips(_clips) {
 	var count = array_length(names);
 	var character = object_get_name(object_index);
 
-	// Give each missing clip the first clip that its fallbacks lead to
+	// Give each missing clip the first clip its fallbacks reach
 	for (var i = 0; i < count; i++) {
 		var name = names[i];
 		if (struct_exists(_clips, name)) {

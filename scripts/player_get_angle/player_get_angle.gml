@@ -76,7 +76,7 @@ function player_get_angle(object, fallback) {
 	
 	// Hard-coded shapes
 	else if (not (obj_shape == shapes.wall and obj_angle == -1)) {
-		// Default if on a flat side of the solid
+		// Default on a flat side of the solid
 		if ((fallback == 0 and obj_yscale <= 0)
 			or (fallback == 90 and obj_xscale <= 0)
 			or (fallback == 180 and obj_yscale > 0)
@@ -96,7 +96,7 @@ function player_get_angle(object, fallback) {
 			}
 		}
 		
-		// If the solid's angle is hard-coded, return it
+		// Return the angle of the solid if it is fixed
 		if (obj_angle != -1) {
 			return obj_angle;
 		}
@@ -128,7 +128,7 @@ function player_get_angle(object, fallback) {
 			var player_x = clamp(x, obj_bbox_left, obj_bbox_right);
 			var player_y = clamp(y, obj_bbox_top, obj_bbox_bottom);
 			
-			// Calculate the direction from the player to the ellipse center
+			// Get the direction to the ellipse center
 			var dir_to_center = 0;
 			if (obj_shape == shapes.ellipse) {
 				dir_to_center = point_direction(player_x, player_y, ellipse_x, ellipse_y);

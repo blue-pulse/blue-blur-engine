@@ -1,5 +1,5 @@
 function player_set_ground(object) {
-	// Reset ground and rotation values if no instance has been assigned
+	// Reset ground and rotation if no instance is set
 	if (!instance_exists(object)) {
 		ground_id = noone;
 		is_grounded = false;
@@ -12,7 +12,7 @@ function player_set_ground(object) {
 	// Calculate new ground angle
 	var new_angle = player_get_angle(object, mask_direction);
 	
-	// Abort if terrain is too steep to map to
+	// Abort if the terrain is too steep
 	if (is_grounded and abs(angle_difference(new_angle, angle)) > 45) {
 		is_grounded = false;
 		exit;

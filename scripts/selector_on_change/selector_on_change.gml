@@ -1,5 +1,5 @@
 function selector_on_change(_facts, _params, _entering) {
-	// Run the reaction of the case that matches the new value of the fact
+	// Run the case that matches the new value of the fact
 	var _value = _facts[$ _params.fact];
 	if (!_entering and _value != presentation_marks[$ _params.fact]) {
 		for (var _i = 0; _i < array_length(_params.cases); _i++) {

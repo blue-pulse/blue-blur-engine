@@ -7,7 +7,7 @@ function player_wall_eject(object) {
 	
 	// Check if we're inside the wall
 	if (collision_point(pos_x, pos_y, object, true, false)) {
-		// Find and move to the closest side outside of collision
+		// Move to the closest side without collision
 		for (var i = wall_radius; i < wall_radius * 2; ++i) {
 			// Right of the wall
 			if (!collision_ray_vertical(i, 0, mask_direction, object)) {

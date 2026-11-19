@@ -14,7 +14,7 @@ if (!_replay.is_started) {
 	exit;
 }
 
-// Write down the buttons the player holds while recording
+// Record the buttons the player holds
 if (_replay.is_recording) {
 	var _mask = 0;
 	for (var _button = 0; _button <= vb_y; _button++) {
