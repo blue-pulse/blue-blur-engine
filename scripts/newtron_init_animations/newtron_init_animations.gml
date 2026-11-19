@@ -4,7 +4,7 @@ function newtron_init_animations() {
 		idle: animation_create(spr_newtron_idle),
 		fade_in: animation_create(spr_newtron_idle),
 		attack: animation_create(spr_newtron_attack),
-		fade_out: animation_create(spr_newtron_idle, { reversed: true }),
+		fade_out: animation_create(spr_newtron_idle, { is_backward: true }),
 	};
 	static presentation = {
 		rows: [

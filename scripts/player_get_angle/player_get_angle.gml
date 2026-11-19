@@ -28,8 +28,8 @@ function player_get_angle(object, fallback) {
 		var pos_y = floor(y);
 		var sine = dsin(fallback);
 		var cosine = dcos(fallback);
-		var left_sensor = false;
-		var right_sensor = false;
+		var left_sensor_hit = false;
+		var right_sensor_hit = false;
 		
 		// Setup positions
 		var pos_x_1 = pos_x - (cosine * hor_radius) + (sine * ver_radius);
@@ -45,29 +45,29 @@ function player_get_angle(object, fallback) {
 				var instance = terrain_list[i];
 				
 				// Check if the left sensor found the solid
-				if (not left_sensor and collision_point(pos_x_1, pos_y_1, instance, true, false)) {
-					left_sensor = true;
+				if (not left_sensor_hit and collision_point(pos_x_1, pos_y_1, instance, true, false)) {
+					left_sensor_hit = true;
 				}
 				
 				// Check if the right sensor found the solid
-				if (not right_sensor and collision_point(pos_x_2, pos_y_2, instance, true, false)) {
-					right_sensor = true;
+				if (not right_sensor_hit and collision_point(pos_x_2, pos_y_2, instance, true, false)) {
+					right_sensor_hit = true;
 				}
 				
 				// Calculate the direction from left to right
-				if (left_sensor and right_sensor) {
+				if (left_sensor_hit and right_sensor_hit) {
 					return floor(point_direction(pos_x_1, pos_y_1, pos_x_2, pos_y_2));
 				}
 			}
 			
 			// Push the left sensor down
-			if (!left_sensor) {
+			if (!left_sensor_hit) {
 				pos_x_1 += sine;
 				pos_y_1 += cosine;
 			}
 			
 			// Push the right sensor down
-			if (!right_sensor) {
+			if (!right_sensor_hit) {
 				pos_x_2 += sine;
 				pos_y_2 += cosine;
 			}

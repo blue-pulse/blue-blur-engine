@@ -3,7 +3,7 @@ function hud_update_stamina() {
 	gml_pragma("forceinline");
 	
 	// Move items
-	var _stamina_target = (is_viewable) ? (stamina_icon_xend) : (stamina_icon_xstart);
+	var _stamina_target = (is_visible) ? (stamina_icon_xend) : (stamina_icon_xstart);
 	if (stamina_icon_x != _stamina_target) {
 		// Variables
 	    var _item_speed = stamina_speed * sign(_stamina_target - stamina_icon_x);

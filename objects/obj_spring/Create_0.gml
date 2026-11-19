@@ -9,5 +9,5 @@ depth = depths.backstage;
 image_speed = 0;
 hor_offset = lengthdir_x(8, image_angle);
 ver_offset = lengthdir_y(8, image_angle);
-usable = true;
+is_usable = true;
 force = 10;

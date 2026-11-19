@@ -3,7 +3,7 @@ event_inherited();
 
 // Variables
 plane = -1;
-usable = true;
+is_usable = true;
 pushable = false;
 semisolid = false;
 shape = shapes.wall;

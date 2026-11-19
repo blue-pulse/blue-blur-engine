@@ -5,6 +5,6 @@ if (allow_time_update) {
 
 // Force visibility
 else if (force_visibility and !scene_is_changing()) {
-	is_viewable = true;
+	is_visible = true;
 	force_visibility = false;
 }

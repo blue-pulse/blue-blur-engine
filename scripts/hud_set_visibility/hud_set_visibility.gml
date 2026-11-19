@@ -3,6 +3,6 @@ function hud_set_visibility(_visibility) {
 	gml_pragma("forceinline");
 
 	// Logic
-	obj_hud.is_viewable = _visibility;
+	obj_hud.is_visible = _visibility;
 	obj_hud.force_visibility = _visibility;
 }

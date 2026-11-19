@@ -3,7 +3,7 @@ function hud_update_lives() {
 	gml_pragma("forceinline");
 	
 	// Move items
-	var _life_target = (is_viewable) ? (life_icon_xend) : (life_icon_xstart);
+	var _life_target = (is_visible) ? (life_icon_xend) : (life_icon_xstart);
 	if (life_icon_x != _life_target) {
 		// Variables
 	    var _item_speed = life_speed * sign(_life_target - life_icon_x);

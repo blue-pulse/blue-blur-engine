@@ -9,7 +9,7 @@ function sonic_create_animations() {
 	// Crouch
 	clips.crouch = animation_create(spr_sonic_crouch, { first_image: 3 });
 	clips.crouch_start = animation_create(spr_sonic_crouch, { last_image: 2 });
-	clips.crouch_stop = animation_create(spr_sonic_crouch, { last_image: 2, reversed: true });
+	clips.crouch_stop = animation_create(spr_sonic_crouch, { last_image: 2, is_backward: true });
 
 	// Dashpanel
 	clips.dashpanel = animation_create(spr_sonic_spindash, { speed: 1.25 });
@@ -42,7 +42,7 @@ function sonic_create_animations() {
 	// Push
 	clips.push = animation_create(spr_sonic_push, { first_image: 3 });
 	clips.push_start = animation_create(spr_sonic_push, { speed: 1.5, last_image: 2 });
-	clips.push_end = animation_create(spr_sonic_push, { speed: 1.5, last_image: 2, reversed: true });
+	clips.push_end = animation_create(spr_sonic_push, { speed: 1.5, last_image: 2, is_backward: true });
 
 	// Recovery
 	clips.recovery = animation_create(spr_sonic_recovery);
@@ -66,7 +66,7 @@ function sonic_create_animations() {
 	// Search
 	clips.lookup = animation_create(spr_sonic_lookup, { first_image: 3 });
 	clips.lookup_start = animation_create(spr_sonic_lookup, { last_image: 2 });
-	clips.lookup_stop = animation_create(spr_sonic_lookup, { last_image: 2, reversed: true });
+	clips.lookup_stop = animation_create(spr_sonic_lookup, { last_image: 2, is_backward: true });
 
 	// Skid
 	clips.skid_fast_loop = animation_create(spr_sonic_skid_fast, { first_image: 2, last_image: 3 });

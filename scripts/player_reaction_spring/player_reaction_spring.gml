@@ -1,6 +1,6 @@
 function player_reaction_spring(object) {
 	// Early exit
-	if (!object.usable or array_contains(damage_denied_state, state)) {
+	if (!object.is_usable or array_contains(damage_denied_state, state)) {
 		return false;
 	}
 	
@@ -14,7 +14,7 @@ function player_reaction_spring(object) {
 
 	// Trigger
 	with (object) {
-		usable = false;
+		is_usable = false;
 		image_speed = 1;
 		alarm_set(0, 10);
 	}

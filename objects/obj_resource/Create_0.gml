@@ -1,3 +1,3 @@
 // Variables
 reaction_index = noone;
-usable = true;
+is_usable = true;

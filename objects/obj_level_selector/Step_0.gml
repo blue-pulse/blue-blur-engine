@@ -1,5 +1,5 @@
 // Early exit
-if (!usable or scene_is_changing() or !instance_exists(player)) {
+if (!is_usable or scene_is_changing() or !instance_exists(player)) {
 	exit;
 }
 

@@ -1,2 +1,2 @@
 // Reset flag
-usable = true;
+is_usable = true;

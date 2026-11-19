@@ -1,12 +1,12 @@
 function player_reaction_monitor(object) {
 	// Variables
-	var change_state = false;
+	var state_changed = false;
 	
 	// Rebound in air
 	if (state == player_state_homing) {
 		// Stop moving and bounce
 		player_set_state(player_state_airbone);
-		change_state = true;
+		state_changed = true;
 		
 		// Variables
 		hor_speed = 0;
@@ -35,5 +35,5 @@ function player_reaction_monitor(object) {
 	instance_destroy(object);
 	
 	// Should abort state
-	return change_state;
+	return state_changed;
 }

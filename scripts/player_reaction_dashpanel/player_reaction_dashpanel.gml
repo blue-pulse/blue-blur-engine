@@ -1,12 +1,12 @@
 function player_reaction_dashpanel(object) {
 	// Early exit
-	if (!is_grounded or !object.usable or array_contains(damage_denied_state, state)) {
+	if (!is_grounded or !object.is_usable or array_contains(damage_denied_state, state)) {
 		return false;
 	}
 	
 	// Trigger object
 	with (object) {
-		usable = false;
+		is_usable = false;
 		alarm_set(0, 16);
 	}
 	

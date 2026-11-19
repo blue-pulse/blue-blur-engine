@@ -170,7 +170,7 @@ An enemy has an enum of states, a script `<enemy>_init_animations` and a child o
 
 | Function | Meaning |
 | --- | --- |
-| `animation_create(_sprite, _options={})` | Makes a clip. The options are `speed` (`ANIMATION_DEFAULT_SPEED`, 1), `first_image` (0), `last_image` (the whole sprite), `reversed` (false) and `next`, a clip. A clip leads into `next` with `ANIMATION_USE_TRANSITIONS`, true |
+| `animation_create(_sprite, _options={})` | Makes a clip. The options are `speed` (`ANIMATION_DEFAULT_SPEED`, 1), `first_image` (0), `last_image` (the whole sprite), `is_backward` (false) and `next`, a clip. A clip leads into `next` with `ANIMATION_USE_TRANSITIONS`, true |
 | `animation_init()` | Sets `animation` to `noone` and creates `__animation_playback` |
 | `animation_update()` | Steps the playback and copies its frame to `sprite_index` and `image_index`. Inlined |
 | `animation_play(_animation, _speed=ANIMATION_DEFAULT_SPEED)` | Sets `animation`, sets the speed of the playback and plays the clip with `restart: false`, so a clip that already plays is not restarted. Inlined |

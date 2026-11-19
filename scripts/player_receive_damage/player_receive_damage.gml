@@ -1,6 +1,6 @@
-function player_receive_damage(object, instant_kill=false) {
+function player_receive_damage(object, is_instant_kill=false) {
 	// Exit if player can't be damaged
-	if (!instant_kill and recovery_timer) {
+	if (!is_instant_kill and recovery_timer) {
 		return false;
 	}
 	
@@ -39,7 +39,7 @@ function player_receive_damage(object, instant_kill=false) {
 	}
 	
 	// Kill player
-	if (instant_kill or !rings) {
+	if (is_instant_kill or !rings) {
 		player_set_state(player_state_death);
 	}
 	

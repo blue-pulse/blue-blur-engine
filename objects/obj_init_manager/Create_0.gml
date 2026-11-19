@@ -1,8 +1,8 @@
 // Variables
-is_active = game_get_initflag();
+is_started = game_get_initflag();
 is_loading = false;
-skip_loading = false;
-next_room = (is_active) ? (rm_home) : (rm_title);
+is_ready = false;
+next_room = (is_started) ? (rm_home) : (rm_title);
 if (REPLAY_SCENARIO != "") {
 	next_room = replay_define_scenarios()[$ REPLAY_SCENARIO].room;
 }
@@ -12,7 +12,7 @@ switch (room) {
 	// Start game
 	case rm_init_game:
 		is_loading = true;
-		skip_loading = framework_start();
+		is_ready = framework_start();
 		break;
 		
 	// Stop game

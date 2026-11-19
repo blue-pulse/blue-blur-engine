@@ -4,8 +4,8 @@ if (!instance_exists(target)) {
 }
 
 // Disable when player is dead
-if (is_viewable and (target.state == player_state_death or scene_is_changing())) {
-	is_viewable = false;
+if (is_visible and (target.state == player_state_death or scene_is_changing())) {
+	is_visible = false;
 }
 
 // Move time

@@ -1,10 +1,10 @@
 function sonic_init_transitions(clips) {	
 	// Early exit
-	static registered = false;
-	if (registered) {
+	static is_registered = false;
+	if (is_registered) {
 		exit;
 	}
-	registered = true;
+	is_registered = true;
 
 	// Crouch
 	animation_add_transition(clips.crouch, clips.idle, clips.crouch_stop);

@@ -3,7 +3,7 @@ function hud_update_timer() {
 	gml_pragma("forceinline");
 	
 	// Move items
-	var _time_target = (is_viewable) ? (time_icon_xend) : (time_icon_xstart);
+	var _time_target = (is_visible) ? (time_icon_xend) : (time_icon_xstart);
 	if (time_icon_x != _time_target) {
 		// Variables
 	    var _item_speed = time_speed * sign(_time_target - time_icon_x);

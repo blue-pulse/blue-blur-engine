@@ -10,7 +10,7 @@ depth = depths.gui;
 sprite_index = noone;
 font = target.data_hud.font;
 margin = 15;
-is_viewable = true;
+is_visible = true;
 force_visibility = true;
 
 // Time
