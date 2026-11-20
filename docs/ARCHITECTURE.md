@@ -92,7 +92,7 @@ When a stage sets `allow_culling`, the stage manager runs a periodic alarm that 
 
 `game_init_data` creates `userdata`, `savedata` and `settings` with `data_create`. A `file_save_*` function turns a table into bytes with `data_serialize`, scrambles them with `cipher_encrypt` when the macro `USE_ENCRYPTION` is true and writes them with `storage_save`. A `file_load_*` function runs the same steps in reverse with `storage_load`, `cipher_decrypt` and `data_deserialize`. Each operation is tracked in the task queue.
 
-`storage_save` copies the bytes, so the caller deletes its own buffer, and `storage_load` hands the buffer it read to the callback, which deletes it. Both report a member of `storage_results`, and a missing file is reported as `failed` because SparkleStore does not tell it apart from an unreadable one. A table crosses the data adapter as a value the caller only passes back. The cipher is obfuscation and not protection, because its key, `CIPHER_KEY`, is in the code.
+`storage_save` copies the bytes, so the caller deletes its own buffer, and `storage_load` hands the buffer it read to the callback, which deletes it. Both report a member of `storage_results`, and a missing file is reported as `failed` because SparkleStore does not tell it apart from an unreadable one. A table crosses the data adapter as a value the caller only passes back. The cipher is obfuscation and not protection, because its key, `CIPHER_KEY`, is in the code. A replay writes to `replay_config` and `replay_saves` through `file_get_folder`, so a scenario never touches the saves of a player.
 
 ### Input, audio and animation
 

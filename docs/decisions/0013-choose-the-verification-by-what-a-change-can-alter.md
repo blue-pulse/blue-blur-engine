@@ -85,7 +85,7 @@ Class 2 costs no run. Class 3 costs one build and one scenario, about 1.5 to 4.5
 - A VM reference of every scenario has to be built once, which costs a VM build and a run for each scenario and was not measured. No reference is kept in the repository, so a new checkout builds them again.
 - The class is a judgment that holds by attention alone, and the report of a change names the class it took, so a reviewer can disagree.
 - A proof by reading can be wrong, and the one scenario of class 3 only catches an error on its own path, and that is accepted.
-- Code that no scenario reaches, such as the title, the home screen, the pause menu and the menus, cannot be verified by replay. That is a gap and not a decision, and the maintainer's own sessions cover it.
+- Code that no scenario reaches, such as the saving indicator and the screens that only a person judges, cannot be verified by replay. That is a gap and not a decision, and the maintainer's own sessions cover it.
 - A build per scenario is the largest cost of a batch, which item 11 of [PENDING.md](../PENDING.md) tracks.
 
 ## Sources
