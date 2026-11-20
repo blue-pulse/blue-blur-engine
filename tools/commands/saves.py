@@ -2,12 +2,13 @@
 import json
 import os
 import re
+import shutil
 import zlib
 from pathlib import Path
 
 # Import modules
 from errors import ToolError
-from project import project_find_file, project_get_root
+from project import project_find_file, project_get_root, project_get_sandbox
 
 # Constants
 MACROS_FILE = "scripts/config_macros/config_macros.gml"
@@ -33,6 +34,10 @@ def saves_add_arguments(parser):
 		action="store_true",
 		help="Read the folders that a replay scenario writes and not the ones of a player.",
 	)
+	actions = parser.add_mutually_exclusive_group()
+	actions.add_argument("--backup", action="store_true", help="Copy the folders to .sandbox, and refuse when a copy is already there.")
+	actions.add_argument("--clear", action="store_true", help="Delete the .dat files, and refuse when there is no copy to restore.")
+	actions.add_argument("--restore", action="store_true", help="Put the copy back, which also removes whatever was added since, and delete the copy.")
 
 
 def saves_read_folders(root, args):
@@ -116,6 +121,44 @@ def saves_decode(data, key, is_encrypted):
 		raise ToolError(f"The content is not JSON ({error}), so the file is damaged.")
 
 
+def saves_get_backup(root, folders):
+	# One copy for each set of folders, so a replay never mixes with a player
+	return project_get_sandbox(root) / f"saves-backup-{folders[0]}"
+
+
+def saves_backup(root, directory, folders):
+	backup = saves_get_backup(root, folders)
+	if backup.exists():
+		raise ToolError(f"A copy already exists in {backup}, so it was not overwritten. Put it back with --restore, or delete that folder when you do not need it.")
+	backup.mkdir()
+	for folder in folders:
+		if (directory / folder).is_dir():
+			shutil.copytree(directory / folder, backup / folder)
+	print(f"[INFO] Copied {', '.join(folders)} to {backup}")
+
+
+def saves_clear(root, directory, folders):
+	files = [file for folder in folders for file in (directory / folder).glob(f"*{FILE_EXTENSION}")]
+	if files and not saves_get_backup(root, folders).exists():
+		raise ToolError("There is no copy of these files, so nothing was deleted. Run it with --backup first.")
+	for file in files:
+		file.unlink()
+	print(f"[INFO] Deleted {len(files)} {FILE_EXTENSION} files from {', '.join(folders)}")
+
+
+def saves_restore(root, directory, folders):
+	backup = saves_get_backup(root, folders)
+	if not backup.exists():
+		raise ToolError(f"There is no copy in {backup}, so nothing was restored. Make one with --backup.")
+	for folder in folders:
+		if (directory / folder).is_dir():
+			shutil.rmtree(directory / folder)
+		if (backup / folder).is_dir():
+			shutil.copytree(backup / folder, directory / folder)
+	shutil.rmtree(backup)
+	print(f"[INFO] Restored {', '.join(folders)} from the copy and deleted the copy")
+
+
 def saves_show(args):
 	root = project_get_root()
 	key = int(saves_read_macro(root, "CIPHER_KEY"))
@@ -123,6 +166,12 @@ def saves_show(args):
 	folders = saves_read_folders(root, args)
 	directory = saves_find_directory(args, root, folders)
 	print(f"[INFO] Save folder {directory}")
+
+	# Change the files and stop
+	for is_asked, action in ((args.backup, saves_backup), (args.clear, saves_clear), (args.restore, saves_restore)):
+		if is_asked:
+			action(root, directory, folders)
+			return 0
 
 	failures = 0
 	found = 0
