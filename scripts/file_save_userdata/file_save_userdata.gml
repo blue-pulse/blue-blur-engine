@@ -27,7 +27,7 @@ function file_save_userdata() {
 	task_add_item(USERDATA, tasks.write);
 	
 	// Save file
-	storage_save(file_get_folder("config"), USERDATA, _buffer, _callback);
+	storage_save(file_get_folder(FOLDER_CONFIG), USERDATA, _buffer, _callback);
 	
 	// Delete the buffer because the storage copies it
 	buffer_delete(_buffer);

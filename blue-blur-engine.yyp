@@ -583,6 +583,7 @@
     {"id":{"name":"enemy_update_animation","path":"scripts/enemy_update_animation/enemy_update_animation.yy",},},
     {"id":{"name":"esign","path":"scripts/esign/esign.yy",},},
     {"id":{"name":"file_get_folder","path":"scripts/file_get_folder/file_get_folder.yy",},},
+    {"id":{"name":"file_get_slot_name","path":"scripts/file_get_slot_name/file_get_slot_name.yy",},},
     {"id":{"name":"file_load_savedata","path":"scripts/file_load_savedata/file_load_savedata.yy",},},
     {"id":{"name":"file_load_settings","path":"scripts/file_load_settings/file_load_settings.yy",},},
     {"id":{"name":"file_load_userdata","path":"scripts/file_load_userdata/file_load_userdata.yy",},},

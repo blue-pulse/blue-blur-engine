@@ -20,6 +20,10 @@
 #macro USERDATA "userdata.dat"
 #macro SAVEDATA "savedata.dat"
 
+// Folders
+#macro FOLDER_CONFIG "config"
+#macro FOLDER_SAVES "saves"
+
 // Animation
 #macro ANIMATION_DEFAULT_SPEED 1
 #macro ANIMATION_USE_TRANSITIONS true

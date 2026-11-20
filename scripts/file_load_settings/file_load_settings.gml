@@ -32,5 +32,5 @@ function file_load_settings() {
 	task_add_item(SETTINGS, tasks.read);
 	
 	// Load file
-	storage_load(file_get_folder("config"), SETTINGS, _callback);
+	storage_load(file_get_folder(FOLDER_CONFIG), SETTINGS, _callback);
 }
