@@ -9,7 +9,7 @@ function stage_bootstrap() {
 	
 	// Reset life counter
 	if (global.lives <= 0) {
-		global.lives = 3;
+		global.lives = DEFAULT_LIVES;
 	}
 	
 	// Allow player input

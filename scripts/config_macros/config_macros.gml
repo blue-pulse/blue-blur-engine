@@ -7,6 +7,7 @@
 #macro MAX_FPS 60
 #macro MAX_SOUNDS 200
 #macro TIMEZONE timezone_utc
+#macro DEFAULT_LIVES 3
 
 // File manager
 #macro SIGNER "BlueBlurEngine"

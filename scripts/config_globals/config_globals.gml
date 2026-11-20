@@ -30,7 +30,7 @@ global.characters = [
 	obj_player,	// Test
 ];
 global.current_player = noone;
-global.lives = 3;
+global.lives = DEFAULT_LIVES;
 global.score = 0;
 
 // Checkpoint data
@@ -46,7 +46,7 @@ global.savedata = {
 	slot: 0,
 	playtime: 0,
 	character: obj_sonic,
-	life: 3,
+	life: DEFAULT_LIVES,
 	position: [0, 0],
 }
 
