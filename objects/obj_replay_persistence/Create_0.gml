@@ -13,3 +13,4 @@ is_recording = false;
 ticks = 0;
 state_lines = [];
 last_state = "";
+storage_was_active = false;

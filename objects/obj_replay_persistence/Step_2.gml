@@ -45,6 +45,13 @@ if (_state != last_state) {
 	print($"[REPLAY] state {ticks} {_state}");
 }
 
+// Print when the storage activity changes
+var _is_active = storage_is_active();
+if (_is_active != storage_was_active) {
+	storage_was_active = _is_active;
+	print($"[REPLAY] activity {ticks} {_is_active ? 1 : 0}");
+}
+
 // End the game after the last stage
 if (!is_playing and stage_index >= array_length(stages)) {
 	game_end();
