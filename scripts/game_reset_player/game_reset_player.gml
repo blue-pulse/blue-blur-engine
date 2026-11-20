@@ -1,6 +1,6 @@
 function game_reset_player() {
 	// Reset values
-	global.character = obj_sonic;
+	global.character = global.default_character;
 	game_set_player(noone);
 	global.score = 0;
 	

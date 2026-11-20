@@ -1,28 +1,9 @@
 function file_save_settings() {
 	// Callback
 	var _callback = function(_result) {
-	    // File saved successfully
-	    if (_result == storage_results.success) {
-			print($"[INFO] Settings were saved successfully!");
-	    }
-		
-		// File failed to save
-	    else {
-			print($"[ERROR] Settings save operation exited with error code: {_result}");
-	    }
+		file_log_save("Settings", _result);
 	};
-	
-	// Get buffer
-	var _buffer = data_serialize(global.settings);
-	
-	// Encrypt
-	if (USE_ENCRYPTION) {
-		_buffer = cipher_encrypt(_buffer);
-	}
-	
+
 	// Save file
-	storage_save(file_get_folder(FOLDER_CONFIG), SETTINGS, _buffer, _callback);
-	
-	// Delete the buffer because the storage copies it
-	buffer_delete(_buffer);
+	file_save(file_get_folder(FOLDER_CONFIG), SETTINGS, global.settings, _callback);
 }

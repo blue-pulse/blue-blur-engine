@@ -20,7 +20,6 @@
 // Packages
 #macro SETTINGS "settings.dat"
 #macro USERDATA "userdata.dat"
-#macro SAVEDATA "savedata.dat"
 
 // Folders
 #macro FOLDER_CONFIG "config"

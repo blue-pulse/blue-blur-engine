@@ -1,32 +1,15 @@
 function file_load_userdata() {
 	// Callback
-	var _callback = function(_result, _buffer) {
-		// Variables
-		var _data = undefined;
-		
-		// Read file
-		if (_result == storage_results.success) {
-			if (USE_ENCRYPTION) {
-				_buffer = cipher_decrypt(_buffer);
-			}
-			_data = data_deserialize(_buffer);
+	var _callback = function(_table, _result) {
+		// Use the loaded table
+		if (_table != undefined) {
+			global.userdata = _table;
 		}
 
-	    // Clean up
-	    buffer_destroy(_buffer);
-
-	    // File loaded successfully
-	    if (_data != undefined) {
-	    	global.userdata = _data;
-			print("[INFO] Userdata loaded successfully!");
-	    }
-		
-		// File failed to load
-		else {
-			print($"[ERROR] Userdata load operation exited with error code: {_result}");
-	    }
+		// Print message
+		file_log_load("Userdata", _result);
 	};
-	
+
 	// Load file
-	storage_load(file_get_folder(FOLDER_CONFIG), USERDATA, _callback);
+	file_load(file_get_folder(FOLDER_CONFIG), USERDATA, file_define_userdata(), file_is_userdata_valid, _callback);
 }

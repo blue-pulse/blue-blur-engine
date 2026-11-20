@@ -1,39 +1,26 @@
 function file_load_savedata(_index) {
+	// Early exit
+	if (!file_is_slot_valid(_index)) {
+		print("[ERROR] An invalid slot was received!");
+		print("[WARN] No data was loaded. Previous values will be used.");
+		exit;
+	}
+
 	// Callback
-	var _callback = function(_result, _buffer) {
-		// Variables
-		var _data = undefined;
-		
-		// Read file
-		if (_result == storage_results.success) {
-			if (USE_ENCRYPTION) {
-				_buffer = cipher_decrypt(_buffer);
-			}
-			_data = data_deserialize(_buffer);
+	var _callback = function(_table, _result) {
+		// Start clean when nothing usable was loaded
+		if (_table == undefined) {
+			_table = data_create(file_define_savedata(), file_define_savedata());
 		}
 
-	    // Clean up
-	    buffer_destroy(_buffer);
+		// Set data
+		global.savedata = _table;
+		game_apply_savedata();
 
-	    // File loaded successfully
-	    if (_data != undefined) {
-			// Set data
-	    	global.savedata = _data;
-			
-			// Set parameters
-			var _params = data_read(global.savedata) ?? {};
-			global.character = _params.character;
-			global.lives = _params.life;
-			global.checkpoint.hub_pos = _params.position;
-			print("[INFO] Savedata loaded successfully!");
-	    }
-		
-		// File failed to load
-		else {
-			print($"[ERROR] Savedata load operation exited with error code: {_result}");	
-	    }
+		// Print message
+		file_log_load("Savedata", _result);
 	};
-	
+
 	// Load file
-	storage_load(file_get_folder(FOLDER_SAVES), file_get_slot_name(_index), _callback);
+	file_load(file_get_folder(FOLDER_SAVES), file_get_slot_name(_index), file_define_savedata(), file_is_savedata_valid, _callback);
 }

@@ -18,7 +18,8 @@ global.sfx_volume = 1
 global.voices_volume = 1;
 
 // Player
-global.character = obj_sonic;
+global.default_character = obj_sonic;
+global.character = global.default_character;
 global.characters = [
 	obj_player,	// Adventure
 	obj_player,	// Amy
@@ -36,21 +37,7 @@ global.score = 0;
 // Checkpoint data
 global.checkpoint = new Checkpoint();
 
-// Databases
-global.userdata = {
-	slot: 1,
-	wasd: true,
-}
-
-global.savedata = {
-	slot: 0,
-	playtime: 0,
-	character: obj_sonic,
-	life: DEFAULT_LIVES,
-	position: [0, 0],
-}
-
-global.settings = {
-	graphics: { antialiasing: 0, upscaling: false, fullscreen: false },
-	sounds: { bgm: 1, sfx: 1, voices: 1, },
-};
+// Databases created by game_init_data
+global.userdata = undefined;
+global.savedata = undefined;
+global.settings = undefined;

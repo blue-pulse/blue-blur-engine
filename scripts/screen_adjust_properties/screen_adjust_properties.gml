@@ -1,9 +1,8 @@
 function screen_adjust_properties() {
 	// Variables
-	var _settings = data_read(global.settings, ["graphics"]) ?? {};
-	var _allow_fullscreen = _settings.fullscreen;
-	var _allow_upscaling = _settings.upscaling;
-	var _aa_level = _settings.antialiasing;
+	var _allow_fullscreen = data_read(global.settings, ["graphics", "fullscreen"]);
+	var _allow_upscaling = data_read(global.settings, ["graphics", "upscaling"]);
+	var _aa_level = data_read(global.settings, ["graphics", "antialiasing"]);
 	
 	// Adjust window size
 	if (_allow_fullscreen) {
