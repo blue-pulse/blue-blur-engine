@@ -87,3 +87,11 @@ Problem. `file_load_settings`, `file_load_userdata` and `file_load_savedata` pri
 Shape. Do it in the review of the database code. Treat a result other than `storage_results.success` as a missing file, keep the defaults that `data_create` set and log it as `[INFO]`. Treat a success whose data `data_deserialize` cannot read as a damaged file or a wrong key and log it as `[WARN]` or `[ERROR]`. SparkleStore gives the same status for a missing file and an unreadable one, so the two stay together as the manual of `SparkleLoad` describes. Decide in the same review whether `settings.dat` should be written at the first start or when a menu of options exists.
 
 Done when a first start with no data files logs no `[ERROR]`, and a damaged file still does.
+
+## 13. Replay the saving, the loading and the menus
+
+Problem. No replay scenario reaches the title, the home screen, the pause menu, saving or loading, as [replay](./components/replay.md) records, so a change to them is checked by hand. A person runs the cases one by one, prepares and damages the save files, and reports what they see, which costs a long session of the keyboard and the mouse each time and depends on a person noticing.
+
+Shape. A second family of scenarios next to the gameplay ones, which starts at the title and presses the buttons through the menus, the hub and the pause. Its steps are written by hand and need no recorded session. The scenario prepares the files it needs from inside the game, such as deleting one or writing damaged bytes, and prints a line of its own with the lives, the slot, the position in the hub and the files that exist, in place of the line of the player. The manager needs a start that does not wait for the player, and the runner needs a way to run one family and not the other. The cases that share files go in one scenario, because each scenario needs its own build until item 11 is done. The cases to cover are a first start with no files, a start with files, an empty slot after a used one, a damaged file, completing a level, abandoning a level, a game over, leaving the hub and quitting. `python tools/gm.py saves` reads the files after a run.
+
+Done when one run of the family gives the results that the manual cases gave for those cases, and what is left to a person is only what they alone can see, such as how long the saving indicator shows.
