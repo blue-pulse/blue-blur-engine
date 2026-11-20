@@ -7,7 +7,7 @@ function file_load_userdata() {
 		// Read file
 		if (_status == SPARKLE_STATUS_SUCCESS) {
 			if (USE_ENCRYPTION) {
-				_buffer = file_decrypt_buffer(_buffer);
+				_buffer = cipher_decrypt(_buffer);
 			}
 			_data = data_deserialize(_buffer);
 		}

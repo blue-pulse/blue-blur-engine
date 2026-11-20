@@ -11,7 +11,7 @@
 // File manager
 #macro SIGNER "BlueBlurEngine"
 #macro MAX_SLOTS 10
-#macro XOR_KEY 3179411283192014336
+#macro CIPHER_KEY 3179411283192014336
 #macro FILE_EXT ".dat"
 #macro USE_ENCRYPTION true
 

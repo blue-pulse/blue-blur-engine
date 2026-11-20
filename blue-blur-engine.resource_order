@@ -351,8 +351,6 @@
     {"name":"enemy_invoke_turn","order":2,"path":"scripts/enemy_invoke_turn/enemy_invoke_turn.yy",},
     {"name":"enemy_update_animation","order":1,"path":"scripts/enemy_update_animation/enemy_update_animation.yy",},
     {"name":"esign","order":4,"path":"scripts/esign/esign.yy",},
-    {"name":"file_decrypt_buffer","order":3,"path":"scripts/file_decrypt_buffer/file_decrypt_buffer.yy",},
-    {"name":"file_encrypt_buffer","order":2,"path":"scripts/file_encrypt_buffer/file_encrypt_buffer.yy",},
     {"name":"file_load_savedata","order":5,"path":"scripts/file_load_savedata/file_load_savedata.yy",},
     {"name":"file_load_settings","order":1,"path":"scripts/file_load_settings/file_load_settings.yy",},
     {"name":"file_load_userdata","order":4,"path":"scripts/file_load_userdata/file_load_userdata.yy",},

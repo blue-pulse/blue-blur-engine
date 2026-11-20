@@ -20,7 +20,7 @@ function file_save_settings() {
 	
 	// Encrypt
 	if (USE_ENCRYPTION) {
-		_buffer = file_encrypt_buffer(_buffer);
+		_buffer = cipher_encrypt(_buffer);
 	}
 	
 	// Add task to queue
