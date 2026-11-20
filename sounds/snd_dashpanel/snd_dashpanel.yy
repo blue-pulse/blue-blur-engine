@@ -15,7 +15,7 @@
   "name":"snd_dashpanel",
   "parent":{
     "name":"03. Audio",
-    "path":"folders/06. Interactables/05. Dash Panels/03. Audio.yy",
+    "path":"folders/06. Interactables/07. Dash Panels/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -15,7 +15,7 @@
   "name":"snd_monitor_explosion",
   "parent":{
     "name":"03. Audio",
-    "path":"folders/06. Interactables/03. Monitors/03. Audio.yy",
+    "path":"folders/06. Interactables/05. Monitors/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

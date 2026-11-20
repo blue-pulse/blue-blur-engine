@@ -31,7 +31,7 @@
   "origin":7,
   "parent":{
     "name":"02. Sprites",
-    "path":"folders/06. Interactables/04. Checkpoints/02. Sprites.yy",
+    "path":"folders/06. Interactables/01. Checkpoints/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

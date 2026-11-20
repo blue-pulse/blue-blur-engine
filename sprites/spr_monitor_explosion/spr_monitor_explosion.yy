@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"02. Sprites",
-    "path":"folders/06. Interactables/03. Monitors/02. Sprites.yy",
+    "path":"folders/06. Interactables/05. Monitors/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

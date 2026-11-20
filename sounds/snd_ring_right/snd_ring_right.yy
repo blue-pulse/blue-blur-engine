@@ -15,7 +15,7 @@
   "name":"snd_ring_right",
   "parent":{
     "name":"03. Audio",
-    "path":"folders/06. Interactables/01. Rings/03. Audio.yy",
+    "path":"folders/06. Interactables/03. Rings/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

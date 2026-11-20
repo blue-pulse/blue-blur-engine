@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"01. Logic",
-    "path":"folders/06. Interactables/03. Monitors/01. Logic.yy",
+    "path":"folders/06. Interactables/05. Monitors/01. Logic.yy",
   },
   "parentObjectId":null,
   "persistent":false,

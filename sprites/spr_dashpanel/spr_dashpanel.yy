@@ -55,7 +55,7 @@
   "origin":7,
   "parent":{
     "name":"02. Sprites",
-    "path":"folders/06. Interactables/05. Dash Panels/02. Sprites.yy",
+    "path":"folders/06. Interactables/07. Dash Panels/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

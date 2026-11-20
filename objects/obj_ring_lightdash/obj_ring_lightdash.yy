@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"01. Logic",
-    "path":"folders/06. Interactables/01. Rings/01. Logic.yy",
+    "path":"folders/06. Interactables/03. Rings/01. Logic.yy",
   },
   "parentObjectId":{
     "name":"obj_ring",

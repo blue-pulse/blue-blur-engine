@@ -1,0 +1,1 @@
+stage_exit_room(15);

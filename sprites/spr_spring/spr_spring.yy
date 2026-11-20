@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"02. Sprites",
-    "path":"folders/06. Interactables/02. Springs/02. Sprites.yy",
+    "path":"folders/06. Interactables/04. Springs/02. Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

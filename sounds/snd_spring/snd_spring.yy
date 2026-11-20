@@ -15,7 +15,7 @@
   "name":"snd_spring",
   "parent":{
     "name":"03. Audio",
-    "path":"folders/06. Interactables/02. Springs/03. Audio.yy",
+    "path":"folders/06. Interactables/04. Springs/03. Audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
