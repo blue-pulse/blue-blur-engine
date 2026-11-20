@@ -1,8 +1,7 @@
 function file_save_userdata() {
 	// Callback
-	var _callback = function(_status, _buffer) {
+	var _callback = function(_status) {
 	    // Clean-up
-	    buffer_delete(_buffer);
 		task_delete_item(USERDATA);
 		
 	    // File saved successfully
@@ -29,5 +28,9 @@ function file_save_userdata() {
 	
 	// Save file
 	SparkleSetGroupName("config");
-	return SparkleSave(USERDATA, _buffer, _callback);
+	var _operation = SparkleSave(USERDATA, _buffer, _callback);
+	
+	// Delete the buffer because SparkleStore copies it
+	buffer_delete(_buffer);
+	return _operation;
 }

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"SparkleExist",
+  "%Name":"SparkleGetIdle",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SparkleExist",
+  "name":"SparkleGetIdle",
   "parent":{
-    "name":"Exist",
-    "path":"folders/01. Vendor/SparkleStore v1.4.2/Exist.yy",
+    "name":"Getters",
+    "path":"folders/01. Vendor/SparkleStore v3.0.0/Getters.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

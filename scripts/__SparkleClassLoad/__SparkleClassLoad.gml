@@ -69,7 +69,7 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) : __Sparkle
         {
             __buffer = __SparkleEmptyBuffer();
             
-            if (SparkleGetWindowsUseGDK())
+            if (SPARKLE_USING_WINDOWS_GDK)
             {
                 xboxone_set_savedata_user(_system.__xboxUser);
                 __asyncID = gdk_load_buffer(__buffer, $"root/{__groupName}/{__filename}", 0, -1); //Recommended by YYG for cross-platform save support
@@ -92,6 +92,9 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) : __Sparkle
                 {
                     buffer_async_group_option("showdialog",   __psShowDialog);
                     buffer_async_group_option("savepadindex", __psGamepadIndex);
+                    buffer_async_group_option("slottitle",    __psSlotTitle);
+                    buffer_async_group_option("subtitle",     __psSlotSubtitle);
+                    buffer_async_group_option("saveslotsize", _system.__psSlotSize);
                 }
                 
                 buffer_load_async(__buffer, __filename, 0, -1);
@@ -148,10 +151,12 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) : __Sparkle
         
         if (_status == SPARKLE_STATUS_FAILED)
         {
+            //FIXME - If key data has changed since this process was started then the cache key will be wrong
             _presenceCacheMap[? __SparkleFileCacheKey(__filename)] = false;
         }
         else if (_status == SPARKLE_STATUS_SUCCESS)
         {
+            //FIXME - If key data has changed since this process was started then the cache key will be wrong
             _presenceCacheMap[? __SparkleFileCacheKey(__filename)] = true;
         }
         

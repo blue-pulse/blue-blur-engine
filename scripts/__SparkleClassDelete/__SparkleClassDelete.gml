@@ -40,14 +40,18 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
         
         array_push(_saveActivityArray, self);
         
-        if (__steamFile && SparkleGetSteamCloud())
+        if (SPARKLE_DEBUG_NEVER_SAVE)
+        {
+            __Complete(SPARKLE_STATUS_FAILED);
+        }
+        else if (__steamFile && SparkleGetSteamCloud())
         {
             var _status = steam_file_delete($"{__groupName}/{__filename}");
             __Complete(_status? SPARKLE_STATUS_SUCCESS : SPARKLE_STATUS_FAILED);
         }
         else
         {
-            if (SparkleGetWindowsUseGDK())
+            if (SPARKLE_USING_WINDOWS_GDK)
             {
                 xboxone_set_savedata_user(_system.__xboxUser);
                 var _buffer = __SparkleEmptyBuffer();
@@ -82,6 +86,9 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
                 {
                     buffer_async_group_option("showdialog",   __psShowDialog);
                     buffer_async_group_option("savepadindex", __psGamepadIndex);
+                    buffer_async_group_option("slottitle",    __psSlotTitle);
+                    buffer_async_group_option("subtitle",     __psSlotSubtitle);
+                    buffer_async_group_option("saveslotsize", _system.__psSlotSize);
                 }
                 
                 if (__SPARKLE_PS_SAVE_BACKUP)
@@ -119,6 +126,7 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
         
         if (_status == SPARKLE_STATUS_SUCCESS)
         {
+            //FIXME - If key data has changed since this process was started then the cache key will be wrong
             _presenceCacheMap[? __SparkleFileCacheKey(__filename)] = false;
         }
         

@@ -20,6 +20,32 @@
 #macro SPARKLE_PLAYSTATION_SLOT_TITLE  SIGNER
 #macro SPARKLE_PLAYSTATION_SUBTITLE    SIGNER + "data"
 
+// `SPARKLE_PLAYSTATION_SLOT_SIZE` sets the size of save slots on PlayStation. How much data you
+// are using per slot is the total sum of all files saved into that slot. A save slot's size can
+// only be set when creating a brand new save slot. An existing save slot cannot be made bigger.
+// You should choose a slot size much, much larger than what you need. The minimum round number
+// value for this macro is `4`.
+// 
+// If you attempt to save more data than the slot can hold then the PlayStation OS will show an
+// error message saying `Something went wrong. (E2-FFFFFFFF)`. If you are running from the IDE,
+// an error message will show up as `sceKernelWrite : 0x8002001c` in the debug log. The data you
+// attempted to save will fail but the player will be able to continue playing the game after
+// dismissing the OS message. Existing savedata on disk will be corrupted or deleted entirely.
+// 
+// Setting the slot size is a feature in GameMaker but it is claimed in documentation that the
+// feature is "optional" despite the permanent nature of PlayStation save slot sizes. Most people,
+// including older versions of SparkleStore, leave the value unset. GameMaker defaults to the
+// minimum slot size allowable by the OS which is approximately 3.15 megabytes. This means that,
+// without setting the necessary parameter, every GameMaker game is only allowed to save up to
+// 3.15 megabytes of data per save slot. Any game that needs more space and has already gone into
+// production will either need to transition to new save slots to make use of a larger slot size or
+// hope they don't hit the limit.
+// 
+// N.B. THE SLOT SIZE CANNOT BE CHANGED AFTER YOU HAVE CREATED A SAVE SLOT.
+// N.B. SET THE SLOT SIZE TO A VALUE MUCH, MUCH HIGHER THAN YOU THINK YOU NEED.
+// 
+#macro SPARKLE_PLAYSTATION_SLOT_SIZE  -1 //megabytes
+
 // Whether SparkleStore is allowed to use `steam_file_*` functions to save and load data. This
 // macro only applies if you have enabled Steam Cloud for your game and the player has enabled
 // Steam Cloud for their account. In the event that either has been disabled, SparkleStore will
@@ -41,5 +67,13 @@
 // Maximum number of save/load operations that can be completed in a minute. These numbers are
 // used to calculate the delays between operations. Default values for Nintendo Switch are
 // conservative and offers extra wiggle room without violating guidelines.
-#macro SPARKLE_MAX_SAVE_FREQUENCY  (SPARKLE_ON_SWITCH ? 25 : 32)
-#macro SPARKLE_MAX_LOAD_FREQUENCY  (SPARKLE_ON_SWITCH ? 25 : 32)
+#macro SPARKLE_MAX_SAVE_FREQUENCY  (SPARKLE_ON_SWITCH? 25 : infinity)
+#macro SPARKLE_MAX_LOAD_FREQUENCY  (SPARKLE_ON_SWITCH? 25 : infinity)
+
+// Minimum time between save operations. This prevents save operations choking up the game if
+// a lot of save operations get generated very quickly.
+#macro SPARKLE_SAVE_RATE_LIMIT  300 //milliseconds
+
+// Prevents save and delete operations from being executed. These operations will instead return
+// a "failed" status. This is helpful when testing a particular savefile that reproduces a bug.
+#macro SPARKLE_DEBUG_NEVER_SAVE  (false && SPARKLE_RUNNING_FROM_IDE)

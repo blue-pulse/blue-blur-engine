@@ -6,7 +6,7 @@
   "name":"SparkleGetSteamFile",
   "parent":{
     "name":"Options",
-    "path":"folders/01. Vendor/SparkleStore v1.4.2/Options.yy",
+    "path":"folders/01. Vendor/SparkleStore v3.0.0/Options.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

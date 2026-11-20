@@ -52,14 +52,14 @@ function SparkleDelete(_filename, _callback, _callbackMetadata = undefined, _pri
     
     _system.__anyRequestMade = true;
     
-    if ((SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK()) && (_system.__xboxUser == 0))
+    if (SPARKLE_ON_GDK && (_system.__xboxUser == 0))
     {
-        __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+        __SparkleError($"Xbox user is invalid ({_system.__xboxUser})");
     }
     
-    if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))
+    if (SPARKLE_ON_PS_ANY && (_system.__psGamepadIndex < 0))
     {
-        __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
+        __SparkleError($"Gamepad index is invalid ({_system.__psGamepadIndex})");
     }
     
     if (not is_callable(_callback))
@@ -68,6 +68,28 @@ function SparkleDelete(_filename, _callback, _callbackMetadata = undefined, _pri
         {
             __SparkleTrace($"Warning! Callback is not callable (typeof={typeof(_callback)})");
         }
+    }
+    
+    //Try to cancel queued save/delete operations to lighten file system burden
+    var _i = 0;
+    repeat(array_length(_queuedArray))
+    {
+        var _opStruct = _queuedArray[_i];
+        if ((_opStruct.__opType == SPARKLE_OP_SAVE) || (_opStruct.__opType == SPARKLE_OP_DELETE))
+        {
+            if ((_opStruct.__filename == _filename) && (_opStruct.__groupName == _system.__groupName) && (_opStruct.__psSlotTitle == _system.__psSlotTitle))
+            {
+                if (SPARKLE_VERBOSE)
+                {
+                    __SparkleTrace($"Cancelled existing save/delete operation: group name = \"{_system.__groupName}\", slot title = \"{_system.__psSlotTitle}\", filename = \"{_filename}\"");
+                }
+                
+                _opStruct.__Complete(SPARKLE_STATUS_CANCELLED);
+                break;
+            }
+        }
+        
+        ++_i;
     }
     
     var _struct = new __SparkleClassDelete(_filename, _callback, _callbackMetadata);

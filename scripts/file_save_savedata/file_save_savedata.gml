@@ -7,9 +7,8 @@ function file_save_savedata(_index) {
 	}
 	
 	// Callback
-	var _callback = function(_status, _buffer) {
+	var _callback = function(_status) {
 	    // Clean-up
-	    buffer_delete(_buffer);
 		task_delete_item(SAVEDATA);
 		
 	    // File saved successfully
@@ -36,5 +35,9 @@ function file_save_savedata(_index) {
 	
 	// Save file
 	SparkleSetGroupName("saves");
-	return SparkleSave($"slot_{_index}" + FILE_EXT, _buffer, _callback);
+	var _operation = SparkleSave($"slot_{_index}" + FILE_EXT, _buffer, _callback);
+	
+	// Delete the buffer because SparkleStore copies it
+	buffer_delete(_buffer);
+	return _operation;
 }

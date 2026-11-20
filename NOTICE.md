@@ -13,7 +13,7 @@ Blue Blur Engine is licensed under the Apache License 2.0 in [LICENSE](./LICENSE
 | [GMUtils](https://github.com/blue-pulse/gmutils) | 2.1.0 | [MIT](https://opensource.org/license/mit) |
 | [Input](https://codeberg.org/offalynne/Input) | 10.5.0 | [MIT](https://opensource.org/license/mit) |
 | [Resnip](https://github.com/blue-pulse/resnip), a rewrite of [AESnips](https://github.com/angelwire/AESnips) by William Jones | 0.2.0 | [MIT](https://opensource.org/license/mit) |
-| [SparkleStore](https://github.com/JujuAdams/SparkleStore) | 1.4.2 | [MIT](https://opensource.org/license/mit) |
+| [SparkleStore](https://github.com/JujuAdams/SparkleStore) | 3.0.0 | [MIT](https://opensource.org/license/mit) |
 | [Sphinx](https://github.com/JujuAdams/Sphinx) | 1.0.0 | [MIT](https://opensource.org/license/mit) |
 
 ## Material without a licence for this project

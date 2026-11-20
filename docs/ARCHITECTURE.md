@@ -59,7 +59,7 @@ Third-party components live in the `01. Vendor` folder and are never edited. [NO
 | EasyFade | 2.0.0 | Fades and room transitions |
 | GMUtils | 2.1.0 | General utilities, such as angles and rounding |
 | Input | 10.5.0 | Controls |
-| SparkleStore | 1.4.2 | Save files |
+| SparkleStore | 3.0.0 | Save files |
 | Sphinx | 1.0.0 | Encryption |
 
 ### The engine and a game
