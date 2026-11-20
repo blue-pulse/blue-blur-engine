@@ -45,7 +45,7 @@ A scenario with `kind: "persistence"` starts at the title and watches the game a
 2. `replay_prepare_persistence` deletes the files that an earlier run left, writes four bytes of text over each file in the `damaged` list of the scenario, and creates `obj_replay_persistence`. That object is persistent, so it survives the restart of the game.
 3. The scenario has `stages`, each one a list of segments like the ones above. The first stage starts at once, and each later stage starts when the player exists and no scene change is running, which is the moment a recording starts. A stage ends when its buttons run out.
 4. In its End Step event the object prints `[REPLAY] state <tick> room <room> slot <slot> lives <lives> hub <x>,<y> character <object> files <paths>` only when that line changes, and the paths are the files that exist.
-5. It prints `[REPLAY] activity <tick> <0|1>` when `storage_is_active()` changes. Those lines stay out of the hash because the query reads the clock, so its changes can move by a tick between runs.
+5. It prints `[REPLAY] busy <tick> <0|1>` when `storage_is_busy(INDICATOR_MIN_TIME)` changes. Those lines stay out of the hash because the query reads the clock, so its changes can move by a tick between runs.
 6. It calls `game_end` after the last stage. However the game ends, its Game End event prints `[REPLAY] logic <md5>` of the state lines.
 
 When `record_stage` holds the number of a stage, that stage plays no buttons. The object plays the sound `snd_menu_confirm`, leaves the keyboard live and prints `[RECORD] <mask>` for each step, so a person plays that stage and the masks become its segments.
@@ -142,5 +142,5 @@ Ask the maintainer before each batch, as `A014` asks, because a run needs the ke
 - The picture line names the sprite and the frame, not the pixels drawn, so a change in a draw event is invisible to it.
 - Each scenario needs its own build, because the scenario is a macro, so builds are most of the time of a batch, as [0013](../decisions/0013-choose-the-verification-by-what-a-change-can-alter.md) measures. Item 11 of [PENDING.md](../PENDING.md) tracks building once.
 - A gameplay scenario starts in its own room, so only the persistence scenarios reach the title, the home screen, the pause menu and the menus.
-- The persistence scenarios do not cover abandoning a level from the pause menu or anything that only a person sees. The activity lines measure when the storage is active and not what the saving indicator draws, and a tick stands for a step, so they measure milliseconds only at 60 steps per second.
+- The persistence scenarios do not cover abandoning a level from the pause menu or anything that only a person sees. The busy lines measure when the storage is busy for the saving indicator and not what it draws, and a tick stands for a step, so they measure milliseconds only at 60 steps per second.
 - A recorded stage replays within a few ticks of the live session, because the script is not the keyboard, so compare two runs of a scenario and not a run with its recording.

@@ -44,7 +44,7 @@ The folders below are the project's logical organisation. An element that has sp
 - At most one manager of each kind exists at a time, because `manager_create` creates one only if none exists.
 - Apart from the initial state a player is created with, its state changes only through `player_set_state`, which stops the previous state before it starts the next.
 - The current player is read through `game_get_player` and written only through `game_set_player`, so a change of character updates one place.
-- The persistence layer never creates or calls the saving indicator, which only reads `storage_is_active`.
+- The persistence layer never creates or calls the saving indicator, which only reads `storage_is_busy`.
 
 ## Boundaries
 
@@ -95,7 +95,7 @@ When a stage sets `allow_culling`, the stage manager runs a periodic alarm that 
 
 `storage_save` copies the bytes, so the caller deletes its own buffer, and `storage_load` hands the buffer it read to the callback, which deletes it. Both report a member of `storage_results`, and a missing file is reported as `failed` because SparkleStore does not tell it apart from an unreadable one. A table crosses the data adapter as a value the caller only passes back. The cipher is obfuscation and not protection, because its key, `CIPHER_KEY`, is in the code. A replay writes to `replay_config` and `replay_saves` through `file_get_folder`, so a scenario never touches the saves of a player.
 
-`storage_is_busy` tells if an operation is pending, and the start of the game and the restart from the hub wait until it is false. `storage_is_active` tells if one is pending or ended within `STORAGE_ACTIVE_TIME`, and it is all that the saving indicator reads. That indicator is `obj_loading`, which `framework_start` creates once, which persists across rooms and which draws its icon in the GUI in every room. Its Draw event draws nothing, because an object with a sprite and no Draw event also draws that sprite in the room.
+`storage_is_idle` tells if no operation is pending, and the start of the game waits for it. `storage_is_busy` tells if one is pending or, with a threshold in milliseconds, if one was dispatched within it, and the restart from the hub waits while it is true. The saving indicator asks `storage_is_busy(INDICATOR_MIN_TIME)` and nothing else. That indicator is `obj_loading`, which `framework_start` creates once, which persists across rooms and which draws its icon in the GUI in every room. Its Draw event draws nothing, because an object with a sprite and no Draw event also draws that sprite in the room.
 
 ### Input, audio and animation
 

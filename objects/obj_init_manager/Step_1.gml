@@ -14,6 +14,6 @@ if (is_ready) {
 else {
 	is_ready = (
 		mixer_is_loaded() and
-		!storage_is_busy()
+		storage_is_idle()
 	);
 }

@@ -1,5 +1,5 @@
 // Early exit
-if (!storage_is_active()) {
+if (!storage_is_busy(INDICATOR_MIN_TIME)) {
 	exit;
 }
 

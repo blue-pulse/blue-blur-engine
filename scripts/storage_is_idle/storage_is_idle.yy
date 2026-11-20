@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"storage_is_active",
+  "%Name":"storage_is_idle",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"storage_is_active",
+  "name":"storage_is_idle",
   "parent":{
     "name":"07. Storage",
     "path":"folders/02. Core/09. Adapters/07. Storage.yy",

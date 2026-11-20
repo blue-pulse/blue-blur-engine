@@ -45,11 +45,11 @@ if (_state != last_state) {
 	print($"[REPLAY] state {ticks} {_state}");
 }
 
-// Print when the storage activity changes
-var _is_active = storage_is_active();
-if (_is_active != storage_was_active) {
-	storage_was_active = _is_active;
-	print($"[REPLAY] activity {ticks} {_is_active ? 1 : 0}");
+// Print when the storage busy state changes
+var _is_busy = storage_is_busy(INDICATOR_MIN_TIME);
+if (_is_busy != storage_was_busy) {
+	storage_was_busy = _is_busy;
+	print($"[REPLAY] busy {ticks} {_is_busy ? 1 : 0}");
 }
 
 // End the game after the last stage

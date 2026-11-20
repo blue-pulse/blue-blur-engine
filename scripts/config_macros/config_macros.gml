@@ -16,6 +16,9 @@
 #macro FILE_EXT ".dat"
 #macro USE_ENCRYPTION true
 
+// Minimum time the saving indicator stays visible in milliseconds
+#macro INDICATOR_MIN_TIME 1200
+
 // Packages
 #macro SETTINGS "settings.dat"
 #macro USERDATA "userdata.dat"
