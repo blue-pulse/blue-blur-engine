@@ -1,0 +1,127 @@
+# Import libraries
+import json
+import os
+import re
+import zlib
+from pathlib import Path
+
+# Import modules
+from errors import ToolError
+from project import project_find_file, project_get_root
+
+# Constants
+MACROS_FILE = "scripts/config_macros/config_macros.gml"
+OPTIONS_FILE = "options/windows/options_windows.yy"
+EXECUTABLE_PATTERN = re.compile(r'"option_windows_executable_name"\s*:\s*"([^"]+?)(?:\.exe)?"')
+FOLDERS = ("config", "saves")
+FILE_EXTENSION = ".dat"
+MAX_DECODED_BYTES = 1 << 20
+INT64_MASK = (1 << 64) - 1
+INT64_SIGN = 1 << 63
+
+
+# Functions
+def saves_add_arguments(parser):
+	parser.add_argument(
+		"--dir",
+		help="Save folder of the game, the one that holds config and saves. Defaults to the folder under APPDATA.",
+	)
+
+
+def saves_read_macro(root, name):
+	# Return the text a macro of config_macros holds
+	code = (root / MACROS_FILE).read_text(encoding="utf-8")
+	match = re.search(rf"^#macro\s+{name}\s+(\S+)\s*$", code, re.MULTILINE)
+	if not match:
+		raise ToolError(f"{MACROS_FILE} has no macro {name}, so the files cannot be read. Add it back or fix the name.")
+	return match.group(1)
+
+
+def saves_find_directory(args, root):
+	if args.dir:
+		return Path(args.dir)
+
+	base = os.environ.get("APPDATA")
+	if not base:
+		raise ToolError("APPDATA is not set, so the save folder is unknown. Pass it with --dir.")
+
+	# The folder is named after the project, with underscores, or after the executable
+	names = [project_find_file(root).stem.replace("-", "_")]
+	options = root / OPTIONS_FILE
+	if options.exists():
+		match = EXECUTABLE_PATTERN.search(options.read_text(encoding="utf-8"))
+		if match:
+			names.append(match.group(1))
+	for name in names:
+		candidate = Path(base) / name
+		if any((candidate / folder).is_dir() for folder in FOLDERS):
+			return candidate
+	raise ToolError(
+		f"No save folder found under {base} named {' or '.join(names)}. Run the game once, or pass the folder with --dir."
+	)
+
+
+def saves_wrap(value):
+	# Keep a number inside a signed 64 bit integer, as GameMaker does
+	value &= INT64_MASK
+	return value - (1 << 64) if value & INT64_SIGN else value
+
+
+def saves_unscramble(data, key):
+	# Undo the XOR that Sphinx applies to every byte
+	state = saves_wrap(key)
+	result = bytearray(data)
+	for index in range(len(result)):
+		state ^= saves_wrap(state << 13)
+		state ^= state >> 17
+		state ^= saves_wrap(state << 5)
+		result[index] ^= state & 0xFF
+	return bytes(result)
+
+
+def saves_decompress(data):
+	decompressor = zlib.decompressobj()
+	try:
+		text = decompressor.decompress(data, MAX_DECODED_BYTES)
+	except zlib.error as error:
+		raise ToolError(f"The bytes are not compressed data ({error}), so the file is damaged or the key is not CIPHER_KEY.")
+	if decompressor.unconsumed_tail:
+		raise ToolError(f"The data is larger than {MAX_DECODED_BYTES} bytes, which no save file of the game reaches.")
+	return text
+
+
+def saves_decode(data, key, is_encrypted):
+	if is_encrypted:
+		data = saves_decompress(saves_unscramble(data, key))
+	try:
+		return json.loads(data.decode("utf-8").rstrip("\0"))
+	except ValueError as error:
+		raise ToolError(f"The content is not JSON ({error}), so the file is damaged.")
+
+
+def saves_show(args):
+	root = project_get_root()
+	key = int(saves_read_macro(root, "CIPHER_KEY"))
+	is_encrypted = saves_read_macro(root, "USE_ENCRYPTION") == "true"
+	directory = saves_find_directory(args, root)
+	print(f"[INFO] Save folder {directory}")
+
+	failures = 0
+	found = 0
+	for folder in FOLDERS:
+		for file in sorted((directory / folder).glob(f"*{FILE_EXTENSION}")):
+			found += 1
+			name = f"{folder}/{file.name}"
+			data = file.read_bytes()
+			try:
+				table = saves_decode(data, key, is_encrypted)
+			except ToolError as error:
+				failures += 1
+				print(f"[ERROR] {name} ({len(data)} bytes) {error}")
+				continue
+			print(f"[INFO] {name} ({len(data)} bytes)")
+			print(json.dumps(table, indent=2, sort_keys=True))
+
+	if found == 0:
+		print(f"[WARNING] No {FILE_EXTENSION} files in {', '.join(FOLDERS)} under {directory}")
+	return 1 if failures else 0
