@@ -983,5 +983,35 @@ function replay_define_scenarios() {
 				{ steps: 124, hold: [] },
 			],
 		},
+		persist_damaged_slot: {
+			room: rm_title,
+			kind: "persistence",
+			damaged: [{ folder: FOLDER_SAVES, name: file_get_slot_name(1) }],
+			stages: [[
+				{ steps: 360, hold: [] },
+				{ steps: 4, hold: [vb_start] },
+				{ steps: 300, hold: [] },
+				{ steps: 4, hold: [vb_accept] },
+				{ steps: 120, hold: [] },
+				{ steps: 4, hold: [vb_accept] },
+				{ steps: 420, hold: [] },
+			]],
+		},
+		persist_damaged_profile: {
+			room: rm_title,
+			kind: "persistence",
+			damaged: [{ folder: FOLDER_CONFIG, name: USERDATA }],
+			stages: [[
+				{ steps: 360, hold: [] },
+				{ steps: 4, hold: [vb_start] },
+				{ steps: 300, hold: [] },
+				{ steps: 4, hold: [vb_down] },
+				{ steps: 20, hold: [] },
+				{ steps: 4, hold: [vb_down] },
+				{ steps: 20, hold: [] },
+				{ steps: 4, hold: [vb_accept] },
+				{ steps: 300, hold: [] },
+			]],
+		},
 	};
 }
