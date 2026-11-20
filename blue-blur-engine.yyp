@@ -1013,6 +1013,7 @@
     {"id":{"name":"stage_restart_room","path":"scripts/stage_restart_room/stage_restart_room.yy",},},
     {"id":{"name":"storage_constants","path":"scripts/storage_constants/storage_constants.yy",},},
     {"id":{"name":"storage_get_result","path":"scripts/storage_get_result/storage_get_result.yy",},},
+    {"id":{"name":"storage_is_busy","path":"scripts/storage_is_busy/storage_is_busy.yy",},},
     {"id":{"name":"storage_load","path":"scripts/storage_load/storage_load.yy",},},
     {"id":{"name":"storage_save","path":"scripts/storage_save/storage_save.yy",},},
     {"id":{"name":"task_add_item","path":"scripts/task_add_item/task_add_item.yy",},},
