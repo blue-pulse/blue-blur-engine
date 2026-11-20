@@ -54,7 +54,7 @@ Third-party components live in the `01. Vendor` folder and are never edited. [NO
 | Component | Version | Responsibility |
 | --- | --- | --- |
 | Resnip | 0.2.0 | Animation |
-| DB | 2.2.0 | Structured data with JSON serialization |
+| DB | 3.0.0 | Structured data with JSON serialization |
 | EasyAudio | 2.0.0 | Audio groups and playback |
 | EasyFade | 2.0.0 | Fades and room transitions |
 | GMUtils | 2.1.0 | General utilities, such as angles and rounding |

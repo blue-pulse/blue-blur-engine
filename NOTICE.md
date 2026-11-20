@@ -7,7 +7,7 @@ Blue Blur Engine is licensed under the Apache License 2.0 in [LICENSE](./LICENSE
 | Software | Version | License |
 | --- | --- | --- |
 | [Cluster-Framework](https://github.com/TsukiruP/Cluster-Framework) | 0.1.0 | [MIT](https://opensource.org/license/mit) |
-| [DB](https://github.com/JujuAdams/db) | 2.2.0 | [MIT](https://opensource.org/license/mit) |
+| [DB](https://github.com/JujuAdams/db) | 3.0.0 | [MIT](https://opensource.org/license/mit) |
 | [EasyAudio](https://github.com/blue-pulse/easyaudio) | 2.0.0 | [MIT](https://opensource.org/license/mit) |
 | [EasyFade](https://github.com/blue-pulse/easyfade) | 2.0.0 | [MIT](https://opensource.org/license/mit) |
 | [GMUtils](https://github.com/blue-pulse/gmutils) | 2.1.0 | [MIT](https://opensource.org/license/mit) |

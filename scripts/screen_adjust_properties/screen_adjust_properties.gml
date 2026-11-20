@@ -1,6 +1,6 @@
 function screen_adjust_properties() {
 	// Variables
-	var _settings = db_read(global.settings, {}, "graphics");
+	var _settings = db_read(global.settings, "graphics") ?? {};
 	var _allow_fullscreen = _settings.fullscreen;
 	var _allow_upscaling = _settings.upscaling;
 	var _aa_level = _settings.antialiasing;
