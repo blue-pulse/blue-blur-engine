@@ -32,6 +32,8 @@ Update this document when a rule is added, changed or retired. Each rule is one 
 | How the game is run, or `tools/` | [0002](./decisions/0002-run-the-game-with-igor-run-and-the-prefabs-flag.md) |
 | Directions and the controls | [0003](./decisions/0003-read-directions-with-input-axis-in-gamemakers-sign-order.md) |
 | A claim about speed | [0011](./decisions/0011-measure-a-cost-in-the-real-step-against-a-rebuild.md) |
+| A crash, a build failure, a slowdown or a graphics problem that may be GameMaker's own | [painfully-learned-lessons](./reference/painfully-learned-lessons.md) |
+| A GML pattern for startup, global state, config macros or freeing a buffer or a surface | [thoughts-on-gamemaker](./reference/thoughts-on-gamemaker.md), an outside author's opinion that no rule here yields to |
 
 ## Always
 

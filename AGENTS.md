@@ -21,6 +21,8 @@ This directory is your whole sandbox. Never leave it, not to look for a file you
 | Report what you did | `A006`, `V002`, `V003`, `V007` |
 | Add or update a dependency | `E001` to `E008` and `A008` |
 | Commit or open a pull request | `A009`, `A010`, `A012`, `G001`, `G002`, `G003` |
+| Chase a crash, a build failure, a slowdown or a graphics problem that may be GameMaker's own | [painfully-learned-lessons](docs/reference/painfully-learned-lessons.md) |
+| Write a GML pattern for startup, global state, config macros or freeing a buffer or a surface | [thoughts-on-gamemaker](docs/reference/thoughts-on-gamemaker.md), which is an outside author's opinion, so `CONTRIBUTING.md` wins where they differ |
 
 ## Navigating the repository
 
