@@ -79,3 +79,11 @@ Problem. The replay scenario is chosen by the macro `REPLAY_SCENARIO`, so each s
 Shape. Keep a compile-time switch that turns the harness on, so a shared build stays unchanged, and read the name of the scenario at run time from a source that needs no build, such as a parameter of the executable or a file beside it. Check first that the executable Igor builds can be started again with such a parameter, which has not been tried. Then update [replay](./components/replay.md) to describe it.
 
 Done when one build runs every scenario with lines identical to those of a build per scenario, and the time of a batch is measured again in 0013.
+
+## 13. Center the window only when its size changes
+
+Problem. `screen_adjust_properties` ends with `window_center()` each time it runs, and `obj_init_manager` runs it each time the start room finishes loading, so leaving the hub moves the window back to the centre even though its size did not change. Entering the hub from the main menu does not pass through the start room, so the window stays where it is. The manual of `window_center` asks to call it at least 10 steps after a resize, and `framework_start` calls it in the same step as `window_set_size`, so the centring of the first start depends on the second call, made when the loads finish.
+
+Shape. Centre only when the size changes. Today that happens only at the first start, because the window cannot be resized by hand and no menu toggles fullscreen, so `obj_init_manager` can call the centring only when the game starts for the first time and `screen_adjust_properties` stops centring. When the settings menu can toggle fullscreen, centre after the size changes and at least 10 steps later, for example with an alarm. Check first how the first start looks, since the start room is 500 by 280 and the window becomes 1000 by 560.
+
+Done when leaving the hub keeps the position of the window, the first start still opens centred, and a fullscreen toggle centres the window after the change.
