@@ -7,18 +7,18 @@ function file_save_savedata(_index) {
 	}
 	
 	// Callback
-	var _callback = function(_status) {
+	var _callback = function(_result) {
 	    // Clean-up
 		task_delete_item(SAVEDATA);
 		
 	    // File saved successfully
-	    if (_status == SPARKLE_STATUS_SUCCESS) {
+	    if (_result == storage_results.success) {
 			print($"[INFO] Savedata was saved successfully!");
 	    }
 		
 		// File failed to save
 	    else {
-			print($"[ERROR] Savedata save operation exited with error code: {_status}");
+			print($"[ERROR] Savedata save operation exited with error code: {_result}");
 	    }
 	};
 	
@@ -34,10 +34,8 @@ function file_save_savedata(_index) {
 	task_add_item(SAVEDATA, tasks.write);
 	
 	// Save file
-	SparkleSetGroupName("saves");
-	var _operation = SparkleSave($"slot_{_index}" + FILE_EXT, _buffer, _callback);
+	storage_save("saves", $"slot_{_index}" + FILE_EXT, _buffer, _callback);
 	
-	// Delete the buffer because SparkleStore copies it
+	// Delete the buffer because the storage copies it
 	buffer_delete(_buffer);
-	return _operation;
 }

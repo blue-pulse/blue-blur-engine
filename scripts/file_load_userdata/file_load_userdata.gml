@@ -1,11 +1,11 @@
 function file_load_userdata() {
 	// Callback
-	var _callback = function(_status, _buffer) {
+	var _callback = function(_result, _buffer) {
 		// Variables
 		var _data = undefined;
 		
 		// Read file
-		if (_status == SPARKLE_STATUS_SUCCESS) {
+		if (_result == storage_results.success) {
 			if (USE_ENCRYPTION) {
 				_buffer = cipher_decrypt(_buffer);
 			}
@@ -24,7 +24,7 @@ function file_load_userdata() {
 		
 		// File failed to load
 		else {
-			print($"[ERROR] Userdata load operation exited with error code: {_status}");
+			print($"[ERROR] Userdata load operation exited with error code: {_result}");
 	    }
 	};
 	
@@ -32,6 +32,5 @@ function file_load_userdata() {
 	task_add_item(USERDATA, tasks.read);
 	
 	// Load file
-	SparkleSetGroupName("config");
-	return SparkleLoad(USERDATA, _callback);
+	storage_load("config", USERDATA, _callback);
 }

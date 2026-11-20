@@ -1,11 +1,11 @@
 function file_load_savedata(_index) {
 	// Callback
-	var _callback = function(_status, _buffer) {
+	var _callback = function(_result, _buffer) {
 		// Variables
 		var _data = undefined;
 		
 		// Read file
-		if (_status == SPARKLE_STATUS_SUCCESS) {
+		if (_result == storage_results.success) {
 			if (USE_ENCRYPTION) {
 				_buffer = cipher_decrypt(_buffer);
 			}
@@ -31,7 +31,7 @@ function file_load_savedata(_index) {
 		
 		// File failed to load
 		else {
-			print($"[ERROR] Savedata load operation exited with error code: {_status}");	
+			print($"[ERROR] Savedata load operation exited with error code: {_result}");	
 	    }
 	};
 	
@@ -39,6 +39,5 @@ function file_load_savedata(_index) {
 	task_add_item(SAVEDATA, tasks.read);
 	
 	// Load file
-	SparkleSetGroupName("saves");
-	return SparkleLoad($"slot_{_index}" + FILE_EXT, _callback);
+	storage_load("saves", $"slot_{_index}" + FILE_EXT, _callback);
 }
