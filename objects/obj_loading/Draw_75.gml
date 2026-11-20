@@ -1,4 +1,7 @@
-// Draw icon
-if (is_shown) {
-	draw_self();
+// Early exit
+if (!storage_is_active()) {
+	exit;
 }
+
+// Draw icon
+draw_self();
