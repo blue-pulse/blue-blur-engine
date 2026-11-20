@@ -16,7 +16,7 @@ function file_save_userdata() {
 	};
 	
 	// Get buffer
-	var _buffer = db_buffer_create(global.userdata);
+	var _buffer = data_serialize(global.userdata);
 	
 	// Encrypt
 	if (USE_ENCRYPTION) {

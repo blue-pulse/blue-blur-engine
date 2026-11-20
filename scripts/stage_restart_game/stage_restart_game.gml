@@ -4,8 +4,8 @@ function stage_restart_game(_duration=10) {
 	camera_set_target(noone);
 	
 	// Write data to database
-	db_write(global.userdata, global.slot, "slot");
-	db_write(global.savedata, {
+	data_write(global.userdata, global.slot, ["slot"]);
+	data_write(global.savedata, {
 		slot: global.slot,
 		playtime: global.framecount,
 		character: global.character,

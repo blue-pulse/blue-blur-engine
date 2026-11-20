@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"data_serialize",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"data_serialize",
+  "parent":{
+    "name":"05. Data",
+    "path":"folders/02. Core/09. Adapters/05. Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

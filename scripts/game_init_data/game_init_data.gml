@@ -3,7 +3,7 @@ function game_init_data() {
 	gml_pragma("forceinline");
 	
 	// Create data
-	global.userdata = db_create(global.userdata);
-	global.savedata = db_create(global.savedata);
-	global.settings = db_create(global.settings);
+	global.userdata = data_create(global.userdata);
+	global.savedata = data_create(global.savedata);
+	global.settings = data_create(global.settings);
 }

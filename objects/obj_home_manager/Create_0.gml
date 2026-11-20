@@ -8,7 +8,7 @@ is_loading = false;
 next_room = rm_hub_world;
 option_active = 0;
 show_menu = true;
-slot_active = db_read(global.userdata, "slot") ?? 1;
+slot_active = data_read(global.userdata, ["slot"]) ?? 1;
 
 // Menu options
 options = [

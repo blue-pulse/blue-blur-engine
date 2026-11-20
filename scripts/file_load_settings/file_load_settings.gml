@@ -9,7 +9,7 @@ function file_load_settings() {
 			if (USE_ENCRYPTION) {
 				_buffer = file_decrypt_buffer(_buffer);
 			}
-			_data = db_buffer_read(_buffer);
+			_data = data_deserialize(_buffer);
 		}
 
 	    // Clean up

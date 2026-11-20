@@ -23,7 +23,7 @@ function file_save_savedata(_index) {
 	};
 	
 	// Get buffer
-	var _buffer = db_buffer_create(global.savedata);
+	var _buffer = data_serialize(global.savedata);
 	
 	// Encrypt
 	if (USE_ENCRYPTION) {

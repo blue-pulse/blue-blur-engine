@@ -9,7 +9,7 @@ function file_load_savedata(_index) {
 			if (USE_ENCRYPTION) {
 				_buffer = file_decrypt_buffer(_buffer);
 			}
-			_data = db_buffer_read(_buffer);
+			_data = data_deserialize(_buffer);
 		}
 
 	    // Clean up
@@ -22,7 +22,7 @@ function file_load_savedata(_index) {
 	    	global.savedata = _data;
 			
 			// Set parameters
-			var _params = db_read(global.savedata) ?? {};
+			var _params = data_read(global.savedata) ?? {};
 			global.character = _params.character;
 			global.lives = _params.life;
 			global.checkpoint.hub_pos = _params.position;
