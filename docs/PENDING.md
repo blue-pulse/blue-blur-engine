@@ -79,11 +79,3 @@ Problem. The replay scenario is chosen by the macro `REPLAY_SCENARIO`, so each s
 Shape. Keep a compile-time switch that turns the harness on, so a shared build stays unchanged, and read the name of the scenario at run time from a source that needs no build, such as a parameter of the executable or a file beside it. Check first that the executable Igor builds can be started again with such a parameter, which has not been tried. Then update [replay](./components/replay.md) to describe it.
 
 Done when one build runs every scenario with lines identical to those of a build per scenario, and the time of a batch is measured again in 0013.
-
-## 12. Report a missing data file as a normal case
-
-Problem. `file_load_settings`, `file_load_userdata` and `file_load_savedata` print `[ERROR]` whenever the load does not end in success, so a file that was never written is reported as a failure on every start. Nothing writes `settings.dat` today, because `screen_set_fullscreen` is the only caller of `file_save_settings` and nothing calls it, so the error shows on every run. A file that exists but cannot be read gives the same line, with a status that says nothing about the cause.
-
-Shape. Do it in the review of the database code. Treat a result other than `storage_results.success` as a missing file, keep the defaults that `data_create` set and log it as `[INFO]`. Treat a success whose data `data_deserialize` cannot read as a damaged file or a wrong key and log it as `[WARN]` or `[ERROR]`. SparkleStore gives the same status for a missing file and an unreadable one, so the two stay together as the manual of `SparkleLoad` describes. Decide in the same review whether `settings.dat` should be written at the first start or when a menu of options exists.
-
-Done when a first start with no data files logs no `[ERROR]`, and a damaged file still does.
