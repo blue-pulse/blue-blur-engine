@@ -1,1 +1,1 @@
-// Draw nothing in the room because the icon belongs to the GUI
+// This event must remain empty!

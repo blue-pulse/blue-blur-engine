@@ -1,1 +1,1 @@
-// Must remain empty!
+// This event must remain empty!
