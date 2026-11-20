@@ -11,6 +11,8 @@ from project import project_find_file, project_get_root
 
 # Constants
 MACROS_FILE = "scripts/config_macros/config_macros.gml"
+FOLDER_FILE = "scripts/file_get_folder/file_get_folder.gml"
+PREFIX_PATTERN = re.compile(r'return\s+"(\w+)"\s*\+\s*_folder;')
 OPTIONS_FILE = "options/windows/options_windows.yy"
 EXECUTABLE_PATTERN = re.compile(r'"option_windows_executable_name"\s*:\s*"([^"]+?)(?:\.exe)?"')
 FOLDERS = ("config", "saves")
@@ -26,6 +28,21 @@ def saves_add_arguments(parser):
 		"--dir",
 		help="Save folder of the game, the one that holds config and saves. Defaults to the folder under APPDATA.",
 	)
+	parser.add_argument(
+		"--replay",
+		action="store_true",
+		help="Read the folders that a replay scenario writes and not the ones of a player.",
+	)
+
+
+def saves_read_folders(root, args):
+	# Return the names of the folders that hold the files
+	if not args.replay:
+		return FOLDERS
+	match = PREFIX_PATTERN.search((root / FOLDER_FILE).read_text(encoding="utf-8"))
+	if not match:
+		raise ToolError(f"{FOLDER_FILE} no longer prefixes the folders of a replay, so --replay cannot find them. Update the pattern in saves.py.")
+	return tuple(match.group(1) + folder for folder in FOLDERS)
 
 
 def saves_read_macro(root, name):
@@ -37,7 +54,7 @@ def saves_read_macro(root, name):
 	return match.group(1)
 
 
-def saves_find_directory(args, root):
+def saves_find_directory(args, root, folders):
 	if args.dir:
 		return Path(args.dir)
 
@@ -54,7 +71,7 @@ def saves_find_directory(args, root):
 			names.append(match.group(1))
 	for name in names:
 		candidate = Path(base) / name
-		if any((candidate / folder).is_dir() for folder in FOLDERS):
+		if any((candidate / folder).is_dir() for folder in folders):
 			return candidate
 	raise ToolError(
 		f"No save folder found under {base} named {' or '.join(names)}. Run the game once, or pass the folder with --dir."
@@ -103,12 +120,13 @@ def saves_show(args):
 	root = project_get_root()
 	key = int(saves_read_macro(root, "CIPHER_KEY"))
 	is_encrypted = saves_read_macro(root, "USE_ENCRYPTION") == "true"
-	directory = saves_find_directory(args, root)
+	folders = saves_read_folders(root, args)
+	directory = saves_find_directory(args, root, folders)
 	print(f"[INFO] Save folder {directory}")
 
 	failures = 0
 	found = 0
-	for folder in FOLDERS:
+	for folder in folders:
 		for file in sorted((directory / folder).glob(f"*{FILE_EXTENSION}")):
 			found += 1
 			name = f"{folder}/{file.name}"
@@ -123,5 +141,5 @@ def saves_show(args):
 			print(json.dumps(table, indent=2, sort_keys=True))
 
 	if found == 0:
-		print(f"[WARNING] No {FILE_EXTENSION} files in {', '.join(FOLDERS)} under {directory}")
+		print(f"[WARNING] No {FILE_EXTENSION} files in {', '.join(folders)} under {directory}")
 	return 1 if failures else 0

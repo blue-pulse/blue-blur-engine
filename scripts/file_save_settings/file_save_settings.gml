@@ -27,7 +27,7 @@ function file_save_settings() {
 	task_add_item(SETTINGS, tasks.write);
 
 	// Save file
-	storage_save("config", SETTINGS, _buffer, _callback);
+	storage_save(file_get_folder("config"), SETTINGS, _buffer, _callback);
 	
 	// Delete the buffer because the storage copies it
 	buffer_delete(_buffer);

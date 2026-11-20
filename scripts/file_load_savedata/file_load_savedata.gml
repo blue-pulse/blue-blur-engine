@@ -39,5 +39,5 @@ function file_load_savedata(_index) {
 	task_add_item(SAVEDATA, tasks.read);
 	
 	// Load file
-	storage_load("saves", $"slot_{_index}" + FILE_EXT, _callback);
+	storage_load(file_get_folder("saves"), $"slot_{_index}" + FILE_EXT, _callback);
 }

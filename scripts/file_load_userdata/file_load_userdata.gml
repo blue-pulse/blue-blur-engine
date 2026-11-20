@@ -32,5 +32,5 @@ function file_load_userdata() {
 	task_add_item(USERDATA, tasks.read);
 	
 	// Load file
-	storage_load("config", USERDATA, _callback);
+	storage_load(file_get_folder("config"), USERDATA, _callback);
 }

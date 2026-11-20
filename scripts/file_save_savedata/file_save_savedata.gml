@@ -34,7 +34,7 @@ function file_save_savedata(_index) {
 	task_add_item(SAVEDATA, tasks.write);
 	
 	// Save file
-	storage_save("saves", $"slot_{_index}" + FILE_EXT, _buffer, _callback);
+	storage_save(file_get_folder("saves"), $"slot_{_index}" + FILE_EXT, _buffer, _callback);
 	
 	// Delete the buffer because the storage copies it
 	buffer_delete(_buffer);
