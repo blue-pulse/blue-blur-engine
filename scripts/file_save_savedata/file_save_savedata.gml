@@ -8,9 +8,6 @@ function file_save_savedata(_index) {
 	
 	// Callback
 	var _callback = function(_result) {
-	    // Clean-up
-		task_delete_item(SAVEDATA);
-		
 	    // File saved successfully
 	    if (_result == storage_results.success) {
 			print($"[INFO] Savedata was saved successfully!");
@@ -30,9 +27,6 @@ function file_save_savedata(_index) {
 		_buffer = cipher_encrypt(_buffer);
 	}
 
-	// Add task to queue
-	task_add_item(SAVEDATA, tasks.write);
-	
 	// Save file
 	storage_save(file_get_folder(FOLDER_SAVES), file_get_slot_name(_index), _buffer, _callback);
 	

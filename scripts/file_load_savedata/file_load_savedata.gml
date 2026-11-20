@@ -14,7 +14,6 @@ function file_load_savedata(_index) {
 
 	    // Clean up
 	    buffer_destroy(_buffer);
-		task_delete_item(SAVEDATA);
 
 	    // File loaded successfully
 	    if (_data != undefined) {
@@ -34,9 +33,6 @@ function file_load_savedata(_index) {
 			print($"[ERROR] Savedata load operation exited with error code: {_result}");	
 	    }
 	};
-	
-	// Add task to queue
-	task_add_item(SAVEDATA, tasks.read);
 	
 	// Load file
 	storage_load(file_get_folder(FOLDER_SAVES), file_get_slot_name(_index), _callback);

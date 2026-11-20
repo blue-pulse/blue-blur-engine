@@ -1,9 +1,6 @@
 function file_save_settings() {
 	// Callback
 	var _callback = function(_result) {
-	    // Clean-up
-		task_delete_item(SETTINGS);
-		
 	    // File saved successfully
 	    if (_result == storage_results.success) {
 			print($"[INFO] Settings were saved successfully!");
@@ -23,9 +20,6 @@ function file_save_settings() {
 		_buffer = cipher_encrypt(_buffer);
 	}
 	
-	// Add task to queue
-	task_add_item(SETTINGS, tasks.write);
-
 	// Save file
 	storage_save(file_get_folder(FOLDER_CONFIG), SETTINGS, _buffer, _callback);
 	

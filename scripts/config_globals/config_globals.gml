@@ -3,7 +3,6 @@ global.framecount = 0;
 global.time = 0;
 
 // Internal
-global.async_operations = [];
 global.is_initialized = false;
 global.game_is_paused = false;
 global.game_state = states.init;

@@ -14,7 +14,6 @@ function file_load_settings() {
 
 	    // Clean up
 	    buffer_destroy(_buffer);
-		task_delete_item(SETTINGS);
 
 	    // File loaded successfully
 	    if (_data != undefined) {
@@ -27,9 +26,6 @@ function file_load_settings() {
 			print($"[ERROR] Settings load operation exited with error code: {_result}");
 	    }
 	};
-	
-	// Add task to queue
-	task_add_item(SETTINGS, tasks.read);
 	
 	// Load file
 	storage_load(file_get_folder(FOLDER_CONFIG), SETTINGS, _callback);

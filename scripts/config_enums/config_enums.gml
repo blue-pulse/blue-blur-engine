@@ -5,16 +5,6 @@ enum states {
 	quit,
 }
 
-// Async operations
-enum tasks {
-	read = 0,
-	write = 1,
-	remove = 2,
-	pending = 3,
-	completed = 4,
-	failed = 5,
-}
-
 // Shapes
 enum shapes {
 	wall = 0,

@@ -14,6 +14,7 @@
 #macro CIPHER_KEY 3179411283192014336
 #macro FILE_EXT ".dat"
 #macro USE_ENCRYPTION true
+#macro INDICATOR_MIN_TIME 1250
 
 // Packages
 #macro SETTINGS "settings.dat"

@@ -1,9 +1,6 @@
 function file_save_userdata() {
 	// Callback
 	var _callback = function(_result) {
-	    // Clean-up
-		task_delete_item(USERDATA);
-		
 	    // File saved successfully
 	    if (_result == storage_results.success) {
 			print($"[INFO] Userdata was saved successfully!");
@@ -23,9 +20,6 @@ function file_save_userdata() {
 		_buffer = cipher_encrypt(_buffer);
 	}
 
-	// Add task to queue
-	task_add_item(USERDATA, tasks.write);
-	
 	// Save file
 	storage_save(file_get_folder(FOLDER_CONFIG), USERDATA, _buffer, _callback);
 	

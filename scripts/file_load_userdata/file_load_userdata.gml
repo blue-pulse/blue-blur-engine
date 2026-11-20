@@ -14,7 +14,6 @@ function file_load_userdata() {
 
 	    // Clean up
 	    buffer_destroy(_buffer);
-		task_delete_item(USERDATA);
 
 	    // File loaded successfully
 	    if (_data != undefined) {
@@ -27,9 +26,6 @@ function file_load_userdata() {
 			print($"[ERROR] Userdata load operation exited with error code: {_result}");
 	    }
 	};
-	
-	// Add task to queue
-	task_add_item(USERDATA, tasks.read);
 	
 	// Load file
 	storage_load(file_get_folder(FOLDER_CONFIG), USERDATA, _callback);

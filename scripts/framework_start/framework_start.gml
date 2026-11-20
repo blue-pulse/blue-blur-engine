@@ -8,6 +8,7 @@ function framework_start() {
 		// Set game parameters
 		game_init_data();
 		game_load_config();
+		gui_create(obj_loading);
 		audio_channel_num(MAX_SOUNDS);
 		mixer_initialize();
 		game_set_step_rate(MAX_FPS);

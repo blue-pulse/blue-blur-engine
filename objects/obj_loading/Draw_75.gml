@@ -1,2 +1,4 @@
 // Draw icon
-draw_self();
+if (is_shown) {
+	draw_self();
+}

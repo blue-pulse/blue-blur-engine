@@ -14,6 +14,6 @@ if (is_ready) {
 else {
 	is_ready = (
 		mixer_is_loaded() and
-		!array_length(global.async_operations)
+		!storage_is_busy()
 	);
 }
